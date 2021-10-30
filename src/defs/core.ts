@@ -41,6 +41,7 @@ export interface ArchipelagoNumericSetting extends ArchipelagoSettingBase {
   type: SettingType.Numeric;
   low: number;
   high: number;
+  step?: number;
   default: number;
   randomable?: boolean;
 }

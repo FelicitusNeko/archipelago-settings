@@ -72,11 +72,23 @@ const Setting: React.FC<SettingProps> = ({
       };
       return (
         <select value={value as string} onChange={onSettingChange}>
-          {Object.keys(values).map((i) => (
-            <option key={`${category}-${sName}-val-${i}`} value={i}>
-              {values[i]}
-            </option>
-          ))}
+          {Object.keys(values).map((i) => {
+            let name = values[i],
+              title;
+            if (name.indexOf(" – ") > 0) {
+              title = name.substr(name.indexOf(" – ") + 3);
+              name = name.substr(0, name.indexOf(" – "));
+            }
+            return (
+              <option
+                key={`${category}-${sName}-val-${i}`}
+                title={title}
+                value={i}
+              >
+                {name}
+              </option>
+            );
+          })}
         </select>
       );
     },
@@ -85,6 +97,7 @@ const Setting: React.FC<SettingProps> = ({
       const {
         low,
         high,
+        step,
         default: vDefault,
       } = setting as ArchipelagoNumericSetting;
 
@@ -98,6 +111,7 @@ const Setting: React.FC<SettingProps> = ({
             className="archslider"
             min={low}
             max={high}
+            step={step}
             value={(value as number) ?? vDefault}
             onChange={onSettingChange}
             trackStyle={SelectRail}
@@ -214,11 +228,23 @@ const Setting: React.FC<SettingProps> = ({
                 value={addWeightString}
                 onChange={onAddWeightChange}
               >
-                {remainingValues.map((i) => (
-                  <option key={`${category}-${sName}-weight-${i}`} value={i}>
-                    {values[i]}
-                  </option>
-                ))}
+                {remainingValues.map((i) => {
+                  let name = values[i],
+                    title;
+                  if (name.indexOf(" – ") > 0) {
+                    title = name.substr(name.indexOf(" – ") + 3);
+                    name = name.substr(0, name.indexOf(" – "));
+                  }
+                  return (
+                    <option
+                      key={`${category}-${sName}-val-${i}`}
+                      title={title}
+                      value={i}
+                    >
+                      {name}
+                    </option>
+                  );
+                })}
               </select>{" "}
               <button
                 key={`${category}-${sName}-wgtadd`}
@@ -235,7 +261,7 @@ const Setting: React.FC<SettingProps> = ({
     },
     numeric: (setting) => {
       if (weights === null) return null;
-      const { low, high } = setting as ArchipelagoNumericSetting;
+      const { low, high, step } = setting as ArchipelagoNumericSetting;
       const count = Object.keys(weights).length;
       const weightSliders: React.ReactNode[] = [];
 
@@ -266,6 +292,7 @@ const Setting: React.FC<SettingProps> = ({
             className="archslider"
             min={low}
             max={high}
+            step={step}
             value={addWeightNumber}
             onChange={onSettingChange}
             trackStyle={SelectRail}
