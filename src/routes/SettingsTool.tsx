@@ -44,8 +44,6 @@ const SettingsTool: React.FC = () => {
   );
   const [settings, setSettings] = useState<SettingsCollection>({});
 
-  console.debug(CategoryList);
-
   // Load settings
   useEffect(() => {
     const checkSavedData = (data: SettingsCollection) => {
