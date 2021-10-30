@@ -3,7 +3,36 @@ import {
   ArchipelagoSettingBase,
   ArchipelagoStringSetting,
   SettingType,
+  ArchipelagoCategory,
 } from "./core";
+
+import LttPSettings from "../defs/lttp";
+import OoTSettings from "../defs/oot";
+import TimespinnerSettings from "../defs/timespinner";
+import FactorioSettings from "../defs/factorio";
+import SubnauticaSettings from "../defs/subnautica";
+import ROR2Settings from "../defs/ror2";
+import SlayTheSpireSettings from "../defs/slaythespire";
+import MinecraftSettings from "../defs/minecraft";
+
+const PartialCategoryList: ArchipelagoCategory[] = [
+  {
+    category: "A Link to the Past",
+    readableName: "The Legend of Zelda: A Link to the Past",
+    settings: LttPSettings,
+  },
+  {
+    category: "Ocarina of Time",
+    readableName: "The Legend of Zelda: Ocarina of Time",
+    settings: OoTSettings,
+  },
+  { category: "Timespinner", settings: TimespinnerSettings },
+  { category: "Factorio", settings: FactorioSettings },
+  { category: "Subnautica", settings: SubnauticaSettings },
+  { category: "Risk of Rain 2", settings: ROR2Settings },
+  { category: "Slay the Spire", settings: SlayTheSpireSettings },
+  { category: "Minecraft", settings: MinecraftSettings },
+];
 
 const GlobalSettings: ArchipelagoSettingBase[] = [];
 GlobalSettings.push(
@@ -12,17 +41,13 @@ GlobalSettings.push(
     name: "game",
     readableName: "Game",
     description: "Determines which game you'll be playing.",
-    values: {
-      "A Link to the Past": "The Legend of Zelda: A Link to the Past",
-      "Ocarina of Time": "The Legend of Zelda: Ocarina of Time",
-      Timespinner: "Timespinner",
-      Factorio: "Factorio",
-      Subnautica: "Subnautica",
-      "Risk of Rain 2": "Risk of Rain 2",
-      "Slay the Spire": "Slay the Spire",
-      Minecraft: "Minecraft",
-    },
-    default: "A Link to the Past",
+    values: (() => {
+      const retval: Record<string, string> = {};
+      for (const { category, readableName } of PartialCategoryList)
+        if (category) retval[category] = readableName ?? category;
+      return retval;
+    })(),
+    default: PartialCategoryList[0].category!,
   })
 );
 GlobalSettings.push(
@@ -51,6 +76,12 @@ GlobalSettings.push(
     default: true,
   })
 );
+
+export default GlobalSettings;
+
+const CategoryList: ArchipelagoCategory[] = PartialCategoryList.slice();
+CategoryList.unshift({ category: null, settings: GlobalSettings });
+export { CategoryList };
 
 //------------======================
 
@@ -86,5 +117,3 @@ Settings.push(
   })
 );
 */
-
-export default GlobalSettings;

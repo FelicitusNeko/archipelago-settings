@@ -19,15 +19,7 @@ import Setting from "./objs/Setting";
 import "./SettingsTool.css";
 import { version } from "../../package.json";
 
-import GlobalSettings from "../defs/global";
-import LttPSettings from "../defs/lttp";
-import OoTSettings from "../defs/oot";
-import TimespinnerSettings from "../defs/timespinner";
-import FactorioSettings from "../defs/factorio";
-import SubnauticaSettings from "../defs/subnautica";
-import ROR2Settings from "../defs/ror2";
-import SlayTheSpireSettings from "../defs/slaythespire";
-import MinecraftSettings from "../defs/minecraft";
+import { CategoryList } from "../defs/global";
 
 const { localStorage, location, confirm } = window;
 
@@ -39,29 +31,11 @@ interface SavedSettings {
   description: string;
   settings: SettingsCollection;
 }
-interface ArchipelagoCategory {
-  category: string | null;
-  settings: ArchipelagoSettingBase[];
-}
 
 const hasCrossover = (lhs: string[], rhs: string[]) => {
   for (const i of lhs) if (rhs.includes(i)) return true;
   return false;
 };
-
-const categoryList: ArchipelagoCategory[] = [
-  { category: null, settings: GlobalSettings },
-  { category: "A Link to the Past", settings: LttPSettings },
-  { category: "Ocarina of Time", settings: OoTSettings },
-  { category: "Timespinner", settings: TimespinnerSettings },
-  { category: "Factorio", settings: FactorioSettings },
-  { category: "Subnautica", settings: SubnauticaSettings },
-  { category: "Risk of Rain 2", settings: ROR2Settings },
-  { category: "Slay the Spire", settings: SlayTheSpireSettings },
-  { category: "Minecraft", settings: MinecraftSettings },
-];
-
-// BUG: When new settings are introduced, they don't show up until the config is reset.
 
 const SettingsTool: React.FC = () => {
   const [playerName, setPlayerName] = useState("Player");
@@ -70,18 +44,19 @@ const SettingsTool: React.FC = () => {
   );
   const [settings, setSettings] = useState<SettingsCollection>({});
 
+  console.debug(CategoryList);
+
   // Load settings
   useEffect(() => {
     const checkSavedData = (data: SettingsCollection) => {
       console.debug("Reticulating splines");
       const retval: SettingsCollection = {};
 
-      for (const { category, settings: catSettings } of categoryList) {
+      for (const { category, settings: catSettings } of CategoryList) {
         if (category)
           retval[category] = data[category]
             ? Object.assign({}, data[category])
             : {};
-      
 
         const subcatIn = (
           category ? data[category] : data
@@ -92,7 +67,10 @@ const SettingsTool: React.FC = () => {
 
         for (const setting of catSettings) {
           if (subcatOut[setting.name]) {
-            subcatOut[setting.name] = typeof subcatOut[setting.name] === "object" ? Object.assign({}, subcatIn[setting.name]) : subcatIn[setting.name];
+            subcatOut[setting.name] =
+              typeof subcatOut[setting.name] === "object"
+                ? Object.assign({}, subcatIn[setting.name])
+                : subcatIn[setting.name];
 
             switch (setting.type) {
               case SettingType.String:
@@ -114,9 +92,7 @@ const SettingsTool: React.FC = () => {
               case SettingType.Numeric:
                 {
                   const numSetting = setting as ArchipelagoNumericSetting;
-                  console.debug(numSetting, subcatOut[setting.name], typeof subcatOut[setting.name])
                   if (typeof subcatOut[setting.name] === "object") {
-                    console.debug('Weighted value detected');
                     const weights = subcatOut[setting.name] as WeightedSetting;
                     for (const value of Object.keys(weights)) {
                       if (value.startsWith("random")) {
@@ -177,7 +153,7 @@ const SettingsTool: React.FC = () => {
       setSettings(checkSavedData(savedSettings.settings));
     } else {
       let defaultSettings: SettingsCollection = {};
-      for (const category of categoryList) {
+      for (const category of CategoryList) {
         const subcollection: SettingsSubcollection = {};
         category.settings.forEach((i) => (subcollection[i.name] = i.default));
         if (!category.category)
@@ -253,7 +229,7 @@ const SettingsTool: React.FC = () => {
   const importYaml = (yamlIn: any) => {
     const newSettings: SettingsCollection = {};
 
-    for (const { category, settings: catSettings } of categoryList) {
+    for (const { category, settings: catSettings } of CategoryList) {
       if (category) {
         if (!yamlIn[category]) continue;
         newSettings[category] = {};
@@ -282,7 +258,7 @@ const SettingsTool: React.FC = () => {
     const yamlIn = Object.assign({}, yamlInBase, yamlInBase.rom);
     const newSettings: SettingsCollection = {};
 
-    for (const { category, settings: catSettings } of categoryList.slice(
+    for (const { category, settings: catSettings } of CategoryList.slice(
       0,
       2
     )) {
@@ -394,7 +370,7 @@ const SettingsTool: React.FC = () => {
     );
 
     if (!e.ctrlKey) {
-      for (const { category } of categoryList) {
+      for (const { category } of CategoryList) {
         if (!category) continue;
         else if (!isGameEnabled(category)) delete outYaml[category];
       }
@@ -533,22 +509,23 @@ const SettingsTool: React.FC = () => {
 
         <Tabs>
           <TabList className="react-tabs__tab-list settingsTabs">
-            {categoryList
-              .filter((i) => isGameEnabled(i.category))
-              .map((i) => (
-                <Tab>{i.category ?? "Global"}</Tab>
-              ))}
+            {CategoryList.filter((i) => isGameEnabled(i.category)).map((i) => (
+              <Tab>{i.category ?? "Global"}</Tab>
+            ))}
             <Tab>Changelog</Tab>
           </TabList>
 
-          {categoryList
-            .filter((i) => isGameEnabled(i.category))
-            .map((i) => (
-              <TabPanel className="settingsBody">
-                {outputSettingCollection(i.category, i.settings)}
-              </TabPanel>
-            ))}
+          {CategoryList.filter((i) => isGameEnabled(i.category)).map((i) => (
+            <TabPanel className="settingsBody">
+              {outputSettingCollection(i.category, i.settings)}
+            </TabPanel>
+          ))}
           <TabPanel className="settingsBody">
+            <h4>0.9.3</h4>
+            <ul>
+              <li>Background changes to make it easier to add new games</li>
+            </ul>
+            <hr />
             <h4>0.9.2</h4>
             <ul>
               <li>Style tweak on weighted sliders</li>

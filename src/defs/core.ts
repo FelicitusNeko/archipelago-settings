@@ -50,6 +50,12 @@ export interface ArchipelagoBooleanSetting extends ArchipelagoSettingBase {
   default: boolean;
 }
 
+export interface ArchipelagoCategory {
+  category: string | null;
+  readableName?: string;
+  settings: ArchipelagoSettingBase[];
+}
+
 const ForbiddenNames = ["Archipelago"]; // lol yup
 export { ForbiddenNames };
 
