@@ -522,6 +522,11 @@ const SettingsTool: React.FC = () => {
             <h4>0.9.3</h4>
             <ul>
               <li>Background changes to make it easier to add new games</li>
+              <li>Tweaked and fixed some LttP settings/dependencies</li>
+              <li>
+                Shortened longer setting values (hover over them to see a
+                detailed description)
+              </li>
             </ul>
             <hr />
             <h4>0.9.2</h4>

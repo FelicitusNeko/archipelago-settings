@@ -35,18 +35,22 @@ LttPSettings.push(
     readableName: "Goal",
     description: "Define your end goal for the game.",
     values: {
-      ganon: "Defeat Ganon and GT Agahnim",
-      crystals: "Defeat Ganon",
+      ganon: "Ganon – Defeat Ganon and GT Agahnim",
+      crystals: "Fast Ganon – Defeat Ganon",
       bosses: "Oops! All Dungeons",
-      pedestal: "Pull the Pedestal",
-      ganon_pedestal: "Pull the Pedestal and defeat Ganon",
-      triforce_hunt: "Find the Triforce Pieces",
-      local_triforce_hunt: "Find the Triforce Pieces in your own world",
-      ganon_triforce_hunt: "Find the Triforce Pieces and defeat Ganon",
+      pedestal:
+        "Pedestal – Get the three Medallions and pull the Master Sword from its pedestal",
+      ganon_pedestal:
+        "Pedestal Ganon – Get the Medallions, check the Master Sword pedestal, then defeat Ganon",
+      triforce_hunt: "Triforce Hunt – Find the Triforce Pieces",
+      local_triforce_hunt:
+        "Local Triforce Hunt – Find the Triforce Pieces in your own world",
+      ganon_triforce_hunt:
+        "Ganon's Triforce Hunt – Find the Triforce Pieces and defeat Ganon",
       local_ganon_triforce_hunt:
-        "Find the Triforce Pieces in your own world and defeat Ganon",
+        "Ganon's Local Triforce Hunt – Find the Triforce Pieces in your own world and defeat Ganon",
       ice_rod_hunt:
-        "Start with everything and find the single hidden item in the world",
+        "Ice Rod Hunt – Start with everything and find the single hidden item in the world",
     },
     default: "ganon",
 
@@ -64,8 +68,8 @@ LttPSettings.push(
     description: "Define your starting point and base world.",
     values: {
       standard: "Standard opening",
-      open: "Open world - skip the opening",
-      inverted: "Inverted mode - start from Dark World",
+      open: "Open world – skip the opening",
+      inverted: "Inverted mode – start from Dark World",
     },
     default: "open",
   })
@@ -116,7 +120,7 @@ LttPSettings.push(
     high: 90,
     default: 20,
     dependsOn: {
-      goal: [
+      goals: [
         "triforce_hunt",
         "local_triforce_hunt",
         "ganon_triforce_hunt",
@@ -139,7 +143,7 @@ LttPSettings.push(
     },
     default: "extra",
     dependsOn: {
-      goal: [
+      goals: [
         "triforce_hunt",
         "local_triforce_hunt",
         "ganon_triforce_hunt",
@@ -159,7 +163,7 @@ LttPSettings.push(
     high: 89,
     default: 10,
     dependsOn: {
-      goal: [
+      goals: [
         "triforce_hunt",
         "local_triforce_hunt",
         "ganon_triforce_hunt",
@@ -177,10 +181,11 @@ LttPSettings.push(
     description:
       "What percentage of Triforce pieces over the required amount will be available. For instance, 20 pieces at 150% would result in 30 pieces in the game.",
     low: 100,
-    high: 999,
+    high: 400,
+    step: 5,
     default: 125,
     dependsOn: {
-      goal: [
+      goals: [
         "triforce_hunt",
         "local_triforce_hunt",
         "ganon_triforce_hunt",
@@ -201,7 +206,7 @@ LttPSettings.push(
     high: 100,
     default: 30,
     dependsOn: {
-      goal: [
+      goals: [
         "triforce_hunt",
         "local_triforce_hunt",
         "ganon_triforce_hunt",
@@ -227,7 +232,7 @@ LttPSettings.push(
     },
     default: "normal",
     dependsOn: {
-      goal: [
+      goals: [
         "triforce_hunt",
         "local_triforce_hunt",
         "ganon_triforce_hunt",
@@ -264,8 +269,9 @@ LttPSettings.push(
     readableName: "Countdown start time",
     description:
       "In countdown timer modes, the time in minutes the clock starts at.",
-    low: 1,
+    low: 5,
     high: 600,
+    step: 5,
     default: 10,
     dependsOn: {
       timer: ["timed", "timed_countdown", "timed_ohko"],
@@ -444,8 +450,8 @@ LttPSettings.push(
     legacyValues: {
       on: "any_world",
       off: "original_dungeon",
-      true: 'any_world',
-      false: 'original_dungeon',
+      true: "any_world",
+      false: "original_dungeon",
     },
   })
 );
@@ -468,8 +474,8 @@ LttPSettings.push(
     legacyValues: {
       on: "any_world",
       off: "original_dungeon",
-      true: 'any_world',
-      false: 'original_dungeon',
+      true: "any_world",
+      false: "original_dungeon",
     },
   })
 );
@@ -491,8 +497,8 @@ LttPSettings.push(
     legacyValues: {
       on: "any_world",
       off: "original_dungeon",
-      true: 'any_world',
-      false: 'original_dungeon',
+      true: "any_world",
+      false: "original_dungeon",
     },
   })
 );
@@ -514,8 +520,8 @@ LttPSettings.push(
     legacyValues: {
       on: "any_world",
       off: "original_dungeon",
-      true: 'any_world',
-      false: 'original_dungeon',
+      true: "any_world",
+      false: "original_dungeon",
     },
   })
 );
@@ -791,8 +797,8 @@ LttPSettings.push(
       "Whether certain events will yield different item drops than normal.",
     values: {
       none: "Off",
-      g: "General prize shuffle – killing enemies and the like",
-      b: "Bonk prize shuffle – bonking trees, stacks, etc.",
+      g: "General prize shuffle – Prizes for killing enemies and the like",
+      b: "Bonk prize shuffle – Prizes for bonking trees, stacks, etc.",
       bg: "Both",
     },
     default: "none",
@@ -818,7 +824,7 @@ LttPSettings.push(
       ufp: "Full shuffle including capacity",
       wfp: "Full shuffle including potion shop",
       ufpw: "Absolutely everything",
-      P: "Exotic price shuffle – sometimes pay in bombs, arrows, and hearts",
+      P: "Exotic price shuffle – Sometimes pay in bombs, arrows, and hearts",
       gP: "Pool and exotic prices",
       fP: "Full exotic shuffle",
       ufP: "Full exotic shuffle including capacity",
@@ -1001,8 +1007,8 @@ LttPSettings.push(
 const spritevalue: Record<string, string> = {
   none: "LttP Link (Nintendo)",
 };
-for (const sprite of lttpsprites as LTTPSprite[])
-  spritevalue[sprite.file] = `${sprite.name} (${sprite.author})`;
+for (const {file, name, author} of lttpsprites as LTTPSprite[])
+  spritevalue[file] = `${name} (${author})`;
 
 LttPSettings.push(
   Object.seal<ArchipelagoStringSetting>({
