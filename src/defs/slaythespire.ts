@@ -6,6 +6,7 @@ import {
   ArchipelagoBooleanSetting,
 } from "./core";
 
+/** The collection of settings for Slay the Spire. */
 const SlayTheSpireSettings: ArchipelagoSettingBase[] = [];
 
 SlayTheSpireSettings.push(

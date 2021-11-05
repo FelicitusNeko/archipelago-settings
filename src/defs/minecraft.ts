@@ -8,6 +8,7 @@ import {
 
 const MinecraftSettings: ArchipelagoSettingBase[] = [];
 
+/** The collection of settings for Minecraft. */
 MinecraftSettings.push(
   Object.seal<ArchipelagoNumericSetting>({
     type: SettingType.Numeric,

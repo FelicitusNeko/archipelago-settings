@@ -6,6 +6,7 @@ import {
   ArchipelagoBooleanSetting,
 } from "./core";
 
+/** The collection of settings for Factorio. */
 const FactorioSettings: ArchipelagoSettingBase[] = [];
 
 // TODO: all of those hidden settings under "world gen" and "starting items"

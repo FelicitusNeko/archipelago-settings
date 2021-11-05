@@ -6,6 +6,7 @@ import {
   ArchipelagoBooleanSetting,
 } from "./core";
 
+/** The collection of settings for Risk of Rain 2. */
 const ROR2Settings: ArchipelagoSettingBase[] = [];
 
 ROR2Settings.push(

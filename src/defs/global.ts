@@ -15,7 +15,9 @@ import ROR2Settings from "../defs/ror2";
 import SlayTheSpireSettings from "../defs/slaythespire";
 import MinecraftSettings from "../defs/minecraft";
 
+/** The list of categories (e.g. games) currently available to the settings tool, not including global settings. */
 const PartialCategoryList: ArchipelagoCategory[] = [
+  // DO NOT MOVE LTTP FROM THE FIRST SPOT; it is required to be first for Berserker import compatibility
   {
     category: "A Link to the Past",
     readableName: "The Legend of Zelda: A Link to the Past",
@@ -34,6 +36,7 @@ const PartialCategoryList: ArchipelagoCategory[] = [
   { category: "Minecraft", settings: MinecraftSettings },
 ];
 
+/** The global settings applicable to all Archipelago games. */
 const GlobalSettings: ArchipelagoSettingBase[] = [];
 GlobalSettings.push(
   Object.seal<ArchipelagoStringSetting>({
@@ -79,6 +82,7 @@ GlobalSettings.push(
 
 export default GlobalSettings;
 
+/** The list of categories (e.g. games) currently available to the settings tool. */
 const CategoryList: ArchipelagoCategory[] = PartialCategoryList.slice();
 CategoryList.unshift({ category: null, settings: GlobalSettings });
 export { CategoryList };

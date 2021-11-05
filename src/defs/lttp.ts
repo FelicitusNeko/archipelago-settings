@@ -13,19 +13,8 @@ interface LTTPSprite {
   author: string;
 }
 
+/** The collection of settings for The Legend of Zelda: A Link to the Past. */
 const LttPSettings: ArchipelagoSettingBase[] = [];
-
-const palettes: Record<string, string> = {
-  default: "Vanilla",
-  good: "Random within reason",
-  classic: "Decent color scheme",
-  grayscale: "Grayscale",
-  negative: "Negative – The exact inverse of vanilla",
-  blackout: "All black (good luck)",
-  dizzy: "Dizzy – Full random but keep saturation and lightness",
-  sick: "Sick – Full random but keep lightness",
-  puke: "Puke – Completely random without regard to anything",
-};
 
 //------------====================== CORE SETTINGS
 LttPSettings.push(
@@ -851,6 +840,18 @@ LttPSettings.push(
 );
 
 //------------====================== PERSONALIZATION
+const palettes: Record<string, string> = {
+  default: "Vanilla",
+  good: "Random within reason",
+  classic: "Decent color scheme",
+  grayscale: "Grayscale",
+  negative: "Negative – The exact inverse of vanilla",
+  blackout: "All black (good luck)",
+  dizzy: "Dizzy – Full random but keep saturation and lightness",
+  sick: "Sick – Full random but keep lightness",
+  puke: "Puke – Completely random without regard to anything",
+};
+
 LttPSettings.push(
   Object.seal<ArchipelagoStringSetting>({
     type: SettingType.String,

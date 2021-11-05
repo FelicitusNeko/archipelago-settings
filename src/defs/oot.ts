@@ -6,6 +6,7 @@ import {
   ArchipelagoBooleanSetting,
 } from "./core";
 
+/** The collection of settings for The Legend of Zelda: Ocarina of Time. */
 const OoTSettings: ArchipelagoSettingBase[] = [];
 
 const colorOptionsPeople: Record<string, string> = {

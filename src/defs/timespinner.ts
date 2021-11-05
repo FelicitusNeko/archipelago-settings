@@ -4,6 +4,7 @@ import {
   ArchipelagoBooleanSetting,
 } from "./core";
 
+/** The collection of settings for Timespinner. */
 const TimespinnerSettings: ArchipelagoSettingBase[] = [];
 
 TimespinnerSettings.push(
