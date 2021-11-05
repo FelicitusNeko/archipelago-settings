@@ -1,8 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, ReactElement } from "react";
 import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
 import yaml from "yaml";
 import { DateTime } from "luxon";
 import "react-tabs/style/react-tabs.css";
+
+import Setting from "./objs/Setting";
+import Changelog from "./objs/Changelog";
 
 import {
   BuildTimestamp,
@@ -15,13 +18,9 @@ import {
   WeightedSetting,
   SettingType,
 } from "../defs/core";
-import Setting from "./objs/Setting";
-import "./SettingsTool.css";
 import { version } from "../../package.json";
-
 import { CategoryList } from "../defs/global";
-import { ReactElement } from "hoist-non-react-statics/node_modules/@types/react";
-import Changelog from "./objs/Changelog";
+import "./SettingsTool.css";
 
 const { localStorage, location, confirm } = window;
 
