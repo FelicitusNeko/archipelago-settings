@@ -101,7 +101,7 @@ const Setting: React.FC<SettingProps> = ({
             // If there is an em-dash in the readableName of the value, split it off and display it as tooltip text instead
             if (name.indexOf(" – ") > 0) {
               title = name.substr(name.indexOf(" – ") + 3);
-              name = name.substr(0, name.indexOf(" – "));
+              name = name.substr(0, name.indexOf(" – ")) + " ℹ️";
             }
             // Output the option
             return (
@@ -192,7 +192,7 @@ const Setting: React.FC<SettingProps> = ({
 
     /** An event handler which fires when the delete button on a weight is clicked. */
     const onDeleteWeight = () => {
-      // If weights are turned off or the weight is not deletable, do nothing 
+      // If weights are turned off or the weight is not deletable, do nothing
       if (!weights || !deletable) return;
       // Remove the value
       delete weights[valueName];
@@ -233,7 +233,7 @@ const Setting: React.FC<SettingProps> = ({
       </>
     );
   };
-  
+
   /** A collection of functions which output value selectors based on the type of setting, when the setting is weighted. */
   const weightedOutput: Record<SettingType, SettingSelectorFunc> = {
     string: (setting) => {
@@ -287,7 +287,7 @@ const Setting: React.FC<SettingProps> = ({
                     title;
                   if (name.indexOf(" – ") > 0) {
                     title = name.substr(name.indexOf(" – ") + 3);
-                    name = name.substr(0, name.indexOf(" – "));
+                    name = name.substr(0, name.indexOf(" – ")) + " ℹ️";
                   }
                   return (
                     <option
@@ -324,15 +324,15 @@ const Setting: React.FC<SettingProps> = ({
 
       // Create weighted value sliders for selected values
       for (const valueName in weights)
-      weightSliders.push(
-        outputWeightedValue(
-          valueName,
-          weights[valueName],
-          count >
-            ((setting as ArchipelagoNumericSetting).randomable ? 4 : 1) &&
-            !valueName.startsWith("random")
-        )
-      );
+        weightSliders.push(
+          outputWeightedValue(
+            valueName,
+            weights[valueName],
+            count >
+              ((setting as ArchipelagoNumericSetting).randomable ? 4 : 1) &&
+              !valueName.startsWith("random")
+          )
+        );
 
       /** An event handler that fires when the value selector's value changes. */
       const onSettingChange = (newVal: number) => {
