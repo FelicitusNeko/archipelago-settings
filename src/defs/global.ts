@@ -19,21 +19,23 @@ import MinecraftSettings from "../defs/minecraft";
 const PartialCategoryList: ArchipelagoCategory[] = [
   // DO NOT MOVE LTTP FROM THE FIRST SPOT; it is required to be first for Berserker import compatibility
   {
+    // inaugural
     category: "A Link to the Past",
     readableName: "The Legend of Zelda: A Link to the Past",
     settings: LttPSettings,
   },
+  { category: "Factorio", settings: FactorioSettings },  // 0.0.2; also introduced Hollow Knight but support was dropped
+  { category: "Minecraft", settings: MinecraftSettings }, // 0.1.0
+  { category: "Subnautica", settings: SubnauticaSettings }, // 0.1.5
+  { category: "Slay the Spire", settings: SlayTheSpireSettings }, // 0.1.7
+  { category: "Risk of Rain 2", settings: ROR2Settings }, // 0.1.7
   {
+    // 0.1.7
     category: "Ocarina of Time",
     readableName: "The Legend of Zelda: Ocarina of Time",
     settings: OoTSettings,
   },
-  { category: "Timespinner", settings: TimespinnerSettings },
-  { category: "Factorio", settings: FactorioSettings },
-  { category: "Subnautica", settings: SubnauticaSettings },
-  { category: "Risk of Rain 2", settings: ROR2Settings },
-  { category: "Slay the Spire", settings: SlayTheSpireSettings },
-  { category: "Minecraft", settings: MinecraftSettings },
+  { category: "Timespinner", settings: TimespinnerSettings }, // 0.1.9
 ];
 
 /** The global settings applicable to all Archipelago games. */
