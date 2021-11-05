@@ -485,7 +485,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
         const file = files[0];
 
         // Take in the text file and try to determine if it's an Archipelago file or a Berserker file
-        // How we determine that: an Archipelago file should not have "goals" at the root, but a 
+        // How we determine that: an Archipelago file should not have "goals" at the root, but a
         // Berserker file generally would...not a guaranteed method, but this will usually work
         file
           .text()
@@ -565,7 +565,6 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
     // If the category is not present in settings, return false.
     if (!settings[category]) return false;
 
-
     if (typeof settings.game === "object") {
       // If the game setting is weighted, return true for any category whose weight is higher than zero
       if (Object.keys(settings.game).includes(category))
@@ -594,51 +593,53 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
     const subsettings = (
       category === null ? settings : settings[category]
     ) as SettingsSubcollection;
-    return settingsDef
-      // Filter out any invalid settings (shouldn't happen, but just in case)
-      .filter((i) => Object.keys(subsettings).includes(i.name))
-      .filter((i) => {
-        // TODO: "not" dependencies (!value)
-        
-        // If this setting has no dependencies, keep it
-        if (!i.dependsOn) return true;
-        else
+    return (
+      settingsDef
+        // Filter out any invalid settings (shouldn't happen, but just in case)
+        .filter((i) => Object.keys(subsettings).includes(i.name))
+        .filter((i) => {
+          // TODO: "not" dependencies (!value)
+
+          // If this setting has no dependencies, keep it
+          if (!i.dependsOn) return true;
           // Iterate through all of the dependencies
-          for (const check in i.dependsOn) {
-            if (typeof subsettings[check] === "object") {
-              /** The collection of weights for the parent setting. */
-              const weightSubsetting = subsettings[check] as WeightedSetting;
-              // If the required value(s) is/are not selected at all, filter out
-              if (
-                !hasCrossover(
-                  Object.keys(weightSubsetting),
-                  i.dependsOn[check] as string[]
+          else
+            for (const check in i.dependsOn) {
+              if (typeof subsettings[check] === "object") {
+                /** The collection of weights for the parent setting. */
+                const weightSubsetting = subsettings[check] as WeightedSetting;
+                // If the required value(s) is/are not selected at all, filter out
+                if (
+                  !hasCrossover(
+                    Object.keys(weightSubsetting),
+                    i.dependsOn[check] as string[]
+                  )
                 )
-              )
-                return false;
-              // If the required value(s) present has/all have a weight of 0, filter out
-              for (const countercheck in weightSubsetting) {
-                if (Object.keys(weightSubsetting).includes(countercheck)) {
-                  if (weightSubsetting[countercheck] === 0) return false;
-                  else break;
+                  return false;
+                // If the required value(s) present has/all have a weight of 0, filter out
+                for (const countercheck in weightSubsetting) {
+                  if (Object.keys(weightSubsetting).includes(countercheck)) {
+                    if (weightSubsetting[countercheck] === 0) return false;
+                    else break;
+                  }
                 }
-              }
-              // If it's a single value, filter out if a required value is not set
-            } else if (!i.dependsOn[check].includes(subsettings[check]))
-              return false;
-          }
-        return true;
-      })
-      .map((i) => (
-        // Return the setting object
-        <Setting
-          key={`setting-${category}-${i.name}`}
-          category={category ?? undefined}
-          setting={i}
-          value={subsettings[i.name]}
-          onChange={onSettingChange}
-        />
-      ));
+                // If it's a single value, filter out if a required value is not set
+              } else if (!i.dependsOn[check].includes(subsettings[check]))
+                return false;
+            }
+          return true;
+        })
+        .map((i) => (
+          // Return the setting object
+          <Setting
+            key={`setting-${category}-${i.name}`}
+            category={category ?? undefined}
+            setting={i}
+            value={subsettings[i.name]}
+            onChange={onSettingChange}
+          />
+        ))
+    );
   };
 
   // Finally, lay out the page
@@ -718,8 +719,10 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
       <footer>
         The Archipelago Settings Tool is not affiliated to, or built in
         association with, Berserker66, Berserker Multiworld team, or Archipelago
-        Multiworld team. The author does not promise any support and holds no
-        liability from your use of the tool. Author: KewlioMZX{" "}
+        Multiworld team. This project is under the{" "}
+        <a href="https://mit-license.org">MIT license</a>, and as such, the
+        author does not promise any support and holds no liability from your use
+        of the tool. Author: KewlioMZX{" "}
         <a href="https://twitter.com/squaresym/">(Twitter)</a>{" "}
         <a href="https://twitter.com/FelicitusNeko/archipelago-settings/">
           (GitHub)
