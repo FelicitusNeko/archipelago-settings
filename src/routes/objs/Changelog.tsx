@@ -3,6 +3,11 @@ import React from "react";
 const Changelog: React.FC = () => {
   return (
     <>
+      <h4>0.9.4</h4>
+      <ul>
+        <li>Reordered games based on their introduction to Archipelago</li>
+      </ul>
+      <hr />
       <h4>0.9.3</h4>
       <ul>
         <li>Background changes to make it easier to add new games</li>
