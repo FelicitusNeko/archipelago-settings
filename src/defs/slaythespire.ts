@@ -4,6 +4,7 @@ import {
   ArchipelagoSettingBase,
   ArchipelagoNumericSetting,
   ArchipelagoBooleanSetting,
+  ArchipelagoCategory,
 } from "./core";
 
 /** The collection of settings for Slay the Spire. */
@@ -16,10 +17,10 @@ SlayTheSpireSettings.push(
     readableName: "Character",
     description: "Which character you will be playing as.",
     values: {
-      ironclad: 'Ironclad',
-      silent: 'Silent',
-      defect: 'Defect',
-      watcher: 'Watcher',
+      ironclad: "Ironclad",
+      silent: "Silent",
+      defect: "Defect",
+      watcher: "Watcher",
     },
     default: "ironclad",
   })
@@ -41,9 +42,17 @@ SlayTheSpireSettings.push(
     type: SettingType.Boolean,
     name: "heart_run",
     readableName: "Heart run",
-    description: "If enabled, you'll need to collect the three keys and defeat the Heart in order to complete the game.",
+    description:
+      "If enabled, you'll need to collect the three keys and defeat the Heart in order to complete the game.",
     default: true,
   })
 );
 
 export default SlayTheSpireSettings;
+
+const SlayTheSpireCategory: ArchipelagoCategory = {
+  category: "Slay the Spire",
+  settings: SlayTheSpireSettings,
+};
+
+export { SlayTheSpireCategory };

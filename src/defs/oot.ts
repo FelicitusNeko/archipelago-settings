@@ -4,6 +4,7 @@ import {
   ArchipelagoStringSetting,
   ArchipelagoNumericSetting,
   ArchipelagoBooleanSetting,
+  ArchipelagoCategory,
 } from "./core";
 
 /** The collection of settings for The Legend of Zelda: Ocarina of Time. */
@@ -1550,6 +1551,14 @@ OoTSettings.push(
 );
 
 export default OoTSettings;
+
+const OoTCategory: ArchipelagoCategory = {
+  category: "Ocarina of Time",
+  readableName: "The Legend of Zelda: Ocarina of Time",
+  settings: OoTSettings,
+};
+
+export { OoTCategory };
 
 //------------======================
 

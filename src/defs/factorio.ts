@@ -4,6 +4,7 @@ import {
   ArchipelagoSettingBase,
   ArchipelagoNumericSetting,
   ArchipelagoBooleanSetting,
+  ArchipelagoCategory,
 } from "./core";
 
 /** The collection of settings for Factorio. */
@@ -209,6 +210,13 @@ FactorioSettings.push(
 );
 
 export default FactorioSettings;
+
+const FactorioCategory: ArchipelagoCategory = {
+  category: "Factorio",
+  settings: FactorioSettings,
+};
+
+export { FactorioCategory };
 
 //------------======================
 

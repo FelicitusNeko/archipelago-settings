@@ -6,36 +6,26 @@ import {
   ArchipelagoCategory,
 } from "./core";
 
-import LttPSettings from "../defs/lttp";
-import OoTSettings from "../defs/oot";
-import TimespinnerSettings from "../defs/timespinner";
-import FactorioSettings from "../defs/factorio";
-import SubnauticaSettings from "../defs/subnautica";
-import ROR2Settings from "../defs/ror2";
-import SlayTheSpireSettings from "../defs/slaythespire";
-import MinecraftSettings from "../defs/minecraft";
+import { LttPCategory } from "../defs/lttp";
+import { OoTCategory } from "../defs/oot";
+import { TimespinnerCategory } from "../defs/timespinner";
+import { FactorioCategory } from "../defs/factorio";
+import { SubnauticaCategory } from "../defs/subnautica";
+import { ROR2Category } from "../defs/ror2";
+import { SlayTheSpireCategory } from "../defs/slaythespire";
+import { MinecraftCategory } from "../defs/minecraft";
 
 /** The list of categories (e.g. games) currently available to the settings tool, not including global settings. */
 const PartialCategoryList: ArchipelagoCategory[] = [
   // DO NOT MOVE LTTP FROM THE FIRST SPOT; it is required to be first for Berserker import compatibility
-  {
-    // inaugural
-    category: "A Link to the Past",
-    readableName: "The Legend of Zelda: A Link to the Past",
-    settings: LttPSettings,
-  },
-  { category: "Factorio", settings: FactorioSettings },  // 0.0.2; also introduced Hollow Knight but support was dropped
-  { category: "Minecraft", settings: MinecraftSettings }, // 0.1.0
-  { category: "Subnautica", settings: SubnauticaSettings }, // 0.1.5
-  { category: "Slay the Spire", settings: SlayTheSpireSettings }, // 0.1.7
-  { category: "Risk of Rain 2", settings: ROR2Settings }, // 0.1.7
-  {
-    // 0.1.7
-    category: "Ocarina of Time",
-    readableName: "The Legend of Zelda: Ocarina of Time",
-    settings: OoTSettings,
-  },
-  { category: "Timespinner", settings: TimespinnerSettings }, // 0.1.9
+  LttPCategory, // inaugural
+  FactorioCategory, // 0.0.2; also introduced Hollow Knight but support was dropped
+  MinecraftCategory, // 0.1.0
+  SubnauticaCategory, // 0.1.5
+  SlayTheSpireCategory, // 0.1.7
+  ROR2Category, // 0.1.7
+  OoTCategory, // 0.1.7
+  TimespinnerCategory, // 0.1.9
 ];
 
 /** The global settings applicable to all Archipelago games. */

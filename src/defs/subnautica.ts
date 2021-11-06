@@ -2,6 +2,7 @@ import {
   SettingType,
   ArchipelagoStringSetting,
   ArchipelagoSettingBase,
+  ArchipelagoCategory,
 } from "./core";
 
 /** The collection of settings for Subnautica. */
@@ -24,3 +25,10 @@ SubnauticaSettings.push(
 );
 
 export default SubnauticaSettings;
+
+const SubnauticaCategory: ArchipelagoCategory = {
+  category: "Subnautica",
+  settings: SubnauticaSettings,
+};
+
+export { SubnauticaCategory };

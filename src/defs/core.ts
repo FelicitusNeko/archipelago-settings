@@ -102,6 +102,16 @@ export interface ArchipelagoBooleanSetting extends ArchipelagoSettingBase {
   default: boolean;
 }
 
+export interface ArchipelagoItem {
+  name: string;
+  readableName?: string;
+}
+
+export interface ArchipelagoLocation {
+  name: string;
+  readableName?: string;
+}
+
 /** The interface defining a category for Archipelago (e.g. a collection of settings for a game). */
 export interface ArchipelagoCategory {
   /** The internal name of the category. */
@@ -110,6 +120,9 @@ export interface ArchipelagoCategory {
   readableName?: string;
   /** The collection of settings for this category. */
   settings: ArchipelagoSettingBase[];
+
+  items?: ArchipelagoItem[];
+  locations?: ArchipelagoLocation[];
 }
 
 /** The list of names which will be rejected by the Archipelago generator. */

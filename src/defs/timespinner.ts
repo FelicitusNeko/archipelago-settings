@@ -2,6 +2,7 @@ import {
   SettingType,
   ArchipelagoSettingBase,
   ArchipelagoBooleanSetting,
+  ArchipelagoCategory,
 } from "./core";
 
 /** The collection of settings for Timespinner. */
@@ -75,3 +76,10 @@ TimespinnerSettings.push(
 );
 
 export default TimespinnerSettings;
+
+const TimespinnerCategory: ArchipelagoCategory = {
+  category: "Timespinner",
+  settings: TimespinnerSettings,
+};
+
+export { TimespinnerCategory };

@@ -4,6 +4,7 @@ import {
   ArchipelagoSettingBase,
   ArchipelagoNumericSetting,
   ArchipelagoBooleanSetting,
+  ArchipelagoCategory,
 } from "./core";
 import lttpsprites from "./lttp-sprites.json";
 
@@ -1008,7 +1009,7 @@ LttPSettings.push(
 const spritevalue: Record<string, string> = {
   none: "LttP Link (Nintendo)",
 };
-for (const {file, name, author} of lttpsprites as LTTPSprite[])
+for (const { file, name, author } of lttpsprites as LTTPSprite[])
   spritevalue[file] = `${name} (${author})`;
 
 LttPSettings.push(
@@ -1024,3 +1025,11 @@ LttPSettings.push(
 );
 
 export default LttPSettings;
+
+const LttPCategory: ArchipelagoCategory = {
+  category: "A Link to the Past",
+  readableName: "The Legend of Zelda: A Link to the Past",
+  settings: LttPSettings,
+};
+
+export { LttPCategory };

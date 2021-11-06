@@ -4,6 +4,7 @@ import {
   ArchipelagoStringSetting,
   ArchipelagoNumericSetting,
   ArchipelagoBooleanSetting,
+  ArchipelagoCategory,
 } from "./core";
 
 const MinecraftSettings: ArchipelagoSettingBase[] = [];
@@ -134,3 +135,10 @@ MinecraftSettings.push(
 );
 
 export default MinecraftSettings;
+
+const MinecraftCategory: ArchipelagoCategory = {
+  category: "Minecraft",
+  settings: MinecraftSettings,
+};
+
+export { MinecraftCategory };

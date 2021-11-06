@@ -4,6 +4,7 @@ import {
   ArchipelagoSettingBase,
   ArchipelagoNumericSetting,
   ArchipelagoBooleanSetting,
+  ArchipelagoCategory,
 } from "./core";
 
 /** The collection of settings for Risk of Rain 2. */
@@ -132,3 +133,10 @@ for (const weightSet of genWeightOpts)
   );
 
 export default ROR2Settings;
+
+const ROR2Category: ArchipelagoCategory = {
+  category: "Risk of Rain 2",
+  settings: ROR2Settings,
+};
+
+export { ROR2Category };

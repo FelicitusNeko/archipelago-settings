@@ -4,11 +4,19 @@ import {
   ArchipelagoStringSetting,
   ArchipelagoNumericSetting,
   ArchipelagoBooleanSetting,
+  ArchipelagoCategory,
 } from "./core";
 
 const Settings: ArchipelagoSettingBase[] = [];
 
 export default Settings;
+
+const Category: ArchipelagoCategory = {
+  category: "",
+  settings: Settings,
+};
+
+export { Category };
 
 //------------======================
 
