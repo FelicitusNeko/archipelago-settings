@@ -579,7 +579,7 @@ LttPSettings.push(
       none: "Off",
       minor_glitches: "May require some of the easier glitches",
       overworld_glitches: "May require harder overworld glitches",
-      no_logic: "Fuck it, put everything anywhere (beware!)",
+      no_logic: "Screw it, put everything anywhere (beware!)",
     },
     default: "none",
   })
@@ -681,7 +681,7 @@ LttPSettings.push(
     name: "killable_thieves",
     readableName: "Killable thieves",
     description:
-      "Normally, the harmless but annoying thieves can only be knocked away. Turn on if you want to kill the fuckers.",
+      "Normally, the harmless but annoying thieves can only be knocked away. Turn on if you want to kill the jerks.",
     default: false,
   })
 );

@@ -16,7 +16,7 @@ const Changelog: React.FC = () => {
           Shortened longer setting values (hover over them to see a detailed
           description)
         </li>
-        <li>Documented the fuck out of the source code</li>
+        <li>Documented the hell out of the source code</li>
       </ul>
       <hr />
       <h4>0.9.2</h4>
