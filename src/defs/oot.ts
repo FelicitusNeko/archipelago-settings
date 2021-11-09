@@ -1560,8 +1560,6 @@ const OoTItems: ArchipelagoItem[] = [
   { name: "Lens of Truth" },
   { name: "Megaton Hammer" },
   { name: "Cojiro" },
-  { name: "Bottle" },
-  { name: "Bottle with Milk" },
   { name: "Rutos Letter", readableName: "Ruto's Letter" },
   { name: "Magic Bean" },
   { name: "Skull Mask" },
@@ -1640,7 +1638,9 @@ const OoTItems: ArchipelagoItem[] = [
   { name: "Bombchus" },
   { name: "Magic Mirror" },
   { name: "Ocarina" },
+  { name: "Bottle" },
   ...[
+    "Milk",
     "Red Potion",
     "Green Potion",
     "Blue Potion",
