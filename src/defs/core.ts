@@ -87,7 +87,10 @@ export interface ArchipelagoNumericSetting extends ArchipelagoSettingBase {
   step?: number;
   /** @override */
   default: number;
-  /** Whether the setting can be randomized. If so, and if the setting is weighted, "random", "random-low", and "random-high" are added as options. */
+  /** 
+   * Whether the setting can be randomized. If so, and if the setting is weighted, "random", "random-low", and
+   * "random-high" are added as options.
+   */
   randomable?: boolean;
 }
 
@@ -102,13 +105,30 @@ export interface ArchipelagoBooleanSetting extends ArchipelagoSettingBase {
   default: boolean;
 }
 
+/**
+ * The interface defining an item in an Archipelago game.
+ * @since 0.9.4
+ */
 export interface ArchipelagoItem {
+  /** The internal name of the item. */
   name: string;
+  /** The human-readable name of the item, if it differs from {@link ArchipelagoItem.name}. */
   readableName?: string;
+  /**
+   * The dependencies for this item. The key should be the internal name of the relevant setting, and the values should
+   * indicate when this item is added to the multiworld pool.
+   */
+  dependsOn?: Record<string, SettingValue[]>
 }
 
+/**
+ * The interface defining a location in an Archipelago game.
+ * @since 0.9.4
+ */
 export interface ArchipelagoLocation {
+  /** The internal name of the location. */
   name: string;
+  /** The human-readable name of the location, if it differs from {@link ArchipelagoLocation.name}. */
   readableName?: string;
 }
 
@@ -120,8 +140,15 @@ export interface ArchipelagoCategory {
   readableName?: string;
   /** The collection of settings for this category. */
   settings: ArchipelagoSettingBase[];
-
+  /**
+   * The collection of defined items for this category.
+   * @since 0.9.4
+   */
   items?: ArchipelagoItem[];
+  /**
+   * The collection of defined locations for this category.
+   * @since 0.9.4
+   */
   locations?: ArchipelagoLocation[];
 }
 
