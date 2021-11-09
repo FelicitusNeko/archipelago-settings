@@ -1555,11 +1555,24 @@ export default OoTSettings;
 
 // NOTE: this list does not include dungeon items; their locations can be determined by existing options
 // If people want/need to be more granular, they can edit the YAML manually
+
+/*
+pocket_egg: "Pocket Egg",
+pocket_cucco: "Pocket Cucco",
+cojiro: "Cojiro",
+odd_mushroom: "Odd Mushroom",
+poachers_saw: "Poacher's Saw",
+broken_sword: "Broken Sword",
+prescription: "Prescription",
+eyeball_frog: "Eyeball Frog",
+eyedrops: "Eyedrops",
+claim_check: "Claim Check",
+*/
+
 const OoTItems: ArchipelagoItem[] = [
   { name: "Boomerang" },
   { name: "Lens of Truth" },
   { name: "Megaton Hammer" },
-  { name: "Cojiro" },
   { name: "Rutos Letter", readableName: "Ruto's Letter" },
   { name: "Magic Bean" },
   { name: "Skull Mask" },
@@ -1572,16 +1585,17 @@ const OoTItems: ArchipelagoItem[] = [
   { name: "Gerudo Mask" },
   { name: "Pocket Egg" },
   { name: "Pocket Cucco" },
+  { name: "Cojiro" },
   { name: "Odd Mushroom" },
-  { name: "Odd Potion" },
+  { name: "Odd Potion", readableName: "Odd Poultice" },
   { name: "Poachers Saw", readableName: "Poacher's Saw" },
+  { name: "Giants Knife", readableName: "Giant's Knife" },
   { name: "Broken Sword" },
   { name: "Prescription" },
   { name: "Eyeball Frog" },
-  { name: "Eyedrops" },
+  { name: "Eyedrops", readableName: "World's Finest Eye Drops" },
   { name: "Claim Check" },
   { name: "Kokiri Sword" },
-  { name: "Giants Knife" },
   { name: "Biggoron Sword" },
   { name: "Deku Shield" },
   { name: "Hylian Shield" },
@@ -1653,8 +1667,12 @@ const OoTItems: ArchipelagoItem[] = [
   ].map((i) => ({ name: `Bottle with ${i}` } as ArchipelagoItem)),
   { name: "Double Defense" },
   { name: "Magic Bean Pack" },
-  { name: "Triforce Piece", dependsOn: {triforce_hunt: [true]} },
-  { name: "Zeldas Letter", readableName: "Zelda's Letter" },
+  { name: "Triforce Piece", dependsOn: { triforce_hunt: [true] } },
+  {
+    name: "Zeldas Letter",
+    readableName: "Zelda's Letter",
+    dependsOn: { skip_child_zelda: [false] },
+  },
   // Songs
   { name: "Minuet of Forest" },
   { name: "Bolero of Fire" },
