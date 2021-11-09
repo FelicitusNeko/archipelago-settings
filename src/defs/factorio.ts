@@ -211,6 +211,8 @@ FactorioSettings.push(
 
 export default FactorioSettings;
 
+// TODO: find a definitive list of items for Factorio
+
 const FactorioCategory: ArchipelagoCategory = {
   category: "Factorio",
   settings: FactorioSettings,

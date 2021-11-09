@@ -6,6 +6,7 @@ const Changelog: React.FC = () => {
       <h4>0.9.4</h4>
       <ul>
         <li>Reordered games based on their introduction to Archipelago</li>
+        <li>Added Hybrid Major Glitches placement logic value to LttP</li>
       </ul>
       <hr />
       <h4>0.9.3</h4>

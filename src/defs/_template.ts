@@ -5,15 +5,21 @@ import {
   ArchipelagoNumericSetting,
   ArchipelagoBooleanSetting,
   ArchipelagoCategory,
+  ArchipelagoItem,
 } from "./core";
 
 const Settings: ArchipelagoSettingBase[] = [];
 
 export default Settings;
 
+const Items: ArchipelagoItem[] = [
+  { name: "" },
+];
+
 const Category: ArchipelagoCategory = {
   category: "",
   settings: Settings,
+  items: Items,
 };
 
 export { Category };

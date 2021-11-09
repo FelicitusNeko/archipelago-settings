@@ -5,6 +5,7 @@ import {
   ArchipelagoNumericSetting,
   ArchipelagoBooleanSetting,
   ArchipelagoCategory,
+  ArchipelagoItem,
 } from "./core";
 
 /** The collection of settings for Risk of Rain 2. */
@@ -134,9 +135,24 @@ for (const weightSet of genWeightOpts)
 
 export default ROR2Settings;
 
+const ROR2Items: ArchipelagoItem[] = [
+  { name: "Dio's Best Friend" },
+  { name: "Common Item" },
+  { name: "Uncommon Item" },
+  { name: "Legendary Item" },
+  { name: "Boss Item" },
+  { name: "Lunar Item", dependsOn: { enable_lunar: [true] } },
+  { name: "Equipment" },
+  { name: "Item Scrap, White" },
+  { name: "Item Scrap, Green" },
+  { name: "Item Scrap, Red" },
+  { name: "Item Scrap, Yellow" },
+];
+
 const ROR2Category: ArchipelagoCategory = {
   category: "Risk of Rain 2",
   settings: ROR2Settings,
+  items: ROR2Items,
 };
 
 export { ROR2Category };

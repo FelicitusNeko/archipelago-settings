@@ -19,13 +19,15 @@ import { MinecraftCategory } from "../defs/minecraft";
 const PartialCategoryList: ArchipelagoCategory[] = [
   // DO NOT MOVE LTTP FROM THE FIRST SPOT; it is required to be first for Berserker import compatibility
   LttPCategory, // inaugural
-  FactorioCategory, // 0.0.2; also introduced Hollow Knight but support was dropped
+  FactorioCategory, // 0.0.2
+  //HollowKnightCategory, // 0.0.2, currently disabled
   MinecraftCategory, // 0.1.0
   SubnauticaCategory, // 0.1.5
   SlayTheSpireCategory, // 0.1.7
   ROR2Category, // 0.1.7
   OoTCategory, // 0.1.7
   TimespinnerCategory, // 0.1.9
+  //OriBFCategory, // 0.2.0??
 ];
 
 /** The global settings applicable to all Archipelago games. */

@@ -5,6 +5,7 @@ import {
   ArchipelagoNumericSetting,
   ArchipelagoBooleanSetting,
   ArchipelagoCategory,
+  ArchipelagoItem,
 } from "./core";
 
 /** The collection of settings for Slay the Spire. */
@@ -50,9 +51,17 @@ SlayTheSpireSettings.push(
 
 export default SlayTheSpireSettings;
 
+const SlayTheSpireItems: ArchipelagoItem[] = [
+  { name: "Card Draw" },
+  { name: "Rare Card Draw" },
+  { name: "Relic" },
+  { name: "Boss Relic" },
+];
+
 const SlayTheSpireCategory: ArchipelagoCategory = {
   category: "Slay the Spire",
   settings: SlayTheSpireSettings,
+  items: SlayTheSpireItems,
 };
 
 export { SlayTheSpireCategory };

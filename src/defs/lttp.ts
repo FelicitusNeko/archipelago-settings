@@ -5,8 +5,9 @@ import {
   ArchipelagoNumericSetting,
   ArchipelagoBooleanSetting,
   ArchipelagoCategory,
+  ArchipelagoItem,
 } from "./core";
-import lttpsprites from "./lttp-sprites.json";
+import lttpsprites from "./LttP/sprites.json";
 
 interface LTTPSprite {
   file: string;
@@ -216,8 +217,9 @@ LttPSettings.push(
     values: {
       normal: "Normal",
       hide_goal:
-        "Hide the display until you pick up a Triforce piece or talk to Murahdahla",
-      hide_required: "Hide the goal number until you've talked to Murahdahla",
+        "Hide goal – Hide the display until you pick up a Triforce piece or talk to Murahdahla",
+      hide_required:
+        "Hide required – Hide the goal number until you've talked to Murahdahla",
       hide_both: "Both of the above",
     },
     default: "normal",
@@ -239,7 +241,7 @@ LttPSettings.push(
     name: "timer",
     readableName: "Timer",
     description:
-      "Set the timer option for the game. If set, the compass treasure counter will be disabled.",
+      "Set the timer option for the game. If set, the compass treasure counter will be disabled. One-hit KO lives here.",
     values: {
       none: "No timer",
       display: "Chrono – counts up",
@@ -326,10 +328,10 @@ LttPSettings.push(
       none: "Off",
       dungeonssimple: "Easy dungeon shuffle",
       dungeonsfull: "Dungeon shuffle",
-      simple: "Basic – a little mixed up",
-      restricted: "Restricted – connectors will stay the same",
+      simple: "Basic – A little mixed up",
+      restricted: "Restricted – Connectors will stay the same",
       full: "Full",
-      crossed: "Crossed – connectors can cross over Light/Dark World",
+      crossed: "Crossed – Connectors can cross over Light/Dark World",
       insanity: "Insanity – Connector exits are also shuffled (beware!)",
     },
     default: "none",
@@ -577,9 +579,11 @@ LttPSettings.push(
       "Whether progression may be locked behind checks that are out of logic.",
     values: {
       none: "Off",
-      minor_glitches: "May require some of the easier glitches",
-      overworld_glitches: "May require harder overworld glitches",
-      no_logic: "Screw it, put everything anywhere (beware!)",
+      minor_glitches: "Minor – May require some of the easier glitches",
+      overworld_glitches: "Overworld – May require harder overworld glitches",
+      hybrid_major_glitches:
+        "Hybrid major – Requires some pretty intense glitch use, but nothing extreme",
+      no_logic: "No logic – Screw it, put everything anywhere (beware!)",
     },
     default: "none",
   })
@@ -1026,10 +1030,181 @@ LttPSettings.push(
 
 export default LttPSettings;
 
+// NOTE: this list does not include dungeon items; their locations can be determined by existing options
+// If people want/need to be more granular, they can edit the YAML manually
+const LttPItems: ArchipelagoItem[] = [
+  {
+    name: "Progressive Bow",
+    dependsOn: { progressive: ["on", "grouped_random"] },
+  },
+  { name: "Bow", dependsOn: { progressive: ["off", "grouped_random"] } },
+  {
+    name: "Silver Bow",
+    dependsOn: {
+      progressive: ["off", "grouped_random"],
+      item_pool: ["easy", "normal"],
+    },
+  },
+  { name: "Silver Arrows", dependsOn: { retro: [true] } },
+  { name: "Blue Boomerang" },
+  { name: "Red Boomerang" },
+  { name: "Hookshot" },
+  { name: "Mushroom" },
+  { name: "Magic Powder" },
+  { name: "Fire Rod" },
+  { name: "Ice Rod" },
+  { name: "Bombos" },
+  { name: "Ether" },
+  { name: "Quake" },
+  { name: "Lamp" },
+  { name: "Hammer" },
+  { name: "Flute" },
+  { name: "Shovel" },
+  { name: "Bug Catching Net" },
+  { name: "Book of Mudora" },
+  { name: "Bottle" },
+  { name: "Bottle (Red Potion)" },
+  { name: "Bottle (Green Potion)" },
+  { name: "Bottle (Blue Potion)" },
+  {
+    name: "Bottle (Fairy)",
+    dependsOn: { item_functionality: ["easy", "normal"] },
+  },
+  { name: "Bottle (Bee)" },
+  { name: "Bottle (Good Bee)" },
+  { name: "Cane of Somaria" },
+  { name: "Cane of Byrna" },
+  { name: "Cape" },
+  { name: "Magic Mirror" },
+  {
+    name: "Progressive Sword",
+    dependsOn: { progressive: ["on", "grouped_random"] },
+  },
+  {
+    name: "Fighter Sword",
+    dependsOn: { progressive: ["off", "grouped_random"] },
+  },
+  {
+    name: "Master Sword",
+    dependsOn: { progressive: ["off", "grouped_random"] },
+  },
+  {
+    name: "Tempered Sword",
+    dependsOn: {
+      progressive: ["off", "grouped_random"],
+      item_pool: ["easy", "normal", "hard"],
+    },
+  },
+  {
+    name: "Golden Sword",
+    dependsOn: {
+      progressive: ["off", "grouped_random"],
+      item_pool: ["easy", "normal"],
+    },
+  },
+  {
+    name: "Progressive Shield",
+    dependsOn: { progressive: ["on", "grouped_random"] },
+  },
+  {
+    name: "Blue Shield",
+    dependsOn: { progressive: ["off", "grouped_random"] },
+  },
+  {
+    name: "Red Shield",
+    dependsOn: {
+      progressive: ["off", "grouped_random"],
+      item_pool: ["easy", "normal", "hard"],
+    },
+  },
+  {
+    name: "Mirror Shield",
+    dependsOn: {
+      progressive: ["off", "grouped_random"],
+      item_pool: ["easy", "normal"],
+    },
+  },
+  {
+    name: "Progressive Mail",
+    dependsOn: { progressive: ["on", "grouped_random"] },
+  },
+  { name: "Blue Mail", dependsOn: { progressive: ["off", "grouped_random"] } },
+  { name: "Red Mail", dependsOn: { progressive: ["off", "grouped_random"] } },
+  {
+    name: "Progressive Glove",
+    dependsOn: { progressive: ["on", "grouped_random"] },
+  },
+  {
+    name: "Power Glove",
+    dependsOn: { progressive: ["off", "grouped_random"] },
+  },
+  {
+    name: "Titans Mitts",
+    readableName: "Titan's Mitts",
+    dependsOn: { progressive: ["off", "grouped_random"] },
+  },
+  { name: "Flippers" },
+  { name: "Pegasus Boots" },
+  { name: "Moon Pearl" },
+  { name: "Magic Upgrade (1/2)" },
+  {
+    name: "Magic Upgrade (1/4)",
+    dependsOn: { progressive: ["off", "grouped_random"], item_pool: ["easy"] },
+  },
+  { name: "Single Arrow" },
+  {
+    name: "Sanctuary Heart Container",
+    dependsOn: { item_pool: ["easy", "normal"] },
+  },
+  { name: "Boss Heart Container" },
+  { name: "Piece of Heart" },
+  { name: "Single Arrow" },
+  { name: "Arrows (10)" },
+  { name: "Single Bomb" },
+  { name: "Bombs (3)" },
+  { name: "Bombs (10)" },
+  { name: "Rupee (1)" },
+  { name: "Rupees (5)" },
+  { name: "Rupees (20)" },
+  { name: "Rupees (50)" },
+  { name: "Rupees (100)" },
+  { name: "Rupees (300)" },
+  { name: "Green Clock" },
+  { name: "Blue Clock" },
+  { name: "Red Clock" },
+  { name: "Rupoor" },
+  {
+    name: "Arrow Upgrade (+5)",
+    dependsOn: { shop_shuffle: ["u", "ufp", "ufpw", "ufP", "ufPw"] },
+  },
+  {
+    name: "Arrow Upgrade (+10)",
+    dependsOn: { shop_shuffle: ["u", "ufp", "ufpw", "ufP", "ufPw"] },
+  },
+  {
+    name: "Bomb Upgrade (+5)",
+    dependsOn: { shop_shuffle: ["u", "ufp", "ufpw", "ufP", "ufPw"] },
+  },
+  {
+    name: "Bomb Upgrade (+10)",
+    dependsOn: { shop_shuffle: ["u", "ufp", "ufpw", "ufP", "ufPw"] },
+  },
+  { name: "Triforce Piece" },
+  {
+    name: "Small Key (Universal)",
+    dependsOn: { smallkey_shuffle: ["universal"] },
+  },
+  { name: "Nothing", dependsOn: { goal: ["ice_rod_hunt"] } },
+  { name: "Bee", dependsOn: { beemizer: [1, 2, 3, 4] } },
+  { name: "Bee Trap", dependsOn: { beemizer: [1, 2, 3, 4] } },
+  //{name: ''},
+];
+
 const LttPCategory: ArchipelagoCategory = {
   category: "A Link to the Past",
   readableName: "The Legend of Zelda: A Link to the Past",
   settings: LttPSettings,
+  items: LttPItems,
 };
 
 export { LttPCategory };

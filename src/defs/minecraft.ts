@@ -5,6 +5,7 @@ import {
   ArchipelagoNumericSetting,
   ArchipelagoBooleanSetting,
   ArchipelagoCategory,
+  ArchipelagoItem,
 } from "./core";
 
 const MinecraftSettings: ArchipelagoSettingBase[] = [];
@@ -135,6 +136,59 @@ MinecraftSettings.push(
 );
 
 export default MinecraftSettings;
+
+const MinecraftItems: ArchipelagoItem[] = [
+  { name: "Archery" },
+  { name: "Progressive Resource Crafting" },
+  { name: "Brewing" },
+  { name: "Enchanting" },
+  { name: "Bucket" },
+  { name: "Flint and Steel" },
+  { name: "Bed" },
+  { name: "Bottles" },
+  { name: "Shield" },
+  { name: "Fishing Rod" },
+  { name: "Campfire" },
+  { name: "Progressive Weapons" },
+  { name: "Progressive Tools" },
+  { name: "Progressive Armor" },
+  { name: "8 Netherite Scrap" },
+  { name: "8 Emeralds" },
+  { name: "4 Emeralds" },
+  { name: "Channeling Book" },
+  { name: "Silk Touch Book" },
+  { name: "Sharpness III Book" },
+  { name: "Piercing IV Book" },
+  { name: "Looting III Book" },
+  { name: "4 Diamond Ore" },
+  { name: "16 Iron Ore" },
+  { name: "500 XP" },
+  { name: "100 XP" },
+  { name: "50 XP" },
+  { name: "3 Ender Pearls" },
+  { name: "4 Lapis Lazuli" },
+  { name: "16 Porkchops" },
+  { name: "8 Gold Ore" },
+  { name: "Rotten Flesh" },
+  { name: "Single Arrow" },
+  { name: "32 Arrows" },
+  { name: "Saddle" },
+  { name: "Shulker Box" },
+  { name: "Dragon Egg Shard" },
+  { name: "Bee Trap (Minecraft)" },
+];
+
+for (const location in [
+  "Village",
+  "Pillager Outpost",
+  "Nether Fortress",
+  "Bastion Remnant",
+  "End City",
+])
+  MinecraftItems.push({
+    name: `Structure Compass (${location})`,
+    dependsOn: { structure_compasses: [true] },
+  });
 
 const MinecraftCategory: ArchipelagoCategory = {
   category: "Minecraft",
