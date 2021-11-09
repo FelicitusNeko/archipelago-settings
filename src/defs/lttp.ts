@@ -675,7 +675,7 @@ LttPSettings.push(
     name: "restrict_dungeon_item_on_boss",
     readableName: "Restrict dungeon items on boss",
     description:
-      "Whether the boss reward can be things like maps or compasses. Turn on if you don't want that.",
+      "If enabled, the boss reward will never be a dungeon item such as a map or compass.",
     default: true,
   })
 );
