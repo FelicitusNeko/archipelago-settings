@@ -43,7 +43,7 @@ TimespinnerSettings.push(
     type: SettingType.Boolean,
     name: "StartWithMeyef",
     readableName: "Start with Meyef",
-    description: "Allows the use of Meyef. Ideal for multiplayer games.",
+    description: "Start with Meyef without having to take a death. Ideal for multiplayer games.",
     default: false,
   })
 );
@@ -52,7 +52,7 @@ TimespinnerSettings.push(
     type: SettingType.Boolean,
     name: "QuickSeed",
     readableName: "Fast mode",
-    description: "Adds the Talaria attachment to your starting inventory.",
+    description: "Adds the Talaria Attachment to your starting inventory, allowing Lunais to dash.",
     default: false,
   })
 );
