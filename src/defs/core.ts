@@ -32,6 +32,9 @@ export type SettingChangeEvent = (
   category?: string
 ) => void;
 
+/** Refers to a setting dependency. */
+export type ArchipelagoDependency = Record<string, SettingValue[]>;
+
 /** The base interface for Archipelago settings. */
 export interface ArchipelagoSettingBase {
   /** The type of setting. */
@@ -45,7 +48,7 @@ export interface ArchipelagoSettingBase {
   /** The default value of the setting. */
   default: SettingValue;
   /** The dependencies for this setting. The key should be the internal name, and the values should indicate when this setting becomes available. */
-  dependsOn?: Record<string, SettingValue[]>;
+  dependsOn?: ArchipelagoDependency;
 
   // for LttP and really nothing else
   /** When importing from Berserker YAMLs, interpret this Berserker setting as its new Archipelago setting. */
@@ -105,11 +108,18 @@ export interface ArchipelagoBooleanSetting extends ArchipelagoSettingBase {
   default: boolean;
 }
 
+export interface ArchipelagoGameEntity {
+  /** The internal name of the entity. */
+  name: string;
+  /** The human-readable name of the entity, if it differs from {@link ArchipelagoGameEntity.name}. */
+  readableName?: string;
+}
+
 /**
  * The interface defining an item in an Archipelago game.
  * @since 0.9.4
  */
-export interface ArchipelagoItem {
+export interface ArchipelagoItem extends ArchipelagoGameEntity {
   /** The internal name of the item. */
   name: string;
   /** The human-readable name of the item, if it differs from {@link ArchipelagoItem.name}. */
@@ -118,18 +128,55 @@ export interface ArchipelagoItem {
    * The dependencies for this item. The key should be the internal name of the relevant setting, and the values should
    * indicate when this item is added to the multiworld pool.
    */
-  dependsOn?: Record<string, SettingValue[]>
+  dependsOn?: ArchipelagoDependency;
+  /** The maximum number of this item that can be added to the player's starting inventory. Defaults to 1. */
+  max?: number;
 }
 
 /**
  * The interface defining a location in an Archipelago game.
  * @since 0.9.4
  */
-export interface ArchipelagoLocation {
+ export interface ArchipelagoLocation extends ArchipelagoGameEntity {
   /** The internal name of the location. */
   name: string;
   /** The human-readable name of the location, if it differs from {@link ArchipelagoLocation.name}. */
   readableName?: string;
+}
+
+/**
+ * The interface defining the quantity of an item. Usually used for starting inventory.
+ * @since 0.9.4
+ */
+export interface ArchipelagoItemAndQty {
+  item: ArchipelagoItem;
+  qty: number;
+}
+
+/**
+ * The interface defining the settings common to all Archipelago games.
+ * @since 0.9.4
+ */
+export interface ArchipelagoCommonSettings {
+  local_items?: ArchipelagoItem[];
+  non_local_items?: ArchipelagoItem[];
+  start_inventory?: ArchipelagoItemAndQty[];
+  start_hints?: ArchipelagoItem[];
+  start_location_hints?: ArchipelagoLocation[];
+  exclude_locations?: ArchipelagoLocation[];
+}
+
+/**
+ * The interface defining the settings common to all Archipelago games, serialized into strings.
+ * @since 0.9.4
+ */
+export interface MinifiedCommonSettings {
+  local_items?: string[];
+  non_local_items?: string[];
+  start_inventory?: Record<string, number>;
+  start_hints?: string[];
+  start_location_hints?: string[];
+  exclude_locations?: string[];
 }
 
 /** The interface defining a category for Archipelago (e.g. a collection of settings for a game). */
