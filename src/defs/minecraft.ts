@@ -176,23 +176,24 @@ const MinecraftItems: ArchipelagoItem[] = [
   { name: "Shulker Box" },
   { name: "Dragon Egg Shard" },
   { name: "Bee Trap (Minecraft)" },
+  ...[
+    "Village",
+    "Pillager Outpost",
+    "Nether Fortress",
+    "Bastion Remnant",
+    "End City",
+  ].map((i) => {
+    return {
+      name: `Structure Compass (${i})`,
+      dependsOn: { structure_compasses: [true] },
+    } as ArchipelagoItem;
+  }),
 ];
-
-for (const location in [
-  "Village",
-  "Pillager Outpost",
-  "Nether Fortress",
-  "Bastion Remnant",
-  "End City",
-])
-  MinecraftItems.push({
-    name: `Structure Compass (${location})`,
-    dependsOn: { structure_compasses: [true] },
-  });
 
 const MinecraftCategory: ArchipelagoCategory = {
   category: "Minecraft",
   settings: MinecraftSettings,
+  items: MinecraftItems
 };
 
 export { MinecraftCategory };
