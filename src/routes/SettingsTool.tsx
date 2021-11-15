@@ -1,4 +1,4 @@
-import React, { useState, useEffect, ReactElement } from "react";
+import React, { useState, useEffect, useCallback, ReactElement } from "react";
 import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
 import yaml from "yaml";
 import { DateTime } from "luxon";
@@ -17,6 +17,12 @@ import {
   SettingValue,
   WeightedSetting,
   SettingType,
+  ArchipelagoDependency,
+  ArchipelagoCommonSettings,
+  MinifiedCommonSettings,
+  ArchipelagoGameEntity,
+  ArchipelagoItem,
+  ArchipelagoLocation,
 } from "../defs/core";
 import { version } from "../../package.json";
 import { CategoryList } from "../defs/global";
@@ -35,6 +41,8 @@ interface SavedSettings {
   description: string;
   /** The saved collection of settings. */
   settings: SettingsCollection;
+  /** Common settings to every category. */
+  commonSettings?: Record<string, MinifiedCommonSettings>;
 }
 
 /**
@@ -48,6 +56,10 @@ const hasCrossover = (lhs: string[], rhs: string[]): boolean => {
   return false;
 };
 
+const EmptyCommonSetings: MinifiedCommonSettings = Object.seal({
+  local_items: [], non_local_items: [], start_inventory: {}, start_hints: [], start_location_hints:[], exclude_locations: []
+});
+
 /**
  * The Archipelago Settings Tool, a tool to generate .YAML settings files for Archipelago Multiworld.
  * @returns {ReactElement<any, any>|null} The body of the Archipelago Settings Tool.
@@ -58,9 +70,117 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
     "Generated using Kewlio's Archipelago Settings Tool"
   );
   const [settings, setSettings] = useState<SettingsCollection>({});
+  const [commonSettings, setCommonSettings] = useState<
+    Record<string, ArchipelagoCommonSettings>
+  >({});
+
+  const minifyCommonSettings = useCallback(
+    (commonSettingsIn?: Record<string, ArchipelagoCommonSettings>) => {
+      const retval: Record<string, MinifiedCommonSettings> = {};
+
+      for (const category of Object.keys(commonSettingsIn ?? commonSettings)) {
+        const settings = (commonSettingsIn ?? commonSettings)[category];
+        retval[category] = {};
+
+        if (settings.local_items)
+          retval[category].local_items = settings.local_items.map(
+            (i) => i.name
+          );
+        if (settings.non_local_items)
+          retval[category].non_local_items = settings.non_local_items.map(
+            (i) => i.name
+          );
+        if (settings.start_inventory) {
+          retval[category].start_inventory = {};
+          for (let { item, qty } of settings.start_inventory)
+            retval[category].start_inventory![item.name] = qty;
+        }
+        if (settings.start_hints)
+          retval[category].start_hints = settings.start_hints.map(
+            (i) => i.name
+          );
+        if (settings.start_location_hints)
+          retval[category].start_location_hints =
+            settings.start_location_hints.map((i) => i.name);
+        if (settings.exclude_locations)
+          retval[category].exclude_locations = settings.exclude_locations.map(
+            (i) => i.name
+          );
+      }
+
+      return retval;
+    },
+    [commonSettings]
+  );
+
+  const deserializeCommonSettings = useCallback(
+    (minifiedSettings: Record<string, MinifiedCommonSettings>) => {
+      const retval: Record<string, ArchipelagoCommonSettings> = {};
+
+      const fetchEntity = (
+        itemName: string,
+        entityList: ArchipelagoGameEntity[]
+      ) =>
+        entityList.reduce(
+          (r: ArchipelagoGameEntity | null, i) => (i.name === itemName ? i : r),
+          null
+        );
+
+      for (const category of Object.keys(minifiedSettings)) {
+        const minSettings = minifiedSettings[category];
+        const fullSettings: ArchipelagoCommonSettings = {};
+        const { items, locations } = CategoryList.reduce((r, i) =>
+          i.category === category ? i : r
+        );
+
+        if (items) {
+          if (minSettings.local_items)
+            fullSettings.local_items = minSettings.local_items.map((i) =>
+              fetchEntity(i, items)
+            ) as ArchipelagoItem[];
+          if (minSettings.non_local_items)
+            fullSettings.non_local_items = minSettings.non_local_items.map(
+              (i) => fetchEntity(i, items)
+            ) as ArchipelagoItem[];
+          if (minSettings.start_inventory) {
+            fullSettings.start_inventory = [];
+            for (const itemName in minSettings.start_inventory) {
+              const item = fetchEntity(itemName, items);
+              if (item)
+                fullSettings.start_inventory.push({
+                  item,
+                  qty: minSettings.start_inventory[itemName],
+                });
+            }
+          }
+          if (minSettings.start_hints)
+            fullSettings.start_hints = minSettings.start_hints.map((i) =>
+              fetchEntity(i, items)
+            ) as ArchipelagoItem[];
+        }
+        if (locations) {
+          if (minSettings.start_location_hints)
+            fullSettings.start_location_hints =
+              minSettings.start_location_hints.map((i) =>
+                fetchEntity(i, locations)
+              ) as ArchipelagoLocation[];
+          if (minSettings.exclude_locations)
+            fullSettings.exclude_locations = minSettings.exclude_locations.map(
+              (i) => fetchEntity(i, locations)
+            ) as ArchipelagoLocation[];
+        }
+
+        retval[category] = fullSettings;
+      }
+
+      return retval;
+    },
+    []
+  );
 
   // Load settings
   useEffect(() => {
+    // TODO: deserialise common settings and load them
     /**
      * Checks a collection of settings for validity, and makes revisions as necessary.
      * @param data The collection of settings to verify.
@@ -202,13 +322,25 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
 
     if (savedSettingsStr) {
       // There are saved settings; load them in
-      const savedSettings = JSON.parse(savedSettingsStr) as SavedSettings;
-      setPlayerName(savedSettings.name);
-      setDescription(savedSettings.description);
-      setSettings(checkSavedData(savedSettings.settings));
+      const {name, description, settings, commonSettings: commonSettingsIn} = JSON.parse(savedSettingsStr) as SavedSettings;
+      setPlayerName(name);
+      setDescription(description);
+      setSettings(checkSavedData(settings));
+      if (commonSettingsIn) {
+        const categories = CategoryList.map(i => i.category);
+        for (const category of categories) if (category) commonSettingsIn[category] = Object.assign({}, EmptyCommonSetings);
+        for (const category of Object.keys(commonSettingsIn)) if (!categories.includes(category)) delete commonSettingsIn[category];
+        setCommonSettings(deserializeCommonSettings(commonSettingsIn));
+      } else {
+        const newEmptyCommons: Record<string, MinifiedCommonSettings> = {};
+        for (const {category} of CategoryList) if (category) newEmptyCommons[category] = Object.assign({}, EmptyCommonSetings);
+        setCommonSettings(deserializeCommonSettings(newEmptyCommons));
+      }
     } else {
       // There are not saved settings; load in the settings collection and populate with defaults
       let defaultSettings: SettingsCollection = {};
+      const newEmptyCommons: Record<string, MinifiedCommonSettings> = {};
+      
       for (const category of CategoryList) {
         const subcollection: SettingsSubcollection = {};
         category.settings.forEach((i) => (subcollection[i.name] = i.default));
@@ -217,8 +349,10 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
         else defaultSettings[category.category] = subcollection;
       }
       setSettings(defaultSettings);
+      for (const {category} of CategoryList) if (category) newEmptyCommons[category] = Object.assign({}, EmptyCommonSetings);
+      setCommonSettings(deserializeCommonSettings(newEmptyCommons));
     }
-  }, []);
+  }, [deserializeCommonSettings]);
 
   // Save settings
   useEffect(() => {
@@ -226,10 +360,11 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
       name: playerName,
       description,
       settings,
+      commonSettings: minifyCommonSettings(),
     };
     // When settings are modified, save them to local storage
     localStorage.setItem("savedSettings", JSON.stringify(savedSettings));
-  }, [playerName, description, settings]);
+  }, [playerName, description, settings, commonSettings, minifyCommonSettings]);
 
   /**
    * An event handler that fires when the player name is changed.
@@ -315,11 +450,14 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
   /**
    * Imports data from an Archipelago YAML file.
    * @param yamlIn The imported YAML data.
+   * @param {string|null} singleCat Optional. Import only a single category.
    */
-  const importYaml = (yamlIn: any) => {
+  const importYaml = (yamlIn: any, singleCat?: string | null) => {
     // TODO: option to import only one category
+    // TODO: import common settings
     /** The collection of imported settings. */
     const newSettings: SettingsCollection = {};
+    const newMinifiedSettings: Record<string, MinifiedCommonSettings> = {};
 
     for (const { category, settings: catSettings } of CategoryList) {
       // If there's a category and it doesn't exist in the imported data, skip it; otherwise, prepare it
@@ -346,12 +484,18 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
             setting
           );
       }
+
+      if (category) {
+        const {local_items, non_local_items, start_inventory, start_hints, start_location_hints, exclude_locations} = yamlIn[category];
+        newMinifiedSettings[category] = {local_items, non_local_items, start_inventory, start_hints, start_location_hints, exclude_locations};
+      }
     }
 
     // Finally, set the name, description, and settings collection to update the UI
     if (yamlIn.name) setPlayerName(yamlIn.name);
     if (yamlIn.description) setDescription(yamlIn.description);
     setSettings(Object.assign({}, settings, newSettings));
+    setCommonSettings(deserializeCommonSettings(newMinifiedSettings))
   };
 
   /**
@@ -506,9 +650,10 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     // TODO: Scan for any obvious problems that would prevent the YAML from working (all-zero weights, bad name, etc.)
+    // TODO: export common settings
 
     // Create the YAML structure
-    const outYaml = Object.assign(
+    const outYaml: any = Object.assign(
       {
         name: playerName,
         description,
@@ -524,6 +669,14 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
         else if (!isGameEnabled(category)) delete outYaml[category];
       }
     }
+
+    const minifiedSettings = minifyCommonSettings();
+    for (const category of Object.keys(minifiedSettings))
+      if (outYaml[category])
+        outYaml[category] = Object.assign(
+          outYaml[category],
+          minifiedSettings[category]
+        );
 
     // Create an <a> element to initiate the download
     const element = document.createElement("a");
@@ -575,6 +728,44 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
   };
 
   /**
+   * Check a setting or item against its dependencies.
+   * @param {SettingsSubcollection} subsettings The subcollection of settings to check.
+   * @param {ArchipelagoDependency} dep The dependency list to check against.
+   * @returns {boolean} Whether all dependencies are met.
+   */
+  const checkDependency = (
+    subsettings: SettingsSubcollection,
+    dep?: ArchipelagoDependency
+  ): boolean => {
+    // TODO: "not" dependencies (!value)
+
+    // If this setting has no dependencies, keep it
+    if (!dep) return true;
+    // Iterate through all of the dependencies
+    else
+      for (const check in dep) {
+        if (typeof subsettings[check] === "object") {
+          /** The collection of weights for the parent setting. */
+          const weightSubsetting = subsettings[check] as WeightedSetting;
+          // If the required value(s) is/are not selected at all, filter out
+          if (
+            !hasCrossover(Object.keys(weightSubsetting), dep[check] as string[])
+          )
+            return false;
+          // If the required value(s) present has/all have a weight of 0, filter out
+          for (const countercheck in weightSubsetting) {
+            if (Object.keys(weightSubsetting).includes(countercheck)) {
+              if (weightSubsetting[countercheck] === 0) return false;
+              else break;
+            }
+          }
+          // If it's a single value, filter out if a required value is not set
+        } else if (!dep[check].includes(subsettings[check])) return false;
+      }
+    return true;
+  };
+
+  /**
    * Converts a collection of settings into an array of {@link Setting} objects.
    * @param category The category to which the settings belong.
    * @param settingsDef The collection of settings to convert.
@@ -597,38 +788,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
       settingsDef
         // Filter out any invalid settings (shouldn't happen, but just in case)
         .filter((i) => Object.keys(subsettings).includes(i.name))
-        .filter((i) => {
-          // TODO: "not" dependencies (!value)
-
-          // If this setting has no dependencies, keep it
-          if (!i.dependsOn) return true;
-          // Iterate through all of the dependencies
-          else
-            for (const check in i.dependsOn) {
-              if (typeof subsettings[check] === "object") {
-                /** The collection of weights for the parent setting. */
-                const weightSubsetting = subsettings[check] as WeightedSetting;
-                // If the required value(s) is/are not selected at all, filter out
-                if (
-                  !hasCrossover(
-                    Object.keys(weightSubsetting),
-                    i.dependsOn[check] as string[]
-                  )
-                )
-                  return false;
-                // If the required value(s) present has/all have a weight of 0, filter out
-                for (const countercheck in weightSubsetting) {
-                  if (Object.keys(weightSubsetting).includes(countercheck)) {
-                    if (weightSubsetting[countercheck] === 0) return false;
-                    else break;
-                  }
-                }
-                // If it's a single value, filter out if a required value is not set
-              } else if (!i.dependsOn[check].includes(subsettings[check]))
-                return false;
-            }
-          return true;
-        })
+        .filter((i) => checkDependency(subsettings, i.dependsOn))
         .map((i) => (
           // Return the setting object
           <Setting
@@ -700,14 +860,14 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
           <TabList className="react-tabs__tab-list settingsTabs">
             {CategoryList.filter((i) => isGameEnabled(i.category)).map((i) => (
               // Output tabs for enabled games
-              <Tab>{i.category ?? "Global"}</Tab>
+              <Tab key={`tab-${i.category}`}>{i.category ?? "Global"}</Tab>
             ))}
             <Tab>Changelog</Tab>
           </TabList>
 
           {CategoryList.filter((i) => isGameEnabled(i.category)).map((i) => (
             // Output tab panels containing setting collections for enabled games
-            <TabPanel className="settingsBody">
+            <TabPanel key={`tabpanel-${i.category}`} className="settingsBody">
               {outputSettingCollection(i.category, i.settings)}
             </TabPanel>
           ))}
