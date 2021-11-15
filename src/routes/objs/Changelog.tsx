@@ -5,6 +5,10 @@ const Changelog: React.FC = () => {
     <>
       <h4>0.9.4</h4>
       <ul>
+        {/* <li>
+          Added item settings for every game except Factorio (as there is not a
+          definitive list of items for that game)
+        </li> */}
         <li>Reordered games based on their introduction to Archipelago</li>
         <li>Added Hybrid Major Glitches placement logic value to LttP</li>
       </ul>
