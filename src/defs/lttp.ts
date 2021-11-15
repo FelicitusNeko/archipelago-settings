@@ -1036,6 +1036,7 @@ const LttPItems: ArchipelagoItem[] = [
   {
     name: "Progressive Bow",
     dependsOn: { progressive: ["on", "grouped_random"] },
+    max: 2
   },
   { name: "Bow", dependsOn: { progressive: ["off", "grouped_random"] } },
   {
@@ -1079,6 +1080,7 @@ const LttPItems: ArchipelagoItem[] = [
   {
     name: "Progressive Sword",
     dependsOn: { progressive: ["on", "grouped_random"] },
+    max: 4
   },
   {
     name: "Fighter Sword",
@@ -1105,6 +1107,7 @@ const LttPItems: ArchipelagoItem[] = [
   {
     name: "Progressive Shield",
     dependsOn: { progressive: ["on", "grouped_random"] },
+    max: 3
   },
   {
     name: "Blue Shield",
@@ -1127,6 +1130,7 @@ const LttPItems: ArchipelagoItem[] = [
   {
     name: "Progressive Mail",
     dependsOn: { progressive: ["on", "grouped_random"] },
+    max: 2
   },
   { name: "Blue Mail", dependsOn: { progressive: ["off", "grouped_random"] } },
   { name: "Red Mail", dependsOn: { progressive: ["off", "grouped_random"] } },
@@ -1146,36 +1150,36 @@ const LttPItems: ArchipelagoItem[] = [
   { name: "Flippers" },
   { name: "Pegasus Boots" },
   { name: "Moon Pearl" },
-  { name: "Magic Upgrade (1/2)" },
+  { name: "Magic Upgrade (1/2)", max: 2 },
   {
     name: "Magic Upgrade (1/4)",
     dependsOn: { progressive: ["off", "grouped_random"], item_pool: ["easy"] },
   },
-  { name: "Single Arrow" },
   {
     name: "Sanctuary Heart Container",
     dependsOn: { item_pool: ["easy", "normal"] },
   },
-  { name: "Boss Heart Container" },
-  { name: "Piece of Heart" },
-  { name: "Single Arrow" },
-  { name: "Arrows (10)" },
-  { name: "Single Bomb" },
-  { name: "Bombs (3)" },
-  { name: "Bombs (10)" },
-  { name: "Rupee (1)" },
-  { name: "Rupees (5)" },
-  { name: "Rupees (20)" },
-  { name: "Rupees (50)" },
-  { name: "Rupees (100)" },
-  { name: "Rupees (300)" },
+  { name: "Boss Heart Container", max: 10 },
+  { name: "Piece of Heart", max: 24 },
+  { name: "Single Arrow", max: 70 },
+  { name: "Arrows (10)", max: 0 },
+  { name: "Single Bomb", max: 50 },
+  { name: "Bombs (3)", max: 0 },
+  { name: "Bombs (10)", max: 0 },
+  { name: "Rupee (1)", max: 9999 },
+  { name: "Rupees (5)", max: 0 },
+  { name: "Rupees (20)", max: 0 },
+  { name: "Rupees (50)", max: 0 },
+  { name: "Rupees (100)", max: 0 },
+  { name: "Rupees (300)", max: 0 },
   { name: "Green Clock" },
   { name: "Blue Clock" },
   { name: "Red Clock" },
-  { name: "Rupoor" },
+  { name: "Rupoor", max: 0 },
   {
     name: "Arrow Upgrade (+5)",
     dependsOn: { shop_shuffle: ["u", "ufp", "ufpw", "ufP", "ufPw"] },
+    max: 6
   },
   {
     name: "Arrow Upgrade (+10)",
@@ -1184,19 +1188,20 @@ const LttPItems: ArchipelagoItem[] = [
   {
     name: "Bomb Upgrade (+5)",
     dependsOn: { shop_shuffle: ["u", "ufp", "ufpw", "ufP", "ufPw"] },
+    max: 6
   },
   {
     name: "Bomb Upgrade (+10)",
     dependsOn: { shop_shuffle: ["u", "ufp", "ufpw", "ufP", "ufPw"] },
   },
-  { name: "Triforce Piece" },
+  { name: "Triforce Piece", max: 0 },
   {
     name: "Small Key (Universal)",
     dependsOn: { smallkey_shuffle: ["universal"] },
   },
   { name: "Nothing", dependsOn: { goal: ["ice_rod_hunt"] } },
-  { name: "Bee", dependsOn: { beemizer: [1, 2, 3, 4] } },
-  { name: "Bee Trap", dependsOn: { beemizer: [1, 2, 3, 4] } },
+  { name: "Bee", dependsOn: { beemizer: [1, 2, 3, 4] }, max: 0 },
+  { name: "Bee Trap", dependsOn: { beemizer: [1, 2, 3, 4] }, max: 0 },
   //{name: ''},
 ];
 
