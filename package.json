@@ -5,7 +5,7 @@
     "email": "kewlio-origin@simguy.net"
   },
   "description": "Configuration tool for Archipelago Multiworld",
-  "version": "0.10.0",
+  "version": "0.9.4",
   "private": true,
   "dependencies": {
     "luxon": "^2.0.2",
