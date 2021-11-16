@@ -6,6 +6,7 @@ import {
   ArchipelagoBooleanSetting,
   ArchipelagoCategory,
   ArchipelagoItem,
+  DeathLinkOption,
 } from "./core";
 
 /** The collection of settings for The Legend of Zelda: Ocarina of Time. */
@@ -714,6 +715,80 @@ OoTSettings.push(
   })
 );
 
+//------------====================== ENTRANCE SHUFFLE
+OoTSettings.push(
+  Object.seal<ArchipelagoStringSetting>({
+    type: SettingType.String,
+    name: "shuffle_interior_entrances",
+    readableName: "Entrance shuffle – interiors",
+    description:
+      'Shuffles interior entrances. "Simple" shuffles houses and Great Fairies; "Full" includes Windmill, Link\'s House, Temple of Time, and Kak potion shop.',
+    values: {
+      off: "Off",
+      simple: "Simple",
+      on: "Full",
+    },
+    default: "off",
+  })
+);
+OoTSettings.push(
+  Object.seal<ArchipelagoBooleanSetting>({
+    type: SettingType.Boolean,
+    name: "shuffle_grotto_entrances",
+    readableName: "Entrance shuffle – grotto",
+    description: "Shuffles grotto and grave entrances.",
+    default: false,
+  })
+);
+OoTSettings.push(
+  Object.seal<ArchipelagoBooleanSetting>({
+    type: SettingType.Boolean,
+    name: "shuffle_dungeon_entrances",
+    readableName: "Entrance shuffle – dungeons",
+    description:
+      "Shuffles dungeon entrances, excluding Ganon's Castle. Opens Deku, Fire and BotW to both ages.",
+    default: false,
+  })
+);
+OoTSettings.push(
+  Object.seal<ArchipelagoBooleanSetting>({
+    type: SettingType.Boolean,
+    name: "shuffle_overworld_entrances",
+    readableName: "Entrance shuffle – overworld",
+    description: "Shuffles overworld loading zones.",
+    default: false,
+  })
+);
+OoTSettings.push(
+  Object.seal<ArchipelagoBooleanSetting>({
+    type: SettingType.Boolean,
+    name: "warp_songs",
+    readableName: "Entrance shuffle – warp songs",
+    description: "Randomizes warp song destinations.",
+    default: false,
+  })
+);
+OoTSettings.push(
+  Object.seal<ArchipelagoBooleanSetting>({
+    type: SettingType.Boolean,
+    name: "spawn_positions",
+    readableName: "Entrance shuffle – on load",
+    description:
+      "Randomizes the starting position on loading a save. Consistent between savewarps.",
+    default: false,
+  })
+);
+OoTSettings.push(
+  Object.seal<ArchipelagoBooleanSetting>({
+    type: SettingType.Boolean,
+    name: "owl_drops",
+    readableName: "Owl drops",
+    description:
+      "Randomizes owl drops from Lake Hylia or Death Mountain Trail as child.",
+    default: false,
+  })
+);
+
 OoTSettings.push(
   Object.seal<ArchipelagoStringSetting>({
     type: SettingType.String,
@@ -1181,6 +1256,7 @@ OoTSettings.push(
     default: "claim_check",
   })
 );
+OoTSettings.push(DeathLinkOption);
 
 //------------====================== PERSONALIZATION
 OoTSettings.push(

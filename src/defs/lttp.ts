@@ -6,6 +6,7 @@ import {
   ArchipelagoBooleanSetting,
   ArchipelagoCategory,
   ArchipelagoItem,
+  DeathLinkOption,
 } from "./core";
 import lttpsprites from "./LttP/sprites.json";
 
@@ -689,6 +690,7 @@ LttPSettings.push(
     default: false,
   })
 );
+LttPSettings.push(DeathLinkOption);
 
 //------------====================== ENEMIZER
 LttPSettings.push(
@@ -733,13 +735,25 @@ LttPSettings.push(
 LttPSettings.push(
   Object.seal<ArchipelagoNumericSetting>({
     type: SettingType.Numeric,
-    name: "beemizer",
+    name: "beemizer_total_chance",
     readableName: "Beemizer",
     description:
-      "Removes garbage treasures like small rupees, bombs, and arrows, and replace with bee traps. 25% of trash per level.",
+      "Percentage of garbage treasures like small rupees, bombs, and arrows, to be replaced with bees or bee traps.",
     low: 0,
-    high: 4,
+    high: 100,
     default: 0,
+  })
+);
+LttPSettings.push(
+  Object.seal<ArchipelagoNumericSetting>({
+    type: SettingType.Numeric,
+    name: "beemizer_trap_chance",
+    readableName: "Beemizer trap chance",
+    description:
+      "Percentage of bee checks which will become bee traps instead of single bees.",
+    low: 0,
+    high: 100,
+    default: 60,
   })
 );
 
@@ -1036,7 +1050,7 @@ const LttPItems: ArchipelagoItem[] = [
   {
     name: "Progressive Bow",
     dependsOn: { progressive: ["on", "grouped_random"] },
-    max: 2
+    max: 2,
   },
   { name: "Bow", dependsOn: { progressive: ["off", "grouped_random"] } },
   {
@@ -1080,7 +1094,7 @@ const LttPItems: ArchipelagoItem[] = [
   {
     name: "Progressive Sword",
     dependsOn: { progressive: ["on", "grouped_random"] },
-    max: 4
+    max: 4,
   },
   {
     name: "Fighter Sword",
@@ -1107,7 +1121,7 @@ const LttPItems: ArchipelagoItem[] = [
   {
     name: "Progressive Shield",
     dependsOn: { progressive: ["on", "grouped_random"] },
-    max: 3
+    max: 3,
   },
   {
     name: "Blue Shield",
@@ -1130,7 +1144,7 @@ const LttPItems: ArchipelagoItem[] = [
   {
     name: "Progressive Mail",
     dependsOn: { progressive: ["on", "grouped_random"] },
-    max: 2
+    max: 2,
   },
   { name: "Blue Mail", dependsOn: { progressive: ["off", "grouped_random"] } },
   { name: "Red Mail", dependsOn: { progressive: ["off", "grouped_random"] } },
@@ -1179,7 +1193,7 @@ const LttPItems: ArchipelagoItem[] = [
   {
     name: "Arrow Upgrade (+5)",
     dependsOn: { shop_shuffle: ["u", "ufp", "ufpw", "ufP", "ufPw"] },
-    max: 6
+    max: 6,
   },
   {
     name: "Arrow Upgrade (+10)",
@@ -1188,7 +1202,7 @@ const LttPItems: ArchipelagoItem[] = [
   {
     name: "Bomb Upgrade (+5)",
     dependsOn: { shop_shuffle: ["u", "ufp", "ufpw", "ufP", "ufPw"] },
-    max: 6
+    max: 6,
   },
   {
     name: "Bomb Upgrade (+10)",

@@ -5,6 +5,7 @@ import {
   ArchipelagoNumericSetting,
   ArchipelagoBooleanSetting,
   ArchipelagoCategory,
+  DeathLinkOption,
 } from "./core";
 
 /** The collection of settings for Factorio. */
@@ -208,6 +209,7 @@ FactorioSettings.push(
     default: 0,
   })
 );
+FactorioSettings.push(DeathLinkOption);
 
 export default FactorioSettings;
 

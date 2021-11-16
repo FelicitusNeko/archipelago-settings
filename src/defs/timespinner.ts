@@ -4,6 +4,7 @@ import {
   ArchipelagoBooleanSetting,
   ArchipelagoCategory,
   ArchipelagoItem,
+  DeathLinkOption,
 } from "./core";
 
 /** The collection of settings for Timespinner. */
@@ -43,7 +44,8 @@ TimespinnerSettings.push(
     type: SettingType.Boolean,
     name: "StartWithMeyef",
     readableName: "Start with Meyef",
-    description: "Start with Meyef without having to take a death. Ideal for multiplayer games.",
+    description:
+      "Start with Meyef without having to take a death. Ideal for multiplayer games.",
     default: false,
   })
 );
@@ -52,7 +54,8 @@ TimespinnerSettings.push(
     type: SettingType.Boolean,
     name: "QuickSeed",
     readableName: "Fast mode",
-    description: "Adds the Talaria Attachment to your starting inventory, allowing Lunais to dash.",
+    description:
+      "Adds the Talaria Attachment to your starting inventory, allowing Lunais to dash.",
     default: false,
   })
 );
@@ -75,6 +78,7 @@ TimespinnerSettings.push(
     default: false,
   })
 );
+TimespinnerSettings.push(DeathLinkOption);
 
 export default TimespinnerSettings;
 

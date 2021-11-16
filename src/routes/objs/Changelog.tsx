@@ -9,6 +9,15 @@ const Changelog: React.FC = () => {
           Added item settings for every game except Factorio (as there is not a
           definitive list of items for that game)
         </li> */}
+        <li>
+          Update spec to 0.2.0
+          <ul>
+            <li>Added Super Metroid, Secret of Evermore</li>
+            <li>DeathLink added to LttP, OoT, SM, TS, Factorio: if one DeathLinked player dies, they all do</li>
+            <li>LttP: More granular settings for Beemizer</li>
+            <li>OoT: Entrance shuffle, owl drops</li>
+          </ul>
+        </li>
         <li>Reordered games based on their introduction to Archipelago</li>
         <li>Added Hybrid Major Glitches placement logic value to LttP</li>
       </ul>

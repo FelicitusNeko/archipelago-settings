@@ -14,6 +14,8 @@ import { SubnauticaCategory } from "../defs/subnautica";
 import { ROR2Category } from "../defs/ror2";
 import { SlayTheSpireCategory } from "../defs/slaythespire";
 import { MinecraftCategory } from "../defs/minecraft";
+import { SMCategory } from "./sm";
+import { SoECategory } from "./soe";
 
 /** The list of categories (e.g. games) currently available to the settings tool, not including global settings. */
 const PartialCategoryList: ArchipelagoCategory[] = [
@@ -27,7 +29,9 @@ const PartialCategoryList: ArchipelagoCategory[] = [
   ROR2Category, // 0.1.7
   OoTCategory, // 0.1.7
   TimespinnerCategory, // 0.1.9
-  //OriBFCategory, // 0.2.0??
+  SMCategory, // 0.2.0
+  SoECategory, // 0.2.0
+  //OriBFCategory, // not currently implemented
 ];
 
 /** The global settings applicable to all Archipelago games. */

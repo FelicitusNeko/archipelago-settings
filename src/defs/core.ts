@@ -214,3 +214,14 @@ const WeightRail: CSSProperties = {
   boxShadow: "0px 0px 5px darkred",
 };
 export { SelectRail, WeightRail };
+
+/** Some games now support DeathLink, which links all enabled players' lives. If one DeathLinked player dies, all of them do. */
+const DeathLinkOption = Object.seal<ArchipelagoBooleanSetting>({
+  type: SettingType.Boolean,
+  name: "death_link",
+  readableName: "DeathLink",
+  description:
+    "If one DeathLinked player dies, all of them do.",
+  default: false,
+})
+export {DeathLinkOption}
