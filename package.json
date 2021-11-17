@@ -8,7 +8,6 @@
   "version": "0.9.4",
   "private": true,
   "dependencies": {
-    "ember-drag-sort": "^3.0.0",
     "luxon": "^2.0.2",
     "preval.macro": "^5.0.0",
     "rc-slider": "^9.7.4",
