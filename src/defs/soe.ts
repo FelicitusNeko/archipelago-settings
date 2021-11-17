@@ -5,7 +5,6 @@ import {
   ArchipelagoNumericSetting,
   ArchipelagoBooleanSetting,
   ArchipelagoCategory,
-  ArchipelagoItem,
 } from "./core";
 
 const SoESettings: ArchipelagoSettingBase[] = [];
@@ -190,7 +189,8 @@ SoESettings.push(
 
 export default SoESettings;
 
-const SoEItems: ArchipelagoItem[] = [{ name: "" }];
+// TODO: find an item list for Secret of Evermore, if one exists
+//const SoEItems: ArchipelagoItem[] = [{ name: "" }];
 
 const SoECategory: ArchipelagoCategory = {
   category: "Secret of Evermore",
