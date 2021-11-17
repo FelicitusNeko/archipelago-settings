@@ -418,12 +418,34 @@ SMSettings.push(
 
 export default SMSettings;
 
-const SMItems: ArchipelagoItem[] = [{ name: "" }];
+const SMItems: ArchipelagoItem[] = [
+  { name: "Energy Tank", max: 14 },
+  { name: "Reserve Tank", max: 4 },
+  { name: "Missile", max: 50 },
+  { name: "Super Missile", max: 20 },
+  { name: "Power Bomb", max: 20 },
+  { name: "Bomb" },
+  { name: "Charge Beam" },
+  { name: "Ice Beam" },
+  { name: "Hi-Jump Boots" },
+  { name: "Speed Booster" },
+  { name: "Wave Beam" },
+  { name: "Spazer" },
+  { name: "Spring Ball" },
+  { name: "Plasma Beam" },
+  { name: "Varia Suit" },
+  { name: "Gravity Suit" },
+  { name: "Grappling Beam" },
+  { name: "Morph Ball" },
+  { name: "X-Ray Scope" },
+  { name: "Space Jump" },
+  { name: "Screw Attack" },
+];
 
 const SMCategory: ArchipelagoCategory = {
   category: "Super Metroid",
   settings: SMSettings,
-  //items: SMItems,
+  items: SMItems,
 };
 
 export { SMCategory };
