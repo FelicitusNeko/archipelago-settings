@@ -5,6 +5,7 @@ import { DateTime } from "luxon";
 import "react-tabs/style/react-tabs.css";
 
 import Setting from "./objs/Setting";
+import ItemSelector from "./objs/ItemSelector";
 import Changelog from "./objs/Changelog";
 
 import {
@@ -869,6 +870,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
             // Output tab panels containing setting collections for enabled games
             <TabPanel key={`tabpanel-${i.category}`} className="settingsBody">
               {outputSettingCollection(i.category, i.settings)}
+              {i.items ? <ItemSelector items={i.items} commonSettings={commonSettings} /> : null}
             </TabPanel>
           ))}
           <TabPanel className="settingsBody">

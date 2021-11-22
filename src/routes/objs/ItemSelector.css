@@ -1,0 +1,29 @@
+div.itemnode {
+  background-color: white;
+  margin: 2px;
+  padding: 1px 2px;
+  border: 2px solid blue;
+}
+
+div.itemdropbox {
+  background-color: lightblue;
+  flex-grow: 1;
+  margin: 10px;
+  border: 2px inset brown;
+  width: 20%;
+}
+
+div.itemcontainer {
+  min-height: 100px;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+div.itemselector {
+  display: flex;
+}
+
+div.itemdropbox h4 {
+  text-align: center;
+  margin: 5px;
+}
