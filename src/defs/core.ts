@@ -32,6 +32,31 @@ export type SettingChangeEvent = (
   category?: string
 ) => void;
 
+/**
+ * Options for {@link CommonItemSettingChangeEvent}.
+ * @since 0.10.0
+ */
+interface CommonItemSettingChangeEventOptions {
+  /** The destination for the given item. If it is being unassigned, this should be null. */
+  destination?: 'local_items'|'non_local_items'|'start_inventory'|null;
+  /** The quantity of the starting item. Ignored if this is not a starting item. */
+  qty?: number;
+  /** Whether a free hint about this item should be provided from the start. Ignored if this is a starting item set to max quantity. */
+  startingHint?: boolean;
+}
+/** 
+ * Refers to an event where the item selector is reporting a change back to the base app.
+ * @since 0.10.0
+ */
+export type CommonItemSettingChangeEvent = (
+  /** The name of the item. */
+  itemName: string,
+  /** The category to which the item belongs. */
+  category: string,
+  /** Any options pertaining to the event. */
+  options: CommonItemSettingChangeEventOptions
+) => void;
+
 /** Refers to a setting dependency. */
 export type ArchipelagoDependency = Record<string, SettingValue[]>;
 

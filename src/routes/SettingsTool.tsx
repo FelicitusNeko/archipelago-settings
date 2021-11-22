@@ -24,6 +24,7 @@ import {
   ArchipelagoGameEntity,
   ArchipelagoItem,
   ArchipelagoLocation,
+  CommonItemSettingChangeEvent,
 } from "../defs/core";
 import { version } from "../../package.json";
 import { CategoryList } from "../defs/global";
@@ -415,6 +416,16 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
     // Merge everything together
     setSettings(Object.assign({}, settings, newSetting));
   };
+
+  /**
+   * A synthetic event handler that fires when the value of a common item setting is changed.
+   * @param itemName The name of the item.
+   * @param category The category to which the item belongs.
+   * @param options Any options pertaining to the event.
+   */
+  const onCommonSettingChange: CommonItemSettingChangeEvent = (itemName, category, options) => {
+
+  }
 
   /**
    * Normalize Boolean values toward "true" or "false".
@@ -870,7 +881,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
             // Output tab panels containing setting collections for enabled games
             <TabPanel key={`tabpanel-${i.category}`} className="settingsBody">
               {outputSettingCollection(i.category, i.settings)}
-              {i.items ? <ItemSelector items={i.items} commonSettings={commonSettings} /> : null}
+              {i.items ? <ItemSelector items={i.items} commonSettings={commonSettings} onChange={onCommonSettingChange} /> : null}
             </TabPanel>
           ))}
           <TabPanel className="settingsBody">

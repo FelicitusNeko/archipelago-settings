@@ -11,6 +11,7 @@ import {
   ArchipelagoCommonSettings,
   ArchipelagoItem,
   ArchipelagoItemAndQty,
+  CommonItemSettingChangeEvent,
 } from "../../defs/core";
 import "./ItemSelector.css";
 
@@ -96,10 +97,12 @@ const ItemDropbox: React.FC<ItemDropboxProps> = ({
 interface ItemSelectorProps {
   items: ArchipelagoItem[];
   commonSettings: ArchipelagoCommonSettings;
+  onChange: CommonItemSettingChangeEvent;
 }
 const ItemSelector: React.FC<ItemSelectorProps> = ({
   items,
   commonSettings,
+  onChange,
 }) => {
   const [unassigned, setUnassigned] = useState(items);
 
