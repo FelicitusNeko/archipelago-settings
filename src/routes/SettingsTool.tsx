@@ -216,7 +216,7 @@ const convertBoolean = (
  */
 const checkSavedData = (data: SettingsCollection) => {
   console.debug("Reticulating splines"); // lul
-  console.debug('before',data);
+  //console.debug('before',data);
   /** The overall collection of revised settings. */
   const retval: SettingsCollection = {};
 
@@ -443,20 +443,22 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
         settings: settingsIn,
         commonSettings: commonSettingsIn,
       } = savedSettings;
-      console.debug(commonSettingsIn);
       setPlayerName(nameIn);
       setDescription(descriptionIn);
       setSettings(checkSavedData(settingsIn));
+      
+      //console.debug(commonSettingsIn);
       if (commonSettingsIn) {
         console.debug("Common settings found; deserializing", commonSettingsIn);
         const categories = CategoryList.map((i) => i.category);
         for (const category of categories)
-          if (category)
+          if (category && !commonSettingsIn[category])
             commonSettingsIn[category] = Object.assign({}, EmptyCommonSetings);
         for (const category of Object.keys(commonSettingsIn))
           if (!categories.includes(category)) delete commonSettingsIn[category];
         //console.debug(commonSettingsIn);
         setCommonSettings(deserializeCommonSettings(commonSettingsIn));
+
       } else {
         console.debug("No common settings, generating empty set");
         const newEmptyCommons: Record<string, MinifiedCommonSettings> = {};
@@ -467,20 +469,22 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
       }
     } else {
       // There are not saved settings; load in the settings collection and populate with defaults
+      console.debug("No saved settings found at all, generating default set");
+
       let defaultSettings: SettingsCollection = {};
       const newEmptyCommons: Record<string, MinifiedCommonSettings> = {};
 
-      for (const category of CategoryList) {
+      for (const {category, settings} of CategoryList) {
         const subcollection: SettingsSubcollection = {};
-        category.settings.forEach((i) => (subcollection[i.name] = i.default));
-        if (!category.category)
+        settings.forEach((i) => (subcollection[i.name] = i.default));
+        if (!category)
           defaultSettings = Object.assign(defaultSettings, subcollection);
-        else defaultSettings[category.category] = subcollection;
+        else {
+          defaultSettings[category] = subcollection;
+          newEmptyCommons[category] = Object.assign({}, EmptyCommonSetings);
+        }
       }
       setSettings(defaultSettings);
-      for (const { category } of CategoryList)
-        if (category)
-          newEmptyCommons[category] = Object.assign({}, EmptyCommonSetings);
       setCommonSettings(deserializeCommonSettings(newEmptyCommons));
     }
   }, []);
@@ -529,7 +533,6 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
     newValue: SettingValue,
     category?: string
   ) => {
-    // TODO: keep documenting from here; I'm tired
     const newSetting: SettingsCollection = {};
     if (category) {
       // If there's a category specified, update the setting in that category
@@ -943,7 +946,6 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     // TODO: Scan for any obvious problems that would prevent the YAML from working (all-zero weights, bad name, etc.)
-    // TODO: export common settings
 
     // Create the YAML structure
     const outYaml: any = Object.assign(
