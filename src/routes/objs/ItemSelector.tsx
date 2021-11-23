@@ -38,11 +38,12 @@ const ItemNode: React.FC<ItemNodeProps> = ({
 }) => {
   const [draggable, setDraggable] = useState(true);
 
-  const onHintChange: React.ChangeEventHandler<HTMLInputElement> = ({currentTarget}) =>
-    onChange(id, category, {startingHint: currentTarget.checked})
+  const onHintChange: React.ChangeEventHandler<HTMLInputElement> = ({
+    currentTarget,
+  }) => onChange(id, category, { startingHint: currentTarget.checked });
 
   const onQtyChange = (newVal: number) =>
-    onChange(id, category, {qty: newVal})
+    onChange(id, category, { qty: newVal });
 
   return (
     <Draggable draggableId={id} index={index} isDragDisabled={!draggable}>
@@ -50,7 +51,6 @@ const ItemNode: React.FC<ItemNodeProps> = ({
         return (
           <div
             className="itemnode"
-            style={!draggable ? { backgroundColor: "orange" } : undefined}
             {...provided.draggableProps}
             {...provided.dragHandleProps}
             ref={provided.innerRef}
@@ -64,11 +64,16 @@ const ItemNode: React.FC<ItemNodeProps> = ({
               <>
                 <br />
                 <div
+                  className="qtycontainer"
                   onMouseEnter={() => setDraggable(false)}
                   onMouseLeave={() => setDraggable(true)}
-                  style={{ width: "90%", margin: "auto" }}
                 >
-                  <Slider min={1} max={max} value={qty} onChange={onQtyChange} />
+                  <Slider
+                    min={1}
+                    max={max}
+                    value={qty}
+                    onChange={onQtyChange}
+                  />
                 </div>
               </>
             ) : null}

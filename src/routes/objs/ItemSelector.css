@@ -5,6 +5,11 @@ div.itemnode {
   border: 2px solid blue;
 }
 
+div.itemnode div.qtycontainer {
+  width: 90%;
+  margin: auto;
+}
+
 div.itemdropbox {
   background-color: lightblue;
   flex-grow: 1;
