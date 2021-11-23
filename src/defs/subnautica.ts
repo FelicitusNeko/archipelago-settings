@@ -39,7 +39,7 @@ export default SubnauticaSettings;
 const SubnauticaItems: ArchipelagoItem[] = (
   subnauticaItems as SubnauticaItem[]
 ).map((i) => {
-  const retval: ArchipelagoItem = { name: i.tech_type };
+  const retval: ArchipelagoItem = { name: i.tech_type, max: i.count };
   if (i.name !== i.tech_type) retval.readableName = i.name;
   if (!i.progression) retval.dependsOn = { item_pool: ["standard"] };
   return retval;
