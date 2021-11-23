@@ -37,8 +37,10 @@ export type SettingChangeEvent = (
  * @since 0.10.0
  */
 interface CommonItemSettingChangeEventOptions {
-  /** The destination for the given item. If it is being unassigned, this should be null. */
-  destination?: 'local_items'|'non_local_items'|'start_inventory'|null;
+  /** The destination for the given item. */
+  destination?: string;
+  /** The index number at which to place the item. This is purely aesthetic, and is ignored for unassigned items. */
+  index?: number;
   /** The quantity of the starting item. Ignored if this is not a starting item. */
   qty?: number;
   /** Whether a free hint about this item should be provided from the start. Ignored if this is a starting item set to max quantity. */
