@@ -44,14 +44,12 @@ const ItemNode: React.FC<ItemNodeProps> = ({ id, index, children }) => {
 interface ItemDropboxProps {
   id: string;
   title: string;
-  offset: number;
   items?: ArchipelagoItem[];
   itemsAndQtys?: ArchipelagoItemAndQty[];
 }
 const ItemDropbox: React.FC<ItemDropboxProps> = ({
   id,
   title,
-  offset,
   items,
   itemsAndQtys,
 }) => {
@@ -79,7 +77,7 @@ const ItemDropbox: React.FC<ItemDropboxProps> = ({
                       key={`item-${item.name}`}
                       id={item.name}
                       index={x}
-                      max={(item.max === undefined ? 1 : item.max)}
+                      max={item.max === undefined ? 1 : item.max}
                       qty={qty}
                     >
                       {item.readableName ?? item.name}
@@ -95,16 +93,19 @@ const ItemDropbox: React.FC<ItemDropboxProps> = ({
 };
 
 interface ItemSelectorProps {
+  category: string;
   items: ArchipelagoItem[];
   commonSettings: ArchipelagoCommonSettings;
   onChange: CommonItemSettingChangeEvent;
 }
 const ItemSelector: React.FC<ItemSelectorProps> = ({
+  category,
   items,
   commonSettings,
   onChange,
 }) => {
   const [unassigned, setUnassigned] = useState(items);
+  const { local_items, non_local_items, start_inventory } = commonSettings;
 
   useEffect(() => {
     setUnassigned(
@@ -119,14 +120,21 @@ const ItemSelector: React.FC<ItemSelectorProps> = ({
             ? !commonSettings.non_local_items.includes(i)
             : true
         )
+        .filter((i) =>
+          commonSettings.start_inventory
+            ? !commonSettings.start_inventory.map(i => i.item).includes(i)
+            : true
+        )
     );
   }, [commonSettings, items, setUnassigned]);
+
+  //console.debug(category, items, commonSettings);
 
   const onDragEnd = (result: DropResult, provided: ResponderProvided): void => {
     console.debug(result, provided);
 
     let moveItem: ArchipelagoItem;
-    let moveQty = -1;
+    //let moveQty = -1;
 
     if (!result.destination) return;
     if (result.source.droppableId === result.destination.droppableId) {
@@ -136,6 +144,35 @@ const ItemSelector: React.FC<ItemSelectorProps> = ({
       )
         return;
     }
+
+    switch (result.source.droppableId) {
+      case "unassigned":
+        moveItem = unassigned[result.source.index];
+        break;
+      case "local_items":
+        if (!local_items) return;
+        moveItem = local_items[result.source.index];
+        break;
+      case "non_local_items":
+        if (!non_local_items) return;
+        moveItem = non_local_items[result.source.index];
+        break;
+      case "start_inventory":
+        if (!start_inventory) return;
+        ({ item: moveItem/*, qty: moveQty*/ } =
+          start_inventory[result.source.index]);
+        break;
+      default:
+        return;
+    }
+
+    if (result.source.droppableId === result.destination.droppableId)
+      onChange(moveItem.name, category, { index: result.destination.index });
+    else
+      onChange(moveItem.name, category, {
+        destination: result.destination.droppableId,
+        index: result.destination.index,
+      });
   };
 
   return (
@@ -144,26 +181,22 @@ const ItemSelector: React.FC<ItemSelectorProps> = ({
         <ItemDropbox
           id="unassigned"
           title="Unassigned items"
-          offset={0}
           items={unassigned}
         />
         <ItemDropbox
-          id="local-items"
+          id="local_items"
           title="Local items"
-          offset={items.length}
-          items={[]}
+          items={local_items ?? []}
         />
         <ItemDropbox
-          id="non-local-items"
+          id="non_local_items"
           title="Non-Local items"
-          offset={items.length * 2}
-          items={[]}
+          items={non_local_items ?? []}
         />
         <ItemDropbox
-          id="start-inventory"
+          id="start_inventory"
           title="Starting inventory"
-          offset={items.length * 3}
-          items={[]}
+          itemsAndQtys={start_inventory ?? []}
         />
       </DragDropContext>
     </div>
