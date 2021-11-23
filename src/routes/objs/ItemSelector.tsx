@@ -65,7 +65,6 @@ const ItemDropbox: React.FC<ItemDropboxProps> = ({
               {...provided.droppableProps}
               ref={provided.innerRef}
             >
-              {/* TODO: list generation goes here*/}
               {items
                 ? items.map((i, x) => (
                     <ItemNode key={`item-${i.name}`} id={i.name} index={x}>
