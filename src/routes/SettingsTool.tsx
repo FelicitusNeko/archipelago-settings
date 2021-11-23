@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, ReactElement } from "react";
+import React, { useState, useEffect, ReactElement } from "react";
 import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
 import yaml from "yaml";
 import { DateTime } from "luxon";
@@ -47,6 +47,15 @@ interface SavedSettings {
   commonSettings?: Record<string, MinifiedCommonSettings>;
 }
 
+const EmptyCommonSetings: MinifiedCommonSettings = Object.seal({
+  local_items: [],
+  non_local_items: [],
+  start_inventory: {},
+  start_hints: [],
+  start_location_hints: [],
+  exclude_locations: [],
+});
+
 /**
  * Checks whether there is any crossover between two arrays.
  * @param {string[]} lhs One array to check against.
@@ -58,9 +67,348 @@ const hasCrossover = (lhs: string[], rhs: string[]): boolean => {
   return false;
 };
 
-const EmptyCommonSetings: MinifiedCommonSettings = Object.seal({
-  local_items: [], non_local_items: [], start_inventory: {}, start_hints: [], start_location_hints:[], exclude_locations: []
-});
+/**
+ * Serializes the common settings for browser storage and YAML output.
+ * @param commonSettings The set of common settings to serialize.
+ * @returns {Record<string, MinifiedCommonSettings>} The set of serialized common settings.
+ */
+const minifyCommonSettings = (
+  commonSettings: Record<string, ArchipelagoCommonSettings>
+) => {
+  const retval: Record<string, MinifiedCommonSettings> = {};
+
+  for (const category of Object.keys(commonSettings)) {
+    const settings = commonSettings[category];
+    retval[category] = {};
+
+    if (settings.local_items)
+      retval[category].local_items = settings.local_items.map((i) => i.name);
+    if (settings.non_local_items)
+      retval[category].non_local_items = settings.non_local_items.map(
+        (i) => i.name
+      );
+    if (settings.start_inventory) {
+      retval[category].start_inventory = {};
+      for (let { item, qty } of settings.start_inventory)
+        retval[category].start_inventory![item.name] = qty;
+    }
+    if (settings.start_hints)
+      retval[category].start_hints = settings.start_hints.map((i) => i.name);
+    if (settings.start_location_hints)
+      retval[category].start_location_hints = settings.start_location_hints.map(
+        (i) => i.name
+      );
+    if (settings.exclude_locations)
+      retval[category].exclude_locations = settings.exclude_locations.map(
+        (i) => i.name
+      );
+  }
+
+  return retval;
+};
+
+/**
+ * Deserialize common settings into complete data that is used by the Settings Tool.
+ * @param minifiedSettings The set of serialized data.
+ * @returns The deserialized common settings for the Settings Tool to use.
+ */
+const deserializeCommonSettings = (
+  minifiedSettings: Record<string, MinifiedCommonSettings>
+) => {
+  console.debug(minifiedSettings);
+  const retval: Record<string, ArchipelagoCommonSettings> = {};
+
+  const fetchEntity = (itemName: string, entityList: ArchipelagoGameEntity[]) =>
+    entityList.reduce(
+      (r: ArchipelagoGameEntity | null, i) => (i.name === itemName ? i : r),
+      null
+    );
+
+  for (const category of Object.keys(minifiedSettings)) {
+    console.debug("Deserializing", category);
+    const minSettings = minifiedSettings[category];
+    const fullSettings: ArchipelagoCommonSettings = {};
+    const { items, locations } = CategoryList.reduce((r, i) =>
+      i.category === category ? i : r
+    );
+
+    if (items) {
+      if (minSettings.local_items)
+        fullSettings.local_items = minSettings.local_items.map((i) =>
+          fetchEntity(i, items)
+        ) as ArchipelagoItem[];
+      if (minSettings.non_local_items)
+        fullSettings.non_local_items = minSettings.non_local_items.map((i) =>
+          fetchEntity(i, items)
+        ) as ArchipelagoItem[];
+      if (minSettings.start_inventory) {
+        fullSettings.start_inventory = [];
+        for (const itemName in minSettings.start_inventory) {
+          const item = fetchEntity(itemName, items);
+          if (item)
+            fullSettings.start_inventory.push({
+              item,
+              qty: minSettings.start_inventory[itemName],
+            });
+        }
+      }
+      if (minSettings.start_hints)
+        fullSettings.start_hints = minSettings.start_hints.map((i) =>
+          fetchEntity(i, items)
+        ) as ArchipelagoItem[];
+    }
+    if (locations) {
+      if (minSettings.start_location_hints)
+        fullSettings.start_location_hints =
+          minSettings.start_location_hints.map((i) =>
+            fetchEntity(i, locations)
+          ) as ArchipelagoLocation[];
+      if (minSettings.exclude_locations)
+        fullSettings.exclude_locations = minSettings.exclude_locations.map(
+          (i) => fetchEntity(i, locations)
+        ) as ArchipelagoLocation[];
+    }
+
+    console.debug(minSettings, fullSettings);
+    retval[category] = fullSettings;
+  }
+
+  console.debug(retval);
+  return retval;
+};
+
+/**
+ * Normalize Boolean values toward "true" or "false".
+ * @param {SettingValue} value The current value for this setting.
+ * @param {ArchipelagoSettingBase} setting The setting object to which the value belongs.
+ * @returns {SettingValue} If the setting is not a {@link ArchipelagoBooleanSetting}, the original value. Otherwise, the normalized Boolean value.
+ */
+const convertBoolean = (
+  value: SettingValue,
+  setting: ArchipelagoSettingBase
+): SettingValue => {
+  // If it's already a Boolean, nothing to be done
+  if (setting.type !== SettingType.Boolean) return value;
+
+  // Special handling for LttP "swordless" setting because of its conversion from Berserker
+  if (setting.name === "swordless") {
+    const booleans = ["on", "off", "true", "false"];
+    if (typeof value === "object") {
+      for (const option in value)
+        if (!booleans.includes(value[option].toString())) return value;
+    } else if (!booleans.includes(value.toString())) return value;
+  }
+
+  if (typeof value === "object") {
+    // If it's a weighted setting, use the Boolean value first, then its on/off equivalent, then default 0
+    const newValue: WeightedSetting = {};
+    newValue.true = value.true ?? value.on ?? 0;
+    newValue.false = value.false ?? value.off ?? 0;
+    return newValue;
+    // Otherwise, just return whether the value is string "true" or "on"
+  } else return value.toString() === "true" || value.toString() === "on";
+};
+
+/**
+ * Checks a collection of settings for validity, and makes revisions as necessary.
+ * @param data The collection of settings to verify.
+ * @returns The revised collection of settings.
+ */
+const checkSavedData = (data: SettingsCollection) => {
+  console.debug("Reticulating splines"); // lul
+  /** The overall collection of revised settings. */
+  const retval: SettingsCollection = {};
+
+  for (const { category, settings: catSettings } of CategoryList) {
+    if (category)
+      retval[category] = data[category]
+        ? Object.assign({}, data[category])
+        : {};
+
+    /** The collection of existing settings for this category. */
+    const subcatIn = (
+      category ? data[category] : data
+    ) as SettingsSubcollection;
+    /** The collection of revised settings for this category. */
+    const subcatOut = (
+      category ? retval[category] : retval
+    ) as SettingsSubcollection;
+
+    for (const setting of catSettings) {
+      if (subcatOut[setting.name]) {
+        // The setting exists; validate it
+        subcatOut[setting.name] =
+          typeof subcatOut[setting.name] === "object"
+            ? Object.assign({}, subcatIn[setting.name])
+            : subcatIn[setting.name];
+
+        switch (setting.type) {
+          case SettingType.String:
+            {
+              /** The current setting as an {@link ArchipelagoStringSetting}. */
+              const strSetting = setting as ArchipelagoStringSetting;
+              /** The list of valid values. */
+              const validValues = Object.keys(strSetting.values);
+
+              if (typeof subcatOut[setting.name] === "object") {
+                // If the setting is weighted, check every single value to make sure it's valid
+                /** The collection of weighted values for this setting. */
+                const weights = subcatOut[setting.name] as WeightedSetting;
+                for (const value of Object.keys(weights))
+                  if (!validValues.includes(value)) delete weights[value];
+
+                // If no valid values are left, default this setting
+                if (Object.keys(weights).length === 0)
+                  subcatOut[setting.name] = setting.default;
+              } else if (
+                // If the setting isn't weighted, check the single value against list of valid values
+                !validValues.includes(subcatOut[setting.name] as string)
+              )
+                // If it's not valid, default it
+                subcatOut[setting.name] = setting.default;
+            }
+            break;
+          case SettingType.Numeric:
+            {
+              /** The current setting as an {@link ArchipelagoNumericSetting}. */
+              const numSetting = setting as ArchipelagoNumericSetting;
+
+              if (typeof subcatOut[setting.name] === "object") {
+                // If the setting is weighted, check every single value to make sure it's valid
+                /** The collection of weighted values for this setting. */
+                const weights = subcatOut[setting.name] as WeightedSetting;
+                for (const value of Object.keys(weights)) {
+                  if (value.startsWith("random")) {
+                    // If the value is a form of random, and the value is not randomable, delete the random value
+                    if (!numSetting.randomable) delete weights[value];
+                  } else {
+                    /** The current numeric value for this setting. */
+                    const numval = Number.parseInt(value);
+                    if (
+                      // If the value is out of bounds or not a number, delete the value
+                      isNaN(numval) ||
+                      numval < numSetting.low ||
+                      numval > numSetting.high
+                    )
+                      delete weights[value];
+                  }
+                }
+
+                if (
+                  // If no numeric values are left, default the setting
+                  Object.keys(weights).length ===
+                  (numSetting.randomable ? 3 : 0)
+                )
+                  subcatOut[setting.name] = setting.default;
+              } else if (
+                // If the single setting is not numeric or out of bounds, default the setting
+                typeof subcatOut[setting.name] !== "number" ||
+                subcatOut[setting.name] < numSetting.low ||
+                subcatOut[setting.name] > numSetting.high
+              )
+                subcatOut[setting.name] = setting.default;
+            }
+            break;
+          case SettingType.Boolean:
+            {
+              /** The list of valid values. */
+              const validValues = ["true", "false", "on", "off"];
+              if (typeof subcatOut[setting.name] === "object") {
+                // If the setting is weighted, check every single value to make sure it's valid
+                /** The collection of weighted values for this setting. */
+                const weights = subcatOut[setting.name] as WeightedSetting;
+                for (const value of Object.keys(weights))
+                  if (!validValues.includes(value)) delete weights[value];
+
+                // If no valid values are left, default this setting
+                if (Object.keys(weights).length === 0)
+                  subcatOut[setting.name] = setting.default;
+                // Otherwise, normalize the Boolean value
+                else
+                  subcatOut[setting.name] = convertBoolean(
+                    subcatOut[setting.name],
+                    setting
+                  );
+              } else if (typeof subcatOut[setting.name] !== "boolean")
+                // If the setting isn't weighted, check the single value against list of valid values
+                // If it's not valid, default it
+                subcatOut[setting.name] = setting.default;
+            }
+            break;
+        }
+      } else subcatOut[setting.name] = setting.default;
+      // The setting does not exist; default it
+    }
+  }
+
+  return retval;
+};
+
+/**
+ * Check a setting or item against its dependencies.
+ * @param {SettingsSubcollection} subsettings The subcollection of settings to check.
+ * @param {ArchipelagoDependency} dep The dependency list to check against.
+ * @returns {boolean} Whether all dependencies are met.
+ */
+const checkDependency = (
+  subsettings: SettingsSubcollection,
+  dep?: ArchipelagoDependency
+): boolean => {
+  // TODO: "not" dependencies (!value)
+
+  // If this setting has no dependencies, keep it
+  if (!dep) return true;
+  // Iterate through all of the dependencies
+  else
+    for (const check in dep) {
+      if (typeof subsettings[check] === "object") {
+        /** The collection of weights for the parent setting. */
+        const weightSubsetting = subsettings[check] as WeightedSetting;
+        // If the required value(s) is/are not selected at all, filter out
+        if (
+          !hasCrossover(Object.keys(weightSubsetting), dep[check] as string[])
+        )
+          return false;
+        // If the required value(s) present has/all have a weight of 0, filter out
+        for (const countercheck in weightSubsetting) {
+          if (Object.keys(weightSubsetting).includes(countercheck)) {
+            if (weightSubsetting[countercheck] === 0) return false;
+            else break;
+          }
+        }
+        // If it's a single value, filter out if a required value is not set
+      } else if (!dep[check].includes(subsettings[check])) return false;
+    }
+  return true;
+};
+
+/**
+ * Checks whether a game has been selected for play in the global "Game" setting.
+ * @param {string|null} category The category to check.
+ * @returns {boolean} Whether this category is enabled. Always true if {@link category} is null.
+ */
+const isGameEnabled = (
+  settings: SettingsCollection,
+  category: string | null
+): boolean => {
+  // Definite answers:
+  // If there's no category, it's global settings; return true.
+  if (!category) return true;
+  // If there are no settings at all (which shouldn't happen unless the page is freshly loaded), return false.
+  if (!settings) return false;
+  // If there is no "game" setting (see above), return false.
+  if (!settings.game) return false;
+  // If the category is not present in settings, return false.
+  if (!settings[category]) return false;
+
+  if (typeof settings.game === "object") {
+    // If the game setting is weighted, return true for any category whose weight is higher than zero
+    if (Object.keys(settings.game).includes(category))
+      return settings.game[category] > 0;
+    else return false;
+    // Otherwise, only return true for the one selected category
+  } else return category === settings.game;
+};
 
 /**
  * The Archipelago Settings Tool, a tool to generate .YAML settings files for Archipelago Multiworld.
@@ -76,273 +424,47 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
     Record<string, ArchipelagoCommonSettings>
   >({});
 
-  const minifyCommonSettings = useCallback(
-    (commonSettingsIn?: Record<string, ArchipelagoCommonSettings>) => {
-      const retval: Record<string, MinifiedCommonSettings> = {};
-
-      for (const category of Object.keys(commonSettingsIn ?? commonSettings)) {
-        const settings = (commonSettingsIn ?? commonSettings)[category];
-        retval[category] = {};
-
-        if (settings.local_items)
-          retval[category].local_items = settings.local_items.map(
-            (i) => i.name
-          );
-        if (settings.non_local_items)
-          retval[category].non_local_items = settings.non_local_items.map(
-            (i) => i.name
-          );
-        if (settings.start_inventory) {
-          retval[category].start_inventory = {};
-          for (let { item, qty } of settings.start_inventory)
-            retval[category].start_inventory![item.name] = qty;
-        }
-        if (settings.start_hints)
-          retval[category].start_hints = settings.start_hints.map(
-            (i) => i.name
-          );
-        if (settings.start_location_hints)
-          retval[category].start_location_hints =
-            settings.start_location_hints.map((i) => i.name);
-        if (settings.exclude_locations)
-          retval[category].exclude_locations = settings.exclude_locations.map(
-            (i) => i.name
-          );
-      }
-
-      return retval;
-    },
-    [commonSettings]
-  );
-
-  const deserializeCommonSettings = useCallback(
-    (minifiedSettings: Record<string, MinifiedCommonSettings>) => {
-      const retval: Record<string, ArchipelagoCommonSettings> = {};
-
-      const fetchEntity = (
-        itemName: string,
-        entityList: ArchipelagoGameEntity[]
-      ) =>
-        entityList.reduce(
-          (r: ArchipelagoGameEntity | null, i) => (i.name === itemName ? i : r),
-          null
-        );
-
-      for (const category of Object.keys(minifiedSettings)) {
-        const minSettings = minifiedSettings[category];
-        const fullSettings: ArchipelagoCommonSettings = {};
-        const { items, locations } = CategoryList.reduce((r, i) =>
-          i.category === category ? i : r
-        );
-
-        if (items) {
-          if (minSettings.local_items)
-            fullSettings.local_items = minSettings.local_items.map((i) =>
-              fetchEntity(i, items)
-            ) as ArchipelagoItem[];
-          if (minSettings.non_local_items)
-            fullSettings.non_local_items = minSettings.non_local_items.map(
-              (i) => fetchEntity(i, items)
-            ) as ArchipelagoItem[];
-          if (minSettings.start_inventory) {
-            fullSettings.start_inventory = [];
-            for (const itemName in minSettings.start_inventory) {
-              const item = fetchEntity(itemName, items);
-              if (item)
-                fullSettings.start_inventory.push({
-                  item,
-                  qty: minSettings.start_inventory[itemName],
-                });
-            }
-          }
-          if (minSettings.start_hints)
-            fullSettings.start_hints = minSettings.start_hints.map((i) =>
-              fetchEntity(i, items)
-            ) as ArchipelagoItem[];
-        }
-        if (locations) {
-          if (minSettings.start_location_hints)
-            fullSettings.start_location_hints =
-              minSettings.start_location_hints.map((i) =>
-                fetchEntity(i, locations)
-              ) as ArchipelagoLocation[];
-          if (minSettings.exclude_locations)
-            fullSettings.exclude_locations = minSettings.exclude_locations.map(
-              (i) => fetchEntity(i, locations)
-            ) as ArchipelagoLocation[];
-        }
-
-        retval[category] = fullSettings;
-      }
-
-      return retval;
-    },
-    []
-  );
-
   // Load settings
   useEffect(() => {
-    // TODO: deserialise common settings and load them
-    /**
-     * Checks a collection of settings for validity, and makes revisions as necessary.
-     * @param data The collection of settings to verify.
-     * @returns The revised collection of settings.
-     */
-    const checkSavedData = (data: SettingsCollection) => {
-      console.debug("Reticulating splines"); // lul
-      /** The overall collection of revised settings. */
-      const retval: SettingsCollection = {};
-
-      for (const { category, settings: catSettings } of CategoryList) {
-        if (category)
-          retval[category] = data[category]
-            ? Object.assign({}, data[category])
-            : {};
-
-        /** The collection of existing settings for this category. */
-        const subcatIn = (
-          category ? data[category] : data
-        ) as SettingsSubcollection;
-        /** The collection of revised settings for this category. */
-        const subcatOut = (
-          category ? retval[category] : retval
-        ) as SettingsSubcollection;
-
-        for (const setting of catSettings) {
-          if (subcatOut[setting.name]) {
-            // The setting exists; validate it
-            subcatOut[setting.name] =
-              typeof subcatOut[setting.name] === "object"
-                ? Object.assign({}, subcatIn[setting.name])
-                : subcatIn[setting.name];
-
-            switch (setting.type) {
-              case SettingType.String:
-                {
-                  /** The current setting as an {@link ArchipelagoStringSetting}. */
-                  const strSetting = setting as ArchipelagoStringSetting;
-                  /** The list of valid values. */
-                  const validValues = Object.keys(strSetting.values);
-
-                  if (typeof subcatOut[setting.name] === "object") {
-                    // If the setting is weighted, check every single value to make sure it's valid
-                    /** The collection of weighted values for this setting. */
-                    const weights = subcatOut[setting.name] as WeightedSetting;
-                    for (const value of Object.keys(weights))
-                      if (!validValues.includes(value)) delete weights[value];
-
-                    // If no valid values are left, default this setting
-                    if (Object.keys(weights).length === 0)
-                      subcatOut[setting.name] = setting.default;
-                  } else if (
-                    // If the setting isn't weighted, check the single value against list of valid values
-                    !validValues.includes(subcatOut[setting.name] as string)
-                  )
-                    // If it's not valid, default it
-                    subcatOut[setting.name] = setting.default;
-                }
-                break;
-              case SettingType.Numeric:
-                {
-                  /** The current setting as an {@link ArchipelagoNumericSetting}. */
-                  const numSetting = setting as ArchipelagoNumericSetting;
-
-                  if (typeof subcatOut[setting.name] === "object") {
-                    // If the setting is weighted, check every single value to make sure it's valid
-                    /** The collection of weighted values for this setting. */
-                    const weights = subcatOut[setting.name] as WeightedSetting;
-                    for (const value of Object.keys(weights)) {
-                      if (value.startsWith("random")) {
-                        // If the value is a form of random, and the value is not randomable, delete the random value
-                        if (!numSetting.randomable) delete weights[value];
-                      } else {
-                        /** The current numeric value for this setting. */
-                        const numval = Number.parseInt(value);
-                        if (
-                          // If the value is out of bounds or not a number, delete the value
-                          isNaN(numval) ||
-                          numval < numSetting.low ||
-                          numval > numSetting.high
-                        )
-                          delete weights[value];
-                      }
-                    }
-
-                    if (
-                      // If no numeric values are left, default the setting
-                      Object.keys(weights).length ===
-                      (numSetting.randomable ? 3 : 0)
-                    )
-                      subcatOut[setting.name] = setting.default;
-                  } else if (
-                    // If the single setting is not numeric or out of bounds, default the setting
-                    typeof subcatOut[setting.name] !== "number" ||
-                    subcatOut[setting.name] < numSetting.low ||
-                    subcatOut[setting.name] > numSetting.high
-                  )
-                    subcatOut[setting.name] = setting.default;
-                }
-                break;
-              case SettingType.Boolean:
-                {
-                  /** The list of valid values. */
-                  const validValues = ["true", "false", "on", "off"];
-                  if (typeof subcatOut[setting.name] === "object") {
-                    // If the setting is weighted, check every single value to make sure it's valid
-                    /** The collection of weighted values for this setting. */
-                    const weights = subcatOut[setting.name] as WeightedSetting;
-                    for (const value of Object.keys(weights))
-                      if (!validValues.includes(value)) delete weights[value];
-
-                    // If no valid values are left, default this setting
-                    if (Object.keys(weights).length === 0)
-                      subcatOut[setting.name] = setting.default;
-                    // Otherwise, normalize the Boolean value
-                    else
-                      subcatOut[setting.name] = convertBoolean(
-                        subcatOut[setting.name],
-                        setting
-                      );
-                  } else if (typeof subcatOut[setting.name] !== "boolean")
-                    // If the setting isn't weighted, check the single value against list of valid values
-                    // If it's not valid, default it
-                    subcatOut[setting.name] = setting.default;
-                }
-                break;
-            }
-          } else subcatOut[setting.name] = setting.default;
-          // The setting does not exist; default it
-        }
-      }
-
-      return retval;
-    };
-
     // Attempt to retrieve settings from local storage
     /** The stringified collection of saved settings. */
     const savedSettingsStr = localStorage.getItem("savedSettings");
 
     if (savedSettingsStr) {
+      console.debug(JSON.parse(savedSettingsStr) as SavedSettings);
+
       // There are saved settings; load them in
-      const {name, description, settings, commonSettings: commonSettingsIn} = JSON.parse(savedSettingsStr) as SavedSettings;
+      const {
+        name,
+        description,
+        settings,
+        commonSettings: commonSettingsIn,
+      } = JSON.parse(savedSettingsStr) as SavedSettings;
       setPlayerName(name);
       setDescription(description);
       setSettings(checkSavedData(settings));
       if (commonSettingsIn) {
-        const categories = CategoryList.map(i => i.category);
-        for (const category of categories) if (category) commonSettingsIn[category] = Object.assign({}, EmptyCommonSetings);
-        for (const category of Object.keys(commonSettingsIn)) if (!categories.includes(category)) delete commonSettingsIn[category];
+        console.debug("Common settings found; deserializing");
+        const categories = CategoryList.map((i) => i.category);
+        for (const category of categories)
+          if (category)
+            commonSettingsIn[category] = Object.assign({}, EmptyCommonSetings);
+        for (const category of Object.keys(commonSettingsIn))
+          if (!categories.includes(category)) delete commonSettingsIn[category];
         setCommonSettings(deserializeCommonSettings(commonSettingsIn));
       } else {
+        console.debug("No common settings, generating empty set");
         const newEmptyCommons: Record<string, MinifiedCommonSettings> = {};
-        for (const {category} of CategoryList) if (category) newEmptyCommons[category] = Object.assign({}, EmptyCommonSetings);
+        for (const { category } of CategoryList)
+          if (category)
+            newEmptyCommons[category] = Object.assign({}, EmptyCommonSetings);
         setCommonSettings(deserializeCommonSettings(newEmptyCommons));
       }
     } else {
       // There are not saved settings; load in the settings collection and populate with defaults
       let defaultSettings: SettingsCollection = {};
       const newEmptyCommons: Record<string, MinifiedCommonSettings> = {};
-      
+
       for (const category of CategoryList) {
         const subcollection: SettingsSubcollection = {};
         category.settings.forEach((i) => (subcollection[i.name] = i.default));
@@ -351,10 +473,12 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
         else defaultSettings[category.category] = subcollection;
       }
       setSettings(defaultSettings);
-      for (const {category} of CategoryList) if (category) newEmptyCommons[category] = Object.assign({}, EmptyCommonSetings);
+      for (const { category } of CategoryList)
+        if (category)
+          newEmptyCommons[category] = Object.assign({}, EmptyCommonSetings);
       setCommonSettings(deserializeCommonSettings(newEmptyCommons));
     }
-  }, [deserializeCommonSettings]);
+  }, []);
 
   // Save settings
   useEffect(() => {
@@ -362,11 +486,11 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
       name: playerName,
       description,
       settings,
-      commonSettings: minifyCommonSettings(),
+      commonSettings: minifyCommonSettings(commonSettings),
     };
     // When settings are modified, save them to local storage
     localStorage.setItem("savedSettings", JSON.stringify(savedSettings));
-  }, [playerName, description, settings, commonSettings, minifyCommonSettings]);
+  }, [playerName, description, settings, commonSettings]);
 
   /**
    * An event handler that fires when the player name is changed.
@@ -422,41 +546,178 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
    * @param itemName The name of the item.
    * @param category The category to which the item belongs.
    * @param options Any options pertaining to the event.
+   * @since 0.10.0
    */
-  const onCommonSettingChange: CommonItemSettingChangeEvent = (itemName, category, options) => {
+  const onCommonSettingChange: CommonItemSettingChangeEvent = (
+    itemName,
+    category,
+    options
+  ) => {
+    console.debug("onCommonSettingChange", itemName, category, options);
+    const { destination, index, qty, startingHint } = options;
 
-  }
-
-  /**
-   * Normalize Boolean values toward "true" or "false".
-   * @param {SettingValue} value The current value for this setting.
-   * @param {ArchipelagoSettingBase} setting The setting object to which the value belongs.
-   * @returns {SettingValue} If the setting is not a {@link ArchipelagoBooleanSetting}, the original value. Otherwise, the normalized Boolean value.
-   */
-  const convertBoolean = (
-    value: SettingValue,
-    setting: ArchipelagoSettingBase
-  ): SettingValue => {
-    // If it's already a Boolean, nothing to be done
-    if (setting.type !== SettingType.Boolean) return value;
-
-    // Special handling for LttP "swordless" setting because of its conversion from Berserker
-    if (setting.name === "swordless") {
-      const booleans = ["on", "off", "true", "false"];
-      if (typeof value === "object") {
-        for (const option in value)
-          if (!booleans.includes(value[option].toString())) return value;
-      } else if (!booleans.includes(value.toString())) return value;
+    const { items } =
+      CategoryList[CategoryList.map((i) => i.category).indexOf(category)];
+    if (!items) {
+      console.warn(`Item list not found for category ${category}`);
+      return;
     }
 
-    if (typeof value === "object") {
-      // If it's a weighted setting, use the Boolean value first, then its on/off equivalent, then default 0
-      const newValue: WeightedSetting = {};
-      newValue.true = value.true ?? value.on ?? 0;
-      newValue.false = value.false ?? value.off ?? 0;
-      return newValue;
-      // Otherwise, just return whether the value is string "true" or "on"
-    } else return value.toString() === "true" || value.toString() === "on";
+    const item = items[items.map((i) => i.name).indexOf(itemName)];
+    if (!item) {
+      console.warn(`Item ${itemName} not found in category ${category}`);
+      return;
+    }
+
+    // doing this to trick React into recognising this is a new common settings object
+    const newCommonSettings = Object.assign({}, commonSettings);
+    const catCommons = Object.assign({}, newCommonSettings[category]);
+
+    const validDests = [
+      "local_items",
+      "non_local_items",
+      "start_inventory",
+      "unassigned",
+    ];
+
+    if (destination) {
+      console.debug("Destination detected");
+      if (!validDests.includes(destination)) {
+        console.warn(`Invalid destination ${destination}`);
+        return;
+      }
+
+      if (catCommons.local_items)
+        catCommons.local_items = catCommons.local_items.filter(
+          (i) => i !== item
+        );
+      if (catCommons.non_local_items)
+        catCommons.non_local_items = catCommons.non_local_items.filter(
+          (i) => i !== item
+        );
+      if (catCommons.start_inventory)
+        catCommons.start_inventory = catCommons.start_inventory.filter(
+          (i) => i.item !== item
+        );
+
+      switch (destination) {
+        case "local_items":
+          console.debug("Local item");
+          if (!catCommons.local_items) catCommons.local_items = [item];
+          else {
+            catCommons.local_items = catCommons.local_items.slice(0);
+            if (index === undefined || index >= catCommons.local_items.length)
+              catCommons.local_items.push(item);
+            else catCommons.local_items.splice(index, 0, item);
+          }
+          break;
+
+        case "non_local_items":
+          console.debug("Nonlocal item");
+          if (!catCommons.non_local_items) catCommons.non_local_items = [item];
+          else {
+            catCommons.non_local_items = catCommons.non_local_items.slice(0);
+            if (
+              index === undefined ||
+              index >= catCommons.non_local_items.length
+            )
+              catCommons.non_local_items.push(item);
+            else catCommons.non_local_items.splice(index, 0, item);
+          }
+          break;
+
+        case "start_inventory":
+          {
+            console.debug("Start inv");
+            const itemQty = { item, qty: qty ?? 1 };
+            if (item.max === 0) {
+              console.warn(
+                `Item ${item} has max of 0 and thus cannot be added to start inventory (there may be a similar item; look for that one)`
+              );
+              return;
+            }
+            if (!catCommons.start_inventory)
+              catCommons.start_inventory = [itemQty];
+            else {
+              catCommons.start_inventory = catCommons.start_inventory.slice(0);
+              if (
+                index === undefined ||
+                index >= catCommons.start_inventory.length
+              )
+                catCommons.start_inventory.push(itemQty);
+              else catCommons.start_inventory.splice(index, 0, itemQty);
+            }
+            if (catCommons.start_hints)
+              catCommons.start_hints = catCommons.start_hints.filter(
+                (i) => i !== item
+              );
+          }
+          break;
+      }
+    } else if (qty) {
+      console.debug("Quantity detected");
+      if (qty < 1) {
+        console.warn(`Quantity cannot go lower than 0`);
+        return;
+      }
+      if (qty > (item.max ?? 1)) {
+        console.warn(
+          `Quantity for ${item.name} cannot go higher than ${item.max ?? 1}`
+        );
+        return;
+      }
+      if (!catCommons.start_inventory) {
+        console.warn(`No starting inventory yet defined for ${category}`);
+        return;
+      }
+      const index = catCommons.start_inventory.map((i) => i.item).indexOf(item);
+      if (index < 0) {
+        console.warn(`${item.name} not in starting inventory`);
+        return;
+      }
+      catCommons.start_inventory = catCommons.start_inventory.slice(0);
+      catCommons.start_inventory[index].qty = qty;
+    }
+
+    if (startingHint !== undefined && destination !== "start_inventory") {
+      console.debug("Starthint detected");
+      if (catCommons.start_inventory) {
+        const index = catCommons.start_inventory
+          .map((i) => i.item)
+          .indexOf(item);
+        if (
+          index >= 0 &&
+          catCommons.start_inventory[index].qty === (item.max ?? 1)
+        ) {
+          console.warn(
+            `All of item ${item.name} in starting inventory; no hints available`
+          );
+          return;
+        }
+      }
+
+      if (startingHint) {
+        if (!catCommons.start_hints) catCommons.start_hints = [item];
+        else {
+          catCommons.start_hints = catCommons.start_hints.slice(0);
+          if (index === undefined || index >= catCommons.start_hints.length)
+            catCommons.start_hints.push(item);
+          else catCommons.start_hints.splice(index, 0, item);
+        }
+      } else {
+        if (!catCommons.start_hints) {
+          console.warn(`No starting hints yet defined for ${category}`);
+          return;
+        } else
+          catCommons.start_hints = catCommons.start_hints.filter(
+            (i) => i !== item
+          );
+      }
+    }
+
+    console.debug("Updating common settings");
+    newCommonSettings[category] = catCommons;
+    setCommonSettings(newCommonSettings);
   };
 
   /**
@@ -498,8 +759,22 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
       }
 
       if (category) {
-        const {local_items, non_local_items, start_inventory, start_hints, start_location_hints, exclude_locations} = yamlIn[category];
-        newMinifiedSettings[category] = {local_items, non_local_items, start_inventory, start_hints, start_location_hints, exclude_locations};
+        const {
+          local_items,
+          non_local_items,
+          start_inventory,
+          start_hints,
+          start_location_hints,
+          exclude_locations,
+        } = yamlIn[category];
+        newMinifiedSettings[category] = {
+          local_items,
+          non_local_items,
+          start_inventory,
+          start_hints,
+          start_location_hints,
+          exclude_locations,
+        };
       }
     }
 
@@ -507,7 +782,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
     if (yamlIn.name) setPlayerName(yamlIn.name);
     if (yamlIn.description) setDescription(yamlIn.description);
     setSettings(Object.assign({}, settings, newSettings));
-    setCommonSettings(deserializeCommonSettings(newMinifiedSettings))
+    setCommonSettings(deserializeCommonSettings(newMinifiedSettings));
   };
 
   /**
@@ -678,11 +953,11 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
     if (!e.ctrlKey) {
       for (const { category } of CategoryList) {
         if (!category) continue;
-        else if (!isGameEnabled(category)) delete outYaml[category];
+        else if (!isGameEnabled(settings, category)) delete outYaml[category];
       }
     }
 
-    const minifiedSettings = minifyCommonSettings();
+    const minifiedSettings = minifyCommonSettings(commonSettings);
     for (const category of Object.keys(minifiedSettings))
       if (outYaml[category])
         outYaml[category] = Object.assign(
@@ -715,69 +990,6 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
   };
 
   /**
-   * Checks whether a game has been selected for play in the global "Game" setting.
-   * @param {string|null} category The category to check.
-   * @returns {boolean} Whether this category is enabled. Always true if {@link category} is null.
-   */
-  const isGameEnabled = (category: string | null): boolean => {
-    // Definite answers:
-    // If there's no category, it's global settings; return true.
-    if (!category) return true;
-    // If there are no settings at all (which shouldn't happen unless the page is freshly loaded), return false.
-    if (!settings) return false;
-    // If there is no "game" setting (see above), return false.
-    if (!settings.game) return false;
-    // If the category is not present in settings, return false.
-    if (!settings[category]) return false;
-
-    if (typeof settings.game === "object") {
-      // If the game setting is weighted, return true for any category whose weight is higher than zero
-      if (Object.keys(settings.game).includes(category))
-        return settings.game[category] > 0;
-      else return false;
-      // Otherwise, only return true for the one selected category
-    } else return category === settings.game;
-  };
-
-  /**
-   * Check a setting or item against its dependencies.
-   * @param {SettingsSubcollection} subsettings The subcollection of settings to check.
-   * @param {ArchipelagoDependency} dep The dependency list to check against.
-   * @returns {boolean} Whether all dependencies are met.
-   */
-  const checkDependency = (
-    subsettings: SettingsSubcollection,
-    dep?: ArchipelagoDependency
-  ): boolean => {
-    // TODO: "not" dependencies (!value)
-
-    // If this setting has no dependencies, keep it
-    if (!dep) return true;
-    // Iterate through all of the dependencies
-    else
-      for (const check in dep) {
-        if (typeof subsettings[check] === "object") {
-          /** The collection of weights for the parent setting. */
-          const weightSubsetting = subsettings[check] as WeightedSetting;
-          // If the required value(s) is/are not selected at all, filter out
-          if (
-            !hasCrossover(Object.keys(weightSubsetting), dep[check] as string[])
-          )
-            return false;
-          // If the required value(s) present has/all have a weight of 0, filter out
-          for (const countercheck in weightSubsetting) {
-            if (Object.keys(weightSubsetting).includes(countercheck)) {
-              if (weightSubsetting[countercheck] === 0) return false;
-              else break;
-            }
-          }
-          // If it's a single value, filter out if a required value is not set
-        } else if (!dep[check].includes(subsettings[check])) return false;
-      }
-    return true;
-  };
-
-  /**
    * Converts a collection of settings into an array of {@link Setting} objects.
    * @param category The category to which the settings belong.
    * @param settingsDef The collection of settings to convert.
@@ -790,7 +1002,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
     // If there are no settings for a category, nothing to return
     if (category !== null && settings[category] === undefined) return null;
     // If the game is not selected, nothing to return
-    if (!isGameEnabled(category)) return null;
+    if (!isGameEnabled(settings, category)) return null;
 
     /** The relevant subcollection of settings for this operation. */
     const subsettings = (
@@ -870,20 +1082,31 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
 
         <Tabs>
           <TabList className="react-tabs__tab-list settingsTabs">
-            {CategoryList.filter((i) => isGameEnabled(i.category)).map((i) => (
+            {CategoryList.filter((i) =>
+              isGameEnabled(settings, i.category)
+            ).map((i) => (
               // Output tabs for enabled games
               <Tab key={`tab-${i.category}`}>{i.category ?? "Global"}</Tab>
             ))}
             <Tab>Changelog</Tab>
           </TabList>
 
-          {CategoryList.filter((i) => isGameEnabled(i.category)).map((i) => (
-            // Output tab panels containing setting collections for enabled games
-            <TabPanel key={`tabpanel-${i.category}`} className="settingsBody">
-              {outputSettingCollection(i.category, i.settings)}
-              {i.items ? <ItemSelector items={i.items} commonSettings={commonSettings} onChange={onCommonSettingChange} /> : null}
-            </TabPanel>
-          ))}
+          {CategoryList.filter((i) => isGameEnabled(settings, i.category)).map(
+            (i) => (
+              // Output tab panels containing setting collections for enabled games
+              <TabPanel key={`tabpanel-${i.category}`} className="settingsBody">
+                {outputSettingCollection(i.category, i.settings)}
+                {i.category && i.items ? (
+                  <ItemSelector
+                    category={i.category}
+                    items={i.items}
+                    commonSettings={commonSettings[i.category]}
+                    onChange={onCommonSettingChange}
+                  />
+                ) : null}
+              </TabPanel>
+            )
+          )}
           <TabPanel className="settingsBody">
             <Changelog />
           </TabPanel>
