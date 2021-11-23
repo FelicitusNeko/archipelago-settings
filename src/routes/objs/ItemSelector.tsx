@@ -43,7 +43,10 @@ const ItemNode: React.FC<ItemNodeProps> = ({
   }) => onChange(id, category, { startingHint: currentTarget.checked });
 
   const onQtyChange = (newVal: number) =>
-    onChange(id, category, { qty: newVal });
+    onChange(id, category, {
+      qty: newVal,
+      startingHint: max === qty ? false : undefined,
+    });
 
   return (
     <Draggable draggableId={id} index={index} isDragDisabled={!draggable}>
@@ -55,9 +58,12 @@ const ItemNode: React.FC<ItemNodeProps> = ({
             {...provided.dragHandleProps}
             ref={provided.innerRef}
           >
-            {max === undefined || max !== qty ? (
-              <input type="checkbox" checked={hint} onChange={onHintChange} />
-            ) : null}
+            <input
+              type="checkbox"
+              checked={hint}
+              onChange={onHintChange}
+              disabled={max !== undefined && max === qty}
+            />
             {qty && max && max > 2 ? `${qty}× ` : null}
             {children}
             {qty && max && max > 2 ? (
