@@ -115,7 +115,7 @@ const minifyCommonSettings = (
 const deserializeCommonSettings = (
   minifiedSettings: Record<string, MinifiedCommonSettings>
 ) => {
-  console.debug(minifiedSettings);
+  //console.debug(minifiedSettings);
   const retval: Record<string, ArchipelagoCommonSettings> = {};
 
   const fetchEntity = (itemName: string, entityList: ArchipelagoGameEntity[]) =>
@@ -125,7 +125,7 @@ const deserializeCommonSettings = (
     );
 
   for (const category of Object.keys(minifiedSettings)) {
-    console.debug("Deserializing", category);
+    //console.debug("Deserializing", category);
     const minSettings = minifiedSettings[category];
     const fullSettings: ArchipelagoCommonSettings = {};
     const { items, locations } = CategoryList.reduce((r, i) =>
@@ -169,11 +169,11 @@ const deserializeCommonSettings = (
         ) as ArchipelagoLocation[];
     }
 
-    console.debug(minSettings, fullSettings);
+    //console.debug(minSettings, fullSettings);
     retval[category] = fullSettings;
   }
 
-  console.debug(retval);
+  //console.debug(retval);
   return retval;
 };
 
@@ -216,6 +216,7 @@ const convertBoolean = (
  */
 const checkSavedData = (data: SettingsCollection) => {
   console.debug("Reticulating splines"); // lul
+  console.debug('before',data);
   /** The overall collection of revised settings. */
   const retval: SettingsCollection = {};
 
@@ -233,9 +234,10 @@ const checkSavedData = (data: SettingsCollection) => {
     const subcatOut = (
       category ? retval[category] : retval
     ) as SettingsSubcollection;
+    //console.log(subcatOut);
 
     for (const setting of catSettings) {
-      if (subcatOut[setting.name]) {
+      if (subcatIn[setting.name]) { // NOTE: is this fixed? was subcatOut
         // The setting exists; validate it
         subcatOut[setting.name] =
           typeof subcatOut[setting.name] === "object"
@@ -341,6 +343,7 @@ const checkSavedData = (data: SettingsCollection) => {
     }
   }
 
+  //console.debug('after',retval);
   return retval;
 };
 
@@ -431,26 +434,28 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
     const savedSettingsStr = localStorage.getItem("savedSettings");
 
     if (savedSettingsStr) {
-      console.debug(JSON.parse(savedSettingsStr) as SavedSettings);
-
       // There are saved settings; load them in
+      const savedSettings = JSON.parse(savedSettingsStr) as SavedSettings;
+      //console.debug(savedSettings);
       const {
-        name,
-        description,
-        settings,
+        name: nameIn,
+        description: descriptionIn,
+        settings: settingsIn,
         commonSettings: commonSettingsIn,
-      } = JSON.parse(savedSettingsStr) as SavedSettings;
-      setPlayerName(name);
-      setDescription(description);
-      setSettings(checkSavedData(settings));
+      } = savedSettings;
+      console.debug(commonSettingsIn);
+      setPlayerName(nameIn);
+      setDescription(descriptionIn);
+      setSettings(checkSavedData(settingsIn));
       if (commonSettingsIn) {
-        console.debug("Common settings found; deserializing");
+        console.debug("Common settings found; deserializing", commonSettingsIn);
         const categories = CategoryList.map((i) => i.category);
         for (const category of categories)
           if (category)
             commonSettingsIn[category] = Object.assign({}, EmptyCommonSetings);
         for (const category of Object.keys(commonSettingsIn))
           if (!categories.includes(category)) delete commonSettingsIn[category];
+        //console.debug(commonSettingsIn);
         setCommonSettings(deserializeCommonSettings(commonSettingsIn));
       } else {
         console.debug("No common settings, generating empty set");
@@ -482,6 +487,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
 
   // Save settings
   useEffect(() => {
+    console.debug('Saving')
     const savedSettings: SavedSettings = {
       name: playerName,
       description,
