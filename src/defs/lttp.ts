@@ -1186,9 +1186,9 @@ const LttPItems: ArchipelagoItem[] = [
   { name: "Rupees (50)", max: 0 },
   { name: "Rupees (100)", max: 0 },
   { name: "Rupees (300)", max: 0 },
-  { name: "Green Clock" },
-  { name: "Blue Clock" },
-  { name: "Red Clock" },
+  { name: "Green Clock", max: 0 },
+  { name: "Blue Clock", max: 0 },
+  { name: "Red Clock", max: 0 },
   { name: "Rupoor", max: 0 },
   {
     name: "Arrow Upgrade (+5)",
@@ -1212,8 +1212,9 @@ const LttPItems: ArchipelagoItem[] = [
   {
     name: "Small Key (Universal)",
     dependsOn: { smallkey_shuffle: ["universal"] },
+    max: 10
   },
-  { name: "Nothing", dependsOn: { goal: ["ice_rod_hunt"] } },
+  { name: "Nothing", dependsOn: { goal: ["ice_rod_hunt"] }, max: 0 },
   { name: "Bee", dependsOn: { beemizer: [1, 2, 3, 4] }, max: 0 },
   { name: "Bee Trap", dependsOn: { beemizer: [1, 2, 3, 4] }, max: 0 },
   //{name: ''},
