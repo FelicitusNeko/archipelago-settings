@@ -351,7 +351,7 @@ const checkSavedData = (data: SettingsCollection) => {
  * Check a setting or item against its dependencies.
  * @param {SettingsSubcollection} subsettings The subcollection of settings to check.
  * @param {ArchipelagoDependency} dep The dependency list to check against.
- * @returns {boolean} Whether all dependencies are met.
+ * @returns {boolean} True if all dependencies are met; otherwise false.
  */
 const checkDependency = (
   subsettings: SettingsSubcollection,
@@ -1107,7 +1107,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
                 {i.category && i.items ? (
                   <ItemSelector
                     category={i.category}
-                    items={i.items}
+                    items={i.items.filter(ii => checkDependency(settings[i.category!] as SettingsSubcollection, ii.dependsOn))}
                     commonSettings={commonSettings[i.category]}
                     onChange={onCommonSettingChange}
                   />
