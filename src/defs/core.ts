@@ -45,6 +45,8 @@ interface CommonItemSettingChangeEventOptions {
   qty?: number;
   /** Whether a free hint about this item should be provided from the start. Ignored if this is a starting item set to max quantity. */
   startingHint?: boolean;
+  /** Resets all lists in this category. If {@link destination} is set, reset only that list. */
+  reset?: boolean;
 }
 /** 
  * Refers to an event where the item selector is reporting a change back to the base app.

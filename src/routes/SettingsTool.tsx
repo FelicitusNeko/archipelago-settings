@@ -237,7 +237,8 @@ const checkSavedData = (data: SettingsCollection) => {
     //console.log(subcatOut);
 
     for (const setting of catSettings) {
-      if (subcatIn[setting.name]) { // NOTE: is this fixed? was subcatOut
+      if (subcatIn[setting.name]) {
+        // NOTE: is this fixed? was subcatOut
         // The setting exists; validate it
         subcatOut[setting.name] =
           typeof subcatOut[setting.name] === "object"
@@ -446,7 +447,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
       setPlayerName(nameIn);
       setDescription(descriptionIn);
       setSettings(checkSavedData(settingsIn));
-      
+
       //console.debug(commonSettingsIn);
       if (commonSettingsIn) {
         console.debug("Common settings found; deserializing", commonSettingsIn);
@@ -458,7 +459,6 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
           if (!categories.includes(category)) delete commonSettingsIn[category];
         //console.debug(commonSettingsIn);
         setCommonSettings(deserializeCommonSettings(commonSettingsIn));
-
       } else {
         console.debug("No common settings, generating empty set");
         const newEmptyCommons: Record<string, MinifiedCommonSettings> = {};
@@ -474,7 +474,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
       let defaultSettings: SettingsCollection = {};
       const newEmptyCommons: Record<string, MinifiedCommonSettings> = {};
 
-      for (const {category, settings} of CategoryList) {
+      for (const { category, settings } of CategoryList) {
         const subcollection: SettingsSubcollection = {};
         settings.forEach((i) => (subcollection[i.name] = i.default));
         if (!category)
@@ -491,7 +491,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
 
   // Save settings
   useEffect(() => {
-    console.debug('Saving')
+    console.debug("Saving");
     const savedSettings: SavedSettings = {
       name: playerName,
       description,
@@ -557,26 +557,13 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
    * @param options Any options pertaining to the event.
    * @since 0.10.0
    */
-  const onCommonSettingChange: CommonItemSettingChangeEvent = (
+  const onCommonItemSettingChange: CommonItemSettingChangeEvent = (
     itemName,
     category,
     options
   ) => {
-    console.debug("onCommonSettingChange", itemName, category, options);
-    const { destination, index, qty, startingHint } = options;
-
-    const { items } =
-      CategoryList[CategoryList.map((i) => i.category).indexOf(category)];
-    if (!items) {
-      console.warn(`Item list not found for category ${category}`);
-      return;
-    }
-
-    const item = items[items.map((i) => i.name).indexOf(itemName)];
-    if (!item) {
-      console.warn(`Item ${itemName} not found in category ${category}`);
-      return;
-    }
+    //console.debug("onCommonItemSettingChange", itemName, category, options);
+    const { destination, index, qty, startingHint, reset } = options;
 
     // doing this to trick React into recognising this is a new common settings object
     const newCommonSettings = Object.assign({}, commonSettings);
@@ -589,142 +576,181 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
       "unassigned",
     ];
 
-    if (destination) {
-      console.debug("Destination detected");
-      if (!validDests.includes(destination)) {
+    if (reset) {
+      const validResetDests = [...validDests, "start_hints"];
+      if (destination && !validResetDests.includes(destination)) {
         console.warn(`Invalid destination ${destination}`);
         return;
       }
 
-      if (catCommons.local_items)
-        catCommons.local_items = catCommons.local_items.filter(
-          (i) => i !== item
-        );
-      if (catCommons.non_local_items)
-        catCommons.non_local_items = catCommons.non_local_items.filter(
-          (i) => i !== item
-        );
-      if (catCommons.start_inventory)
-        catCommons.start_inventory = catCommons.start_inventory.filter(
-          (i) => i.item !== item
-        );
+      if (!destination || destination === "local_items")
+        catCommons.local_items = [];
+      if (!destination || destination === "non_local_items")
+        catCommons.non_local_items = [];
+      if (!destination || destination === "start_inventory")
+        catCommons.start_inventory = [];
+      if (!destination || destination === "start_hints")
+        catCommons.start_hints = [];
+        
+    } else {
+      const { items } =
+        CategoryList[CategoryList.map((i) => i.category).indexOf(category)];
+      if (!items) {
+        console.warn(`Item list not found for category ${category}`);
+        return;
+      }
 
-      switch (destination) {
-        case "local_items":
-          console.debug("Local item");
-          if (!catCommons.local_items) catCommons.local_items = [item];
-          else {
-            catCommons.local_items = catCommons.local_items.slice(0);
-            if (index === undefined || index >= catCommons.local_items.length)
-              catCommons.local_items.push(item);
-            else catCommons.local_items.splice(index, 0, item);
-          }
-          break;
+      const item = items[items.map((i) => i.name).indexOf(itemName)];
+      if (!item) {
+        console.warn(`Item ${itemName} not found in category ${category}`);
+        return;
+      }
 
-        case "non_local_items":
-          console.debug("Nonlocal item");
-          if (!catCommons.non_local_items) catCommons.non_local_items = [item];
-          else {
-            catCommons.non_local_items = catCommons.non_local_items.slice(0);
-            if (
-              index === undefined ||
-              index >= catCommons.non_local_items.length
-            )
-              catCommons.non_local_items.push(item);
-            else catCommons.non_local_items.splice(index, 0, item);
-          }
-          break;
+      if (destination) {
+        //console.debug("Destination detected");
+        if (!validDests.includes(destination)) {
+          console.warn(`Invalid destination ${destination}`);
+          return;
+        }
 
-        case "start_inventory":
-          {
-            console.debug("Start inv");
-            const itemQty = { item, qty: qty ?? 1 };
-            if (item.max === 0) {
-              console.warn(
-                `Item ${item} has max of 0 and thus cannot be added to start inventory (there may be a similar item; look for that one)`
-              );
-              return;
-            }
-            if (!catCommons.start_inventory)
-              catCommons.start_inventory = [itemQty];
+        if (catCommons.local_items)
+          catCommons.local_items = catCommons.local_items.filter(
+            (i) => i !== item
+          );
+        if (catCommons.non_local_items)
+          catCommons.non_local_items = catCommons.non_local_items.filter(
+            (i) => i !== item
+          );
+        if (catCommons.start_inventory)
+          catCommons.start_inventory = catCommons.start_inventory.filter(
+            (i) => i.item !== item
+          );
+
+        switch (destination) {
+          case "local_items":
+            console.debug("Local item");
+            if (!catCommons.local_items) catCommons.local_items = [item];
             else {
-              catCommons.start_inventory = catCommons.start_inventory.slice(0);
+              catCommons.local_items = catCommons.local_items.slice(0);
+              if (index === undefined || index >= catCommons.local_items.length)
+                catCommons.local_items.push(item);
+              else catCommons.local_items.splice(index, 0, item);
+            }
+            break;
+
+          case "non_local_items":
+            console.debug("Nonlocal item");
+            if (!catCommons.non_local_items)
+              catCommons.non_local_items = [item];
+            else {
+              catCommons.non_local_items = catCommons.non_local_items.slice(0);
               if (
                 index === undefined ||
-                index >= catCommons.start_inventory.length
+                index >= catCommons.non_local_items.length
               )
-                catCommons.start_inventory.push(itemQty);
-              else catCommons.start_inventory.splice(index, 0, itemQty);
+                catCommons.non_local_items.push(item);
+              else catCommons.non_local_items.splice(index, 0, item);
             }
-            if (catCommons.start_hints)
-              catCommons.start_hints = catCommons.start_hints.filter(
-                (i) => i !== item
-              );
-          }
-          break;
-      }
-    } else if (qty) {
-      console.debug("Quantity detected");
-      if (qty < 1) {
-        console.warn(`Quantity cannot go lower than 0`);
-        return;
-      }
-      if (qty > (item.max ?? 1)) {
-        console.warn(
-          `Quantity for ${item.name} cannot go higher than ${item.max ?? 1}`
-        );
-        return;
-      }
-      if (!catCommons.start_inventory) {
-        console.warn(`No starting inventory yet defined for ${category}`);
-        return;
-      }
-      const index = catCommons.start_inventory.map((i) => i.item).indexOf(item);
-      if (index < 0) {
-        console.warn(`${item.name} not in starting inventory`);
-        return;
-      }
-      catCommons.start_inventory = catCommons.start_inventory.slice(0);
-      catCommons.start_inventory[index].qty = qty;
-    }
+            break;
 
-    if (startingHint !== undefined && destination !== "start_inventory") {
-      console.debug("Starthint detected");
-      if (catCommons.start_inventory) {
+          case "start_inventory":
+            {
+              console.debug("Start inv");
+              const itemQty = { item, qty: qty ?? 1 };
+              if (item.max === 0) {
+                console.warn(
+                  `Item ${item} has max of 0 and thus cannot be added to start inventory (there may be a similar item; look for that one)`
+                );
+                return;
+              }
+              if (!catCommons.start_inventory)
+                catCommons.start_inventory = [itemQty];
+              else {
+                catCommons.start_inventory =
+                  catCommons.start_inventory.slice(0);
+                if (
+                  index === undefined ||
+                  index >= catCommons.start_inventory.length
+                )
+                  catCommons.start_inventory.push(itemQty);
+                else catCommons.start_inventory.splice(index, 0, itemQty);
+              }
+              if (catCommons.start_hints)
+                catCommons.start_hints = catCommons.start_hints.filter(
+                  (i) => i !== item
+                );
+            }
+            break;
+        }
+      } else if (qty) {
+        //console.debug("Quantity detected");
+        if (qty < 1) {
+          console.warn(`Quantity cannot go lower than 0`);
+          return;
+        }
+        if (qty > (item.max ?? 1)) {
+          console.warn(
+            `Quantity for ${item.name} cannot go higher than ${item.max ?? 1}`
+          );
+          return;
+        }
+        if (!catCommons.start_inventory) {
+          console.warn(`No starting inventory yet defined for ${category}`);
+          return;
+        }
         const index = catCommons.start_inventory
           .map((i) => i.item)
           .indexOf(item);
-        if (
-          index >= 0 &&
-          catCommons.start_inventory[index].qty === (item.max ?? 1)
-        ) {
-          console.warn(
-            `All of item ${item.name} in starting inventory; no hints available`
-          );
+        if (index < 0) {
+          console.warn(`${item.name} not in starting inventory`);
           return;
         }
+        catCommons.start_inventory = catCommons.start_inventory.slice(0);
+        catCommons.start_inventory[index].qty = qty;
       }
 
-      if (startingHint) {
-        if (!catCommons.start_hints) catCommons.start_hints = [item];
-        else {
-          catCommons.start_hints = catCommons.start_hints.slice(0);
-          if (index === undefined || index >= catCommons.start_hints.length)
-            catCommons.start_hints.push(item);
-          else catCommons.start_hints.splice(index, 0, item);
+      if (
+        !reset &&
+        startingHint !== undefined &&
+        destination !== "start_inventory"
+      ) {
+        console.debug("Starthint detected");
+        if (catCommons.start_inventory) {
+          const index = catCommons.start_inventory
+            .map((i) => i.item)
+            .indexOf(item);
+          if (
+            index >= 0 &&
+            catCommons.start_inventory[index].qty === (item.max ?? 1)
+          ) {
+            console.warn(
+              `All of item ${item.name} in starting inventory; no hints available`
+            );
+            return;
+          }
         }
-      } else {
-        if (!catCommons.start_hints) {
-          console.warn(`No starting hints yet defined for ${category}`);
-          return;
-        } else
-          catCommons.start_hints = catCommons.start_hints.filter(
-            (i) => i !== item
-          );
+
+        if (startingHint) {
+          if (!catCommons.start_hints) catCommons.start_hints = [item];
+          else {
+            catCommons.start_hints = catCommons.start_hints.slice(0);
+            if (index === undefined || index >= catCommons.start_hints.length)
+              catCommons.start_hints.push(item);
+            else catCommons.start_hints.splice(index, 0, item);
+          }
+        } else {
+          if (!catCommons.start_hints) {
+            console.warn(`No starting hints yet defined for ${category}`);
+            return;
+          } else
+            catCommons.start_hints = catCommons.start_hints.filter(
+              (i) => i !== item
+            );
+        }
       }
     }
 
-    console.debug("Updating common settings");
+    //console.debug("Updating common settings");
     newCommonSettings[category] = catCommons;
     setCommonSettings(newCommonSettings);
   };
@@ -1107,9 +1133,14 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
                 {i.category && i.items ? (
                   <ItemSelector
                     category={i.category}
-                    items={i.items.filter(ii => checkDependency(settings[i.category!] as SettingsSubcollection, ii.dependsOn))}
+                    items={i.items.filter((ii) =>
+                      checkDependency(
+                        settings[i.category!] as SettingsSubcollection,
+                        ii.dependsOn
+                      )
+                    )}
                     commonSettings={commonSettings[i.category]}
-                    onChange={onCommonSettingChange}
+                    onChange={onCommonItemSettingChange}
                   />
                 ) : null}
               </TabPanel>

@@ -3,6 +3,23 @@ import React from "react";
 const Changelog: React.FC = () => {
   return (
     <>
+      <h4>0.10.0</h4>
+      <ul>
+        <li>
+          Add item selection support
+          <ul>
+            <li>
+              Items can now be designated as local, non-local, or starting
+              inventory, as well as getting a starting hint for them
+            </li>
+            <li>
+              Not yet supported for Factorio or Secret of Evermore due to lack
+              of solid list of items
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <hr />
       <h4>0.9.4</h4>
       <ul>
         {/* <li>
@@ -13,7 +30,10 @@ const Changelog: React.FC = () => {
           Update spec to 0.2.0
           <ul>
             <li>Added Super Metroid, Secret of Evermore</li>
-            <li>DeathLink added to LttP, OoT, SM, TS, Factorio: if one DeathLinked player dies, they all do</li>
+            <li>
+              DeathLink added to LttP, OoT, SM, TS, Factorio: if one DeathLinked
+              player dies, they all do
+            </li>
             <li>LttP: More granular settings for Beemizer</li>
             <li>OoT: Entrance shuffle, owl drops</li>
           </ul>
