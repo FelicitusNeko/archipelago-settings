@@ -254,9 +254,25 @@ const ItemSelector: React.FC<ItemSelectorProps> = ({
     return setMoveItem(undefined);
   };
 
+  const onDefault = () => {
+    onChange("", category, { reset: true });
+  };
+
   return (
     <div className="setting">
       <b>Item selector</b>
+      {(!local_items || local_items.length === 0) &&
+      (!non_local_items || non_local_items.length === 0) &&
+      (!start_inventory || start_inventory.length === 0) &&
+      (!start_hints || start_hints.length === 0) ? null : (
+        <button
+          className="revert emojibutton"
+          title="Revert to default"
+          onClick={onDefault}
+        >
+          🔄
+        </button>
+      )}
       <br />
       Select which items are guaranteed to be in your world (local) or not
       (non-local), and items you start with. Check the box if you want to get a
