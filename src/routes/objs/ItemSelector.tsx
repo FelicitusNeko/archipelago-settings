@@ -130,7 +130,7 @@ const ItemDropbox: React.FC<ItemDropboxProps> = ({
                       hint={start_hints ? start_hints.includes(i) : false}
                       onChange={onChange}
                     >
-                      {i.readableName ?? i.name}
+                      {`${i.readableName ?? i.name}${i.max === 0 ? ' ⛔' : ''}`}
                     </ItemNode>
                   ))
                 : itemsAndQtys!.map(({ item, qty }, x) => (
@@ -144,7 +144,7 @@ const ItemDropbox: React.FC<ItemDropboxProps> = ({
                       hint={start_hints ? start_hints.includes(item) : false}
                       onChange={onChange}
                     >
-                      {item.readableName ?? item.name}
+                      {`${item.readableName ?? item.name}${item.max === 0 ? ' ⛔' : ''}`}
                     </ItemNode>
                   ))}
               {provided.placeholder}
@@ -246,7 +246,9 @@ const ItemSelector: React.FC<ItemSelectorProps> = ({
       <br />
       Select which items are guaranteed to be in your world (local) or not
       (non-local), and items you start with. Check the box if you want to get a
-      hint on where that item is from the start.
+      hint on where that item is from the start. If all of a given item is in
+      the starting inventory, hints are disabled. Some items cannot be added to
+      start inventory (⛔).
       <br />
       <div className="itemselector">
         <DragDropContext onDragEnd={onDragEnd}>
