@@ -591,7 +591,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
         catCommons.start_inventory = [];
       if (!destination || destination === "start_hints")
         catCommons.start_hints = [];
-        
+
     } else {
       const { items } =
         CategoryList[CategoryList.map((i) => i.category).indexOf(category)];
@@ -1159,7 +1159,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
         author does not promise any support and holds no liability from your use
         of the tool. Author: KewlioMZX{" "}
         <a href="https://twitter.com/squaresym/">(Twitter)</a>{" "}
-        <a href="https://twitter.com/FelicitusNeko/archipelago-settings/">
+        <a href="https://github.com/FelicitusNeko/archipelago-settings/">
           (GitHub)
         </a>
       </footer>
