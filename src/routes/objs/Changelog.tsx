@@ -3,6 +3,12 @@ import React from "react";
 const Changelog: React.FC = () => {
   return (
     <>
+      <h4>0.10.1</h4>
+      <ul>
+        <li>Factorio: fixed misspelled "spanw" in "silo" option</li>
+        <li>LttP: tweaked maximums for some items (Rupees, arrows, bombs)</li>
+      </ul>
+      <hr />
       <h4>0.10.0</h4>
       <ul>
         <li>
@@ -22,10 +28,6 @@ const Changelog: React.FC = () => {
       <hr />
       <h4>0.9.4</h4>
       <ul>
-        {/* <li>
-          Added item settings for every game except Factorio (as there is not a
-          definitive list of items for that game)
-        </li> */}
         <li>
           Update spec to 0.2.0
           <ul>
