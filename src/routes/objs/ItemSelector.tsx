@@ -4,6 +4,7 @@ import {
   DragDropContext,
   Droppable,
   Draggable,
+  DragStart,
   DropResult,
   ResponderProvided,
 } from "react-beautiful-dnd";
@@ -97,6 +98,7 @@ interface ItemDropboxProps {
   items?: ArchipelagoItem[];
   itemsAndQtys?: ArchipelagoItemAndQty[];
   start_hints?: ArchipelagoItem[];
+  dropDisabled?: boolean;
   onChange: CommonItemSettingChangeEvent;
 }
 const ItemDropbox: React.FC<ItemDropboxProps> = ({
@@ -106,13 +108,14 @@ const ItemDropbox: React.FC<ItemDropboxProps> = ({
   items,
   itemsAndQtys,
   start_hints,
+  dropDisabled,
   onChange,
 }) => {
   if ((!items && !itemsAndQtys) || (items && itemsAndQtys)) return null;
   return (
     <div className="itemdropbox">
       <h4>{title}</h4>
-      <Droppable droppableId={id}>
+      <Droppable droppableId={id} isDropDisabled={dropDisabled}>
         {(provided) => {
           return (
             <div
@@ -130,7 +133,7 @@ const ItemDropbox: React.FC<ItemDropboxProps> = ({
                       hint={start_hints ? start_hints.includes(i) : false}
                       onChange={onChange}
                     >
-                      {`${i.readableName ?? i.name}${i.max === 0 ? ' ⛔' : ''}`}
+                      {`${i.readableName ?? i.name}${i.max === 0 ? " ⛔" : ""}`}
                     </ItemNode>
                   ))
                 : itemsAndQtys!.map(({ item, qty }, x) => (
@@ -144,7 +147,9 @@ const ItemDropbox: React.FC<ItemDropboxProps> = ({
                       hint={start_hints ? start_hints.includes(item) : false}
                       onChange={onChange}
                     >
-                      {`${item.readableName ?? item.name}${item.max === 0 ? ' ⛔' : ''}`}
+                      {`${item.readableName ?? item.name}${
+                        item.max === 0 ? " ⛔" : ""
+                      }`}
                     </ItemNode>
                   ))}
               {provided.placeholder}
@@ -169,6 +174,8 @@ const ItemSelector: React.FC<ItemSelectorProps> = ({
   onChange,
 }) => {
   const [unassigned, setUnassigned] = useState(items);
+  const [moveItem, setMoveItem] = useState<ArchipelagoItem | undefined>();
+
   const { local_items, non_local_items, start_inventory, start_hints } =
     commonSettings;
 
@@ -195,49 +202,56 @@ const ItemSelector: React.FC<ItemSelectorProps> = ({
 
   //console.debug(category, items, commonSettings);
 
-  const onDragEnd = (result: DropResult, provided: ResponderProvided): void => {
-    console.debug(result, provided);
-
-    let moveItem: ArchipelagoItem;
-    //let moveQty = -1;
-
-    if (!result.destination) return;
-    if (result.source.droppableId === result.destination.droppableId) {
-      if (
-        result.source.index === result.destination.index ||
-        result.source.droppableId === "unassigned"
-      )
-        return;
-    }
-
-    switch (result.source.droppableId) {
+  const onDragStart = (
+    { source }: DragStart,
+    provided: ResponderProvided
+  ): void => {
+    switch (source.droppableId) {
       case "unassigned":
-        moveItem = unassigned[result.source.index];
+        setMoveItem(unassigned[source.index]);
         break;
       case "local_items":
         if (!local_items) return;
-        moveItem = local_items[result.source.index];
+        setMoveItem(local_items[source.index]);
         break;
       case "non_local_items":
         if (!non_local_items) return;
-        moveItem = non_local_items[result.source.index];
+        setMoveItem(non_local_items[source.index]);
         break;
       case "start_inventory":
         if (!start_inventory) return;
-        ({ item: moveItem /*, qty: moveQty*/ } =
-          start_inventory[result.source.index]);
+        setMoveItem(start_inventory[source.index].item);
         break;
       default:
         return;
     }
+  };
 
-    if (result.source.droppableId === result.destination.droppableId)
-      onChange(moveItem.name, category, { index: result.destination.index });
+  const onDragEnd = (result: DropResult, provided: ResponderProvided): void => {
+    const { source, destination } = result;
+    console.debug(result, provided);
+
+    if (!moveItem) return;
+
+    if (!destination) return setMoveItem(undefined);
+
+    if (source.droppableId === destination.droppableId) {
+      if (
+        source.index === destination.index ||
+        source.droppableId === "unassigned"
+      )
+        return setMoveItem(undefined);
+    }
+
+    if (source.droppableId === destination.droppableId)
+      onChange(moveItem.name, category, { index: destination.index });
     else
       onChange(moveItem.name, category, {
-        destination: result.destination.droppableId,
-        index: result.destination.index,
+        destination: destination.droppableId,
+        index: destination.index,
       });
+
+    return setMoveItem(undefined);
   };
 
   return (
@@ -251,7 +265,7 @@ const ItemSelector: React.FC<ItemSelectorProps> = ({
       start inventory (⛔).
       <br />
       <div className="itemselector">
-        <DragDropContext onDragEnd={onDragEnd}>
+        <DragDropContext onDragStart={onDragStart} onDragEnd={onDragEnd}>
           <ItemDropbox
             id="unassigned"
             category={category}
@@ -282,6 +296,7 @@ const ItemSelector: React.FC<ItemSelectorProps> = ({
             title="Starting inventory"
             itemsAndQtys={start_inventory ?? []}
             start_hints={start_hints}
+            dropDisabled={moveItem && moveItem.max === 0}
             onChange={onChange}
           />
         </DragDropContext>
