@@ -31,6 +31,7 @@ const PartialCategoryList: ArchipelagoCategory[] = [
   TimespinnerCategory, // 0.1.9
   SMCategory, // 0.2.0
   SoECategory, // 0.2.0
+  //FF1Category, // 0.2.1?
   //OriBFCategory, // not currently implemented
 ];
 
