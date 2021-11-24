@@ -27,22 +27,22 @@ LttPSettings.push(
     readableName: "Goal",
     description: "Define your end goal for the game.",
     values: {
-      ganon: "Ganon – Defeat Ganon and GT Agahnim",
-      crystals: "Fast Ganon – Defeat Ganon",
-      bosses: "Oops! All Dungeons",
+      ganon: "Ganon – Find the crystals, defeat Agahnim in Ganon's Tower, then defeat Ganon",
+      crystals: "Fast Ganon – Find the crystals, then defeat Ganon",
+      bosses: "Oops! All Dungeons – Clear every dungeon, then defeat Ganon",
       pedestal:
-        "Pedestal – Get the three Medallions and pull the Master Sword from its pedestal",
+        "Pedestal – Get the three Medallions, then pull the Master Sword from its pedestal",
       ganon_pedestal:
         "Pedestal Ganon – Get the Medallions, check the Master Sword pedestal, then defeat Ganon",
-      triforce_hunt: "Triforce Hunt – Find the Triforce Pieces",
+      triforce_hunt: "Triforce Hunt – Find the Triforce Pieces, then find Murahdahla",
       local_triforce_hunt:
-        "Local Triforce Hunt – Find the Triforce Pieces in your own world",
+        "Local Triforce Hunt – Find the Triforce Pieces in your own world, then find Murahdahla",
       ganon_triforce_hunt:
-        "Ganon's Triforce Hunt – Find the Triforce Pieces and defeat Ganon",
+        "Ganon's Triforce Hunt – Find the Triforce Pieces, then defeat Ganon",
       local_ganon_triforce_hunt:
-        "Ganon's Local Triforce Hunt – Find the Triforce Pieces in your own world and defeat Ganon",
+        "Ganon's Local Triforce Hunt – Find the Triforce Pieces in your own world, then defeat Ganon",
       ice_rod_hunt:
-        "Ice Rod Hunt – Start with everything and find the single hidden item in the world",
+        "Ice Rod Hunt – Start with everything but the Ice Rod; find it, defeat Trinexx at Turtle Rock, then find Murahdahla",
     },
     default: "ganon",
 
@@ -1180,11 +1180,11 @@ const LttPItems: ArchipelagoItem[] = [
   { name: "Single Bomb", max: 50 },
   { name: "Bombs (3)", max: 0 },
   { name: "Bombs (10)", max: 0 },
-  { name: "Rupee (1)", max: 9999 },
+  { name: "Rupee (1)", max: 99 },
   { name: "Rupees (5)", max: 0 },
   { name: "Rupees (20)", max: 0 },
   { name: "Rupees (50)", max: 0 },
-  { name: "Rupees (100)", max: 0 },
+  { name: "Rupees (100)", max: 99 },
   { name: "Rupees (300)", max: 0 },
   { name: "Green Clock", max: 0 },
   { name: "Blue Clock", max: 0 },
@@ -1215,8 +1215,8 @@ const LttPItems: ArchipelagoItem[] = [
     max: 10
   },
   { name: "Nothing", dependsOn: { goal: ["ice_rod_hunt"] }, max: 0 },
-  { name: "Bee", dependsOn: { beemizer: [1, 2, 3, 4] }, max: 0 },
-  { name: "Bee Trap", dependsOn: { beemizer: [1, 2, 3, 4] }, max: 0 },
+  { name: "Bee", max: 0 }, // TODO: fix deps
+  { name: "Bee Trap", max: 0 },
   //{name: ''},
 ];
 
