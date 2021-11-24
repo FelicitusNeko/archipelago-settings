@@ -1050,7 +1050,10 @@ const LttPItems: ArchipelagoItem[] = [
   {
     name: "Progressive Bow",
     dependsOn: { progressive: ["on", "grouped_random"] },
-    max: 2,
+  },
+  {
+    name: "Progressive Bow (Alt)",
+    dependsOn: { progressive: ["on", "grouped_random"] },
   },
   { name: "Bow", dependsOn: { progressive: ["off", "grouped_random"] } },
   {
@@ -1167,7 +1170,7 @@ const LttPItems: ArchipelagoItem[] = [
   { name: "Magic Upgrade (1/2)", max: 2 },
   {
     name: "Magic Upgrade (1/4)",
-    dependsOn: { progressive: ["off", "grouped_random"], item_pool: ["easy"] },
+    //dependsOn: { progressive: ["off", "grouped_random"], item_pool: ["easy"] },
   },
   {
     name: "Sanctuary Heart Container",
@@ -1192,21 +1195,21 @@ const LttPItems: ArchipelagoItem[] = [
   { name: "Rupoor", max: 0 },
   {
     name: "Arrow Upgrade (+5)",
-    dependsOn: { shop_shuffle: ["u", "ufp", "ufpw", "ufP", "ufPw"] },
+    //dependsOn: { shop_shuffle: ["u", "ufp", "ufpw", "ufP", "ufPw"] },
     max: 6,
   },
   {
     name: "Arrow Upgrade (+10)",
-    dependsOn: { shop_shuffle: ["u", "ufp", "ufpw", "ufP", "ufPw"] },
+    //dependsOn: { shop_shuffle: ["u", "ufp", "ufpw", "ufP", "ufPw"] },
   },
   {
     name: "Bomb Upgrade (+5)",
-    dependsOn: { shop_shuffle: ["u", "ufp", "ufpw", "ufP", "ufPw"] },
+    //dependsOn: { shop_shuffle: ["u", "ufp", "ufpw", "ufP", "ufPw"] },
     max: 6,
   },
   {
     name: "Bomb Upgrade (+10)",
-    dependsOn: { shop_shuffle: ["u", "ufp", "ufpw", "ufP", "ufPw"] },
+    //dependsOn: { shop_shuffle: ["u", "ufp", "ufpw", "ufP", "ufPw"] },
   },
   { name: "Triforce Piece", max: 0 },
   {

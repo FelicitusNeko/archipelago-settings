@@ -7,6 +7,8 @@ const Changelog: React.FC = () => {
       <ul>
         <li>Factorio: fixed misspelled "spanw" in "silo" option</li>
         <li>LttP: tweaked maximums for some items (Rupees, arrows, bombs)</li>
+        <li>LttP: remove deps for ¼ Magic and capacity upgrades</li>
+        <li>LttP: add Progressive Bow (Alt) item</li>
       </ul>
       <hr />
       <h4>0.10.0</h4>
