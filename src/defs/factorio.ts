@@ -80,7 +80,7 @@ FactorioSettings.push(
     values: {
       vanilla: "Vanilla",
       randomize_recipe: "Randomize recipe",
-      spanw: "Auto-spawn",
+      spawn: "Auto-spawn",
     },
     default: "vanilla",
   })
