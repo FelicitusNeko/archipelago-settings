@@ -221,10 +221,13 @@ const checkSavedData = (data: SettingsCollection) => {
   const retval: SettingsCollection = {};
 
   for (const { category, settings: catSettings } of CategoryList) {
-    if (category)
+    if (category) {
+      // If the category doesn't exist, create it
+      if (!data[category]) data[category] = {};
       retval[category] = data[category]
         ? Object.assign({}, data[category])
         : {};
+    }
 
     /** The collection of existing settings for this category. */
     const subcatIn = (
@@ -237,8 +240,9 @@ const checkSavedData = (data: SettingsCollection) => {
     //console.log(subcatOut);
 
     for (const setting of catSettings) {
+      console.debug(subcatIn, subcatOut);
       if (subcatIn[setting.name]) {
-        // NOTE: is this fixed? was subcatOut
+        // NOTE: is this fixed? was subcatOut (I'm hoping this is fixed now)
         // The setting exists; validate it
         subcatOut[setting.name] =
           typeof subcatOut[setting.name] === "object"
@@ -591,7 +595,6 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
         catCommons.start_inventory = [];
       if (!destination || destination === "start_hints")
         catCommons.start_hints = [];
-
     } else {
       const { items } =
         CategoryList[CategoryList.map((i) => i.category).indexOf(category)];
