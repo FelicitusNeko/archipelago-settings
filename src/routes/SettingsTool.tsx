@@ -215,7 +215,7 @@ const convertBoolean = (
  * @returns The revised collection of settings.
  */
 const checkSavedData = (data: SettingsCollection) => {
-  console.debug("Reticulating splines"); // lul
+  console.info("Reticulating splines"); // lul
   //console.debug('before',data);
   /** The overall collection of revised settings. */
   const retval: SettingsCollection = {};
@@ -240,7 +240,6 @@ const checkSavedData = (data: SettingsCollection) => {
     //console.log(subcatOut);
 
     for (const setting of catSettings) {
-      console.debug(subcatIn, subcatOut);
       if (subcatIn[setting.name]) {
         // NOTE: is this fixed? was subcatOut (I'm hoping this is fixed now)
         // The setting exists; validate it
@@ -454,7 +453,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
 
       //console.debug(commonSettingsIn);
       if (commonSettingsIn) {
-        console.debug("Common settings found; deserializing", commonSettingsIn);
+        //console.debug("Common settings found; deserializing", commonSettingsIn);
         const categories = CategoryList.map((i) => i.category);
         for (const category of categories)
           if (category && !commonSettingsIn[category])
@@ -464,7 +463,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
         //console.debug(commonSettingsIn);
         setCommonSettings(deserializeCommonSettings(commonSettingsIn));
       } else {
-        console.debug("No common settings, generating empty set");
+        //console.debug("No common settings, generating empty set");
         const newEmptyCommons: Record<string, MinifiedCommonSettings> = {};
         for (const { category } of CategoryList)
           if (category)
@@ -495,7 +494,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
 
   // Save settings
   useEffect(() => {
-    console.debug("Saving");
+    //console.debug("Saving");
     const savedSettings: SavedSettings = {
       name: playerName,
       description,
@@ -631,7 +630,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
 
         switch (destination) {
           case "local_items":
-            console.debug("Local item");
+            //console.debug("Local item");
             if (!catCommons.local_items) catCommons.local_items = [item];
             else {
               catCommons.local_items = catCommons.local_items.slice(0);
@@ -642,7 +641,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
             break;
 
           case "non_local_items":
-            console.debug("Nonlocal item");
+            //console.debug("Nonlocal item");
             if (!catCommons.non_local_items)
               catCommons.non_local_items = [item];
             else {
@@ -658,7 +657,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
 
           case "start_inventory":
             {
-              console.debug("Start inv");
+              //console.debug("Start inv");
               const itemQty = { item, qty: qty ?? 1 };
               if (item.max === 0) {
                 console.warn(
@@ -717,7 +716,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
         startingHint !== undefined &&
         destination !== "start_inventory"
       ) {
-        console.debug("Starthint detected");
+        //console.debug("Starthint detected");
         if (catCommons.start_inventory) {
           const index = catCommons.start_inventory
             .map((i) => i.item)
