@@ -16,6 +16,7 @@ import { SlayTheSpireCategory } from "../defs/slaythespire";
 import { MinecraftCategory } from "../defs/minecraft";
 import { SMCategory } from "./sm";
 import { SoECategory } from "./soe";
+import { FF1Category } from "./ff1";
 
 /** The list of categories (e.g. games) currently available to the settings tool, not including global settings. */
 const PartialCategoryList: ArchipelagoCategory[] = [
@@ -31,7 +32,7 @@ const PartialCategoryList: ArchipelagoCategory[] = [
   TimespinnerCategory, // 0.1.9
   SMCategory, // 0.2.0
   SoECategory, // 0.2.0
-  //FF1Category, // 0.2.1?
+  FF1Category, // 0.2.1
   //OriBFCategory, // not currently implemented
 ];
 

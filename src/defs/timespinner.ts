@@ -78,6 +78,26 @@ TimespinnerSettings.push(
     default: false,
   })
 );
+TimespinnerSettings.push(
+  Object.seal<ArchipelagoBooleanSetting>({
+    type: SettingType.Boolean,
+    name: "GyreArchives",
+    readableName: "Gyre Archives",
+    description:
+      "Gyre Archives locations are in logic. New warps are gated by Merchant Crow and Kobo.",
+    default: false,
+  })
+);
+TimespinnerSettings.push(
+  Object.seal<ArchipelagoBooleanSetting>({
+    type: SettingType.Boolean,
+    name: "Cantoran",
+    readableName: "Cantoran",
+    description:
+      "Cantoran's fight and check are available upon revisiting his room.",
+    default: false,
+  })
+);
 TimespinnerSettings.push(DeathLinkOption);
 
 export default TimespinnerSettings;

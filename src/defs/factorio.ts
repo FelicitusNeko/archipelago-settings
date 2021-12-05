@@ -17,7 +17,7 @@ FactorioSettings.push(
   Object.seal<ArchipelagoStringSetting>({
     type: SettingType.String,
     name: "max_science_pack",
-    readableName: "Maximum science pack (goal)",
+    readableName: "Maximum science pack",
     description: "The level of science pack required to reach your goal.",
     values: {
       automation_science_pack: "Automation",
@@ -29,6 +29,19 @@ FactorioSettings.push(
       space_science_pack: "Space",
     },
     default: "space_science_pack",
+  })
+);
+FactorioSettings.push(
+  Object.seal<ArchipelagoStringSetting>({
+    type: SettingType.String,
+    name: "goal",
+    readableName: "Goal",
+    description: "Goal required to complete the game.",
+    values: {
+      rocket: "Rocket",
+      satellite: "Satellite",
+    },
+    default: "rocket",
   })
 );
 FactorioSettings.push(
@@ -88,6 +101,20 @@ FactorioSettings.push(
 FactorioSettings.push(
   Object.seal<ArchipelagoStringSetting>({
     type: SettingType.String,
+    name: "satellite",
+    readableName: "Satellite",
+    description:
+      "This option can randomize the recipe to create the satellite.",
+    values: {
+      vanilla: "Vanilla",
+      randomize_recipe: "Randomize recipe",
+    },
+    default: "vanilla",
+  })
+);
+FactorioSettings.push(
+  Object.seal<ArchipelagoStringSetting>({
+    type: SettingType.String,
     name: "free_samples",
     readableName: "Free samples",
     description: "Whether you receive free items with technologies.",
@@ -120,13 +147,16 @@ FactorioSettings.push(
     name: "recipe_time",
     readableName: "Recipe time",
     description:
-      "Randomize the amount of time it will take to craft things. This affects all crafting types.",
+      'Randomize the amount of time it will take to craft things. This affects all crafting types. "New" options ignore the original time.',
     values: {
       vanilla: "Vanilla",
-      fast: "Fast",
-      normal: "Normal",
-      slow: "Slow",
-      chaos: "Chaos – some fast, some slow",
+      fast: "Fast – .25× to 1× speed",
+      normal: "Normal – .5× to 2× speed",
+      slow: "Slow – 1× to 4× speed",
+      chaos: "Chaos – .25× to 4× speed",
+      new_fast: "New fast – .25 to 2 seconds",
+      new_normal: "New normal: – .25 to 10 seconds",
+      new_slow: "New slow – 5 to 10 seconds",
     },
     default: "vanilla",
   })

@@ -771,11 +771,34 @@ OoTSettings.push(
 OoTSettings.push(
   Object.seal<ArchipelagoBooleanSetting>({
     type: SettingType.Boolean,
-    name: "spawn_positions",
-    readableName: "Entrance shuffle – on load",
-    description:
-      "Randomizes the starting position on loading a save. Consistent between savewarps.",
-    default: false,
+    name: "decouple_entrances",
+    readableName: "Decouple entrances",
+    description: "Decouple entrances when shuffling them. Also adds the one-way entrance from Gerudo Valley to Lake Hylia if overworld is shuffled.",
+    default: true,
+  })
+);
+OoTSettings.push(
+  Object.seal<ArchipelagoStringSetting>({
+    type: SettingType.String,
+    name: "mix_entrance_pools",
+    readableName: "Mix entrance pools",
+    description: "Shuffles entrances into a mixed pool instead of separate ones.",
+    values: {
+      off: 'Off',
+      indoor: 'Indoor – Keeps overworld entrances separate',
+      all: 'All'
+    },
+    default: "off",
+  })
+);
+OoTSettings.push(
+  Object.seal<ArchipelagoStringSetting>({
+    type: SettingType.String,
+    name: "",
+    readableName: "",
+    description: "",
+    values: {},
+    default: "",
   })
 );
 OoTSettings.push(
@@ -1067,6 +1090,15 @@ OoTSettings.push(
       always: "Always",
     },
     default: "always",
+  })
+);
+OoTSettings.push(
+  Object.seal<ArchipelagoBooleanSetting>({
+    type: SettingType.Boolean,
+    name: "misc_hints",
+    readableName: "Miscellaneous hints",
+    description: "Controls whether the Temple of Time altar gives dungeon prize info and whether Ganondorf hints the Light Arrows.",
+    default: true,
   })
 );
 OoTSettings.push(

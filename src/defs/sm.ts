@@ -6,7 +6,6 @@ import {
   ArchipelagoBooleanSetting,
   ArchipelagoCategory,
   ArchipelagoItem,
-  DeathLinkOption,
 } from "./core";
 
 const SMSettings: ArchipelagoSettingBase[] = [];
@@ -28,15 +27,21 @@ SMSettings.push(
     description:
       "The preset is used by the Randomizer to know which techniques are available to reach the items locations.",
     values: {
-      newbie: "Newbie – New to randomizers, but completed Super Metroid 100% and knows basic techniques (Wall Jump, Shinespark, Mid-air Morph)",
-      casual: "Casual – Occasional rando player. No hell runs or suitless Maridia, some easy to learn tricks in logic.",
-      regular: "Regular – Plays rando regularly. Knows tricks that are not too hard and open up the game.",
-      veteran: "Veteran – Experienced rando player. Harder everything, some tougher tricks in logic.",
-      expert: "Expert – Knows almost all tricks: full suitless Maridia, Lower Norfair hell runs, hi-jumpless Lava Dive (mania difficulty only)",
+      newbie:
+        "Newbie – New to randomizers, but completed Super Metroid 100% and knows basic techniques (Wall Jump, Shinespark, Mid-air Morph)",
+      casual:
+        "Casual – Occasional rando player. No hell runs or suitless Maridia, some easy to learn tricks in logic.",
+      regular:
+        "Regular – Plays rando regularly. Knows tricks that are not too hard and open up the game.",
+      veteran:
+        "Veteran – Experienced rando player. Harder everything, some tougher tricks in logic.",
+      expert:
+        "Expert – Knows almost all tricks: full suitless Maridia, Lower Norfair hell runs, hi-jumpless Lava Dive (mania difficulty only)",
       master: "Master – Everything on hardest, all tricks known.",
       samus: "Samus",
       season_races: "Season races",
-      smrat2021: "SMRAT 2021 – Settings used for Super Metroid Randomizer Accessible Tournament 2021",
+      smrat2021:
+        "SMRAT 2021 – Settings used for Super Metroid Randomizer Accessible Tournament 2021",
       solution: "Solution",
       // TODO: implement custom presets
       //custom: "Custom",
@@ -71,7 +76,21 @@ SMSettings.push(
     default: "landing_site",
   })
 );
-SMSettings.push(DeathLinkOption);
+SMSettings.push(
+  Object.seal<ArchipelagoStringSetting>({
+    type: SettingType.String,
+    name: "death_link",
+    readableName: "DeathLink",
+    description: "If one DeathLinked player dies, all of them do.",
+    values: {
+      disable: "Off",
+      enable: "On",
+      enable_survive:
+        "Reserve save – If you have any energy in Reserve Tanks, you will survive.",
+    },
+    default: "disable",
+  })
+);
 SMSettings.push(
   Object.seal<ArchipelagoStringSetting>({
     type: SettingType.String,
@@ -104,19 +123,19 @@ SMSettings.push(
     default: "early",
   })
 );
-SMSettings.push(
-  Object.seal<ArchipelagoBooleanSetting>({
-    type: SettingType.Boolean,
-    name: "suits_restriction",
-    readableName: "Suits restriction",
-    description:
-      "Prevent Gravity or Varia suits to be placed early in the game (Crateria/Blue Brinstar). Using a non-standard start location will force this setting off.",
-    default: true,
-    dependsOn: {
-      start_location: ["ceres", "landing_site"],
-    },
-  })
-);
+// SMSettings.push(
+//   Object.seal<ArchipelagoBooleanSetting>({
+//     type: SettingType.Boolean,
+//     name: "suits_restriction",
+//     readableName: "Suits restriction",
+//     description:
+//       "Prevent Gravity or Varia suits to be placed early in the game (Crateria/Blue Brinstar). Using a non-standard start location will force this setting off.",
+//     default: true,
+//     dependsOn: {
+//       start_location: ["ceres", "landing_site"],
+//     },
+//   })
+// );
 SMSettings.push(
   Object.seal<ArchipelagoBooleanSetting>({
     type: SettingType.Boolean,
@@ -440,6 +459,8 @@ const SMItems: ArchipelagoItem[] = [
   { name: "X-Ray Scope" },
   { name: "Space Jump" },
   { name: "Screw Attack" },
+  { name: "Nothing" },
+  { name: "No Energy" },
 ];
 
 const SMCategory: ArchipelagoCategory = {

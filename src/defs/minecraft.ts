@@ -6,6 +6,7 @@ import {
   ArchipelagoBooleanSetting,
   ArchipelagoCategory,
   ArchipelagoItem,
+  DeathLinkOption,
 } from "./core";
 
 const MinecraftSettings: ArchipelagoSettingBase[] = [];
@@ -19,9 +20,9 @@ MinecraftSettings.push(
     description:
       "How many advancements are needed for the Ender Dragon to spawn.",
     low: 0,
-    high: 87,
+    high: 92,
     randomable: true,
-    default: 50,
+    default: 40,
   })
 );
 MinecraftSettings.push(
@@ -32,7 +33,7 @@ MinecraftSettings.push(
     description:
       "How many Dragon Egg Shards are needed to spawn the Ender Dragon.",
     low: 0,
-    high: 30,
+    high: 40,
     default: 0,
   })
 );
@@ -48,13 +49,28 @@ MinecraftSettings.push(
   })
 );
 MinecraftSettings.push(
+  Object.seal<ArchipelagoStringSetting>({
+    type: SettingType.String,
+    name: "required_bosses",
+    readableName: "Boss goal",
+    description: "Boss or bosses to defeat to complete the goal.",
+    values: {
+      none: "None – Get your advancements and win",
+      ender_dragon: "Ender Dragon",
+      wither: "Wither",
+      both: "Both",
+    },
+    default: "ender_dragon",
+  })
+);
+MinecraftSettings.push(
   Object.seal<ArchipelagoBooleanSetting>({
     type: SettingType.Boolean,
     name: "shuffle_structures",
     readableName: "Shuffle structures",
     description:
       "Enable shuffling of villages, outposts, fortresses, bastions, and cities.",
-    default: false,
+    default: true,
   })
 );
 MinecraftSettings.push(
@@ -107,7 +123,7 @@ MinecraftSettings.push(
 MinecraftSettings.push(
   Object.seal<ArchipelagoBooleanSetting>({
     type: SettingType.Boolean,
-    name: "include_insane_advancements",
+    name: "include_unreasonable_advancements",
     readableName: "Include unreasonable advancements",
     description:
       'Include the advancements "How Did We Get Here?" and "Adventuring Time". Please don\'t chase these.',
@@ -134,6 +150,7 @@ MinecraftSettings.push(
     default: false,
   })
 );
+MinecraftSettings.push(DeathLinkOption);
 
 export default MinecraftSettings;
 
@@ -175,6 +192,7 @@ const MinecraftItems: ArchipelagoItem[] = [
   { name: "Saddle" },
   { name: "Shulker Box" },
   { name: "Dragon Egg Shard" },
+  { name: "Spyglass" },
   { name: "Bee Trap (Minecraft)" },
   ...[
     "Village",
@@ -193,7 +211,7 @@ const MinecraftItems: ArchipelagoItem[] = [
 const MinecraftCategory: ArchipelagoCategory = {
   category: "Minecraft",
   settings: MinecraftSettings,
-  items: MinecraftItems
+  items: MinecraftItems,
 };
 
 export { MinecraftCategory };

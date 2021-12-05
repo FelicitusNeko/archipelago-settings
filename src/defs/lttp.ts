@@ -661,13 +661,19 @@ LttPSettings.push(
   })
 );
 LttPSettings.push(
-  Object.seal<ArchipelagoBooleanSetting>({
-    type: SettingType.Boolean,
+  Object.seal<ArchipelagoStringSetting>({
+    type: SettingType.String,
     name: "hints",
     readableName: "In-game hint system",
     description:
       "Whether hints about important/expensive items or difficult locations show up in the in-game hint system.",
-    default: true,
+    values: {
+      off: 'Off',
+      vendors: 'Vendors – No hint tiles, but Bottle Vendor and King Zora will tell you what they\'re selling',
+      on: 'On',
+      full: 'Full-on – Every hint is good; no trolls'
+    },
+    default: 'on',
   })
 );
 LttPSettings.push(
