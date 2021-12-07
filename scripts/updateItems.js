@@ -21,7 +21,6 @@ const Locations: ArchipelagoLocation[] = [
 const getDataPackage = () => {
   const url =
     DATAPACKAGE_URL ?? "https://archipelago.gg/api/datapackage";
-  console.debug(url);
   return new Promise((f, r) => {
     httpsGet(url, (res) => {
       let data = "";
@@ -34,7 +33,6 @@ const getDataPackage = () => {
 
 (async () => {
   const dataPackage = await getDataPackage();
-  //console.debug(dataPackage.games, Object.keys(dataPackage.games));
 
   if (!existsSync(__dirname + "/itemloc")) {
     console.debug('Creating itemloc subdir');
