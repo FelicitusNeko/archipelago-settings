@@ -6,14 +6,14 @@ This tool has been built to supplement the Archipelago Multiworld system, and ge
 
 - Import both Archipelago and Berserker LttP YAMLs
 - Settings for all 10 Archipelago-supported games
+  - Final Fantasy does not have AP-based configuration support and [does its own thing](https://beta.finalfantasyrandomizer.com/)
 - Per-setting weighted values for settings
-- Item selector for most games; designate items as local, non-local, starting inventory, and/or starting hints
+- Item selector for all games; designate items as local, non-local, starting inventory, and/or starting hints
 - Reduce clutter by only showing relevant settings and items
 - Configure settings for multiple games at once, if weighted values are being used to pick the game
 
 #### Not implemented yet
 
-- Item lists for all games
 - Location selector to designate locations as starting hints and/or excluded from progression logic
 - Meta ignore flags
 - Triggers
@@ -23,7 +23,7 @@ This tool has been built to supplement the Archipelago Multiworld system, and ge
 This site was built using `create-react-app`, which means standard `cra` commands work when running or building this project locally.
 
 Requirements:
-- NodeJS 16 or higher
+- NodeJS 16.x LTS (17 not currently supported by `react-scripts`)
 - Yarn Berry 3.0.x or higher
 - TypeScript 4.2.x or higher
 
