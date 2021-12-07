@@ -17,6 +17,7 @@ const Changelog: React.FC = () => {
           </ul>
         </li>
         <li>Fix app crash when new categories are added</li>
+        <li>Fix misspelling in page title</li>
       </ul>
       <hr />
       <h4>0.10.1</h4>
