@@ -6,14 +6,14 @@ import {
   ArchipelagoCategory,
 } from "./core";
 
-import { LttPCategory } from "../defs/lttp";
-import { OoTCategory } from "../defs/oot";
-import { TimespinnerCategory } from "../defs/timespinner";
-import { FactorioCategory } from "../defs/factorio";
-import { SubnauticaCategory } from "../defs/subnautica";
-import { ROR2Category } from "../defs/ror2";
-import { SlayTheSpireCategory } from "../defs/slaythespire";
-import { MinecraftCategory } from "../defs/minecraft";
+import { LttPCategory } from "./lttp";
+import { OoTCategory } from "./oot";
+import { TimespinnerCategory } from "./timespinner";
+import { FactorioCategory } from "./factorio";
+import { SubnauticaCategory } from "./subnautica";
+import { ROR2Category } from "./ror2";
+import { StSCategory } from "./sts";
+import { MinecraftCategory } from "./minecraft";
 import { SMCategory } from "./sm";
 import { SoECategory } from "./soe";
 import { FF1Category } from "./ff1";
@@ -26,13 +26,13 @@ const PartialCategoryList: ArchipelagoCategory[] = [
   //HollowKnightCategory, // 0.0.2, currently disabled
   MinecraftCategory, // 0.1.0
   SubnauticaCategory, // 0.1.5
-  SlayTheSpireCategory, // 0.1.7
+  StSCategory, // 0.1.7
   ROR2Category, // 0.1.7
   OoTCategory, // 0.1.7
   TimespinnerCategory, // 0.1.9
   SMCategory, // 0.2.0
   SoECategory, // 0.2.0
-  FF1Category, // 0.2.1
+  FF1Category, // 0.2.1, no real support (must go to FFR website)
   //OriBFCategory, // not currently implemented
 ];
 

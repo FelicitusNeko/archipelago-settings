@@ -6,6 +6,7 @@ import {
   ArchipelagoBooleanSetting,
   ArchipelagoCategory,
   ArchipelagoItem,
+  ArchipelagoLocation,
 } from "./core";
 
 /** The collection of settings for Risk of Rain 2. */
@@ -136,23 +137,31 @@ for (const weightSet of genWeightOpts)
 export default ROR2Settings;
 
 const ROR2Items: ArchipelagoItem[] = [
-  { name: "Dio's Best Friend" },
-  { name: "Common Item" },
-  { name: "Uncommon Item" },
-  { name: "Legendary Item" },
-  { name: "Boss Item" },
-  { name: "Lunar Item", dependsOn: { enable_lunar: [true] } },
+  { name: "Dio's Best Friend", max: 10 },
+  { name: "Common Item", max: 10 },
+  { name: "Uncommon Item", max: 10 },
+  { name: "Legendary Item", max: 10 },
+  { name: "Boss Item", max: 10 },
+  { name: "Lunar Item", max: 10, dependsOn: { enable_lunar: [true] } },
   { name: "Equipment" },
-  { name: "Item Scrap, White" },
-  { name: "Item Scrap, Green" },
-  { name: "Item Scrap, Red" },
-  { name: "Item Scrap, Yellow" },
+  { name: "Item Scrap, White", max: 10 },
+  { name: "Item Scrap, Green", max: 10 },
+  { name: "Item Scrap, Red", max: 10 },
+  { name: "Item Scrap, Yellow", max: 10 },
 ];
+
+const ROR2Locations: ArchipelagoLocation[] = [];
+for (let x = 1; x <= 100; x++)
+  ROR2Locations.push({
+    name: `ItemPickup${x}`,
+    readableName: `AP check #${x}`,
+  });
 
 const ROR2Category: ArchipelagoCategory = {
   category: "Risk of Rain 2",
   settings: ROR2Settings,
   items: ROR2Items,
+  locations: ROR2Locations,
 };
 
 export { ROR2Category };
