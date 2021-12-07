@@ -442,7 +442,7 @@ const SMItems: ArchipelagoItem[] = [
   { name: "Energy Tank", max: 14 },
   { name: "Reserve Tank", max: 4 },
   { name: "Missile", max: 50 },
-  { name: "Super Missile", max: 20 },
+  { name: "Super Missile", max: 30 },
   { name: "Power Bomb", max: 20 },
   { name: "Bomb" },
   { name: "Charge Beam" },
@@ -460,8 +460,8 @@ const SMItems: ArchipelagoItem[] = [
   { name: "X-Ray Scope" },
   { name: "Space Jump" },
   { name: "Screw Attack" },
-  { name: "Nothing" },
-  { name: "No Energy" },
+  { name: "Nothing", max: 0 },
+  { name: "No Energy", max: 0 },
 ];
 
 const SMLocations: ArchipelagoLocation[] = [

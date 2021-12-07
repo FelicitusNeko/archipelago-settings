@@ -229,7 +229,7 @@ const SoEItems: ArchipelagoItem[] = [
   { name: "Sting" },
   { name: "Stop" },
   { name: "Super Heal" },
-  { name: "Nothing" },
+  { name: "Nothing", max: 0 },
   { name: "Wheel" },
   { name: "Gladiator Sword" },
   { name: "Crusader Sword" },
