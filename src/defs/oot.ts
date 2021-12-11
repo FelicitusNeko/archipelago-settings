@@ -1687,7 +1687,7 @@ const OoTItems: ArchipelagoItem[] = [
   { name: "Skull Mask" },
   { name: "Spooky Mask" },
   { name: "Keaton Mask" },
-  { name: "Bunny Hood" },
+  { name: "Bunny Hood", max: 0 }, // Can't be used as starting item as per Espeon
   { name: "Mask of Truth" },
   { name: "Goron Mask" },
   { name: "Zora Mask" },
