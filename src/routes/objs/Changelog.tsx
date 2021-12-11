@@ -3,6 +3,13 @@ import React from "react";
 const Changelog: React.FC = () => {
   return (
     <>
+      <h4>0.10.3</h4>
+      <ul>
+        <li>SoE, Factorio: Add items</li>
+        <li>OoT, Minecraft: Adjust maximum items</li>
+        <li>Internal: Add locations (no interface yet)</li>
+      </ul>
+      <hr />
       <h4>0.10.2</h4>
       <ul>
         <li>Update spec to 0.2.1
