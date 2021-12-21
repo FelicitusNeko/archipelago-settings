@@ -3,6 +3,17 @@ import React from "react";
 const Changelog: React.FC = () => {
   return (
     <>
+      <h4>0.10.3</h4>
+      <ul>
+        <li>Update spec to 0.2.2
+          <ul>
+            <li>Factorio: New tech tree options</li>
+            <li>TS: Damage rando mode</li>
+            <li>SoE: "Chaos" options renamed to "full"</li>
+          </ul>
+        </li>
+      </ul>
+      <hr />
       <h4>0.10.2</h4>
       <ul>
         <li>Update spec to 0.2.1

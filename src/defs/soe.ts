@@ -107,7 +107,7 @@ SoESettings.push(
     type: SettingType.Boolean,
     name: "short_boss_rush",
     readableName: "Short Boss Rush",
-    description: "If enabled, the Boss Rush will start at Magmar, and HP will be cut in half.",
+    description: "If enabled, the Boss Rush will start at Metal Magmar, and enemy HP will be cut in half.",
     default: false,
   })
 );
@@ -120,7 +120,7 @@ SoESettings.push(
     values: {
       off: "Off",
       on: "On – Shuffled",
-      chaos: "Chaos – Randomized",
+      full: "Full – Randomized",
     },
     default: "on",
   })
@@ -134,7 +134,7 @@ SoESettings.push(
     values: {
       off: "Off",
       on: "On – Shuffled",
-      chaos: "Chaos – Randomized",
+      full: "Full – Randomized",
     },
     default: "on",
   })
@@ -147,8 +147,8 @@ SoESettings.push(
     description: "Shuffles Call Bead characters or spells.",
     values: {
       off: "Off",
-      on: "On – Shuffled",
-      chaos: "Chaos – Randomized",
+      on: "On – Shuffles call bead characters",
+      full: "Full – Shuffles individual spells",
     },
     default: "on",
   })
@@ -171,7 +171,7 @@ SoESettings.push(
     values: {
       off: "Off",
       on: "On – Shuffled every act",
-      chaos: "Chaos – Randomized every screen",
+      full: "Full – Randomized every screen",
       pupdunk: "Pupdunk – Everypupper everywhere!"
     },
     default: "off",
