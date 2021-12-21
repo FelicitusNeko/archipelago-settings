@@ -99,6 +99,16 @@ TimespinnerSettings.push(
     default: false,
   })
 );
+TimespinnerSettings.push(
+  Object.seal<ArchipelagoBooleanSetting>({
+    type: SettingType.Boolean,
+    name: "DamageRando",
+    readableName: "Damage rando",
+    description:
+      "Each orb has a high chance of having lower base damage and a low chance of having much higher base damage.",
+    default: false,
+  })
+);
 TimespinnerSettings.push(DeathLinkOption);
 
 export default TimespinnerSettings;

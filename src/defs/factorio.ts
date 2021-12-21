@@ -63,6 +63,8 @@ FactorioSettings.push(
       small_funnels: "Small funnels",
       medium_funnels: "Medium funnels",
       large_funnels: "Large funnels",
+      trees: "Trees",
+      choices: "Choices",
     },
     default: "single",
   })
