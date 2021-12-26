@@ -1,0 +1,23 @@
+div.setting {
+  margin: 5px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.setting button.emojibutton {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  font-size: 100%;
+}
+
+.settingDropdown option[title]::after {
+  content: "ℹ️";
+}
+
+.archslider {
+  display: inline-block;
+  width: 30%;
+  margin-left: 10px;
+  margin-right: 10px;
+}

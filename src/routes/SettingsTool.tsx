@@ -975,6 +975,23 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
   ) => {
     // TODO: Scan for any obvious problems that would prevent the YAML from working (all-zero weights, bad name, etc.)
 
+    // If Ctrl and Shift are both held, export the CategoryList object as JSON instead
+    if (e.ctrlKey && e.shiftKey) {
+      // Create an <a> element to initiate the download
+      const element = document.createElement("a");
+      const file = new Blob([JSON.stringify(CategoryList)], {
+        type: "application/json",
+      });
+      element.href = URL.createObjectURL(file);
+      element.download = `category_listing.json`;
+
+      // Under Firefox, the element must be present in order for the file dialog to appear
+      document.body.appendChild(element);
+      element.click();
+      document.body.removeChild(element);
+      return;
+    }
+
     // Create the YAML structure
     const outYaml: any = Object.assign(
       {

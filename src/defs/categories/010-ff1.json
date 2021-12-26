@@ -1,0 +1,18 @@
+{
+  "category": "Final Fantasy",
+  "settings": [
+    {
+      "type": "string",
+      "name": "nosettings",
+      "readableName": "Settings aren't here",
+      "description": "Currently, Archipelago has no built-in support for settings for Final Fantasy. You'll have to generate your settings file at the Final Fantasy Randomizer website.",
+      "values": {
+        "no1": "Dang",
+        "no2": "That sucks",
+        "no3": "Oh well",
+        "no4": "I want to speak to your manager"
+      },
+      "default": "no1"
+    }
+  ]
+}
