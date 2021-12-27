@@ -1,5 +1,4 @@
 import { ChangeEvent } from "react";
-import * as YAML from "yaml";
 import { SettingType } from "../../defs/core";
 
 import {
@@ -13,7 +12,7 @@ import {
  * The interface for Archipelago string-based settings as stored in JSON.
  * @since 1.0.0
  */
-interface APStringSettingJson extends APSettingJson<string> {
+export interface APStringSettingJson extends APSettingJson<string> {
   /**
    * The type of setting. Must be {@link SettingType.String}.
    * @override
@@ -24,10 +23,10 @@ interface APStringSettingJson extends APSettingJson<string> {
 }
 
 /**
- * The YAML-encoded representation for this string-based setting.
+ * The renderable representation of an Archipelago string-based setting.
  * @since 1.0.0
  */
-export class APStringSetting extends APBaseSetting<string> {
+ export class APStringSetting extends APBaseSetting<string> {
   private readonly _values: Record<string, string | string[]>;
 
   constructor(props: APSettingProps, settingData: APStringSettingJson) {
@@ -47,12 +46,11 @@ export class APStringSetting extends APBaseSetting<string> {
       const valueOut: Record<string, number> = {};
       for (const wValue of value) valueOut[wValue.value] = wValue.weight;
 
-      return YAML.stringify(valueOut);
-    } else return YAML.stringify(value);
+      return valueOut;
+    } else return value;
   }
   /** @override */
-  set yamlValue(yamlStr) {
-    const value = YAML.parse(yamlStr) as string | Record<string, number>;
+  set yamlValue(value) {
     if (typeof value === "object") {
       const wValues: APWeightedSetting<string>[] = [];
       for (const wValue of Object.entries(value))

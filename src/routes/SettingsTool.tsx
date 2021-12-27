@@ -29,6 +29,7 @@ import {
 import { version } from "../../package.json";
 import { CategoryList } from "../defs/global";
 import "./SettingsTool.css";
+import { APCategoryList } from "../defs/generate";
 
 const { localStorage, location, confirm } = window;
 
@@ -1135,16 +1136,21 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
 
         <Tabs>
           <TabList className="react-tabs__tab-list settingsTabs">
-            {CategoryList.filter((i) =>
+            {/* {CategoryList.filter((i) =>
               isGameEnabled(settings, i.category)
             ).map((i) => (
               // Output tabs for enabled games
               <Tab key={`tab-${i.category}`}>{i.category ?? "Global"}</Tab>
+            ))} */}
+            {APCategoryList.map((i) => (
+              <Tab key={`tab-${i.category}`}>
+                {i.category ?? 'Global'}
+              </Tab>
             ))}
             <Tab>Changelog</Tab>
           </TabList>
 
-          {CategoryList.filter((i) => isGameEnabled(settings, i.category)).map(
+          {/* {CategoryList.filter((i) => isGameEnabled(settings, i.category)).map(
             (i) => (
               // Output tab panels containing setting collections for enabled games
               <TabPanel key={`tabpanel-${i.category}`} className="settingsBody">
@@ -1164,7 +1170,12 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
                 ) : null}
               </TabPanel>
             )
-          )}
+          )} */}
+          {APCategoryList.map((i) => (
+            <TabPanel key={`tabpanel-${i.category}`} className="settingsBody">
+              {i.settings[0]}
+            </TabPanel>
+          ))}
           <TabPanel className="settingsBody">
             <Changelog />
           </TabPanel>

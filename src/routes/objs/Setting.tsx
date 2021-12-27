@@ -175,6 +175,8 @@ const Setting: React.FC<SettingProps> = ({
         </label>
       );
     },
+    games: () => null,
+    "lttp-sprite": () => null,
   };
 
   /** Outputs a slider for a weighted value, within the context of {@link weightedOutput}. */
@@ -381,6 +383,8 @@ const Setting: React.FC<SettingProps> = ({
         </>
       );
     },
+    games: () => null,
+    "lttp-sprite": () => null,
   };
 
   /** An event handler that fires when the weighted setting toggle is clicked. */

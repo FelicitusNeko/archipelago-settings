@@ -13,6 +13,10 @@ export enum SettingType {
   Numeric = "numeric",
   /** Refers to a setting whose value may be true/on or false/off. */
   Boolean = "boolean",
+  /** Refers to a setting derived from the full list of games. */
+  Games = 'games',
+  /** Refers to a setting derived from the list of available LttP sprites. */
+  LttPSprite = 'lttp-sprite'
 }
 
 /** A collection of weights for a setting. The key should be the setting's value, and the value should indicate the chance of it being selected. */

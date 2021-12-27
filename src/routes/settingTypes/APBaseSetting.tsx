@@ -159,30 +159,9 @@ export abstract class APBaseSetting<T> extends React.Component<
   }
 
   /** The YAML-encoded representation for this setting. */
-  abstract get yamlValue(): T;
+  abstract get yamlValue(): T | Record<string, number>;
+  abstract set yamlValue(value);
   // {
-  //   const { value } = this.state;
-  //   if (Array.isArray(value)) {
-  //     const valueOut: Record<string, number> = {};
-  //     for (const wvalue of value)
-  //       switch (typeof wvalue.value) {
-  //         case "string":
-  //         case "number":
-  //         case "boolean":
-  //           valueOut[wvalue.value.toString()] = wvalue.value;
-  //           break;
-  //       }
-  //     return YAML.stringify(valueOut);
-  //   } else return YAML.stringify(this.state.value);
-  // }
-  abstract set yamlValue(yamlStr);
-  // {
-  //   const value = YAML.parse(yamlValue);
-  //   this.setState({
-  //     weighted: Array.isArray(value),
-  //     value,
-  //   });
-  // }
 
   /** Resets this setting to its default unweighted value. */
   protected onDefault() {

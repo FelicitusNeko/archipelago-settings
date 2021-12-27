@@ -1,6 +1,5 @@
 import { ChangeEvent, ReactNode } from "react";
 import Slider from "rc-slider";
-import * as YAML from "yaml";
 
 import { SelectRail, SettingType } from "../../defs/core";
 import {
@@ -16,7 +15,7 @@ const randomOrder = ["random", "random-low", "random-mid", "random-high"];
  * The interface for Archipelago numeric settings as stored in JSON.
  * @since 1.0.0
  */
-interface APNumericSettingJson extends APSettingJson<number | string> {
+export interface APNumericSettingJson extends APSettingJson<number | string> {
   /**
    * The type of setting. Must be {@link SettingType.Numeric}.
    * @override
@@ -40,10 +39,10 @@ interface APNumericSettingJson extends APSettingJson<number | string> {
 }
 
 /**
- * The YAML-encoded representation for this numeric setting.
+ * The renderable representation of an Archipelago numeric setting.
  * @since 1.0.0
  */
-export class APNumericSetting extends APBaseSetting<number | string> {
+ export class APNumericSetting extends APBaseSetting<number | string> {
   private readonly _low: number;
   private readonly _high: number;
   private readonly _step?: number;
@@ -71,12 +70,11 @@ export class APNumericSetting extends APBaseSetting<number | string> {
       for (const wValue of value)
         valueOut[wValue.value.toString()] = wValue.weight;
 
-      return YAML.stringify(valueOut);
-    } else return YAML.stringify(value);
+      return valueOut;
+    } else return value;
   }
   /** @override */
-  set yamlValue(yamlStr) {
-    const value = YAML.parse(yamlStr) as string | Record<string, number>;
+  set yamlValue(value) {
     if (typeof value === "object") {
       const wValues: APWeightedSetting<number | string>[] = [];
       for (const wValue of Object.entries(value))
@@ -96,11 +94,13 @@ export class APNumericSetting extends APBaseSetting<number | string> {
     if (currentTarget.checked) {
       const newValue: APWeightedSetting<number | string>[] = [
         { value: value as number | string, weight: 50 },
-      ].concat(
-        randomOrder.map((i) => {
-          return { value: i, weight: 0 };
-        })
-      );
+      ];
+      if (this._randomable)
+        newValue.push(
+          ...randomOrder.map((i) => {
+            return { value: i, weight: 0 };
+          })
+        );
       this.setState({
         weighted: true,
         value: newValue,
@@ -196,18 +196,28 @@ export class APNumericSetting extends APBaseSetting<number | string> {
     /** An event handler that fires when the "Add value" button is clicked. */
     const onAddWeight = () => {
       // If the specified value is already selected, don't add it again
-      if (value.findIndex(i => i.value === selector) >= 0) return;
+      if (value.findIndex((i) => i.value === selector) >= 0) return;
       // Otherwise, add the new value
-      const newValue: APWeightedSetting<number|string>[] = value.slice().concat([{
-        value: selector as number,
-        weight: 50
-      }]).sort((a,b) => {
-        if (typeof a.value === typeof b.value) {
-          if (typeof a.value === 'number') return a.value - (b.value as number);
-          else return randomOrder.findIndex(i => i === a.value) - randomOrder.findIndex(i => i === b.value);
-        } else return typeof a.value === 'number' ? -1 : 1;
-      });
-      this.setState({value: newValue});
+      const newValue: APWeightedSetting<number | string>[] = value
+        .slice()
+        .concat([
+          {
+            value: selector as number,
+            weight: 50,
+          },
+        ])
+        .sort((a, b) => {
+          if (typeof a.value === typeof b.value) {
+            if (typeof a.value === "number")
+              return a.value - (b.value as number);
+            else
+              return (
+                randomOrder.findIndex((i) => i === a.value) -
+                randomOrder.findIndex((i) => i === b.value)
+              );
+          } else return typeof a.value === "number" ? -1 : 1;
+        });
+      this.setState({ value: newValue });
     };
 
     return (
