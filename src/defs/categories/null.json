@@ -14,9 +14,9 @@
       "readableName": "Item accessibility",
       "description": "How much the game expects you to do checks and get items.",
       "values": {
-        "locations": "All locations – You can go everywhere, and so, all checks are eventually accessible",
-        "items": "All items – All progression items are accessible, but all locations won't be",
-        "none": "Beatable – The only guarantee is that you'll have the bare necessity to beat the game"
+        "locations": ["All locations","You can go everywhere, and so, all checks are eventually accessible"],
+        "items": ["All items","All progression items are accessible, but all locations won't be"],
+        "none": ["Beatable","The only guarantee is that you'll have the bare necessity to beat the game"]
       },
       "default": "locations"
     },

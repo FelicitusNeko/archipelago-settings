@@ -1,7 +1,11 @@
-import React, { ChangeEvent } from "react";
+import React, { ChangeEvent, useState, useEffect } from "react";
 import Slider from "rc-slider";
 
-import { ArchipelagoDependency, SettingType, WeightRail } from "../../defs/core";
+import {
+  ArchipelagoDependency,
+  SettingType,
+  WeightRail,
+} from "../../defs/core";
 import "./Setting.css";
 
 /**
@@ -43,29 +47,24 @@ export interface APSettingJson<T> {
   legacyValues?: Record<string, string | null>; // null if the setting no longer exists
 }
 
-/** The properties for this setting. */
-export interface APSettingProps {
-  /** The category for this setting. */
-  category: string | null;
-}
-/** The state object for this setting. */
-interface APSettingState<T> {
-  /** Whether this setting is weighted. */
-  weighted: boolean;
-  /** The value for this setting. */
-  value: T | APWeightedSetting<T>[];
-  /** The value of the weight selector for this setting, if it applies. */
-  selector?: T;
-}
+// /** The properties for this setting. */
+// export interface APSettingProps {
+//   /** The category for this setting. */
+//   category: string | null;
+// }
+// /** The state object for this setting. */
+// interface APSettingState<T> {
+//   /** Whether this setting is weighted. */
+//   weighted: boolean;
+// }
 /**
  * The renderable representation of an Archipelago setting.
  * @abstract
  * @since 1.0.0
  */
-export abstract class APBaseSetting<T> extends React.Component<
-  APSettingProps,
-  APSettingState<T>
-> {
+export abstract class APBaseSetting<T> {
+  /** The category to which this setting belongs. */
+  private readonly _category: string | null;
   /** The type of setting. */
   private readonly _type: SettingType;
   /** The internal name for the setting. */
@@ -86,9 +85,23 @@ export abstract class APBaseSetting<T> extends React.Component<
    */
   private readonly _legacyValues?: Record<string, string | null>;
 
-  constructor(props: APSettingProps, settingData: APSettingJson<T>) {
-    super(props);
+  /** The value for this setting. */
+  private _value: T | APWeightedSetting<T>[];
+  /** The value of the weight selector for this setting, if it applies. */
+  private _selector?: T;
 
+  private _valueSetter?: React.Dispatch<
+    React.SetStateAction<T | APWeightedSetting<T>[]>
+  >;
+
+  constructor(
+    category: string | null,
+    settingData: APSettingJson<T>,
+    initialValue?: T | APWeightedSetting<T>[]
+  ) {
+    //super(props);
+
+    this._category = category;
     this._type = settingData.type;
     this._name = settingData.name;
     this._readableName = settingData.readableName;
@@ -97,8 +110,14 @@ export abstract class APBaseSetting<T> extends React.Component<
     this._dependsOn = settingData.dependsOn;
     this._legacyName = settingData.legacyName;
     this._legacyValues = settingData.legacyValues;
+
+    this._value = initialValue ?? this._default;
   }
 
+  /** The category to which this setting belongs. */
+  get category() {
+    return this._category;
+  }
   /** The type of setting. */
   get type() {
     return this._type;
@@ -137,38 +156,40 @@ export abstract class APBaseSetting<T> extends React.Component<
 
   /** The value for this setting. */
   get value() {
-    return this.state.value;
+    return this._value;
   }
   set value(value) {
-    this.setState({
-      weighted: Array.isArray(value),
-      value,
-    });
+    if (this._valueSetter) this._valueSetter(value);
+    else this._value = value;
   }
 
   /** The JSON-encoded representation for this setting. */
   get storageValue() {
-    return JSON.stringify(this.state.value);
+    return JSON.stringify(this._value);
   }
   set storageValue(jsonStr: string) {
-    const value = JSON.parse(jsonStr);
-    this.setState({
-      weighted: Array.isArray(value),
-      value,
-    });
+    if (this._valueSetter) this._valueSetter(JSON.parse(jsonStr));
+    this._value = JSON.parse(jsonStr);
   }
 
   /** The YAML-encoded representation for this setting. */
   abstract get yamlValue(): T | Record<string, number>;
   abstract set yamlValue(value);
-  // {
+
+  protected get valueSetter() {
+    return this._valueSetter;
+  }
+
+  protected get selector() {
+    return this._selector;
+  }
+  protected set selector(value) {
+    this._selector = value;
+  }
 
   /** Resets this setting to its default unweighted value. */
-  protected onDefault() {
-    this.setState({
-      weighted: false,
-      value: this._default,
-    });
+  protected onDefault = () => {
+    this.value = this._default;
   }
 
   /** Outputs a slider for a weighted value, within the context of {@link onWeightedCheck}. */
@@ -178,8 +199,9 @@ export abstract class APBaseSetting<T> extends React.Component<
     weight: number,
     deletable?: boolean
   ) {
-    const { category } = this.props;
-    const { value } = this.state;
+    // const { category } = this.props;
+    // const { value } = this.state;
+    const { category, value } = this;
 
     if (!Array.isArray(value)) return null;
 
@@ -187,9 +209,7 @@ export abstract class APBaseSetting<T> extends React.Component<
     const onWeightChange = (newVal: number) => {
       const wValue = value.find((i) => i.value === valueName);
       if (wValue) wValue.weight = newVal;
-      this.setState({
-        value: [...value],
-      });
+      this.value = [...value];
     };
 
     /** An event handler which fires when the delete button on a weight is clicked. */
@@ -197,9 +217,7 @@ export abstract class APBaseSetting<T> extends React.Component<
       // If the weight is not deletable, do nothing
       if (!deletable) return;
       // Remove the value
-      this.setState({
-        value: [...value.filter((i) => i.value !== valueName)],
-      });
+      this.value = [...value.filter((i) => i.value !== valueName)];
     };
 
     // If "deletable" was not defined, assume it to be true
@@ -239,41 +257,95 @@ export abstract class APBaseSetting<T> extends React.Component<
   /** Renders the selector for a linear choice setting. */
   protected abstract renderWeightedChoice(): React.ReactNode;
 
-  /** Renders the interface for this setting. */
   render() {
-    if (!this.state) return null;
-    const { weighted, value } = this.state;
+    const { _value: value } = this;
+    const weighted = Array.isArray(value);
 
-    return (
-      <>
-        <div className="setting">
-          <b>{this._readableName ?? this._name}</b>{" "}
-          <label className="switch switch-weight" title="Weighted toggle">
-            <input
-              className="switch-input"
-              type="checkbox"
-              checked={weighted}
-              onChange={this.onWeightedCheck}
-            />
-            <span className="switch-label" data-on="Wgt" data-off="Std"></span>
-            <span className="switch-handle"></span>
-          </label>{" "}
-          {value === this._default ? null : (
-            <button
-              className="revert emojibutton"
-              title="Revert to default"
-              onClick={this.onDefault}
-            >
-              🔄
-            </button>
-          )}
-          <br />
-          {this._description}
-          <br />
-          {(weighted ? this.renderWeightedChoice : this.renderLinearChoice)()}
-        </div>
-        <hr style={{ borderColor: "blue" }} />
-      </>
-    );
+    const TestComponent: React.FC = () => {
+      const [value, setValue] = useState(this._value);
+
+      useEffect(() => {
+        this._valueSetter = setValue;
+        return () => {
+          this._valueSetter = undefined;
+        };
+      }, []);
+
+      return (
+        <>
+          <div className="setting">
+            <b>{this._readableName ?? this._name}</b>{" "}
+            <label className="switch switch-weight" title="Weighted toggle">
+              <input
+                className="switch-input"
+                type="checkbox"
+                checked={weighted}
+                onChange={this.onWeightedCheck}
+              />
+              <span
+                className="switch-label"
+                data-on="Wgt"
+                data-off="Std"
+              ></span>
+              <span className="switch-handle"></span>
+            </label>{" "}
+            {value === this._default ? null : (
+              <button
+                className="revert emojibutton"
+                title="Revert to default"
+                onClick={this.onDefault}
+              >
+                🔄
+              </button>
+            )}
+            <br />
+            {this._description}
+            <br />
+            {(weighted ? this.renderWeightedChoice : this.renderLinearChoice)()}
+          </div>
+          <hr style={{ borderColor: "blue" }} />
+        </>
+      );
+    };
+
+    return <TestComponent />;
   }
+
+  /** Renders the interface for this setting. */
+  // render() {
+  //   if (!this.state) return null;
+  //   const { weighted, value } = this.state;
+
+  //   return (
+  //     <>
+  //       <div className="setting">
+  //         <b>{this._readableName ?? this._name}</b>{" "}
+  //         <label className="switch switch-weight" title="Weighted toggle">
+  //           <input
+  //             className="switch-input"
+  //             type="checkbox"
+  //             checked={weighted}
+  //             onChange={this.onWeightedCheck}
+  //           />
+  //           <span className="switch-label" data-on="Wgt" data-off="Std"></span>
+  //           <span className="switch-handle"></span>
+  //         </label>{" "}
+  //         {value === this._default ? null : (
+  //           <button
+  //             className="revert emojibutton"
+  //             title="Revert to default"
+  //             onClick={this.onDefault}
+  //           >
+  //             🔄
+  //           </button>
+  //         )}
+  //         <br />
+  //         {this._description}
+  //         <br />
+  //         {(weighted ? this.renderWeightedChoice : this.renderLinearChoice)()}
+  //       </div>
+  //       <hr style={{ borderColor: "blue" }} />
+  //     </>
+  //   );
+  // }
 }

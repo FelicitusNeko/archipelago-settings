@@ -1,11 +1,11 @@
-import { ChangeEvent, ReactNode } from "react";
+import { ChangeEvent/*, ReactNode*/ } from "react";
 import Slider from "rc-slider";
 
 import { SelectRail, SettingType } from "../../defs/core";
 import {
   APBaseSetting,
   APSettingJson,
-  APSettingProps,
+  // APSettingProps,
   APWeightedSetting,
 } from "./APBaseSetting";
 
@@ -42,29 +42,29 @@ export interface APNumericSettingJson extends APSettingJson<number | string> {
  * The renderable representation of an Archipelago numeric setting.
  * @since 1.0.0
  */
- export class APNumericSetting extends APBaseSetting<number | string> {
+export class APNumericSetting extends APBaseSetting<number | string> {
   private readonly _low: number;
   private readonly _high: number;
   private readonly _step?: number;
   private readonly _randomable: boolean;
 
-  constructor(props: APSettingProps, settingData: APNumericSettingJson) {
-    super(props, settingData);
+  constructor(category: string |null, settingData: APNumericSettingJson) {
+    super(category, settingData);
 
     this._low = settingData.low;
     this._high = settingData.high;
     this._step = settingData.step;
     this._randomable = settingData.randomable ?? false;
 
-    this.state = {
-      weighted: false,
-      value: settingData.default,
-    };
+    // this.state = {
+    //   weighted: false,
+    //   value: settingData.default,
+    // };
   }
 
   /** @override */
   get yamlValue() {
-    const { value } = this.state;
+    const { value } = this;
     if (Array.isArray(value)) {
       const valueOut: Record<string, number> = {};
       for (const wValue of value)
@@ -87,10 +87,10 @@ export interface APNumericSettingJson extends APSettingJson<number | string> {
   }
 
   /** @override */
-  protected onWeightedCheck({
+  protected onWeightedCheck = ({
     currentTarget,
-  }: ChangeEvent<HTMLInputElement>): void {
-    const { value } = this.state;
+  }: ChangeEvent<HTMLInputElement>): void => {
+    const { value } = this;
     if (currentTarget.checked) {
       const newValue: APWeightedSetting<number | string>[] = [
         { value: value as number | string, weight: 50 },
@@ -101,23 +101,16 @@ export interface APNumericSettingJson extends APSettingJson<number | string> {
             return { value: i, weight: 0 };
           })
         );
-      this.setState({
-        weighted: true,
-        value: newValue,
-        selector: this.default,
-      });
-    } else
-      this.setState({
-        weighted: false,
-        value: this.default,
-      });
+      this.value = newValue;
+      this.selector = this.default;
+    } else this.value = this.default;
   }
 
   /** @override */
-  protected renderLinearChoice(): ReactNode {
-    const { category } = this.props;
-    const { value } = this.state;
+  protected renderLinearChoice = () => {
     const {
+      category,
+      value,
       name,
       _low: low,
       _high: high,
@@ -130,9 +123,7 @@ export interface APNumericSettingJson extends APSettingJson<number | string> {
 
     /** An event handler which fires when the value for this setting is changed. */
     const onSettingChange = (newVal: number) => {
-      this.setState({
-        value: newVal,
-      });
+      this.value = newVal;
     };
 
     return (
@@ -154,10 +145,11 @@ export interface APNumericSettingJson extends APSettingJson<number | string> {
   }
 
   /** @override */
-  protected renderWeightedChoice(): ReactNode {
-    const { category } = this.props;
-    const { value, selector } = this.state;
+  protected renderWeightedChoice = () => {
     const {
+      category,
+      value,
+      selector,
       name,
       _low: low,
       _high: high,
@@ -188,9 +180,7 @@ export interface APNumericSettingJson extends APSettingJson<number | string> {
 
     /** An event handler that fires when the value selector's value changes. */
     const onSettingChange = (newVal: number) => {
-      this.setState({
-        selector: newVal,
-      });
+      this.selector = newVal;
     };
 
     /** An event handler that fires when the "Add value" button is clicked. */
@@ -217,7 +207,7 @@ export interface APNumericSettingJson extends APSettingJson<number | string> {
               );
           } else return typeof a.value === "number" ? -1 : 1;
         });
-      this.setState({ value: newValue });
+      this.value = newValue;
     };
 
     return (

@@ -1,10 +1,10 @@
-import { ChangeEvent, ReactNode } from "react";
+import { ChangeEvent/*, ReactNode*/ } from "react";
 
 import { SettingType } from "../../defs/core";
 import {
   APBaseSetting,
   APSettingJson,
-  APSettingProps,
+  // APSettingProps,
   APWeightedSetting,
 } from "./APBaseSetting";
 
@@ -17,18 +17,18 @@ export interface APBooleanSettingJson extends APSettingJson<boolean> {
 }
 
 export class APBooleanSetting extends APBaseSetting<boolean> {
-  constructor(props: APSettingProps, settingData: APBooleanSettingJson) {
-    super(props, settingData);
+  // constructor(props: APSettingProps, settingData: APBooleanSettingJson) {
+  //   super(props, settingData);
 
-    this.state = {
-      weighted: false,
-      value: this.default,
-    };
-  }
+  //   this.state = {
+  //     weighted: false,
+  //     value: this.default,
+  //   };
+  // }
 
   /** @override */
   get yamlValue() {
-    const { value } = this.state;
+    const { value } = this;
     if (Array.isArray(value)) {
       const valueOut: Record<string, number> = {};
       for (const wValue of value)
@@ -50,14 +50,12 @@ export class APBooleanSetting extends APBaseSetting<boolean> {
     } else this.value = value;
   }
 
-  protected onWeightedCheck({
+  protected onWeightedCheck = ({
     currentTarget,
-  }: ChangeEvent<HTMLInputElement>): void {
-    const { value } = this.state;
+  }: ChangeEvent<HTMLInputElement>): void => {
+    const { value } = this;
     if (currentTarget.checked)
-      this.setState({
-        weighted: true,
-        value: [
+      this.value = [
           {
             value: true,
             weight: (value as boolean) ? 50 : 0,
@@ -66,14 +64,13 @@ export class APBooleanSetting extends APBaseSetting<boolean> {
             value: false,
             weight: !(value as boolean) ? 50 : 0,
           },
-        ],
-      });
-    else this.setState({ weighted: false, value: this.default });
+        ];
+    else this.value = this.default;
   }
 
-  protected renderLinearChoice(): ReactNode {
+  protected renderLinearChoice = () => {
     // if this is a weighted setting, output nothing; it should output correctly on the next frame
-    const { value } = this.state;
+    const { value } = this;
 
     // if this is a weighted setting, output nothing; it should output correctly on the next frame
     if (Array.isArray(value)) return null;
@@ -82,7 +79,7 @@ export class APBooleanSetting extends APBaseSetting<boolean> {
     const onSettingChange: React.ChangeEventHandler<HTMLInputElement> = ({
       currentTarget,
     }) => {
-      this.setState({ value: currentTarget.checked });
+      this.value = currentTarget.checked;
     };
 
     // Output the value toggle
@@ -101,9 +98,9 @@ export class APBooleanSetting extends APBaseSetting<boolean> {
     );
   }
 
-  protected renderWeightedChoice(): ReactNode {
+  protected renderWeightedChoice = () => {
     // if this is a weighted setting, output nothing; it should output correctly on the next frame
-    const { value } = this.state;
+    const { value } = this;
 
     // if this is not a weighted setting, output nothing; it should output correctly on the next frame
     if (!Array.isArray(value)) return null;

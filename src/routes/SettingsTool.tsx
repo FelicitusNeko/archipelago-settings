@@ -1173,7 +1173,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
           )} */}
           {APCategoryList.map((i) => (
             <TabPanel key={`tabpanel-${i.category}`} className="settingsBody">
-              {i.settings[0]}
+              {i.settings.map(ii => ii.render())}
             </TabPanel>
           ))}
           <TabPanel className="settingsBody">

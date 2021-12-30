@@ -4,7 +4,7 @@ import { SettingType } from "../../defs/core";
 import {
   APBaseSetting,
   APSettingJson,
-  APSettingProps,
+  // APSettingProps,
   APWeightedSetting,
 } from "./APBaseSetting";
 
@@ -26,22 +26,22 @@ export interface APStringSettingJson extends APSettingJson<string> {
  * The renderable representation of an Archipelago string-based setting.
  * @since 1.0.0
  */
- export class APStringSetting extends APBaseSetting<string> {
+export class APStringSetting extends APBaseSetting<string> {
   private readonly _values: Record<string, string | string[]>;
 
-  constructor(props: APSettingProps, settingData: APStringSettingJson) {
-    super(props, settingData);
+  constructor(category: string | null, settingData: APStringSettingJson) {
+    super(category, settingData);
 
     this._values = settingData.values;
-    this.state = {
-      weighted: false,
-      value: this.default,
-    };
+    // this.state = {
+    //   weighted: false,
+    //   value: this.default,
+    // };
   }
 
   /** @override */
   get yamlValue() {
-    const { value } = this.state;
+    const { value } = this;
     if (Array.isArray(value)) {
       const valueOut: Record<string, number> = {};
       for (const wValue of value) valueOut[wValue.value] = wValue.weight;
@@ -66,7 +66,7 @@ export interface APStringSettingJson extends APSettingJson<string> {
   private getFirstUnselected(
     ...additionalOptions: string[]
   ): string | undefined {
-    const { value } = this.state;
+    const { value } = this;
     const selectedValues = (
       Array.isArray(value) ? value.map((i) => i.value) : [value]
     ).concat(additionalOptions);
@@ -77,24 +77,23 @@ export interface APStringSettingJson extends APSettingJson<string> {
   }
 
   /** @override */
-  protected onWeightedCheck({ currentTarget }: ChangeEvent<HTMLInputElement>) {
+  protected onWeightedCheck = ({
+    currentTarget,
+  }: ChangeEvent<HTMLInputElement>) => {
     if (currentTarget.checked) {
-      this.setState({
-        value: [
-          {
-            value: this.value as string,
-            weight: 50,
-          },
-        ] as APWeightedSetting<string>[],
-        selector: this.getFirstUnselected(),
-      });
+      this.value = [
+        {
+          value: this.value as string,
+          weight: 50,
+        },
+      ] as APWeightedSetting<string>[];
+      this.selector = this.getFirstUnselected();
     } else this.value = this.default;
-  }
+  };
 
   /** @override */
-  protected renderLinearChoice() {
-    const { category } = this.props;
-    const { value } = this.state;
+  protected renderLinearChoice = () => {
+    const { category, value } = this;
 
     // if this is a weighted setting, output nothing; it should output correctly on the next frame
     if (Array.isArray(value)) return null;
@@ -121,20 +120,19 @@ export interface APStringSettingJson extends APSettingJson<string> {
             <option
               key={`${category}-${this.name}-val-${name}`}
               title={Array.isArray(readable) ? readable[1] : undefined}
-              value={Array.isArray(readable) ? readable[0] : readable}
+              value={name}
             >
-              {name}
+              {Array.isArray(readable) ? `${readable[0]} ℹ️` : readable}
             </option>
           );
         })}
       </select>
     );
-  }
+  };
 
   /** @override */
-  protected renderWeightedChoice() {
-    const { category } = this.props;
-    const { value, selector } = this.state;
+  protected renderWeightedChoice = () => {
+    const { category, value, selector } = this;
 
     // if this is not a weighted setting, output nothing; it should output correctly on the next frame
     if (!Array.isArray(value)) return null;
@@ -168,23 +166,19 @@ export interface APStringSettingJson extends APSettingJson<string> {
       currentTarget,
     }) => {
       //setAddWeightString(currentTarget.value);
-      this.setState({
-        selector: currentTarget.value,
-      });
+      this.selector = currentTarget.value;
     };
 
     /** An event handler that fires when the "Add value" button is clicked. */
     const onAddWeight = () => {
       if (!selector) return;
-      this.setState({
-        value: value.slice().concat([
-          {
-            value: selector,
-            weight: 50,
-          },
-        ]),
-        selector: this.getFirstUnselected(selector),
-      });
+      this.value = value.slice().concat([
+        {
+          value: selector,
+          weight: 50,
+        },
+      ]);
+      this.selector = this.getFirstUnselected(selector);
     };
 
     /** The list of unselected values. */
@@ -213,9 +207,9 @@ export interface APStringSettingJson extends APSettingJson<string> {
                   <option
                     key={`${category}-${this.name}-val-${name}`}
                     title={Array.isArray(readable) ? readable[1] : undefined}
-                    value={Array.isArray(readable) ? readable[0] : readable}
+                    value={name}
                   >
-                    {name}
+                    {Array.isArray(readable) ? `${readable[0]} ℹ️` : readable}
                   </option>
                 );
               })}
@@ -232,5 +226,5 @@ export interface APStringSettingJson extends APSettingJson<string> {
         ) : null}
       </>
     );
-  }
+  };
 }

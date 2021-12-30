@@ -11,10 +11,6 @@ div.setting {
   font-size: 100%;
 }
 
-.settingDropdown option[title]::after {
-  content: "ℹ️";
-}
-
 .archslider {
   display: inline-block;
   width: 30%;

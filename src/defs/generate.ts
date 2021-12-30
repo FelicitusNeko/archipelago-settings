@@ -43,30 +43,30 @@ const APCategoryList: APCategoryJson<APBaseSetting<any>>[] = APCategoryData.map(
         switch (setting.type) {
           case SettingType.String:
             return new APStringSetting(
-              { category: i.category },
+              i.category,
               setting as APStringSettingJson
             );
           case SettingType.Numeric:
             return new APNumericSetting(
-              { category: i.category },
+              i.category,
               setting as APNumericSettingJson
             );
           case SettingType.Boolean:
             return new APBooleanSetting(
-              { category: i.category },
+              i.category,
               setting as APBooleanSettingJson
             );
           case SettingType.Games: {
             const stringJson = setting as APStringSettingJson;
             stringJson.type = SettingType.String;
             stringJson.values = Object.fromEntries(gameList);
-            return new APStringSetting({ category: i.category }, stringJson);
+            return new APStringSetting(i.category, stringJson);
           }
           case SettingType.LttPSprite: {
             const stringJson = setting as APStringSettingJson;
             stringJson.type = SettingType.String;
             stringJson.values = spritevalue;
-            return new APStringSetting({ category: i.category }, stringJson);
+            return new APStringSetting(i.category, stringJson);
           }
           default:
             throw new Error(`Unknown setting type: ${setting.type}`)
