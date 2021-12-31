@@ -34,10 +34,6 @@ export class APBooleanSetting extends APSetting<boolean> {
     } else this.value = value;
   }
 
-  /** Whether this setting is a Boolean setting. */
-  isBooleanSetting(): this is APBooleanSetting {
-    return this.type === SettingType.Boolean;
-  }
   /**
    * Evaluates whether a setting definition is for a Boolean setting.
    * @param value The setting definition to evalute.

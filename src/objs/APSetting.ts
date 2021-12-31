@@ -1,4 +1,7 @@
 import { ArchipelagoDependency, SettingType } from "../defs/core";
+import { APBooleanSetting } from "./APBooleanSetting";
+import { APNumericSetting } from "./APNumericSetting";
+import { APStringSetting } from "./APStringSetting";
 
 /**
  * The definition for a weighted setting. Its chance of being selected is based on its weight value.
@@ -150,6 +153,24 @@ export abstract class APSetting<T> {
   abstract get yamlValue(): T | Record<string, number>;
   abstract set yamlValue(value);
 
+  /** Whether this setting is a Boolean setting. */
+  isBooleanSetting(): this is APBooleanSetting {
+    return this.type === SettingType.Boolean;
+  }
+  /** Whether this setting is a numeric setting. */
+  isNumericSetting(): this is APNumericSetting {
+    return this.type === SettingType.Numeric;
+  }
+  /** Whether this setting is a string-based setting. */
+  isStringSetting(): this is APStringSetting {
+    return [
+      SettingType.String,
+      SettingType.Games,
+      SettingType.Character,
+    ].includes(this.type);
+  }
+
+  /** Whether the given value is weighted. */
   static isWeighted(
     value: APWeightableValue<any>
   ): value is APWeightedValue<any> {

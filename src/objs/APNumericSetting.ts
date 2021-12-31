@@ -106,10 +106,6 @@ export class APNumericSetting extends APSetting<number | string> {
     } else this.value = value;
   }
 
-  /** Whether this setting is a numeric setting. */
-  isNumericSetting(): this is APNumericSetting {
-    return this.type === SettingType.Numeric;
-  }
   /**
    * Evaluates whether a setting definition is for a numeric setting.
    * @param value The setting definition to evalute.
