@@ -153,6 +153,15 @@ export abstract class APSetting<T> {
   abstract get yamlValue(): T | Record<string, number>;
   abstract set yamlValue(value);
 
+  includes(...values: T[]) {
+    return (
+      (Array.isArray(this._value)
+        ? this._value.map((i) => i.value)
+        : [this._value]
+      ).filter((i) => values.includes(i)).length > 0
+    );
+  }
+
   /** Whether this setting is a Boolean setting. */
   isBooleanSetting(): this is APBooleanSetting {
     return this.type === SettingType.Boolean;
@@ -175,7 +184,7 @@ export abstract class APSetting<T> {
    * @param value The setting definition to evalute.
    * @returns Whether the given setting definition is for a string-based setting.
    */
-   static isStringJson(value: APSettingJson<any>): value is APStringSettingJson {
+  static isStringJson(value: APSettingJson<any>): value is APStringSettingJson {
     return [
       SettingType.String,
       SettingType.Games,
@@ -187,7 +196,7 @@ export abstract class APSetting<T> {
    * @param value The setting definition to evalute.
    * @returns Whether the given setting definition is for a numeric setting.
    */
-   static isNumericJson(
+  static isNumericJson(
     value: APSettingJson<any>
   ): value is APNumericSettingJson {
     return value.type === SettingType.Numeric;
