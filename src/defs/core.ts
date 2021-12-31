@@ -9,6 +9,10 @@ export { BuildTimestamp };
 export enum SettingType {
   /** Refers to a string-based setting. */
   String = "string",
+  /** Refers to the string-based game selection setting. This should only exist once. */
+  Games = "games",
+  /** Refers to the string-based sprite/model selection setting, if one exists. This typically should only exist no more than once per game. */
+  Character = "char",
   /** Refers to a numeric setting. */
   Numeric = "numeric",
   /** Refers to a setting whose value may be true/on or false/off. */
@@ -48,7 +52,7 @@ interface CommonItemSettingChangeEventOptions {
   /** Resets all lists in this category. If {@link destination} is set, reset only that list. */
   reset?: boolean;
 }
-/** 
+/**
  * Refers to an event where the item selector is reporting a change back to the base app.
  * @since 0.10.0
  */
@@ -91,7 +95,7 @@ export interface ArchipelagoSettingBase {
 
 /** The interface for a string-based setting. */
 export interface ArchipelagoStringSetting extends ArchipelagoSettingBase {
-  /** 
+  /**
    * The type of setting. Must be {@link SettingType.String}.
    * @override
    */
@@ -119,7 +123,7 @@ export interface ArchipelagoNumericSetting extends ArchipelagoSettingBase {
   step?: number;
   /** @override */
   default: number;
-  /** 
+  /**
    * Whether the setting can be randomized. If so, and if the setting is weighted, "random", "random-low", and
    * "random-high" are added as options.
    */
@@ -166,7 +170,7 @@ export interface ArchipelagoItem extends ArchipelagoGameEntity {
  * The interface defining a location in an Archipelago game.
  * @since 0.9.4
  */
- export interface ArchipelagoLocation extends ArchipelagoGameEntity {
+export interface ArchipelagoLocation extends ArchipelagoGameEntity {
   /** The internal name of the location. */
   name: string;
   /** The human-readable name of the location, if it differs from {@link ArchipelagoLocation.name}. */
@@ -249,8 +253,7 @@ const DeathLinkOption = Object.seal<ArchipelagoBooleanSetting>({
   type: SettingType.Boolean,
   name: "death_link",
   readableName: "DeathLink",
-  description:
-    "If one DeathLinked player dies, all of them do.",
+  description: "If one DeathLinked player dies, all of them do.",
   default: false,
-})
-export {DeathLinkOption}
+});
+export { DeathLinkOption };
