@@ -75,6 +75,7 @@ const APCategoryList: APCategory[] = APCategoryData.map((i) => {
 
           const stringJson = setting as APStringSettingJson;
           stringJson.values = Object.fromEntries(gameList);
+          stringJson.default = gameList[0][0];
           return new APStringSetting(i.category, stringJson);
         }
         case SettingType.Character: {
@@ -104,6 +105,6 @@ export { APCategoryList };
 
 const GameSetting = APCategoryList[0].settings.find(
   (i) => i.type === SettingType.Games
-);
+) as APStringSetting;
 if (GameSetting === undefined) throw new Error('No game selection setting found');
-export { GameSetting as APStringSetting };
+export { GameSetting };
