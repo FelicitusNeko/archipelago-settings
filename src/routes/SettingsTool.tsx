@@ -4,13 +4,13 @@ import yaml from "yaml";
 import { DateTime } from "luxon";
 import "react-tabs/style/react-tabs.css";
 
-import Setting from "./objs/Setting";
+//import Setting from "./objs/Setting";
 import ItemSelector from "./objs/ItemSelector";
 import Changelog from "./objs/Changelog";
 
 import {
   BuildTimestamp,
-  SettingChangeEvent,
+  // SettingChangeEvent,
   ArchipelagoSettingBase,
   ArchipelagoStringSetting,
   ArchipelagoNumericSetting,
@@ -28,6 +28,11 @@ import {
 } from "../defs/core";
 import { version } from "../../package.json";
 import { CategoryList } from "../defs/global";
+import { APCategoryList } from "../defs/generate";
+import { APCategory } from "../defs/categories/reader";
+import { APStringSettingNode } from "./objs/APStringSettingNode";
+import { APNumericSettingNode } from "./objs/APNumericSettingNode";
+import { APBooleanSettingNode } from "./objs/APBooleanSettingNode";
 import "./SettingsTool.css";
 
 const { localStorage, location, confirm } = window;
@@ -525,32 +530,36 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
     setDescription(currentTarget.value);
   };
 
-  /**
-   * A synthetic event handler that fires when the value of a setting is changed.
-   * @param {string} settingName The internal name of the setting.
-   * @param {SettingValue} newValue The new value for this setting.
-   * @param {string} [category] Optional. The category to which this setting belongs. If omitted, it is presumed to be a global setting.
-   */
-  const onSettingChange: SettingChangeEvent = (
-    settingName: string,
-    newValue: SettingValue,
-    category?: string
-  ) => {
-    const newSetting: SettingsCollection = {};
-    if (category) {
-      // If there's a category specified, update the setting in that category
-      const newSubSetting: SettingsSubcollection = {};
-      newSubSetting[settingName] = newValue;
-      newSetting[category] = Object.assign(
-        {},
-        settings[category],
-        newSubSetting
-      );
-      // Otherwise, update the global setting
-    } else newSetting[settingName] = newValue;
+  // /**
+  //  * A synthetic event handler that fires when the value of a setting is changed.
+  //  * @param {string} settingName The internal name of the setting.
+  //  * @param {SettingValue} newValue The new value for this setting.
+  //  * @param {string} [category] Optional. The category to which this setting belongs. If omitted, it is presumed to be a global setting.
+  //  */
+  // const onSettingChange: SettingChangeEvent = (
+  //   settingName: string,
+  //   newValue: SettingValue,
+  //   category?: string
+  // ) => {
+  //   const newSetting: SettingsCollection = {};
+  //   if (category) {
+  //     // If there's a category specified, update the setting in that category
+  //     const newSubSetting: SettingsSubcollection = {};
+  //     newSubSetting[settingName] = newValue;
+  //     newSetting[category] = Object.assign(
+  //       {},
+  //       settings[category],
+  //       newSubSetting
+  //     );
+  //     // Otherwise, update the global setting
+  //   } else newSetting[settingName] = newValue;
 
-    // Merge everything together
-    setSettings(Object.assign({}, settings, newSetting));
+  //   // Merge everything together
+  //   setSettings(Object.assign({}, settings, newSetting));
+  // };
+
+  const SaveToStorage = () => {
+    // do what it says
   };
 
   /**
@@ -1025,41 +1034,102 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
     }
   };
 
+  // /**
+  //  * Converts a collection of settings into an array of {@link Setting} objects.
+  //  * @param category The category to which the settings belong.
+  //  * @param settingsDef The collection of settings to convert.
+  //  * @returns {React.ReactNode[]|null} The collection of {@link Setting} objects.
+  //  */
+  // const outputSettingCollection = (
+  //   category: string | null,
+  //   settingsDef: ArchipelagoSettingBase[]
+  // ): React.ReactNode[] | null => {
+  //   // If there are no settings for a category, nothing to return
+  //   if (category !== null && settings[category] === undefined) return null;
+  //   // If the game is not selected, nothing to return
+  //   if (!isGameEnabled(settings, category)) return null;
+
+  //   /** The relevant subcollection of settings for this operation. */
+  //   const subsettings = (
+  //     category === null ? settings : settings[category]
+  //   ) as SettingsSubcollection;
+  //   return (
+  //     settingsDef
+  //       // Filter out any invalid settings (shouldn't happen, but just in case)
+  //       .filter((i) => Object.keys(subsettings).includes(i.name))
+  //       .filter((i) => checkDependency(subsettings, i.dependsOn))
+  //       .map((i) => (
+  //         // Return the setting object
+  //         <Setting
+  //           key={`setting-${category}-${i.name}`}
+  //           category={category ?? undefined}
+  //           setting={i}
+  //           value={subsettings[i.name]}
+  //           onChange={onSettingChange}
+  //         />
+  //       ))
+  //   );
+  // };
+
   /**
    * Converts a collection of settings into an array of {@link Setting} objects.
    * @param category The category to which the settings belong.
    * @param settingsDef The collection of settings to convert.
    * @returns {React.ReactNode[]|null} The collection of {@link Setting} objects.
    */
-  const outputSettingCollection = (
-    category: string | null,
-    settingsDef: ArchipelagoSettingBase[]
+  const outputSettingCollectionV2 = (
+    category: APCategory
   ): React.ReactNode[] | null => {
-    // If there are no settings for a category, nothing to return
-    if (category !== null && settings[category] === undefined) return null;
     // If the game is not selected, nothing to return
-    if (!isGameEnabled(settings, category)) return null;
+    // if (!isGameEnabled(settings, category)) return null;
 
-    /** The relevant subcollection of settings for this operation. */
-    const subsettings = (
-      category === null ? settings : settings[category]
-    ) as SettingsSubcollection;
-    return (
-      settingsDef
-        // Filter out any invalid settings (shouldn't happen, but just in case)
-        .filter((i) => Object.keys(subsettings).includes(i.name))
-        .filter((i) => checkDependency(subsettings, i.dependsOn))
-        .map((i) => (
-          // Return the setting object
-          <Setting
-            key={`setting-${category}-${i.name}`}
-            category={category ?? undefined}
+    return category.settings.map((i) => {
+      if (i.isStringSetting())
+        return (
+          <APStringSettingNode
+            category={i.category}
             setting={i}
-            value={subsettings[i.name]}
-            onChange={onSettingChange}
+            save={SaveToStorage}
           />
-        ))
-    );
+        );
+      if (i.isNumericSetting())
+        return (
+          <APNumericSettingNode
+            category={i.category}
+            setting={i}
+            save={SaveToStorage}
+          />
+        );
+      if (i.isBooleanSetting())
+        return (
+          <APBooleanSettingNode
+            category={i.category}
+            setting={i}
+            save={SaveToStorage}
+          />
+        );
+      return null;
+    });
+    // /** The relevant subcollection of settings for this operation. */
+    // const subsettings = (
+    //   category === null ? settings : settings[category]
+    // ) as SettingsSubcollection;
+    // return (
+    //   settingsDef
+    //     // Filter out any invalid settings (shouldn't happen, but just in case)
+    //     .filter((i) => Object.keys(subsettings).includes(i.name))
+    //     .filter((i) => checkDependency(subsettings, i.dependsOn))
+    //     .map((i) => (
+    //       // Return the setting object
+    //       <Setting
+    //         key={`setting-${category}-${i.name}`}
+    //         category={category ?? undefined}
+    //         setting={i}
+    //         value={subsettings[i.name]}
+    //         onChange={onSettingChange}
+    //       />
+    //     ))
+    // );
   };
 
   // Finally, lay out the page
@@ -1118,16 +1188,37 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
 
         <Tabs>
           <TabList className="react-tabs__tab-list settingsTabs">
-            {CategoryList.filter((i) =>
+            {/* {CategoryList.filter((i) =>
               isGameEnabled(settings, i.category)
             ).map((i) => (
               // Output tabs for enabled games
+              <Tab key={`tab-${i.category}`}>{i.category ?? "Global"}</Tab>
+            ))} */}
+            {APCategoryList.map((i) => (
               <Tab key={`tab-${i.category}`}>{i.category ?? "Global"}</Tab>
             ))}
             <Tab>Changelog</Tab>
           </TabList>
 
-          {CategoryList.filter((i) => isGameEnabled(settings, i.category)).map(
+          {APCategoryList.map((i) => (
+            <TabPanel key={`tabpanel-${i.category}`} className="settingsBody">
+              {outputSettingCollectionV2(i)}
+              {i.category && i.items ? (
+                <ItemSelector
+                  category={i.category}
+                  items={i.items/*.filter((ii) =>
+                    checkDependency(
+                      settings[i.category!] as SettingsSubcollection,
+                      ii.dependsOn
+                    )
+                    )*/}
+                  commonSettings={commonSettings[i.category]}
+                  onChange={onCommonItemSettingChange}
+                />
+              ) : null}
+            </TabPanel>
+          ))}
+          {/* {CategoryList.filter((i) => isGameEnabled(settings, i.category)).map(
             (i) => (
               // Output tab panels containing setting collections for enabled games
               <TabPanel key={`tabpanel-${i.category}`} className="settingsBody">
@@ -1147,7 +1238,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
                 ) : null}
               </TabPanel>
             )
-          )}
+          )} */}
           <TabPanel className="settingsBody">
             <Changelog />
           </TabPanel>
