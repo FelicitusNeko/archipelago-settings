@@ -105,15 +105,4 @@ export class APNumericSetting extends APSetting<number | string> {
       this.value = wValues;
     } else this.value = value;
   }
-
-  /**
-   * Evaluates whether a setting definition is for a numeric setting.
-   * @param value The setting definition to evalute.
-   * @returns Whether the given setting definition is for a numeric setting.
-   */
-  static isNumericJson(
-    value: APSettingJson<any>
-  ): value is APNumericSettingJson {
-    return value.type === SettingType.Numeric;
-  }
 }

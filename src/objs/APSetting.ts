@@ -1,7 +1,7 @@
 import { ArchipelagoDependency, SettingType } from "../defs/core";
-import { APBooleanSetting } from "./APBooleanSetting";
-import { APNumericSetting } from "./APNumericSetting";
-import { APStringSetting } from "./APStringSetting";
+import { APBooleanSetting, APBooleanSettingJson } from "./APBooleanSetting";
+import { APNumericSetting, APNumericSettingJson } from "./APNumericSetting";
+import { APStringSetting, APStringSettingJson } from "./APStringSetting";
 
 /**
  * The definition for a weighted setting. Its chance of being selected is based on its weight value.
@@ -168,6 +168,39 @@ export abstract class APSetting<T> {
       SettingType.Games,
       SettingType.Character,
     ].includes(this.type);
+  }
+
+  /**
+   * Evaluates whether a setting definition is for a string-based setting.
+   * @param value The setting definition to evalute.
+   * @returns Whether the given setting definition is for a string-based setting.
+   */
+   static isStringJson(value: APSettingJson<any>): value is APStringSettingJson {
+    return [
+      SettingType.String,
+      SettingType.Games,
+      SettingType.Character,
+    ].includes(value.type);
+  }
+  /**
+   * Evaluates whether a setting definition is for a numeric setting.
+   * @param value The setting definition to evalute.
+   * @returns Whether the given setting definition is for a numeric setting.
+   */
+   static isNumericJson(
+    value: APSettingJson<any>
+  ): value is APNumericSettingJson {
+    return value.type === SettingType.Numeric;
+  }
+  /**
+   * Evaluates whether a setting definition is for a Boolean setting.
+   * @param value The setting definition to evalute.
+   * @returns Whether the given setting definition is for a Boolean setting.
+   */
+  static isBooleanJson(
+    value: APSettingJson<any>
+  ): value is APBooleanSettingJson {
+    return value.type === SettingType.Boolean;
   }
 
   /** Whether the given value is weighted. */

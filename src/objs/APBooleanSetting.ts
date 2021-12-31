@@ -1,8 +1,6 @@
 import { SettingType } from "../defs/core";
 import { APSetting, APSettingJson, APWeightedValue } from "./APSetting";
 
-import "./switch.css";
-
 const positiveValues = ["true", "on"];
 
 export interface APBooleanSettingJson extends APSettingJson<boolean> {
@@ -32,16 +30,5 @@ export class APBooleanSetting extends APSetting<boolean> {
         });
       this.value = wValues;
     } else this.value = value;
-  }
-
-  /**
-   * Evaluates whether a setting definition is for a Boolean setting.
-   * @param value The setting definition to evalute.
-   * @returns Whether the given setting definition is for a Boolean setting.
-   */
-  static isBooleanJson(
-    value: APSettingJson<any>
-  ): value is APBooleanSettingJson {
-    return value.type === SettingType.Boolean;
   }
 }

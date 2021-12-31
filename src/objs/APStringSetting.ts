@@ -65,17 +65,4 @@ export class APStringSetting extends APSetting<string> {
       this.value = wValues;
     } else this.value = value;
   }
-
-  /**
-   * Evaluates whether a setting definition is for a string-based setting.
-   * @param value The setting definition to evalute.
-   * @returns Whether the given setting definition is for a string-based setting.
-   */
-  static isStringJson(value: APSettingJson<any>): value is APStringSettingJson {
-    return [
-      SettingType.String,
-      SettingType.Games,
-      SettingType.Character,
-    ].includes(value.type);
-  }
 }
