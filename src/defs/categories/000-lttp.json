@@ -930,7 +930,7 @@
       }
     },
     {
-      "type": "lttp-sprite",
+      "type": "char",
       "name": "sprite",
       "readableName": "Sprite",
       "description": "Your hero's sprite. Sorry there are no pictures; this is being done in a very hacky way to begin with. ZSPR files are hard."
