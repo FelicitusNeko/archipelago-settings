@@ -1,12 +1,12 @@
-import { ChangeEvent, ReactNode } from "react";
+import { ChangeEvent } from "react";
 
 import { APBooleanSetting } from "../../objs/APBooleanSetting";
 import { APSettingNode } from "./APSettingNode";
 
 export class APBooleanSettingNode extends APSettingNode<APBooleanSetting> {
-  protected onWeightedCheck({
+  protected onWeightedCheck = ({
     currentTarget,
-  }: ChangeEvent<HTMLInputElement>): void {
+  }: ChangeEvent<HTMLInputElement>) => {
     const { setting } = this.props;
     const { value } = this.state;
     if (currentTarget.checked)
@@ -25,7 +25,7 @@ export class APBooleanSettingNode extends APSettingNode<APBooleanSetting> {
     else this.setState({ value: setting.default });
   }
 
-  protected renderLinearChoice(): ReactNode {
+  protected renderLinearChoice = () => {
     // if this is a weighted setting, output nothing; it should output correctly on the next frame
     const { setting } = this.props;
     const { value } = this.state;
@@ -56,7 +56,7 @@ export class APBooleanSettingNode extends APSettingNode<APBooleanSetting> {
     );
   }
 
-  protected renderWeightedChoice(): ReactNode {
+  protected renderWeightedChoice = () => {
     // if this is a weighted setting, output nothing; it should output correctly on the next frame
     const { value } = this.state;
 

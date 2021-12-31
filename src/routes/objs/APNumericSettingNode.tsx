@@ -1,4 +1,4 @@
-import { ChangeEvent, ReactNode } from "react";
+import { ChangeEvent } from "react";
 import Slider from "rc-slider";
 
 import { APNumericSetting } from "../../objs/APNumericSetting";
@@ -11,9 +11,9 @@ const randomOrder = ["random", "random-low", "random-middle", "random-high"];
 type APNumericType = number | string;
 export class APNumericSettingNode extends APSettingNode<APNumericSetting> {
   /** @override */
-  protected onWeightedCheck({
+  protected onWeightedCheck = ({
     currentTarget,
-  }: ChangeEvent<HTMLInputElement>): void {
+  }: ChangeEvent<HTMLInputElement>) => {
     const {setting} = this.props;
     const { value } = this.state;
     if (currentTarget.checked) {
@@ -37,7 +37,7 @@ export class APNumericSettingNode extends APSettingNode<APNumericSetting> {
   }
 
   /** @override */
-  protected renderLinearChoice(): ReactNode {
+  protected renderLinearChoice = () => {
     const { category, setting } = this.props;
     const { value } = this.state;
     const {
@@ -77,7 +77,7 @@ export class APNumericSettingNode extends APSettingNode<APNumericSetting> {
   }
 
   /** @override */
-  protected renderWeightedChoice(): ReactNode {
+  protected renderWeightedChoice = () => {
     const { category, setting } = this.props;
     const { value, selector } = this.state;
     const {

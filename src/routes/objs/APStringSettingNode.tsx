@@ -34,7 +34,9 @@ export class APStringSettingNode extends APSettingNode<APStringSetting> {
   }
 
   /** @override */
-  protected onWeightedCheck({ currentTarget }: ChangeEvent<HTMLInputElement>) {
+  protected onWeightedCheck = ({
+    currentTarget,
+  }: ChangeEvent<HTMLInputElement>) => {
     const { setting } = this.props;
     const { value } = this.state;
     if (currentTarget.checked) {
@@ -51,10 +53,10 @@ export class APStringSettingNode extends APSettingNode<APStringSetting> {
       this.setState({
         value: setting.default,
       });
-  }
+  };
 
   /** @override */
-  protected renderLinearChoice() {
+  protected renderLinearChoice = () => {
     const { category, setting } = this.props;
     const { value } = this.state;
 
@@ -65,10 +67,9 @@ export class APStringSettingNode extends APSettingNode<APStringSetting> {
     const onSettingChange: React.ChangeEventHandler<HTMLSelectElement> = ({
       currentTarget,
     }) => {
-      //onChange(sName, currentTarget.value, category);
       this.setState({
-        value: currentTarget.value
-      })
+        value: currentTarget.value,
+      });
     };
 
     return (
@@ -85,24 +86,23 @@ export class APStringSettingNode extends APSettingNode<APStringSetting> {
             <option
               key={`${category}-${setting.name}-val-${name}`}
               title={Array.isArray(readable) ? readable[1] : undefined}
-              value={Array.isArray(readable) ? readable[0] : readable}
+              value={name}
             >
-              {name}
+              {Array.isArray(readable) ? `${readable[0]} ℹ️` : readable}
             </option>
           );
         })}
       </select>
     );
-  }
+  };
 
   /** @override */
-  protected renderWeightedChoice() {
+  protected renderWeightedChoice = () => {
     const { category, setting } = this.props;
     const { value, selector } = this.state;
 
     // if this is not a weighted setting, output nothing; it should output correctly on the next frame
     if (!Array.isArray(value)) return null;
-    //const { name: sName, values } = setting as ArchipelagoStringSetting;
     /** How many selected weights there are. */
     const count = value.length;
     /** The collection of weighted value sliders. */
@@ -131,7 +131,6 @@ export class APStringSettingNode extends APSettingNode<APStringSetting> {
     const onAddWeightChange: React.ChangeEventHandler<HTMLSelectElement> = ({
       currentTarget,
     }) => {
-      //setAddWeightString(currentTarget.value);
       this.setState({
         selector: currentTarget.value,
       });
@@ -170,16 +169,13 @@ export class APStringSettingNode extends APSettingNode<APStringSetting> {
             >
               {remainingValues.map((i) => {
                 const [name, readable] = i;
-
-                // let name = values[i],
-                //   title;
                 return (
                   <option
                     key={`${category}-${setting.name}-val-${name}`}
                     title={Array.isArray(readable) ? readable[1] : undefined}
-                    value={Array.isArray(readable) ? readable[0] : readable}
+                    value={name}
                   >
-                    {name}
+                    {Array.isArray(readable) ? `${readable[0]} ℹ️` : readable}
                   </option>
                 );
               })}
@@ -196,5 +192,5 @@ export class APStringSettingNode extends APSettingNode<APStringSetting> {
         ) : null}
       </>
     );
-  }
+  };
 }

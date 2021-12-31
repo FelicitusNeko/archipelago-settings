@@ -1,11 +1,21 @@
-import Slider from "rc-slider";
 import React, { ChangeEvent } from "react";
+import Slider from "rc-slider";
+import "rc-slider/assets/index.css";
+
 import { WeightRail } from "../../defs/core";
-
 import { APMetaSetting } from "../../defs/generate";
-import { APSetting, APWeightableValue } from "../../objs/APSetting";
+import {
+  APSetting,
+  APWeightableValue,
+  APWeightedValue,
+} from "../../objs/APSetting";
 
-type GenericOf<T> = T extends APSetting<infer X> ? X : never;
+import "./Setting.css";
+import "./switch.css";
+
+export type SettingValueType<T = APMetaSetting> = T extends APSetting<infer X>
+  ? X
+  : never;
 
 /** The properties for this setting. */
 export interface APSettingProps<T extends APMetaSetting> {
@@ -13,6 +23,8 @@ export interface APSettingProps<T extends APMetaSetting> {
   category: string | null;
   /** The setting definition and value for this setting. */
   setting: T;
+  /** The event callback to call when the value is changed. */
+  save: () => void;
 }
 /** The state object for this setting. */
 interface APSettingState<T> {
@@ -25,30 +37,51 @@ export abstract class APSettingNode<
   TSetting extends APMetaSetting
 > extends React.Component<
   APSettingProps<TSetting>,
-  APSettingState<GenericOf<TSetting>>
+  APSettingState<SettingValueType<TSetting>>
 > {
   constructor(props: APSettingProps<TSetting>) {
     super(props);
     this.state = {
-      value: props.setting.value as APWeightableValue<GenericOf<TSetting>>
+      value: props.setting.value as APWeightableValue<
+        SettingValueType<TSetting>
+      >,
+    };
+  }
+
+  componentDidUpdate(
+    _prevProps: APSettingProps<TSetting>,
+    prevState: APSettingState<SettingValueType<TSetting>>
+  ) {
+    const { value } = this.state;
+    if (value !== prevState.value) {
+      const { setting, save } = this.props;
+      // HACK: this doesn't work as a direct assignment for some reason
+      setting.value = value as
+        | string
+        | number
+        | boolean
+        | APWeightedValue<string>[]
+        | APWeightedValue<string | number>[]
+        | APWeightedValue<boolean>[];
+      save();
     }
   }
 
   /** Resets this setting to its default unweighted value. */
-  protected onDefault() {
+  protected onDefault = () => {
     const { setting } = this.props;
     this.setState({
-      value: setting.default as GenericOf<TSetting>,
+      value: setting.default as SettingValueType<TSetting>,
     });
   }
 
   /** Outputs a slider for a weighted value, within the context of {@link onWeightedCheck}. */
-  protected outputWeightedValue(
-    valueName: GenericOf<TSetting>,
+  protected outputWeightedValue = (
+    valueName: SettingValueType<TSetting>,
     displayName: string,
     weight: number,
     deletable?: boolean
-  ) {
+  ) => {
     const { category, setting } = this.props;
     const { value } = this.state;
 
