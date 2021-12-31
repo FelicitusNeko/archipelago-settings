@@ -28,7 +28,7 @@ import {
 } from "../defs/core";
 import { version } from "../../package.json";
 import { CategoryList } from "../defs/global";
-import { APCategoryList } from "../defs/generate";
+import { APCategoryList, GameSetting } from "../defs/generate";
 import { APCategory } from "../defs/categories/reader";
 import { APStringSettingNode } from "./objs/APStringSettingNode";
 import { APNumericSettingNode } from "./objs/APNumericSettingNode";
@@ -420,6 +420,18 @@ const isGameEnabled = (
     else return false;
     // Otherwise, only return true for the one selected category
   } else return category === settings.game;
+};
+
+/**
+ * Checks whether a game has been selected for play in the global "Game" setting.
+ * @param {string|null} category The category to check.
+ * @returns {boolean} Whether this category is enabled. Always true if {@link category} is null.
+ */
+const isGameEnabledV2 = (category: string | null): boolean => {
+  // If there's no category, it's global settings; return true.
+  if (!category) return true;
+  // Otherwise, just check whether the category is included in the Game setting. Super simple!
+  return GameSetting.includes(category);
 };
 
 /**
@@ -1081,7 +1093,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
     category: APCategory
   ): React.ReactNode[] | null => {
     // If the game is not selected, nothing to return
-    // if (!isGameEnabled(settings, category)) return null;
+     if (!isGameEnabledV2(category.category)) return null;
 
     return category.settings.map((i) => {
       if (i.isStringSetting())
@@ -1110,26 +1122,9 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
         );
       return null;
     });
-    // /** The relevant subcollection of settings for this operation. */
-    // const subsettings = (
-    //   category === null ? settings : settings[category]
-    // ) as SettingsSubcollection;
-    // return (
-    //   settingsDef
     //     // Filter out any invalid settings (shouldn't happen, but just in case)
     //     .filter((i) => Object.keys(subsettings).includes(i.name))
     //     .filter((i) => checkDependency(subsettings, i.dependsOn))
-    //     .map((i) => (
-    //       // Return the setting object
-    //       <Setting
-    //         key={`setting-${category}-${i.name}`}
-    //         category={category ?? undefined}
-    //         setting={i}
-    //         value={subsettings[i.name]}
-    //         onChange={onSettingChange}
-    //       />
-    //     ))
-    // );
   };
 
   // Finally, lay out the page
@@ -1194,24 +1189,28 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
               // Output tabs for enabled games
               <Tab key={`tab-${i.category}`}>{i.category ?? "Global"}</Tab>
             ))} */}
-            {APCategoryList.map((i) => (
+            {APCategoryList.filter(i => isGameEnabledV2(i.category))
+            .map((i) => (
               <Tab key={`tab-${i.category}`}>{i.category ?? "Global"}</Tab>
             ))}
             <Tab>Changelog</Tab>
           </TabList>
 
-          {APCategoryList.map((i) => (
+          {APCategoryList.filter(i => isGameEnabledV2(i.category))
+          .map((i) => (
             <TabPanel key={`tabpanel-${i.category}`} className="settingsBody">
               {outputSettingCollectionV2(i)}
               {i.category && i.items ? (
                 <ItemSelector
                   category={i.category}
-                  items={i.items/*.filter((ii) =>
+                  items={
+                    i.items /*.filter((ii) =>
                     checkDependency(
                       settings[i.category!] as SettingsSubcollection,
                       ii.dependsOn
                     )
-                    )*/}
+                    )*/
+                  }
                   commonSettings={commonSettings[i.category]}
                   onChange={onCommonItemSettingChange}
                 />
