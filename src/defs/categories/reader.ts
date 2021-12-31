@@ -1,5 +1,6 @@
-import { APSettingJson } from "../../routes/settingTypes/APBaseSetting";
+//import { APSettingJson } from "../../routes/settingTypes/APBaseSetting";
 import { ArchipelagoItem, ArchipelagoLocation } from "../core";
+import { APMetaSetting } from "../generate";
 
 // afaik there really isn't any better way to do this with create-react-app
 import root from "./null.json";
@@ -16,7 +17,7 @@ import evermore from "./009-soe.json";
 import ff1 from "./010-ff1.json";
 
 /** The JSON representation of an Archipelago category. */
-export interface APCategoryJson<T> {
+export interface APCategory {
   /** The internal name of the category. */
   category: string | null;
   /** The user-readable name of the category. */
@@ -24,7 +25,7 @@ export interface APCategoryJson<T> {
   /** The numeric index of the category. */
   index: number;
   /** The collection of settings for this category. */
-  settings: T[];
+  settings: APMetaSetting[];
   /**
    * The collection of defined items for this category.
    * @since 0.9.4
@@ -50,6 +51,6 @@ const APCategoryData = ([
   smetroid, // 0.2.0
   evermore, // 0.2.0
   ff1, // 0.2.1, no real support (must go to FFR website)
-] as APCategoryJson<APSettingJson<any>>[]).sort((a,b) => a.index - b.index);
+] as APCategory[]).sort((a,b) => a.index - b.index);
 
 export { APCategoryData };
