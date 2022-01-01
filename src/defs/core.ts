@@ -285,3 +285,17 @@ const DeathLinkOption = Object.seal<ArchipelagoBooleanSetting>({
   default: false,
 });
 export { DeathLinkOption };
+
+/** Settings currently saved in the browser's local storage. */
+export interface APSavedSettings {
+  playerName: string;
+  description: string;
+  categories: {
+    category: string|null;
+    settings: Record<string, string>
+  }[];
+  /**
+   * @deprecated Common settings need to be reworked
+   */
+  commonSettings?: Record<string, MinifiedCommonSettings>;
+}
