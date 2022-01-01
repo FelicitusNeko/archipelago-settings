@@ -153,7 +153,7 @@ export abstract class APSetting<T> {
   abstract get yamlValue(): T | Record<string, number>;
   abstract set yamlValue(value);
 
-  includes(...values: T[]) {
+  includes(...values: any[]) {
     return (
       (Array.isArray(this._value)
         ? this._value.map((i) => i.value)
