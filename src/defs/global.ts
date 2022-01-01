@@ -6,33 +6,33 @@ import {
   ArchipelagoCategory,
 } from "./core";
 
-import { LttPCategory } from "./lttp";
-import { OoTCategory } from "./oot";
-import { TimespinnerCategory } from "./timespinner";
-import { FactorioCategory } from "./factorio";
-import { SubnauticaCategory } from "./subnautica";
-import { ROR2Category } from "./ror2";
-import { StSCategory } from "./sts";
-import { MinecraftCategory } from "./minecraft";
-import { SMCategory } from "./sm";
-import { SoECategory } from "./soe";
-import { FF1Category } from "./ff1";
+// import { LttPCategory } from "./lttp";
+// import { OoTCategory } from "./oot";
+// import { TimespinnerCategory } from "./timespinner";
+// import { FactorioCategory } from "./factorio";
+// import { SubnauticaCategory } from "./subnautica";
+// import { ROR2Category } from "./ror2";
+// import { StSCategory } from "./sts";
+// import { MinecraftCategory } from "./minecraft";
+// import { SMCategory } from "./sm";
+// import { SoECategory } from "./soe";
+// import { FF1Category } from "./ff1";
 
 /** The list of categories (e.g. games) currently available to the settings tool, not including global settings. */
 const PartialCategoryList: ArchipelagoCategory[] = [
   // DO NOT MOVE LTTP FROM THE FIRST SPOT; it is required to be first for Berserker import compatibility
-  LttPCategory, // inaugural
-  FactorioCategory, // 0.0.2
-  //HollowKnightCategory, // 0.0.2, currently disabled
-  MinecraftCategory, // 0.1.0
-  SubnauticaCategory, // 0.1.5
-  StSCategory, // 0.1.7
-  ROR2Category, // 0.1.7
-  OoTCategory, // 0.1.7
-  TimespinnerCategory, // 0.1.9
-  SMCategory, // 0.2.0
-  SoECategory, // 0.2.0
-  FF1Category, // 0.2.1, no real support (must go to FFR website)
+  // LttPCategory, // inaugural
+  // FactorioCategory, // 0.0.2
+  // //HollowKnightCategory, // 0.0.2, currently disabled
+  // MinecraftCategory, // 0.1.0
+  // SubnauticaCategory, // 0.1.5
+  // StSCategory, // 0.1.7
+  // ROR2Category, // 0.1.7
+  // OoTCategory, // 0.1.7
+  // TimespinnerCategory, // 0.1.9
+  // SMCategory, // 0.2.0
+  // SoECategory, // 0.2.0
+  // FF1Category, // 0.2.1, no real support (must go to FFR website)
   //OriBFCategory, // not currently implemented
 ];
 
@@ -50,7 +50,7 @@ GlobalSettings.push(
         if (category) retval[category] = readableName ?? category;
       return retval;
     })(),
-    default: PartialCategoryList[0].category!,
+    default: 'A Link to the Past'
   })
 );
 GlobalSettings.push(
@@ -82,42 +82,10 @@ GlobalSettings.push(
 
 export default GlobalSettings;
 
-/** The list of categories (e.g. games) currently available to the settings tool. */
+/**
+ * The list of categories (e.g. games) currently available to the settings tool.
+ * @deprecated Replace with {@link APCategoryList}
+ */
 const CategoryList: ArchipelagoCategory[] = PartialCategoryList.slice();
 CategoryList.unshift({ category: null, settings: GlobalSettings });
 export { CategoryList };
-
-//------------======================
-
-/*
-Settings.push(
-  Object.seal<ArchipelagoNumericSetting>({
-    type: SettingType.Numeric,
-    name: "",
-    readableName: "",
-    description: "",
-    low: 0,
-    high: 0,
-    default: 0,
-  })
-);
-Settings.push(
-  Object.seal<ArchipelagoStringSetting>({
-    type: SettingType.String,
-    name: "",
-    readableName: "",
-    description: "",
-    values: {},
-    default: "",
-  })
-);
-Settings.push(
-  Object.seal<ArchipelagoBooleanSetting>({
-    type: SettingType.Boolean,
-    name: "",
-    readableName: "",
-    description: "",
-    default: true,
-  })
-);
-*/
