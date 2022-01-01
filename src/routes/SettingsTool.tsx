@@ -18,7 +18,8 @@ import {
   SettingValue,
   WeightedSetting,
   SettingType,
-  ArchipelagoDependency,
+  // ArchipelagoDependency,
+  APDependency,
   ArchipelagoCommonSettings,
   MinifiedCommonSettings,
   ArchipelagoGameEntity,
@@ -61,16 +62,16 @@ const EmptyCommonSetings: MinifiedCommonSettings = Object.seal({
   exclude_locations: [],
 });
 
-/**
- * Checks whether there is any crossover between two arrays.
- * @param {string[]} lhs One array to check against.
- * @param {string[]} rhs The other array to check against.
- * @returns {boolean} Whether there is any crossover between the arrays.
- */
-const hasCrossover = (lhs: string[], rhs: string[]): boolean => {
-  for (const i of lhs) if (rhs.includes(i)) return true;
-  return false;
-};
+// /**
+//  * Checks whether there is any crossover between two arrays.
+//  * @param {string[]} lhs One array to check against.
+//  * @param {string[]} rhs The other array to check against.
+//  * @returns {boolean} Whether there is any crossover between the arrays.
+//  */
+// const hasCrossover = (lhs: string[], rhs: string[]): boolean => {
+//   for (const i of lhs) if (rhs.includes(i)) return true;
+//   return false;
+// };
 
 /**
  * Serializes the common settings for browser storage and YAML output.
@@ -356,41 +357,72 @@ const checkSavedData = (data: SettingsCollection) => {
   return retval;
 };
 
+// /**
+//  * Check a setting or item against its dependencies.
+//  * @param {SettingsSubcollection} subsettings The subcollection of settings to check.
+//  * @param {ArchipelagoDependency} dep The dependency list to check against.
+//  * @returns {boolean} True if all dependencies are met; otherwise false.
+//  */
+// const checkDependency = (
+//   subsettings: SettingsSubcollection,
+//   dep?: ArchipelagoDependency
+// ): boolean => {
+//   // TODO: "not" dependencies (!value)
+
+//   // If this setting has no dependencies, keep it
+//   if (!dep) return true;
+//   // Iterate through all of the dependencies
+//   else
+//     for (const check in dep) {
+//       if (typeof subsettings[check] === "object") {
+//         /** The collection of weights for the parent setting. */
+//         const weightSubsetting = subsettings[check] as WeightedSetting;
+//         // If the required value(s) is/are not selected at all, filter out
+//         if (
+//           !hasCrossover(Object.keys(weightSubsetting), dep[check] as string[])
+//         )
+//           return false;
+//         // If the required value(s) present has/all have a weight of 0, filter out
+//         for (const countercheck in weightSubsetting) {
+//           if (Object.keys(weightSubsetting).includes(countercheck)) {
+//             if (weightSubsetting[countercheck] === 0) return false;
+//             else break;
+//           }
+//         }
+//         // If it's a single value, filter out if a required value is not set
+//       } else if (!dep[check].includes(subsettings[check])) return false;
+//     }
+//   return true;
+// };
+
 /**
  * Check a setting or item against its dependencies.
- * @param {SettingsSubcollection} subsettings The subcollection of settings to check.
+ * @param {string|null} category The category to check.
  * @param {ArchipelagoDependency} dep The dependency list to check against.
  * @returns {boolean} True if all dependencies are met; otherwise false.
  */
-const checkDependency = (
-  subsettings: SettingsSubcollection,
-  dep?: ArchipelagoDependency
+const checkDependencyV2 = (
+  category: string | null,
+  dep?: APDependency
 ): boolean => {
   // TODO: "not" dependencies (!value)
 
   // If this setting has no dependencies, keep it
   if (!dep) return true;
+  // Get the category to check against
+  const categoryObj = APCategoryList.find((i) => i.category === category);
+  // If, for some reason, it's not found, then nothing exists anyway; return false
+  if (!categoryObj) return false;
+
   // Iterate through all of the dependencies
-  else
-    for (const check in dep) {
-      if (typeof subsettings[check] === "object") {
-        /** The collection of weights for the parent setting. */
-        const weightSubsetting = subsettings[check] as WeightedSetting;
-        // If the required value(s) is/are not selected at all, filter out
-        if (
-          !hasCrossover(Object.keys(weightSubsetting), dep[check] as string[])
-        )
-          return false;
-        // If the required value(s) present has/all have a weight of 0, filter out
-        for (const countercheck in weightSubsetting) {
-          if (Object.keys(weightSubsetting).includes(countercheck)) {
-            if (weightSubsetting[countercheck] === 0) return false;
-            else break;
-          }
-        }
-        // If it's a single value, filter out if a required value is not set
-      } else if (!dep[check].includes(subsettings[check])) return false;
-    }
+  for (const check in dep) {
+    // Find the setting in the category; if we can't, then assume deps are not met
+    const setting = categoryObj.settings.find((i) => i.name === check);
+    if (!setting) return false;
+
+    // If the setting does not include any of the dependencies, then deps are definitely not met
+    if (!setting.includes(...dep[check])) return false;
+  }
   return true;
 };
 
@@ -434,6 +466,13 @@ const isGameEnabledV2 = (category: string | null): boolean => {
   return GameSetting.includes(category);
 };
 
+//create your forceUpdate hook
+const useForceUpdate = () => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [value, setValue] = useState(0); // integer state
+  return () => setValue((value) => value + 1); // update the state to force render
+};
+
 /**
  * The Archipelago Settings Tool, a tool to generate .YAML settings files for Archipelago Multiworld.
  * @returns {ReactElement<any, any>|null} The body of the Archipelago Settings Tool.
@@ -447,6 +486,8 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
   const [commonSettings, setCommonSettings] = useState<
     Record<string, ArchipelagoCommonSettings>
   >({});
+
+  const forceUpdate = useForceUpdate();
 
   // Load settings
   useEffect(() => {
@@ -572,6 +613,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
 
   const SaveToStorage = () => {
     // do what it says
+    forceUpdate();
   };
 
   /**
@@ -1093,38 +1135,37 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
     category: APCategory
   ): React.ReactNode[] | null => {
     // If the game is not selected, nothing to return
-     if (!isGameEnabledV2(category.category)) return null;
+    if (!isGameEnabledV2(category.category)) return null;
 
-    return category.settings.map((i) => {
-      if (i.isStringSetting())
-        return (
-          <APStringSettingNode
-            category={i.category}
-            setting={i}
-            save={SaveToStorage}
-          />
-        );
-      if (i.isNumericSetting())
-        return (
-          <APNumericSettingNode
-            category={i.category}
-            setting={i}
-            save={SaveToStorage}
-          />
-        );
-      if (i.isBooleanSetting())
-        return (
-          <APBooleanSettingNode
-            category={i.category}
-            setting={i}
-            save={SaveToStorage}
-          />
-        );
-      return null;
-    });
-    //     // Filter out any invalid settings (shouldn't happen, but just in case)
-    //     .filter((i) => Object.keys(subsettings).includes(i.name))
-    //     .filter((i) => checkDependency(subsettings, i.dependsOn))
+    return category.settings
+      .filter((i) => checkDependencyV2(i.category, i.dependsOn))
+      .map((i) => {
+        if (i.isStringSetting())
+          return (
+            <APStringSettingNode
+              category={i.category}
+              setting={i}
+              save={SaveToStorage}
+            />
+          );
+        if (i.isNumericSetting())
+          return (
+            <APNumericSettingNode
+              category={i.category}
+              setting={i}
+              save={SaveToStorage}
+            />
+          );
+        if (i.isBooleanSetting())
+          return (
+            <APBooleanSettingNode
+              category={i.category}
+              setting={i}
+              save={SaveToStorage}
+            />
+          );
+        return null;
+      });
   };
 
   // Finally, lay out the page
@@ -1189,34 +1230,36 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
               // Output tabs for enabled games
               <Tab key={`tab-${i.category}`}>{i.category ?? "Global"}</Tab>
             ))} */}
-            {APCategoryList.filter(i => isGameEnabledV2(i.category))
-            .map((i) => (
-              <Tab key={`tab-${i.category}`}>{i.category ?? "Global"}</Tab>
-            ))}
+            {APCategoryList.filter((i) => isGameEnabledV2(i.category)).map(
+              (i) => (
+                <Tab key={`tab-${i.category}`}>{i.category ?? "Global"}</Tab>
+              )
+            )}
             <Tab>Changelog</Tab>
           </TabList>
 
-          {APCategoryList.filter(i => isGameEnabledV2(i.category))
-          .map((i) => (
-            <TabPanel key={`tabpanel-${i.category}`} className="settingsBody">
-              {outputSettingCollectionV2(i)}
-              {i.category && i.items ? (
-                <ItemSelector
-                  category={i.category}
-                  items={
-                    i.items /*.filter((ii) =>
+          {APCategoryList.filter((i) => isGameEnabledV2(i.category)).map(
+            (i) => (
+              <TabPanel key={`tabpanel-${i.category}`} className="settingsBody">
+                {outputSettingCollectionV2(i)}
+                {i.category && i.items ? (
+                  <ItemSelector
+                    category={i.category}
+                    items={
+                      i.items /*.filter((ii) =>
                     checkDependency(
                       settings[i.category!] as SettingsSubcollection,
                       ii.dependsOn
                     )
                     )*/
-                  }
-                  commonSettings={commonSettings[i.category]}
-                  onChange={onCommonItemSettingChange}
-                />
-              ) : null}
-            </TabPanel>
-          ))}
+                    }
+                    commonSettings={commonSettings[i.category]}
+                    onChange={onCommonItemSettingChange}
+                  />
+                ) : null}
+              </TabPanel>
+            )
+          )}
           {/* {CategoryList.filter((i) => isGameEnabled(settings, i.category)).map(
             (i) => (
               // Output tab panels containing setting collections for enabled games
