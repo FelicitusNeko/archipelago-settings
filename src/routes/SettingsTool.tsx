@@ -250,6 +250,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
     // Attempt to retrieve settings from local storage
     /** The stringified collection of saved settings. */
     const savedSettingsStr = localStorage.getItem("savedSettingsV2");
+    console.debug('Loading')
 
     if (savedSettingsStr) {
       // There are saved settings; load them in
@@ -263,7 +264,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
       setPlayerName(nameIn);
       setDescription(descriptionIn);
 
-      console.debug(savedSettings);
+      //console.debug(savedSettings);
       for (const category of APCategoryList) {
         const savedCategory = categoriesIn.find(
           (i) => i.category === category.category
@@ -302,9 +303,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
       }
       setCommonSettings(deserializeCommonSettings(newEmptyCommons));
     }
-
-    return () => SaveToStorage(true);
-  }, [SaveToStorage]);
+  }, []);
 
   /**
    * An event handler that fires when the player name is changed.
