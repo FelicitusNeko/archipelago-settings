@@ -1,4 +1,4 @@
-import React, { useState, useEffect, ReactElement, useCallback } from "react";
+import React, { useState, useEffect, ReactElement } from "react";
 import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
 import yaml from "yaml";
 import { DateTime } from "luxon";
@@ -222,35 +222,32 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
   const forceUpdate = useForceUpdate();
 
   /** Saves the current settings to local storage. */
-  const SaveToStorage = useCallback(
-    (skipUpdate = false) => {
-      const savedSettings: APSavedSettings = {
-        playerName,
-        description,
-        categories: APCategoryList.map((i) => {
-          return {
-            category: i.category,
-            settings: Object.fromEntries(
-              i.settings.map((ii) => [ii.name, ii.storageValue])
-            ),
-          };
-        }),
-        // TODO: Rework common settings
-        commonSettings: minifyCommonSettings(commonSettings),
-      };
-      localStorage.setItem("savedSettingsV2", JSON.stringify(savedSettings));
+  const SaveToStorage = (skipUpdate = false) => {
+    const savedSettings: APSavedSettings = {
+      playerName,
+      description,
+      categories: APCategoryList.map((i) => {
+        return {
+          category: i.category,
+          settings: Object.fromEntries(
+            i.settings.map((ii) => [ii.name, ii.storageValue])
+          ),
+        };
+      }),
+      // TODO: Rework common settings
+      commonSettings: minifyCommonSettings(commonSettings),
+    };
+    localStorage.setItem("savedSettingsV2", JSON.stringify(savedSettings));
 
-      if (!skipUpdate) forceUpdate();
-    },
-    [commonSettings, description, forceUpdate, playerName]
-  );
+    if (!skipUpdate) forceUpdate();
+  };
 
   // Load settings
   useEffect(() => {
     // Attempt to retrieve settings from local storage
     /** The stringified collection of saved settings. */
     const savedSettingsStr = localStorage.getItem("savedSettingsV2");
-    console.debug('Loading')
+    console.debug("Loading");
 
     if (savedSettingsStr) {
       // There are saved settings; load them in
