@@ -166,6 +166,7 @@ export interface ArchipelagoBooleanSetting extends ArchipelagoSettingBase {
   default: boolean;
 }
 
+/** @deprecated replace with {@link APGameEntity} */
 export interface ArchipelagoGameEntity {
   /** The internal name of the entity. */
   name: string;
@@ -176,6 +177,7 @@ export interface ArchipelagoGameEntity {
 /**
  * The interface defining an item in an Archipelago game.
  * @since 0.9.4
+ * @deprecated replace with {@link APGameItem}
  */
 export interface ArchipelagoItem extends ArchipelagoGameEntity {
   /** The internal name of the item. */
@@ -194,6 +196,7 @@ export interface ArchipelagoItem extends ArchipelagoGameEntity {
 /**
  * The interface defining a location in an Archipelago game.
  * @since 0.9.4
+ * @deprecated replace with {@link APGameLocation}
  */
 export interface ArchipelagoLocation extends ArchipelagoGameEntity {
   /** The internal name of the location. */
@@ -205,6 +208,7 @@ export interface ArchipelagoLocation extends ArchipelagoGameEntity {
 /**
  * The interface defining the quantity of an item. Usually used for starting inventory.
  * @since 0.9.4
+ * @deprecated replace with {@link APGameItemAndQty}
  */
 export interface ArchipelagoItemAndQty {
   item: ArchipelagoItem;
@@ -214,6 +218,7 @@ export interface ArchipelagoItemAndQty {
 /**
  * The interface defining the settings common to all Archipelago games.
  * @since 0.9.4
+ * @deprecated will be replaced by entity managers
  */
 export interface ArchipelagoCommonSettings {
   local_items?: ArchipelagoItem[];
@@ -227,6 +232,7 @@ export interface ArchipelagoCommonSettings {
 /**
  * The interface defining the settings common to all Archipelago games, serialized into strings.
  * @since 0.9.4
+ * @deprecated entity managers will obsolete this
  */
 export interface MinifiedCommonSettings {
   local_items?: string[];
@@ -237,7 +243,10 @@ export interface MinifiedCommonSettings {
   exclude_locations?: string[];
 }
 
-/** The interface defining a category for Archipelago (e.g. a collection of settings for a game). */
+/**
+ * The interface defining a category for Archipelago (e.g. a collection of settings for a game).
+ * @deprecated replace with {@link APCategory}
+ */
 export interface ArchipelagoCategory {
   /** The internal name of the category. */
   category: string | null;
@@ -256,6 +265,55 @@ export interface ArchipelagoCategory {
    */
   locations?: ArchipelagoLocation[];
 }
+
+/**
+ * The base class for game entities.
+ * @since 1.0.0
+ */
+export interface APGameEntity {
+  /** The internal name of the entity. */
+  name: string;
+  /** The human-readable name of the entity, if it differs from {@link APGameEntity.name}. */
+  readableName?: string;
+}
+
+/**
+ * The interface defining an item in an Archipelago game.
+ * @since 1.0.0
+ */
+export interface APGameItem extends APGameEntity {
+  /** The internal name of the item. */
+  name: string;
+  /** The human-readable name of the item, if it differs from {@link APGameItem.name}. */
+  readableName?: string;
+  /**
+   * The dependencies for this item. The key should be the internal name of the relevant setting, and the values should
+   * indicate when this item is added to the multiworld pool.
+   */
+  dependsOn?: APDependency;
+  /** The maximum number of this item that can be added to the player's starting inventory. Defaults to 1. */
+  max?: number;
+}
+
+/**
+ * The interface defining a location in an Archipelago game.
+ * @since 1.0.0
+ */
+export interface APGameLocation extends APGameEntity {
+  /** The internal name of the location. */
+  name: string;
+  /** The human-readable name of the location, if it differs from {@link APGameLocation.name}. */
+  readableName?: string;
+}
+
+/**
+ * The interface defining the quantity of an item. Usually used for starting inventory.
+ * @since 1.0.0
+ */
+export interface APGameItemAndQty extends APGameItem {
+  qty: number;
+}
+
 
 /** The list of names which will be rejected by the Archipelago generator. */
 const ForbiddenNames = ["Archipelago"]; // lol yup
