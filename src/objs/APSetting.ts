@@ -1,4 +1,4 @@
-import { ArchipelagoDependency, SettingType } from "../defs/core";
+import { APDependency, SettingType } from "../defs/core";
 import { APBooleanSetting, APBooleanSettingJson } from "./APBooleanSetting";
 import { APNumericSetting, APNumericSettingJson } from "./APNumericSetting";
 import { APStringSetting, APStringSettingJson } from "./APStringSetting";
@@ -30,7 +30,7 @@ export interface APSettingJson<T> {
   /** The default value of the setting. */
   default: T;
   /** The dependencies for this setting. The key should be the internal name, and the values should indicate when this setting becomes available. */
-  dependsOn?: ArchipelagoDependency;
+  dependsOn?: APDependency;
 
   // for LttP and really nothing else
   /** When importing from Berserker YAMLs, interpret this Berserker setting as its new Archipelago setting. */
@@ -63,7 +63,7 @@ export abstract class APSetting<T> {
   /** The default value of the setting. */
   private readonly _default: T;
   /** The dependencies for this setting. The key should be the internal name, and the values should indicate when this setting becomes available. */
-  private readonly _dependsOn?: ArchipelagoDependency;
+  private readonly _dependsOn?: APDependency;
   /** When importing from Berserker YAMLs, interpret this Berserker setting as its new Archipelago setting. */
   private readonly _legacyName?: string;
   /**
@@ -118,7 +118,7 @@ export abstract class APSetting<T> {
     return this._default;
   }
   /** The dependencies for this setting. The key should be the internal name, and the values should indicate when this setting becomes available. */
-  get dependsOn(): Readonly<ArchipelagoDependency> | undefined {
+  get dependsOn(): Readonly<APDependency> | undefined {
     return this._dependsOn;
   }
   /** When importing from Berserker YAMLs, interpret this Berserker setting as its new Archipelago setting. */

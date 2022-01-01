@@ -68,6 +68,8 @@ export type CommonItemSettingChangeEvent = (
 /** Refers to a setting dependency. */
 export type ArchipelagoDependency = Record<string, SettingValue[]>;
 
+export type APDependency = Record<string, any[]>;
+
 /** The base interface for Archipelago settings. */
 export interface ArchipelagoSettingBase {
   /** The type of setting. */
