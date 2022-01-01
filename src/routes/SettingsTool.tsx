@@ -1,4 +1,4 @@
-import React, { useState, useEffect, ReactElement } from "react";
+import React, { useState, useEffect, ReactElement, useCallback } from "react";
 import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
 import yaml from "yaml";
 import { DateTime } from "luxon";
@@ -10,15 +10,8 @@ import Changelog from "./objs/Changelog";
 
 import {
   BuildTimestamp,
-  // SettingChangeEvent,
-  ArchipelagoSettingBase,
-  ArchipelagoStringSetting,
-  ArchipelagoNumericSetting,
   ForbiddenNames,
   SettingValue,
-  WeightedSetting,
-  SettingType,
-  // ArchipelagoDependency,
   APDependency,
   ArchipelagoCommonSettings,
   MinifiedCommonSettings,
@@ -26,6 +19,7 @@ import {
   ArchipelagoItem,
   ArchipelagoLocation,
   CommonItemSettingChangeEvent,
+  APSavedSettings,
 } from "../defs/core";
 import { version } from "../../package.json";
 import { CategoryList } from "../defs/global";
@@ -38,20 +32,10 @@ import "./SettingsTool.css";
 
 const { localStorage, location, confirm } = window;
 
+/** @deprecated */
 type SettingsSubcollection = Record<string, SettingValue>;
+/** @deprecated */
 type SettingsCollection = Record<string, SettingValue | SettingsSubcollection>;
-
-/** Settings currently saved in the browser's local storage. */
-interface SavedSettings {
-  /** The saved player name. */
-  name: string;
-  /** The saved file description. */
-  description: string;
-  /** The saved collection of settings. */
-  settings: SettingsCollection;
-  /** Common settings to every category. */
-  commonSettings?: Record<string, MinifiedCommonSettings>;
-}
 
 const EmptyCommonSetings: MinifiedCommonSettings = Object.seal({
   local_items: [],
@@ -173,182 +157,6 @@ const deserializeCommonSettings = (
 };
 
 /**
- * Normalize Boolean values toward "true" or "false".
- * @param {SettingValue} value The current value for this setting.
- * @param {ArchipelagoSettingBase} setting The setting object to which the value belongs.
- * @returns {SettingValue} If the setting is not a {@link ArchipelagoBooleanSetting}, the original value. Otherwise, the normalized Boolean value.
- * @deprecated {@link APBooleanSetting} should soon handle this automatically
- */
-const convertBoolean = (
-  value: SettingValue,
-  setting: ArchipelagoSettingBase
-): SettingValue => {
-  // If it's already a Boolean, nothing to be done
-  if (setting.type !== SettingType.Boolean) return value;
-
-  // Special handling for LttP "swordless" setting because of its conversion from Berserker
-  if (setting.name === "swordless") {
-    const booleans = ["on", "off", "true", "false"];
-    if (typeof value === "object") {
-      for (const option in value)
-        if (!booleans.includes(value[option].toString())) return value;
-    } else if (!booleans.includes(value.toString())) return value;
-  }
-
-  if (typeof value === "object") {
-    // If it's a weighted setting, use the Boolean value first, then its on/off equivalent, then default 0
-    const newValue: WeightedSetting = {};
-    newValue.true = value.true ?? value.on ?? 0;
-    newValue.false = value.false ?? value.off ?? 0;
-    return newValue;
-    // Otherwise, just return whether the value is string "true" or "on"
-  } else return value.toString() === "true" || value.toString() === "on";
-};
-
-/**
- * Checks a collection of settings for validity, and makes revisions as necessary.
- * @param data The collection of settings to verify.
- * @returns The revised collection of settings.
- * @deprecated New data structures should soon handle this automatically
- */
-const checkSavedData = (data: SettingsCollection) => {
-  console.info("Reticulating splines"); // lul
-  //console.debug('before',data);
-  /** The overall collection of revised settings. */
-  const retval: SettingsCollection = {};
-
-  for (const { category, settings: catSettings } of CategoryList) {
-    if (category) {
-      // If the category doesn't exist, create it
-      if (!data[category]) data[category] = {};
-      retval[category] = data[category]
-        ? Object.assign({}, data[category])
-        : {};
-    }
-
-    /** The collection of existing settings for this category. */
-    const subcatIn = (
-      category ? data[category] : data
-    ) as SettingsSubcollection;
-    /** The collection of revised settings for this category. */
-    const subcatOut = (
-      category ? retval[category] : retval
-    ) as SettingsSubcollection;
-    //console.log(subcatOut);
-
-    for (const setting of catSettings) {
-      if (subcatIn[setting.name]) {
-        // NOTE: is this fixed? was subcatOut (I'm hoping this is fixed now)
-        // The setting exists; validate it
-        subcatOut[setting.name] =
-          typeof subcatOut[setting.name] === "object"
-            ? Object.assign({}, subcatIn[setting.name])
-            : subcatIn[setting.name];
-
-        switch (setting.type) {
-          case SettingType.String:
-            {
-              /** The current setting as an {@link ArchipelagoStringSetting}. */
-              const strSetting = setting as ArchipelagoStringSetting;
-              /** The list of valid values. */
-              const validValues = Object.keys(strSetting.values);
-
-              if (typeof subcatOut[setting.name] === "object") {
-                // If the setting is weighted, check every single value to make sure it's valid
-                /** The collection of weighted values for this setting. */
-                const weights = subcatOut[setting.name] as WeightedSetting;
-                for (const value of Object.keys(weights))
-                  if (!validValues.includes(value)) delete weights[value];
-
-                // If no valid values are left, default this setting
-                if (Object.keys(weights).length === 0)
-                  subcatOut[setting.name] = setting.default;
-              } else if (
-                // If the setting isn't weighted, check the single value against list of valid values
-                !validValues.includes(subcatOut[setting.name] as string)
-              )
-                // If it's not valid, default it
-                subcatOut[setting.name] = setting.default;
-            }
-            break;
-          case SettingType.Numeric:
-            {
-              /** The current setting as an {@link ArchipelagoNumericSetting}. */
-              const numSetting = setting as ArchipelagoNumericSetting;
-
-              if (typeof subcatOut[setting.name] === "object") {
-                // If the setting is weighted, check every single value to make sure it's valid
-                /** The collection of weighted values for this setting. */
-                const weights = subcatOut[setting.name] as WeightedSetting;
-                for (const value of Object.keys(weights)) {
-                  if (value.startsWith("random")) {
-                    // If the value is a form of random, and the value is not randomable, delete the random value
-                    if (!numSetting.randomable) delete weights[value];
-                  } else {
-                    /** The current numeric value for this setting. */
-                    const numval = Number.parseInt(value);
-                    if (
-                      // If the value is out of bounds or not a number, delete the value
-                      isNaN(numval) ||
-                      numval < numSetting.low ||
-                      numval > numSetting.high
-                    )
-                      delete weights[value];
-                  }
-                }
-
-                if (
-                  // If no numeric values are left, default the setting
-                  Object.keys(weights).length ===
-                  (numSetting.randomable ? 3 : 0)
-                )
-                  subcatOut[setting.name] = setting.default;
-              } else if (
-                // If the single setting is not numeric or out of bounds, default the setting
-                typeof subcatOut[setting.name] !== "number" ||
-                subcatOut[setting.name] < numSetting.low ||
-                subcatOut[setting.name] > numSetting.high
-              )
-                subcatOut[setting.name] = setting.default;
-            }
-            break;
-          case SettingType.Boolean:
-            {
-              /** The list of valid values. */
-              const validValues = ["true", "false", "on", "off"];
-              if (typeof subcatOut[setting.name] === "object") {
-                // If the setting is weighted, check every single value to make sure it's valid
-                /** The collection of weighted values for this setting. */
-                const weights = subcatOut[setting.name] as WeightedSetting;
-                for (const value of Object.keys(weights))
-                  if (!validValues.includes(value)) delete weights[value];
-
-                // If no valid values are left, default this setting
-                if (Object.keys(weights).length === 0)
-                  subcatOut[setting.name] = setting.default;
-                // Otherwise, normalize the Boolean value
-                else
-                  subcatOut[setting.name] = convertBoolean(
-                    subcatOut[setting.name],
-                    setting
-                  );
-              } else if (typeof subcatOut[setting.name] !== "boolean")
-                // If the setting isn't weighted, check the single value against list of valid values
-                // If it's not valid, default it
-                subcatOut[setting.name] = setting.default;
-            }
-            break;
-        }
-      } else subcatOut[setting.name] = setting.default;
-      // The setting does not exist; default it
-    }
-  }
-
-  //console.debug('after',retval);
-  return retval;
-};
-
-/**
  * Check a setting or item against its dependencies.
  * @param {string|null} category The category to check.
  * @param {ArchipelagoDependency} dep The dependency list to check against.
@@ -383,35 +191,6 @@ const checkDependencyV2 = (
  * Checks whether a game has been selected for play in the global "Game" setting.
  * @param {string|null} category The category to check.
  * @returns {boolean} Whether this category is enabled. Always true if {@link category} is null.
- * @deprecated Replace with {@link isGameEnabledV2}
- */
-const isGameEnabled = (
-  settings: SettingsCollection,
-  category: string | null
-): boolean => {
-  // Definite answers:
-  // If there's no category, it's global settings; return true.
-  if (!category) return true;
-  // If there are no settings at all (which shouldn't happen unless the page is freshly loaded), return false.
-  if (!settings) return false;
-  // If there is no "game" setting (see above), return false.
-  if (!settings.game) return false;
-  // If the category is not present in settings, return false.
-  if (!settings[category]) return false;
-
-  if (typeof settings.game === "object") {
-    // If the game setting is weighted, return true for any category whose weight is higher than zero
-    if (Object.keys(settings.game).includes(category))
-      return settings.game[category] > 0;
-    else return false;
-    // Otherwise, only return true for the one selected category
-  } else return category === settings.game;
-};
-
-/**
- * Checks whether a game has been selected for play in the global "Game" setting.
- * @param {string|null} category The category to check.
- * @returns {boolean} Whether this category is enabled. Always true if {@link category} is null.
  */
 const isGameEnabledV2 = (category: string | null): boolean => {
   // If there's no category, it's global settings; return true.
@@ -436,48 +215,77 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
   const [description, setDescription] = useState(
     "Generated using Kewlio's Archipelago Settings Tool"
   );
-  const [settings, setSettings] = useState<SettingsCollection>({});
   const [commonSettings, setCommonSettings] = useState<
     Record<string, ArchipelagoCommonSettings>
   >({});
 
   const forceUpdate = useForceUpdate();
 
+  /** Saves the current settings to local storage. */
+  const SaveToStorage = useCallback(
+    (skipUpdate = false) => {
+      const savedSettings: APSavedSettings = {
+        playerName,
+        description,
+        categories: APCategoryList.map((i) => {
+          return {
+            category: i.category,
+            settings: Object.fromEntries(
+              i.settings.map((ii) => [ii.name, ii.storageValue])
+            ),
+          };
+        }),
+        // TODO: Rework common settings
+        commonSettings: minifyCommonSettings(commonSettings),
+      };
+      localStorage.setItem("savedSettingsV2", JSON.stringify(savedSettings));
+
+      if (!skipUpdate) forceUpdate();
+    },
+    [commonSettings, description, forceUpdate, playerName]
+  );
+
   // Load settings
   useEffect(() => {
     // Attempt to retrieve settings from local storage
     /** The stringified collection of saved settings. */
-    const savedSettingsStr = localStorage.getItem("savedSettings");
+    const savedSettingsStr = localStorage.getItem("savedSettingsV2");
 
     if (savedSettingsStr) {
       // There are saved settings; load them in
-      const savedSettings = JSON.parse(savedSettingsStr) as SavedSettings;
-      //console.debug(savedSettings);
+      const savedSettings = JSON.parse(savedSettingsStr) as APSavedSettings;
       const {
-        name: nameIn,
+        playerName: nameIn,
         description: descriptionIn,
-        settings: settingsIn,
+        categories: categoriesIn,
         commonSettings: commonSettingsIn,
       } = savedSettings;
       setPlayerName(nameIn);
       setDescription(descriptionIn);
-      setSettings(checkSavedData(settingsIn));
 
-      //console.debug(commonSettingsIn);
+      console.debug(savedSettings);
+      for (const category of APCategoryList) {
+        const savedCategory = categoriesIn.find(
+          (i) => i.category === category.category
+        );
+        if (!savedCategory) continue;
+        for (const setting of category.settings)
+          if (savedCategory.settings[setting.name])
+            setting.storageValue = savedCategory.settings[setting.name];
+      }
+
+      // TODO: Rework common settings
       if (commonSettingsIn) {
-        //console.debug("Common settings found; deserializing", commonSettingsIn);
-        const categories = CategoryList.map((i) => i.category);
+        const categories = APCategoryList.map((i) => i.category);
         for (const category of categories)
           if (category && !commonSettingsIn[category])
             commonSettingsIn[category] = Object.assign({}, EmptyCommonSetings);
         for (const category of Object.keys(commonSettingsIn))
           if (!categories.includes(category)) delete commonSettingsIn[category];
-        //console.debug(commonSettingsIn);
         setCommonSettings(deserializeCommonSettings(commonSettingsIn));
       } else {
-        //console.debug("No common settings, generating empty set");
         const newEmptyCommons: Record<string, MinifiedCommonSettings> = {};
-        for (const { category } of CategoryList)
+        for (const { category } of APCategoryList)
           if (category)
             newEmptyCommons[category] = Object.assign({}, EmptyCommonSetings);
         setCommonSettings(deserializeCommonSettings(newEmptyCommons));
@@ -486,36 +294,17 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
       // There are not saved settings; load in the settings collection and populate with defaults
       console.debug("No saved settings found at all, generating default set");
 
-      let defaultSettings: SettingsCollection = {};
       const newEmptyCommons: Record<string, MinifiedCommonSettings> = {};
 
-      for (const { category, settings } of CategoryList) {
-        const subcollection: SettingsSubcollection = {};
-        settings.forEach((i) => (subcollection[i.name] = i.default));
-        if (!category)
-          defaultSettings = Object.assign(defaultSettings, subcollection);
-        else {
-          defaultSettings[category] = subcollection;
+      for (const { category } of APCategoryList) {
+        if (category !== null)
           newEmptyCommons[category] = Object.assign({}, EmptyCommonSetings);
-        }
       }
-      setSettings(defaultSettings);
       setCommonSettings(deserializeCommonSettings(newEmptyCommons));
     }
-  }, []);
 
-  // Save settings
-  useEffect(() => {
-    //console.debug("Saving");
-    const savedSettings: SavedSettings = {
-      name: playerName,
-      description,
-      settings,
-      commonSettings: minifyCommonSettings(commonSettings),
-    };
-    // When settings are modified, save them to local storage
-    localStorage.setItem("savedSettings", JSON.stringify(savedSettings));
-  }, [playerName, description, settings, commonSettings]);
+    return () => SaveToStorage(true);
+  }, [SaveToStorage]);
 
   /**
    * An event handler that fires when the player name is changed.
@@ -525,6 +314,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
     currentTarget,
   }) => {
     setPlayerName(currentTarget.value);
+    SaveToStorage(true);
   };
 
   /**
@@ -535,39 +325,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
     currentTarget,
   }) => {
     setDescription(currentTarget.value);
-  };
-
-  // /**
-  //  * A synthetic event handler that fires when the value of a setting is changed.
-  //  * @param {string} settingName The internal name of the setting.
-  //  * @param {SettingValue} newValue The new value for this setting.
-  //  * @param {string} [category] Optional. The category to which this setting belongs. If omitted, it is presumed to be a global setting.
-  //  */
-  // const onSettingChange: SettingChangeEvent = (
-  //   settingName: string,
-  //   newValue: SettingValue,
-  //   category?: string
-  // ) => {
-  //   const newSetting: SettingsCollection = {};
-  //   if (category) {
-  //     // If there's a category specified, update the setting in that category
-  //     const newSubSetting: SettingsSubcollection = {};
-  //     newSubSetting[settingName] = newValue;
-  //     newSetting[category] = Object.assign(
-  //       {},
-  //       settings[category],
-  //       newSubSetting
-  //     );
-  //     // Otherwise, update the global setting
-  //   } else newSetting[settingName] = newValue;
-
-  //   // Merge everything together
-  //   setSettings(Object.assign({}, settings, newSetting));
-  // };
-
-  const SaveToStorage = () => {
-    // TODO: actually save things
-    forceUpdate();
+    SaveToStorage(true);
   };
 
   /**
@@ -772,6 +530,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
     //console.debug("Updating common settings");
     newCommonSettings[category] = catCommons;
     setCommonSettings(newCommonSettings);
+    SaveToStorage(true);
   };
 
   /**
@@ -779,14 +538,14 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
    * @param yamlIn The imported YAML data.
    * @param {string|null} singleCat Optional. Import only a single category.
    */
-  const importYaml = (yamlIn: any, singleCat?: string | null) => {
+  const importYamlV2 = (yamlIn: any, singleCat?: string | null) => {
     // TODO: option to import only one category
-    // TODO: import common settings
+    // TODO: rework common settings
     /** The collection of imported settings. */
     const newSettings: SettingsCollection = {};
     const newMinifiedSettings: Record<string, MinifiedCommonSettings> = {};
 
-    for (const { category, settings: catSettings } of CategoryList) {
+    for (const { category, settings: catSettings } of APCategoryList) {
       // If there's a category and it doesn't exist in the imported data, skip it; otherwise, prepare it
       if (category) {
         if (!yamlIn[category]) continue;
@@ -795,21 +554,13 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
 
       /** The category from the data set being imported. */
       const curImport = category ? yamlIn[category] : yamlIn;
-      /** The category from the destination {@link SettingsSubcollection}. */
-      const curCategory = category ? newSettings[category] : newSettings;
 
       // Iterate through established settings, not through imported data
       for (const setting of catSettings) {
         // If the setting doesn't exist in the imported data, default it in the new settings
-        if (!curImport[setting.name])
-          (curCategory as SettingsSubcollection)[setting.name] =
-            setting.default;
-        // Otherwise, import the setting
-        else
-          (curCategory as SettingsSubcollection)[setting.name] = convertBoolean(
-            curImport[setting.name] as SettingValue,
-            setting
-          );
+        if (curImport[setting.name])
+          setting.yamlValue = curImport[setting.name];
+        else setting.value = setting.default;
       }
 
       if (category) {
@@ -835,110 +586,67 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
     // Finally, set the name, description, and settings collection to update the UI
     if (yamlIn.name) setPlayerName(yamlIn.name);
     if (yamlIn.description) setDescription(yamlIn.description);
-    setSettings(Object.assign({}, settings, newSettings));
     setCommonSettings(deserializeCommonSettings(newMinifiedSettings));
+    SaveToStorage();
   };
 
   /**
    * Imports data from a Berserker YAML file.
    * @param yamlInBase The imported YAML data.
    */
-  const importLegacyYaml = (yamlInBase: any) => {
+  const importLegacyYamlV2 = (yamlInBase: any) => {
     /** The aggregate collection of settings from the Berserker YAML. */
     const yamlIn = Object.assign({}, yamlInBase, yamlInBase.rom);
     /** The collection of imported settings. */
     const newSettings: SettingsCollection = {};
 
     // Only iterate through global and LttP settings.
-    for (const { category, settings: catSettings } of CategoryList.slice(
-      0,
-      2
+    for (const { category, settings: catSettings } of APCategoryList.filter(
+      (i) => [null, "A Link to the Past"].includes(i.category)
     )) {
       // If there's a category (which would be LttP), prepare it in the settings collection
       if (category) {
         newSettings[category] = {};
       }
 
-      // Unlike importYaml, there isn't a need for curImport, as the data file is mostly flat
-      /** The category from the destination {@link SettingsSubcollection}. */
-      const curCategory = category ? newSettings[category] : newSettings;
-
       // In this function, we refer to a setting's legacyName when checking the imported data
       // Some setting and value names have changed, so we need to use the new ones
       for (const setting of catSettings) {
         // If the setting doesn't exist in the imported data, default it
-        if (!yamlIn[setting.legacyName ?? setting.name]) {
-          (curCategory as SettingsSubcollection)[setting.name] =
-            setting.default;
+        if (yamlIn[setting.legacyName ?? setting.name]) {
+          setting.value = setting.default;
         } else {
           // Fetch the data
-          let newSetting: SettingValue = convertBoolean(
-            yamlIn[setting.legacyName ?? setting.name] as SettingValue,
-            setting
-          );
+          let oldSetting = yamlIn[setting.legacyName ?? setting.name];
 
           // "weapons" as a string setting changed to "swordless" as a boolean setting, so special handling is needed
           if (setting.name === "swordless") {
             // If it's weighted, then:
             // - Equate a "true" swordless value as the old chance of "swordless" weapon
             // - Equate a "false" swordless value as the old chance of anything else
-            if (typeof newSetting === "object") {
-              newSetting = {
-                true: newSetting.swordless ?? 0,
+            // TODO: when triggers are implemented, triggerfy this instead
+            if (typeof oldSetting === "object") {
+              setting.yamlValue = {
+                true: oldSetting.swordless ?? 0,
                 false:
-                  (newSetting.vanilla ?? 0) +
-                  (newSetting.randomized ?? 0) +
-                  (newSetting.assured ?? 0),
+                  (oldSetting.vanilla ?? 0) +
+                  (oldSetting.randomized ?? 0) +
+                  (oldSetting.assured ?? 0),
               };
               // Otherwise, the value is just whether the old setting is "swordless" or not
-            } else newSetting = newSetting === "swordless";
+            } else setting.yamlValue = oldSetting === "swordless";
           } else if (setting.name === "music") {
             // "disablemusic" became "music", so its value should be flipped
-            if (typeof newSetting === "object") {
-              newSetting = {
-                true: newSetting.false ?? newSetting.off ?? 0,
-                false: newSetting.true ?? newSetting.on ?? 0,
+            if (typeof oldSetting === "object") {
+              setting.yamlValue = {
+                true: oldSetting.false ?? oldSetting.off ?? 0,
+                false: oldSetting.true ?? oldSetting.on ?? 0,
               };
             } else
-              newSetting =
-                newSetting.toString() === "false" ||
-                newSetting.toString() === "off";
-          } else if (setting.legacyValues) {
-            // If legacy values are specified, change the old values into new ones
-            if (typeof newSetting === "object") {
-              // Basic rundown: iterate through all weighted settings and change them into new ones
-              // If the old value no longer exists, remove it from weights
-              for (const legacyName in setting.legacyValues) {
-                const legacyNewName = setting.legacyValues[legacyName];
-                if (newSetting[legacyName]) {
-                  if (legacyNewName) {
-                    newSetting[legacyNewName] = newSetting[legacyName];
-                  }
-                  delete newSetting[legacyName];
-                }
-              }
-            } else if (
-              Object.keys(setting.legacyValues).includes(newSetting as string)
-            ) {
-              // If the old value no longer exists, assign a default value here
-              // Otherwise, assign the new corresponding value
-              if (setting.legacyValues[newSetting as string])
-                newSetting = setting.legacyValues[newSetting as string]!;
-              else newSetting = setting.default;
-            }
-          }
-          if (
-            setting.type === SettingType.Numeric &&
-            (setting as ArchipelagoNumericSetting).randomable &&
-            typeof newSetting === "object"
-          ) {
-            // Weighted numeric settings which are randomable should gain a random, random-low, and random-high value
-            // TODO: I think random-mid is also a thing
-            if (!newSetting.random) newSetting.random = 0;
-            newSetting["random-low"] = 0;
-            newSetting["random-high"] = 0;
-          }
-          (curCategory as SettingsSubcollection)[setting.name] = newSetting;
+              setting.yamlValue =
+                oldSetting.toString() === "false" ||
+                oldSetting.toString() === "off";
+          } else setting.fromBerserkerYamlValue(oldSetting);
         }
       }
     }
@@ -946,7 +654,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
     // Finally, set the name, description, and settings collection to update the UI
     if (yamlIn.name) setPlayerName(yamlIn.name);
     if (yamlIn.description) setDescription(yamlIn.description);
-    setSettings(Object.assign({}, settings, newSettings));
+    SaveToStorage();
   };
 
   /**
@@ -976,7 +684,9 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
           .text()
           .then((text) => {
             const importedYaml = yaml.parse(text);
-            (importedYaml.goals ? importLegacyYaml : importYaml)(importedYaml);
+            (importedYaml.goals ? importLegacyYamlV2 : importYamlV2)(
+              importedYaml
+            );
           })
           .catch((e) => console.error(e));
       }
@@ -987,29 +697,28 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
    * An event handler that fires when the "Export YAML" button is clicked.
    * @param {React.MouseEvent<HTMLButtonElement, MouseEvent>} e The {@link MouseEvent} object.
    */
-  const onExport: React.MouseEventHandler<HTMLButtonElement> = (
+  const onExportV2: React.MouseEventHandler<HTMLButtonElement> = (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     // TODO: Scan for any obvious problems that would prevent the YAML from working (all-zero weights, bad name, etc.)
 
     // Create the YAML structure
-    const outYaml: any = Object.assign(
-      {
-        name: playerName,
-        description,
-        requires: { version: process.env.REACT_APP_CURRENT_ARCHIPELAGO_VER },
-      },
-      settings
-    );
+    let outYaml: any = Object.assign({
+      name: playerName,
+      description,
+      requires: { version: process.env.REACT_APP_CURRENT_ARCHIPELAGO_VER },
+    });
 
-    // If Ctrl is NOT held, filter out any category that is definitely not being played
-    if (!e.ctrlKey) {
-      for (const { category } of CategoryList) {
-        if (!category) continue;
-        else if (!isGameEnabled(settings, category)) delete outYaml[category];
-      }
+    for (const category of APCategoryList) {
+      // If Ctrl is NOT held, filter out any category that is definitely not being played
+      if (!isGameEnabledV2(category.category) && !e.ctrlKey) continue;
+      const settings = category.settings.map((i) => [i.name, i.yamlValue]);
+      if (category.category === null)
+        outYaml = Object.assign(outYaml, Object.fromEntries(settings));
+      else outYaml[category.category] = Object.fromEntries(settings);
     }
 
+    // TODO: Rework common settings
     const minifiedSettings = minifyCommonSettings(commonSettings);
     for (const category of Object.keys(minifiedSettings))
       if (outYaml[category])
@@ -1131,7 +840,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
             </button>
             <button
               title="Hold Ctrl to export all settings, including for games not being played."
-              onClick={onExport}
+              onClick={onExportV2}
             >
               Export YAML
             </button>
