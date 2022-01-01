@@ -41,6 +41,8 @@ export abstract class APSettingNode<
 > {
   constructor(props: APSettingProps<TSetting>) {
     super(props);
+
+    // HACK: I know this is an incredibly improper way of doing things and will be trying to simplify this later
     this.state = {
       value: props.setting.value as APWeightableValue<
         SettingValueType<TSetting>
@@ -52,18 +54,24 @@ export abstract class APSettingNode<
     _prevProps: APSettingProps<TSetting>,
     prevState: APSettingState<SettingValueType<TSetting>>
   ) {
-    const { value } = this.state;
-    if (value !== prevState.value) {
-      const { setting, save } = this.props;
-      // HACK: this doesn't work as a direct assignment for some reason
-      setting.value = value as
-        | string
-        | number
-        | boolean
-        | APWeightedValue<string>[]
-        | APWeightedValue<string | number>[]
-        | APWeightedValue<boolean>[];
-      save();
+    const { value: stateValue } = this.state;
+    const { value: propValue } = this.props.setting;
+    if (stateValue !== propValue) {
+      if (stateValue !== prevState.value) {
+        const { setting, save } = this.props;
+        // HACK: this doesn't work as a direct assignment for some reason
+        setting.value = stateValue as
+          | string
+          | number
+          | boolean
+          | APWeightedValue<string>[]
+          | APWeightedValue<string | number>[]
+          | APWeightedValue<boolean>[];
+        save();
+      } else
+        this.setState({
+          value: propValue as APWeightableValue<SettingValueType<TSetting>>,
+        });
     }
   }
 
@@ -73,7 +81,7 @@ export abstract class APSettingNode<
     this.setState({
       value: setting.default as SettingValueType<TSetting>,
     });
-  }
+  };
 
   /** Outputs a slider for a weighted value, within the context of {@link onWeightedCheck}. */
   protected outputWeightedValue = (
@@ -133,7 +141,7 @@ export abstract class APSettingNode<
         <br />
       </>
     );
-  }
+  };
 
   /** Toggles the weighted state of this setting. */
   protected abstract onWeightedCheck(e: ChangeEvent<HTMLInputElement>): void;
