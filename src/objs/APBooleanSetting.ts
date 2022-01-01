@@ -1,7 +1,7 @@
 import { SettingType } from "../defs/core";
 import { APSetting, APSettingJson, APWeightedValue } from "./APSetting";
 
-const positiveValues = ["true", "on"];
+const truthy = ["true", "on"];
 
 export interface APBooleanSettingJson extends APSettingJson<boolean> {
   type: SettingType.Boolean;
@@ -25,10 +25,11 @@ export class APBooleanSetting extends APSetting<boolean> {
       const wValues: APWeightedValue<boolean>[] = [];
       for (const wValue of Object.entries(value))
         wValues.push({
-          value: positiveValues.includes(wValue[0]),
+          value: truthy.includes(wValue[0]),
           weight: wValue[1],
         });
       this.value = wValues;
-    } else this.value = value;
+    } else if (typeof value === "string") this.value = truthy.includes(value);
+    else this.value = value;
   }
 }

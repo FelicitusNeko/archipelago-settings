@@ -55,6 +55,7 @@ export class APStringSetting extends APSetting<string> {
   }
   /** @override */
   set yamlValue(value) {
+    // TODO: sanity checking
     if (typeof value === "object") {
       const wValues: APWeightedValue<string>[] = [];
       for (const wValue of Object.entries(value))

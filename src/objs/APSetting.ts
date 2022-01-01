@@ -39,7 +39,7 @@ export interface APSettingJson<T> {
    * When importing from Berserker YAMLs, interpret these Berserker values (keys) as their corresponding Archipelago values (values).
    * If the Berserker value no longer exists in Archipelago, the value here should be null.
    */
-  legacyValues?: Record<string, string | null>; // null if the setting no longer exists
+  legacyValues?: Record<string, T | null>; // null if the setting no longer exists
 }
 
 export type APWeightableValue<T> = T | APWeightedValue<T>[];
@@ -70,7 +70,7 @@ export abstract class APSetting<T> {
    * When importing from Berserker YAMLs, interpret these Berserker values (keys) as their corresponding Archipelago values (values).
    * If the Berserker value no longer exists in Archipelago, the value here should be null.
    */
-  private readonly _legacyValues?: Record<string, string | null>;
+  private readonly _legacyValues?: Record<string, T | null>;
 
   /** The value for this setting. */
   private _value: APWeightableValue<T>;
@@ -129,7 +129,7 @@ export abstract class APSetting<T> {
    * When importing from Berserker YAMLs, interpret these Berserker values (keys) as their corresponding Archipelago values (values).
    * If the Berserker value no longer exists in Archipelago, the value here should be null.
    */
-  get legacyValues(): Readonly<Record<string, string | null>> | undefined {
+  get legacyValues(): Readonly<Record<string, T | null>> | undefined {
     return this._legacyValues;
   }
 
@@ -153,6 +153,11 @@ export abstract class APSetting<T> {
   abstract get yamlValue(): T | Record<string, number>;
   abstract set yamlValue(value);
 
+  /**
+   * Checks whether this setting's value is or contains any of the values in a given list.
+   * @param values The list of values to check against.
+   * @returns Whether this setting's value is or contains any of the given values.
+   */
   includes(...values: any[]) {
     return (
       (Array.isArray(this._value)
@@ -160,6 +165,34 @@ export abstract class APSetting<T> {
         : [this._value]
       ).filter((i) => values.includes(i)).length > 0
     );
+  }
+
+  /**
+   * Sets this setting's value based on Berserker legacy values.
+   * @param value The value from the Berserker YAML.
+   */
+  fromBerserkerYamlValue(value: any) {
+    if (this._legacyValues) {
+      const dstEntries = Object.entries(this._legacyValues);
+      if (typeof value === "object") {
+        const srcEntries = Object.entries(value)
+          .filter((i) => {
+            const dstEntry = dstEntries.find((ii) => ii[0] === i[0]);
+            return !dstEntry || dstEntry[1] !== null;
+          })
+          .map((i) => {
+            const dstEntry = dstEntries.find((ii) => ii[0] === i[0]);
+            if (dstEntry && dstEntry[1]) return [i[0], dstEntry[1]];
+            else return i;
+          });
+        return (this.yamlValue = Object.fromEntries(srcEntries));
+      } else {
+        const dstEntry = dstEntries.find((i) => i[0] === value.toString());
+        if (dstEntry) {
+          if (dstEntry[1]) return (this.yamlValue = dstEntry[1]);
+        }
+      }
+    } else return (this.yamlValue = value);
   }
 
   /** Whether this setting is a Boolean setting. */

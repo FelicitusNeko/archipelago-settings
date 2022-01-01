@@ -6,7 +6,7 @@ import {
   APWeightedValue,
 } from "./APSetting";
 
-//const randomOrder = ["random", "random-low", "random-mid", "random-high"];
+const randomOrder = ["random", "random-low", "random-middle", "random-high"];
 
 /**
  * The interface for Archipelago numeric settings as stored in JSON.
@@ -26,7 +26,7 @@ export interface APNumericSettingJson extends APSettingJson<number | string> {
    * If specified, the slider for this setting will skip this many numbers between values.
    * @optional
    */
-   step?: number;
+  step?: number;
   /** @override */
   default: number;
   /**
@@ -71,14 +71,14 @@ export class APNumericSetting extends APSetting<number | string> {
    * If specified, the slider for this setting will skip this many numbers between values.
    * @optional
    */
-   get step() {
+  get step() {
     return this._step;
   }
   /**
    * Whether the setting can be randomized. If so, and if the setting is weighted, "random", "random-low", and
    * "random-high" are added as options.
    */
-   get randomable() {
+  get randomable() {
     return this._randomable;
   }
 
@@ -102,7 +102,26 @@ export class APNumericSetting extends APSetting<number | string> {
           value: wValue[0],
           weight: wValue[1],
         });
-      this.value = wValues;
+      if (this._randomable) {
+        const missingRandoms = randomOrder.filter(
+          (i) => !wValues.map((ii) => ii.value.toString()).includes(i)
+        );
+        wValues.push(
+          ...missingRandoms.map((i) => {
+            return { value: i, weight: 0 };
+          })
+        );
+      }
+      this.value = wValues.sort((a, b) => {
+        if (typeof a.value === typeof b.value) {
+          if (typeof a.value === "number") return a.value - (b.value as number);
+          else
+            return (
+              randomOrder.indexOf(a.value) -
+              randomOrder.indexOf(b.value as string)
+            );
+        } else return typeof a.value === "number" ? -1 : 1;
+      });
     } else this.value = value;
   }
 }
