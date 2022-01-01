@@ -113,9 +113,12 @@
       "readableName": "Triforce Hunt mode",
       "description": "This will determine how many extra Triforce Pieces, if any, there will be during your Triforce Hunt.",
       "values": {
-        "extra": "The required number plus an extra amount",
-        "percentage": "A certain percentage over the required number",
-        "available": "A set number of Triforce pieces"
+        "extra": ["Plus extra", "The required number plus an extra amount"],
+        "percentage": [
+          "Plus percentage",
+          "A certain percentage over the required number"
+        ],
+        "available": ["Set number", "A set number of Triforce pieces"]
       },
       "default": "extra",
       "dependsOn": {
@@ -148,7 +151,7 @@
     {
       "type": "numeric",
       "name": "triforce_pieces_percentage",
-      "readableName": ["Triforce pieces", "percentage"],
+      "readableName": "Triforce pieces — plus percent",
       "description": "What percentage of Triforce pieces over the required amount will be available. For instance, 20 pieces at 150% would result in 30 pieces in the game.",
       "low": 100,
       "high": 400,
@@ -288,7 +291,7 @@
         "none": "Off",
         "dungeonssimple": "Easy dungeon shuffle",
         "dungeonsfull": "Dungeon shuffle",
-        "simple": ["Basic", "A little mixed up"],
+        "simple": ["Simple", "A little mixed up"],
         "restricted": ["Restricted", "Connectors will stay the same"],
         "full": "Full",
         "crossed": ["Crossed", "Connectors can cross over Light/Dark World"],
@@ -331,7 +334,7 @@
       "description": "Whether and how bosses will be shuffled.",
       "values": {
         "none": "Off",
-        "basic": ["Simple", "Shuffle all bosses except GT (one each)"],
+        "basic": ["Basic", "Shuffle all bosses except GT (one each)"],
         "full": ["Full", "Shuffle all bosses including GT"],
         "chaos": "Random",
         "singularity": ["Singularity", "Spawn one boss as much as possible"]
@@ -374,17 +377,20 @@
       "readableName": "Big key shuffle",
       "description": "How big keys will be shuffled.",
       "values": {
-        "original_dungeon": "Keep them to their own dungeons",
-        "own_dungeons": "Put them in any dungeon",
-        "own_world": "Put them anywhere in your world",
-        "any_world": "Put them in anyone's world",
-        "different_world": "Put them in any world but yours"
+        "original_dungeon": ["In dungeon", "Keep them to their own dungeons"],
+        "own_dungeons": [
+          "Any dungeon",
+          "Put them in any dungeon in your world"
+        ],
+        "own_world": ["Local", "Put them anywhere in your world"],
+        "any_world": ["Anywhere", "Put them in anyone's world"],
+        "different_world": ["Non-local", "Put them in any world but yours"]
       },
       "default": "original_dungeon",
       "legacyValues": {
         "on": "any_world",
-        "off": "original_dungeon",
         "true": "any_world",
+        "off": "original_dungeon",
         "false": "original_dungeon"
       }
     },
@@ -394,18 +400,21 @@
       "readableName": "Small key shuffle",
       "description": "How small keys will be shuffled.",
       "values": {
-        "original_dungeon": "Keep them to their own dungeons",
-        "own_dungeons": "Put them in any dungeon",
-        "own_world": "Put them anywhere in your world",
-        "any_world": "Put them in anyone's world",
-        "different_world": "Put them in any world but yours",
+        "original_dungeon": ["In dungeon", "Keep them to their own dungeons"],
+        "own_dungeons": [
+          "Any dungeon",
+          "Put them in any dungeon in your world"
+        ],
+        "own_world": ["Local", "Put them anywhere in your world"],
+        "any_world": ["Anywhere", "Put them in anyone's world"],
+        "different_world": ["Non-local", "Put them in any world but yours"],
         "universal": ["Universal", "any world, usable in any dungeon"]
       },
       "default": "original_dungeon",
       "legacyValues": {
         "on": "any_world",
-        "off": "original_dungeon",
         "true": "any_world",
+        "off": "original_dungeon",
         "false": "original_dungeon"
       }
     },
@@ -415,17 +424,20 @@
       "readableName": "Compass shuffle",
       "description": "How compasses will be shuffled.",
       "values": {
-        "original_dungeon": "Keep them to their own dungeons",
-        "own_dungeons": "Put them in any dungeon",
-        "own_world": "Put them anywhere in your world",
-        "any_world": "Put them in anyone's world",
-        "different_world": "Put them in any world but yours"
+        "original_dungeon": ["In dungeon", "Keep them to their own dungeons"],
+        "own_dungeons": [
+          "Any dungeon",
+          "Put them in any dungeon in your world"
+        ],
+        "own_world": ["Local", "Put them anywhere in your world"],
+        "any_world": ["Anywhere", "Put them in anyone's world"],
+        "different_world": ["Non-local", "Put them in any world but yours"]
       },
       "default": "original_dungeon",
       "legacyValues": {
         "on": "any_world",
-        "off": "original_dungeon",
         "true": "any_world",
+        "off": "original_dungeon",
         "false": "original_dungeon"
       }
     },
@@ -435,17 +447,20 @@
       "readableName": "Map shuffle",
       "description": "How maps will be shuffled.",
       "values": {
-        "original_dungeon": "Keep them to their own dungeons",
-        "own_dungeons": "Put them in any dungeon",
-        "own_world": "Put them anywhere in your world",
-        "any_world": "Put them in anyone's world",
-        "different_world": "Put them in any world but yours"
+        "original_dungeon": ["In dungeon", "Keep them to their own dungeons"],
+        "own_dungeons": [
+          "Any dungeon",
+          "Put them in any dungeon in your world"
+        ],
+        "own_world": ["Local", "Put them anywhere in your world"],
+        "any_world": ["Anywhere", "Put them in anyone's world"],
+        "different_world": ["Non-local", "Put them in any world but yours"]
       },
       "default": "original_dungeon",
       "legacyValues": {
         "on": "any_world",
-        "off": "original_dungeon",
         "true": "any_world",
+        "off": "original_dungeon",
         "false": "original_dungeon"
       }
     },
@@ -536,9 +551,9 @@
       "readableName": "Dark room logic",
       "description": "Whether a light source should be required to traverse dark rooms.",
       "values": {
-        "lamp": "Expect that you'll have a lamp for those",
-        "torches": "A Fire Rod will do to light up braziers",
-        "none": "Eyes like a cat, baby"
+        "lamp": ["Lamp required", "Expect that you'll have a lamp for those"],
+        "torches": ["Torches", "A Fire Rod will do to light up braziers"],
+        "none": ["No logic", "Eyes like a cat, baby"]
       },
       "default": "lamp"
     },
@@ -629,7 +644,7 @@
       "description": "Affects the amount of damage enemies inflict.",
       "values": {
         "default": "Vanilla",
-        "shuffled": ["Shuffle", "general same number of hard hitters"],
+        "shuffled": ["Shuffle", "General same number of hard hitters"],
         "chaos": "Full random"
       },
       "default": "default"
@@ -651,7 +666,7 @@
       "type": "numeric",
       "name": "beemizer_total_chance",
       "readableName": "Beemizer",
-      "description": "Percentage of garbage treasures like small rupees, bombs, and arrows, to be replaced with bees or bee traps.",
+      "description": "Percentage of garbage treasures, like small rupees, bombs, and arrows, to be replaced with bees or bee traps.",
       "low": 0,
       "high": 100,
       "default": 0
@@ -660,7 +675,7 @@
       "type": "numeric",
       "name": "beemizer_trap_chance",
       "readableName": "Beemizer trap chance",
-      "description": "Percentage of bee checks which will become bee traps instead of single bees.",
+      "description": "Percentage of bee checks which will become bee swarm traps instead of single bees.",
       "low": 0,
       "high": 100,
       "default": 60
@@ -727,7 +742,7 @@
         "ufpw": "Absolutely everything",
         "P": [
           "Exotic price shuffle",
-          "Sometimes pay in bombs, arrows, and hearts"
+          "Sometimes pay in bombs, arrows, and hearts (warning: unstable, may crash the game)"
         ],
         "gP": "Pool and exotic prices",
         "fP": "Full exotic shuffle",
@@ -924,9 +939,9 @@
       "legacyName": "disablemusic",
       "legacyValues": {
         "true": "false",
+        "on": "false",
         "false": "true",
-        "off": "true",
-        "on": "false"
+        "off": "true"
       }
     },
     {
