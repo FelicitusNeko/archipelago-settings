@@ -155,7 +155,7 @@ export abstract class APSettingNode<
   render() {
     if (!this.state) return null;
     const { setting } = this.props;
-    const { value } = this.state;
+    const { value } = setting;
     const weighted = APSetting.isWeighted(value);
 
     return (

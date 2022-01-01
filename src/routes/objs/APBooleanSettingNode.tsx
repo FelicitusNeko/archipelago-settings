@@ -23,12 +23,12 @@ export class APBooleanSettingNode extends APSettingNode<APBooleanSetting> {
         ],
       });
     else this.setState({ value: setting.default });
-  }
+  };
 
   protected renderLinearChoice = () => {
     // if this is a weighted setting, output nothing; it should output correctly on the next frame
     const { setting } = this.props;
-    const { value } = this.state;
+    const { value } = setting;
 
     // if this is a weighted setting, output nothing; it should output correctly on the next frame
     if (Array.isArray(value)) return null;
@@ -54,11 +54,11 @@ export class APBooleanSettingNode extends APSettingNode<APBooleanSetting> {
         <span className="switch-handle"></span>
       </label>
     );
-  }
+  };
 
   protected renderWeightedChoice = () => {
     // if this is a weighted setting, output nothing; it should output correctly on the next frame
-    const { value } = this.state;
+    const { value } = this.props.setting;
 
     // if this is not a weighted setting, output nothing; it should output correctly on the next frame
     if (!Array.isArray(value)) return null;
@@ -76,5 +76,5 @@ export class APBooleanSettingNode extends APSettingNode<APBooleanSetting> {
         )}
       </>
     );
-  }
+  };
 }

@@ -14,7 +14,7 @@ export class APNumericSettingNode extends APSettingNode<APNumericSetting> {
   protected onWeightedCheck = ({
     currentTarget,
   }: ChangeEvent<HTMLInputElement>) => {
-    const {setting} = this.props;
+    const { setting } = this.props;
     const { value } = this.state;
     if (currentTarget.checked) {
       const newValue: APWeightedValue<APNumericType>[] = [
@@ -34,19 +34,12 @@ export class APNumericSettingNode extends APSettingNode<APNumericSetting> {
       this.setState({
         value: setting.default,
       });
-  }
+  };
 
   /** @override */
   protected renderLinearChoice = () => {
     const { category, setting } = this.props;
-    const { value } = this.state;
-    const {
-      name,
-      low,
-      high,
-      step,
-      default: vDefault,
-    } = setting;
+    const { name, low, high, step, value, default: vDefault } = setting;
 
     // if this is a weighted setting, output nothing; it should output correctly on the next frame
     if (Array.isArray(value)) return null;
@@ -74,19 +67,13 @@ export class APNumericSettingNode extends APSettingNode<APNumericSetting> {
         <b>{value}</b>
       </>
     );
-  }
+  };
 
   /** @override */
   protected renderWeightedChoice = () => {
     const { category, setting } = this.props;
-    const { value, selector } = this.state;
-    const {
-      name,
-      low,
-      high,
-      step,
-      default: vDefault,
-    } = setting;
+    const { selector } = this.state;
+    const { name, low, high, step, value, default: vDefault } = setting;
 
     // if this is not a weighted setting, output nothing; it should output correctly on the next frame
     if (!Array.isArray(value)) return null;
@@ -165,4 +152,5 @@ export class APNumericSettingNode extends APSettingNode<APNumericSetting> {
         </button>
       </>
     );
-  }}
+  };
+}
