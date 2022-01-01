@@ -62,17 +62,6 @@ const EmptyCommonSetings: MinifiedCommonSettings = Object.seal({
   exclude_locations: [],
 });
 
-// /**
-//  * Checks whether there is any crossover between two arrays.
-//  * @param {string[]} lhs One array to check against.
-//  * @param {string[]} rhs The other array to check against.
-//  * @returns {boolean} Whether there is any crossover between the arrays.
-//  */
-// const hasCrossover = (lhs: string[], rhs: string[]): boolean => {
-//   for (const i of lhs) if (rhs.includes(i)) return true;
-//   return false;
-// };
-
 /**
  * Serializes the common settings for browser storage and YAML output.
  * @param commonSettings The set of common settings to serialize.
@@ -188,6 +177,7 @@ const deserializeCommonSettings = (
  * @param {SettingValue} value The current value for this setting.
  * @param {ArchipelagoSettingBase} setting The setting object to which the value belongs.
  * @returns {SettingValue} If the setting is not a {@link ArchipelagoBooleanSetting}, the original value. Otherwise, the normalized Boolean value.
+ * @deprecated {@link APBooleanSetting} should soon handle this automatically
  */
 const convertBoolean = (
   value: SettingValue,
@@ -219,6 +209,7 @@ const convertBoolean = (
  * Checks a collection of settings for validity, and makes revisions as necessary.
  * @param data The collection of settings to verify.
  * @returns The revised collection of settings.
+ * @deprecated New data structures should soon handle this automatically
  */
 const checkSavedData = (data: SettingsCollection) => {
   console.info("Reticulating splines"); // lul
@@ -357,44 +348,6 @@ const checkSavedData = (data: SettingsCollection) => {
   return retval;
 };
 
-// /**
-//  * Check a setting or item against its dependencies.
-//  * @param {SettingsSubcollection} subsettings The subcollection of settings to check.
-//  * @param {ArchipelagoDependency} dep The dependency list to check against.
-//  * @returns {boolean} True if all dependencies are met; otherwise false.
-//  */
-// const checkDependency = (
-//   subsettings: SettingsSubcollection,
-//   dep?: ArchipelagoDependency
-// ): boolean => {
-//   // TODO: "not" dependencies (!value)
-
-//   // If this setting has no dependencies, keep it
-//   if (!dep) return true;
-//   // Iterate through all of the dependencies
-//   else
-//     for (const check in dep) {
-//       if (typeof subsettings[check] === "object") {
-//         /** The collection of weights for the parent setting. */
-//         const weightSubsetting = subsettings[check] as WeightedSetting;
-//         // If the required value(s) is/are not selected at all, filter out
-//         if (
-//           !hasCrossover(Object.keys(weightSubsetting), dep[check] as string[])
-//         )
-//           return false;
-//         // If the required value(s) present has/all have a weight of 0, filter out
-//         for (const countercheck in weightSubsetting) {
-//           if (Object.keys(weightSubsetting).includes(countercheck)) {
-//             if (weightSubsetting[countercheck] === 0) return false;
-//             else break;
-//           }
-//         }
-//         // If it's a single value, filter out if a required value is not set
-//       } else if (!dep[check].includes(subsettings[check])) return false;
-//     }
-//   return true;
-// };
-
 /**
  * Check a setting or item against its dependencies.
  * @param {string|null} category The category to check.
@@ -430,6 +383,7 @@ const checkDependencyV2 = (
  * Checks whether a game has been selected for play in the global "Game" setting.
  * @param {string|null} category The category to check.
  * @returns {boolean} Whether this category is enabled. Always true if {@link category} is null.
+ * @deprecated Replace with {@link isGameEnabledV2}
  */
 const isGameEnabled = (
   settings: SettingsCollection,
@@ -612,7 +566,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
   // };
 
   const SaveToStorage = () => {
-    // do what it says
+    // TODO: actually save things
     forceUpdate();
   };
 
@@ -1088,43 +1042,6 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
     }
   };
 
-  // /**
-  //  * Converts a collection of settings into an array of {@link Setting} objects.
-  //  * @param category The category to which the settings belong.
-  //  * @param settingsDef The collection of settings to convert.
-  //  * @returns {React.ReactNode[]|null} The collection of {@link Setting} objects.
-  //  */
-  // const outputSettingCollection = (
-  //   category: string | null,
-  //   settingsDef: ArchipelagoSettingBase[]
-  // ): React.ReactNode[] | null => {
-  //   // If there are no settings for a category, nothing to return
-  //   if (category !== null && settings[category] === undefined) return null;
-  //   // If the game is not selected, nothing to return
-  //   if (!isGameEnabled(settings, category)) return null;
-
-  //   /** The relevant subcollection of settings for this operation. */
-  //   const subsettings = (
-  //     category === null ? settings : settings[category]
-  //   ) as SettingsSubcollection;
-  //   return (
-  //     settingsDef
-  //       // Filter out any invalid settings (shouldn't happen, but just in case)
-  //       .filter((i) => Object.keys(subsettings).includes(i.name))
-  //       .filter((i) => checkDependency(subsettings, i.dependsOn))
-  //       .map((i) => (
-  //         // Return the setting object
-  //         <Setting
-  //           key={`setting-${category}-${i.name}`}
-  //           category={category ?? undefined}
-  //           setting={i}
-  //           value={subsettings[i.name]}
-  //           onChange={onSettingChange}
-  //         />
-  //       ))
-  //   );
-  // };
-
   /**
    * Converts a collection of settings into an array of {@link Setting} objects.
    * @param category The category to which the settings belong.
@@ -1224,14 +1141,9 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
 
         <Tabs>
           <TabList className="react-tabs__tab-list settingsTabs">
-            {/* {CategoryList.filter((i) =>
-              isGameEnabled(settings, i.category)
-            ).map((i) => (
-              // Output tabs for enabled games
-              <Tab key={`tab-${i.category}`}>{i.category ?? "Global"}</Tab>
-            ))} */}
             {APCategoryList.filter((i) => isGameEnabledV2(i.category)).map(
               (i) => (
+                // Output tabs for enabled games
                 <Tab key={`tab-${i.category}`}>{i.category ?? "Global"}</Tab>
               )
             )}
@@ -1260,27 +1172,6 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
               </TabPanel>
             )
           )}
-          {/* {CategoryList.filter((i) => isGameEnabled(settings, i.category)).map(
-            (i) => (
-              // Output tab panels containing setting collections for enabled games
-              <TabPanel key={`tabpanel-${i.category}`} className="settingsBody">
-                {outputSettingCollection(i.category, i.settings)}
-                {i.category && i.items ? (
-                  <ItemSelector
-                    category={i.category}
-                    items={i.items.filter((ii) =>
-                      checkDependency(
-                        settings[i.category!] as SettingsSubcollection,
-                        ii.dependsOn
-                      )
-                    )}
-                    commonSettings={commonSettings[i.category]}
-                    onChange={onCommonItemSettingChange}
-                  />
-                ) : null}
-              </TabPanel>
-            )
-          )} */}
           <TabPanel className="settingsBody">
             <Changelog />
           </TabPanel>

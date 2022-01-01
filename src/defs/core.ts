@@ -19,9 +19,15 @@ export enum SettingType {
   Boolean = "boolean",
 }
 
-/** A collection of weights for a setting. The key should be the setting's value, and the value should indicate the chance of it being selected. */
+/**
+ * A collection of weights for a setting. The key should be the setting's value, and the value should indicate the chance of it being selected.
+ * @deprecated Replace with {@link APWeightedValue}
+ */
 export type WeightedSetting = Record<string, number>;
-/** The value for a setting. */
+/**
+ * The value for a setting.
+ * @deprecated Replace with {@link APWeightableValue}
+ */
 export type SettingValue = string | number | boolean | WeightedSetting;
 /**
  * Refers to an event where a setting is reporting a change back to the base app.
@@ -29,6 +35,7 @@ export type SettingValue = string | number | boolean | WeightedSetting;
  * @param newValue The new value for the setting.
  * @param category Optional. The category to which this setting belongs. Should only be undefined in the event of a global setting.
  * @returns void
+ * @deprecated The new structures no longer require this event to work
  */
 export type SettingChangeEvent = (
   settingName: string,
@@ -65,12 +72,19 @@ export type CommonItemSettingChangeEvent = (
   options: CommonItemSettingChangeEventOptions
 ) => void;
 
-/** Refers to a setting dependency. */
+/**
+ * Refers to a setting dependency.
+ * @deprecated Replace with {@link APDependency}
+ */
 export type ArchipelagoDependency = Record<string, SettingValue[]>;
 
+/** Refers to a setting dependency. */
 export type APDependency = Record<string, any[]>;
 
-/** The base interface for Archipelago settings. */
+/**
+ * The base interface for Archipelago settings.
+ * @deprecated Replace with {@link APSetting}
+ */
 export interface ArchipelagoSettingBase {
   /** The type of setting. */
   type: SettingType;
@@ -95,7 +109,10 @@ export interface ArchipelagoSettingBase {
   legacyValues?: Record<string, string | null>; // null if the setting no longer exists
 }
 
-/** The interface for a string-based setting. */
+/**
+ * The interface for a string-based setting. 
+ * @deprecated Replace with {@link APStringSetting}
+ */
 export interface ArchipelagoStringSetting extends ArchipelagoSettingBase {
   /**
    * The type of setting. Must be {@link SettingType.String}.
@@ -107,7 +124,10 @@ export interface ArchipelagoStringSetting extends ArchipelagoSettingBase {
   default: string;
 }
 
-/** The interface for a numeric setting. */
+/**
+ * The interface for a numeric setting.
+ * @deprecated Replace with {@link APNumericSetting}
+ */
 export interface ArchipelagoNumericSetting extends ArchipelagoSettingBase {
   /**
    * The type of setting. Must be {@link SettingType.Numeric}.
@@ -132,7 +152,10 @@ export interface ArchipelagoNumericSetting extends ArchipelagoSettingBase {
   randomable?: boolean;
 }
 
-/** The interface for a Boolean setting. */
+/**
+ * The interface for a Boolean setting.
+ * @deprecated Replace with {@link APBooleanSetting}
+ */
 export interface ArchipelagoBooleanSetting extends ArchipelagoSettingBase {
   /**
    * The type of setting. Must be {@link SettingType.Boolean}.
@@ -250,7 +273,10 @@ const WeightRail: CSSProperties = {
 };
 export { SelectRail, WeightRail };
 
-/** Some games now support DeathLink, which links all enabled players' lives. If one DeathLinked player dies, all of them do. */
+/**
+ * Some games now support DeathLink, which links all enabled players' lives. If one DeathLinked player dies, all of them do.
+ * @deprecated With the new structures, this can unfortunately no longer be used as-is
+ */
 const DeathLinkOption = Object.seal<ArchipelagoBooleanSetting>({
   type: SettingType.Boolean,
   name: "death_link",
