@@ -341,7 +341,10 @@
       "name": "random_music",
       "readableName": "Random music",
       "description": "Randomize the background music.",
-      "default": false
+      "default": false,
+      "dependsOn": {
+        "no_music": [false]
+      }
     }
   ],
   "items": [
