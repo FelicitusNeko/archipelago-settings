@@ -89,6 +89,7 @@ const APCategoryList: APCategory[] = APCategoryData.map((i) => {
                 `Game "${i.category}" does not have a known list of character sprites/models`
               );
           }
+          stringJson.default = Object.keys(stringJson.values)[0];
           return new APStringSetting(i.category, stringJson);
         }
         default:
