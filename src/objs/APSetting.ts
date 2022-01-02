@@ -15,6 +15,13 @@ export interface APWeightedValue<T> {
 }
 
 /**
+ * A value type that may or may not be weighted. Whether or not it is can be determined by using {@link isWeighted} or by
+ * checking whether or not the value is an array of {@link APWeightedValue}s.
+ * @since 1.0.0
+ */
+export type APWeightableValue<T> = T | APWeightedValue<T>[];
+
+/**
  * The base interface for Archipelago settings as stored in JSON.
  * @since 1.0.0
  */
@@ -41,8 +48,6 @@ export interface APSettingJson<T> {
    */
   legacyValues?: Record<string, T | null>; // null if the setting no longer exists
 }
-
-export type APWeightableValue<T> = T | APWeightedValue<T>[];
 
 /**
  * The renderable representation of an Archipelago setting.
@@ -170,8 +175,9 @@ export abstract class APSetting<T> {
   /**
    * Sets this setting's value based on Berserker legacy values.
    * @param value The value from the Berserker YAML.
+   * @returns The interpreted value as its Archipelago YAML representation.
    */
-  fromBerserkerYamlValue(value: any) {
+  fromBerserkerYamlValue(value: any): T | Record<string, number> {
     if (this._legacyValues) {
       const dstEntries = Object.entries(this._legacyValues);
       if (typeof value === "object") {
@@ -192,7 +198,8 @@ export abstract class APSetting<T> {
           if (dstEntry[1]) return (this.yamlValue = dstEntry[1]);
         }
       }
-    } else return (this.yamlValue = value);
+    }
+    return (this.yamlValue = value);
   }
 
   /** Whether this setting is a Boolean setting. */
@@ -214,6 +221,7 @@ export abstract class APSetting<T> {
 
   /**
    * Evaluates whether a setting definition is for a string-based setting.
+   * @static
    * @param value The setting definition to evalute.
    * @returns Whether the given setting definition is for a string-based setting.
    */
@@ -226,6 +234,7 @@ export abstract class APSetting<T> {
   }
   /**
    * Evaluates whether a setting definition is for a numeric setting.
+   * @static
    * @param value The setting definition to evalute.
    * @returns Whether the given setting definition is for a numeric setting.
    */
@@ -236,6 +245,7 @@ export abstract class APSetting<T> {
   }
   /**
    * Evaluates whether a setting definition is for a Boolean setting.
+   * @static
    * @param value The setting definition to evalute.
    * @returns Whether the given setting definition is for a Boolean setting.
    */
@@ -245,7 +255,12 @@ export abstract class APSetting<T> {
     return value.type === SettingType.Boolean;
   }
 
-  /** Whether the given value is weighted. */
+  /**
+   * Whether the given value is weighted.
+   * @static
+   * @param value The value to check.
+   * @returns Whether the value is weighted. If so, it should be treated as an {@link APWeightedValue}.
+   */
   static isWeighted(
     value: APWeightableValue<any>
   ): value is APWeightedValue<any> {

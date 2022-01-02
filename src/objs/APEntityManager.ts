@@ -5,7 +5,10 @@ import {
   APGameLocation,
 } from "../defs/core";
 
-/** How to handle `start_inventory` entries in the item manager. */
+/**
+ * How to handle `start_inventory` entries in the item manager.
+ * @since 1.0.0
+ */
 export enum MakeStartInvLocal {
   /** No special handling. */
   No,
@@ -15,10 +18,16 @@ export enum MakeStartInvLocal {
   Always,
 }
 
-/** An object that can be resolved into a relevant {@link APGameEntity} type. */
+/**
+ * An object that can be resolved into a relevant {@link APGameEntity} type.
+ * @since 1.0.0
+ */
 type APEntityResolvable<T extends APGameEntity> = string | T;
 
-/** Manages entities in a category. */
+/**
+ * Manages entities in a category.
+ * @since 1.0.0
+ */
 export abstract class APEntityManager<T extends APGameEntity> {
   /** Entities can only belong to one of these lists. */
   protected _exclusiveLists: Record<string, T[]> = {};
@@ -127,7 +136,10 @@ export abstract class APEntityManager<T extends APGameEntity> {
   }
 }
 
-/** Manages items in a category. */
+/**
+ * Manages items in a category.
+ * @since 1.0.0
+ */
 export class APItemManager extends APEntityManager<APGameItem> {
   private _startInvMode: MakeStartInvLocal = MakeStartInvLocal.MaxOnly;
 
@@ -197,7 +209,10 @@ export class APItemManager extends APEntityManager<APGameItem> {
   }
 }
 
-/** Manages locations in a category. */
+/**
+ * Manages locations in a category.
+ * @since 1.0.0
+ */
 export class APLocationManager extends APEntityManager<APGameLocation> {
   constructor(entityList: APGameLocation[]) {
     super(entityList);

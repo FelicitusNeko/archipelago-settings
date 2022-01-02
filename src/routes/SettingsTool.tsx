@@ -37,6 +37,7 @@ type SettingsSubcollection = Record<string, SettingValue>;
 /** @deprecated */
 type SettingsCollection = Record<string, SettingValue | SettingsSubcollection>;
 
+/** @deprecated */
 const EmptyCommonSetings: MinifiedCommonSettings = Object.seal({
   local_items: [],
   non_local_items: [],
@@ -50,6 +51,7 @@ const EmptyCommonSetings: MinifiedCommonSettings = Object.seal({
  * Serializes the common settings for browser storage and YAML output.
  * @param commonSettings The set of common settings to serialize.
  * @returns {Record<string, MinifiedCommonSettings>} The set of serialized common settings.
+ * @deprecated will be replaced by entity managers
  */
 const minifyCommonSettings = (
   commonSettings: Record<string, ArchipelagoCommonSettings>
@@ -90,6 +92,7 @@ const minifyCommonSettings = (
  * Deserialize common settings into complete data that is used by the Settings Tool.
  * @param minifiedSettings The set of serialized data.
  * @returns The deserialized common settings for the Settings Tool to use.
+ * @deprecated will be replaced by entity managers
  */
 const deserializeCommonSettings = (
   minifiedSettings: Record<string, MinifiedCommonSettings>
@@ -199,7 +202,7 @@ const isGameEnabledV2 = (category: string | null): boolean => {
   return GameSetting.includes(category);
 };
 
-//create your forceUpdate hook
+/** Creates a hook which facilitates forced updating of a function component. */
 const useForceUpdate = () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [value, setValue] = useState(0); // integer state
@@ -330,6 +333,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
    * @param category The category to which the item belongs.
    * @param options Any options pertaining to the event.
    * @since 0.10.0
+   * @deprecated will be replaced by entity managers
    */
   const onCommonItemSettingChange: CommonItemSettingChangeEvent = (
     itemName,
@@ -593,18 +597,11 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
   const importLegacyYamlV2 = (yamlInBase: any) => {
     /** The aggregate collection of settings from the Berserker YAML. */
     const yamlIn = Object.assign({}, yamlInBase, yamlInBase.rom);
-    /** The collection of imported settings. */
-    const newSettings: SettingsCollection = {};
 
     // Only iterate through global and LttP settings.
-    for (const { category, settings: catSettings } of APCategoryList.filter(
+    for (const { settings: catSettings } of APCategoryList.filter(
       (i) => [null, "A Link to the Past"].includes(i.category)
     )) {
-      // If there's a category (which would be LttP), prepare it in the settings collection
-      if (category) {
-        newSettings[category] = {};
-      }
-
       // In this function, we refer to a setting's legacyName when checking the imported data
       // Some setting and value names have changed, so we need to use the new ones
       for (const setting of catSettings) {
@@ -653,9 +650,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
     SaveToStorage();
   };
 
-  /**
-   * An event handler that fires when the "Import YAML" button is clicked.
-   */
+  /** An event handler that fires when the "Import YAML" button is clicked. */
   const onImport = () => {
     // Create an invisible file selector to open a dialog box
     const fileSelector = document.createElement("input");
@@ -742,7 +737,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
     // Confirm the action.
     if (confirm("Are you sure you want to reset these settings to default?")) {
       // If so, just delete the local storage object and reload.
-      localStorage.removeItem("savedSettings");
+      localStorage.removeItem("savedSettingsV2");
       location.reload();
     }
   };
