@@ -2,7 +2,10 @@ import { SettingType } from "./core";
 import { APCategoryData, APCategory } from "./categories/reader";
 
 import lttpSprites from "./LttP/sprites.json";
-import { APStringSetting, APStringSettingJson } from "../objs/settings/APStringSetting";
+import {
+  APStringSetting,
+  APStringSettingJson,
+} from "../objs/settings/APStringSetting";
 import {
   APNumericSetting,
   APNumericSettingJson,
@@ -11,6 +14,8 @@ import {
   APBooleanSetting,
   APBooleanSettingJson,
 } from "../objs/settings/APBooleanSetting";
+import { APItemManager } from "../objs/entities/APItemManager";
+import { APLocationManager } from "../objs/entities/APLocationManager";
 
 export type APMetaSetting =
   | APStringSetting
@@ -20,6 +25,8 @@ export type APMetaSettingJson =
   | APStringSettingJson
   | APNumericSettingJson
   | APBooleanSettingJson;
+
+export type APMetaManager = APItemManager | APLocationManager;
 
 interface LttPSprite {
   file: string;
@@ -107,5 +114,6 @@ export { APCategoryList };
 const GameSetting = APCategoryList[0].settings.find(
   (i) => i.type === SettingType.Games
 ) as APStringSetting;
-if (GameSetting === undefined) throw new Error('No game selection setting found');
+if (GameSetting === undefined)
+  throw new Error("No game selection setting found");
 export { GameSetting };
