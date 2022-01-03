@@ -1,3 +1,5 @@
+import { gunzipSync, gzipSync } from "zlib";
+
 import React, { useState, useEffect, ReactElement } from "react";
 import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
 import yaml from "yaml";
@@ -218,6 +220,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
   const [description, setDescription] = useState(
     "Generated using Kewlio's Archipelago Settings Tool"
   );
+  /** @deprecated Entity managers will remove the need for this */
   const [commonSettings, setCommonSettings] = useState<
     Record<string, ArchipelagoCommonSettings>
   >({});
@@ -240,7 +243,10 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
       // TODO: Rework common settings
       commonSettings: minifyCommonSettings(commonSettings),
     };
-    localStorage.setItem("savedSettingsV2", JSON.stringify(savedSettings));
+    localStorage.setItem(
+      "savedSettingsV2",
+      gzipSync(JSON.stringify(savedSettings)).toString("base64")
+    );
 
     if (!skipUpdate) forceUpdate();
   };
@@ -249,8 +255,12 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
   useEffect(() => {
     // Attempt to retrieve settings from local storage
     /** The stringified collection of saved settings. */
-    const savedSettingsStr = localStorage.getItem("savedSettingsV2");
     console.debug("Loading");
+    const savedSettingsStr = (() => {
+      const store = localStorage.getItem("savedSettingsV2");
+      if (!store || store[0] === "{") return store;
+      else return gunzipSync(Buffer.from(store, "base64")).toString();
+    })();
 
     if (savedSettingsStr) {
       // There are saved settings; load them in
@@ -599,8 +609,8 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
     const yamlIn = Object.assign({}, yamlInBase, yamlInBase.rom);
 
     // Only iterate through global and LttP settings.
-    for (const { settings: catSettings } of APCategoryList.filter(
-      (i) => [null, "A Link to the Past"].includes(i.category)
+    for (const { settings: catSettings } of APCategoryList.filter((i) =>
+      [null, "A Link to the Past"].includes(i.category)
     )) {
       // In this function, we refer to a setting's legacyName when checking the imported data
       // Some setting and value names have changed, so we need to use the new ones
