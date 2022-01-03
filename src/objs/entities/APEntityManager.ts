@@ -103,12 +103,22 @@ export abstract class APEntityManager<T extends APGameEntity> {
     return Object.fromEntries(Object.entries(entity)) as T;
   }
 
+  /** Retrieve the list of items that have not been assigned to an exclusive list. */
+  getUnassigned(): ReadonlyArray<T> {
+    const retval = this._entityList.slice();
+    const group = this._exclusiveLists;
+    for (const list in group)
+      for (const entity of group[list])
+        retval.filter((i) => i.name !== entity.name);
+    return retval;
+  }
+
   /**
    * Retrieve the contents of a list.
    * @param list The list to retrieve.
    * @returns The contents of the specified list, or `undefined` if the list is not found.
    */
-  getList(list: string): Readonly<Readonly<T>[]> | undefined {
+  getList(list: string): ReadonlyArray<T> | undefined {
     for (const group of [this._exclusiveLists, this._inclusiveLists])
       if (group[list]) return group[list].slice();
   }
