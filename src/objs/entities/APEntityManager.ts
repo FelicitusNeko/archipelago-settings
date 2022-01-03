@@ -1,4 +1,4 @@
-import { APGameEntity } from "../../defs/core";
+import { APGameEntity, APGameItem, APGameLocation, EntityType } from "../../defs/core";
 
 /**
  * An object that can be resolved into a relevant {@link APGameEntity} type.
@@ -251,5 +251,12 @@ export abstract class APEntityManager<T extends APGameEntity> {
   reset() {
     for (const group of [this._exclusiveLists, this._inclusiveLists])
       for (const list in group) group[list] = [];
+  }
+
+  static isItem(value: APGameItem|APGameLocation): value is APGameItem {
+    return value.type === EntityType.Item;
+  }
+  static isLocation(value: APGameItem|APGameLocation): value is APGameLocation {
+    return value.type === EntityType.Location;
   }
 }
