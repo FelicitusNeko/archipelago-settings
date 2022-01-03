@@ -1,5 +1,5 @@
 //import { APSettingJson } from "../../routes/settingTypes/APBaseSetting";
-import { ArchipelagoItem, ArchipelagoLocation } from "../core";
+import { APGameItem, APGameLocation } from "../core";
 import { APMetaSetting } from "../generate";
 
 // afaik there really isn't any better way to do this with create-react-app
@@ -16,7 +16,10 @@ import smetroid from "./008-sm.json";
 import evermore from "./009-soe.json";
 import ff1 from "./010-ff1.json";
 
-/** The JSON representation of an Archipelago category. */
+/**
+ * The JSON representation of an Archipelago category.
+ * @since 1.0.0
+ */
 export interface APCategory {
   /** The internal name of the category. */
   category: string | null;
@@ -26,16 +29,10 @@ export interface APCategory {
   index: number;
   /** The collection of settings for this category. */
   settings: APMetaSetting[];
-  /**
-   * The collection of defined items for this category.
-   * @since 0.9.4
-   */
-  items?: ArchipelagoItem[];
-  /**
-   * The collection of defined locations for this category.
-   * @since 0.9.4
-   */
-  locations?: ArchipelagoLocation[];
+  /** The collection of defined items for this category. */
+  items?: APGameItem[];
+  /** The collection of defined locations for this category. */
+  locations?: APGameLocation[];
 }
 
 const APCategoryData = ([
