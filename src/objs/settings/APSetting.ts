@@ -1,4 +1,4 @@
-import { APDependency, SettingType } from "../defs/core";
+import { APDependency, SettingType } from "../../defs/core";
 import { APBooleanSetting, APBooleanSettingJson } from "./APBooleanSetting";
 import { APNumericSetting, APNumericSettingJson } from "./APNumericSetting";
 import { APStringSetting, APStringSettingJson } from "./APStringSetting";

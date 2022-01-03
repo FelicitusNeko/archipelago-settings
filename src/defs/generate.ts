@@ -2,15 +2,15 @@ import { SettingType } from "./core";
 import { APCategoryData, APCategory } from "./categories/reader";
 
 import lttpSprites from "./LttP/sprites.json";
-import { APStringSetting, APStringSettingJson } from "../objs/APStringSetting";
+import { APStringSetting, APStringSettingJson } from "../objs/settings/APStringSetting";
 import {
   APNumericSetting,
   APNumericSettingJson,
-} from "../objs/APNumericSetting";
+} from "../objs/settings/APNumericSetting";
 import {
   APBooleanSetting,
   APBooleanSettingJson,
-} from "../objs/APBooleanSetting";
+} from "../objs/settings/APBooleanSetting";
 
 export type APMetaSetting =
   | APStringSetting

@@ -8,7 +8,7 @@ import {
   APSetting,
   APWeightableValue,
   APWeightedValue,
-} from "../../objs/APSetting";
+} from "../../objs/settings/APSetting";
 
 import "./Setting.css";
 import "./switch.css";

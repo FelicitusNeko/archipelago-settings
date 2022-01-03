@@ -1,4 +1,4 @@
-import { SettingType } from "../defs/core";
+import { SettingType } from "../../defs/core";
 import { APSetting, APSettingJson, APWeightedValue } from "./APSetting";
 
 const truthy = ["true", "on"];

@@ -1,8 +1,8 @@
 import { ChangeEvent } from "react";
 import Slider from "rc-slider";
 
-import { APNumericSetting } from "../../objs/APNumericSetting";
-import { APWeightedValue } from "../../objs/APSetting";
+import { APNumericSetting } from "../../objs/settings/APNumericSetting";
+import { APWeightedValue } from "../../objs/settings/APSetting";
 import { APSettingNode } from "./APSettingNode";
 import { SelectRail } from "../../defs/core";
 
