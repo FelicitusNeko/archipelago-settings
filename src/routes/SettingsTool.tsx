@@ -6,7 +6,6 @@ import yaml from "yaml";
 import { DateTime } from "luxon";
 import "react-tabs/style/react-tabs.css";
 
-//import Setting from "./objs/Setting";
 import ItemSelector from "./objs/ItemSelector";
 import Changelog from "./objs/Changelog";
 
