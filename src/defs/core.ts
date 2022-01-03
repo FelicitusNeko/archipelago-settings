@@ -62,6 +62,7 @@ interface CommonItemSettingChangeEventOptions {
 /**
  * Refers to an event where the item selector is reporting a change back to the base app.
  * @since 0.10.0
+ * @deprecated Entity managers will remove the need for this
  */
 export type CommonItemSettingChangeEvent = (
   /** The name of the item. */
