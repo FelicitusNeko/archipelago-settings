@@ -160,35 +160,39 @@ export abstract class APEntityManager<T extends APGameEntity> {
 
   /**
    * Adds one or more entities to a list. If they are being added to an exclusive list, this also removes them from other exclusive lists.
-   * @param list The list to which to add the entity or entities.
-   * @param pos Optional. The position in the list in which to add the entity or entities. This is purely cosmetic.
+   * @param list The list to which to add the entities. Alternatively, "_unassigned" will only remove the entities from any exclusive lists.
+   * @param pos Optional. The position in the list in which to add the entities. This is purely cosmetic.
    * @param entities The entities to add.
    */
   addToList(list: string, pos?: number, ...entities: APEntityResolvable<T>[]) {
-    for (const group of [this._exclusiveLists, this._inclusiveLists])
-      if (group[list]) {
-        if (pos !== undefined && (pos < 0 || pos > group[list].length))
-          throw new Error(
-            `Position out of range (got ${pos}, expected 0-${group[list].length})`
+    if (!this.lists.includes(list) && list !== "_unassigned") return;
+
+    const addList: T[] = [];
+    for (const entity of entities) {
+      const addEntity = this.getEntity(null, entity);
+      if (addEntity) addList.push(addEntity);
+    }
+
+    if (list !== "_unassigned")
+      for (const group of [this._exclusiveLists, this._inclusiveLists])
+        if (group[list]) {
+          if (pos !== undefined && (pos < 0 || pos > group[list].length))
+            throw new Error(
+              `Position out of range (got ${pos}, expected 0-${group[list].length})`
+            );
+
+          group[list].splice(
+            pos ?? group[list].length,
+            0,
+            ...addList.map(this.duplicateEntity)
           );
 
-        const addList: T[] = [];
-        for (const entity of entities) {
-          const addEntity = this.getEntity(null, entity);
-          if (addEntity) addList.push(addEntity);
+          break;
         }
-        group[list].splice(
-          pos ?? group[list].length,
-          0,
-          ...addList.map(this.duplicateEntity)
-        );
 
-        if (group === this._exclusiveLists)
-          for (const delList in this._exclusiveLists)
-            if (list !== delList) this.delFromList(delList, ...addList);
-
-        break;
-      }
+    if (this.exclusiveLists.includes(list) || list === "_unassigned")
+      for (const delList in this._exclusiveLists)
+        if (list !== delList) this.delFromList(delList, ...addList);
   }
 
   /**
