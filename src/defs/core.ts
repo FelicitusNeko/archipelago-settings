@@ -19,6 +19,14 @@ export enum SettingType {
   Boolean = "boolean",
 }
 
+/** Indicates what type of entity is being used. */
+export enum EntityType {
+  /** Refers to an item. */
+  Item = 'item',
+  /** Refers to a location. */
+  Location = 'location',
+}
+
 /**
  * A collection of weights for a setting. The key should be the setting's value, and the value should indicate the chance of it being selected.
  * @deprecated Replace with {@link APWeightedValue}
@@ -272,6 +280,8 @@ export interface ArchipelagoCategory {
  * @since 1.0.0
  */
 export interface APGameEntity {
+  /** The type of entity. */
+  type: EntityType;
   /** The internal name of the entity. */
   name: string;
   /** The human-readable name of the entity, if it differs from {@link APGameEntity.name}. */
@@ -283,10 +293,8 @@ export interface APGameEntity {
  * @since 1.0.0
  */
 export interface APGameItem extends APGameEntity {
-  /** The internal name of the item. */
-  name: string;
-  /** The human-readable name of the item, if it differs from {@link APGameItem.name}. */
-  readableName?: string;
+  /** The type of entity. */
+  type: EntityType.Item;
   /**
    * The dependencies for this item. The key should be the internal name of the relevant setting, and the values should
    * indicate when this item is added to the multiworld pool.
@@ -301,10 +309,8 @@ export interface APGameItem extends APGameEntity {
  * @since 1.0.0
  */
 export interface APGameLocation extends APGameEntity {
-  /** The internal name of the location. */
-  name: string;
-  /** The human-readable name of the location, if it differs from {@link APGameLocation.name}. */
-  readableName?: string;
+  /** @override */
+  type: EntityType.Location;
 }
 
 /**
