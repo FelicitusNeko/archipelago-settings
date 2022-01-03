@@ -68,7 +68,7 @@ export class APItemManager extends APEntityManager<APGameItem> {
     if (list === "start_inventory") {
       const setList: APGameItemAndQty[] = [];
       for (const entry of Object.entries(content as Record<string, number>)) {
-        const findEntity = this.getItemFromStock(entry[0]);
+        const findEntity = this.getEntity(null, entry[0]);
         if (findEntity && findEntity.max !== 0) {
           const addEntity = this.duplicateEntity(
             findEntity
@@ -115,7 +115,7 @@ export class APItemManager extends APEntityManager<APGameItem> {
 
     const addList: APGameItemAndQty[] = [];
     for (const entity of entities) {
-      const findEntity = this.getItemFromStock(entity) as APGameItemAndQty;
+      const findEntity = this.getEntity(null, entity) as APGameItemAndQty;
       if (findEntity && findEntity.max !== 0) {
         const addEntity = this.duplicateEntity(findEntity) as APGameItemAndQty;
         addEntity.qty = 1;
@@ -138,7 +138,7 @@ export class APItemManager extends APEntityManager<APGameItem> {
    * @param qty The quantity of the item to set to.
    */
   setQty(entity: APEntityResolvable<APGameItem>, qty: number) {
-    const item = this.getItemFromList("start_inventory", entity) as
+    const item = this.getEntity("start_inventory", entity) as
       | APGameItemAndQty
       | undefined;
     if (!item) return;

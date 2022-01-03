@@ -72,29 +72,6 @@ export abstract class APEntityManager<T extends APGameEntity> {
   }
 
   /**
-   * Retrieve an entity from the master entity list.
-   * @param entity The entity to find.
-   * @returns The entity, if found; otherwise, `undefined`.
-   */
-  protected getItemFromStock(entity: APEntityResolvable<T>) {
-    const itemName = typeof entity === "string" ? entity : entity.name;
-    return this._entityList.find((i) => i.name === itemName);
-  }
-
-  /**
-   * Retrieve an entity from a given list.
-   * @param list The list to search for the given {@link entity}.
-   * @param entity The entity to find.
-   * @returns The entity, if found; otherwise, `undefined`. Also returns `undefined` if the list is not found.
-   */
-  protected getItemFromList(list: string, entity: APEntityResolvable<T>) {
-    const itemName = typeof entity === "string" ? entity : entity.name;
-    for (const group of [this._exclusiveLists, this._inclusiveLists])
-      if (group[list]) return group[list].find((i) => i.name === itemName);
-    return undefined;
-  }
-
-  /**
    * Duplicate an entity to add to a list.
    * @param entity The entity to duplicate.
    * @returns A shallow duplicate copy of the {@link entity}.
@@ -115,12 +92,41 @@ export abstract class APEntityManager<T extends APGameEntity> {
 
   /**
    * Retrieve the contents of a list.
-   * @param list The list to retrieve.
+   * @param list The list to retrieve, "_unassigned" for unassigned items, or `null` for all items.
    * @returns The contents of the specified list, or `undefined` if the list is not found.
    */
-  getList(list: string): ReadonlyArray<T> | undefined {
+  getList(list: string | null): ReadonlyArray<T> | undefined {
+    if (!list) return this._entityList;
+    if (list === "_unassigned") return this.getUnassigned();
     for (const group of [this._exclusiveLists, this._inclusiveLists])
       if (group[list]) return group[list].slice();
+  }
+
+  /**
+   * Retrieve an entity from a given list, or from unassigned/all items.
+   * @param list The list to search for the given {@link entity}, "_unassigned" for unassigned items, or `null` for all items.
+   * @param entity The entity to find.
+   * @returns The entity, if found; otherwise, `undefined`. Also returns `undefined` if the list is not found.
+   */
+  getEntity(
+    list: string | null,
+    entity: APEntityResolvable<T>
+  ): Readonly<T> | undefined {
+    const itemName = typeof entity === "string" ? entity : entity.name;
+    const refList: ReadonlyArray<T> | undefined = this.getList(list);
+    if (refList) return refList.find((i) => i.name === itemName);
+  }
+
+  /**
+   *
+   * @param list The list from which to retrieve, "_unassigned" for an unassigned item, or `null` for an all item.
+   * @param pos The position in the list to retrieve.
+   * @returns The entity in the given list at the given position, or `undefined` if the list was not found or the position is out of bounds.
+   */
+  getEntityAt(list: string | null, pos: number): Readonly<T> | undefined {
+    if (pos < 0) return undefined;
+    const refList: ReadonlyArray<T> | undefined = this.getList(list);
+    if (refList && pos < refList.length) return refList[pos];
   }
 
   /**
@@ -161,7 +167,7 @@ export abstract class APEntityManager<T extends APGameEntity> {
 
         const addList: T[] = [];
         for (const entity of entities) {
-          const addEntity = this.getItemFromStock(entity);
+          const addEntity = this.getEntity(null, entity);
           if (addEntity) addList.push(addEntity);
         }
         group[list].splice(
@@ -188,7 +194,7 @@ export abstract class APEntityManager<T extends APGameEntity> {
       if (group[list]) {
         const delList: string[] = [];
         for (const entity of entities) {
-          const delEntity = this.getItemFromList(list, entity);
+          const delEntity = this.getEntity(list, entity);
           if (delEntity) delList.push(delEntity.name);
         }
         group[list] = group[list].filter((i) => !delList.includes(i.name));
@@ -212,7 +218,7 @@ export abstract class APEntityManager<T extends APGameEntity> {
               group[list].length - 1
             })`
           );
-        const moveItem = this.getItemFromList(list, entity);
+        const moveItem = this.getEntity(list, entity);
         if (moveItem)
           group[list].filter((i) => i !== moveItem).splice(to, 0, moveItem);
 
@@ -227,7 +233,7 @@ export abstract class APEntityManager<T extends APGameEntity> {
    * @returns Whether the {@link entity} is in the given {@link list}. Returns false if the list does not exist.
    */
   includes(list: string, entity: APEntityResolvable<T>) {
-    return this.getItemFromList(list, entity) !== undefined;
+    return this.getEntity(list, entity) !== undefined;
   }
 
   /** Resets all lists in this manager to an empty state. */
