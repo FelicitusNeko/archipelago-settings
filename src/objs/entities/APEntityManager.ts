@@ -13,7 +13,7 @@ export type APEntityResolvable<T extends APGameEntity> = string | T;
 export abstract class APEntityManager<T extends APGameEntity> {
   /** Entities can only belong to one of these lists. */
   protected _exclusiveLists: Record<string, T[]> = {};
-  /** Entities can belong to any of these lists, independent of any other list (including exlcusives). */
+  /** Entities can belong to any of these lists, independent of any other list (including exclusives). */
   protected _inclusiveLists: Record<string, T[]> = {};
 
   /** The list of valid entities. */
