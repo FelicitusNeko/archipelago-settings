@@ -80,6 +80,13 @@ export abstract class APEntityManager<T extends APGameEntity> {
     return Object.fromEntries(Object.entries(entity)) as T;
   }
 
+  /** Whether any list has anything in it. */
+  isAnyListPopulated() {
+    for (const group of [this._exclusiveLists, this._inclusiveLists])
+      for (const list in group) if (group[list].length > 0) return true;
+    return false;
+  }
+
   /** Retrieve the list of items that have not been assigned to an exclusive list. */
   getUnassigned(): ReadonlyArray<T> {
     const retval = this._entityList.slice();
