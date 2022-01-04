@@ -44,7 +44,9 @@
         "large_pyramids": "Large pyramids",
         "small_funnels": "Small funnels",
         "medium_funnels": "Medium funnels",
-        "large_funnels": "Large funnels"
+        "large_funnels": "Large funnels",
+        "trees": "Trees",
+        "choices": "Choices"
       },
       "default": "single"
     },
@@ -178,12 +180,7 @@
       "high": 100,
       "default": 10,
       "dependsOn": {
-        "evolution_traps": [
-          1,
-          2,
-          3,
-          4
-        ]
+        "evolution_traps": [1, 2, 3, 4]
       }
     },
     {

@@ -67,6 +67,13 @@
     },
     {
       "type": "boolean",
+      "name": "DamageRando",
+      "readableName": "Damage rando",
+      "description": "Each orb has a high chance of having lower base damage and a low chance of having much higher base damage.",
+      "default": false
+    },
+    {
+      "type": "boolean",
       "name": "death_link",
       "readableName": "DeathLink",
       "description": "If one DeathLinked player dies, all of them do.",
