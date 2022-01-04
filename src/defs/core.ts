@@ -351,16 +351,20 @@ const DeathLinkOption = Object.seal<ArchipelagoBooleanSetting>({
 });
 export { DeathLinkOption };
 
+export interface APSavedSettingsCategory {
+  category: string|null;
+  settings: Record<string, string>;
+  items?: Record<string, any>;
+  locations?: Record<string, any>;
+}
+
 /** Settings currently saved in the browser's local storage. */
 export interface APSavedSettings {
   playerName: string;
   description: string;
-  categories: {
-    category: string|null;
-    settings: Record<string, string>
-  }[];
+  categories: APSavedSettingsCategory[];
   /**
    * @deprecated Common settings need to be reworked
    */
-  commonSettings?: Record<string, MinifiedCommonSettings>;
+  //commonSettings?: Record<string, MinifiedCommonSettings>;
 }
