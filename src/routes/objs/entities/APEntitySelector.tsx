@@ -264,6 +264,12 @@ export abstract class APEntitySelector<
     });
   };
 
+  onReset = () => {
+    const { manager, save } = this.props;
+    manager.reset();
+    save();
+  };
+
   render() {
     if (!this.state) return null;
 
@@ -274,15 +280,15 @@ export abstract class APEntitySelector<
     return (
       <div className="setting">
         <b>{this._title}</b>
-        {manager.isAnyListPopulated() ? null : (
+        {manager.isAnyListPopulated() ? (
           <button
             className="revert emojibutton"
             title="Revert to default"
-            onClick={manager.reset}
+            onClick={this.onReset}
           >
             🔄
           </button>
-        )}
+        ) : null}
         <br />
         {this._description}
         <br />
