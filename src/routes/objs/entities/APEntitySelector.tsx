@@ -6,6 +6,7 @@ import {
   DragStart,
   DropResult,
 } from "react-beautiful-dnd";
+import "rc-slider/assets/index.css";
 
 import { APMetaManager } from "../../../defs/generate";
 import { APEntityManager } from "../../../objs/entities/APEntityManager";
@@ -165,7 +166,7 @@ interface APEntitySelectorProps<T extends APMetaManager> {
  * The state variables for {@link APEntitySelector};
  * @since 1.0.0
  */
- interface APEntitySelectorState<T extends APMetaManager> {
+interface APEntitySelectorState<T extends APMetaManager> {
   moveEntity?: Readonly<ManagerValueType<T>>;
 }
 /**
@@ -177,23 +178,42 @@ export abstract class APEntitySelector<
   T extends APMetaManager
 > extends React.Component<APEntitySelectorProps<T>, APEntitySelectorState<T>> {
   /** A dictionary of labels for drop boxes. */
-  protected abstract readonly _dropLabels: Record<string, string>;
+  protected abstract _dropLabels: Record<string, string>;
   /** A dictionary of labels for checkboxes for item nodes. */
-  protected abstract readonly _checkLabels: Record<string, string>;
+  protected abstract _checkLabels: Record<string, string>;
 
   /** The title of this entity manager. */
-  protected abstract readonly _title: string;
+  protected abstract _title: string;
   /** The description to display for this entity manager. */
-  protected abstract readonly _description: string;
+  protected abstract _description: string;
 
   /** Any additional components to render for this entity manager. */
   protected abstract _additionalComponents: React.ReactNode[];
+  /** Alternative renderers for specific drop boxes. */
+  protected abstract _nodeRenderers: Record<
+    string,
+    React.FC<APEntityNodeProps<T>>
+  >;
+  /**
+   * Functions that determine whether the item being dragged can be dropped in a given drop box.
+   * Dropping will be disabled if the function returns true.
+   * If no function exists for a drop box, it will never be restricted.
+   */
+  protected abstract _dropRestrictors: Record<
+    string,
+    (entity: Readonly<ManagerValueType<T>>) => boolean
+  >;
+
+  constructor(props: APEntitySelectorProps<T>) {
+    super(props);
+    this.state = {};
+  }
 
   /**
    * An event handler that handles the beginning of a beautiful-dnd-provided drag-and-drop operation.
    * @param drag Data pertaining to the beginning of a drag operation.
    */
-   onDragStart = ({ source }: DragStart): void => {
+  onDragStart = ({ source }: DragStart): void => {
     const { manager } = this.props;
     this.setState({
       moveEntity: manager.getEntityAt(
@@ -245,10 +265,11 @@ export abstract class APEntitySelector<
   };
 
   render() {
+    if (!this.state) return null;
+
     const { category, manager, save } = this.props;
-    const listList = [["_unassigned", "Unassigned items"]].concat(
-      Object.entries(this._dropLabels)
-    );
+    const { moveEntity } = this.state;
+    const listList = Object.entries(this._dropLabels);
 
     return (
       <div className="setting">
@@ -279,7 +300,12 @@ export abstract class APEntitySelector<
                 manager={manager}
                 title={i[1]}
                 checkLabels={this._checkLabels}
-                AlternateNode={APEntityNode}
+                AlternateNode={this._nodeRenderers[i[0]]}
+                dropDisabled={
+                  moveEntity && this._dropRestrictors[i[0]]
+                    ? this._dropRestrictors[i[0]](moveEntity)
+                    : false
+                }
                 save={save}
               />
             ))}
