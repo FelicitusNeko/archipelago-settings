@@ -245,8 +245,6 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
 
         return retval;
       }),
-      // TODO: Rework common settings
-      //commonSettings: minifyCommonSettings(commonSettings),
     };
 
     localStorage.setItem(
@@ -296,35 +294,9 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
           category.locations.yamlValue = savedCategory.locations;
       }
 
-      // // TODO: Rework common settings
-      // if (commonSettingsIn) {
-      //   const categories = APCategoryList.map((i) => i.category);
-      //   for (const category of categories)
-      //     if (category && !commonSettingsIn[category])
-      //       commonSettingsIn[category] = Object.assign({}, EmptyCommonSetings);
-      //   for (const category of Object.keys(commonSettingsIn))
-      //     if (!categories.includes(category)) delete commonSettingsIn[category];
-      //   setCommonSettings(deserializeCommonSettings(commonSettingsIn));
-      // } else {
-      //   const newEmptyCommons: Record<string, MinifiedCommonSettings> = {};
-      //   for (const { category } of APCategoryList)
-      //     if (category)
-      //       newEmptyCommons[category] = Object.assign({}, EmptyCommonSetings);
-      //   setCommonSettings(deserializeCommonSettings(newEmptyCommons));
-      // }
+      // HACK: find a way to initialise settings with saved data
+      forceUpdate();
     }
-    // else {
-    //   // There are not saved settings; load in the settings collection and populate with defaults
-    //   console.debug("No saved settings found at all, generating default set");
-
-    //   const newEmptyCommons: Record<string, MinifiedCommonSettings> = {};
-
-    //   for (const { category } of APCategoryList) {
-    //     if (category !== null)
-    //       newEmptyCommons[category] = Object.assign({}, EmptyCommonSetings);
-    //   }
-    //   setCommonSettings(deserializeCommonSettings(newEmptyCommons));
-    // }
   }, []);
 
   /**
@@ -562,16 +534,15 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
    */
   const importYamlV2 = (yamlIn: any, singleCat?: string | null) => {
     // TODO: option to import only one category
-    // TODO: rework common settings
     /** The collection of imported settings. */
-    const newSettings: SettingsCollection = {};
-    const newMinifiedSettings: Record<string, MinifiedCommonSettings> = {};
+    //const newSettings: SettingsCollection = {};
+    //const newMinifiedSettings: Record<string, MinifiedCommonSettings> = {};
 
-    for (const { category, settings: catSettings } of APCategoryList) {
+    for (const { category, settings: catSettings, items, locations } of APCategoryList) {
       // If there's a category and it doesn't exist in the imported data, skip it; otherwise, prepare it
       if (category) {
         if (!yamlIn[category]) continue;
-        newSettings[category] = {};
+        //newSettings[category] = {};
       }
 
       /** The category from the data set being imported. */
@@ -585,30 +556,36 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
         else setting.value = setting.default;
       }
 
-      if (category) {
-        const {
-          local_items,
-          non_local_items,
-          start_inventory,
-          start_hints,
-          start_location_hints,
-          exclude_locations,
-        } = yamlIn[category];
-        newMinifiedSettings[category] = {
-          local_items,
-          non_local_items,
-          start_inventory,
-          start_hints,
-          start_location_hints,
-          exclude_locations,
-        };
+      for (const manager of [items, locations]) if (manager) {
+        const importEntities: Record<string, any> = {};
+        for (const list of manager.lists) if (curImport[list]) importEntities[list] = curImport[list];
+        manager.yamlValue = importEntities;
       }
+
+      // if (category) {
+      //   const {
+      //     local_items,
+      //     non_local_items,
+      //     start_inventory,
+      //     start_hints,
+      //     start_location_hints,
+      //     exclude_locations,
+      //   } = yamlIn[category];
+      //   newMinifiedSettings[category] = {
+      //     local_items,
+      //     non_local_items,
+      //     start_inventory,
+      //     start_hints,
+      //     start_location_hints,
+      //     exclude_locations,
+      //   };
+      // }
     }
 
     // Finally, set the name, description, and settings collection to update the UI
     if (yamlIn.name) setPlayerName(yamlIn.name);
     if (yamlIn.description) setDescription(yamlIn.description);
-    setCommonSettings(deserializeCommonSettings(newMinifiedSettings));
+    //setCommonSettings(deserializeCommonSettings(newMinifiedSettings));
     SaveToStorage();
   };
 
@@ -726,19 +703,14 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
       // If Ctrl is NOT held, filter out any category that is definitely not being played
       if (!isGameEnabledV2(category.category) && !e.ctrlKey) continue;
       const settings = category.settings.map((i) => [i.name, i.yamlValue]);
+      if (category.items)
+        settings.push(...Object.entries(category.items.yamlValue));
+      if (category.locations)
+        settings.push(...Object.entries(category.locations.yamlValue));
       if (category.category === null)
         outYaml = Object.assign(outYaml, Object.fromEntries(settings));
       else outYaml[category.category] = Object.fromEntries(settings);
     }
-
-    // TODO: Rework common settings
-    const minifiedSettings = minifyCommonSettings(commonSettings);
-    for (const category of Object.keys(minifiedSettings))
-      if (outYaml[category])
-        outYaml[category] = Object.assign(
-          outYaml[category],
-          minifiedSettings[category]
-        );
 
     // Create an <a> element to initiate the download
     const element = document.createElement("a");
