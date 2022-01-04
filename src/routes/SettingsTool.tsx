@@ -1077,6 +1077,20 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
           </h6>
         </hgroup>
 
+        <div style={{
+          border: '2px solid black',
+          borderRadius: '5px',
+          backgroundColor: 'yellow',
+          width: '60%',
+          margin: 'auto',
+          padding: '.2em',
+        }}>
+          <b>Please note:</b> When Archipelago 0.2.3 comes out, a major update
+          to this tool will be issued which will reset any saved settings on
+          this tool. Please be sure to export your YAML as a backup, then
+          reimport it once the update is out.
+        </div>
+
         <section className="settings">
           <div className="setting">
             <b>Your name</b>:{" "}
