@@ -21,6 +21,7 @@ import {
   ArchipelagoLocation,
   CommonItemSettingChangeEvent,
   APSavedSettings,
+  APSavedSettingsCategory,
 } from "../defs/core";
 import { version } from "../../package.json";
 import { CategoryList } from "../defs/global";
@@ -233,16 +234,21 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
       playerName,
       description,
       categories: APCategoryList.map((i) => {
-        return {
+        const retval = {
           category: i.category,
           settings: Object.fromEntries(
             i.settings.map((ii) => [ii.name, ii.storageValue])
           ),
-        };
+        } as APSavedSettingsCategory;
+        if (i.items) retval.items = i.items.yamlValue;
+        if (i.locations) retval.locations = i.locations.yamlValue;
+
+        return retval;
       }),
       // TODO: Rework common settings
-      commonSettings: minifyCommonSettings(commonSettings),
+      //commonSettings: minifyCommonSettings(commonSettings),
     };
+
     localStorage.setItem(
       "savedSettingsV2",
       gzipSync(JSON.stringify(savedSettings)).toString("base64")
@@ -269,7 +275,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
         playerName: nameIn,
         description: descriptionIn,
         categories: categoriesIn,
-        commonSettings: commonSettingsIn,
+        //commonSettings: commonSettingsIn,
       } = savedSettings;
       setPlayerName(nameIn);
       setDescription(descriptionIn);
@@ -283,36 +289,42 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
         for (const setting of category.settings)
           if (savedCategory.settings[setting.name])
             setting.storageValue = savedCategory.settings[setting.name];
+
+        if (category.items && savedCategory.items)
+          category.items.yamlValue = savedCategory.items;
+        if (category.locations && savedCategory.locations)
+          category.locations.yamlValue = savedCategory.locations;
       }
 
-      // TODO: Rework common settings
-      if (commonSettingsIn) {
-        const categories = APCategoryList.map((i) => i.category);
-        for (const category of categories)
-          if (category && !commonSettingsIn[category])
-            commonSettingsIn[category] = Object.assign({}, EmptyCommonSetings);
-        for (const category of Object.keys(commonSettingsIn))
-          if (!categories.includes(category)) delete commonSettingsIn[category];
-        setCommonSettings(deserializeCommonSettings(commonSettingsIn));
-      } else {
-        const newEmptyCommons: Record<string, MinifiedCommonSettings> = {};
-        for (const { category } of APCategoryList)
-          if (category)
-            newEmptyCommons[category] = Object.assign({}, EmptyCommonSetings);
-        setCommonSettings(deserializeCommonSettings(newEmptyCommons));
-      }
-    } else {
-      // There are not saved settings; load in the settings collection and populate with defaults
-      console.debug("No saved settings found at all, generating default set");
-
-      const newEmptyCommons: Record<string, MinifiedCommonSettings> = {};
-
-      for (const { category } of APCategoryList) {
-        if (category !== null)
-          newEmptyCommons[category] = Object.assign({}, EmptyCommonSetings);
-      }
-      setCommonSettings(deserializeCommonSettings(newEmptyCommons));
+      // // TODO: Rework common settings
+      // if (commonSettingsIn) {
+      //   const categories = APCategoryList.map((i) => i.category);
+      //   for (const category of categories)
+      //     if (category && !commonSettingsIn[category])
+      //       commonSettingsIn[category] = Object.assign({}, EmptyCommonSetings);
+      //   for (const category of Object.keys(commonSettingsIn))
+      //     if (!categories.includes(category)) delete commonSettingsIn[category];
+      //   setCommonSettings(deserializeCommonSettings(commonSettingsIn));
+      // } else {
+      //   const newEmptyCommons: Record<string, MinifiedCommonSettings> = {};
+      //   for (const { category } of APCategoryList)
+      //     if (category)
+      //       newEmptyCommons[category] = Object.assign({}, EmptyCommonSetings);
+      //   setCommonSettings(deserializeCommonSettings(newEmptyCommons));
+      // }
     }
+    // else {
+    //   // There are not saved settings; load in the settings collection and populate with defaults
+    //   console.debug("No saved settings found at all, generating default set");
+
+    //   const newEmptyCommons: Record<string, MinifiedCommonSettings> = {};
+
+    //   for (const { category } of APCategoryList) {
+    //     if (category !== null)
+    //       newEmptyCommons[category] = Object.assign({}, EmptyCommonSetings);
+    //   }
+    //   setCommonSettings(deserializeCommonSettings(newEmptyCommons));
+    // }
   }, []);
 
   /**
