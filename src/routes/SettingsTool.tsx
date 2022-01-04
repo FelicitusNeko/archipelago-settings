@@ -117,9 +117,11 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
 
   // Load settings
   useEffect(() => {
+    // Old settings are incompatible; delete them
+    localStorage.removeItem('savedSettings');
+
     // Attempt to retrieve settings from local storage
     /** The stringified collection of saved settings. */
-    console.debug("Loading");
     const savedSettingsStr = (() => {
       const store = localStorage.getItem("savedSettingsV2");
       if (!store || store[0] === "{") return store;
@@ -133,12 +135,10 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
         playerName: nameIn,
         description: descriptionIn,
         categories: categoriesIn,
-        //commonSettings: commonSettingsIn,
       } = savedSettings;
       setPlayerName(nameIn);
       setDescription(descriptionIn);
 
-      //console.debug(savedSettings);
       for (const category of APCategoryList) {
         const savedCategory = categoriesIn.find(
           (i) => i.category === category.category
@@ -188,16 +188,10 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
    */
   const importYamlV2 = (yamlIn: any, singleCat?: string | null) => {
     // TODO: option to import only one category
-    /** The collection of imported settings. */
-    //const newSettings: SettingsCollection = {};
-    //const newMinifiedSettings: Record<string, MinifiedCommonSettings> = {};
 
     for (const { category, settings: catSettings, items, locations } of APCategoryList) {
       // If there's a category and it doesn't exist in the imported data, skip it; otherwise, prepare it
-      if (category) {
-        if (!yamlIn[category]) continue;
-        //newSettings[category] = {};
-      }
+      if (category && !yamlIn[category]) continue;
 
       /** The category from the data set being imported. */
       const curImport = category ? yamlIn[category] : yamlIn;
@@ -215,31 +209,11 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
         for (const list of manager.lists) if (curImport[list]) importEntities[list] = curImport[list];
         manager.yamlValue = importEntities;
       }
-
-      // if (category) {
-      //   const {
-      //     local_items,
-      //     non_local_items,
-      //     start_inventory,
-      //     start_hints,
-      //     start_location_hints,
-      //     exclude_locations,
-      //   } = yamlIn[category];
-      //   newMinifiedSettings[category] = {
-      //     local_items,
-      //     non_local_items,
-      //     start_inventory,
-      //     start_hints,
-      //     start_location_hints,
-      //     exclude_locations,
-      //   };
-      // }
     }
 
     // Finally, set the name, description, and settings collection to update the UI
     if (yamlIn.name) setPlayerName(yamlIn.name);
     if (yamlIn.description) setDescription(yamlIn.description);
-    //setCommonSettings(deserializeCommonSettings(newMinifiedSettings));
     SaveToStorage();
   };
 
@@ -508,20 +482,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
                     manager={i.items}
                     save={SaveToStorage}
                   />
-                ) : // <ItemSelector
-                //   category={i.category}
-                //   items={[]
-                //     /*i.items.filter((ii) =>
-                //   checkDependency(
-                //     settings[i.category!] as SettingsSubcollection,
-                //     ii.dependsOn
-                //   )
-                //   )*/
-                //   }
-                //   commonSettings={commonSettings[i.category]}
-                //   onChange={onCommonItemSettingChange}
-                // />
-                null}
+                ) :null}
               </TabPanel>
             )
           )}
