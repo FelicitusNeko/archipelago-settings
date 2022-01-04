@@ -29,6 +29,7 @@ import { APCategory } from "../defs/categories/reader";
 import { APStringSettingNode } from "./objs/APStringSettingNode";
 import { APNumericSettingNode } from "./objs/APNumericSettingNode";
 import { APBooleanSettingNode } from "./objs/APBooleanSettingNode";
+import { APItemSelector } from "./objs/entities/APItemSelector";
 import "./SettingsTool.css";
 
 const { localStorage, location, confirm } = window;
@@ -864,20 +865,25 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
               <TabPanel key={`tabpanel-${i.category}`} className="settingsBody">
                 {outputSettingCollectionV2(i)}
                 {i.category && i.items ? (
-                  <ItemSelector
+                  <APItemSelector
                     category={i.category}
-                    items={
-                      i.items /*.filter((ii) =>
-                    checkDependency(
-                      settings[i.category!] as SettingsSubcollection,
-                      ii.dependsOn
-                    )
-                    )*/
-                    }
-                    commonSettings={commonSettings[i.category]}
-                    onChange={onCommonItemSettingChange}
+                    manager={i.items}
+                    save={SaveToStorage}
                   />
-                ) : null}
+                ) : // <ItemSelector
+                //   category={i.category}
+                //   items={[]
+                //     /*i.items.filter((ii) =>
+                //   checkDependency(
+                //     settings[i.category!] as SettingsSubcollection,
+                //     ii.dependsOn
+                //   )
+                //   )*/
+                //   }
+                //   commonSettings={commonSettings[i.category]}
+                //   onChange={onCommonItemSettingChange}
+                // />
+                null}
               </TabPanel>
             )
           )}
