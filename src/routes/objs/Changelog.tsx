@@ -3,6 +3,22 @@ import React from "react";
 const Changelog: React.FC = () => {
   return (
     <>
+      <h4>1.0.0</h4>
+      <ul>
+        <li>
+          Massive internal rework
+          <ul>
+            <li>Please note that 0.x saved data is not compatible; please re-import your YAML</li>
+          </ul>
+        </li>
+        <li>Location selector implemented</li>
+        <li>
+          Update spec to 0.2.3
+          <ul>
+            <li>(this is not out yet, but this update is only coming out when it is)</li>
+          </ul>
+        </li>
+      </ul>
       <h4>0.10.4</h4>
       <ul>
         <li>
