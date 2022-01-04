@@ -1,6 +1,8 @@
 //import { APSettingJson } from "../../routes/settingTypes/APBaseSetting";
 import { APGameItem, APGameLocation } from "../core";
-import { APMetaSetting } from "../generate";
+import { APMetaSetting, APMetaSettingJson } from "../generate";
+import { APItemManager } from "../../objs/entities/APItemManager";
+import { APLocationManager } from "../../objs/entities/APLocationManager";
 
 // afaik there really isn't any better way to do this with create-react-app
 import root from "./null.json";
@@ -30,6 +32,21 @@ export interface APCategory {
   /** The collection of settings for this category. */
   settings: APMetaSetting[];
   /** The collection of defined items for this category. */
+  items?: APItemManager;
+  /** The collection of defined locations for this category. */
+  locations?: APLocationManager;
+}
+
+interface APCategoryJson {
+  /** The internal name of the category. */
+  category: string | null;
+  /** The user-readable name of the category. */
+  readableName?: string;
+  /** The numeric index of the category. */
+  index: number;
+  /** The collection of settings for this category. */
+  settings: APMetaSettingJson[];
+  /** The collection of defined items for this category. */
   items?: APGameItem[];
   /** The collection of defined locations for this category. */
   locations?: APGameLocation[];
@@ -48,6 +65,6 @@ const APCategoryData = ([
   smetroid, // 0.2.0
   evermore, // 0.2.0
   ff1, // 0.2.1, no real support (must go to FFR website)
-] as APCategory[]).sort((a,b) => a.index - b.index);
+] as APCategoryJson[]).sort((a,b) => a.index - b.index);
 
 export { APCategoryData };
