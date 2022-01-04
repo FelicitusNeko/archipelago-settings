@@ -1,4 +1,4 @@
-import { SettingType } from "./core";
+import { APGameItem, APGameLocation, EntityType, SettingType } from "./core";
 import { APCategoryData, APCategory } from "./categories/reader";
 
 import lttpSprites from "./LttP/sprites.json";
@@ -100,12 +100,27 @@ const APCategoryList: APCategory[] = APCategoryData.map((i) => {
           return new APStringSetting(i.category, stringJson);
         }
         default:
-          throw new Error(`Unknown setting type: ${setting.type}`);
+          throw new Error(`Unknown setting type`);
       }
     }),
-    items: i.items,
-    locations: i.locations,
   };
+
+  if (i.items)
+    retval.items = new APItemManager(
+      i.items.map((i) =>
+        Object.assign<APGameItem, Partial<APGameItem>>(i, {
+          type: EntityType.Item,
+        })
+      )
+    );
+  if (i.locations)
+    retval.locations = new APLocationManager(
+      i.locations.map((i) =>
+        Object.assign<APGameLocation, Partial<APGameLocation>>(i, {
+          type: EntityType.Location,
+        })
+      )
+    );
 
   return retval;
 });
