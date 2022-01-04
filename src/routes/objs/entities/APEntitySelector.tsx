@@ -54,8 +54,8 @@ function APEntityNode<T extends APMetaManager>({
     currentTarget,
   }) => {
     const { name, checked } = currentTarget;
-    if (checked) manager.delFromList(name, entity.name);
-    else manager.addToList(name, undefined, entity.name);
+    if (checked) manager.addToList(name, undefined, entity.name);
+    else manager.delFromList(name, entity.name);
     save();
   };
 
