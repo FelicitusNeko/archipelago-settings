@@ -105,7 +105,7 @@ export class APItemManager extends APEntityManager<APGameItem> {
     pos?: number,
     ...entities: APEntityResolvable<APGameItem>[]
   ) {
-    if (list !== "start_inventory") super.addToList(list, pos, ...entities);
+    if (list !== "start_inventory") return super.addToList(list, pos, ...entities);
 
     const group = this._exclusiveLists;
     if (pos !== undefined && (pos < 0 || pos > group[list].length))
