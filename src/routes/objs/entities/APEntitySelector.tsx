@@ -12,12 +12,20 @@ import { APEntityManager } from "../../../objs/entities/APEntityManager";
 
 import "../ItemSelector.css";
 
+/**
+ * The type of entity def used by the given entity manager.
+ * @since 1.0.0
+ */
 export type ManagerValueType<T = APMetaManager> = T extends APEntityManager<
   infer X
 >
   ? X
   : never;
 
+/**
+ * Properties for the {@link APEntityNode} component.
+ * @since 1.0.0
+ */
 export interface APEntityNodeProps<T extends APMetaManager> {
   entity: ManagerValueType<T>;
   category: string | null;
@@ -27,6 +35,11 @@ export interface APEntityNodeProps<T extends APMetaManager> {
   save: () => void;
   children: string;
 }
+/**
+ * A renderable representation of a node in a dropbox in an entity manager.
+ * @param props The properties for this component.
+ * @returns The result of rendering this component.
+ */
 function APEntityNode<T extends APMetaManager>({
   entity,
   category,
@@ -74,6 +87,10 @@ function APEntityNode<T extends APMetaManager>({
   );
 }
 
+/**
+ * The properties for {@link APEntityDropbox}.
+ * @since 1.0.0
+ */
 interface APEntityDropboxProps<T extends APMetaManager> {
   id: string;
   category: string | null;
@@ -84,6 +101,11 @@ interface APEntityDropboxProps<T extends APMetaManager> {
   AlternateNode?: React.FC<APEntityNodeProps<T>>;
   save: () => void;
 }
+/**
+ * The renderable representation of a dropbox in an entity selector.
+ * @param props The properties for this component.
+ * @returns The result of rendering this component.
+ */
 function APEntityDropbox<T extends APMetaManager>({
   id,
   category,
@@ -130,26 +152,48 @@ function APEntityDropbox<T extends APMetaManager>({
   );
 }
 
+/**
+ * The properties for {@link APEntitySelector};
+ * @since 1.0.0
+ */
 interface APEntitySelectorProps<T extends APMetaManager> {
   category: string | null;
   manager: T;
   save: () => void;
 }
-interface APEntitySelectorState<T extends APMetaManager> {
+/**
+ * The state variables for {@link APEntitySelector};
+ * @since 1.0.0
+ */
+ interface APEntitySelectorState<T extends APMetaManager> {
   moveEntity?: Readonly<ManagerValueType<T>>;
 }
+/**
+ * The renderable representation of an entity selector, which interacts with an {@link APEntityManager}.
+ * @abstract
+ * @since 1.0.0
+ */
 export abstract class APEntitySelector<
   T extends APMetaManager
 > extends React.Component<APEntitySelectorProps<T>, APEntitySelectorState<T>> {
+  /** A dictionary of labels for drop boxes. */
   protected abstract readonly _dropLabels: Record<string, string>;
+  /** A dictionary of labels for checkboxes for item nodes. */
   protected abstract readonly _checkLabels: Record<string, string>;
 
+  /** The title of this entity manager. */
   protected abstract readonly _title: string;
+  /** The description to display for this entity manager. */
   protected abstract readonly _description: string;
 
+  /** Any additional components to render for this entity manager. */
   protected abstract _additionalComponents: React.ReactNode[];
 
-  onDragStart = ({ source }: DragStart): void => {
+  /**
+   * An event handler that handles the beginning of a beautiful-dnd-provided drag-and-drop operation.
+   * @param drag Data pertaining to the beginning of a drag operation.
+   */
+   onDragStart = ({ source }: DragStart): void => {
     const { manager } = this.props;
     this.setState({
       moveEntity: manager.getEntityAt(
@@ -159,6 +203,10 @@ export abstract class APEntitySelector<
     });
   };
 
+  /**
+   * An event handler that handles the end of a beautiful-dnd-provided drag-and-drop operation.
+   * @param result The result of the drop operation.
+   */
   onDragEnd = (result: DropResult): void => {
     if (!this.state) return;
 
@@ -191,7 +239,7 @@ export abstract class APEntitySelector<
       }
     }
 
-    return this.setState({
+    this.setState({
       moveEntity: undefined,
     });
   };

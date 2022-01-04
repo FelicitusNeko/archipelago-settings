@@ -125,8 +125,8 @@ export abstract class APEntityManager<T extends APGameEntity> {
   }
 
   /**
-   *
-   * @param list The list from which to retrieve, "_unassigned" for an unassigned item, or `null` for an all item.
+   * Retrieve an entity from a specific position of a given list, or from unassigned/all items.
+   * @param list The list from which to retrieve, "_unassigned" for an unassigned item, or `null` for all items.
    * @param pos The position in the list to retrieve.
    * @returns The entity in the given list at the given position, or `undefined` if the list was not found or the position is out of bounds.
    */
@@ -253,9 +253,11 @@ export abstract class APEntityManager<T extends APGameEntity> {
       for (const list in group) group[list] = [];
   }
 
+  /** Whether the given entity is an item. */
   static isItem(value: APGameItem|APGameLocation): value is APGameItem {
     return value.type === EntityType.Item;
   }
+  /** Whether the given entity is a location. */
   static isLocation(value: APGameItem|APGameLocation): value is APGameLocation {
     return value.type === EntityType.Location;
   }

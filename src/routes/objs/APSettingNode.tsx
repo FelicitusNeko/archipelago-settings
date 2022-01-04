@@ -13,11 +13,18 @@ import {
 import "./Setting.css";
 import "./switch.css";
 
+/**
+ * The type of setting def used by the given setting object.
+ * @since 1.0.0
+ */
 export type SettingValueType<T = APMetaSetting> = T extends APSetting<infer X>
   ? X
   : never;
 
-/** The properties for this setting. */
+/**
+ * The properties for this setting.
+ * @since 1.0.0
+ */
 export interface APSettingProps<T extends APMetaSetting> {
   /** The category for this setting. */
   category: string | null;
@@ -33,6 +40,11 @@ interface APSettingState<T> {
   /** The current location of the selector for this setting, if one is used. */
   selector?: T;
 }
+/**
+ * The renderable representation of a setting.
+ * @abstract
+ * @since 1.0.0
+ */
 export abstract class APSettingNode<
   TSetting extends APMetaSetting
 > extends React.Component<
@@ -42,7 +54,6 @@ export abstract class APSettingNode<
   constructor(props: APSettingProps<TSetting>) {
     super(props);
 
-    // HACK: I know this is an incredibly improper way of doing things and will be trying to simplify this later
     this.state = {
       value: props.setting.value as APWeightableValue<
         SettingValueType<TSetting>
