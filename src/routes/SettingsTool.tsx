@@ -18,9 +18,9 @@ import {
 import { version } from "../../package.json";
 import { APCategoryList, GameSetting } from "../defs/generate";
 import { APCategory } from "../defs/categories/reader";
-import { APStringSettingNode } from "./objs/APStringSettingNode";
-import { APNumericSettingNode } from "./objs/APNumericSettingNode";
-import { APBooleanSettingNode } from "./objs/APBooleanSettingNode";
+import { APStringSettingNode } from "./objs/settings/APStringSettingNode";
+import { APNumericSettingNode } from "./objs/settings/APNumericSettingNode";
+import { APBooleanSettingNode } from "./objs/settings/APBooleanSettingNode";
 import { APItemSelector } from "./objs/entities/APItemSelector";
 import "./SettingsTool.css";
 

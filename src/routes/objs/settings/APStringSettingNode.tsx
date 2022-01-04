@@ -13,8 +13,8 @@
 // limitations under the License.
 
 import { ChangeEvent } from "react";
-import { APWeightedValue } from "../../objs/settings/APSetting";
-import { APStringSetting } from "../../objs/settings/APStringSetting";
+import { APWeightedValue } from "../../../objs/settings/APSetting";
+import { APStringSetting } from "../../../objs/settings/APStringSetting";
 import { APSettingNode } from "./APSettingNode";
 
 export class APStringSettingNode extends APSettingNode<APStringSetting> {

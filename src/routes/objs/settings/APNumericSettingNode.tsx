@@ -1,10 +1,10 @@
 import { ChangeEvent } from "react";
 import Slider from "rc-slider";
 
-import { APNumericSetting } from "../../objs/settings/APNumericSetting";
-import { APWeightedValue } from "../../objs/settings/APSetting";
+import { APNumericSetting } from "../../../objs/settings/APNumericSetting";
+import { APWeightedValue } from "../../../objs/settings/APSetting";
 import { APSettingNode } from "./APSettingNode";
-import { SelectRail } from "../../defs/core";
+import { SelectRail } from "../../../defs/core";
 
 const randomOrder = ["random", "random-low", "random-middle", "random-high"];
 

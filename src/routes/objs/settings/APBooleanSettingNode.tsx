@@ -1,6 +1,6 @@
 import { ChangeEvent } from "react";
 
-import { APBooleanSetting } from "../../objs/settings/APBooleanSetting";
+import { APBooleanSetting } from "../../../objs/settings/APBooleanSetting";
 import { APSettingNode } from "./APSettingNode";
 
 export class APBooleanSettingNode extends APSettingNode<APBooleanSetting> {

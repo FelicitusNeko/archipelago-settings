@@ -2,16 +2,16 @@ import React, { ChangeEvent } from "react";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 
-import { WeightRail } from "../../defs/core";
-import { APMetaSetting } from "../../defs/generate";
+import { WeightRail } from "../../../defs/core";
+import { APMetaSetting } from "../../../defs/generate";
 import {
   APSetting,
   APWeightableValue,
   APWeightedValue,
-} from "../../objs/settings/APSetting";
+} from "../../../objs/settings/APSetting";
 
-import "./Setting.css";
-import "./switch.css";
+import "../Setting.css";
+import "../switch.css";
 
 /**
  * The type of setting def used by the given setting object.
