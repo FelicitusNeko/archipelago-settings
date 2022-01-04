@@ -63,6 +63,7 @@ function APItemQtyNode({
                 onChange={onCheckChange}
               />
             ))}
+            {max && max > 2 ? `${qty}× ` : null}
             {children}
             {entity.max === 0 ? " ⛔" : null}
             {max && max > 2 ? (
