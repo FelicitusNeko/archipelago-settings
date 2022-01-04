@@ -3,16 +3,45 @@ import React from "react";
 const Changelog: React.FC = () => {
   return (
     <>
+      <h4>0.10.4</h4>
+      <ul>
+        <li>
+          Update spec to 0.2.2
+          <ul>
+            <li>Factorio: New tech tree options</li>
+            <li>TS: Damage rando mode</li>
+            <li>SoE: "Chaos" options renamed to "full"</li>
+          </ul>
+        </li>
+      </ul>
+      <hr />
+      <h4>0.10.3</h4>
+      <ul>
+        <li>SoE, Factorio: Add items</li>
+        <li>OoT, Minecraft: Adjust maximum items</li>
+        <li>Internal: Add locations (no interface yet)</li>
+      </ul>
+      <hr />
       <h4>0.10.2</h4>
       <ul>
-        <li>Update spec to 0.2.1
+        <li>
+          Update spec to 0.2.1
           <ul>
-            <li>Final Fantasy added...kinda (really, you have to go to the FFR website, sorry)</li>
+            <li>
+              Final Fantasy added...kinda (really, you have to go to the FFR
+              website, sorry)
+            </li>
             <li>LttP: Change to how in-game hints are handled</li>
             <li>Factorio: New goal and recipe speed options</li>
-            <li>Minecraft: Up to 1.17, new boss goal option, DeathLink added</li>
-            <li>OoT: More entrance shuffle options, slightly more granular hints</li>
-            <li>SM: More granular DeathLink, remove Suits Restriction option</li>
+            <li>
+              Minecraft: Up to 1.17, new boss goal option, DeathLink added
+            </li>
+            <li>
+              OoT: More entrance shuffle options, slightly more granular hints
+            </li>
+            <li>
+              SM: More granular DeathLink, remove Suits Restriction option
+            </li>
             <li>TS: A couple of new options</li>
           </ul>
         </li>
