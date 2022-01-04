@@ -1,0 +1,1617 @@
+{
+  "category": "Secret of Evermore",
+  "index": 9,
+  "settings": [
+    {
+      "type": "string",
+      "name": "difficulty",
+      "readableName": "Difficulty",
+      "description": "Changes relative spell cost and other things.",
+      "values": {
+        "easy": "Easy",
+        "normal": "Normal",
+        "hard": "Hard",
+        "mystery": "Mystery"
+      },
+      "default": "normal"
+    },
+    {
+      "type": "numeric",
+      "name": "money_modifier",
+      "readableName": "Money modifier",
+      "description": "Percentage by which money drops will be modified.",
+      "randomable": true,
+      "low": 1,
+      "high": 2500,
+      "default": 200
+    },
+    {
+      "type": "numeric",
+      "name": "exp_modifier",
+      "readableName": "Experience modifier",
+      "description": "Percentage by which experience gains will be modified.",
+      "randomable": true,
+      "low": 1,
+      "high": 2500,
+      "default": 200
+    },
+    {
+      "type": "boolean",
+      "name": "fix_sequence",
+      "readableName": "Fix sequence breaks",
+      "description": "Fixes some sequence breaks.",
+      "default": true
+    },
+    {
+      "type": "boolean",
+      "name": "fix_cheats",
+      "readableName": "Fix cheats",
+      "description": "Fixes cheats left in by the developers (excluding Desert Skip).",
+      "default": true
+    },
+    {
+      "type": "boolean",
+      "name": "fix_infinite_ammo",
+      "readableName": "Fix Infinite Ammo",
+      "description": "Fixes the Infinite Ammo glitch.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "fix_atlas_glitch",
+      "readableName": "Fix Atlas glitch",
+      "description": "Fixes the bug where Atlas causes stats to underflow.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "fix_wings_glitch",
+      "readableName": "Fix Wings glitch",
+      "description": "Fixes Wings making you invincible in some areas.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "shorter_dialogs",
+      "readableName": "Reduce dialog",
+      "description": "Cuts out some of the in-game dialog.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "short_boss_rush",
+      "readableName": "Short Boss Rush",
+      "description": "If enabled, the Boss Rush will start at Metal Magmar, and enemy HP will be cut in half.",
+      "default": false
+    },
+    {
+      "type": "string",
+      "name": "ingredienizer",
+      "readableName": "Ingredienizer",
+      "description": "Shuffles or randomizes spell ingredients",
+      "values": {
+        "off": "Off",
+        "on": "On – Shuffled",
+        "full": "Full – Randomized"
+      },
+      "default": "on"
+    },
+    {
+      "type": "string",
+      "name": "sniffamizer",
+      "readableName": "Sniffamizer",
+      "description": "Shuffles or randomizes drops in sniff locations.",
+      "values": {
+        "off": "Off",
+        "on": "On – Shuffled",
+        "full": "Full – Randomized"
+      },
+      "default": "on"
+    },
+    {
+      "type": "string",
+      "name": "callbeadamizer",
+      "readableName": "Callbeadamizer",
+      "description": "Shuffles Call Bead characters or spells.",
+      "values": {
+        "off": "Off",
+        "on": "On – Shuffles call bead characters",
+        "full": "Full – Shuffles individual spells"
+      },
+      "default": "on"
+    },
+    {
+      "type": "boolean",
+      "name": "musicmizer",
+      "readableName": "Musicmizer",
+      "description": "Randomizes music for some rooms.",
+      "default": true
+    },
+    {
+      "type": "string",
+      "name": "doggomizer",
+      "readableName": "Doggomizer",
+      "description": "Randomize the dog in certain situations.",
+      "values": {
+        "off": "Off",
+        "on": "On – Shuffled every act",
+        "full": "Full – Randomized every screen",
+        "pupdunk": "Pupdunk – Everypupper everywhere!"
+      },
+      "default": "off"
+    },
+    {
+      "type": "boolean",
+      "name": "turdo_mode",
+      "readableName": "Turdo Mode",
+      "description": "Replaces offensive spells by Turd Balls with varying strength, and weakens weapons.",
+      "default": false
+    }
+  ],
+  "items": [
+    {
+      "name": "Acid Rain"
+    },
+    {
+      "name": "Atlas"
+    },
+    {
+      "name": "Barrier"
+    },
+    {
+      "name": "Call Up"
+    },
+    {
+      "name": "Corrosion"
+    },
+    {
+      "name": "Crush"
+    },
+    {
+      "name": "Cure"
+    },
+    {
+      "name": "Defend"
+    },
+    {
+      "name": "Double Drain"
+    },
+    {
+      "name": "Drain"
+    },
+    {
+      "name": "Energize"
+    },
+    {
+      "name": "Escape"
+    },
+    {
+      "name": "Explosion"
+    },
+    {
+      "name": "Fireball"
+    },
+    {
+      "name": "Fire Power"
+    },
+    {
+      "name": "Flash"
+    },
+    {
+      "name": "Force Field"
+    },
+    {
+      "name": "Hard Ball"
+    },
+    {
+      "name": "Heal"
+    },
+    {
+      "name": "Lance"
+    },
+    {
+      "name": "Levitate"
+    },
+    {
+      "name": "Lightning Storm"
+    },
+    {
+      "name": "Miracle Cure"
+    },
+    {
+      "name": "Nitro"
+    },
+    {
+      "name": "One Up"
+    },
+    {
+      "name": "Reflect"
+    },
+    {
+      "name": "Regrowth"
+    },
+    {
+      "name": "Revealer"
+    },
+    {
+      "name": "Revive"
+    },
+    {
+      "name": "Slow Burn"
+    },
+    {
+      "name": "Speed"
+    },
+    {
+      "name": "Sting"
+    },
+    {
+      "name": "Stop"
+    },
+    {
+      "name": "Super Heal"
+    },
+    {
+      "name": "Nothing",
+      "max": 0
+    },
+    {
+      "name": "Wheel"
+    },
+    {
+      "name": "Gladiator Sword"
+    },
+    {
+      "name": "Crusader Sword"
+    },
+    {
+      "name": "Spider Claw"
+    },
+    {
+      "name": "Bronze Axe"
+    },
+    {
+      "name": "Horn Spear"
+    },
+    {
+      "name": "Bronze Spear"
+    },
+    {
+      "name": "Lance (Weapon)"
+    },
+    {
+      "name": "Progressive breast / Dino Skin / Talons"
+    },
+    {
+      "name": "Bazooka+Shells / Shining Armor / 5k Gold"
+    },
+    {
+      "name": "10,000 Gold Coins"
+    },
+    {
+      "name": "Diamond Eye"
+    },
+    {
+      "name": "15 Moniez"
+    },
+    {
+      "name": "Petal"
+    },
+    {
+      "name": "Nectar"
+    },
+    {
+      "name": "Oil"
+    },
+    {
+      "name": "Progressive helmet"
+    },
+    {
+      "name": "Wax"
+    },
+    {
+      "name": "2 Wax"
+    },
+    {
+      "name": "Water"
+    },
+    {
+      "name": "4 Water"
+    },
+    {
+      "name": "2 Clay"
+    },
+    {
+      "name": "Call bead"
+    },
+    {
+      "name": "2 Water"
+    },
+    {
+      "name": "Roots"
+    },
+    {
+      "name": "2 Roots"
+    },
+    {
+      "name": "3 Clay"
+    },
+    {
+      "name": "18 Moniez"
+    },
+    {
+      "name": "Clay"
+    },
+    {
+      "name": "30 Moniez"
+    },
+    {
+      "name": "3 Water"
+    },
+    {
+      "name": "4 Clay"
+    },
+    {
+      "name": "5 Ash"
+    },
+    {
+      "name": "4 Crystal"
+    },
+    {
+      "name": "Biscuit"
+    },
+    {
+      "name": "4 Wax"
+    },
+    {
+      "name": "2 Crystal"
+    },
+    {
+      "name": "Progressive gloves"
+    },
+    {
+      "name": "4 Ash"
+    },
+    {
+      "name": "Gauge"
+    },
+    {
+      "name": "3 Wax"
+    },
+    {
+      "name": "3 Ash"
+    },
+    {
+      "name": "5 Wax"
+    },
+    {
+      "name": "6 Water"
+    },
+    {
+      "name": "Mud Pepper"
+    },
+    {
+      "name": "100 Moniez"
+    },
+    {
+      "name": "Progressive breast"
+    },
+    {
+      "name": "3 Limestone"
+    },
+    {
+      "name": "200 Moniez"
+    },
+    {
+      "name": "Ash"
+    },
+    {
+      "name": "3 Bone"
+    },
+    {
+      "name": "Regenerate"
+    },
+    {
+      "name": "Herbal Essence"
+    },
+    {
+      "name": "Honey"
+    },
+    {
+      "name": "2 Limestone"
+    },
+    {
+      "name": "3 Vinegar"
+    },
+    {
+      "name": "Pixie Dust"
+    },
+    {
+      "name": "Wings"
+    },
+    {
+      "name": "3 Dry Ice"
+    },
+    {
+      "name": "Mushroom"
+    },
+    {
+      "name": "2 Call beads"
+    },
+    {
+      "name": "2 Iron"
+    },
+    {
+      "name": "4 Feathers"
+    },
+    {
+      "name": "Acorns"
+    },
+    {
+      "name": "2 Meteorite"
+    },
+    {
+      "name": "2 Gunpowder"
+    },
+    {
+      "name": "Grease"
+    },
+    {
+      "name": "3 Ethanol"
+    },
+    {
+      "name": "2 Dry Ice"
+    },
+    {
+      "name": "2 Vinegar"
+    },
+    {
+      "name": "Brimstone"
+    },
+    {
+      "name": "3 Nectar"
+    },
+    {
+      "name": "3 Brimstone"
+    },
+    {
+      "name": "2 Ash"
+    },
+    {
+      "name": "6 Ash"
+    },
+    {
+      "name": "4 Brimstone"
+    },
+    {
+      "name": "3 Honey"
+    },
+    {
+      "name": "3 Call beads"
+    },
+    {
+      "name": "Ethanol"
+    },
+    {
+      "name": "2 Acorns"
+    },
+    {
+      "name": "4 Ethanol"
+    },
+    {
+      "name": "Feather"
+    },
+    {
+      "name": "Aura"
+    },
+    {
+      "name": "Amulet of Annihilation"
+    },
+    {
+      "name": "Atlas Medallion"
+    },
+    {
+      "name": "3 Acorns"
+    },
+    {
+      "name": "5 Iron"
+    },
+    {
+      "name": "2 Petal"
+    },
+    {
+      "name": "4 Nectar"
+    },
+    {
+      "name": "Crystal"
+    },
+    {
+      "name": "Limestone"
+    },
+    {
+      "name": "2 Brimstone"
+    },
+    {
+      "name": "6 Vinegar"
+    },
+    {
+      "name": "8 Ash"
+    },
+    {
+      "name": "4 Vinegar"
+    },
+    {
+      "name": "2 Bone"
+    },
+    {
+      "name": "20 Moniez"
+    },
+    {
+      "name": "2 Ethanol"
+    },
+    {
+      "name": "10 Crystal"
+    },
+    {
+      "name": "7 Roots"
+    },
+    {
+      "name": "2 Honey"
+    },
+    {
+      "name": "5 Oil"
+    },
+    {
+      "name": "500 Moniez"
+    },
+    {
+      "name": "Knight Basher"
+    },
+    {
+      "name": "3 Mushroom"
+    },
+    {
+      "name": "4 Iron"
+    },
+    {
+      "name": "3 Oil"
+    },
+    {
+      "name": "3 Feathers"
+    },
+    {
+      "name": "Laser Lance"
+    },
+    {
+      "name": "30 Cryo Blast"
+    },
+    {
+      "name": "3 Meteorite"
+    },
+    {
+      "name": "30 Particle Bombs or Nectar?"
+    },
+    {
+      "name": "30 Thunderballs"
+    },
+    {
+      "name": "Atom Smasher"
+    },
+    {
+      "name": "4 Dry Ice"
+    }
+  ],
+  "locations": [
+    {
+      "name": "Acid Rain"
+    },
+    {
+      "name": "Atlas"
+    },
+    {
+      "name": "Barrier"
+    },
+    {
+      "name": "Call Up"
+    },
+    {
+      "name": "Corrosion"
+    },
+    {
+      "name": "Crush"
+    },
+    {
+      "name": "Cure"
+    },
+    {
+      "name": "Defend"
+    },
+    {
+      "name": "Double Drain"
+    },
+    {
+      "name": "Drain"
+    },
+    {
+      "name": "Energize"
+    },
+    {
+      "name": "Escape"
+    },
+    {
+      "name": "Explosion"
+    },
+    {
+      "name": "Fireball"
+    },
+    {
+      "name": "Fire Power"
+    },
+    {
+      "name": "Flash"
+    },
+    {
+      "name": "Force Field"
+    },
+    {
+      "name": "Hard Ball"
+    },
+    {
+      "name": "Heal"
+    },
+    {
+      "name": "Lance"
+    },
+    {
+      "name": "Levitate"
+    },
+    {
+      "name": "Lightning Storm"
+    },
+    {
+      "name": "Miracle Cure"
+    },
+    {
+      "name": "Nitro"
+    },
+    {
+      "name": "One Up"
+    },
+    {
+      "name": "Reflect"
+    },
+    {
+      "name": "Regrowth"
+    },
+    {
+      "name": "Revealer"
+    },
+    {
+      "name": "Revive"
+    },
+    {
+      "name": "Slow Burn"
+    },
+    {
+      "name": "Speed"
+    },
+    {
+      "name": "Sting"
+    },
+    {
+      "name": "Stop"
+    },
+    {
+      "name": "Super Heal"
+    },
+    {
+      "name": "Thraxx"
+    },
+    {
+      "name": "Coleoptera"
+    },
+    {
+      "name": "Mammoth Viper"
+    },
+    {
+      "name": "Cave Raptors"
+    },
+    {
+      "name": "Salabog"
+    },
+    {
+      "name": "Vigor"
+    },
+    {
+      "name": "Megataur"
+    },
+    {
+      "name": "Rimsala"
+    },
+    {
+      "name": "Aquagoth"
+    },
+    {
+      "name": "Bad Boys"
+    },
+    {
+      "name": "Timberdrake"
+    },
+    {
+      "name": "Verminator"
+    },
+    {
+      "name": "Tiny"
+    },
+    {
+      "name": "Mungola"
+    },
+    {
+      "name": "Sons of Sth."
+    },
+    {
+      "name": "Volcano Viper"
+    },
+    {
+      "name": "Magmar"
+    },
+    {
+      "name": "Mad Monk"
+    },
+    {
+      "name": "S. Jungle #0"
+    },
+    {
+      "name": "S. Jungle #1"
+    },
+    {
+      "name": "S. Jungle w/ weapon #2"
+    },
+    {
+      "name": "S. Jungle w/ weapon #3"
+    },
+    {
+      "name": "S. Jungle #4"
+    },
+    {
+      "name": "S. Jungle w/ weapon #5"
+    },
+    {
+      "name": "Strongheart's Hut #6"
+    },
+    {
+      "name": "Strongheart's Hut #7"
+    },
+    {
+      "name": "Strongheart's Hut #8"
+    },
+    {
+      "name": "FE Village #9"
+    },
+    {
+      "name": "Blimp's Hut #10"
+    },
+    {
+      "name": "Blimp's Hut #11"
+    },
+    {
+      "name": "Blimp's Hut #12"
+    },
+    {
+      "name": "FE Village Hut #13"
+    },
+    {
+      "name": "FE Village Hut #14"
+    },
+    {
+      "name": "FE Village Hut #15"
+    },
+    {
+      "name": "FE Village Hut #16"
+    },
+    {
+      "name": "FE Village Hut #17"
+    },
+    {
+      "name": "FE Village Hut #18"
+    },
+    {
+      "name": "FE Village Hut #19"
+    },
+    {
+      "name": "FE Village Hut #20"
+    },
+    {
+      "name": "FE Village Hut #21"
+    },
+    {
+      "name": "FE Village Hut #22"
+    },
+    {
+      "name": "FE Village Hut #23"
+    },
+    {
+      "name": "FE Village Hut #24"
+    },
+    {
+      "name": "FE Village Hut #25"
+    },
+    {
+      "name": "FE Village Hut #26"
+    },
+    {
+      "name": "FE Village Hut #27"
+    },
+    {
+      "name": "FE Village Hut #28"
+    },
+    {
+      "name": "FE Village Hut #29"
+    },
+    {
+      "name": "FE Village Hut #30"
+    },
+    {
+      "name": "FE Village Hut #31"
+    },
+    {
+      "name": "FE Village Hut #32"
+    },
+    {
+      "name": "FE Village Hut #33"
+    },
+    {
+      "name": "FE Village Hut #34"
+    },
+    {
+      "name": "Defend Area #35"
+    },
+    {
+      "name": "Defend Area #36"
+    },
+    {
+      "name": "Defend Area #37"
+    },
+    {
+      "name": "Quick Sand Field #38"
+    },
+    {
+      "name": "Quick Sand Field #39"
+    },
+    {
+      "name": "Quick Sand Field #40"
+    },
+    {
+      "name": "Quick Sand Field #41"
+    },
+    {
+      "name": "Quick Sand Field #42"
+    },
+    {
+      "name": "Quick Sand Field #43"
+    },
+    {
+      "name": "Quick Sand Field #44"
+    },
+    {
+      "name": "Bugmuck #45"
+    },
+    {
+      "name": "Bugmuck #46"
+    },
+    {
+      "name": "Bugmuck #47"
+    },
+    {
+      "name": "Bugmuck #48"
+    },
+    {
+      "name": "Bugmuck #49"
+    },
+    {
+      "name": "Bugmuck #50"
+    },
+    {
+      "name": "Bugmuck #51"
+    },
+    {
+      "name": "Bugmuck #52"
+    },
+    {
+      "name": "Acid Rain Guy #53"
+    },
+    {
+      "name": "Acid Rain Guy #54"
+    },
+    {
+      "name": "N. Jungle #55"
+    },
+    {
+      "name": "N. Jungle #56"
+    },
+    {
+      "name": "Vanilla Gauge #57"
+    },
+    {
+      "name": "Volcano Path #58"
+    },
+    {
+      "name": "Volcano Path #59"
+    },
+    {
+      "name": "Volcano Path #60"
+    },
+    {
+      "name": "Volcano Path #61"
+    },
+    {
+      "name": "West of Swamp #62"
+    },
+    {
+      "name": "West of Swamp #63"
+    },
+    {
+      "name": "Swamp #64"
+    },
+    {
+      "name": "Swamp #65"
+    },
+    {
+      "name": "Swamp #66"
+    },
+    {
+      "name": "Swamp #67"
+    },
+    {
+      "name": "Swamp #68"
+    },
+    {
+      "name": "Swamp #69"
+    },
+    {
+      "name": "Swamp #70"
+    },
+    {
+      "name": "Volcano Shop #71"
+    },
+    {
+      "name": "Volcano Shop #72"
+    },
+    {
+      "name": "Volcano Room1 #73"
+    },
+    {
+      "name": "Volcano Room1 #74"
+    },
+    {
+      "name": "Volcano Room1 #75"
+    },
+    {
+      "name": "Volcano Room1 #76"
+    },
+    {
+      "name": "Volcano Room1 #77"
+    },
+    {
+      "name": "Volcano Room1 #78"
+    },
+    {
+      "name": "Volcano Room1 #79"
+    },
+    {
+      "name": "Volcano Room1 #80"
+    },
+    {
+      "name": "Volcano Room2 #81"
+    },
+    {
+      "name": "Volcano Room2 #82"
+    },
+    {
+      "name": "Volcano Room2 #83"
+    },
+    {
+      "name": "Volcano Room2 #84"
+    },
+    {
+      "name": "Volcano Room2 #85"
+    },
+    {
+      "name": "Volcano Room2 #86"
+    },
+    {
+      "name": "Volcano Room2 #87"
+    },
+    {
+      "name": "Volcano Room2 #88"
+    },
+    {
+      "name": "Pipe Maze #89"
+    },
+    {
+      "name": "Pipe Maze #90"
+    },
+    {
+      "name": "Pipe Maze #91"
+    },
+    {
+      "name": "Pipe Maze #92"
+    },
+    {
+      "name": "Pipe Maze #93"
+    },
+    {
+      "name": "Pipe Maze #94"
+    },
+    {
+      "name": "Arena Holding #95"
+    },
+    {
+      "name": "Arena Holding #96"
+    },
+    {
+      "name": "Arena Holding #97"
+    },
+    {
+      "name": "Arena Holding #98"
+    },
+    {
+      "name": "Arena Holding #99"
+    },
+    {
+      "name": "Arena Holding #100"
+    },
+    {
+      "name": "Arena Holding #101"
+    },
+    {
+      "name": "Arena Holding #102"
+    },
+    {
+      "name": "W. Crustacia #103"
+    },
+    {
+      "name": "W. Crustacia #104"
+    },
+    {
+      "name": "W. Crustacia #105"
+    },
+    {
+      "name": "W. Crustacia #106"
+    },
+    {
+      "name": "E. Crustacia #107"
+    },
+    {
+      "name": "E. Crustacia #108"
+    },
+    {
+      "name": "Blimp's Cave #109"
+    },
+    {
+      "name": "Blimp's Cave #110"
+    },
+    {
+      "name": "Crustacia Interior #111"
+    },
+    {
+      "name": "Crustacia Interior #112"
+    },
+    {
+      "name": "Crustacia Interior #113"
+    },
+    {
+      "name": "Crustacia Interior #114"
+    },
+    {
+      "name": "Crustacia Interior #115"
+    },
+    {
+      "name": "Crustacia Interior #116"
+    },
+    {
+      "name": "Pyramid bottom #117"
+    },
+    {
+      "name": "Pyramid bottom #118"
+    },
+    {
+      "name": "Pyramid bottom #119"
+    },
+    {
+      "name": "Pyramid bottom #120"
+    },
+    {
+      "name": "Pyramid bottom #121"
+    },
+    {
+      "name": "Pyramid bottom #122"
+    },
+    {
+      "name": "Pyramid bottom #123"
+    },
+    {
+      "name": "Pyramid bottom #124"
+    },
+    {
+      "name": "Pyramid bottom #125"
+    },
+    {
+      "name": "Pyramid bottom #126"
+    },
+    {
+      "name": "Pyramid bottom #127"
+    },
+    {
+      "name": "Pyramid bottom #128"
+    },
+    {
+      "name": "Pyramid bottom #129"
+    },
+    {
+      "name": "Pyramid bottom #130"
+    },
+    {
+      "name": "Pyramid bottom #131"
+    },
+    {
+      "name": "Pyramid bottom #132"
+    },
+    {
+      "name": "Pyramid bottom #133"
+    },
+    {
+      "name": "Pyramid bottom #134"
+    },
+    {
+      "name": "Pyramid top #135"
+    },
+    {
+      "name": "Pyramid top #136"
+    },
+    {
+      "name": "Pyramid top #137"
+    },
+    {
+      "name": "Pyramid top #138"
+    },
+    {
+      "name": "Pyramid top #139"
+    },
+    {
+      "name": "Pyramid top #140"
+    },
+    {
+      "name": "Pyramid top #141"
+    },
+    {
+      "name": "Pyramid top #142"
+    },
+    {
+      "name": "Pyramid top #143"
+    },
+    {
+      "name": "Pyramid top #144"
+    },
+    {
+      "name": "Pyramid top #145"
+    },
+    {
+      "name": "Pyramid top #146"
+    },
+    {
+      "name": "Pyramid top #147"
+    },
+    {
+      "name": "Pyramid top #148"
+    },
+    {
+      "name": "Pyramid top #149"
+    },
+    {
+      "name": "Pyramid top #150"
+    },
+    {
+      "name": "Pyramid top #151"
+    },
+    {
+      "name": "Pyramid top #152"
+    },
+    {
+      "name": "Pyramid top #153"
+    },
+    {
+      "name": "Pyramid top #154"
+    },
+    {
+      "name": "Pyramid top #155"
+    },
+    {
+      "name": "Pyramid top #156"
+    },
+    {
+      "name": "Pyramid top #157"
+    },
+    {
+      "name": "Tiny's hideout #158"
+    },
+    {
+      "name": "Tiny's hideout #159"
+    },
+    {
+      "name": "Tiny's hideout #160"
+    },
+    {
+      "name": "Tiny's hideout #161"
+    },
+    {
+      "name": "Tiny's hideout #162"
+    },
+    {
+      "name": "Tiny's hideout #163"
+    },
+    {
+      "name": "Tiny's hideout #164"
+    },
+    {
+      "name": "Halls Main Room #165"
+    },
+    {
+      "name": "Halls Main Room #166"
+    },
+    {
+      "name": "Halls SW #167"
+    },
+    {
+      "name": "Halls SW #168"
+    },
+    {
+      "name": "Halls SW #169"
+    },
+    {
+      "name": "Halls NW #170"
+    },
+    {
+      "name": "Halls NW #171"
+    },
+    {
+      "name": "Halls NW #172"
+    },
+    {
+      "name": "Halls NW #173"
+    },
+    {
+      "name": "Halls NE #174"
+    },
+    {
+      "name": "Halls NE #175"
+    },
+    {
+      "name": "Halls NE #176"
+    },
+    {
+      "name": "Halls NE #177"
+    },
+    {
+      "name": "Halls Bridge #178"
+    },
+    {
+      "name": "Oglin Cave #179"
+    },
+    {
+      "name": "Drain Cave #180"
+    },
+    {
+      "name": "Drain Cave #181"
+    },
+    {
+      "name": "Volcano Path Cave #182"
+    },
+    {
+      "name": "Volcano Path Cave #183"
+    },
+    {
+      "name": "Jaguar Ring Cave #184"
+    },
+    {
+      "name": "Jaguar Ring Cave #185"
+    },
+    {
+      "name": "Jaguar Ring Cave #186"
+    },
+    {
+      "name": "HB Cave #187"
+    },
+    {
+      "name": "HB Cave #188"
+    },
+    {
+      "name": "HB Cave #189"
+    },
+    {
+      "name": "Ebon Sewers #190"
+    },
+    {
+      "name": "Ebon Sewers #191"
+    },
+    {
+      "name": "Ebon Sewers #192"
+    },
+    {
+      "name": "Ebon Sewers #193"
+    },
+    {
+      "name": "Ebon Sewers #194"
+    },
+    {
+      "name": "Gomi's Tower #195"
+    },
+    {
+      "name": "Gomi's Tower #196"
+    },
+    {
+      "name": "Gomi's Tower #197"
+    },
+    {
+      "name": "Gomi's Tower #198"
+    },
+    {
+      "name": "Outside Ivor #199"
+    },
+    {
+      "name": "Outside Ivor #200"
+    },
+    {
+      "name": "Outside Ivor #201"
+    },
+    {
+      "name": "Outside Ivor #202"
+    },
+    {
+      "name": "Ivor Houses #203"
+    },
+    {
+      "name": "Ivor Houses #204"
+    },
+    {
+      "name": "Ivor Houses #205"
+    },
+    {
+      "name": "Ivor Houses #206"
+    },
+    {
+      "name": "Ebon Houses #207"
+    },
+    {
+      "name": "Ivor Houses #208"
+    },
+    {
+      "name": "Ebon Houses #209"
+    },
+    {
+      "name": "Ivor Houses #210"
+    },
+    {
+      "name": "Ebon Houses #211"
+    },
+    {
+      "name": "Ivor Houses #212"
+    },
+    {
+      "name": "Ebon Houses #213"
+    },
+    {
+      "name": "Ivor Houses #214"
+    },
+    {
+      "name": "Ebon Houses #215"
+    },
+    {
+      "name": "Ivor Houses #216"
+    },
+    {
+      "name": "Ebon Houses #217"
+    },
+    {
+      "name": "Ivor Houses #218"
+    },
+    {
+      "name": "Ebon Houses #219"
+    },
+    {
+      "name": "Ivor Houses #220"
+    },
+    {
+      "name": "Ebon Houses #221"
+    },
+    {
+      "name": "Ivor Houses #222"
+    },
+    {
+      "name": "Ebon Houses #223"
+    },
+    {
+      "name": "Ivor Houses #224"
+    },
+    {
+      "name": "Ebon Houses #225"
+    },
+    {
+      "name": "Ivor Houses #226"
+    },
+    {
+      "name": "Ebon Houses #227"
+    },
+    {
+      "name": "Ivor Houses #228"
+    },
+    {
+      "name": "Ebon Houses #229"
+    },
+    {
+      "name": "Ivor Houses #230"
+    },
+    {
+      "name": "Ebon Houses #231"
+    },
+    {
+      "name": "Ivor Houses #232"
+    },
+    {
+      "name": "Ebon Houses #233"
+    },
+    {
+      "name": "Ivor Houses #234"
+    },
+    {
+      "name": "Ebon Houses #235"
+    },
+    {
+      "name": "Ivor Houses #236"
+    },
+    {
+      "name": "Ebon Houses #237"
+    },
+    {
+      "name": "Ivor Houses #238"
+    },
+    {
+      "name": "Ebon Houses #239"
+    },
+    {
+      "name": "Ivor Houses #240"
+    },
+    {
+      "name": "Ebon Houses #241"
+    },
+    {
+      "name": "Ivor Houses #242"
+    },
+    {
+      "name": "Ebon Houses #243"
+    },
+    {
+      "name": "Ivor Houses #244"
+    },
+    {
+      "name": "Ebon Houses #245"
+    },
+    {
+      "name": "Ivor Houses #246"
+    },
+    {
+      "name": "Ebon Houses #247"
+    },
+    {
+      "name": "Ebon Houses #248"
+    },
+    {
+      "name": "Naris #249"
+    },
+    {
+      "name": "Naris #250"
+    },
+    {
+      "name": "Tinker #251"
+    },
+    {
+      "name": "Ebon Dining #252"
+    },
+    {
+      "name": "Ivor Dining #253"
+    },
+    {
+      "name": "Ivor Dining #254"
+    },
+    {
+      "name": "Ivor East #255"
+    },
+    {
+      "name": "Ivor East #256"
+    },
+    {
+      "name": "Ivor East #257"
+    },
+    {
+      "name": "Ivor East #258"
+    },
+    {
+      "name": "Ivor East #259"
+    },
+    {
+      "name": "Ivor East #260"
+    },
+    {
+      "name": "Ivor Upper Floor #261"
+    },
+    {
+      "name": "Ivor Upper Floor #262"
+    },
+    {
+      "name": "Ivor Sewers #263"
+    },
+    {
+      "name": "Ivor Sewers #264"
+    },
+    {
+      "name": "Ivor Sewers #265"
+    },
+    {
+      "name": "Ivor Sewers #266"
+    },
+    {
+      "name": "Ivor Sewers #267"
+    },
+    {
+      "name": "Ivor Sewers #268"
+    },
+    {
+      "name": "Ivor Sewers #269"
+    },
+    {
+      "name": "Ivor Sewers #270"
+    },
+    {
+      "name": "Ebon Storage #271"
+    },
+    {
+      "name": "Ebon Storage #272"
+    },
+    {
+      "name": "Ebon Storage #273"
+    },
+    {
+      "name": "Prof. Lab #274"
+    },
+    {
+      "name": "Greenhouse #275"
+    },
+    {
+      "name": "Alarm room #276"
+    },
+    {
+      "name": "Reactor room #277"
+    },
+    {
+      "name": "Storage room #278"
+    },
+    {
+      "name": "Storage room #279"
+    },
+    {
+      "name": "Storage room #280"
+    },
+    {
+      "name": "Storage room #281"
+    },
+    {
+      "name": "Storage room #282"
+    },
+    {
+      "name": "Storage room #283"
+    },
+    {
+      "name": "Storage room #284"
+    }
+  ]
+}

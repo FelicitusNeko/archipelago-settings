@@ -1,0 +1,1250 @@
+{
+  "category": "Timespinner",
+  "index": 7,
+  "settings": [
+    {
+      "type": "boolean",
+      "name": "StartWithJewelryBox",
+      "readableName": "Start with Jewelry Box",
+      "description": "Whether you start with the Jewelry Box unlocked.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "DownloadableItems",
+      "readableName": "Downloadable items",
+      "description": "If enabled, you'll be able to download items at terminals using the Tablet.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "FacebookMode",
+      "readableName": "Facebook mode",
+      "description": "Enables the use of Oculus VR devices to find weak spots in walls and floors.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "StartWithMeyef",
+      "readableName": "Start with Meyef",
+      "description": "Start with Meyef without having to take a death. Ideal for multiplayer games.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "QuickSeed",
+      "readableName": "Fast mode",
+      "description": "Adds the Talaria Attachment to your starting inventory, allowing Lunais to dash.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "SpecificKeycards",
+      "readableName": "Restricted keycards",
+      "description": "If enabled, keycards will only unlock their corresponding doors.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "Inverted",
+      "readableName": "Inverted mode",
+      "description": "Whether the game will start in the past.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "GyreArchives",
+      "readableName": "Gyre Archives",
+      "description": "Gyre Archives locations are in logic. New warps are gated by Merchant Crow and Kobo.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "Cantoran",
+      "readableName": "Cantoran",
+      "description": "Cantoran's fight and check are available upon revisiting his room.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "DamageRando",
+      "readableName": "Damage rando",
+      "description": "Each orb has a high chance of having lower base damage and a low chance of having much higher base damage.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "death_link",
+      "readableName": "DeathLink",
+      "description": "If one DeathLinked player dies, all of them do.",
+      "default": false
+    }
+  ],
+  "items": [
+    {
+      "name": "Eternal Crown"
+    },
+    {
+      "name": "Security Visor"
+    },
+    {
+      "name": "Engineer Goggles"
+    },
+    {
+      "name": "Leather Helmet"
+    },
+    {
+      "name": "Copper Helmet"
+    },
+    {
+      "name": "Pointy Hat"
+    },
+    {
+      "name": "Dragoon Helmet"
+    },
+    {
+      "name": "Buckle Hat"
+    },
+    {
+      "name": "Advisor Hat"
+    },
+    {
+      "name": "Librarian Hat"
+    },
+    {
+      "name": "Combat Helmet"
+    },
+    {
+      "name": "Captain's Cap"
+    },
+    {
+      "name": "Lab Glasses"
+    },
+    {
+      "name": "Empire Crown"
+    },
+    {
+      "name": "Viletian Crown"
+    },
+    {
+      "name": "Sunglasses"
+    },
+    {
+      "name": "Old Coat"
+    },
+    {
+      "name": "Trendy Jacket"
+    },
+    {
+      "name": "Security Vest"
+    },
+    {
+      "name": "Leather Jerkin"
+    },
+    {
+      "name": "Copper Breastplate"
+    },
+    {
+      "name": "Traveler's Cloak"
+    },
+    {
+      "name": "Dragoon Armor"
+    },
+    {
+      "name": "Midnight Cloak"
+    },
+    {
+      "name": "Advisor Robe"
+    },
+    {
+      "name": "Librarian Robe"
+    },
+    {
+      "name": "Military Armor"
+    },
+    {
+      "name": "Captain's Uniform"
+    },
+    {
+      "name": "Lab Coat"
+    },
+    {
+      "name": "Empress Robe"
+    },
+    {
+      "name": "Princess Dress"
+    },
+    {
+      "name": "Eternal Coat"
+    },
+    {
+      "name": "Synthetic Plume"
+    },
+    {
+      "name": "Cheveur Plume"
+    },
+    {
+      "name": "Metal Wristband"
+    },
+    {
+      "name": "Nymph Hairband"
+    },
+    {
+      "name": "Mother o' Pearl"
+    },
+    {
+      "name": "Bird Statue"
+    },
+    {
+      "name": "Chaos Stole"
+    },
+    {
+      "name": "Pendulum"
+    },
+    {
+      "name": "Chaos Horn"
+    },
+    {
+      "name": "Filigree Clasp"
+    },
+    {
+      "name": "Azure Stole"
+    },
+    {
+      "name": "Ancient Coin"
+    },
+    {
+      "name": "Shiny Rock"
+    },
+    {
+      "name": "Galaxy Earrings"
+    },
+    {
+      "name": "Selen's Bangle"
+    },
+    {
+      "name": "Glass Pumpkin"
+    },
+    {
+      "name": "Gilded Egg"
+    },
+    {
+      "name": "Meyef",
+      "dependsOn": {
+        "StartWithMeyef": [false]
+      }
+    },
+    {
+      "name": "Griffin"
+    },
+    {
+      "name": "Merchant Crow"
+    },
+    {
+      "name": "Kobo"
+    },
+    {
+      "name": "Sprite"
+    },
+    {
+      "name": "Demon"
+    },
+    {
+      "name": "Potion",
+      "max": 9
+    },
+    {
+      "name": "Ether",
+      "max": 9
+    },
+    {
+      "name": "Sand Vial",
+      "max": 9
+    },
+    {
+      "name": "Hi-Potion",
+      "max": 9
+    },
+    {
+      "name": "Hi-Ether",
+      "max": 9
+    },
+    {
+      "name": "Sand Bottle",
+      "max": 9
+    },
+    {
+      "name": "Berry Pick-Mi-Up",
+      "max": 9
+    },
+    {
+      "name": "Berry Pick-Mi-Up+",
+      "max": 9
+    },
+    {
+      "name": "Mind Refresh",
+      "max": 9
+    },
+    {
+      "name": "Mind Refresh ULTRA",
+      "max": 9
+    },
+    {
+      "name": "Antidote",
+      "max": 9
+    },
+    {
+      "name": "Chaos Rose",
+      "max": 9
+    },
+    {
+      "name": "Warp Shard",
+      "max": 9
+    },
+    {
+      "name": "Dream Wisp",
+      "max": 9
+    },
+    {
+      "name": "Lachiemi Sun",
+      "max": 9
+    },
+    {
+      "name": "Jerky",
+      "max": 9
+    },
+    {
+      "name": "Biscuit",
+      "max": 9
+    },
+    {
+      "name": "Fried Cheveur",
+      "max": 9
+    },
+    {
+      "name": "Sautéed Wyvern Tail",
+      "max": 9
+    },
+    {
+      "name": "Unagi Roll",
+      "max": 9
+    },
+    {
+      "name": "Cheveur au Vin",
+      "max": 9
+    },
+    {
+      "name": "Royal Casserole",
+      "max": 9
+    },
+    {
+      "name": "Spaghetti",
+      "max": 9
+    },
+    {
+      "name": "Plump Maggot",
+      "max": 9
+    },
+    {
+      "name": "Orange Juice",
+      "max": 9
+    },
+    {
+      "name": "Filigree Tea",
+      "max": 9
+    },
+    {
+      "name": "Empress Cake",
+      "max": 9
+    },
+    {
+      "name": "Rotten Tail",
+      "max": 9
+    },
+    {
+      "name": "Alchemy Tools",
+      "max": 9
+    },
+    {
+      "name": "Galaxy Stone",
+      "max": 9
+    },
+    {
+      "name": "Essence Crystal",
+      "max": 9
+    },
+    {
+      "name": "Gold Ring",
+      "max": 9
+    },
+    {
+      "name": "Gold Necklace",
+      "max": 9
+    },
+    {
+      "name": "Herb",
+      "max": 9
+    },
+    {
+      "name": "Mushroom",
+      "max": 9
+    },
+    {
+      "name": "Plasma Crystal",
+      "max": 9
+    },
+    {
+      "name": "Plasma IV Bag",
+      "max": 9
+    },
+    {
+      "name": "Cheveur Drumstick",
+      "max": 9
+    },
+    {
+      "name": "Wyvern Tail",
+      "max": 9
+    },
+    {
+      "name": "Eel Meat",
+      "max": 9
+    },
+    {
+      "name": "Cheveux Breast",
+      "max": 9
+    },
+    {
+      "name": "Food Synthesizer",
+      "max": 9
+    },
+    {
+      "name": "Cheveux Feather",
+      "max": 9
+    },
+    {
+      "name": "Siren Ink",
+      "max": 9
+    },
+    {
+      "name": "Plasma Core",
+      "max": 9
+    },
+    {
+      "name": "Silver Ore",
+      "max": 9
+    },
+    {
+      "name": "Historical Documents",
+      "max": 9
+    },
+    {
+      "name": "MapReveal 0"
+    },
+    {
+      "name": "MapReveal 1"
+    },
+    {
+      "name": "MapReveal 2"
+    },
+    {
+      "name": "Timespinner Wheel"
+    },
+    {
+      "name": "Timespinner Spindle"
+    },
+    {
+      "name": "Timespinner Gear 1"
+    },
+    {
+      "name": "Timespinner Gear 2"
+    },
+    {
+      "name": "Timespinner Gear 3"
+    },
+    {
+      "name": "Twin Pyramid Key"
+    },
+    {
+      "name": "Celestial Sash"
+    },
+    {
+      "name": "Succubus Hairpin"
+    },
+    {
+      "name": "Talaria Attachment",
+      "dependsOn": {
+        "QuickSeed": [false]
+      }
+    },
+    {
+      "name": "Water Mask"
+    },
+    {
+      "name": "Gas Mask"
+    },
+    {
+      "name": "Soul Scanner"
+    },
+    {
+      "name": "Security Keycard A"
+    },
+    {
+      "name": "Security Keycard B"
+    },
+    {
+      "name": "Security Keycard C"
+    },
+    {
+      "name": "Security Keycard D"
+    },
+    {
+      "name": "Library Keycard V"
+    },
+    {
+      "name": "Tablet"
+    },
+    {
+      "name": "Elevator Keycard"
+    },
+    {
+      "name": "Jewelry Box",
+      "dependsOn": {
+        "StartWithJewelryBox": [false]
+      }
+    },
+    {
+      "name": "Goddess Brooch"
+    },
+    {
+      "name": "Wyrm Brooch"
+    },
+    {
+      "name": "Greed Brooch"
+    },
+    {
+      "name": "Eternal Brooch"
+    },
+    {
+      "name": "Blue Orb"
+    },
+    {
+      "name": "Blade Orb"
+    },
+    {
+      "name": "Fire Orb"
+    },
+    {
+      "name": "Plasma Orb"
+    },
+    {
+      "name": "Iron Orb"
+    },
+    {
+      "name": "Ice Orb"
+    },
+    {
+      "name": "Wind Orb"
+    },
+    {
+      "name": "Gun Orb"
+    },
+    {
+      "name": "Umbra Orb"
+    },
+    {
+      "name": "Empire Orb"
+    },
+    {
+      "name": "Eye Orb"
+    },
+    {
+      "name": "Blood Orb"
+    },
+    {
+      "name": "Forbidden Tome"
+    },
+    {
+      "name": "Shattered Orb"
+    },
+    {
+      "name": "Nether Orb"
+    },
+    {
+      "name": "Radiant Orb"
+    },
+    {
+      "name": "Aura Blast"
+    },
+    {
+      "name": "Colossal Blade"
+    },
+    {
+      "name": "Infernal Flames"
+    },
+    {
+      "name": "Plasma Geyser"
+    },
+    {
+      "name": "Colossal Hammer"
+    },
+    {
+      "name": "Frozen Spires"
+    },
+    {
+      "name": "Storm Eye"
+    },
+    {
+      "name": "Arm Cannon"
+    },
+    {
+      "name": "Dark Flames"
+    },
+    {
+      "name": "Aura Serpent"
+    },
+    {
+      "name": "Chaos Blades"
+    },
+    {
+      "name": "Crimson Vortex"
+    },
+    {
+      "name": "Djinn Inferno"
+    },
+    {
+      "name": "Bombardment"
+    },
+    {
+      "name": "Corruption"
+    },
+    {
+      "name": "Lightwall"
+    },
+    {
+      "name": "Bleak Ring"
+    },
+    {
+      "name": "Scythe Ring"
+    },
+    {
+      "name": "Pyro Ring"
+    },
+    {
+      "name": "Royal Ring"
+    },
+    {
+      "name": "Shield Ring"
+    },
+    {
+      "name": "Icicle Ring"
+    },
+    {
+      "name": "Tailwind Ring"
+    },
+    {
+      "name": "Economizer Ring"
+    },
+    {
+      "name": "Dusk Ring"
+    },
+    {
+      "name": "Star of Lachiem"
+    },
+    {
+      "name": "Oculus Ring"
+    },
+    {
+      "name": "Sanguine Ring"
+    },
+    {
+      "name": "Sun Ring"
+    },
+    {
+      "name": "Silence Ring"
+    },
+    {
+      "name": "Shadow Seal"
+    },
+    {
+      "name": "Hope Ring"
+    },
+    {
+      "name": "Max HP"
+    },
+    {
+      "name": "Max Aura"
+    },
+    {
+      "name": "Max Sand"
+    }
+  ],
+  "locations": [
+    {
+      "name": "Yo Momma 1"
+    },
+    {
+      "name": "Yo Momma 2"
+    },
+    {
+      "name": "Starter chest 2"
+    },
+    {
+      "name": "Starter chest 3"
+    },
+    {
+      "name": "Starter chest 1"
+    },
+    {
+      "name": "Timespinner Wheel room"
+    },
+    {
+      "name": "Forget me not chest"
+    },
+    {
+      "name": "Chicken chest"
+    },
+    {
+      "name": "Not so secret room"
+    },
+    {
+      "name": "Tank chest"
+    },
+    {
+      "name": "Upper desolation Oxygen recovery room"
+    },
+    {
+      "name": "Upper desolation secret"
+    },
+    {
+      "name": "Upper desolation double jump cave floor"
+    },
+    {
+      "name": "Upper desolation double jump cave platform"
+    },
+    {
+      "name": "Fire-Locked sparrow chest"
+    },
+    {
+      "name": "Crash site pedestal"
+    },
+    {
+      "name": "Crash site chest 1"
+    },
+    {
+      "name": "Crash site chest 2"
+    },
+    {
+      "name": "Kitty Boss"
+    },
+    {
+      "name": "Library Basement"
+    },
+    {
+      "name": "Library warp gate"
+    },
+    {
+      "name": "Librarian"
+    },
+    {
+      "name": "Reading nook chest"
+    },
+    {
+      "name": "Storage room chest 1"
+    },
+    {
+      "name": "Storage room chest 2"
+    },
+    {
+      "name": "Storage room chest 3"
+    },
+    {
+      "name": "Backer room chest 5"
+    },
+    {
+      "name": "Backer room chest 4"
+    },
+    {
+      "name": "Backer room chest 3"
+    },
+    {
+      "name": "Backer room chest 2"
+    },
+    {
+      "name": "Backer room chest 1"
+    },
+    {
+      "name": "Elevator Key not required"
+    },
+    {
+      "name": "Ye olde Timespinner"
+    },
+    {
+      "name": "Varndagroth left bottom floor"
+    },
+    {
+      "name": "Left air vents secret"
+    },
+    {
+      "name": "Left elevator chest"
+    },
+    {
+      "name": "Varndagroth bridge"
+    },
+    {
+      "name": "Right Varndagroth elevator chest"
+    },
+    {
+      "name": "Elevator card chest"
+    },
+    {
+      "name": "Air vents right"
+    },
+    {
+      "name": "Air Vents left"
+    },
+    {
+      "name": "Varndagroth right bottom floor"
+    },
+    {
+      "name": "Varndagroth"
+    },
+    {
+      "name": "Varndagroth Spider hell"
+    },
+    {
+      "name": "Skeleton"
+    },
+    {
+      "name": "Sealed cave shroom jump room"
+    },
+    {
+      "name": "Sealed cave double shroom room"
+    },
+    {
+      "name": "Sealed cave Mini jackpot room"
+    },
+    {
+      "name": "Below sealed cave mini jackpot room"
+    },
+    {
+      "name": "Sealed cave secret room"
+    },
+    {
+      "name": "Sealed cave bottom left"
+    },
+    {
+      "name": "Last chance before Xarion"
+    },
+    {
+      "name": "Xarion"
+    },
+    {
+      "name": "Upper sealed cave water hook"
+    },
+    {
+      "name": "Upper sealed cave siren room right"
+    },
+    {
+      "name": "Upper sealed cave siren room left"
+    },
+    {
+      "name": "Upper sealed cave after sirens chest 2"
+    },
+    {
+      "name": "Upper sealed cave after sirens chest 1"
+    },
+    {
+      "name": "Military bomber chest"
+    },
+    {
+      "name": "Close combat room"
+    },
+    {
+      "name": "Military soldiers bridge"
+    },
+    {
+      "name": "Military giantess room"
+    },
+    {
+      "name": "Military giantess bridge"
+    },
+    {
+      "name": "Military B door chest 2"
+    },
+    {
+      "name": "Military B door chest 1"
+    },
+    {
+      "name": "Military pedestal"
+    },
+    {
+      "name": "Coffee break"
+    },
+    {
+      "name": "Lower trash right"
+    },
+    {
+      "name": "Lower trash left"
+    },
+    {
+      "name": "Below lab entrance"
+    },
+    {
+      "name": "Trash jump room"
+    },
+    {
+      "name": "Dynamo Works"
+    },
+    {
+      "name": "Blob mom"
+    },
+    {
+      "name": "Experiment #13"
+    },
+    {
+      "name": "Download and chest room"
+    },
+    {
+      "name": "Lab secret"
+    },
+    {
+      "name": "Lab Spider hell"
+    },
+    {
+      "name": "Dad's bottom"
+    },
+    {
+      "name": "Dad's courtyard floor secret"
+    },
+    {
+      "name": "Dad's courtyard chest"
+    },
+    {
+      "name": "Galactic sage room"
+    },
+    {
+      "name": "Bottom of Dad's right tower"
+    },
+    {
+      "name": "Wayyyy up there"
+    },
+    {
+      "name": "Dad's left tower balcony"
+    },
+    {
+      "name": "Dad's Chambers chest"
+    },
+    {
+      "name": "Dad's Chambers pedestal"
+    },
+    {
+      "name": "Neliste's Bra"
+    },
+    {
+      "name": "Refugee camp storage chest 3"
+    },
+    {
+      "name": "Refugee camp storage chest 2"
+    },
+    {
+      "name": "Refugee camp storage chest 1"
+    },
+    {
+      "name": "Refugee camp roof"
+    },
+    {
+      "name": "Forest bat jump ledge"
+    },
+    {
+      "name": "Forest green platform secret"
+    },
+    {
+      "name": "Forest rats guarded chest"
+    },
+    {
+      "name": "Waterfall chest 1"
+    },
+    {
+      "name": "Waterfall chest 2"
+    },
+    {
+      "name": "Forest batcave"
+    },
+    {
+      "name": "In the moat"
+    },
+    {
+      "name": "Before Serene single bat cave"
+    },
+    {
+      "name": "Upper Serene rat nest"
+    },
+    {
+      "name": "Upper Serene double jump cave platform"
+    },
+    {
+      "name": "Upper Serene double jump cave floor"
+    },
+    {
+      "name": "Upper Serene cave secret"
+    },
+    {
+      "name": "Serene behind the vines"
+    },
+    {
+      "name": "Pyramid keys room"
+    },
+    {
+      "name": "Deep dive"
+    },
+    {
+      "name": "Under the eels"
+    },
+    {
+      "name": "Water spikes room"
+    },
+    {
+      "name": "Underwater secret"
+    },
+    {
+      "name": "T chest"
+    },
+    {
+      "name": "Past the eels"
+    },
+    {
+      "name": "Underwater pedestal"
+    },
+    {
+      "name": "Banishment shroom jump room"
+    },
+    {
+      "name": "Banishment secret room"
+    },
+    {
+      "name": "Banishment bottom left"
+    },
+    {
+      "name": "Banishment single shroom room"
+    },
+    {
+      "name": "Banishment jackpot room chest 1"
+    },
+    {
+      "name": "Banishment jackpot room chest 2"
+    },
+    {
+      "name": "Banishment jackpot room chest 3"
+    },
+    {
+      "name": "Banishment jackpot room chest 4"
+    },
+    {
+      "name": "Banishment pedestal"
+    },
+    {
+      "name": "Last chance before Maw"
+    },
+    {
+      "name": "Mineshaft"
+    },
+    {
+      "name": "Wyvern room"
+    },
+    {
+      "name": "Upper banishment above sirens"
+    },
+    {
+      "name": "Under banishment sirens left"
+    },
+    {
+      "name": "Under banishment sirens right"
+    },
+    {
+      "name": "Banishment water hook"
+    },
+    {
+      "name": "Castle bomber chest"
+    },
+    {
+      "name": "Ramparts Freeze the engineer"
+    },
+    {
+      "name": "Ramparts Giantess guarded room"
+    },
+    {
+      "name": "Ramparts Knight and archer guarded room"
+    },
+    {
+      "name": "Ramparts pedestal"
+    },
+    {
+      "name": "Castle basement secret pedestal"
+    },
+    {
+      "name": "Clean the castle basement"
+    },
+    {
+      "name": "Yas queen room"
+    },
+    {
+      "name": "Castle basement giantess"
+    },
+    {
+      "name": "Omelette chest"
+    },
+    {
+      "name": "Just an egg"
+    },
+    {
+      "name": "Under the twins"
+    },
+    {
+      "name": "Twins"
+    },
+    {
+      "name": "Royal guard tiny room"
+    },
+    {
+      "name": "Royal tower floor secret"
+    },
+    {
+      "name": "Royal towers pre-climb gap"
+    },
+    {
+      "name": "Royal towers long balcony"
+    },
+    {
+      "name": "Next to bottom royal tower struggle juggle"
+    },
+    {
+      "name": "Bottom royal tower struggle juggle"
+    },
+    {
+      "name": "Top royal tower struggle juggle"
+    },
+    {
+      "name": "No struggle required"
+    },
+    {
+      "name": "Right tower freebie"
+    },
+    {
+      "name": "Royal towers left small balcony"
+    },
+    {
+      "name": "Royal tower left royal guard"
+    },
+    {
+      "name": "Before Aelana"
+    },
+    {
+      "name": "Aelana's attic"
+    },
+    {
+      "name": "Aelana's pedestal"
+    },
+    {
+      "name": "Aelana's chest"
+    },
+    {
+      "name": "Library terminal 2"
+    },
+    {
+      "name": "Library terminal 1"
+    },
+    {
+      "name": "Library terminal 3"
+    },
+    {
+      "name": "V terminal 1"
+    },
+    {
+      "name": "V terminal 2"
+    },
+    {
+      "name": "V terminal 3"
+    },
+    {
+      "name": "Backer room terminal"
+    },
+    {
+      "name": "Medbay"
+    },
+    {
+      "name": "Chest and download terminal"
+    },
+    {
+      "name": "Lab terminal middle"
+    },
+    {
+      "name": "Sentry platform terminal"
+    },
+    {
+      "name": "Experiment 13 terminal"
+    },
+    {
+      "name": "Lab terminal left"
+    },
+    {
+      "name": "Lab terminal right"
+    },
+    {
+      "name": "Advisor jump"
+    },
+    {
+      "name": "Underwater banishment sirens right ground"
+    },
+    {
+      "name": "Plasma Crystal"
+    },
+    {
+      "name": "Chicken ledge"
+    },
+    {
+      "name": "Before Big Bird"
+    },
+    {
+      "name": "Cantoran"
+    },
+    {
+      "name": "Ravenlord post fight (pedestal)"
+    },
+    {
+      "name": "Ifrit post fight (pedestal)"
+    },
+    {
+      "name": "Transition chest 1"
+    },
+    {
+      "name": "Transition chest 2"
+    },
+    {
+      "name": "Transition chest 3"
+    },
+    {
+      "name": "Ravenlord pre fight"
+    },
+    {
+      "name": "Ravenlord post fight (chest)"
+    },
+    {
+      "name": "Ifrit pre fight"
+    },
+    {
+      "name": "Ifrit post fight (chest)"
+    },
+    {
+      "name": "Why not it's right there"
+    },
+    {
+      "name": "Conviction guarded room"
+    },
+    {
+      "name": "Pit secret room"
+    },
+    {
+      "name": "Regret chest"
+    }
+  ]
+}

@@ -1,0 +1,987 @@
+{
+  "category": "Subnautica",
+  "index": 3,
+  "settings": [
+    {
+      "type": "string",
+      "name": "item_pool",
+      "readableName": "Item pool",
+      "description": "Whether to include all items or only valuables to the multiworld item pool.",
+      "values": {
+        "standard": "All treasures",
+        "valuable": [
+          "Valuables only",
+          "Everything else is sent to you immediately, and valuables are duplicated"
+        ]
+      },
+      "default": "standard"
+    }
+  ],
+  "items": [
+    {
+      "name": "Compass",
+      "max": 1,
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "PlasteelTank",
+      "max": 1,
+      "readableName": "Lightweight High Capacity Tank"
+    },
+    {
+      "name": "BaseUpgradeConsole",
+      "max": 1,
+      "readableName": "Vehicle Upgrade Console"
+    },
+    {
+      "name": "UltraGlideFins",
+      "max": 1,
+      "readableName": "Ultra Glide Fins"
+    },
+    {
+      "name": "CyclopsSonarModule",
+      "max": 1,
+      "readableName": "Cyclops Sonar Upgrade",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "ReinforcedDiveSuit",
+      "max": 1,
+      "readableName": "Reinforced Dive Suit",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "CyclopsThermalReactorModule",
+      "max": 1,
+      "readableName": "Cyclops Thermal Reactor Module",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "Stillsuit",
+      "max": 1,
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "BaseWaterParkFragment",
+      "max": 2,
+      "readableName": "Alien Containment Fragment",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "CyclopsDecoy",
+      "max": 1,
+      "readableName": "Creature Decoy",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "CyclopsFireSuppressionModule",
+      "max": 1,
+      "readableName": "Cyclops Fire Suppression System",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "SwimChargeFins",
+      "max": 1,
+      "readableName": "Swim Charge Fins",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "RepulsionCannon",
+      "max": 1,
+      "readableName": "Repulsion Cannon",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "CyclopsDecoyModule",
+      "max": 1,
+      "readableName": "Cyclops Decoy Tube Upgrade",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "CyclopsShieldModule",
+      "max": 1,
+      "readableName": "Cyclops Shield Generator"
+    },
+    {
+      "name": "CyclopsHullModule1",
+      "max": 1,
+      "readableName": "Cyclops Depth Module MK1"
+    },
+    {
+      "name": "CyclopsSeamothRepairModule",
+      "max": 1,
+      "readableName": "Cyclops Docking Bay Repair Module",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "BatteryChargerFragment",
+      "max": 2,
+      "readableName": "Battery Charger fragment",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "BeaconFragment",
+      "max": 2,
+      "readableName": "Beacon Fragment",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "BaseBioReactorFragment",
+      "max": 2,
+      "readableName": "Bioreactor Fragment",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "CyclopsBridgeFragment",
+      "max": 3,
+      "readableName": "Cyclops Bridge Fragment"
+    },
+    {
+      "name": "CyclopsEngineFragment",
+      "max": 3,
+      "readableName": "Cyclops Engine Fragment"
+    },
+    {
+      "name": "CyclopsHullFragment",
+      "max": 3,
+      "readableName": "Cyclops Hull Fragment"
+    },
+    {
+      "name": "GravSphereFragment",
+      "max": 2,
+      "readableName": "Grav Trap Fragment",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "LaserCutterFragment",
+      "max": 3,
+      "readableName": "Laser Cutter Fragment"
+    },
+    {
+      "name": "TechlightFragment",
+      "max": 1,
+      "readableName": "Light Stick Fragment",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "ConstructorFragment",
+      "max": 3,
+      "readableName": "Mobile Vehicle Bay Fragment"
+    },
+    {
+      "name": "WorkbenchFragment",
+      "max": 3,
+      "readableName": "Modification Station Fragment"
+    },
+    {
+      "name": "MoonpoolFragment",
+      "max": 2,
+      "readableName": "Moonpool Fragment"
+    },
+    {
+      "name": "BaseNuclearReactorFragment",
+      "max": 3,
+      "readableName": "Nuclear Reactor Fragment",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "PowerCellChargerFragment",
+      "max": 2,
+      "readableName": "Power Cell Charger Fragment",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "PowerTransmitterFragment",
+      "max": 1,
+      "readableName": "Power Transmitter Fragment",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "ExosuitFragment",
+      "max": 4,
+      "readableName": "Prawn Suit Fragment"
+    },
+    {
+      "name": "ExosuitDrillArmFragment",
+      "max": 2,
+      "readableName": "Prawn Suit Drill Arm Fragment",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "ExosuitGrapplingArmFragment",
+      "max": 2,
+      "readableName": "Prawn Suit Grappling Arm Fragment",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "ExosuitPropulsionArmFragment",
+      "max": 2,
+      "readableName": "Prawn Suit Propulsion Cannon Fragment",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "ExosuitTorpedoArmFragment",
+      "max": 2,
+      "readableName": "Prawn Suit Torpedo Arm Fragment",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "BaseMapRoomFragment",
+      "max": 3,
+      "readableName": "Scanner Room Fragment",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "SeamothFragment",
+      "max": 5,
+      "readableName": "Seamoth Fragment"
+    },
+    {
+      "name": "StasisRifleFragment",
+      "max": 2,
+      "readableName": "Stasis Rifle Fragment",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "ThermalPlantFragment",
+      "max": 2,
+      "readableName": "Thermal Plant Fragment",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "SeaglideFragment",
+      "max": 4,
+      "readableName": "Seaglide Fragment"
+    },
+    {
+      "name": "RadiationSuit",
+      "max": 1,
+      "readableName": "Radiation Suit"
+    },
+    {
+      "name": "PropulsionCannonFragment",
+      "max": 2,
+      "readableName": "Propulsion Cannon Fragment"
+    },
+    {
+      "name": "RocketBase",
+      "max": 1,
+      "readableName": "Neptune Launch Platform"
+    },
+    {
+      "name": "PrecursorIonPowerCell",
+      "max": 1,
+      "readableName": "Ion Power Cell"
+    },
+    {
+      "name": "FarmingTrayFragment",
+      "max": 2,
+      "readableName": "Exterior Growbed Fragment",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "PictureFrameFragment",
+      "max": 1,
+      "readableName": "Picture Frame",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "BenchFragment",
+      "max": 2,
+      "readableName": "Bench Fragment",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "PlanterPotFragment",
+      "max": 1,
+      "readableName": "Basic Plant Pot",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "PlanterBoxFragment",
+      "max": 1,
+      "readableName": "Interior Growbed",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "PlanterShelfFragment",
+      "max": 1,
+      "readableName": "Plant Shelf",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "BaseObservatoryFragment",
+      "max": 2,
+      "readableName": "Observatory Fragment",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "BaseRoomFragment",
+      "max": 2,
+      "readableName": "Multipurpose Room Fragment",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "BaseBulkheadFragment",
+      "max": 2,
+      "readableName": "Bulkhead Fragment",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "Spotlight",
+      "max": 1,
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "StarshipDesk",
+      "max": 2,
+      "readableName": "Desk",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "StarshipChair",
+      "max": 1,
+      "readableName": "Swivel Chair",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "StarshipChair2",
+      "max": 1,
+      "readableName": "Office Chair",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "StarshipChair3",
+      "max": 1,
+      "readableName": "Command Chair",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "LabCounter",
+      "max": 2,
+      "readableName": "Counter",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "NarrowBed",
+      "max": 1,
+      "readableName": "Single Bed",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "Bed1",
+      "max": 1,
+      "readableName": "Basic Double Bed",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "Bed2",
+      "max": 1,
+      "readableName": "Quilted Double Bed",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "CoffeeVendingMachine",
+      "max": 2,
+      "readableName": "Coffee Vending Machine",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "Trashcans",
+      "max": 2,
+      "readableName": "Trash Can",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "Techlight",
+      "max": 1,
+      "readableName": "Floodlight",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "BarTable",
+      "max": 1,
+      "readableName": "Bar Table",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "VendingMachine",
+      "max": 1,
+      "readableName": "Vending Machine",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "SingleWallShelf",
+      "max": 1,
+      "readableName": "Single Wall Shelf",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "WallShelves",
+      "max": 1,
+      "readableName": "Wall Shelves",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "PlanterPot2",
+      "max": 1,
+      "readableName": "Round Plant Pot",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "PlanterPot3",
+      "max": 1,
+      "readableName": "Chic Plant Pot",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "LabTrashcan",
+      "max": 1,
+      "readableName": "Nuclear Waste Disposal",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "BasePlanter",
+      "max": 1,
+      "readableName": "Wall Planter",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    },
+    {
+      "name": "PrecursorIonBattery",
+      "max": 1,
+      "readableName": "Ion Battery"
+    },
+    {
+      "name": "RocketBaseLadder",
+      "max": 1,
+      "readableName": "Neptune Gantry"
+    },
+    {
+      "name": "RocketStage1",
+      "max": 1,
+      "readableName": "Neptune Boosters"
+    },
+    {
+      "name": "RocketStage2",
+      "max": 1,
+      "readableName": "Neptune Fuel Reserve"
+    },
+    {
+      "name": "RocketStage3",
+      "max": 1,
+      "readableName": "Neptune Cockpit"
+    },
+    {
+      "name": "BaseFiltrationMachine",
+      "max": 1,
+      "readableName": "Water Filtration Machine",
+      "dependsOn": {
+        "item_pool": ["standard"]
+      }
+    }
+  ],
+  "locations": [
+    {
+      "name": "Blood Kelp Trench Wreck - Outside Databox"
+    },
+    {
+      "name": "Blood Kelp Trench Wreck - Inside Databox"
+    },
+    {
+      "name": "Blood Kelp Trench Wreck - PDA"
+    },
+    {
+      "name": "Bulb Zone West Wreck - Outside Databox"
+    },
+    {
+      "name": "Bulb Zone West Wreck - Under Databox"
+    },
+    {
+      "name": "Bulb Zone West Wreck - Inside Databox"
+    },
+    {
+      "name": "Bulb Zone West Wreck - PDA"
+    },
+    {
+      "name": "Bulb Zone East Wreck - Databox"
+    },
+    {
+      "name": "Dunes North Wreck - Outside Databox"
+    },
+    {
+      "name": "Dunes North Wreck - Office Databox"
+    },
+    {
+      "name": "Dunes North Wreck - PDA"
+    },
+    {
+      "name": "Dunes North Wreck - Cargo Databox"
+    },
+    {
+      "name": "Dunes West Wreck - Databox"
+    },
+    {
+      "name": "Dunes East Wreck - Outside Databox"
+    },
+    {
+      "name": "Dunes East Wreck - Inside Databox"
+    },
+    {
+      "name": "Grand Reef North Wreck - Outside Databox"
+    },
+    {
+      "name": "Grand Reef North Wreck - Elevator Databox"
+    },
+    {
+      "name": "Grand Reef North Wreck - Bottom Databox"
+    },
+    {
+      "name": "Grand Reef North Wreck - Hangar PDA"
+    },
+    {
+      "name": "Grand Reef South Wreck - Trench Databox"
+    },
+    {
+      "name": "Grand Reef South Wreck - Comms Databox"
+    },
+    {
+      "name": "Grand Reef South Wreck - Outside Databox"
+    },
+    {
+      "name": "Grand Reef South Wreck - PDA"
+    },
+    {
+      "name": "Grassy Plateaus South Wreck - Databox"
+    },
+    {
+      "name": "Grassy Plateaus South Wreck - PDA"
+    },
+    {
+      "name": "Grassy Plateaus East Wreck - Breach Databox"
+    },
+    {
+      "name": "Grassy Plateaus East Wreck - Hangar Databox"
+    },
+    {
+      "name": "Grassy Plateaus West Wreck - Locker PDA"
+    },
+    {
+      "name": "Grassy Plateaus West Wreck - Data Terminal"
+    },
+    {
+      "name": "Grassy Plateaus West Wreck - Databox"
+    },
+    {
+      "name": "Safe Shallows Wreck - PDA"
+    },
+    {
+      "name": "Kelp Forest Wreck - Databox"
+    },
+    {
+      "name": "Kelp Forest Wreck - PDA"
+    },
+    {
+      "name": "Mountains West Wreck - Outside Databox"
+    },
+    {
+      "name": "Mountains West Wreck - Data Terminal"
+    },
+    {
+      "name": "Mountains West Wreck - Hangar Databox"
+    },
+    {
+      "name": "Mountains West Wreck - Office Databox"
+    },
+    {
+      "name": "Mountains East Wreck - Comms Databox"
+    },
+    {
+      "name": "Mountains East Wreck - Outside Databox"
+    },
+    {
+      "name": "Northwestern Mushroom Forest Wreck - Cargo Databox"
+    },
+    {
+      "name": "Northwestern Mushroom Forest Wreck - Office Databox"
+    },
+    {
+      "name": "Northwestern Mushroom Forest Wreck - PDA"
+    },
+    {
+      "name": "Sea Treader's Path Wreck - Outside Databox"
+    },
+    {
+      "name": "Sea Treader's Path Wreck - Hangar Databox"
+    },
+    {
+      "name": "Sea Treader's Path Wreck - Lobby Databox"
+    },
+    {
+      "name": "Sea Treader's Path Wreck - PDA"
+    },
+    {
+      "name": "Sparse Reef Wreck - Locker Databox"
+    },
+    {
+      "name": "Sparse Reef Wreck - Outside Databox"
+    },
+    {
+      "name": "Sparse Reef Wreck - Lab Databox"
+    },
+    {
+      "name": "Underwater Islands Wreck - Outside Databox"
+    },
+    {
+      "name": "Underwater Islands Wreck - Hangar Databox"
+    },
+    {
+      "name": "Underwater Islands Wreck - Data Terminal"
+    },
+    {
+      "name": "Underwater Islands Wreck - Cable Databox"
+    },
+    {
+      "name": "Underwater Islands Wreck - Pipes Databox 1"
+    },
+    {
+      "name": "Underwater Islands Wreck - Pipes Databox 2"
+    },
+    {
+      "name": "Degasi Seabase - Deep Grand Reef - Bedroom Databox"
+    },
+    {
+      "name": "Degasi Seabase - Deep Grand Reef - Observatory Databox"
+    },
+    {
+      "name": "Degasi Seabase - Deep Grand Reef - Bedroom PDA"
+    },
+    {
+      "name": "Degasi Seabase - Deep Grand Reef - Outside PDA"
+    },
+    {
+      "name": "Degasi Seabase - Deep Grand Reef - Observatory PDA"
+    },
+    {
+      "name": "Degasi Seabase - Deep Grand Reef - Lab PDA"
+    },
+    {
+      "name": "Floating Island - Lake PDA"
+    },
+    {
+      "name": "Degasi Seabase - Floating Island - Databox"
+    },
+    {
+      "name": "Degasi Seabase - Floating Island - Room PDA"
+    },
+    {
+      "name": "Degasi Seabase - Floating Island - Green Wall PDA"
+    },
+    {
+      "name": "Degasi Seabase - Floating Island - Corridor PDA"
+    },
+    {
+      "name": "Degasi Seabase - Floating Island - North Observatory PDA"
+    },
+    {
+      "name": "Degasi Seabase - Floating Island - South Observatory PDA"
+    },
+    {
+      "name": "Jellyshroom Cave - PDA"
+    },
+    {
+      "name": "Degasi Seabase - Jellyshroom Cave - Bedroom Databox"
+    },
+    {
+      "name": "Degasi Seabase - Jellyshroom Cave - Detached PDA"
+    },
+    {
+      "name": "Degasi Seabase - Jellyshroom Cave - Office PDA"
+    },
+    {
+      "name": "Degasi Seabase - Jellyshroom Cave - Locker PDA"
+    },
+    {
+      "name": "Degasi Seabase - Jellyshroom Cave - Bedroom PDA"
+    },
+    {
+      "name": "Degasi Seabase - Jellyshroom Cave - Observatory PDA"
+    },
+    {
+      "name": "Lifepod 2 - Databox"
+    },
+    {
+      "name": "Lifepod 2 - PDA"
+    },
+    {
+      "name": "Lifepod 3 - Databox"
+    },
+    {
+      "name": "Lifepod 3 - PDA"
+    },
+    {
+      "name": "Lifepod 4 - Databox"
+    },
+    {
+      "name": "Lifepod 4 - PDA"
+    },
+    {
+      "name": "Lifepod 6 - Databox"
+    },
+    {
+      "name": "Lifepod 6 - Inside PDA"
+    },
+    {
+      "name": "Lifepod 6 - Outside PDA"
+    },
+    {
+      "name": "Lifepod 7 - PDA"
+    },
+    {
+      "name": "Lifepod 12 - Databox"
+    },
+    {
+      "name": "Lifepod 12 - PDA"
+    },
+    {
+      "name": "Lifepod 13 - Databox"
+    },
+    {
+      "name": "Lifepod 13 - PDA"
+    },
+    {
+      "name": "Lifepod 17 - PDA"
+    },
+    {
+      "name": "Lifepod 19 - Databox"
+    },
+    {
+      "name": "Lifepod 19 - Outside PDA"
+    },
+    {
+      "name": "Lifepod 19 - Inside PDA"
+    },
+    {
+      "name": "Aurora Seamoth Bay - Upgrade Console"
+    },
+    {
+      "name": "Aurora Drive Room - Upgrade Console"
+    },
+    {
+      "name": "Aurora Prawn Suit Bay - Upgrade Console"
+    },
+    {
+      "name": "Aurora - Office PDA"
+    },
+    {
+      "name": "Aurora - Corridor PDA"
+    },
+    {
+      "name": "Aurora - Cargo Bay PDA"
+    },
+    {
+      "name": "Aurora - Seamoth Bay PDA"
+    },
+    {
+      "name": "Aurora - Medkit Locker PDA"
+    },
+    {
+      "name": "Aurora - Locker PDA"
+    },
+    {
+      "name": "Aurora - Canteen PDA"
+    },
+    {
+      "name": "Aurora - Cabin 4 PDA"
+    },
+    {
+      "name": "Aurora - Cabin 7 PDA"
+    },
+    {
+      "name": "Aurora - Cabin 1 PDA"
+    },
+    {
+      "name": "Aurora - Captain PDA"
+    },
+    {
+      "name": "Aurora - Ring PDA"
+    },
+    {
+      "name": "Aurora - Lab PDA"
+    },
+    {
+      "name": "Aurora - Office Data Terminal"
+    },
+    {
+      "name": "Aurora - Captain Data Terminal"
+    },
+    {
+      "name": "Aurora - Battery Room Data Terminal"
+    },
+    {
+      "name": "Aurora - Lab Data Terminal"
+    },
+    {
+      "name": "Quarantine Enforcement Platform's - Upper Alien Data Terminal"
+    },
+    {
+      "name": "Quarantine Enforcement Platform's - Mid Alien Data Terminal"
+    },
+    {
+      "name": "Dunes Sanctuary - Alien Data Terminal"
+    },
+    {
+      "name": "Deep Sparse Reef Sanctuary - Alien Data Terminal"
+    },
+    {
+      "name": "Northern Blood Kelp Zone Sanctuary - Alien Data Terminal"
+    },
+    {
+      "name": "Lost River Laboratory Cache - Alien Data Terminal"
+    },
+    {
+      "name": "Disease Research Facility - Upper Alien Data Terminal"
+    },
+    {
+      "name": "Disease Research Facility - Mid Alien Data Terminal"
+    },
+    {
+      "name": "Disease Research Facility - Lower Alien Data Terminal"
+    },
+    {
+      "name": "Alien Thermal Plant - Entrance Alien Data Terminal"
+    },
+    {
+      "name": "Alien Thermal Plant - Green Alien Data Terminal"
+    },
+    {
+      "name": "Alien Thermal Plant - Yellow Alien Data Terminal"
+    },
+    {
+      "name": "Primary Containment Facility's Antechamber - Alien Data Terminal"
+    },
+    {
+      "name": "Primary Containment Facility's Egg Laboratory - Alien Data Terminal"
+    },
+    {
+      "name": "Primary Containment Facility's Pipe Room - Alien Data Terminal"
+    },
+    {
+      "name": "Grassy Plateaus West Wreck - Beam PDA"
+    },
+    {
+      "name": "Floating Island - Cave Entrance PDA"
+    }
+  ]
+}
