@@ -22,6 +22,7 @@ import { APStringSettingNode } from "./objs/settings/APStringSettingNode";
 import { APNumericSettingNode } from "./objs/settings/APNumericSettingNode";
 import { APBooleanSettingNode } from "./objs/settings/APBooleanSettingNode";
 import { APItemSelector } from "./objs/entities/APItemSelector";
+import { APLocationSelector } from "./objs/entities/APLocationSelector";
 import "./SettingsTool.css";
 
 const { localStorage, location, confirm } = window;
@@ -118,7 +119,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
   // Load settings
   useEffect(() => {
     // Old settings are incompatible; delete them
-    localStorage.removeItem('savedSettings');
+    localStorage.removeItem("savedSettings");
 
     // Attempt to retrieve settings from local storage
     /** The stringified collection of saved settings. */
@@ -159,6 +160,11 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
     }
   }, []);
 
+  // HACK: otherwise, the name and description wouldn't save properly (but now useEffect deps are unmet)
+  useEffect(() => {
+    SaveToStorage(true);
+  }, [playerName, description]);
+
   /**
    * An event handler that fires when the player name is changed.
    * @param param0 The event object for this event.
@@ -167,7 +173,6 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
     currentTarget,
   }) => {
     setPlayerName(currentTarget.value);
-    SaveToStorage(true);
   };
 
   /**
@@ -178,7 +183,6 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
     currentTarget,
   }) => {
     setDescription(currentTarget.value);
-    SaveToStorage(true);
   };
 
   /**
@@ -189,7 +193,12 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
   const importYamlV2 = (yamlIn: any, singleCat?: string | null) => {
     // TODO: option to import only one category
 
-    for (const { category, settings: catSettings, items, locations } of APCategoryList) {
+    for (const {
+      category,
+      settings: catSettings,
+      items,
+      locations,
+    } of APCategoryList) {
       // If there's a category and it doesn't exist in the imported data, skip it; otherwise, prepare it
       if (category && !yamlIn[category]) continue;
 
@@ -204,11 +213,13 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
         else setting.value = setting.default;
       }
 
-      for (const manager of [items, locations]) if (manager) {
-        const importEntities: Record<string, any> = {};
-        for (const list of manager.lists) if (curImport[list]) importEntities[list] = curImport[list];
-        manager.yamlValue = importEntities;
-      }
+      for (const manager of [items, locations])
+        if (manager) {
+          const importEntities: Record<string, any> = {};
+          for (const list of manager.lists)
+            if (curImport[list]) importEntities[list] = curImport[list];
+          manager.yamlValue = importEntities;
+        }
     }
 
     // Finally, set the name, description, and settings collection to update the UI
@@ -376,7 +387,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
     // If the game is not selected, nothing to return
     if (!isGameEnabledV2(category.category)) return null;
 
-    return category.settings
+    const retval = category.settings
       .filter((i) => checkDependencyV2(i.category, i.dependsOn))
       .map((i) => {
         if (i.isStringSetting())
@@ -405,6 +416,10 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
           );
         return null;
       });
+
+    for (let x = retval.length - 1; x > 0; x--)
+      retval.splice(x, 0, <hr style={{ borderColor: "blue" }} />);
+    return retval;
   };
 
   // Finally, lay out the page
@@ -477,12 +492,25 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
               <TabPanel key={`tabpanel-${i.category}`} className="settingsBody">
                 {outputSettingCollectionV2(i)}
                 {i.category && i.items ? (
-                  <APItemSelector
-                    category={i.category}
-                    manager={i.items}
-                    save={SaveToStorage}
-                  />
-                ) :null}
+                  <>
+                    <hr style={{ borderColor: "blue" }} />
+                    <APItemSelector
+                      category={i.category}
+                      manager={i.items}
+                      save={SaveToStorage}
+                    />
+                  </>
+                ) : null}
+                {i.category && i.locations ? (
+                  <>
+                    <hr style={{ borderColor: "blue" }} />
+                    <APLocationSelector
+                      category={i.category}
+                      manager={i.locations}
+                      save={SaveToStorage}
+                    />
+                  </>
+                ) : null}
               </TabPanel>
             )
           )}

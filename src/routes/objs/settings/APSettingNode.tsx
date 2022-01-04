@@ -197,7 +197,6 @@ export abstract class APSettingNode<
           <br />
           {(weighted ? this.renderWeightedChoice : this.renderLinearChoice)()}
         </div>
-        <hr style={{ borderColor: "blue" }} />
       </>
     );
   }
