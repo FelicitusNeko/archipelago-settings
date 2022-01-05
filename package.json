@@ -58,6 +58,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "peerDependencies": {
+    "prop-types": "*"
+  },
   "eslintConfig": {
     "extends": "react-app"
   },
