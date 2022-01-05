@@ -4,6 +4,7 @@ import React, { useState, useEffect, ReactElement } from "react";
 import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
 import yaml from "yaml";
 import { DateTime } from "luxon";
+import cogoToast from "cogo-toast";
 import "react-tabs/style/react-tabs.css";
 
 import Changelog from "./objs/Changelog";
@@ -157,6 +158,26 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
 
       // HACK: find a way to initialise settings with saved data
       forceUpdate();
+    }
+
+    const privacy = localStorage.getItem("apstPrivacy");
+    if (!privacy) {
+      const {hide} = cogoToast.info(
+        <>
+          This site uses local storage to save your settings. No data is saved
+          on this server, and no analytics are kept. Click on this notification
+          to dismiss it.
+        </>,
+        {
+          hideAfter: 0,
+          position: "bottom-center",
+          heading: "Privacy",
+          onClick: () => {
+            localStorage.setItem('apstPrivacy', Date.now().toString());
+            if (hide) hide();
+          }
+        }
+      );
     }
   }, []);
 

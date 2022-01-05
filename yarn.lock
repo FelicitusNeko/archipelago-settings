@@ -3583,6 +3583,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": ^4.0.0
     "@typescript-eslint/parser": ^4.0.0
     babel-eslint: ^10.1.0
+    cogo-toast: ^4.2.3
     eslint: ^7.0.0
     eslint-config-react-app: ^6.0.0
     eslint-plugin-flowtype: ^5.2.0
@@ -3590,7 +3591,7 @@ __metadata:
     eslint-plugin-jsx-a11y: ^6.5.1
     eslint-plugin-react: ^7.27.0
     eslint-plugin-react-hooks: ^4.3.0
-    luxon: ^2.0.2
+    luxon: ^2.1.1
     preval.macro: ^5.0.0
     rc-slider: ^9.7.4
     react: ^17.0.2
@@ -4952,6 +4953,17 @@ __metadata:
   version: 1.1.0
   resolution: "code-point-at@npm:1.1.0"
   checksum: 17d5666611f9b16d64fdf48176d9b7fb1c7d1c1607a189f7e600040a11a6616982876af148230336adb7d8fe728a559f743a4e29db3747e3b1a32fa7f4529681
+  languageName: node
+  linkType: hard
+
+"cogo-toast@npm:^4.2.3":
+  version: 4.2.3
+  resolution: "cogo-toast@npm:4.2.3"
+  peerDependencies:
+    prop-types: ^15.6.2
+    react: ^16.8.0
+    react-dom: ^16.8.0
+  checksum: 0c6a25adeebbdbf7d0ef023b0fcf79255e54aa25a5da269cf9100adbe0824898385c28b84f325bc1a4e98045e04ef5bad87b00d1f6ba1f3fa3806d33b95c29ae
   languageName: node
   linkType: hard
 
@@ -10358,10 +10370,10 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"luxon@npm:^2.0.2":
-  version: 2.0.2
-  resolution: "luxon@npm:2.0.2"
-  checksum: eb2e366cf41a129704ae3213e0aea3e1504390af2a84322a5bbb6a22c92d96c7cb70e58b941a109c5e1bfbed51784d08130278feeee6cdf169940af90a68ded5
+"luxon@npm:^2.1.1":
+  version: 2.3.0
+  resolution: "luxon@npm:2.3.0"
+  checksum: 3d00e1b812a31082cf0d97e844d7354c93891fbd14795756f396ee5656387e21d2c862edb841516114eb391f8314a6cf3848799acc6d59cf9560c88c909b91f0
   languageName: node
   linkType: hard
 
