@@ -162,7 +162,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
 
     const privacy = localStorage.getItem("apstPrivacy");
     if (!privacy) {
-      const {hide} = cogoToast.info(
+      const { hide } = cogoToast.info(
         <>
           This site uses local storage to save your settings. No data is saved
           on this server, and no analytics are kept. Click on this notification
@@ -173,9 +173,9 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
           position: "bottom-center",
           heading: "Privacy",
           onClick: () => {
-            localStorage.setItem('apstPrivacy', Date.now().toString());
+            localStorage.setItem("apstPrivacy", Date.now().toString());
             if (hide) hide();
-          }
+          },
         }
       );
     }
@@ -411,9 +411,11 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
     const retval = category.settings
       .filter((i) => checkDependencyV2(i.category, i.dependsOn))
       .map((i) => {
+        const key = `setting-${category}-${i.name}`;
         if (i.isStringSetting())
           return (
             <APStringSettingNode
+              key={key}
               category={i.category}
               setting={i}
               save={SaveToStorage}
@@ -422,6 +424,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
         if (i.isNumericSetting())
           return (
             <APNumericSettingNode
+              key={key}
               category={i.category}
               setting={i}
               save={SaveToStorage}
@@ -430,6 +433,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
         if (i.isBooleanSetting())
           return (
             <APBooleanSettingNode
+              key={key}
               category={i.category}
               setting={i}
               save={SaveToStorage}
@@ -439,7 +443,11 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
       });
 
     for (let x = retval.length - 1; x > 0; x--)
-      retval.splice(x, 0, <hr style={{ borderColor: "blue" }} />);
+      retval.splice(
+        x,
+        0,
+        <hr key={`hr-setting-${x}`} style={{ borderColor: "blue" }} />
+      );
     return retval;
   };
 

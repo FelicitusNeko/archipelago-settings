@@ -128,9 +128,11 @@ export abstract class APSettingNode<
     // If "deletable" was not defined, assume it to be true
     if (deletable === undefined) deletable = true;
     return (
-      <>
+      <div
+        key={`wgtsld-${category}-${setting.name}-${valueName}`}
+        style={{margin: 0, padding: 0}}
+      >
         <Slider
-          key={`${category}-wgtsld-${setting.name}-${valueName}`}
           className="archslider"
           min={0}
           max={100}
@@ -149,8 +151,7 @@ export abstract class APSettingNode<
             ❌
           </button>
         ) : null}
-        <br />
-      </>
+      </div>
     );
   };
 
