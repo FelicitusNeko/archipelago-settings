@@ -15,6 +15,7 @@ import {
   APDependency,
   APSavedSettings,
   APSavedSettingsCategory,
+  useForceUpdate,
 } from "../defs/core";
 import { version } from "../../package.json";
 import {
@@ -122,13 +123,6 @@ const RealSaveToStorage = (() => {
     } else queueAnother = [playerName, description];
   };
 })();
-
-/** Creates a hook which facilitates forced updating of a function component. */
-const useForceUpdate = () => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [value, setValue] = useState(0); // integer state
-  return () => setValue((value) => value + 1); // update the state to force render
-};
 
 /**
  * The Archipelago Settings Tool, a tool to generate .YAML settings files for Archipelago Multiworld.
