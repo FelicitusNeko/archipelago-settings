@@ -3,7 +3,7 @@ import ReactMarkdown from "react-markdown";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 
-import { WeightRail } from "../../../defs/core";
+import { SettingType, WeightRail } from "../../../defs/core";
 import { APMetaSetting } from "../../../defs/generate";
 import {
   APSetting,
@@ -32,7 +32,7 @@ export interface APSettingProps<T extends APMetaSetting> {
   /** The setting definition and value for this setting. */
   setting: T;
   /** The event callback to call when the value is changed. */
-  save: () => void;
+  save: (skipUpdate?: boolean) => void;
 }
 /** The state object for this setting. */
 interface APSettingState<T> {
@@ -71,6 +71,7 @@ export abstract class APSettingNode<
     if (stateValue !== propValue) {
       if (stateValue !== prevState.value) {
         const { setting, save } = this.props;
+        const isGameSetting = setting.type === SettingType.Games;
         // HACK: this doesn't work as a direct assignment for some reason
         setting.value = stateValue as
           | string
@@ -79,8 +80,8 @@ export abstract class APSettingNode<
           | APWeightedValue<string>[]
           | APWeightedValue<string | number>[]
           | APWeightedValue<boolean>[];
-        save();
-        this.forceUpdate();
+        save(!isGameSetting);
+        if (!isGameSetting) this.forceUpdate();
       } else
         this.setState({
           value: propValue as APWeightableValue<SettingValueType<TSetting>>,
