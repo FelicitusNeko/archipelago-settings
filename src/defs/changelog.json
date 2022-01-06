@@ -1,0 +1,84 @@
+{
+  "1.0.0": [
+    "Massive internal rework",
+    [
+      "Please note that 0.x saved data is not compatible; please re-import your YAML"
+    ],
+    "**Location selector** implemented",
+    "Update spec to **0.2.3**",
+    ["(this is not out yet, but this update is only coming out when it is)"]
+  ],
+  "0.10.4": [
+    "Update spec to **0.2.2**",
+    [
+      "**Factorio**: New tech tree options",
+      "**Timespinner**: Damage rando mode",
+      "**Secret of Evermore**: \"Chaos\" options renamed to \"full\""
+    ]
+  ],
+  "0.10.3": [
+    "**Secret of Evermore, Factorio**: Add items",
+    "**Ocarina of Time, Minecraft**: Adjust maximum items",
+    "Internal: Add locations (no interface yet)"
+  ],
+  "0.10.2": [
+    "Update spec to **0.2.1**",
+    [
+      "**Final Fantasy** added...kinda (really, you have to go to the [FFR website](https://finalfantasyrandomizer.com), sorry)",
+      "**A Link to the Past**: Change to how in-game hints are handled",
+      "**Factorio**: New goal and recipe speed options",
+      "**Minecraft**: Up to 1.17, new boss goal option, DeathLink added",
+      "**Ocarina of Time**: More entrance shuffle options, slightly more granular hints",
+      "**Super Metroid**: More granular DeathLink, remove Suits Restriction option",
+      "**Timespinner**: A couple of new options"
+    ],
+    "Fix app crash when new categories are added",
+    "Fix misspelling in page title"
+  ],
+  "0.10.1": [
+    "**Factorio**: fixed misspelled \"spanw\" in \"silo\" option",
+    "**A Link to the Past**:",
+    [
+      "Tweaked maximums for some items (Rupees, arrows, bombs)",
+      "Remove deps for ¼ Magic and capacity upgrades",
+      "Add Progressive Bow (Alt) item"
+    ]
+  ],
+  "0.10.0": [
+    "Add **item selection** support",
+    [
+      "Items can now be designated as local, non-local, or starting inventory, as well as getting a starting hint for them",
+      "Not yet supported for Factorio or Secret of Evermore due to lack of solid list of items"
+    ]
+  ],
+  "0.9.4": [
+    "Update spec to **0.2.0**",
+    [
+      "Added **Super Metroid**, **Secret of Evermore**",
+      "DeathLink added to LttP, OoT, SM, TS, Factorio: if one DeathLinked player dies, they all do",
+      "**A Link to the Past**: More granular settings for Beemizer",
+      "**Ocarina of Time**: Entrance shuffle, owl drops"
+    ],
+    "Reordered games based on their introduction to Archipelago",
+    "**A Link to the Past**: Added Hybrid Major Glitches placement logic value"
+  ],
+  "0.9.3": [
+    "Background changes to make it easier to add new games",
+    "Tweaked and fixed some LttP settings/dependencies",
+    "Shortened longer setting values (hover over them to see a detailed description)",
+    "Documented the hell out of the source code"
+  ],
+  "0.9.2": [
+    "Style tweak on weighted sliders",
+    "Don't show dropdown for weighted string settings if all of them are on the table",
+    "Fixed a couple of options in Ocarina of Time",
+    "Hide reset button for a setting if it is already default",
+    "Reduce YAML output by removing sections for games definitely not being played (hold Ctrl to bypass this behaviour)",
+    "Settings will now properly update if games/settings in them are added/removed"
+  ],
+  "0.9.1": [
+    "This is when I started the changelog. I didn't have version numbers up until now.",
+    "Display app version and build time; clarify that \"big\" version is the current official server version at app build time"
+  ],
+  "0.9.0": ["Initial public release."]
+}
