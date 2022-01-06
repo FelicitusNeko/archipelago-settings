@@ -1,4 +1,5 @@
 import React, { ChangeEvent } from "react";
+import ReactMarkdown from "react-markdown";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 
@@ -194,7 +195,7 @@ export abstract class APSettingNode<
             </button>
           )}
           <br />
-          {setting.description}
+          <ReactMarkdown children={setting.description} />
           <br />
           {(weighted ? this.renderWeightedChoice : this.renderLinearChoice)()}
         </div>

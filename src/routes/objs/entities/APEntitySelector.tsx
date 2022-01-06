@@ -12,6 +12,7 @@ import { APMetaManager } from "../../../defs/generate";
 import { APEntityManager } from "../../../objs/entities/APEntityManager";
 
 import "../ItemSelector.css";
+import ReactMarkdown from "react-markdown";
 
 /**
  * The type of entity def used by the given entity manager.
@@ -290,7 +291,7 @@ export abstract class APEntitySelector<
           </button>
         ) : null}
         <br />
-        {this._description}
+        <ReactMarkdown children={this._description} />
         <br />
         {this._additionalComponents}
         <div className="itemselector">
