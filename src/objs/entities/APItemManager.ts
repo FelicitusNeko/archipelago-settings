@@ -56,7 +56,7 @@ export class APItemManager extends APEntityManager<APGameItem> {
         for (const item of startInv)
           if (
             this._startInvMode === MakeStartInvLocal.Always ||
-            item.qty === item.max
+            item.qty === (item.max ?? 1)
           )
             baseList.push(item.name);
       return baseList;
