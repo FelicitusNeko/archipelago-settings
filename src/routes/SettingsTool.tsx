@@ -112,7 +112,7 @@ const RealSaveToStorage = (() => {
     if (queueAnother) {
       timeout = setTimeout(save, 1000, ...queueAnother);
       queueAnother = undefined;
-    }
+    } else timeout = undefined;
     running = false;
   };
   return (playerName: string, description: string) => {
