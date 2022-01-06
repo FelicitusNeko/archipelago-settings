@@ -23,7 +23,7 @@ export type SettingValueType<T = APMetaSetting> = T extends APSetting<infer X>
   : never;
 
 /**
- * The properties for this setting.
+ * The properties for this {@link APSettingNode}.
  * @since 1.0.0
  */
 export interface APSettingProps<T extends APMetaSetting> {
