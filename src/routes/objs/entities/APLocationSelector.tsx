@@ -16,14 +16,14 @@ export class APLocationSelector extends APEntitySelector<APLocationManager> {
   _title = "Location selector";
   _description =
     "Select which locations will be guaranteed not to hold any progression items. " +
-    "Check the box to start with a hint as to what's in that location. " +
-    "Some locations cannot be excluded (⛔).";
+    "Check the box to start with a hint as to what's in that location. ";
+  // + "Some locations cannot be excluded (⛔).";
 
   _additionalComponents = [];
   _nodeRenderers = {};
   _dropRestrictors = {
     exclude_locations: (location: Readonly<APGameLocation>) => {
       return location.neverExclude ?? false;
-    }
+    },
   };
 }
