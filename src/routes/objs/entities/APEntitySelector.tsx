@@ -191,7 +191,7 @@ export abstract class APEntitySelector<
   protected abstract _description: string;
 
   /** Any additional components to render for this entity manager. */
-  protected abstract _additionalComponents: React.ReactNode[];
+  protected abstract _additionalComponents: (() => JSX.Element)[];
   /** Alternative renderers for specific drop boxes. */
   protected abstract _nodeRenderers: Record<
     string,
@@ -294,7 +294,7 @@ export abstract class APEntitySelector<
         ) : null}
         <br />
         <ReactMarkdown children={this._description} />
-        {this._additionalComponents}
+        {this._additionalComponents.map(I => <I />)}
         <div className="itemselector">
           <DragDropContext
             onDragStart={this.onDragStart}
