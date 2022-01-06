@@ -80,10 +80,15 @@ export abstract class APSetting<T> {
   /** The value for this setting. */
   private _value: APWeightableValue<T>;
 
+  /**
+   * @param category The category name.
+   * @param settingData The JSON representation for this setting.
+   * @param initialValue The initial value in its local storage form, if any.
+   */
   constructor(
     category: string | null,
     settingData: APSettingJson<T>,
-    initialValue?: APWeightableValue<T>
+    initialValue?: string
   ) {
     this._category = category;
     this._type = settingData.type;
@@ -95,7 +100,8 @@ export abstract class APSetting<T> {
     this._legacyName = settingData.legacyName;
     this._legacyValues = settingData.legacyValues;
 
-    this._value = initialValue ?? this._default;
+    this._value = this._default;
+    if (initialValue) this.storageValue = initialValue;
   }
 
   /** The category to which this setting belongs. */

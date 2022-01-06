@@ -2,7 +2,6 @@ import { SettingType } from "../../defs/core";
 import {
   APSetting,
   APSettingJson,
-  APWeightableValue,
   APWeightedValue,
 } from "./APSetting";
 
@@ -31,7 +30,7 @@ export class APStringSetting extends APSetting<string> {
   constructor(
     category: string | null,
     settingData: APStringSettingJson,
-    initialValue?: APWeightableValue<string>
+    initialValue?: string
   ) {
     super(category, settingData, initialValue);
 
