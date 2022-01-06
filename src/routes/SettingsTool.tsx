@@ -1,4 +1,4 @@
-import { gunzipSync, gzipSync } from "zlib";
+import { gzipSync } from "zlib";
 
 import React, { useState, useEffect, ReactElement } from "react";
 import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
@@ -129,44 +129,6 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
   useEffect(() => {
     // Old settings are incompatible; delete them
     localStorage.removeItem("savedSettings");
-
-    // Attempt to retrieve settings from local storage
-    /** The stringified collection of saved settings. */
-    const savedSettingsStr = (() => {
-      const store = localStorage.getItem("savedSettingsV2");
-      if (!store || store[0] === "{") return store;
-      else return gunzipSync(Buffer.from(store, "base64")).toString();
-    })();
-
-    if (savedSettingsStr) {
-      // There are saved settings; load them in
-      const savedSettings = JSON.parse(savedSettingsStr) as APSavedSettings;
-      const {
-        playerName: nameIn,
-        description: descriptionIn,
-        categories: categoriesIn,
-      } = savedSettings;
-      setPlayerName(nameIn);
-      setDescription(descriptionIn);
-
-      for (const category of APCategoryList) {
-        const savedCategory = categoriesIn.find(
-          (i) => i.category === category.category
-        );
-        if (!savedCategory) continue;
-        for (const setting of category.settings)
-          if (savedCategory.settings[setting.name])
-            setting.storageValue = savedCategory.settings[setting.name];
-
-        if (category.items && savedCategory.items)
-          category.items.yamlValue = savedCategory.items;
-        if (category.locations && savedCategory.locations)
-          category.locations.yamlValue = savedCategory.locations;
-      }
-
-      // HACK: find a way to initialise settings with saved data
-      forceUpdate();
-    }
 
     const privacy = localStorage.getItem("apstPrivacy");
     if (!privacy) {

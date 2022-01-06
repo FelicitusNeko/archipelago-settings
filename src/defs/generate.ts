@@ -1,4 +1,10 @@
-import { APGameItem, APGameLocation, EntityType, SettingType } from "./core";
+import {
+  APGameItem,
+  APGameLocation,
+  APSavedSettings,
+  EntityType,
+  SettingType,
+} from "./core";
 import { APCategoryData, APCategory } from "./categories/reader";
 
 import lttpSprites from "./LttP/sprites.json";
@@ -16,6 +22,7 @@ import {
 } from "../objs/settings/APBooleanSetting";
 import { APItemManager } from "../objs/entities/APItemManager";
 import { APLocationManager } from "../objs/entities/APLocationManager";
+import { gunzipSync } from "zlib";
 
 export type APMetaSetting =
   | APStringSetting
@@ -47,7 +54,31 @@ const gameList: [string, string][] = APCategoryData.filter(
 ).map((i) => [i.category, i.readableName ?? i.category] as [string, string]);
 let gameListUsed = false;
 
+const storedData = (() => {
+  // Attempt to retrieve settings from local storage
+  /** The stringified collection of saved settings. */
+  const savedSettingsStr = (() => {
+    const store = localStorage.getItem("savedSettingsV2");
+    if (!store || store[0] === "{") return store;
+    else return gunzipSync(Buffer.from(store, "base64")).toString();
+  })();
+
+  if (savedSettingsStr)
+    // There are saved settings; load them in
+    return JSON.parse(savedSettingsStr) as APSavedSettings;
+})();
+
+const [storedName, storedDesc] = (() => {
+  return storedData
+    ? [storedData.playerName, storedData.description]
+    : [undefined, undefined];
+})();
+export { storedName, storedDesc };
+
 const APCategoryList: APCategory[] = APCategoryData.map((i) => {
+  const savedCategory = storedData
+    ? storedData.categories.find((ii) => i.category === ii.category)
+    : undefined;
   const retval: APCategory = {
     category: i.category,
     readableName: i.readableName,
@@ -57,17 +88,20 @@ const APCategoryList: APCategory[] = APCategoryData.map((i) => {
         case SettingType.String:
           return new APStringSetting(
             i.category,
-            setting as APStringSettingJson
+            setting as APStringSettingJson,
+            savedCategory ? savedCategory.settings[setting.name] : undefined
           );
         case SettingType.Numeric:
           return new APNumericSetting(
             i.category,
-            setting as APNumericSettingJson
+            setting as APNumericSettingJson,
+            savedCategory ? savedCategory.settings[setting.name] : undefined
           );
         case SettingType.Boolean:
           return new APBooleanSetting(
             i.category,
-            setting as APBooleanSettingJson
+            setting as APBooleanSettingJson,
+            savedCategory ? savedCategory.settings[setting.name] : undefined
           );
         case SettingType.Games: {
           if (i.category !== null)
@@ -83,7 +117,11 @@ const APCategoryList: APCategory[] = APCategoryData.map((i) => {
           const stringJson = setting as APStringSettingJson;
           stringJson.values = Object.fromEntries(gameList);
           stringJson.default = gameList[0][0];
-          return new APStringSetting(i.category, stringJson);
+          return new APStringSetting(
+            i.category,
+            stringJson,
+            savedCategory ? savedCategory.settings[setting.name] : undefined
+          );
         }
         case SettingType.Character: {
           const stringJson = setting as APStringSettingJson;
@@ -97,7 +135,11 @@ const APCategoryList: APCategory[] = APCategoryData.map((i) => {
               );
           }
           stringJson.default = Object.keys(stringJson.values)[0];
-          return new APStringSetting(i.category, stringJson);
+          return new APStringSetting(
+            i.category,
+            stringJson,
+            savedCategory ? savedCategory.settings[setting.name] : undefined
+          );
         }
         default:
           throw new Error(`Unknown setting type`);
