@@ -71,6 +71,35 @@ const isGameEnabledV2 = (category: string | null): boolean => {
   return GameSetting.includes(category);
 };
 
+/**
+ * Does the actual work of saving. Placed outside the component to comply with the Rules of Hooks.
+ * @param playerName The user-provided player name.
+ * @param description The user-provided description.
+ */
+const RealSaveToStorage = (playerName: string, description: string) => {
+  const savedSettings: APSavedSettings = {
+    playerName,
+    description,
+    categories: APCategoryList.map((i) => {
+      const retval = {
+        category: i.category,
+        settings: Object.fromEntries(
+          i.settings.map((ii) => [ii.name, ii.storageValue])
+        ),
+      } as APSavedSettingsCategory;
+      if (i.items) retval.items = i.items.yamlValue;
+      if (i.locations) retval.locations = i.locations.yamlValue;
+
+      return retval;
+    }),
+  };
+
+  localStorage.setItem(
+    "savedSettingsV2",
+    gzipSync(JSON.stringify(savedSettings)).toString("base64")
+  );
+}
+
 /** Creates a hook which facilitates forced updating of a function component. */
 const useForceUpdate = () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -92,28 +121,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
 
   /** Saves the current settings to local storage. */
   const SaveToStorage = (skipUpdate = false) => {
-    const savedSettings: APSavedSettings = {
-      playerName,
-      description,
-      categories: APCategoryList.map((i) => {
-        const retval = {
-          category: i.category,
-          settings: Object.fromEntries(
-            i.settings.map((ii) => [ii.name, ii.storageValue])
-          ),
-        } as APSavedSettingsCategory;
-        if (i.items) retval.items = i.items.yamlValue;
-        if (i.locations) retval.locations = i.locations.yamlValue;
-
-        return retval;
-      }),
-    };
-
-    localStorage.setItem(
-      "savedSettingsV2",
-      gzipSync(JSON.stringify(savedSettings)).toString("base64")
-    );
-
+    RealSaveToStorage(playerName, description);
     if (!skipUpdate) forceUpdate();
   };
 
@@ -181,9 +189,8 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
     }
   }, []);
 
-  // HACK: otherwise, the name and description wouldn't save properly (but now useEffect deps are unmet)
   useEffect(() => {
-    SaveToStorage(true);
+    RealSaveToStorage(playerName, description);
   }, [playerName, description]);
 
   /**
