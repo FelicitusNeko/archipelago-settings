@@ -453,7 +453,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
         <hgroup>
           <h1>Archipelago Settings Tool</h1>
           <h2>
-            Server version: {process.env.REACT_APP_CURRENT_ARCHIPELAGO_VER}
+            AP version: {process.env.REACT_APP_CURRENT_ARCHIPELAGO_VER}
           </h2>
           <h6>
             App version {version} — built{" "}
