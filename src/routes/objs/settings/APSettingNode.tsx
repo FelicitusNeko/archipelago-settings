@@ -80,6 +80,7 @@ export abstract class APSettingNode<
           | APWeightedValue<string | number>[]
           | APWeightedValue<boolean>[];
         save();
+        this.forceUpdate();
       } else
         this.setState({
           value: propValue as APWeightableValue<SettingValueType<TSetting>>,

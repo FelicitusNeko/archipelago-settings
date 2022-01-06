@@ -127,6 +127,7 @@ export class APItemSelector extends APEntitySelector<APItemManager> {
     }) => {
       manager.startInvMode = Number.parseInt(currentTarget.value) as MakeStartInvLocal;
       save();
+      this.forceUpdate();
     }
 
     return <p>

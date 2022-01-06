@@ -251,6 +251,7 @@ export abstract class APEntitySelector<
             destination.index
           );
           save();
+          this.forceUpdate();
         }
       } else {
         manager.addToList(
@@ -259,6 +260,7 @@ export abstract class APEntitySelector<
           moveEntity.name
         );
         save();
+        this.forceUpdate();
       }
     }
 
@@ -271,6 +273,7 @@ export abstract class APEntitySelector<
     const { manager, save } = this.props;
     manager.reset();
     save();
+    this.forceUpdate();
   };
 
   render() {

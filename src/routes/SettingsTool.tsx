@@ -137,7 +137,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
   const forceUpdate = useForceUpdate();
 
   /** Saves the current settings to local storage. */
-  const SaveToStorage = (skipUpdate = false) => {
+  const SaveToStorage = (skipUpdate = true) => {
     RealSaveToStorage(playerName, description);
     if (!skipUpdate) forceUpdate();
   };
