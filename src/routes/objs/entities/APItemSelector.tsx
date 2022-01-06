@@ -3,7 +3,7 @@ import { Draggable } from "react-beautiful-dnd";
 import Slider from "rc-slider";
 
 import { APGameItem, APGameItemAndQty } from "../../../defs/core";
-import { APItemManager } from "../../../objs/entities/APItemManager";
+import { APItemManager, MakeStartInvLocal } from "../../../objs/entities/APItemManager";
 import { APEntityNodeProps, APEntitySelector } from "./APEntitySelector";
 
 /**
@@ -111,8 +111,6 @@ export class APItemSelector extends APEntitySelector<APItemManager> {
     "the starting inventory, hints are disabled. Some items cannot be added to " +
     "start inventory (⛔).";
 
-  // TODO: Additional component for extra startinv→local handling
-  _additionalComponents = [];
   _nodeRenderers = {
     start_inventory: APItemQtyNode,
   };
@@ -121,4 +119,24 @@ export class APItemSelector extends APEntitySelector<APItemManager> {
       return item.max === 0;
     },
   };
+
+  startInvComp = () => {
+    const {manager, save} = this.props;
+    const onStartInvChange: React.ChangeEventHandler<HTMLSelectElement> = ({
+      currentTarget,
+    }) => {
+      manager.startInvMode = Number.parseInt(currentTarget.value) as MakeStartInvLocal;
+      save();
+    }
+
+    return <p>
+      <b>Start inventory mode:</b>{" "}
+      <select onChange={onStartInvChange} value={manager.startInvMode}>
+        <option value={0}>Do nothing</option>
+        <option value={1}>On export, any max qty item in Start Inventory will be added to Local Items</option>
+        <option value={2}>On export, all items in Start Inventory will be added to Local Items</option>
+      </select>
+    </p>
+  }
+  _additionalComponents = [this.startInvComp];
 }
