@@ -17,7 +17,12 @@ import {
   APSavedSettingsCategory,
 } from "../defs/core";
 import { version } from "../../package.json";
-import { APCategoryList, GameSetting } from "../defs/generate";
+import {
+  APCategoryList,
+  GameSetting,
+  storedDesc,
+  storedName,
+} from "../defs/generate";
 import { APCategory } from "../defs/categories/reader";
 import { APStringSettingNode } from "./objs/settings/APStringSettingNode";
 import { APNumericSettingNode } from "./objs/settings/APNumericSettingNode";
@@ -76,29 +81,47 @@ const isGameEnabledV2 = (category: string | null): boolean => {
  * @param playerName The user-provided player name.
  * @param description The user-provided description.
  */
-const RealSaveToStorage = (playerName: string, description: string) => {
-  const savedSettings: APSavedSettings = {
-    playerName,
-    description,
-    categories: APCategoryList.map((i) => {
-      const retval = {
-        category: i.category,
-        settings: Object.fromEntries(
-          i.settings.map((ii) => [ii.name, ii.storageValue])
-        ),
-      } as APSavedSettingsCategory;
-      if (i.items) retval.items = i.items.yamlValue;
-      if (i.locations) retval.locations = i.locations.yamlValue;
+const RealSaveToStorage = (() => {
+  let running: boolean = false;
+  let queueAnother: [string, string] | undefined = undefined;
+  let timeout: number | undefined = undefined;
+  const save = (playerName: string, description: string) => {
+    running = true;
+    const savedSettings: APSavedSettings = {
+      playerName,
+      description,
+      categories: APCategoryList.map((i) => {
+        const retval = {
+          category: i.category,
+          settings: Object.fromEntries(
+            i.settings.map((ii) => [ii.name, ii.storageValue])
+          ),
+        } as APSavedSettingsCategory;
+        if (i.items) retval.items = i.items.yamlValue;
+        if (i.locations) retval.locations = i.locations.yamlValue;
 
-      return retval;
-    }),
+        return retval;
+      }),
+    };
+
+    localStorage.setItem(
+      "savedSettingsV2",
+      gzipSync(JSON.stringify(savedSettings)).toString("base64")
+    );
+
+    running = false;
+    if (queueAnother) {
+      timeout = setTimeout(save, 1000, ...queueAnother);
+      queueAnother = undefined;
+    }
   };
-
-  localStorage.setItem(
-    "savedSettingsV2",
-    gzipSync(JSON.stringify(savedSettings)).toString("base64")
-  );
-}
+  return (playerName: string, description: string) => {
+    if (!running) {
+      if (timeout) clearTimeout(timeout);
+      timeout = setTimeout(save, 1000, playerName, description);
+    } else queueAnother = [playerName, description];
+  };
+})();
 
 /** Creates a hook which facilitates forced updating of a function component. */
 const useForceUpdate = () => {
@@ -129,6 +152,9 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
   useEffect(() => {
     // Old settings are incompatible; delete them
     localStorage.removeItem("savedSettings");
+
+    if (storedName) setPlayerName(storedName);
+    if (storedDesc) setDescription(storedDesc);
 
     const privacy = localStorage.getItem("apstPrivacy");
     if (!privacy) {
