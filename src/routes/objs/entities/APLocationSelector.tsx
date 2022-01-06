@@ -1,3 +1,4 @@
+import { APGameLocation } from "../../../defs/core";
 import { APLocationManager } from "../../../objs/entities/APLocationManager";
 import { APEntitySelector } from "./APEntitySelector";
 
@@ -15,10 +16,14 @@ export class APLocationSelector extends APEntitySelector<APLocationManager> {
   _title = "Location selector";
   _description =
     "Select which locations will be guaranteed not to hold any progression items. " +
-    "Check the box to start with a hint as to what's in that location.";
+    "Check the box to start with a hint as to what's in that location. " +
+    "Some locations cannot be excluded (⛔).";
 
-  // TODO: Additional component for extra startinv→local handling
   _additionalComponents = [];
   _nodeRenderers = {};
-  _dropRestrictors = {};
+  _dropRestrictors = {
+    exclude_locations: (location: Readonly<APGameLocation>) => {
+      return location.neverExclude ?? false;
+    }
+  };
 }

@@ -66,6 +66,9 @@ export interface APGameItem extends APGameEntity {
 export interface APGameLocation extends APGameEntity {
   /** @override */
   type: EntityType.Location;
+
+  /** Whether this location can not be excluded from containing a progression item. */
+  neverExclude?: boolean;
 }
 
 /**

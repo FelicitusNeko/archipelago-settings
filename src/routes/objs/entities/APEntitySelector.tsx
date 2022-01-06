@@ -81,7 +81,9 @@ function APEntityNode<T extends APMetaManager>({
               />
             ))}
             {children}
+            {/* TODO: Come up with a way to add decorators */}
             {APEntityManager.isItem(entity) && entity.max === 0 ? " ⛔" : null}
+            {APEntityManager.isLocation(entity) && entity.neverExclude ? " ⛔" : null}
           </div>
         );
       }}
