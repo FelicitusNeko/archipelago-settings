@@ -566,7 +566,7 @@
         "off": "Off",
         "grouped_random": [
           "Grouped random",
-          "some groups may be while others may not"
+          "Some groups may be while others may not"
         ],
         "on": "On"
       },
@@ -728,7 +728,7 @@
       "type": "string",
       "name": "shop_shuffle",
       "readableName": "Shop shuffle",
-      "description": "Whether certain aspects of the shop will be randomized. Please note that \"exotic prices\" options are experimental and may crash the game.",
+      "description": "Whether certain aspects of the shop will be randomized. **Please note that \"exotic prices\" options are experimental and may crash the game.**",
       "values": {
         "none": "Off",
         "g": ["Pool shuffle", "Shuffles vanilla inventory"],
@@ -857,7 +857,7 @@
       "type": "string",
       "name": "link_palettes",
       "readableName": "Link palette",
-      "description": "How Link will look. Yes, this is apparently an option. Unknown if it works with alternate sprites.",
+      "description": "How Link will look. May or may not work with alternate sprites.",
       "values": {
         "default": "Vanilla",
         "good": "Random within reason",

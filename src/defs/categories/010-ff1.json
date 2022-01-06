@@ -5,7 +5,7 @@
       "type": "string",
       "name": "nosettings",
       "readableName": "Settings aren't here",
-      "description": "Currently, Archipelago has no built-in support for settings for Final Fantasy. You'll have to generate your settings file at the Final Fantasy Randomizer website.",
+      "description": "Currently, Archipelago has no built-in support for settings for Final Fantasy. You'll have to generate your settings file at the [Final Fantasy Randomizer website](https://finalfantasyrandomizer.com/).",
       "values": {
         "no1": "Dang",
         "no2": "That sucks",
