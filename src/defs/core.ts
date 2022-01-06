@@ -22,9 +22,9 @@ export enum SettingType {
 /** Indicates what type of entity is being used. */
 export enum EntityType {
   /** Refers to an item. */
-  Item = 'item',
+  Item = "item",
   /** Refers to a location. */
-  Location = 'location',
+  Location = "location",
 }
 
 /** Refers to a setting dependency. */
@@ -76,9 +76,9 @@ export interface APGameLocation extends APGameEntity {
  * @since 1.0.0
  */
 export interface APGameItemAndQty extends APGameItem {
+  /** The quantity of this item, usually used for starting inventory. */
   qty: number;
 }
-
 
 /** The list of names which will be rejected by the Archipelago generator. */
 const ForbiddenNames = ["Archipelago"]; // lol yup
@@ -96,16 +96,24 @@ const WeightRail: CSSProperties = {
 };
 export { SelectRail, WeightRail };
 
+/** The category structure stored within {@link APSavedSettings}. */
 export interface APSavedSettingsCategory {
-  category: string|null;
+  /** The name of the category, or `null` if global settings. */
+  category: string | null;
+  /** Serialized data pertaining to settings for this category. */
   settings: Record<string, string>;
+  /** Serialized data pertaining to items for this category, if any. */
   items?: Record<string, any>;
+  /** Serialized data pertaining to locations for this category, if any. */
   locations?: Record<string, any>;
 }
 
 /** Settings currently saved in the browser's local storage. */
 export interface APSavedSettings {
+  /** The name of the player (also referred to as "slot name"). */
   playerName: string;
+  /** The user-provided description of this settings collection. This is purely for the user's reference. */
   description: string;
+  /** The stored data for each category. */
   categories: APSavedSettingsCategory[];
 }
