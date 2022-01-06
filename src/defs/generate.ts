@@ -147,7 +147,7 @@ const APCategoryList: APCategory[] = APCategoryData.map((i) => {
     }),
   };
 
-  if (i.items)
+  if (i.items) {
     retval.items = new APItemManager(
       i.items.map((i) =>
         Object.assign<APGameItem, Partial<APGameItem>>(i, {
@@ -155,7 +155,10 @@ const APCategoryList: APCategory[] = APCategoryData.map((i) => {
         })
       )
     );
-  if (i.locations)
+    if (savedCategory && savedCategory.items)
+      retval.items.yamlValue = savedCategory.items;
+  }
+  if (i.locations) {
     retval.locations = new APLocationManager(
       i.locations.map((i) =>
         Object.assign<APGameLocation, Partial<APGameLocation>>(i, {
@@ -163,7 +166,9 @@ const APCategoryList: APCategory[] = APCategoryData.map((i) => {
         })
       )
     );
-
+    if (savedCategory && savedCategory.locations)
+      retval.locations.yamlValue = savedCategory.locations;
+  }
   return retval;
 });
 export { APCategoryList };
