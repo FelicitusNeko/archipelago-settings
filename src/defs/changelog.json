@@ -2,11 +2,13 @@
   "1.0.0": [
     "Massive internal rework",
     [
+      "**Location selector** implemented",
+      "Completely changes how settings, items, and locations are handled internally",
+      "Saved storage is now compressed",
       "Please note that 0.x saved data is not compatible; please re-import your YAML"
     ],
     "Update spec to **0.2.3**",
     ["(this is not out yet, but this update is only coming out when it is)"],
-    "**Location selector** implemented",
     "Change how changelog is stored and rendered",
     "Fancy Markdown shenanigans"
   ],
