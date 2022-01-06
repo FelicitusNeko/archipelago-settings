@@ -109,11 +109,11 @@ const RealSaveToStorage = (() => {
       gzipSync(JSON.stringify(savedSettings)).toString("base64")
     );
 
-    running = false;
     if (queueAnother) {
       timeout = setTimeout(save, 1000, ...queueAnother);
       queueAnother = undefined;
     }
+    running = false;
   };
   return (playerName: string, description: string) => {
     if (!running) {
