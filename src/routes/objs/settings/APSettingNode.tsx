@@ -196,7 +196,6 @@ export abstract class APSettingNode<
           )}
           <br />
           <ReactMarkdown children={setting.description} />
-          <br />
           {(weighted ? this.renderWeightedChoice : this.renderLinearChoice)()}
         </div>
       </>

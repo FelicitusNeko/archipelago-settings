@@ -292,7 +292,6 @@ export abstract class APEntitySelector<
         ) : null}
         <br />
         <ReactMarkdown children={this._description} />
-        <br />
         {this._additionalComponents}
         <div className="itemselector">
           <DragDropContext

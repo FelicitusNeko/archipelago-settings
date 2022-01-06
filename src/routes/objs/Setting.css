@@ -27,6 +27,11 @@ div.setting {
   font-size: 100%;
 }
 
+.setting p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
 .archslider {
   display: inline-block;
   width: 30%;
