@@ -83,7 +83,9 @@ function APEntityNode<T extends APMetaManager>({
             {children}
             {/* TODO: Come up with a way to add decorators */}
             {APEntityManager.isItem(entity) && entity.max === 0 ? " ⛔" : null}
-            {APEntityManager.isLocation(entity) && entity.neverExclude ? " ⛔" : null}
+            {APEntityManager.isLocation(entity) && entity.neverExclude
+              ? " ⛔"
+              : null}
           </div>
         );
       }}
@@ -297,7 +299,11 @@ export abstract class APEntitySelector<
         ) : null}
         <br />
         <ReactMarkdown children={this._description} />
-        {this._additionalComponents.map(I => <I />)}
+        {this._additionalComponents.map((I, x) => (
+          <I
+            key={`extracomp-${category}-${this._title.substring(0, 4)}-${x}`}
+          />
+        ))}
         <div className="itemselector">
           <DragDropContext
             onDragStart={this.onDragStart}
