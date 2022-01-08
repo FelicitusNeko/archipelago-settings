@@ -47,6 +47,9 @@ export interface APSettingJson<T> {
    * If the Berserker value no longer exists in Archipelago, the value here should be null.
    */
   legacyValues?: Record<string, T | null>; // null if the setting no longer exists
+
+  /** Whether this setting is currently disabled and should not be included in setting generation. */
+  disabled?: boolean;
 }
 
 /**

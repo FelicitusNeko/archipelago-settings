@@ -83,68 +83,70 @@ const APCategoryList: APCategory[] = APCategoryData.map((i) => {
     category: i.category,
     readableName: i.readableName,
     index: i.index,
-    settings: i.settings.map((setting) => {
-      switch (setting.type) {
-        case SettingType.String:
-          return new APStringSetting(
-            i.category,
-            setting as APStringSettingJson,
-            savedCategory ? savedCategory.settings[setting.name] : undefined
-          );
-        case SettingType.Numeric:
-          return new APNumericSetting(
-            i.category,
-            setting as APNumericSettingJson,
-            savedCategory ? savedCategory.settings[setting.name] : undefined
-          );
-        case SettingType.Boolean:
-          return new APBooleanSetting(
-            i.category,
-            setting as APBooleanSettingJson,
-            savedCategory ? savedCategory.settings[setting.name] : undefined
-          );
-        case SettingType.Games: {
-          if (i.category !== null)
-            throw new Error(
-              "Game list type can only be used in global category"
+    settings: i.settings
+      .filter((i) => i.disabled !== true)
+      .map((setting) => {
+        switch (setting.type) {
+          case SettingType.String:
+            return new APStringSetting(
+              i.category,
+              setting as APStringSettingJson,
+              savedCategory ? savedCategory.settings[setting.name] : undefined
             );
-          if (gameListUsed)
-            throw new Error(
-              "Game list type has already been used (check null.json)"
+          case SettingType.Numeric:
+            return new APNumericSetting(
+              i.category,
+              setting as APNumericSettingJson,
+              savedCategory ? savedCategory.settings[setting.name] : undefined
             );
-          gameListUsed = true;
-
-          const stringJson = setting as APStringSettingJson;
-          stringJson.values = Object.fromEntries(gameList);
-          stringJson.default = gameList[0][0];
-          return new APStringSetting(
-            i.category,
-            stringJson,
-            savedCategory ? savedCategory.settings[setting.name] : undefined
-          );
-        }
-        case SettingType.Character: {
-          const stringJson = setting as APStringSettingJson;
-          switch (i.category) {
-            case "A Link to the Past":
-              stringJson.values = LttPSpriteValue;
-              break;
-            default:
+          case SettingType.Boolean:
+            return new APBooleanSetting(
+              i.category,
+              setting as APBooleanSettingJson,
+              savedCategory ? savedCategory.settings[setting.name] : undefined
+            );
+          case SettingType.Games: {
+            if (i.category !== null)
               throw new Error(
-                `Game "${i.category}" does not have a known list of character sprites/models`
+                "Game list type can only be used in global category"
               );
+            if (gameListUsed)
+              throw new Error(
+                "Game list type has already been used (check null.json)"
+              );
+            gameListUsed = true;
+
+            const stringJson = setting as APStringSettingJson;
+            stringJson.values = Object.fromEntries(gameList);
+            stringJson.default = gameList[0][0];
+            return new APStringSetting(
+              i.category,
+              stringJson,
+              savedCategory ? savedCategory.settings[setting.name] : undefined
+            );
           }
-          stringJson.default = Object.keys(stringJson.values)[0];
-          return new APStringSetting(
-            i.category,
-            stringJson,
-            savedCategory ? savedCategory.settings[setting.name] : undefined
-          );
+          case SettingType.Character: {
+            const stringJson = setting as APStringSettingJson;
+            switch (i.category) {
+              case "A Link to the Past":
+                stringJson.values = LttPSpriteValue;
+                break;
+              default:
+                throw new Error(
+                  `Game "${i.category}" does not have a known list of character sprites/models`
+                );
+            }
+            stringJson.default = Object.keys(stringJson.values)[0];
+            return new APStringSetting(
+              i.category,
+              stringJson,
+              savedCategory ? savedCategory.settings[setting.name] : undefined
+            );
+          }
+          default:
+            throw new Error(`Unknown setting type`);
         }
-        default:
-          throw new Error(`Unknown setting type`);
-      }
-    }),
+      }),
   };
 
   if (i.items) {
