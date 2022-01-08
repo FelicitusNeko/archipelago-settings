@@ -84,21 +84,28 @@ const isGameEnabledV2 = (category: string | null): boolean => {
  * @param description The user-provided description.
  */
 const RealSaveToStorage = (() => {
+  /** Whether the save operation is running. */
   let running: boolean = false;
+  /** Data for a queued save operation, if any. */
   let queueAnother: [string, string] | undefined = undefined;
+  /** The timeout for the next save operation, if any. */
   let timeout: number | undefined = undefined;
   const save = (playerName: string, description: string) => {
+    // mark as running
     running = true;
+
     const savedSettings: APSavedSettings = {
       playerName,
       description,
       categories: APCategoryList.map((i) => {
+        // retrieve all settings' storage values
         const retval = {
           category: i.category,
           settings: Object.fromEntries(
             i.settings.map((ii) => [ii.name, ii.storageValue])
           ),
         } as APSavedSettingsCategory;
+        // if this category has items/locs, save those as their YAML values
         if (i.items) retval.items = i.items.yamlValue;
         if (i.locations) retval.locations = i.locations.yamlValue;
 
@@ -106,11 +113,13 @@ const RealSaveToStorage = (() => {
       }),
     };
 
+    // gzip and save to local storage
     localStorage.setItem(
       "savedSettingsV2",
       gzipSync(JSON.stringify(savedSettings)).toString("base64")
     );
 
+    // if another operation is queued, set a new timeout; otherwise, just clear this one...either way, we're done
     if (queueAnother) {
       timeout = setTimeout(save, 1000, ...queueAnother);
       queueAnother = undefined;
@@ -126,10 +135,15 @@ const RealSaveToStorage = (() => {
 })();
 
 const restrictName = (value: string) => {
+  /** The effective length of the string. */
   let modifiedLength = value.length;
+  // if there's a number template, reduce the perceived length of the string by 5 (from 8 chars to up to 3 digits)
   if (/\{(?:PLAYER|player|NUMBER|number)\}/.test(value)) modifiedLength -= 5;
+  // maximum name length 16
   if (modifiedLength > 16) return "This name is too long.";
+  // no blank name
   if (modifiedLength === 0) return "You must provide a name.";
+  // can't be Archipelago (reserved name)
   if (ForbiddenNames.includes(value))
     return `The name "${value}" is not allowed.`;
   return null;
@@ -145,6 +159,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
     "Generated using Kewlio's Archipelago Settings Tool"
   );
 
+  /** Forces this component to update when invoked. */
   const forceUpdate = useForceUpdate();
 
   /** Saves the current settings to local storage. */
@@ -153,14 +168,16 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
     if (!skipUpdate) forceUpdate();
   };
 
-  // Load settings
+  // Start application (actual loading now happens in generate.ts)
   useEffect(() => {
     // Old settings are incompatible; delete them
     localStorage.removeItem("savedSettings");
 
+    // restore stored name/desc, if any
     if (storedName) setPlayerName(storedName);
     if (storedDesc) setDescription(storedDesc);
 
+    // did we display privacy statement? if not, do that now
     const privacy = localStorage.getItem("apstPrivacy");
     if (!privacy) {
       const { hide } = cogoToast.info(
@@ -182,6 +199,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
     }
   }, []);
 
+  // save without reloading on change name/desc
   useEffect(() => {
     RealSaveToStorage(playerName, description);
   }, [playerName, description]);
@@ -208,13 +226,14 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
 
       // Iterate through established settings, not through imported data
       for (const setting of catSettings) {
-        // If the setting doesn't exist in the imported data, default it in the new settings
+        // If the setting exists in the imported data, then import it; otherwise, default it
         if (curImport[setting.name])
           setting.yamlValue = curImport[setting.name];
         else setting.value = setting.default;
       }
 
       for (const manager of [items, locations])
+        // if the category has items/locs and so does the YAML, then import those
         if (manager) {
           const importEntities: Record<string, any> = {};
           for (const list of manager.lists)
@@ -223,7 +242,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
         }
     }
 
-    // Finally, set the name, description, and settings collection to update the UI
+    // Finally, set the name and description, save, and update the UI
     if (yamlIn.name) setPlayerName(yamlIn.name);
     if (yamlIn.description) setDescription(yamlIn.description);
     SaveToStorage();
