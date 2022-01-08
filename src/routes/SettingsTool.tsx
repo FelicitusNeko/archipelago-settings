@@ -126,7 +126,10 @@ const RealSaveToStorage = (() => {
 })();
 
 const restrictName = (value: string) => {
-  if (value === "") return "You must provide a name.";
+  let modifiedLength = value.length;
+  if (/\{(?:PLAYER|player|NUMBER|number)\}/.test(value)) modifiedLength -= 5;
+  if (modifiedLength > 16) return "This name is too long.";
+  if (modifiedLength === 0) return "You must provide a name.";
   if (ForbiddenNames.includes(value))
     return `The name "${value}" is not allowed.`;
   return null;
@@ -445,7 +448,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
           <APHeaderStringNode
             label="Your name"
             value={playerName}
-            maxLength={16}
+            maxLength={24}
             setValue={setPlayerName}
             restrict={restrictName}
           />
