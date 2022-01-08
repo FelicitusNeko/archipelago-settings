@@ -53,10 +53,10 @@
       "name": "chests_per_zone",
       "readableName": "Normal chests per zone",
       "description": "Determines the number of normal (non-Fairy) Chests in a given zone that contain items. After these have been checked, only gold or stat bonuses can be found in Chests.",
-      "low": 0,
-      "high": 20,
+      "low": 15,
+      "high": 30,
       "randomable": true,
-      "default": 0
+      "default": 15
     },
     {
       "type": "string",
