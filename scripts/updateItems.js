@@ -6,17 +6,9 @@ const {
   unlinkSync,
   writeSync,
 } = require('fs');
-const {get: httpsGet} = require('https');
-const {format} = require('util');
+const { get: httpsGet } = require('https');
 
 const { DATAPACKAGE_URL } = process.env;
-
-const fileTemplate = `const Items: ArchipelagoItem[] = [
-%s]
-  
-const Locations: ArchipelagoLocation[] = [
-%s]
-`;
 
 const getDataPackage = () => {
   const url =
@@ -39,7 +31,7 @@ const getDataPackage = () => {
     mkdirSync(__dirname + "/itemloc");
   }
   for (const category of Object.keys(dataPackage.games)) {
-    const outFileName = __dirname + `/itemloc/${category}.ts`;
+    const outFileName = __dirname + `/itemloc/${category}.json`;
 
     if (existsSync(outFileName)) unlinkSync(outFileName);
 
@@ -49,18 +41,17 @@ const getDataPackage = () => {
       dataPackage.games[category];
     let itemList = Object.entries(item_name_to_id)
       .sort((a, b) => a[1] - b[1])
-      .map((i) => i[0]);
+      .map((i) => { return { name: i[0] } });
     const locationList = Object.entries(location_name_to_id)
       .sort((a, b) => a[1] - b[1])
-      .map((i) => i[0]);
+      .map((i) => { return { name: i[0] } });
 
     writeSync(
       outFile,
-      format(
-        fileTemplate,
-        itemList.map((i) => `  { name: "${i}" },\n`).join(""),
-        locationList.map((i) => `  { name: "${i}" },\n`).join("")
-      )
+      JSON.stringify({
+        items: itemList,
+        locations: locationList
+      }, undefined, 2)
     );
 
     closeSync(outFile);
