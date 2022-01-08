@@ -30,8 +30,8 @@ import { APNumericSettingNode } from "./objs/settings/APNumericSettingNode";
 import { APBooleanSettingNode } from "./objs/settings/APBooleanSettingNode";
 import { APItemSelector } from "./objs/entities/APItemSelector";
 import { APLocationSelector } from "./objs/entities/APLocationSelector";
-import "./SettingsTool.css";
 import { APHeaderStringNode } from "./objs/settings/APHeaderStringNode";
+import "./SettingsTool.css";
 
 const { localStorage, location, confirm } = window;
 
