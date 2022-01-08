@@ -365,7 +365,7 @@
     {
       "type": "string",
       "name": "shuffle_interior_entrances",
-      "readableName": ["Entrance shuffle", "interiors"],
+      "readableName": "Entrance shuffle – interiors",
       "description": "Shuffles interior entrances. \"Simple\" shuffles houses and Great Fairies; \"Full\" includes Windmill, Link's House, Temple of Time, and Kak potion shop.",
       "values": {
         "off": "Off",
@@ -377,28 +377,28 @@
     {
       "type": "boolean",
       "name": "shuffle_grotto_entrances",
-      "readableName": ["Entrance shuffle", "grotto"],
+      "readableName": "Entrance shuffle – grotto",
       "description": "Shuffles grotto and grave entrances.",
       "default": false
     },
     {
       "type": "boolean",
       "name": "shuffle_dungeon_entrances",
-      "readableName": ["Entrance shuffle", "dungeons"],
+      "readableName": "Entrance shuffle – dungeons",
       "description": "Shuffles dungeon entrances, excluding Ganon's Castle. Opens Deku, Fire and BotW to both ages.",
       "default": false
     },
     {
       "type": "boolean",
       "name": "shuffle_overworld_entrances",
-      "readableName": ["Entrance shuffle", "overworld"],
+      "readableName": "Entrance shuffle – overworld",
       "description": "Shuffles overworld loading zones.",
       "default": false
     },
     {
       "type": "boolean",
       "name": "warp_songs",
-      "readableName": ["Entrance shuffle", "warp songs"],
+      "readableName": "Entrance shuffle – warp songs",
       "description": "Randomizes warp song destinations.",
       "default": false
     },
@@ -407,7 +407,8 @@
       "name": "decouple_entrances",
       "readableName": "Decouple entrances",
       "description": "Decouple entrances when shuffling them. Also adds the one-way entrance from Gerudo Valley to Lake Hylia if overworld is shuffled.",
-      "default": true
+      "default": true,
+      "disabled": true
     },
     {
       "type": "string",
@@ -419,15 +420,8 @@
         "indoor": ["Indoor", "Keeps overworld entrances separate"],
         "all": "All"
       },
-      "default": "off"
-    },
-    {
-      "type": "string",
-      "name": "",
-      "readableName": "",
-      "description": "",
-      "values": {},
-      "default": ""
+      "default": "off",
+      "disabled": true
     },
     {
       "type": "boolean",

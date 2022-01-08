@@ -17,6 +17,7 @@ import timespin from "./007-timespin.json";
 import smetroid from "./008-sm.json";
 import evermore from "./009-soe.json";
 import ff1 from "./010-ff1.json";
+import roguelegacy from "./011-roguelegacy.json";
 
 /**
  * The JSON representation of an Archipelago category.
@@ -65,6 +66,7 @@ const APCategoryData = ([
   smetroid, // 0.2.0
   evermore, // 0.2.0
   ff1, // 0.2.1, no real support (must go to FFR website)
+  roguelegacy, // 0.2.3
 ] as APCategoryJson[]).sort((a,b) => a.index - b.index);
 
 export { APCategoryData };

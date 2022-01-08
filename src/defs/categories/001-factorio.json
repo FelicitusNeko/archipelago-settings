@@ -146,14 +146,14 @@
       "type": "boolean",
       "name": "imported_blueprints",
       "readableName": "Imported blueprints",
-      "description": "[not documented]",
+      "description": "Whether blueprints from outside the current savegame are allowed.",
       "default": true
     },
     {
       "type": "string",
       "name": "progressive",
       "readableName": "Progressive technologies",
-      "description": "[not documented]",
+      "description": "Merges together Technologies like \"automation-1\" to \"automation-3\" into 3 copies of \"Progressive Automation\", which awards them in order.",
       "values": {
         "off": "Off",
         "grouped_random": "Randomize groups",

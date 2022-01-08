@@ -67,6 +67,13 @@
     },
     {
       "type": "boolean",
+      "name": "LoreChecks",
+      "readableName": "Lore checks",
+      "description": "Whether memories and journal entries will provide items.",
+      "default": false
+    },
+    {
+      "type": "boolean",
       "name": "DamageRando",
       "readableName": "Damage rando",
       "description": "Each orb has a high chance of having lower base damage and a low chance of having much higher base damage.",
@@ -1208,19 +1215,85 @@
       "name": "Cantoran"
     },
     {
+      "name": "Memory - Coyote Jump (Time Messenger)"
+    },
+    {
+      "name": "Memory - Waterway (A Message)"
+    },
+    {
+      "name": "Memory - Library Gap (Lachiemi Sun)"
+    },
+    {
+      "name": "Memory - Mr. Hat Portrait (Moonlit Night)"
+    },
+    {
+      "name": "Memory - Left Elevator (Nomads)"
+    },
+    {
+      "name": "Memory - Siren Elevator (Childhood)"
+    },
+    {
+      "name": "Memory - Varndagroth Right Bottom (Faron)"
+    },
+    {
+      "name": "Memory - Bomber Climb (A Solution)"
+    },
+    {
+      "name": "Memory - Genza's Secret Stash 1 (An Old Friend)"
+    },
+    {
+      "name": "Memory - Genza's Secret Stash 2 (Twilight Dinner)"
+    },
+    {
+      "name": "Memory - Way Up There (Final Circle)"
+    },
+    {
+      "name": "Journal - Forest Rats (Lachiem Expedition)"
+    },
+    {
+      "name": "Journal - Forest Bat Jump Ledge (Peace Treaty)"
+    },
+    {
+      "name": "Journal - Floating in Moat (Prime Edicts)"
+    },
+    {
+      "name": "Journal - Archer + Knight (Declaration of Independence)"
+    },
+    {
+      "name": "Journal - Under the Twins (Letter of Reference)"
+    },
+    {
+      "name": "Journal - Castle Loop Giantess (Political Advice)"
+    },
+    {
+      "name": "Journal - Aleana's Room (Diplomatic Missive)"
+    },
+    {
+      "name": "Journal - Top Struggle Juggle Base (War of the Sisters)"
+    },
+    {
+      "name": "Journal - Aleana Boss (Stained Letter)"
+    },
+    {
+      "name": "Journal - Near Bottom Struggle Juggle (Mission Findings)"
+    },
+    {
+      "name": "Journal - Lower Left Maw Caves (Naivety)"
+    },
+    {
       "name": "Ravenlord post fight (pedestal)"
     },
     {
       "name": "Ifrit post fight (pedestal)"
     },
     {
-      "name": "Transition chest 1"
+      "name": "Gyre chest 1"
     },
     {
-      "name": "Transition chest 2"
+      "name": "Gyre chest 2"
     },
     {
-      "name": "Transition chest 3"
+      "name": "Gyre chest 3"
     },
     {
       "name": "Ravenlord pre fight"

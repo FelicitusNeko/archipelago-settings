@@ -1,0 +1,2348 @@
+{
+  "category": "Rogue Legacy",
+  "index": 11,
+  "settings": [
+    {
+      "type": "string",
+      "name": "starting_gender",
+      "readableName": "Starting gender",
+      "description": "Determines the gender of your starting character. Limited to genders available in-game.",
+      "values": {
+        "sir": "Sir",
+        "lady": "Lady"
+      },
+      "default": "sir"
+    },
+    {
+      "type": "string",
+      "name": "starting_class",
+      "readableName": "Starting class",
+      "description": "Determines the class of your starting character.",
+      "values": {
+        "knight": "Knight",
+        "mage": "Mage",
+        "barbarian": "Barbarian",
+        "knave": "Knave"
+      },
+      "default": "knight"
+    },
+    {
+      "type": "string",
+      "name": "new_game_plus",
+      "readableName": "Starting difficulty",
+      "description": "Determines how many levels of New Game + will be applied to your game. This drastically increases monster level and gold gain.",
+      "values": {
+        "normal": "Normal",
+        "new_game_plus": "New Game +",
+        "new_game_plus_2": "New Game ++"
+      },
+      "default": "normal"
+    },
+    {
+      "type": "numeric",
+      "name": "fairy_chests_per_zone",
+      "readableName": "Fairy chests per zone",
+      "description": "Determines the number of Fairy Chests in a given zone that contain items. After these have been checked, only stat bonuses can be found in Fairy Chests.",
+      "low": 5,
+      "high": 15,
+      "randomable": true,
+      "default": 5
+    },
+    {
+      "type": "numeric",
+      "name": "chests_per_zone",
+      "readableName": "Normal chests per zone",
+      "description": "Determines the number of normal (non-Fairy) Chests in a given zone that contain items. After these have been checked, only gold or stat bonuses can be found in Chests.",
+      "low": 0,
+      "high": 20,
+      "randomable": true,
+      "default": 0
+    },
+    {
+      "type": "string",
+      "name": "vendors",
+      "readableName": "Vendor logic",
+      "description": "Determines where to place the Blacksmith and Enchantress unlocks in logic (or start with them unlocked).",
+      "values": {
+        "start_unlocked": "Start unlocked",
+        "early": "Unlock early",
+        "normal": "Vanilla",
+        "anywhere": "Anywhere"
+      },
+      "default": "early"
+    },
+    {
+      "type": "boolean",
+      "name": "disable_charon",
+      "readableName": "Disable Charon",
+      "description": "Prevents Charon from taking your money when you re-enter the castle. Also removes Haggling from the Item Pool.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "require_purchasing",
+      "readableName": "Require purchasing",
+      "description": "Determines where you will be required to purchase equipment and runes from the Blacksmith and Enchantress before equipping them. If you disable require purchasing, Manor Renovations are scaled to take this into account.",
+      "default": true
+    },
+    {
+      "type": "string",
+      "name": "gold_gain_multiplier",
+      "readableName": "Gold gain multiplier",
+      "description": "Adjusts the multiplier for gaining gold from all sources.",
+      "values": {
+        "quarter": "25%",
+        "half": "50%",
+        "normal": "Normal",
+        "double": "200%",
+        "quadruple": "400%"
+      },
+      "default": "normal"
+    },
+    {
+      "type": "numeric",
+      "name": "number_of_children",
+      "readableName": "Offspring selection",
+      "description": "Determines how many descendants you can choose from on the Lineage screen between runs.",
+      "low": 1,
+      "high": 5,
+      "randomable": true,
+      "default": 3
+    },
+    {
+      "type": "boolean",
+      "name": "death_link",
+      "readableName": "DeathLink",
+      "description": "If one DeathLinked player dies, all of them do.",
+      "default": false
+    }
+  ],
+  "items": [
+    {
+      "name": "Blacksmith"
+    },
+    {
+      "name": "Enchantress"
+    },
+    {
+      "name": "Architect"
+    },
+    {
+      "name": "Progressive Knights",
+      "max": 2
+    },
+    {
+      "name": "Progressive Mages",
+      "max": 2
+    },
+    {
+      "name": "Progressive Barbarians",
+      "max": 2
+    },
+    {
+      "name": "Progressive Knaves",
+      "max": 2
+    },
+    {
+      "name": "Progressive Shinobis",
+      "max": 2
+    },
+    {
+      "name": "Progressive Miners",
+      "max": 2
+    },
+    {
+      "name": "Progressive Liches",
+      "max": 2
+    },
+    {
+      "name": "Progressive Spellthieves",
+      "max": 2
+    },
+    {
+      "name": "Health Up",
+      "max": 15
+    },
+    {
+      "name": "Mana Up",
+      "max": 15
+    },
+    {
+      "name": "Attack Up",
+      "max": 15
+    },
+    {
+      "name": "Magic Damage Up",
+      "max": 15
+    },
+    {
+      "name": "Armor Up",
+      "max": 10
+    },
+    {
+      "name": "Equip Up",
+      "max": 10
+    },
+    {
+      "name": "Crit Chance Up",
+      "max": 5
+    },
+    {
+      "name": "Crit Damage Up",
+      "max": 5
+    },
+    {
+      "name": "Down Strike Up"
+    },
+    {
+      "name": "Gold Gain Up"
+    },
+    {
+      "name": "Potion Efficiency Up"
+    },
+    {
+      "name": "Invulnerability Time Up"
+    },
+    {
+      "name": "Mana Cost Down"
+    },
+    {
+      "name": "Death Defiance"
+    },
+    {
+      "name": "Haggling"
+    },
+    {
+      "name": "Randomize Children"
+    },
+    {
+      "name": "Triple Stat Increase"
+    },
+    {
+      "name": "1000 Gold"
+    },
+    {
+      "name": "3000 Gold"
+    },
+    {
+      "name": "5000 Gold"
+    },
+    {
+      "name": "Squire Armor Blueprints"
+    },
+    {
+      "name": "Silver Armor Blueprints"
+    },
+    {
+      "name": "Guardian Armor Blueprints"
+    },
+    {
+      "name": "Imperial Armor Blueprints"
+    },
+    {
+      "name": "Royal Armor Blueprints"
+    },
+    {
+      "name": "Knight Armor Blueprints"
+    },
+    {
+      "name": "Ranger Armor Blueprints"
+    },
+    {
+      "name": "Sky Armor Blueprints"
+    },
+    {
+      "name": "Dragon Armor Blueprints"
+    },
+    {
+      "name": "Slayer Armor Blueprints"
+    },
+    {
+      "name": "Blood Armor Blueprints"
+    },
+    {
+      "name": "Sage Armor Blueprints"
+    },
+    {
+      "name": "Retribution Armor Blueprints"
+    },
+    {
+      "name": "Holy Armor Blueprints"
+    },
+    {
+      "name": "Dark Armor Blueprints"
+    },
+    {
+      "name": "Vault Runes"
+    },
+    {
+      "name": "Sprint Runes"
+    },
+    {
+      "name": "Vampire Runes"
+    },
+    {
+      "name": "Sky Runes"
+    },
+    {
+      "name": "Siphon Runes"
+    },
+    {
+      "name": "Retaliation Runes"
+    },
+    {
+      "name": "Bounty Runes"
+    },
+    {
+      "name": "Haste Runes"
+    },
+    {
+      "name": "Curse Runes"
+    },
+    {
+      "name": "Grace Runes"
+    },
+    {
+      "name": "Balance Runes"
+    },
+    {
+      "name": "Knights"
+    },
+    {
+      "name": "Paladins"
+    },
+    {
+      "name": "Mages"
+    },
+    {
+      "name": "Archmages"
+    },
+    {
+      "name": "Barbarians"
+    },
+    {
+      "name": "Barbarian Kings"
+    },
+    {
+      "name": "Knaves"
+    },
+    {
+      "name": "Assassins"
+    },
+    {
+      "name": "Shinobis"
+    },
+    {
+      "name": "Hokages"
+    },
+    {
+      "name": "Miners"
+    },
+    {
+      "name": "Spelunkers"
+    },
+    {
+      "name": "Lichs"
+    },
+    {
+      "name": "Lich Kings"
+    },
+    {
+      "name": "Spellthieves"
+    },
+    {
+      "name": "Spellswords"
+    },
+    {
+      "name": "Dragons"
+    },
+    {
+      "name": "Traitors"
+    }
+  ],
+  "locations": [
+    {
+      "name": "Manor Renovation - Ground Road"
+    },
+    {
+      "name": "Manor Renovation - Main Base"
+    },
+    {
+      "name": "Manor Renovation - Main Bottom Window"
+    },
+    {
+      "name": "Manor Renovation - Main Top Window"
+    },
+    {
+      "name": "Manor Renovation - Main Rooftop"
+    },
+    {
+      "name": "Manor Renovation - Left Wing Base"
+    },
+    {
+      "name": "Manor Renovation - Left Wing Window"
+    },
+    {
+      "name": "Manor Renovation - Left Wing Rooftop"
+    },
+    {
+      "name": "Manor Renovation - Left Big Base"
+    },
+    {
+      "name": "Manor Renovation - Left Big Upper 1"
+    },
+    {
+      "name": "Manor Renovation - Left Big Upper 2"
+    },
+    {
+      "name": "Manor Renovation - Left Big Windows"
+    },
+    {
+      "name": "Manor Renovation - Left Big Rooftop"
+    },
+    {
+      "name": "Manor Renovation - Left Far Base"
+    },
+    {
+      "name": "Manor Renovation - Left Far Roof"
+    },
+    {
+      "name": "Manor Renovation - Left Extension"
+    },
+    {
+      "name": "Manor Renovation - Left Tree 1"
+    },
+    {
+      "name": "Manor Renovation - Left Tree 2"
+    },
+    {
+      "name": "Manor Renovation - Right Wing Base"
+    },
+    {
+      "name": "Manor Renovation - Right Wing Window"
+    },
+    {
+      "name": "Manor Renovation - Right Wing Rooftop"
+    },
+    {
+      "name": "Manor Renovation - Right Big Base"
+    },
+    {
+      "name": "Manor Renovation - Right Big Upper"
+    },
+    {
+      "name": "Manor Renovation - Right Big Rooftop"
+    },
+    {
+      "name": "Manor Renovation - Right High Base"
+    },
+    {
+      "name": "Manor Renovation - Right High Upper"
+    },
+    {
+      "name": "Manor Renovation - Right High Tower"
+    },
+    {
+      "name": "Manor Renovation - Right Extension"
+    },
+    {
+      "name": "Manor Renovation - Right Tree"
+    },
+    {
+      "name": "Manor Renovation - Observatory Base"
+    },
+    {
+      "name": "Manor Renovation - Observatory Telescope"
+    },
+    {
+      "name": "Khindr's Boss Chest"
+    },
+    {
+      "name": "Alexander's Boss Chest"
+    },
+    {
+      "name": "Ponce de Leon's Boss Chest"
+    },
+    {
+      "name": "Herodotus's Boss Chest"
+    },
+    {
+      "name": "Jukebox"
+    },
+    {
+      "name": "Diary 1"
+    },
+    {
+      "name": "Diary 2"
+    },
+    {
+      "name": "Diary 3"
+    },
+    {
+      "name": "Diary 4"
+    },
+    {
+      "name": "Diary 5"
+    },
+    {
+      "name": "Diary 6"
+    },
+    {
+      "name": "Diary 7"
+    },
+    {
+      "name": "Diary 8"
+    },
+    {
+      "name": "Diary 9"
+    },
+    {
+      "name": "Diary 10"
+    },
+    {
+      "name": "Diary 11"
+    },
+    {
+      "name": "Diary 12"
+    },
+    {
+      "name": "Diary 13"
+    },
+    {
+      "name": "Diary 14"
+    },
+    {
+      "name": "Diary 15"
+    },
+    {
+      "name": "Diary 16"
+    },
+    {
+      "name": "Diary 17"
+    },
+    {
+      "name": "Diary 18"
+    },
+    {
+      "name": "Diary 19"
+    },
+    {
+      "name": "Diary 20"
+    },
+    {
+      "name": "Diary 21"
+    },
+    {
+      "name": "Diary 22"
+    },
+    {
+      "name": "Diary 23"
+    },
+    {
+      "name": "Diary 24"
+    },
+    {
+      "name": "Diary 25"
+    },
+    {
+      "name": "Castle Hamson - Fairy Chest 1"
+    },
+    {
+      "name": "Castle Hamson - Fairy Chest 2"
+    },
+    {
+      "name": "Castle Hamson - Fairy Chest 3"
+    },
+    {
+      "name": "Castle Hamson - Fairy Chest 4"
+    },
+    {
+      "name": "Castle Hamson - Fairy Chest 5"
+    },
+    {
+      "name": "Castle Hamson - Fairy Chest 6"
+    },
+    {
+      "name": "Castle Hamson - Fairy Chest 7"
+    },
+    {
+      "name": "Castle Hamson - Fairy Chest 8"
+    },
+    {
+      "name": "Castle Hamson - Fairy Chest 9"
+    },
+    {
+      "name": "Castle Hamson - Fairy Chest 10"
+    },
+    {
+      "name": "Castle Hamson - Fairy Chest 11"
+    },
+    {
+      "name": "Castle Hamson - Fairy Chest 12"
+    },
+    {
+      "name": "Castle Hamson - Fairy Chest 13"
+    },
+    {
+      "name": "Castle Hamson - Fairy Chest 14"
+    },
+    {
+      "name": "Castle Hamson - Fairy Chest 15"
+    },
+    {
+      "name": "Castle Hamson - Fairy Chest 16"
+    },
+    {
+      "name": "Castle Hamson - Fairy Chest 17"
+    },
+    {
+      "name": "Castle Hamson - Fairy Chest 18"
+    },
+    {
+      "name": "Castle Hamson - Fairy Chest 19"
+    },
+    {
+      "name": "Castle Hamson - Fairy Chest 20"
+    },
+    {
+      "name": "Castle Hamson - Fairy Chest 21"
+    },
+    {
+      "name": "Castle Hamson - Fairy Chest 22"
+    },
+    {
+      "name": "Castle Hamson - Fairy Chest 23"
+    },
+    {
+      "name": "Castle Hamson - Fairy Chest 24"
+    },
+    {
+      "name": "Castle Hamson - Fairy Chest 25"
+    },
+    {
+      "name": "Castle Hamson - Fairy Chest 26"
+    },
+    {
+      "name": "Castle Hamson - Fairy Chest 27"
+    },
+    {
+      "name": "Castle Hamson - Fairy Chest 28"
+    },
+    {
+      "name": "Castle Hamson - Fairy Chest 29"
+    },
+    {
+      "name": "Castle Hamson - Fairy Chest 30"
+    },
+    {
+      "name": "Castle Hamson - Fairy Chest 31"
+    },
+    {
+      "name": "Castle Hamson - Fairy Chest 32"
+    },
+    {
+      "name": "Castle Hamson - Fairy Chest 33"
+    },
+    {
+      "name": "Castle Hamson - Fairy Chest 34"
+    },
+    {
+      "name": "Castle Hamson - Fairy Chest 35"
+    },
+    {
+      "name": "Castle Hamson - Fairy Chest 36"
+    },
+    {
+      "name": "Castle Hamson - Fairy Chest 37"
+    },
+    {
+      "name": "Castle Hamson - Fairy Chest 38"
+    },
+    {
+      "name": "Castle Hamson - Fairy Chest 39"
+    },
+    {
+      "name": "Castle Hamson - Fairy Chest 40"
+    },
+    {
+      "name": "Castle Hamson - Fairy Chest 41"
+    },
+    {
+      "name": "Castle Hamson - Fairy Chest 42"
+    },
+    {
+      "name": "Castle Hamson - Fairy Chest 43"
+    },
+    {
+      "name": "Castle Hamson - Fairy Chest 44"
+    },
+    {
+      "name": "Castle Hamson - Fairy Chest 45"
+    },
+    {
+      "name": "Castle Hamson - Fairy Chest 46"
+    },
+    {
+      "name": "Castle Hamson - Fairy Chest 47"
+    },
+    {
+      "name": "Castle Hamson - Fairy Chest 48"
+    },
+    {
+      "name": "Castle Hamson - Fairy Chest 49"
+    },
+    {
+      "name": "Castle Hamson - Fairy Chest 50"
+    },
+    {
+      "name": "Forest Abkhazia - Fairy Chest 1"
+    },
+    {
+      "name": "Forest Abkhazia - Fairy Chest 2"
+    },
+    {
+      "name": "Forest Abkhazia - Fairy Chest 3"
+    },
+    {
+      "name": "Forest Abkhazia - Fairy Chest 4"
+    },
+    {
+      "name": "Forest Abkhazia - Fairy Chest 5"
+    },
+    {
+      "name": "Forest Abkhazia - Fairy Chest 6"
+    },
+    {
+      "name": "Forest Abkhazia - Fairy Chest 7"
+    },
+    {
+      "name": "Forest Abkhazia - Fairy Chest 8"
+    },
+    {
+      "name": "Forest Abkhazia - Fairy Chest 9"
+    },
+    {
+      "name": "Forest Abkhazia - Fairy Chest 10"
+    },
+    {
+      "name": "Forest Abkhazia - Fairy Chest 11"
+    },
+    {
+      "name": "Forest Abkhazia - Fairy Chest 12"
+    },
+    {
+      "name": "Forest Abkhazia - Fairy Chest 13"
+    },
+    {
+      "name": "Forest Abkhazia - Fairy Chest 14"
+    },
+    {
+      "name": "Forest Abkhazia - Fairy Chest 15"
+    },
+    {
+      "name": "Forest Abkhazia - Fairy Chest 16"
+    },
+    {
+      "name": "Forest Abkhazia - Fairy Chest 17"
+    },
+    {
+      "name": "Forest Abkhazia - Fairy Chest 18"
+    },
+    {
+      "name": "Forest Abkhazia - Fairy Chest 19"
+    },
+    {
+      "name": "Forest Abkhazia - Fairy Chest 20"
+    },
+    {
+      "name": "Forest Abkhazia - Fairy Chest 21"
+    },
+    {
+      "name": "Forest Abkhazia - Fairy Chest 22"
+    },
+    {
+      "name": "Forest Abkhazia - Fairy Chest 23"
+    },
+    {
+      "name": "Forest Abkhazia - Fairy Chest 24"
+    },
+    {
+      "name": "Forest Abkhazia - Fairy Chest 25"
+    },
+    {
+      "name": "Forest Abkhazia - Fairy Chest 26"
+    },
+    {
+      "name": "Forest Abkhazia - Fairy Chest 27"
+    },
+    {
+      "name": "Forest Abkhazia - Fairy Chest 28"
+    },
+    {
+      "name": "Forest Abkhazia - Fairy Chest 29"
+    },
+    {
+      "name": "Forest Abkhazia - Fairy Chest 30"
+    },
+    {
+      "name": "Forest Abkhazia - Fairy Chest 31"
+    },
+    {
+      "name": "Forest Abkhazia - Fairy Chest 32"
+    },
+    {
+      "name": "Forest Abkhazia - Fairy Chest 33"
+    },
+    {
+      "name": "Forest Abkhazia - Fairy Chest 34"
+    },
+    {
+      "name": "Forest Abkhazia - Fairy Chest 35"
+    },
+    {
+      "name": "Forest Abkhazia - Fairy Chest 36"
+    },
+    {
+      "name": "Forest Abkhazia - Fairy Chest 37"
+    },
+    {
+      "name": "Forest Abkhazia - Fairy Chest 38"
+    },
+    {
+      "name": "Forest Abkhazia - Fairy Chest 39"
+    },
+    {
+      "name": "Forest Abkhazia - Fairy Chest 40"
+    },
+    {
+      "name": "Forest Abkhazia - Fairy Chest 41"
+    },
+    {
+      "name": "Forest Abkhazia - Fairy Chest 42"
+    },
+    {
+      "name": "Forest Abkhazia - Fairy Chest 43"
+    },
+    {
+      "name": "Forest Abkhazia - Fairy Chest 44"
+    },
+    {
+      "name": "Forest Abkhazia - Fairy Chest 45"
+    },
+    {
+      "name": "Forest Abkhazia - Fairy Chest 46"
+    },
+    {
+      "name": "Forest Abkhazia - Fairy Chest 47"
+    },
+    {
+      "name": "Forest Abkhazia - Fairy Chest 48"
+    },
+    {
+      "name": "Forest Abkhazia - Fairy Chest 49"
+    },
+    {
+      "name": "Forest Abkhazia - Fairy Chest 50"
+    },
+    {
+      "name": "The Maya - Fairy Chest 1"
+    },
+    {
+      "name": "The Maya - Fairy Chest 2"
+    },
+    {
+      "name": "The Maya - Fairy Chest 3"
+    },
+    {
+      "name": "The Maya - Fairy Chest 4"
+    },
+    {
+      "name": "The Maya - Fairy Chest 5"
+    },
+    {
+      "name": "The Maya - Fairy Chest 6"
+    },
+    {
+      "name": "The Maya - Fairy Chest 7"
+    },
+    {
+      "name": "The Maya - Fairy Chest 8"
+    },
+    {
+      "name": "The Maya - Fairy Chest 9"
+    },
+    {
+      "name": "The Maya - Fairy Chest 10"
+    },
+    {
+      "name": "The Maya - Fairy Chest 11"
+    },
+    {
+      "name": "The Maya - Fairy Chest 12"
+    },
+    {
+      "name": "The Maya - Fairy Chest 13"
+    },
+    {
+      "name": "The Maya - Fairy Chest 14"
+    },
+    {
+      "name": "The Maya - Fairy Chest 15"
+    },
+    {
+      "name": "The Maya - Fairy Chest 16"
+    },
+    {
+      "name": "The Maya - Fairy Chest 17"
+    },
+    {
+      "name": "The Maya - Fairy Chest 18"
+    },
+    {
+      "name": "The Maya - Fairy Chest 19"
+    },
+    {
+      "name": "The Maya - Fairy Chest 20"
+    },
+    {
+      "name": "The Maya - Fairy Chest 21"
+    },
+    {
+      "name": "The Maya - Fairy Chest 22"
+    },
+    {
+      "name": "The Maya - Fairy Chest 23"
+    },
+    {
+      "name": "The Maya - Fairy Chest 24"
+    },
+    {
+      "name": "The Maya - Fairy Chest 25"
+    },
+    {
+      "name": "The Maya - Fairy Chest 26"
+    },
+    {
+      "name": "The Maya - Fairy Chest 27"
+    },
+    {
+      "name": "The Maya - Fairy Chest 28"
+    },
+    {
+      "name": "The Maya - Fairy Chest 29"
+    },
+    {
+      "name": "The Maya - Fairy Chest 30"
+    },
+    {
+      "name": "The Maya - Fairy Chest 31"
+    },
+    {
+      "name": "The Maya - Fairy Chest 32"
+    },
+    {
+      "name": "The Maya - Fairy Chest 33"
+    },
+    {
+      "name": "The Maya - Fairy Chest 34"
+    },
+    {
+      "name": "The Maya - Fairy Chest 35"
+    },
+    {
+      "name": "The Maya - Fairy Chest 36"
+    },
+    {
+      "name": "The Maya - Fairy Chest 37"
+    },
+    {
+      "name": "The Maya - Fairy Chest 38"
+    },
+    {
+      "name": "The Maya - Fairy Chest 39"
+    },
+    {
+      "name": "The Maya - Fairy Chest 40"
+    },
+    {
+      "name": "The Maya - Fairy Chest 41"
+    },
+    {
+      "name": "The Maya - Fairy Chest 42"
+    },
+    {
+      "name": "The Maya - Fairy Chest 43"
+    },
+    {
+      "name": "The Maya - Fairy Chest 44"
+    },
+    {
+      "name": "The Maya - Fairy Chest 45"
+    },
+    {
+      "name": "The Maya - Fairy Chest 46"
+    },
+    {
+      "name": "The Maya - Fairy Chest 47"
+    },
+    {
+      "name": "The Maya - Fairy Chest 48"
+    },
+    {
+      "name": "The Maya - Fairy Chest 49"
+    },
+    {
+      "name": "The Maya - Fairy Chest 50"
+    },
+    {
+      "name": "The Land of Darkness - Fairy Chest 1"
+    },
+    {
+      "name": "The Land of Darkness - Fairy Chest 2"
+    },
+    {
+      "name": "The Land of Darkness - Fairy Chest 3"
+    },
+    {
+      "name": "The Land of Darkness - Fairy Chest 4"
+    },
+    {
+      "name": "The Land of Darkness - Fairy Chest 5"
+    },
+    {
+      "name": "The Land of Darkness - Fairy Chest 6"
+    },
+    {
+      "name": "The Land of Darkness - Fairy Chest 7"
+    },
+    {
+      "name": "The Land of Darkness - Fairy Chest 8"
+    },
+    {
+      "name": "The Land of Darkness - Fairy Chest 9"
+    },
+    {
+      "name": "The Land of Darkness - Fairy Chest 10"
+    },
+    {
+      "name": "The Land of Darkness - Fairy Chest 11"
+    },
+    {
+      "name": "The Land of Darkness - Fairy Chest 12"
+    },
+    {
+      "name": "The Land of Darkness - Fairy Chest 13"
+    },
+    {
+      "name": "The Land of Darkness - Fairy Chest 14"
+    },
+    {
+      "name": "The Land of Darkness - Fairy Chest 15"
+    },
+    {
+      "name": "The Land of Darkness - Fairy Chest 16"
+    },
+    {
+      "name": "The Land of Darkness - Fairy Chest 17"
+    },
+    {
+      "name": "The Land of Darkness - Fairy Chest 18"
+    },
+    {
+      "name": "The Land of Darkness - Fairy Chest 19"
+    },
+    {
+      "name": "The Land of Darkness - Fairy Chest 20"
+    },
+    {
+      "name": "The Land of Darkness - Fairy Chest 21"
+    },
+    {
+      "name": "The Land of Darkness - Fairy Chest 22"
+    },
+    {
+      "name": "The Land of Darkness - Fairy Chest 23"
+    },
+    {
+      "name": "The Land of Darkness - Fairy Chest 24"
+    },
+    {
+      "name": "The Land of Darkness - Fairy Chest 25"
+    },
+    {
+      "name": "The Land of Darkness - Fairy Chest 26"
+    },
+    {
+      "name": "The Land of Darkness - Fairy Chest 27"
+    },
+    {
+      "name": "The Land of Darkness - Fairy Chest 28"
+    },
+    {
+      "name": "The Land of Darkness - Fairy Chest 29"
+    },
+    {
+      "name": "The Land of Darkness - Fairy Chest 30"
+    },
+    {
+      "name": "The Land of Darkness - Fairy Chest 31"
+    },
+    {
+      "name": "The Land of Darkness - Fairy Chest 32"
+    },
+    {
+      "name": "The Land of Darkness - Fairy Chest 33"
+    },
+    {
+      "name": "The Land of Darkness - Fairy Chest 34"
+    },
+    {
+      "name": "The Land of Darkness - Fairy Chest 35"
+    },
+    {
+      "name": "The Land of Darkness - Fairy Chest 36"
+    },
+    {
+      "name": "The Land of Darkness - Fairy Chest 37"
+    },
+    {
+      "name": "The Land of Darkness - Fairy Chest 38"
+    },
+    {
+      "name": "The Land of Darkness - Fairy Chest 39"
+    },
+    {
+      "name": "The Land of Darkness - Fairy Chest 40"
+    },
+    {
+      "name": "The Land of Darkness - Fairy Chest 41"
+    },
+    {
+      "name": "The Land of Darkness - Fairy Chest 42"
+    },
+    {
+      "name": "The Land of Darkness - Fairy Chest 43"
+    },
+    {
+      "name": "The Land of Darkness - Fairy Chest 44"
+    },
+    {
+      "name": "The Land of Darkness - Fairy Chest 45"
+    },
+    {
+      "name": "The Land of Darkness - Fairy Chest 46"
+    },
+    {
+      "name": "The Land of Darkness - Fairy Chest 47"
+    },
+    {
+      "name": "The Land of Darkness - Fairy Chest 48"
+    },
+    {
+      "name": "The Land of Darkness - Fairy Chest 49"
+    },
+    {
+      "name": "The Land of Darkness - Fairy Chest 50"
+    },
+    {
+      "name": "Castle Hamson - Chest 1"
+    },
+    {
+      "name": "Castle Hamson - Chest 2"
+    },
+    {
+      "name": "Castle Hamson - Chest 3"
+    },
+    {
+      "name": "Castle Hamson - Chest 4"
+    },
+    {
+      "name": "Castle Hamson - Chest 5"
+    },
+    {
+      "name": "Castle Hamson - Chest 6"
+    },
+    {
+      "name": "Castle Hamson - Chest 7"
+    },
+    {
+      "name": "Castle Hamson - Chest 8"
+    },
+    {
+      "name": "Castle Hamson - Chest 9"
+    },
+    {
+      "name": "Castle Hamson - Chest 10"
+    },
+    {
+      "name": "Castle Hamson - Chest 11"
+    },
+    {
+      "name": "Castle Hamson - Chest 12"
+    },
+    {
+      "name": "Castle Hamson - Chest 13"
+    },
+    {
+      "name": "Castle Hamson - Chest 14"
+    },
+    {
+      "name": "Castle Hamson - Chest 15"
+    },
+    {
+      "name": "Castle Hamson - Chest 16"
+    },
+    {
+      "name": "Castle Hamson - Chest 17"
+    },
+    {
+      "name": "Castle Hamson - Chest 18"
+    },
+    {
+      "name": "Castle Hamson - Chest 19"
+    },
+    {
+      "name": "Castle Hamson - Chest 20"
+    },
+    {
+      "name": "Castle Hamson - Chest 21"
+    },
+    {
+      "name": "Castle Hamson - Chest 22"
+    },
+    {
+      "name": "Castle Hamson - Chest 23"
+    },
+    {
+      "name": "Castle Hamson - Chest 24"
+    },
+    {
+      "name": "Castle Hamson - Chest 25"
+    },
+    {
+      "name": "Castle Hamson - Chest 26"
+    },
+    {
+      "name": "Castle Hamson - Chest 27"
+    },
+    {
+      "name": "Castle Hamson - Chest 28"
+    },
+    {
+      "name": "Castle Hamson - Chest 29"
+    },
+    {
+      "name": "Castle Hamson - Chest 30"
+    },
+    {
+      "name": "Castle Hamson - Chest 31"
+    },
+    {
+      "name": "Castle Hamson - Chest 32"
+    },
+    {
+      "name": "Castle Hamson - Chest 33"
+    },
+    {
+      "name": "Castle Hamson - Chest 34"
+    },
+    {
+      "name": "Castle Hamson - Chest 35"
+    },
+    {
+      "name": "Castle Hamson - Chest 36"
+    },
+    {
+      "name": "Castle Hamson - Chest 37"
+    },
+    {
+      "name": "Castle Hamson - Chest 38"
+    },
+    {
+      "name": "Castle Hamson - Chest 39"
+    },
+    {
+      "name": "Castle Hamson - Chest 40"
+    },
+    {
+      "name": "Castle Hamson - Chest 41"
+    },
+    {
+      "name": "Castle Hamson - Chest 42"
+    },
+    {
+      "name": "Castle Hamson - Chest 43"
+    },
+    {
+      "name": "Castle Hamson - Chest 44"
+    },
+    {
+      "name": "Castle Hamson - Chest 45"
+    },
+    {
+      "name": "Castle Hamson - Chest 46"
+    },
+    {
+      "name": "Castle Hamson - Chest 47"
+    },
+    {
+      "name": "Castle Hamson - Chest 48"
+    },
+    {
+      "name": "Castle Hamson - Chest 49"
+    },
+    {
+      "name": "Castle Hamson - Chest 50"
+    },
+    {
+      "name": "Castle Hamson - Chest 51"
+    },
+    {
+      "name": "Castle Hamson - Chest 52"
+    },
+    {
+      "name": "Castle Hamson - Chest 53"
+    },
+    {
+      "name": "Castle Hamson - Chest 54"
+    },
+    {
+      "name": "Castle Hamson - Chest 55"
+    },
+    {
+      "name": "Castle Hamson - Chest 56"
+    },
+    {
+      "name": "Castle Hamson - Chest 57"
+    },
+    {
+      "name": "Castle Hamson - Chest 58"
+    },
+    {
+      "name": "Castle Hamson - Chest 59"
+    },
+    {
+      "name": "Castle Hamson - Chest 60"
+    },
+    {
+      "name": "Castle Hamson - Chest 61"
+    },
+    {
+      "name": "Castle Hamson - Chest 62"
+    },
+    {
+      "name": "Castle Hamson - Chest 63"
+    },
+    {
+      "name": "Castle Hamson - Chest 64"
+    },
+    {
+      "name": "Castle Hamson - Chest 65"
+    },
+    {
+      "name": "Castle Hamson - Chest 66"
+    },
+    {
+      "name": "Castle Hamson - Chest 67"
+    },
+    {
+      "name": "Castle Hamson - Chest 68"
+    },
+    {
+      "name": "Castle Hamson - Chest 69"
+    },
+    {
+      "name": "Castle Hamson - Chest 70"
+    },
+    {
+      "name": "Castle Hamson - Chest 71"
+    },
+    {
+      "name": "Castle Hamson - Chest 72"
+    },
+    {
+      "name": "Castle Hamson - Chest 73"
+    },
+    {
+      "name": "Castle Hamson - Chest 74"
+    },
+    {
+      "name": "Castle Hamson - Chest 75"
+    },
+    {
+      "name": "Castle Hamson - Chest 76"
+    },
+    {
+      "name": "Castle Hamson - Chest 77"
+    },
+    {
+      "name": "Castle Hamson - Chest 78"
+    },
+    {
+      "name": "Castle Hamson - Chest 79"
+    },
+    {
+      "name": "Castle Hamson - Chest 80"
+    },
+    {
+      "name": "Castle Hamson - Chest 81"
+    },
+    {
+      "name": "Castle Hamson - Chest 82"
+    },
+    {
+      "name": "Castle Hamson - Chest 83"
+    },
+    {
+      "name": "Castle Hamson - Chest 84"
+    },
+    {
+      "name": "Castle Hamson - Chest 85"
+    },
+    {
+      "name": "Castle Hamson - Chest 86"
+    },
+    {
+      "name": "Castle Hamson - Chest 87"
+    },
+    {
+      "name": "Castle Hamson - Chest 88"
+    },
+    {
+      "name": "Castle Hamson - Chest 89"
+    },
+    {
+      "name": "Castle Hamson - Chest 90"
+    },
+    {
+      "name": "Castle Hamson - Chest 91"
+    },
+    {
+      "name": "Castle Hamson - Chest 92"
+    },
+    {
+      "name": "Castle Hamson - Chest 93"
+    },
+    {
+      "name": "Castle Hamson - Chest 94"
+    },
+    {
+      "name": "Castle Hamson - Chest 95"
+    },
+    {
+      "name": "Castle Hamson - Chest 96"
+    },
+    {
+      "name": "Castle Hamson - Chest 97"
+    },
+    {
+      "name": "Castle Hamson - Chest 98"
+    },
+    {
+      "name": "Castle Hamson - Chest 99"
+    },
+    {
+      "name": "Castle Hamson - Chest 100"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 1"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 2"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 3"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 4"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 5"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 6"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 7"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 8"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 9"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 10"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 11"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 12"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 13"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 14"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 15"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 16"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 17"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 18"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 19"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 20"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 21"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 22"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 23"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 24"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 25"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 26"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 27"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 28"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 29"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 30"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 31"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 32"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 33"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 34"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 35"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 36"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 37"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 38"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 39"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 40"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 41"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 42"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 43"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 44"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 45"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 46"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 47"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 48"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 49"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 50"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 51"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 52"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 53"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 54"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 55"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 56"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 57"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 58"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 59"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 60"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 61"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 62"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 63"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 64"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 65"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 66"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 67"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 68"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 69"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 70"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 71"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 72"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 73"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 74"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 75"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 76"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 77"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 78"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 79"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 80"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 81"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 82"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 83"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 84"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 85"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 86"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 87"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 88"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 89"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 90"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 91"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 92"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 93"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 94"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 95"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 96"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 97"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 98"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 99"
+    },
+    {
+      "name": "Forest Abkhazia - Chest 100"
+    },
+    {
+      "name": "The Maya - Chest 1"
+    },
+    {
+      "name": "The Maya - Chest 2"
+    },
+    {
+      "name": "The Maya - Chest 3"
+    },
+    {
+      "name": "The Maya - Chest 4"
+    },
+    {
+      "name": "The Maya - Chest 5"
+    },
+    {
+      "name": "The Maya - Chest 6"
+    },
+    {
+      "name": "The Maya - Chest 7"
+    },
+    {
+      "name": "The Maya - Chest 8"
+    },
+    {
+      "name": "The Maya - Chest 9"
+    },
+    {
+      "name": "The Maya - Chest 10"
+    },
+    {
+      "name": "The Maya - Chest 11"
+    },
+    {
+      "name": "The Maya - Chest 12"
+    },
+    {
+      "name": "The Maya - Chest 13"
+    },
+    {
+      "name": "The Maya - Chest 14"
+    },
+    {
+      "name": "The Maya - Chest 15"
+    },
+    {
+      "name": "The Maya - Chest 16"
+    },
+    {
+      "name": "The Maya - Chest 17"
+    },
+    {
+      "name": "The Maya - Chest 18"
+    },
+    {
+      "name": "The Maya - Chest 19"
+    },
+    {
+      "name": "The Maya - Chest 20"
+    },
+    {
+      "name": "The Maya - Chest 21"
+    },
+    {
+      "name": "The Maya - Chest 22"
+    },
+    {
+      "name": "The Maya - Chest 23"
+    },
+    {
+      "name": "The Maya - Chest 24"
+    },
+    {
+      "name": "The Maya - Chest 25"
+    },
+    {
+      "name": "The Maya - Chest 26"
+    },
+    {
+      "name": "The Maya - Chest 27"
+    },
+    {
+      "name": "The Maya - Chest 28"
+    },
+    {
+      "name": "The Maya - Chest 29"
+    },
+    {
+      "name": "The Maya - Chest 30"
+    },
+    {
+      "name": "The Maya - Chest 31"
+    },
+    {
+      "name": "The Maya - Chest 32"
+    },
+    {
+      "name": "The Maya - Chest 33"
+    },
+    {
+      "name": "The Maya - Chest 34"
+    },
+    {
+      "name": "The Maya - Chest 35"
+    },
+    {
+      "name": "The Maya - Chest 36"
+    },
+    {
+      "name": "The Maya - Chest 37"
+    },
+    {
+      "name": "The Maya - Chest 38"
+    },
+    {
+      "name": "The Maya - Chest 39"
+    },
+    {
+      "name": "The Maya - Chest 40"
+    },
+    {
+      "name": "The Maya - Chest 41"
+    },
+    {
+      "name": "The Maya - Chest 42"
+    },
+    {
+      "name": "The Maya - Chest 43"
+    },
+    {
+      "name": "The Maya - Chest 44"
+    },
+    {
+      "name": "The Maya - Chest 45"
+    },
+    {
+      "name": "The Maya - Chest 46"
+    },
+    {
+      "name": "The Maya - Chest 47"
+    },
+    {
+      "name": "The Maya - Chest 48"
+    },
+    {
+      "name": "The Maya - Chest 49"
+    },
+    {
+      "name": "The Maya - Chest 50"
+    },
+    {
+      "name": "The Maya - Chest 51"
+    },
+    {
+      "name": "The Maya - Chest 52"
+    },
+    {
+      "name": "The Maya - Chest 53"
+    },
+    {
+      "name": "The Maya - Chest 54"
+    },
+    {
+      "name": "The Maya - Chest 55"
+    },
+    {
+      "name": "The Maya - Chest 56"
+    },
+    {
+      "name": "The Maya - Chest 57"
+    },
+    {
+      "name": "The Maya - Chest 58"
+    },
+    {
+      "name": "The Maya - Chest 59"
+    },
+    {
+      "name": "The Maya - Chest 60"
+    },
+    {
+      "name": "The Maya - Chest 61"
+    },
+    {
+      "name": "The Maya - Chest 62"
+    },
+    {
+      "name": "The Maya - Chest 63"
+    },
+    {
+      "name": "The Maya - Chest 64"
+    },
+    {
+      "name": "The Maya - Chest 65"
+    },
+    {
+      "name": "The Maya - Chest 66"
+    },
+    {
+      "name": "The Maya - Chest 67"
+    },
+    {
+      "name": "The Maya - Chest 68"
+    },
+    {
+      "name": "The Maya - Chest 69"
+    },
+    {
+      "name": "The Maya - Chest 70"
+    },
+    {
+      "name": "The Maya - Chest 71"
+    },
+    {
+      "name": "The Maya - Chest 72"
+    },
+    {
+      "name": "The Maya - Chest 73"
+    },
+    {
+      "name": "The Maya - Chest 74"
+    },
+    {
+      "name": "The Maya - Chest 75"
+    },
+    {
+      "name": "The Maya - Chest 76"
+    },
+    {
+      "name": "The Maya - Chest 77"
+    },
+    {
+      "name": "The Maya - Chest 78"
+    },
+    {
+      "name": "The Maya - Chest 79"
+    },
+    {
+      "name": "The Maya - Chest 80"
+    },
+    {
+      "name": "The Maya - Chest 81"
+    },
+    {
+      "name": "The Maya - Chest 82"
+    },
+    {
+      "name": "The Maya - Chest 83"
+    },
+    {
+      "name": "The Maya - Chest 84"
+    },
+    {
+      "name": "The Maya - Chest 85"
+    },
+    {
+      "name": "The Maya - Chest 86"
+    },
+    {
+      "name": "The Maya - Chest 87"
+    },
+    {
+      "name": "The Maya - Chest 88"
+    },
+    {
+      "name": "The Maya - Chest 89"
+    },
+    {
+      "name": "The Maya - Chest 90"
+    },
+    {
+      "name": "The Maya - Chest 91"
+    },
+    {
+      "name": "The Maya - Chest 92"
+    },
+    {
+      "name": "The Maya - Chest 93"
+    },
+    {
+      "name": "The Maya - Chest 94"
+    },
+    {
+      "name": "The Maya - Chest 95"
+    },
+    {
+      "name": "The Maya - Chest 96"
+    },
+    {
+      "name": "The Maya - Chest 97"
+    },
+    {
+      "name": "The Maya - Chest 98"
+    },
+    {
+      "name": "The Maya - Chest 99"
+    },
+    {
+      "name": "The Maya - Chest 100"
+    },
+    {
+      "name": "The Land of Darkness - Chest 1"
+    },
+    {
+      "name": "The Land of Darkness - Chest 2"
+    },
+    {
+      "name": "The Land of Darkness - Chest 3"
+    },
+    {
+      "name": "The Land of Darkness - Chest 4"
+    },
+    {
+      "name": "The Land of Darkness - Chest 5"
+    },
+    {
+      "name": "The Land of Darkness - Chest 6"
+    },
+    {
+      "name": "The Land of Darkness - Chest 7"
+    },
+    {
+      "name": "The Land of Darkness - Chest 8"
+    },
+    {
+      "name": "The Land of Darkness - Chest 9"
+    },
+    {
+      "name": "The Land of Darkness - Chest 10"
+    },
+    {
+      "name": "The Land of Darkness - Chest 11"
+    },
+    {
+      "name": "The Land of Darkness - Chest 12"
+    },
+    {
+      "name": "The Land of Darkness - Chest 13"
+    },
+    {
+      "name": "The Land of Darkness - Chest 14"
+    },
+    {
+      "name": "The Land of Darkness - Chest 15"
+    },
+    {
+      "name": "The Land of Darkness - Chest 16"
+    },
+    {
+      "name": "The Land of Darkness - Chest 17"
+    },
+    {
+      "name": "The Land of Darkness - Chest 18"
+    },
+    {
+      "name": "The Land of Darkness - Chest 19"
+    },
+    {
+      "name": "The Land of Darkness - Chest 20"
+    },
+    {
+      "name": "The Land of Darkness - Chest 21"
+    },
+    {
+      "name": "The Land of Darkness - Chest 22"
+    },
+    {
+      "name": "The Land of Darkness - Chest 23"
+    },
+    {
+      "name": "The Land of Darkness - Chest 24"
+    },
+    {
+      "name": "The Land of Darkness - Chest 25"
+    },
+    {
+      "name": "The Land of Darkness - Chest 26"
+    },
+    {
+      "name": "The Land of Darkness - Chest 27"
+    },
+    {
+      "name": "The Land of Darkness - Chest 28"
+    },
+    {
+      "name": "The Land of Darkness - Chest 29"
+    },
+    {
+      "name": "The Land of Darkness - Chest 30"
+    },
+    {
+      "name": "The Land of Darkness - Chest 31"
+    },
+    {
+      "name": "The Land of Darkness - Chest 32"
+    },
+    {
+      "name": "The Land of Darkness - Chest 33"
+    },
+    {
+      "name": "The Land of Darkness - Chest 34"
+    },
+    {
+      "name": "The Land of Darkness - Chest 35"
+    },
+    {
+      "name": "The Land of Darkness - Chest 36"
+    },
+    {
+      "name": "The Land of Darkness - Chest 37"
+    },
+    {
+      "name": "The Land of Darkness - Chest 38"
+    },
+    {
+      "name": "The Land of Darkness - Chest 39"
+    },
+    {
+      "name": "The Land of Darkness - Chest 40"
+    },
+    {
+      "name": "The Land of Darkness - Chest 41"
+    },
+    {
+      "name": "The Land of Darkness - Chest 42"
+    },
+    {
+      "name": "The Land of Darkness - Chest 43"
+    },
+    {
+      "name": "The Land of Darkness - Chest 44"
+    },
+    {
+      "name": "The Land of Darkness - Chest 45"
+    },
+    {
+      "name": "The Land of Darkness - Chest 46"
+    },
+    {
+      "name": "The Land of Darkness - Chest 47"
+    },
+    {
+      "name": "The Land of Darkness - Chest 48"
+    },
+    {
+      "name": "The Land of Darkness - Chest 49"
+    },
+    {
+      "name": "The Land of Darkness - Chest 50"
+    },
+    {
+      "name": "The Land of Darkness - Chest 51"
+    },
+    {
+      "name": "The Land of Darkness - Chest 52"
+    },
+    {
+      "name": "The Land of Darkness - Chest 53"
+    },
+    {
+      "name": "The Land of Darkness - Chest 54"
+    },
+    {
+      "name": "The Land of Darkness - Chest 55"
+    },
+    {
+      "name": "The Land of Darkness - Chest 56"
+    },
+    {
+      "name": "The Land of Darkness - Chest 57"
+    },
+    {
+      "name": "The Land of Darkness - Chest 58"
+    },
+    {
+      "name": "The Land of Darkness - Chest 59"
+    },
+    {
+      "name": "The Land of Darkness - Chest 60"
+    },
+    {
+      "name": "The Land of Darkness - Chest 61"
+    },
+    {
+      "name": "The Land of Darkness - Chest 62"
+    },
+    {
+      "name": "The Land of Darkness - Chest 63"
+    },
+    {
+      "name": "The Land of Darkness - Chest 64"
+    },
+    {
+      "name": "The Land of Darkness - Chest 65"
+    },
+    {
+      "name": "The Land of Darkness - Chest 66"
+    },
+    {
+      "name": "The Land of Darkness - Chest 67"
+    },
+    {
+      "name": "The Land of Darkness - Chest 68"
+    },
+    {
+      "name": "The Land of Darkness - Chest 69"
+    },
+    {
+      "name": "The Land of Darkness - Chest 70"
+    },
+    {
+      "name": "The Land of Darkness - Chest 71"
+    },
+    {
+      "name": "The Land of Darkness - Chest 72"
+    },
+    {
+      "name": "The Land of Darkness - Chest 73"
+    },
+    {
+      "name": "The Land of Darkness - Chest 74"
+    },
+    {
+      "name": "The Land of Darkness - Chest 75"
+    },
+    {
+      "name": "The Land of Darkness - Chest 76"
+    },
+    {
+      "name": "The Land of Darkness - Chest 77"
+    },
+    {
+      "name": "The Land of Darkness - Chest 78"
+    },
+    {
+      "name": "The Land of Darkness - Chest 79"
+    },
+    {
+      "name": "The Land of Darkness - Chest 80"
+    },
+    {
+      "name": "The Land of Darkness - Chest 81"
+    },
+    {
+      "name": "The Land of Darkness - Chest 82"
+    },
+    {
+      "name": "The Land of Darkness - Chest 83"
+    },
+    {
+      "name": "The Land of Darkness - Chest 84"
+    },
+    {
+      "name": "The Land of Darkness - Chest 85"
+    },
+    {
+      "name": "The Land of Darkness - Chest 86"
+    },
+    {
+      "name": "The Land of Darkness - Chest 87"
+    },
+    {
+      "name": "The Land of Darkness - Chest 88"
+    },
+    {
+      "name": "The Land of Darkness - Chest 89"
+    },
+    {
+      "name": "The Land of Darkness - Chest 90"
+    },
+    {
+      "name": "The Land of Darkness - Chest 91"
+    },
+    {
+      "name": "The Land of Darkness - Chest 92"
+    },
+    {
+      "name": "The Land of Darkness - Chest 93"
+    },
+    {
+      "name": "The Land of Darkness - Chest 94"
+    },
+    {
+      "name": "The Land of Darkness - Chest 95"
+    },
+    {
+      "name": "The Land of Darkness - Chest 96"
+    },
+    {
+      "name": "The Land of Darkness - Chest 97"
+    },
+    {
+      "name": "The Land of Darkness - Chest 98"
+    },
+    {
+      "name": "The Land of Darkness - Chest 99"
+    },
+    {
+      "name": "The Land of Darkness - Chest 100"
+    }
+  ]
+}

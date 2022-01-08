@@ -377,6 +377,10 @@
       "readableName": "Big key shuffle",
       "description": "How big keys will be shuffled.",
       "values": {
+        "start_with": [
+          "Start with them",
+          "They will be in your inventory from the start"
+        ],
         "original_dungeon": ["In dungeon", "Keep them to their own dungeons"],
         "own_dungeons": [
           "Any dungeon",
@@ -400,6 +404,10 @@
       "readableName": "Small key shuffle",
       "description": "How small keys will be shuffled.",
       "values": {
+        "start_with": [
+          "Start with them",
+          "They will be in your inventory from the start"
+        ],
         "original_dungeon": ["In dungeon", "Keep them to their own dungeons"],
         "own_dungeons": [
           "Any dungeon",
@@ -424,6 +432,10 @@
       "readableName": "Compass shuffle",
       "description": "How compasses will be shuffled.",
       "values": {
+        "start_with": [
+          "Start with them",
+          "They will be in your inventory from the start"
+        ],
         "original_dungeon": ["In dungeon", "Keep them to their own dungeons"],
         "own_dungeons": [
           "Any dungeon",
@@ -447,6 +459,10 @@
       "readableName": "Map shuffle",
       "description": "How maps will be shuffled.",
       "values": {
+        "start_with": [
+          "Start with them",
+          "They will be in your inventory from the start"
+        ],
         "original_dungeon": ["In dungeon", "Keep them to their own dungeons"],
         "own_dungeons": [
           "Any dungeon",
@@ -762,6 +778,17 @@
       "default": 0,
       "randomable": true,
       "legacyName": "shop_shuffle_slots"
+    },
+    {
+      "type": "numeric",
+      "name": "shop_price_modifier",
+      "readableName": "Shop price modifier",
+      "description": "Affects the price of collectible items in shops.",
+      "low": 0,
+      "high": 400,
+      "default": 100,
+      "step": 10,
+      "randomable": true
     },
     {
       "type": "string",
