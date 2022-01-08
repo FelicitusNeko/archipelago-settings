@@ -1,4 +1,9 @@
-import { APGameEntity, APGameItem, APGameLocation, EntityType } from "../../defs/core";
+import {
+  APGameEntity,
+  APGameItem,
+  APGameLocation,
+  EntityType,
+} from "../../defs/core";
 
 /**
  * An object that can be resolved into a relevant {@link APGameEntity} type.
@@ -68,7 +73,7 @@ export abstract class APEntityManager<T extends APGameEntity> {
    * @param content The serialized content of the {@link list}.
    */
   protected deserializeList(list: string, content: any) {
-    return this.setList(list, content as string[]);
+    if (content !== undefined) return this.setList(list, content as string[]);
   }
 
   /**
@@ -254,11 +259,13 @@ export abstract class APEntityManager<T extends APGameEntity> {
   }
 
   /** Whether the given entity is an item. */
-  static isItem(value: APGameItem|APGameLocation): value is APGameItem {
+  static isItem(value: APGameItem | APGameLocation): value is APGameItem {
     return value.type === EntityType.Item;
   }
   /** Whether the given entity is a location. */
-  static isLocation(value: APGameItem|APGameLocation): value is APGameLocation {
+  static isLocation(
+    value: APGameItem | APGameLocation
+  ): value is APGameLocation {
     return value.type === EntityType.Location;
   }
 }
