@@ -10,6 +10,14 @@ const randomOrder = ["random", "random-low", "random-middle", "random-high"];
 
 type APNumericType = number | string;
 export class APNumericSettingNode extends APSettingNode<APNumericSetting> {
+  componentDidMount() {
+    const { selector } = this.state;
+    if (selector === undefined) {
+      const { setting } = this.props;
+      this.setState({ selector: setting.default });
+    }
+  }
+
   /** @override */
   protected onWeightedCheck = ({
     currentTarget,
@@ -28,11 +36,11 @@ export class APNumericSettingNode extends APSettingNode<APNumericSetting> {
         );
       this.setState({
         value: newValue,
-        selector: setting.default,
       });
     } else
       this.setState({
         value: setting.default,
+        selector: setting.default,
       });
   };
 
@@ -142,7 +150,7 @@ export class APNumericSettingNode extends APSettingNode<APNumericSetting> {
           onChange={onSettingChange}
           trackStyle={SelectRail}
         />{" "}
-        <b>{selector}</b>
+        <b>{selector as number}</b>
         <button
           key={`${category}-${name}-wgtadd`}
           className="emojibutton"
