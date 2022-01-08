@@ -31,6 +31,7 @@ import { APBooleanSettingNode } from "./objs/settings/APBooleanSettingNode";
 import { APItemSelector } from "./objs/entities/APItemSelector";
 import { APLocationSelector } from "./objs/entities/APLocationSelector";
 import "./SettingsTool.css";
+import { APHeaderStringNode } from "./objs/settings/APHeaderStringNode";
 
 const { localStorage, location, confirm } = window;
 
@@ -124,6 +125,13 @@ const RealSaveToStorage = (() => {
   };
 })();
 
+const restrictName = (value: string) => {
+  if (value === "") return "You must provide a name.";
+  if (ForbiddenNames.includes(value))
+    return `The name "${value}" is not allowed.`;
+  return null;
+};
+
 /**
  * The Archipelago Settings Tool, a tool to generate .YAML settings files for Archipelago Multiworld.
  * @returns {ReactElement<any, any>|null} The body of the Archipelago Settings Tool.
@@ -174,26 +182,6 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
   useEffect(() => {
     RealSaveToStorage(playerName, description);
   }, [playerName, description]);
-
-  /**
-   * An event handler that fires when the player name is changed.
-   * @param param0 The event object for this event.
-   */
-  const onNameChange: React.ChangeEventHandler<HTMLInputElement> = ({
-    currentTarget,
-  }) => {
-    setPlayerName(currentTarget.value);
-  };
-
-  /**
-   * An event handler that fires when the YAML description is changed.
-   * @param param0 The event object for this event.
-   */
-  const onDescriptionChange: React.ChangeEventHandler<HTMLInputElement> = ({
-    currentTarget,
-  }) => {
-    setDescription(currentTarget.value);
-  };
 
   /**
    * Imports data from an Archipelago YAML file.
@@ -446,9 +434,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
       <div className="settingsTool">
         <hgroup>
           <h1>Archipelago Settings Tool</h1>
-          <h2>
-            AP version: {process.env.REACT_APP_CURRENT_ARCHIPELAGO_VER}
-          </h2>
+          <h2>AP version: {process.env.REACT_APP_CURRENT_ARCHIPELAGO_VER}</h2>
           <h6>
             App version {version} — built{" "}
             {DateTime.fromMillis(BuildTimestamp).toRFC2822()}
@@ -456,27 +442,18 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
         </hgroup>
 
         <section className="settings">
-          <div className="setting">
-            <b>Your name</b>:{" "}
-            <input
-              type="text"
-              value={playerName}
-              onChange={onNameChange}
-              maxLength={16}
-            />
-            {ForbiddenNames.includes(playerName)
-              ? `Your name cannot be ${playerName}.`
-              : null}
-            {playerName === "" ? `You must provide a name.` : null}
-          </div>
-          <div className="setting">
-            <b>Settings description</b>:{" "}
-            <input
-              type="text"
-              value={description}
-              onChange={onDescriptionChange}
-            />
-          </div>
+          <APHeaderStringNode
+            label="Your name"
+            value={playerName}
+            maxLength={16}
+            setValue={setPlayerName}
+            restrict={restrictName}
+          />
+          <APHeaderStringNode
+            label="Settings description"
+            value={description}
+            setValue={setDescription}
+          />
           <div className="setting">
             <button
               title="You can import Archipelago or Berserker YAML files."
