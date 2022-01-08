@@ -18,6 +18,12 @@ import { APStringSetting } from "../../../objs/settings/APStringSetting";
 import { APSettingNode } from "./APSettingNode";
 
 export class APStringSettingNode extends APSettingNode<APStringSetting> {
+  componentDidMount() {
+    const { selector } = this.state;
+    if (selector === undefined)
+      this.setState({ selector: this.getFirstUnselected() });
+  }
+
   /** Gets the first unselected value, for the purpose of setting the weighted selector position. */
   private getFirstUnselected(
     ...additionalOptions: string[]
