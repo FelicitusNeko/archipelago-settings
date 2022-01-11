@@ -744,7 +744,7 @@
       "type": "string",
       "name": "shop_shuffle",
       "readableName": "Shop shuffle",
-      "description": "Whether certain aspects of the shop will be randomized. **Please note that \"exotic prices\" options are experimental and may crash the game.**",
+      "description": "Whether certain aspects of the shop will be randomized.",
       "values": {
         "none": "Off",
         "g": ["Pool shuffle", "Shuffles vanilla inventory"],
@@ -756,15 +756,15 @@
         "ufp": "Full shuffle including capacity",
         "wfp": "Full shuffle including potion shop",
         "ufpw": "Absolutely everything",
-        "P": [
+        "pP": [
           "Exotic price shuffle",
-          "Sometimes pay in bombs, arrows, and hearts (warning: unstable, may crash the game)"
+          "Sometimes pay in bombs, arrows, and hearts"
         ],
-        "gP": "Pool and exotic prices",
-        "fP": "Full exotic shuffle",
-        "ufP": "Full exotic shuffle including capacity",
-        "wfP": "Full exotic shuffle including potion shop",
-        "ufPw": "Absolutely everything with exotic"
+        "gpP": "Pool and exotic prices",
+        "fpP": "Full exotic shuffle",
+        "ufpP": "Full exotic shuffle including capacity",
+        "wfpP": "Full exotic shuffle including potion shop",
+        "wufpP": "Absolutely everything with exotic"
       },
       "default": "none"
     },
