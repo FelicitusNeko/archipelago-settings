@@ -215,27 +215,27 @@
   "items": [
     {
       "name": "Dio's Best Friend",
-      "max": 10
+      "max": 50
     },
     {
       "name": "Common Item",
-      "max": 10
+      "max": 50
     },
     {
       "name": "Uncommon Item",
-      "max": 10
+      "max": 50
     },
     {
       "name": "Legendary Item",
-      "max": 10
+      "max": 50
     },
     {
       "name": "Boss Item",
-      "max": 10
+      "max": 50
     },
     {
       "name": "Lunar Item",
-      "max": 10,
+      "max": 50,
       "dependsOn": {
         "enable_lunar": [true]
       }
@@ -245,421 +245,1521 @@
     },
     {
       "name": "Item Scrap, White",
-      "max": 10
+      "max": 50
     },
     {
       "name": "Item Scrap, Green",
-      "max": 10
+      "max": 50
     },
     {
       "name": "Item Scrap, Red",
-      "max": 10
+      "max": 50
     },
     {
       "name": "Item Scrap, Yellow",
-      "max": 10
+      "max": 50
     }
   ],
   "locations": [
     {
-      "name": "ItemPickup1",
-      "readableName": "AP check #1"
+      "name": "ItemPickup1"
     },
     {
-      "name": "ItemPickup2",
-      "readableName": "AP check #2"
+      "name": "ItemPickup2"
     },
     {
-      "name": "ItemPickup3",
-      "readableName": "AP check #3"
+      "name": "ItemPickup3"
     },
     {
-      "name": "ItemPickup4",
-      "readableName": "AP check #4"
+      "name": "ItemPickup4"
     },
     {
-      "name": "ItemPickup5",
-      "readableName": "AP check #5"
+      "name": "ItemPickup5"
     },
     {
-      "name": "ItemPickup6",
-      "readableName": "AP check #6"
+      "name": "ItemPickup6"
     },
     {
-      "name": "ItemPickup7",
-      "readableName": "AP check #7"
+      "name": "ItemPickup7"
     },
     {
-      "name": "ItemPickup8",
-      "readableName": "AP check #8"
+      "name": "ItemPickup8"
     },
     {
-      "name": "ItemPickup9",
-      "readableName": "AP check #9"
+      "name": "ItemPickup9"
     },
     {
-      "name": "ItemPickup10",
-      "readableName": "AP check #10"
+      "name": "ItemPickup10"
     },
     {
-      "name": "ItemPickup11",
-      "readableName": "AP check #11"
+      "name": "ItemPickup11"
     },
     {
-      "name": "ItemPickup12",
-      "readableName": "AP check #12"
+      "name": "ItemPickup12"
     },
     {
-      "name": "ItemPickup13",
-      "readableName": "AP check #13"
+      "name": "ItemPickup13"
     },
     {
-      "name": "ItemPickup14",
-      "readableName": "AP check #14"
+      "name": "ItemPickup14"
     },
     {
-      "name": "ItemPickup15",
-      "readableName": "AP check #15"
+      "name": "ItemPickup15"
     },
     {
-      "name": "ItemPickup16",
-      "readableName": "AP check #16"
+      "name": "ItemPickup16"
     },
     {
-      "name": "ItemPickup17",
-      "readableName": "AP check #17"
+      "name": "ItemPickup17"
     },
     {
-      "name": "ItemPickup18",
-      "readableName": "AP check #18"
+      "name": "ItemPickup18"
     },
     {
-      "name": "ItemPickup19",
-      "readableName": "AP check #19"
+      "name": "ItemPickup19"
     },
     {
-      "name": "ItemPickup20",
-      "readableName": "AP check #20"
+      "name": "ItemPickup20"
     },
     {
-      "name": "ItemPickup21",
-      "readableName": "AP check #21"
+      "name": "ItemPickup21"
     },
     {
-      "name": "ItemPickup22",
-      "readableName": "AP check #22"
+      "name": "ItemPickup22"
     },
     {
-      "name": "ItemPickup23",
-      "readableName": "AP check #23"
+      "name": "ItemPickup23"
     },
     {
-      "name": "ItemPickup24",
-      "readableName": "AP check #24"
+      "name": "ItemPickup24"
     },
     {
-      "name": "ItemPickup25",
-      "readableName": "AP check #25"
+      "name": "ItemPickup25"
     },
     {
-      "name": "ItemPickup26",
-      "readableName": "AP check #26"
+      "name": "ItemPickup26"
     },
     {
-      "name": "ItemPickup27",
-      "readableName": "AP check #27"
+      "name": "ItemPickup27"
     },
     {
-      "name": "ItemPickup28",
-      "readableName": "AP check #28"
+      "name": "ItemPickup28"
     },
     {
-      "name": "ItemPickup29",
-      "readableName": "AP check #29"
+      "name": "ItemPickup29"
     },
     {
-      "name": "ItemPickup30",
-      "readableName": "AP check #30"
+      "name": "ItemPickup30"
     },
     {
-      "name": "ItemPickup31",
-      "readableName": "AP check #31"
+      "name": "ItemPickup31"
     },
     {
-      "name": "ItemPickup32",
-      "readableName": "AP check #32"
+      "name": "ItemPickup32"
     },
     {
-      "name": "ItemPickup33",
-      "readableName": "AP check #33"
+      "name": "ItemPickup33"
     },
     {
-      "name": "ItemPickup34",
-      "readableName": "AP check #34"
+      "name": "ItemPickup34"
     },
     {
-      "name": "ItemPickup35",
-      "readableName": "AP check #35"
+      "name": "ItemPickup35"
     },
     {
-      "name": "ItemPickup36",
-      "readableName": "AP check #36"
+      "name": "ItemPickup36"
     },
     {
-      "name": "ItemPickup37",
-      "readableName": "AP check #37"
+      "name": "ItemPickup37"
     },
     {
-      "name": "ItemPickup38",
-      "readableName": "AP check #38"
+      "name": "ItemPickup38"
     },
     {
-      "name": "ItemPickup39",
-      "readableName": "AP check #39"
+      "name": "ItemPickup39"
     },
     {
-      "name": "ItemPickup40",
-      "readableName": "AP check #40"
+      "name": "ItemPickup40"
     },
     {
-      "name": "ItemPickup41",
-      "readableName": "AP check #41"
+      "name": "ItemPickup41"
     },
     {
-      "name": "ItemPickup42",
-      "readableName": "AP check #42"
+      "name": "ItemPickup42"
     },
     {
-      "name": "ItemPickup43",
-      "readableName": "AP check #43"
+      "name": "ItemPickup43"
     },
     {
-      "name": "ItemPickup44",
-      "readableName": "AP check #44"
+      "name": "ItemPickup44"
     },
     {
-      "name": "ItemPickup45",
-      "readableName": "AP check #45"
+      "name": "ItemPickup45"
     },
     {
-      "name": "ItemPickup46",
-      "readableName": "AP check #46"
+      "name": "ItemPickup46"
     },
     {
-      "name": "ItemPickup47",
-      "readableName": "AP check #47"
+      "name": "ItemPickup47"
     },
     {
-      "name": "ItemPickup48",
-      "readableName": "AP check #48"
+      "name": "ItemPickup48"
     },
     {
-      "name": "ItemPickup49",
-      "readableName": "AP check #49"
+      "name": "ItemPickup49"
     },
     {
-      "name": "ItemPickup50",
-      "readableName": "AP check #50"
+      "name": "ItemPickup50"
     },
     {
-      "name": "ItemPickup51",
-      "readableName": "AP check #51"
+      "name": "ItemPickup51"
     },
     {
-      "name": "ItemPickup52",
-      "readableName": "AP check #52"
+      "name": "ItemPickup52"
     },
     {
-      "name": "ItemPickup53",
-      "readableName": "AP check #53"
+      "name": "ItemPickup53"
     },
     {
-      "name": "ItemPickup54",
-      "readableName": "AP check #54"
+      "name": "ItemPickup54"
     },
     {
-      "name": "ItemPickup55",
-      "readableName": "AP check #55"
+      "name": "ItemPickup55"
     },
     {
-      "name": "ItemPickup56",
-      "readableName": "AP check #56"
+      "name": "ItemPickup56"
     },
     {
-      "name": "ItemPickup57",
-      "readableName": "AP check #57"
+      "name": "ItemPickup57"
     },
     {
-      "name": "ItemPickup58",
-      "readableName": "AP check #58"
+      "name": "ItemPickup58"
     },
     {
-      "name": "ItemPickup59",
-      "readableName": "AP check #59"
+      "name": "ItemPickup59"
     },
     {
-      "name": "ItemPickup60",
-      "readableName": "AP check #60"
+      "name": "ItemPickup60"
     },
     {
-      "name": "ItemPickup61",
-      "readableName": "AP check #61"
+      "name": "ItemPickup61"
     },
     {
-      "name": "ItemPickup62",
-      "readableName": "AP check #62"
+      "name": "ItemPickup62"
     },
     {
-      "name": "ItemPickup63",
-      "readableName": "AP check #63"
+      "name": "ItemPickup63"
     },
     {
-      "name": "ItemPickup64",
-      "readableName": "AP check #64"
+      "name": "ItemPickup64"
     },
     {
-      "name": "ItemPickup65",
-      "readableName": "AP check #65"
+      "name": "ItemPickup65"
     },
     {
-      "name": "ItemPickup66",
-      "readableName": "AP check #66"
+      "name": "ItemPickup66"
     },
     {
-      "name": "ItemPickup67",
-      "readableName": "AP check #67"
+      "name": "ItemPickup67"
     },
     {
-      "name": "ItemPickup68",
-      "readableName": "AP check #68"
+      "name": "ItemPickup68"
     },
     {
-      "name": "ItemPickup69",
-      "readableName": "AP check #69"
+      "name": "ItemPickup69"
     },
     {
-      "name": "ItemPickup70",
-      "readableName": "AP check #70"
+      "name": "ItemPickup70"
     },
     {
-      "name": "ItemPickup71",
-      "readableName": "AP check #71"
+      "name": "ItemPickup71"
     },
     {
-      "name": "ItemPickup72",
-      "readableName": "AP check #72"
+      "name": "ItemPickup72"
     },
     {
-      "name": "ItemPickup73",
-      "readableName": "AP check #73"
+      "name": "ItemPickup73"
     },
     {
-      "name": "ItemPickup74",
-      "readableName": "AP check #74"
+      "name": "ItemPickup74"
     },
     {
-      "name": "ItemPickup75",
-      "readableName": "AP check #75"
+      "name": "ItemPickup75"
     },
     {
-      "name": "ItemPickup76",
-      "readableName": "AP check #76"
+      "name": "ItemPickup76"
     },
     {
-      "name": "ItemPickup77",
-      "readableName": "AP check #77"
+      "name": "ItemPickup77"
     },
     {
-      "name": "ItemPickup78",
-      "readableName": "AP check #78"
+      "name": "ItemPickup78"
     },
     {
-      "name": "ItemPickup79",
-      "readableName": "AP check #79"
+      "name": "ItemPickup79"
     },
     {
-      "name": "ItemPickup80",
-      "readableName": "AP check #80"
+      "name": "ItemPickup80"
     },
     {
-      "name": "ItemPickup81",
-      "readableName": "AP check #81"
+      "name": "ItemPickup81"
     },
     {
-      "name": "ItemPickup82",
-      "readableName": "AP check #82"
+      "name": "ItemPickup82"
     },
     {
-      "name": "ItemPickup83",
-      "readableName": "AP check #83"
+      "name": "ItemPickup83"
     },
     {
-      "name": "ItemPickup84",
-      "readableName": "AP check #84"
+      "name": "ItemPickup84"
     },
     {
-      "name": "ItemPickup85",
-      "readableName": "AP check #85"
+      "name": "ItemPickup85"
     },
     {
-      "name": "ItemPickup86",
-      "readableName": "AP check #86"
+      "name": "ItemPickup86"
     },
     {
-      "name": "ItemPickup87",
-      "readableName": "AP check #87"
+      "name": "ItemPickup87"
     },
     {
-      "name": "ItemPickup88",
-      "readableName": "AP check #88"
+      "name": "ItemPickup88"
     },
     {
-      "name": "ItemPickup89",
-      "readableName": "AP check #89"
+      "name": "ItemPickup89"
     },
     {
-      "name": "ItemPickup90",
-      "readableName": "AP check #90"
+      "name": "ItemPickup90"
     },
     {
-      "name": "ItemPickup91",
-      "readableName": "AP check #91"
+      "name": "ItemPickup91"
     },
     {
-      "name": "ItemPickup92",
-      "readableName": "AP check #92"
+      "name": "ItemPickup92"
     },
     {
-      "name": "ItemPickup93",
-      "readableName": "AP check #93"
+      "name": "ItemPickup93"
     },
     {
-      "name": "ItemPickup94",
-      "readableName": "AP check #94"
+      "name": "ItemPickup94"
     },
     {
-      "name": "ItemPickup95",
-      "readableName": "AP check #95"
+      "name": "ItemPickup95"
     },
     {
-      "name": "ItemPickup96",
-      "readableName": "AP check #96"
+      "name": "ItemPickup96"
     },
     {
-      "name": "ItemPickup97",
-      "readableName": "AP check #97"
+      "name": "ItemPickup97"
     },
     {
-      "name": "ItemPickup98",
-      "readableName": "AP check #98"
+      "name": "ItemPickup98"
     },
     {
-      "name": "ItemPickup99",
-      "readableName": "AP check #99"
+      "name": "ItemPickup99"
     },
     {
-      "name": "ItemPickup100",
-      "readableName": "AP check #100"
+      "name": "ItemPickup100"
+    },
+    {
+      "name": "ItemPickup101"
+    },
+    {
+      "name": "ItemPickup102"
+    },
+    {
+      "name": "ItemPickup103"
+    },
+    {
+      "name": "ItemPickup104"
+    },
+    {
+      "name": "ItemPickup105"
+    },
+    {
+      "name": "ItemPickup106"
+    },
+    {
+      "name": "ItemPickup107"
+    },
+    {
+      "name": "ItemPickup108"
+    },
+    {
+      "name": "ItemPickup109"
+    },
+    {
+      "name": "ItemPickup110"
+    },
+    {
+      "name": "ItemPickup111"
+    },
+    {
+      "name": "ItemPickup112"
+    },
+    {
+      "name": "ItemPickup113"
+    },
+    {
+      "name": "ItemPickup114"
+    },
+    {
+      "name": "ItemPickup115"
+    },
+    {
+      "name": "ItemPickup116"
+    },
+    {
+      "name": "ItemPickup117"
+    },
+    {
+      "name": "ItemPickup118"
+    },
+    {
+      "name": "ItemPickup119"
+    },
+    {
+      "name": "ItemPickup120"
+    },
+    {
+      "name": "ItemPickup121"
+    },
+    {
+      "name": "ItemPickup122"
+    },
+    {
+      "name": "ItemPickup123"
+    },
+    {
+      "name": "ItemPickup124"
+    },
+    {
+      "name": "ItemPickup125"
+    },
+    {
+      "name": "ItemPickup126"
+    },
+    {
+      "name": "ItemPickup127"
+    },
+    {
+      "name": "ItemPickup128"
+    },
+    {
+      "name": "ItemPickup129"
+    },
+    {
+      "name": "ItemPickup130"
+    },
+    {
+      "name": "ItemPickup131"
+    },
+    {
+      "name": "ItemPickup132"
+    },
+    {
+      "name": "ItemPickup133"
+    },
+    {
+      "name": "ItemPickup134"
+    },
+    {
+      "name": "ItemPickup135"
+    },
+    {
+      "name": "ItemPickup136"
+    },
+    {
+      "name": "ItemPickup137"
+    },
+    {
+      "name": "ItemPickup138"
+    },
+    {
+      "name": "ItemPickup139"
+    },
+    {
+      "name": "ItemPickup140"
+    },
+    {
+      "name": "ItemPickup141"
+    },
+    {
+      "name": "ItemPickup142"
+    },
+    {
+      "name": "ItemPickup143"
+    },
+    {
+      "name": "ItemPickup144"
+    },
+    {
+      "name": "ItemPickup145"
+    },
+    {
+      "name": "ItemPickup146"
+    },
+    {
+      "name": "ItemPickup147"
+    },
+    {
+      "name": "ItemPickup148"
+    },
+    {
+      "name": "ItemPickup149"
+    },
+    {
+      "name": "ItemPickup150"
+    },
+    {
+      "name": "ItemPickup151"
+    },
+    {
+      "name": "ItemPickup152"
+    },
+    {
+      "name": "ItemPickup153"
+    },
+    {
+      "name": "ItemPickup154"
+    },
+    {
+      "name": "ItemPickup155"
+    },
+    {
+      "name": "ItemPickup156"
+    },
+    {
+      "name": "ItemPickup157"
+    },
+    {
+      "name": "ItemPickup158"
+    },
+    {
+      "name": "ItemPickup159"
+    },
+    {
+      "name": "ItemPickup160"
+    },
+    {
+      "name": "ItemPickup161"
+    },
+    {
+      "name": "ItemPickup162"
+    },
+    {
+      "name": "ItemPickup163"
+    },
+    {
+      "name": "ItemPickup164"
+    },
+    {
+      "name": "ItemPickup165"
+    },
+    {
+      "name": "ItemPickup166"
+    },
+    {
+      "name": "ItemPickup167"
+    },
+    {
+      "name": "ItemPickup168"
+    },
+    {
+      "name": "ItemPickup169"
+    },
+    {
+      "name": "ItemPickup170"
+    },
+    {
+      "name": "ItemPickup171"
+    },
+    {
+      "name": "ItemPickup172"
+    },
+    {
+      "name": "ItemPickup173"
+    },
+    {
+      "name": "ItemPickup174"
+    },
+    {
+      "name": "ItemPickup175"
+    },
+    {
+      "name": "ItemPickup176"
+    },
+    {
+      "name": "ItemPickup177"
+    },
+    {
+      "name": "ItemPickup178"
+    },
+    {
+      "name": "ItemPickup179"
+    },
+    {
+      "name": "ItemPickup180"
+    },
+    {
+      "name": "ItemPickup181"
+    },
+    {
+      "name": "ItemPickup182"
+    },
+    {
+      "name": "ItemPickup183"
+    },
+    {
+      "name": "ItemPickup184"
+    },
+    {
+      "name": "ItemPickup185"
+    },
+    {
+      "name": "ItemPickup186"
+    },
+    {
+      "name": "ItemPickup187"
+    },
+    {
+      "name": "ItemPickup188"
+    },
+    {
+      "name": "ItemPickup189"
+    },
+    {
+      "name": "ItemPickup190"
+    },
+    {
+      "name": "ItemPickup191"
+    },
+    {
+      "name": "ItemPickup192"
+    },
+    {
+      "name": "ItemPickup193"
+    },
+    {
+      "name": "ItemPickup194"
+    },
+    {
+      "name": "ItemPickup195"
+    },
+    {
+      "name": "ItemPickup196"
+    },
+    {
+      "name": "ItemPickup197"
+    },
+    {
+      "name": "ItemPickup198"
+    },
+    {
+      "name": "ItemPickup199"
+    },
+    {
+      "name": "ItemPickup200"
+    },
+    {
+      "name": "ItemPickup201"
+    },
+    {
+      "name": "ItemPickup202"
+    },
+    {
+      "name": "ItemPickup203"
+    },
+    {
+      "name": "ItemPickup204"
+    },
+    {
+      "name": "ItemPickup205"
+    },
+    {
+      "name": "ItemPickup206"
+    },
+    {
+      "name": "ItemPickup207"
+    },
+    {
+      "name": "ItemPickup208"
+    },
+    {
+      "name": "ItemPickup209"
+    },
+    {
+      "name": "ItemPickup210"
+    },
+    {
+      "name": "ItemPickup211"
+    },
+    {
+      "name": "ItemPickup212"
+    },
+    {
+      "name": "ItemPickup213"
+    },
+    {
+      "name": "ItemPickup214"
+    },
+    {
+      "name": "ItemPickup215"
+    },
+    {
+      "name": "ItemPickup216"
+    },
+    {
+      "name": "ItemPickup217"
+    },
+    {
+      "name": "ItemPickup218"
+    },
+    {
+      "name": "ItemPickup219"
+    },
+    {
+      "name": "ItemPickup220"
+    },
+    {
+      "name": "ItemPickup221"
+    },
+    {
+      "name": "ItemPickup222"
+    },
+    {
+      "name": "ItemPickup223"
+    },
+    {
+      "name": "ItemPickup224"
+    },
+    {
+      "name": "ItemPickup225"
+    },
+    {
+      "name": "ItemPickup226"
+    },
+    {
+      "name": "ItemPickup227"
+    },
+    {
+      "name": "ItemPickup228"
+    },
+    {
+      "name": "ItemPickup229"
+    },
+    {
+      "name": "ItemPickup230"
+    },
+    {
+      "name": "ItemPickup231"
+    },
+    {
+      "name": "ItemPickup232"
+    },
+    {
+      "name": "ItemPickup233"
+    },
+    {
+      "name": "ItemPickup234"
+    },
+    {
+      "name": "ItemPickup235"
+    },
+    {
+      "name": "ItemPickup236"
+    },
+    {
+      "name": "ItemPickup237"
+    },
+    {
+      "name": "ItemPickup238"
+    },
+    {
+      "name": "ItemPickup239"
+    },
+    {
+      "name": "ItemPickup240"
+    },
+    {
+      "name": "ItemPickup241"
+    },
+    {
+      "name": "ItemPickup242"
+    },
+    {
+      "name": "ItemPickup243"
+    },
+    {
+      "name": "ItemPickup244"
+    },
+    {
+      "name": "ItemPickup245"
+    },
+    {
+      "name": "ItemPickup246"
+    },
+    {
+      "name": "ItemPickup247"
+    },
+    {
+      "name": "ItemPickup248"
+    },
+    {
+      "name": "ItemPickup249"
+    },
+    {
+      "name": "ItemPickup250"
+    },
+    {
+      "name": "ItemPickup251"
+    },
+    {
+      "name": "ItemPickup252"
+    },
+    {
+      "name": "ItemPickup253"
+    },
+    {
+      "name": "ItemPickup254"
+    },
+    {
+      "name": "ItemPickup255"
+    },
+    {
+      "name": "ItemPickup256"
+    },
+    {
+      "name": "ItemPickup257"
+    },
+    {
+      "name": "ItemPickup258"
+    },
+    {
+      "name": "ItemPickup259"
+    },
+    {
+      "name": "ItemPickup260"
+    },
+    {
+      "name": "ItemPickup261"
+    },
+    {
+      "name": "ItemPickup262"
+    },
+    {
+      "name": "ItemPickup263"
+    },
+    {
+      "name": "ItemPickup264"
+    },
+    {
+      "name": "ItemPickup265"
+    },
+    {
+      "name": "ItemPickup266"
+    },
+    {
+      "name": "ItemPickup267"
+    },
+    {
+      "name": "ItemPickup268"
+    },
+    {
+      "name": "ItemPickup269"
+    },
+    {
+      "name": "ItemPickup270"
+    },
+    {
+      "name": "ItemPickup271"
+    },
+    {
+      "name": "ItemPickup272"
+    },
+    {
+      "name": "ItemPickup273"
+    },
+    {
+      "name": "ItemPickup274"
+    },
+    {
+      "name": "ItemPickup275"
+    },
+    {
+      "name": "ItemPickup276"
+    },
+    {
+      "name": "ItemPickup277"
+    },
+    {
+      "name": "ItemPickup278"
+    },
+    {
+      "name": "ItemPickup279"
+    },
+    {
+      "name": "ItemPickup280"
+    },
+    {
+      "name": "ItemPickup281"
+    },
+    {
+      "name": "ItemPickup282"
+    },
+    {
+      "name": "ItemPickup283"
+    },
+    {
+      "name": "ItemPickup284"
+    },
+    {
+      "name": "ItemPickup285"
+    },
+    {
+      "name": "ItemPickup286"
+    },
+    {
+      "name": "ItemPickup287"
+    },
+    {
+      "name": "ItemPickup288"
+    },
+    {
+      "name": "ItemPickup289"
+    },
+    {
+      "name": "ItemPickup290"
+    },
+    {
+      "name": "ItemPickup291"
+    },
+    {
+      "name": "ItemPickup292"
+    },
+    {
+      "name": "ItemPickup293"
+    },
+    {
+      "name": "ItemPickup294"
+    },
+    {
+      "name": "ItemPickup295"
+    },
+    {
+      "name": "ItemPickup296"
+    },
+    {
+      "name": "ItemPickup297"
+    },
+    {
+      "name": "ItemPickup298"
+    },
+    {
+      "name": "ItemPickup299"
+    },
+    {
+      "name": "ItemPickup300"
+    },
+    {
+      "name": "ItemPickup301"
+    },
+    {
+      "name": "ItemPickup302"
+    },
+    {
+      "name": "ItemPickup303"
+    },
+    {
+      "name": "ItemPickup304"
+    },
+    {
+      "name": "ItemPickup305"
+    },
+    {
+      "name": "ItemPickup306"
+    },
+    {
+      "name": "ItemPickup307"
+    },
+    {
+      "name": "ItemPickup308"
+    },
+    {
+      "name": "ItemPickup309"
+    },
+    {
+      "name": "ItemPickup310"
+    },
+    {
+      "name": "ItemPickup311"
+    },
+    {
+      "name": "ItemPickup312"
+    },
+    {
+      "name": "ItemPickup313"
+    },
+    {
+      "name": "ItemPickup314"
+    },
+    {
+      "name": "ItemPickup315"
+    },
+    {
+      "name": "ItemPickup316"
+    },
+    {
+      "name": "ItemPickup317"
+    },
+    {
+      "name": "ItemPickup318"
+    },
+    {
+      "name": "ItemPickup319"
+    },
+    {
+      "name": "ItemPickup320"
+    },
+    {
+      "name": "ItemPickup321"
+    },
+    {
+      "name": "ItemPickup322"
+    },
+    {
+      "name": "ItemPickup323"
+    },
+    {
+      "name": "ItemPickup324"
+    },
+    {
+      "name": "ItemPickup325"
+    },
+    {
+      "name": "ItemPickup326"
+    },
+    {
+      "name": "ItemPickup327"
+    },
+    {
+      "name": "ItemPickup328"
+    },
+    {
+      "name": "ItemPickup329"
+    },
+    {
+      "name": "ItemPickup330"
+    },
+    {
+      "name": "ItemPickup331"
+    },
+    {
+      "name": "ItemPickup332"
+    },
+    {
+      "name": "ItemPickup333"
+    },
+    {
+      "name": "ItemPickup334"
+    },
+    {
+      "name": "ItemPickup335"
+    },
+    {
+      "name": "ItemPickup336"
+    },
+    {
+      "name": "ItemPickup337"
+    },
+    {
+      "name": "ItemPickup338"
+    },
+    {
+      "name": "ItemPickup339"
+    },
+    {
+      "name": "ItemPickup340"
+    },
+    {
+      "name": "ItemPickup341"
+    },
+    {
+      "name": "ItemPickup342"
+    },
+    {
+      "name": "ItemPickup343"
+    },
+    {
+      "name": "ItemPickup344"
+    },
+    {
+      "name": "ItemPickup345"
+    },
+    {
+      "name": "ItemPickup346"
+    },
+    {
+      "name": "ItemPickup347"
+    },
+    {
+      "name": "ItemPickup348"
+    },
+    {
+      "name": "ItemPickup349"
+    },
+    {
+      "name": "ItemPickup350"
+    },
+    {
+      "name": "ItemPickup351"
+    },
+    {
+      "name": "ItemPickup352"
+    },
+    {
+      "name": "ItemPickup353"
+    },
+    {
+      "name": "ItemPickup354"
+    },
+    {
+      "name": "ItemPickup355"
+    },
+    {
+      "name": "ItemPickup356"
+    },
+    {
+      "name": "ItemPickup357"
+    },
+    {
+      "name": "ItemPickup358"
+    },
+    {
+      "name": "ItemPickup359"
+    },
+    {
+      "name": "ItemPickup360"
+    },
+    {
+      "name": "ItemPickup361"
+    },
+    {
+      "name": "ItemPickup362"
+    },
+    {
+      "name": "ItemPickup363"
+    },
+    {
+      "name": "ItemPickup364"
+    },
+    {
+      "name": "ItemPickup365"
+    },
+    {
+      "name": "ItemPickup366"
+    },
+    {
+      "name": "ItemPickup367"
+    },
+    {
+      "name": "ItemPickup368"
+    },
+    {
+      "name": "ItemPickup369"
+    },
+    {
+      "name": "ItemPickup370"
+    },
+    {
+      "name": "ItemPickup371"
+    },
+    {
+      "name": "ItemPickup372"
+    },
+    {
+      "name": "ItemPickup373"
+    },
+    {
+      "name": "ItemPickup374"
+    },
+    {
+      "name": "ItemPickup375"
+    },
+    {
+      "name": "ItemPickup376"
+    },
+    {
+      "name": "ItemPickup377"
+    },
+    {
+      "name": "ItemPickup378"
+    },
+    {
+      "name": "ItemPickup379"
+    },
+    {
+      "name": "ItemPickup380"
+    },
+    {
+      "name": "ItemPickup381"
+    },
+    {
+      "name": "ItemPickup382"
+    },
+    {
+      "name": "ItemPickup383"
+    },
+    {
+      "name": "ItemPickup384"
+    },
+    {
+      "name": "ItemPickup385"
+    },
+    {
+      "name": "ItemPickup386"
+    },
+    {
+      "name": "ItemPickup387"
+    },
+    {
+      "name": "ItemPickup388"
+    },
+    {
+      "name": "ItemPickup389"
+    },
+    {
+      "name": "ItemPickup390"
+    },
+    {
+      "name": "ItemPickup391"
+    },
+    {
+      "name": "ItemPickup392"
+    },
+    {
+      "name": "ItemPickup393"
+    },
+    {
+      "name": "ItemPickup394"
+    },
+    {
+      "name": "ItemPickup395"
+    },
+    {
+      "name": "ItemPickup396"
+    },
+    {
+      "name": "ItemPickup397"
+    },
+    {
+      "name": "ItemPickup398"
+    },
+    {
+      "name": "ItemPickup399"
+    },
+    {
+      "name": "ItemPickup400"
+    },
+    {
+      "name": "ItemPickup401"
+    },
+    {
+      "name": "ItemPickup402"
+    },
+    {
+      "name": "ItemPickup403"
+    },
+    {
+      "name": "ItemPickup404"
+    },
+    {
+      "name": "ItemPickup405"
+    },
+    {
+      "name": "ItemPickup406"
+    },
+    {
+      "name": "ItemPickup407"
+    },
+    {
+      "name": "ItemPickup408"
+    },
+    {
+      "name": "ItemPickup409"
+    },
+    {
+      "name": "ItemPickup410"
+    },
+    {
+      "name": "ItemPickup411"
+    },
+    {
+      "name": "ItemPickup412"
+    },
+    {
+      "name": "ItemPickup413"
+    },
+    {
+      "name": "ItemPickup414"
+    },
+    {
+      "name": "ItemPickup415"
+    },
+    {
+      "name": "ItemPickup416"
+    },
+    {
+      "name": "ItemPickup417"
+    },
+    {
+      "name": "ItemPickup418"
+    },
+    {
+      "name": "ItemPickup419"
+    },
+    {
+      "name": "ItemPickup420"
+    },
+    {
+      "name": "ItemPickup421"
+    },
+    {
+      "name": "ItemPickup422"
+    },
+    {
+      "name": "ItemPickup423"
+    },
+    {
+      "name": "ItemPickup424"
+    },
+    {
+      "name": "ItemPickup425"
+    },
+    {
+      "name": "ItemPickup426"
+    },
+    {
+      "name": "ItemPickup427"
+    },
+    {
+      "name": "ItemPickup428"
+    },
+    {
+      "name": "ItemPickup429"
+    },
+    {
+      "name": "ItemPickup430"
+    },
+    {
+      "name": "ItemPickup431"
+    },
+    {
+      "name": "ItemPickup432"
+    },
+    {
+      "name": "ItemPickup433"
+    },
+    {
+      "name": "ItemPickup434"
+    },
+    {
+      "name": "ItemPickup435"
+    },
+    {
+      "name": "ItemPickup436"
+    },
+    {
+      "name": "ItemPickup437"
+    },
+    {
+      "name": "ItemPickup438"
+    },
+    {
+      "name": "ItemPickup439"
+    },
+    {
+      "name": "ItemPickup440"
+    },
+    {
+      "name": "ItemPickup441"
+    },
+    {
+      "name": "ItemPickup442"
+    },
+    {
+      "name": "ItemPickup443"
+    },
+    {
+      "name": "ItemPickup444"
+    },
+    {
+      "name": "ItemPickup445"
+    },
+    {
+      "name": "ItemPickup446"
+    },
+    {
+      "name": "ItemPickup447"
+    },
+    {
+      "name": "ItemPickup448"
+    },
+    {
+      "name": "ItemPickup449"
+    },
+    {
+      "name": "ItemPickup450"
+    },
+    {
+      "name": "ItemPickup451"
+    },
+    {
+      "name": "ItemPickup452"
+    },
+    {
+      "name": "ItemPickup453"
+    },
+    {
+      "name": "ItemPickup454"
+    },
+    {
+      "name": "ItemPickup455"
+    },
+    {
+      "name": "ItemPickup456"
+    },
+    {
+      "name": "ItemPickup457"
+    },
+    {
+      "name": "ItemPickup458"
+    },
+    {
+      "name": "ItemPickup459"
+    },
+    {
+      "name": "ItemPickup460"
+    },
+    {
+      "name": "ItemPickup461"
+    },
+    {
+      "name": "ItemPickup462"
+    },
+    {
+      "name": "ItemPickup463"
+    },
+    {
+      "name": "ItemPickup464"
+    },
+    {
+      "name": "ItemPickup465"
+    },
+    {
+      "name": "ItemPickup466"
+    },
+    {
+      "name": "ItemPickup467"
+    },
+    {
+      "name": "ItemPickup468"
+    },
+    {
+      "name": "ItemPickup469"
+    },
+    {
+      "name": "ItemPickup470"
+    },
+    {
+      "name": "ItemPickup471"
+    },
+    {
+      "name": "ItemPickup472"
+    },
+    {
+      "name": "ItemPickup473"
+    },
+    {
+      "name": "ItemPickup474"
+    },
+    {
+      "name": "ItemPickup475"
+    },
+    {
+      "name": "ItemPickup476"
+    },
+    {
+      "name": "ItemPickup477"
+    },
+    {
+      "name": "ItemPickup478"
+    },
+    {
+      "name": "ItemPickup479"
+    },
+    {
+      "name": "ItemPickup480"
+    },
+    {
+      "name": "ItemPickup481"
+    },
+    {
+      "name": "ItemPickup482"
+    },
+    {
+      "name": "ItemPickup483"
+    },
+    {
+      "name": "ItemPickup484"
+    },
+    {
+      "name": "ItemPickup485"
+    },
+    {
+      "name": "ItemPickup486"
+    },
+    {
+      "name": "ItemPickup487"
+    },
+    {
+      "name": "ItemPickup488"
+    },
+    {
+      "name": "ItemPickup489"
+    },
+    {
+      "name": "ItemPickup490"
+    },
+    {
+      "name": "ItemPickup491"
+    },
+    {
+      "name": "ItemPickup492"
+    },
+    {
+      "name": "ItemPickup493"
+    },
+    {
+      "name": "ItemPickup494"
+    },
+    {
+      "name": "ItemPickup495"
+    },
+    {
+      "name": "ItemPickup496"
+    },
+    {
+      "name": "ItemPickup497"
+    },
+    {
+      "name": "ItemPickup498"
+    },
+    {
+      "name": "ItemPickup499"
+    },
+    {
+      "name": "ItemPickup500"
     }
   ]
 }
