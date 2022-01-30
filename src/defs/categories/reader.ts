@@ -39,6 +39,8 @@ export interface APCategory {
   items?: APItemManager;
   /** The collection of defined locations for this category. */
   locations?: APLocationManager;
+  /** Settings that have dependencies on them. */
+  hasDeps?: string[];
 }
 
 interface APCategoryJson {

@@ -175,7 +175,7 @@ export abstract class APSetting<T> {
   includes(...values: any[]) {
     return (
       (Array.isArray(this._value)
-        ? this._value.map((i) => i.value)
+        ? this._value.filter((i) => i.weight > 0).map((i) => i.value)
         : [this._value]
       ).filter((i) => values.includes(i)).length > 0
     );

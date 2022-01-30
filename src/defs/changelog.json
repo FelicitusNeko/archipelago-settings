@@ -7,7 +7,8 @@
       "**Rogue Legacy**: Added a mess of new options",
       "**Risk of Rain 2**: Max locations is now 500, DBFs now a percentage",
       "**Timespinner**: Locations update"
-    ]
+    ],
+    "Fix issue where settings dependent on others would not show/hide correctly when dep values changed"
   ],
   "1.0.0": [
     "Massive internal rework",

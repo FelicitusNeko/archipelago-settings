@@ -33,6 +33,8 @@ export interface APSettingProps<T extends APMetaSetting> {
   setting: T;
   /** The event callback to call when the value is changed. */
   save: (skipUpdate?: boolean) => void;
+  /** The event callback to call to check if a page update is needed. */
+  update: (category: string | null, settingName: string) => void;
 }
 /** The state object for this setting. */
 interface APSettingState<T> {
@@ -66,11 +68,14 @@ export abstract class APSettingNode<
     _prevProps: APSettingProps<TSetting>,
     prevState: APSettingState<SettingValueType<TSetting>>
   ) {
+    // BUG: currently regenerates page for all settings changes
+    // TODO: check to make sure we need to check for an update
+
     const { value: stateValue } = this.state;
     const { value: propValue } = this.props.setting;
     if (stateValue !== propValue) {
       if (stateValue !== prevState.value) {
-        const { setting, save } = this.props;
+        const { setting, save, update } = this.props;
         const isGameSetting = setting.type === SettingType.Games;
         // HACK: this doesn't work as a direct assignment for some reason
         setting.value = stateValue as
@@ -81,6 +86,7 @@ export abstract class APSettingNode<
           | APWeightedValue<string | number>[]
           | APWeightedValue<boolean>[];
         save(!isGameSetting);
+        update(setting.category, setting.name);
         if (!isGameSetting) this.forceUpdate();
       } else
         this.setState({
@@ -133,7 +139,7 @@ export abstract class APSettingNode<
     return (
       <div
         key={`wgtsld-${category}-${setting.name}-${valueName}`}
-        style={{margin: 0, padding: 0}}
+        style={{ margin: 0, padding: 0 }}
       >
         <Slider
           className="archslider"

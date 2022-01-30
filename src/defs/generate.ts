@@ -79,6 +79,7 @@ const APCategoryList: APCategory[] = APCategoryData.map((i) => {
   const savedCategory = storedData
     ? storedData.categories.find((ii) => i.category === ii.category)
     : undefined;
+  const hasDeps = new Set<string>();
   const retval: APCategory = {
     category: i.category,
     readableName: i.readableName,
@@ -86,6 +87,9 @@ const APCategoryList: APCategory[] = APCategoryData.map((i) => {
     settings: i.settings
       .filter((i) => i.disabled !== true)
       .map((setting) => {
+        if (setting.dependsOn)
+          Object.keys(setting.dependsOn).forEach((i) => hasDeps.add(i));
+
         switch (setting.type) {
           case SettingType.String:
             return new APStringSetting(
@@ -147,6 +151,7 @@ const APCategoryList: APCategory[] = APCategoryData.map((i) => {
             throw new Error(`Unknown setting type`);
         }
       }),
+    hasDeps: [...hasDeps],
   };
 
   if (i.items) {

@@ -168,6 +168,11 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
     if (!skipUpdate) forceUpdate();
   };
 
+  const UpdateIfNeeded = (category: string | null, settingName: string) => {
+    const cat = APCategoryList.find((i) => i.category === category);
+    if (cat && cat.hasDeps && cat.hasDeps.includes(settingName)) forceUpdate();
+  };
+
   // Start application (actual loading now happens in generate.ts)
   useEffect(() => {
     // Old settings are incompatible; delete them
@@ -232,8 +237,8 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
         else setting.value = setting.default;
       }
 
+      // if the category has items/locs and so does the YAML, then import those
       for (const manager of [items, locations])
-        // if the category has items/locs and so does the YAML, then import those
         if (manager) {
           const importEntities: Record<string, any> = {};
           for (const list of manager.lists)
@@ -418,6 +423,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
               category={i.category}
               setting={i}
               save={SaveToStorage}
+              update={UpdateIfNeeded}
             />
           );
         if (i.isNumericSetting())
@@ -427,6 +433,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
               category={i.category}
               setting={i}
               save={SaveToStorage}
+              update={UpdateIfNeeded}
             />
           );
         if (i.isBooleanSetting())
@@ -436,6 +443,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
               category={i.category}
               setting={i}
               save={SaveToStorage}
+              update={UpdateIfNeeded}
             />
           );
         return null;
