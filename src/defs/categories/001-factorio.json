@@ -175,7 +175,7 @@
       "type": "numeric",
       "name": "evolution_trap_increase",
       "readableName": "Evolution trap increase",
-      "description": "When an evolution trap is researched, the percentage by which enemy evolution will be boosted.",
+      "description": "When an evolution trap is researched, the scale by which enemy evolution will be boosted. Increases scale down proportionally to the session's current evolution factor (40 increase at 0.50 will add 0.20... 40 increase at 0.75 will add 0.10...)",
       "low": 1,
       "high": 100,
       "default": 10,
