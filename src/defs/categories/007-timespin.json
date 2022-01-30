@@ -723,10 +723,10 @@
       "name": "Upper desolation secret"
     },
     {
-      "name": "Upper desolation double jump cave floor"
+      "name": "Upper desolation double jump cave platform"
     },
     {
-      "name": "Upper desolation double jump cave platform"
+      "name": "Upper desolation double jump cave floor"
     },
     {
       "name": "Fire-Locked sparrow chest"
@@ -855,10 +855,10 @@
       "name": "Upper sealed cave siren room left"
     },
     {
-      "name": "Upper sealed cave after sirens chest 2"
+      "name": "Upper sealed cave after sirens chest 1"
     },
     {
-      "name": "Upper sealed cave after sirens chest 1"
+      "name": "Upper sealed cave after sirens chest 2"
     },
     {
       "name": "Military bomber chest"
@@ -1149,10 +1149,10 @@
       "name": "Aelana's attic"
     },
     {
-      "name": "Aelana's pedestal"
+      "name": "Aelana's chest"
     },
     {
-      "name": "Aelana's chest"
+      "name": "Aelana's pedestal"
     },
     {
       "name": "Library terminal 2"
@@ -1279,6 +1279,9 @@
     },
     {
       "name": "Journal - Lower Left Maw Caves (Naivety)"
+    },
+    {
+      "name": "Nightmare Door chest"
     },
     {
       "name": "Ravenlord post fight (pedestal)"
