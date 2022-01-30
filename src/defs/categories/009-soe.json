@@ -75,14 +75,14 @@
       "name": "shorter_dialogs",
       "readableName": "Reduce dialog",
       "description": "Cuts out some of the in-game dialog.",
-      "default": false
+      "default": true
     },
     {
       "type": "boolean",
       "name": "short_boss_rush",
       "readableName": "Short Boss Rush",
       "description": "If enabled, the Boss Rush will start at Metal Magmar, and enemy HP will be cut in half.",
-      "default": false
+      "default": true
     },
     {
       "type": "string",
