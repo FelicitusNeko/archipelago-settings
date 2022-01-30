@@ -22,7 +22,11 @@
         "knight": "Knight",
         "mage": "Mage",
         "barbarian": "Barbarian",
-        "knave": "Knave"
+        "knave": "Knave",
+        "shinobi": "Shinobi",
+        "miner": "Miner",
+        "spellthief": "Spellthief",
+        "lich": "Lich"
       },
       "default": "knight"
     },
@@ -37,6 +41,17 @@
         "new_game_plus_2": "New Game ++"
       },
       "default": "normal"
+    },
+    {
+      "type": "numeric",
+      "name": "level_scaling",
+      "readableName": "Level Scaling",
+      "description": "How much enemy levels will increase as you progress through the game compared to vanilla, in percentage.",
+      "low": 100,
+      "high": 300,
+      "step": 5,
+      "randomable": true,
+      "default": 100
     },
     {
       "type": "numeric",
@@ -59,6 +74,20 @@
       "default": 15
     },
     {
+      "type": "boolean",
+      "name": "universal_fairy_chests",
+      "readableName": "Universal Fairy Chests",
+      "description": "Whether Fairy Chest drops should be combined into a single larger pool.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "universal_chests",
+      "readableName": "Universal Chests",
+      "description": "Whether regular chest drops should be combined into a single larger pool.",
+      "default": false
+    },
+    {
       "type": "string",
       "name": "vendors",
       "readableName": "Vendor logic",
@@ -66,10 +95,32 @@
       "values": {
         "start_unlocked": "Start unlocked",
         "early": "Unlock early",
-        "normal": "Vanilla",
+        "normal": "Normal",
         "anywhere": "Anywhere"
       },
       "default": "early"
+    },
+    {
+      "type": "string",
+      "name": "architect",
+      "readableName": "Architect logic",
+      "description": "Determines where to place the Architect unlock in logic (or start with him unlocked).",
+      "values": {
+        "start_unlocked": "Start unlocked",
+        "normal": "Normal",
+        "disabled": "Disabled"
+      },
+      "default": "normal"
+    },
+    {
+      "type": "numeric",
+      "name": "architect_fee",
+      "readableName": "Architect Fee",
+      "description": "What percentage of gold drops the Architect will claim if you activate him.",
+      "low": 0,
+      "high": 100,
+      "randomable": true,
+      "default": 40
     },
     {
       "type": "boolean",
@@ -84,6 +135,13 @@
       "readableName": "Require purchasing",
       "description": "Determines where you will be required to purchase equipment and runes from the Blacksmith and Enchantress before equipping them. If you disable require purchasing, Manor Renovations are scaled to take this into account.",
       "default": true
+    },
+    {
+      "type": "boolean",
+      "name": "progressive_blueprints",
+      "readableName": "Progressive Blueprints",
+      "description": "Whether blueprints will be received in order from weakest (Squire) to strongest (Dark).",
+      "default": false
     },
     {
       "type": "string",
@@ -108,6 +166,132 @@
       "high": 5,
       "randomable": true,
       "default": 3
+    },
+    {
+      "type": "numeric",
+      "name": "castle_scaling",
+      "readableName": "Castle Scaling",
+      "description": "How big the castle will be compared to vanilla, in percentage.",
+      "low": 50,
+      "high": 300,
+      "step": 5,
+      "randomable": true,
+      "default": 100
+    },
+    {
+      "type": "boolean",
+      "name": "challenge_boss_khidr",
+      "readableName": "Boost Khidr",
+      "description": "Replaces the boss Khidr with the more powerful Neo Khidr.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "challenge_boss_alexander",
+      "readableName": "Boost Alexander",
+      "description": "Replaces the boss Alexander with the more powerful Alexander IV.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "challenge_boss_leon",
+      "readableName": "Boost Ponce de Leon",
+      "description": "Replaces the boss Ponce de Leon with the more powerful Ponce de Freon.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "challenge_boss_herodotus",
+      "readableName": "Boost Herodotus",
+      "description": "Replaces the boss Herodotus with the more powerful Astrodotus.",
+      "default": false
+    },
+    {
+      "type": "numeric",
+      "name": "health_up_pool",
+      "readableName": "Health Up Pool",
+      "description": "How many Health Ups are in the item pool.",
+      "low": 0,
+      "high": 15,
+      "randomable": true,
+      "default": 15
+    },
+    {
+      "type": "numeric",
+      "name": "mana_up_pool",
+      "readableName": "Mana Up Pool",
+      "description": "How many Mana Ups are in the item pool.",
+      "low": 0,
+      "high": 15,
+      "randomable": true,
+      "default": 15
+    },
+    {
+      "type": "numeric",
+      "name": "attack_up_pool",
+      "readableName": "Attack Up Pool",
+      "description": "How many Attack Ups are in the item pool.",
+      "low": 0,
+      "high": 15,
+      "randomable": true,
+      "default": 15
+    },
+    {
+      "type": "numeric",
+      "name": "magic_damage_up_pool",
+      "readableName": "Magic Damage Up Pool",
+      "description": "How many Magic Damage Ups are in the item pool.",
+      "low": 0,
+      "high": 15,
+      "randomable": true,
+      "default": 15
+    },
+    {
+      "type": "numeric",
+      "name": "armor_up_pool",
+      "readableName": "Armor Up Pool",
+      "description": "How many Armor Ups are in the item pool.",
+      "low": 0,
+      "high": 10,
+      "randomable": true,
+      "default": 10
+    },
+    {
+      "type": "numeric",
+      "name": "equip_up_pool",
+      "readableName": "Equip Up Pool",
+      "description": "How many Equip Ups are in the item pool.",
+      "low": 0,
+      "high": 15,
+      "randomable": true,
+      "default": 15
+    },
+    {
+      "type": "numeric",
+      "name": "crit_chance_up_pool",
+      "readableName": "Crit Chance Up Pool",
+      "description": "How many Crit Chance Ups are in the item pool.",
+      "low": 0,
+      "high": 5,
+      "randomable": true,
+      "default": 5
+    },
+    {
+      "type": "numeric",
+      "name": "crit_damage_up_pool",
+      "readableName": "Crit Damage Up Pool",
+      "description": "How many Crit Damage Ups are in the item pool.",
+      "low": 0,
+      "high": 5,
+      "randomable": true,
+      "default": 5
+    },
+    {
+      "type": "boolean",
+      "name": "free_diary_on_generation",
+      "readableName": "Free diary on generation",
+      "description": "Allow the entryway to have a new diary entry (and thus, an additional item check) every time the castle is regenerated.",
+      "default": true
     },
     {
       "type": "boolean",
@@ -228,49 +412,101 @@
       "name": "5000 Gold"
     },
     {
-      "name": "Squire Armor Blueprints"
+      "name": "Squire Armor Blueprints",
+      "dependsOn": {
+        "progressive_blueprints": ["false"]
+      }
     },
     {
-      "name": "Silver Armor Blueprints"
+      "name": "Silver Armor Blueprints",
+      "dependsOn": {
+        "progressive_blueprints": ["false"]
+      }
     },
     {
-      "name": "Guardian Armor Blueprints"
+      "name": "Guardian Armor Blueprints",
+      "dependsOn": {
+        "progressive_blueprints": ["false"]
+      }
     },
     {
-      "name": "Imperial Armor Blueprints"
+      "name": "Imperial Armor Blueprints",
+      "dependsOn": {
+        "progressive_blueprints": ["false"]
+      }
     },
     {
-      "name": "Royal Armor Blueprints"
+      "name": "Royal Armor Blueprints",
+      "dependsOn": {
+        "progressive_blueprints": ["false"]
+      }
     },
     {
-      "name": "Knight Armor Blueprints"
+      "name": "Knight Armor Blueprints",
+      "dependsOn": {
+        "progressive_blueprints": ["false"]
+      }
     },
     {
-      "name": "Ranger Armor Blueprints"
+      "name": "Ranger Armor Blueprints",
+      "dependsOn": {
+        "progressive_blueprints": ["false"]
+      }
     },
     {
-      "name": "Sky Armor Blueprints"
+      "name": "Sky Armor Blueprints",
+      "dependsOn": {
+        "progressive_blueprints": ["false"]
+      }
     },
     {
-      "name": "Dragon Armor Blueprints"
+      "name": "Dragon Armor Blueprints",
+      "dependsOn": {
+        "progressive_blueprints": ["false"]
+      }
     },
     {
-      "name": "Slayer Armor Blueprints"
+      "name": "Slayer Armor Blueprints",
+      "dependsOn": {
+        "progressive_blueprints": ["false"]
+      }
     },
     {
-      "name": "Blood Armor Blueprints"
+      "name": "Blood Armor Blueprints",
+      "dependsOn": {
+        "progressive_blueprints": ["false"]
+      }
     },
     {
-      "name": "Sage Armor Blueprints"
+      "name": "Sage Armor Blueprints",
+      "dependsOn": {
+        "progressive_blueprints": ["false"]
+      }
     },
     {
-      "name": "Retribution Armor Blueprints"
+      "name": "Retribution Armor Blueprints",
+      "dependsOn": {
+        "progressive_blueprints": ["false"]
+      }
     },
     {
-      "name": "Holy Armor Blueprints"
+      "name": "Holy Armor Blueprints",
+      "dependsOn": {
+        "progressive_blueprints": ["false"]
+      }
     },
     {
-      "name": "Dark Armor Blueprints"
+      "name": "Dark Armor Blueprints",
+      "dependsOn": {
+        "progressive_blueprints": ["false"]
+      }
+    },
+    {
+      "name": "Progressive Blueprints",
+      "max": 15,
+      "dependsOn": {
+        "progressive_blueprints": ["true"]
+      }
     },
     {
       "name": "Vault Runes"
@@ -455,19 +691,28 @@
       "name": "Manor Renovation - Observatory Telescope"
     },
     {
-      "name": "Khindr's Boss Chest"
+      "name": "Castle Hamson Boss"
     },
     {
-      "name": "Alexander's Boss Chest"
+      "name": "Forest Abkhazia Boss"
     },
     {
-      "name": "Ponce de Leon's Boss Chest"
+      "name": "The Maya Boss"
     },
     {
-      "name": "Herodotus's Boss Chest"
+      "name": "The Land of Darkness Boss"
     },
     {
       "name": "Jukebox"
+    },
+    {
+      "name": "Painting"
+    },
+    {
+      "name": "Cheapskate Elf's Game"
+    },
+    {
+      "name": "Carnival"
     },
     {
       "name": "Diary 1"
@@ -2343,6 +2588,546 @@
     },
     {
       "name": "The Land of Darkness - Chest 100"
+    },
+    {
+      "name": "Chest 1"
+    },
+    {
+      "name": "Chest 2"
+    },
+    {
+      "name": "Chest 3"
+    },
+    {
+      "name": "Chest 4"
+    },
+    {
+      "name": "Chest 5"
+    },
+    {
+      "name": "Chest 6"
+    },
+    {
+      "name": "Chest 7"
+    },
+    {
+      "name": "Chest 8"
+    },
+    {
+      "name": "Chest 9"
+    },
+    {
+      "name": "Chest 10"
+    },
+    {
+      "name": "Chest 11"
+    },
+    {
+      "name": "Chest 12"
+    },
+    {
+      "name": "Chest 13"
+    },
+    {
+      "name": "Chest 14"
+    },
+    {
+      "name": "Chest 15"
+    },
+    {
+      "name": "Chest 16"
+    },
+    {
+      "name": "Chest 17"
+    },
+    {
+      "name": "Chest 18"
+    },
+    {
+      "name": "Chest 19"
+    },
+    {
+      "name": "Chest 20"
+    },
+    {
+      "name": "Chest 21"
+    },
+    {
+      "name": "Chest 22"
+    },
+    {
+      "name": "Chest 23"
+    },
+    {
+      "name": "Chest 24"
+    },
+    {
+      "name": "Chest 25"
+    },
+    {
+      "name": "Chest 26"
+    },
+    {
+      "name": "Chest 27"
+    },
+    {
+      "name": "Chest 28"
+    },
+    {
+      "name": "Chest 29"
+    },
+    {
+      "name": "Chest 30"
+    },
+    {
+      "name": "Chest 31"
+    },
+    {
+      "name": "Chest 32"
+    },
+    {
+      "name": "Chest 33"
+    },
+    {
+      "name": "Chest 34"
+    },
+    {
+      "name": "Chest 35"
+    },
+    {
+      "name": "Chest 36"
+    },
+    {
+      "name": "Chest 37"
+    },
+    {
+      "name": "Chest 38"
+    },
+    {
+      "name": "Chest 39"
+    },
+    {
+      "name": "Chest 40"
+    },
+    {
+      "name": "Chest 41"
+    },
+    {
+      "name": "Chest 42"
+    },
+    {
+      "name": "Chest 43"
+    },
+    {
+      "name": "Chest 44"
+    },
+    {
+      "name": "Chest 45"
+    },
+    {
+      "name": "Chest 46"
+    },
+    {
+      "name": "Chest 47"
+    },
+    {
+      "name": "Chest 48"
+    },
+    {
+      "name": "Chest 49"
+    },
+    {
+      "name": "Chest 50"
+    },
+    {
+      "name": "Chest 51"
+    },
+    {
+      "name": "Chest 52"
+    },
+    {
+      "name": "Chest 53"
+    },
+    {
+      "name": "Chest 54"
+    },
+    {
+      "name": "Chest 55"
+    },
+    {
+      "name": "Chest 56"
+    },
+    {
+      "name": "Chest 57"
+    },
+    {
+      "name": "Chest 58"
+    },
+    {
+      "name": "Chest 59"
+    },
+    {
+      "name": "Chest 60"
+    },
+    {
+      "name": "Chest 61"
+    },
+    {
+      "name": "Chest 62"
+    },
+    {
+      "name": "Chest 63"
+    },
+    {
+      "name": "Chest 64"
+    },
+    {
+      "name": "Chest 65"
+    },
+    {
+      "name": "Chest 66"
+    },
+    {
+      "name": "Chest 67"
+    },
+    {
+      "name": "Chest 68"
+    },
+    {
+      "name": "Chest 69"
+    },
+    {
+      "name": "Chest 70"
+    },
+    {
+      "name": "Chest 71"
+    },
+    {
+      "name": "Chest 72"
+    },
+    {
+      "name": "Chest 73"
+    },
+    {
+      "name": "Chest 74"
+    },
+    {
+      "name": "Chest 75"
+    },
+    {
+      "name": "Chest 76"
+    },
+    {
+      "name": "Chest 77"
+    },
+    {
+      "name": "Chest 78"
+    },
+    {
+      "name": "Chest 79"
+    },
+    {
+      "name": "Chest 80"
+    },
+    {
+      "name": "Chest 81"
+    },
+    {
+      "name": "Chest 82"
+    },
+    {
+      "name": "Chest 83"
+    },
+    {
+      "name": "Chest 84"
+    },
+    {
+      "name": "Chest 85"
+    },
+    {
+      "name": "Chest 86"
+    },
+    {
+      "name": "Chest 87"
+    },
+    {
+      "name": "Chest 88"
+    },
+    {
+      "name": "Chest 89"
+    },
+    {
+      "name": "Chest 90"
+    },
+    {
+      "name": "Chest 91"
+    },
+    {
+      "name": "Chest 92"
+    },
+    {
+      "name": "Chest 93"
+    },
+    {
+      "name": "Chest 94"
+    },
+    {
+      "name": "Chest 95"
+    },
+    {
+      "name": "Chest 96"
+    },
+    {
+      "name": "Chest 97"
+    },
+    {
+      "name": "Chest 98"
+    },
+    {
+      "name": "Chest 99"
+    },
+    {
+      "name": "Chest 100"
+    },
+    {
+      "name": "Chest 101"
+    },
+    {
+      "name": "Chest 102"
+    },
+    {
+      "name": "Chest 103"
+    },
+    {
+      "name": "Chest 104"
+    },
+    {
+      "name": "Chest 105"
+    },
+    {
+      "name": "Chest 106"
+    },
+    {
+      "name": "Chest 107"
+    },
+    {
+      "name": "Chest 108"
+    },
+    {
+      "name": "Chest 109"
+    },
+    {
+      "name": "Chest 110"
+    },
+    {
+      "name": "Chest 111"
+    },
+    {
+      "name": "Chest 112"
+    },
+    {
+      "name": "Chest 113"
+    },
+    {
+      "name": "Chest 114"
+    },
+    {
+      "name": "Chest 115"
+    },
+    {
+      "name": "Chest 116"
+    },
+    {
+      "name": "Chest 117"
+    },
+    {
+      "name": "Chest 118"
+    },
+    {
+      "name": "Chest 119"
+    },
+    {
+      "name": "Chest 120"
+    },
+    {
+      "name": "Fairy Chest 1"
+    },
+    {
+      "name": "Fairy Chest 2"
+    },
+    {
+      "name": "Fairy Chest 3"
+    },
+    {
+      "name": "Fairy Chest 4"
+    },
+    {
+      "name": "Fairy Chest 5"
+    },
+    {
+      "name": "Fairy Chest 6"
+    },
+    {
+      "name": "Fairy Chest 7"
+    },
+    {
+      "name": "Fairy Chest 8"
+    },
+    {
+      "name": "Fairy Chest 9"
+    },
+    {
+      "name": "Fairy Chest 10"
+    },
+    {
+      "name": "Fairy Chest 11"
+    },
+    {
+      "name": "Fairy Chest 12"
+    },
+    {
+      "name": "Fairy Chest 13"
+    },
+    {
+      "name": "Fairy Chest 14"
+    },
+    {
+      "name": "Fairy Chest 15"
+    },
+    {
+      "name": "Fairy Chest 16"
+    },
+    {
+      "name": "Fairy Chest 17"
+    },
+    {
+      "name": "Fairy Chest 18"
+    },
+    {
+      "name": "Fairy Chest 19"
+    },
+    {
+      "name": "Fairy Chest 20"
+    },
+    {
+      "name": "Fairy Chest 21"
+    },
+    {
+      "name": "Fairy Chest 22"
+    },
+    {
+      "name": "Fairy Chest 23"
+    },
+    {
+      "name": "Fairy Chest 24"
+    },
+    {
+      "name": "Fairy Chest 25"
+    },
+    {
+      "name": "Fairy Chest 26"
+    },
+    {
+      "name": "Fairy Chest 27"
+    },
+    {
+      "name": "Fairy Chest 28"
+    },
+    {
+      "name": "Fairy Chest 29"
+    },
+    {
+      "name": "Fairy Chest 30"
+    },
+    {
+      "name": "Fairy Chest 31"
+    },
+    {
+      "name": "Fairy Chest 32"
+    },
+    {
+      "name": "Fairy Chest 33"
+    },
+    {
+      "name": "Fairy Chest 34"
+    },
+    {
+      "name": "Fairy Chest 35"
+    },
+    {
+      "name": "Fairy Chest 36"
+    },
+    {
+      "name": "Fairy Chest 37"
+    },
+    {
+      "name": "Fairy Chest 38"
+    },
+    {
+      "name": "Fairy Chest 39"
+    },
+    {
+      "name": "Fairy Chest 40"
+    },
+    {
+      "name": "Fairy Chest 41"
+    },
+    {
+      "name": "Fairy Chest 42"
+    },
+    {
+      "name": "Fairy Chest 43"
+    },
+    {
+      "name": "Fairy Chest 44"
+    },
+    {
+      "name": "Fairy Chest 45"
+    },
+    {
+      "name": "Fairy Chest 46"
+    },
+    {
+      "name": "Fairy Chest 47"
+    },
+    {
+      "name": "Fairy Chest 48"
+    },
+    {
+      "name": "Fairy Chest 49"
+    },
+    {
+      "name": "Fairy Chest 50"
+    },
+    {
+      "name": "Fairy Chest 51"
+    },
+    {
+      "name": "Fairy Chest 52"
+    },
+    {
+      "name": "Fairy Chest 53"
+    },
+    {
+      "name": "Fairy Chest 54"
+    },
+    {
+      "name": "Fairy Chest 55"
+    },
+    {
+      "name": "Fairy Chest 56"
+    },
+    {
+      "name": "Fairy Chest 57"
+    },
+    {
+      "name": "Fairy Chest 58"
+    },
+    {
+      "name": "Fairy Chest 59"
+    },
+    {
+      "name": "Fairy Chest 60"
     }
   ]
 }
