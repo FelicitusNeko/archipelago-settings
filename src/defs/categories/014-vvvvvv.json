@@ -1,0 +1,160 @@
+{
+  "category": "VVVVVV",
+  "index": 14,
+  "settings": [
+    {
+      "type": "numeric",
+      "name": "DoorCost",
+      "readableName": "Door cost",
+      "description": "Amount of Trinkets required to enter Areas. Set to 0 to disable artificial locks.",
+      "low": 0,
+      "high": 3,
+      "randomable": true,
+      "default": 3
+    },
+    {
+      "type": "boolean",
+      "name": "DeathLink",
+      "readableName": "DeathLink",
+      "description": "If one DeathLinked player dies, all of them do.",
+      "default": false
+    },
+    {
+      "type": "numeric",
+      "name": "DeathLinkAmnesty",
+      "readableName": "DeathLink amnesty",
+      "description": "How many times you have to die before the next one sends DeathLink to the server.",
+      "low": 0,
+      "high": 30,
+      "randomable": true,
+      "default": 15,
+      "dependsOn": {
+        "DeathLink": [true]
+      }
+    }
+  ],
+  "items": [
+    {
+      "name": "Trinket 01"
+    },
+    {
+      "name": "Trinket 02"
+    },
+    {
+      "name": "Trinket 03"
+    },
+    {
+      "name": "Trinket 04"
+    },
+    {
+      "name": "Trinket 05"
+    },
+    {
+      "name": "Trinket 06"
+    },
+    {
+      "name": "Trinket 07"
+    },
+    {
+      "name": "Trinket 08"
+    },
+    {
+      "name": "Trinket 09"
+    },
+    {
+      "name": "Trinket 10"
+    },
+    {
+      "name": "Trinket 11"
+    },
+    {
+      "name": "Trinket 12"
+    },
+    {
+      "name": "Trinket 13"
+    },
+    {
+      "name": "Trinket 14"
+    },
+    {
+      "name": "Trinket 15"
+    },
+    {
+      "name": "Trinket 16"
+    },
+    {
+      "name": "Trinket 17"
+    },
+    {
+      "name": "Trinket 18"
+    },
+    {
+      "name": "Trinket 19"
+    },
+    {
+      "name": "Trinket 20"
+    }
+  ],
+  "locations": [
+    {
+      "name": "It's a Secret to Nobody"
+    },
+    {
+      "name": "Trench Warfare"
+    },
+    {
+      "name": "One Way Room"
+    },
+    {
+      "name": "You Just Keep Coming Back"
+    },
+    {
+      "name": "Clarion Call"
+    },
+    {
+      "name": "Doing things the hard way"
+    },
+    {
+      "name": "Prize for the Reckless"
+    },
+    {
+      "name": "The Tower 1"
+    },
+    {
+      "name": "The Tower 2"
+    },
+    {
+      "name": "Young Man, It's Worth the Challenge"
+    },
+    {
+      "name": "The Tantalizing Trinket"
+    },
+    {
+      "name": "Purest Unobtainium"
+    },
+    {
+      "name": "Edge Games"
+    },
+    {
+      "name": "Overworld (Pipe-shaped Segment)"
+    },
+    {
+      "name": "Overworld (Outside Entanglement Generator)"
+    },
+    {
+      "name": "Overworld (Left of Ship)"
+    },
+    {
+      "name": "Overworld (Square Room)"
+    },
+    {
+      "name": "Overworld (Sad Elephant)"
+    },
+    {
+      "name": "NPC Trinket"
+    },
+    {
+      "name": "V"
+    }
+  ]
+}

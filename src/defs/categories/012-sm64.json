@@ -1,0 +1,428 @@
+{
+  "category": "Super Mario 64",
+  "index": 12,
+  "settings": [
+    {
+      "type": "boolean",
+      "name": "EnableCoinStars",
+      "readableName": "Enable Coin Stars",
+      "description": "Whether 100-Coin Stars will count toward checks.",
+      "default": true
+    },
+    {
+      "type": "boolean",
+      "name": "StrictCapRequirements",
+      "readableName": "Strict cap requirements",
+      "description": "Whether Power Stars that require specific Caps may not be considered in-logic without those Caps.",
+      "default": true
+    },
+    {
+      "type": "numeric",
+      "name": "StarsToFinish",
+      "readableName": "Stars to finish",
+      "description": "How many Power Stars are needed to dispel the Infinite Staircase to Bowser's final lair.",
+      "low": 50,
+      "high": 100,
+      "randomable": true,
+      "default": 70
+    }
+  ],
+  "items": [
+    {
+      "name": "Power Star",
+      "max": 120
+    },
+    {
+      "name": "Basement Key"
+    },
+    {
+      "name": "Second Floor Key"
+    },
+    {
+      "name": "Wing Cap"
+    },
+    {
+      "name": "Metal Cap"
+    },
+    {
+      "name": "Vanish Cap"
+    }
+  ],
+  "locations": [
+    {
+      "name": "BoB: Big Bob-Omb on the Summit"
+    },
+    {
+      "name": "BoB: Footrace with Koopa The Quick"
+    },
+    {
+      "name": "BoB: Shoot to the Island in the Sky"
+    },
+    {
+      "name": "BoB: Find the 8 Red Coins"
+    },
+    {
+      "name": "BoB: Mario Wings to the Sky"
+    },
+    {
+      "name": "BoB: Behind Chain Chomp's Gate"
+    },
+    {
+      "name": "BoB: 100 Coins"
+    },
+    {
+      "name": "WF: Chip Off Whomp's Block"
+    },
+    {
+      "name": "WF: To the Top of the Fortress"
+    },
+    {
+      "name": "WF: Shoot into the Wild Blue"
+    },
+    {
+      "name": "WF: Red Coins on the Floating Isle"
+    },
+    {
+      "name": "WF: Fall onto the Caged Island"
+    },
+    {
+      "name": "WF: Blast Away the Wall"
+    },
+    {
+      "name": "WF: 100 Coins"
+    },
+    {
+      "name": "JRB: Plunder in the Sunken Ship"
+    },
+    {
+      "name": "JRB: Can the Eel Come Out to Play?"
+    },
+    {
+      "name": "JRB: Treasure of the Ocean Cave"
+    },
+    {
+      "name": "JRB: Red Coins on the Ship Afloat"
+    },
+    {
+      "name": "JRB: Blast to the Stone Pillar"
+    },
+    {
+      "name": "JRB: Through the Jet Stream"
+    },
+    {
+      "name": "JRB: 100 Coins"
+    },
+    {
+      "name": "CCM: Slip Slidin' Away"
+    },
+    {
+      "name": "CCM: Li'l Penguin Lost"
+    },
+    {
+      "name": "CCM: Big Penguin Race"
+    },
+    {
+      "name": "CCM: Frosty Slide for 8 Red Coins"
+    },
+    {
+      "name": "CCM: Snowman's Lost His Head"
+    },
+    {
+      "name": "CCM: Wall Kicks Will Work"
+    },
+    {
+      "name": "CCM: 100 Coins"
+    },
+    {
+      "name": "BBH: Go on a Ghost Hunt"
+    },
+    {
+      "name": "BBH: Ride Big Boo's Merry-Go-Round"
+    },
+    {
+      "name": "BBH: Secret of the Haunted Books"
+    },
+    {
+      "name": "BBH: Seek the 8 Red Coins"
+    },
+    {
+      "name": "BBH: Big Boo's Balcony"
+    },
+    {
+      "name": "BBH: Eye to Eye in the Secret Room"
+    },
+    {
+      "name": "BBH: 100 Coins"
+    },
+    {
+      "name": "HMC: Swimming Beast in the Cavern"
+    },
+    {
+      "name": "HMC: Elevate for 8 Red Coins"
+    },
+    {
+      "name": "HMC: Metal-Head Mario Can Move!"
+    },
+    {
+      "name": "HMC: Navigating the Toxic Maze"
+    },
+    {
+      "name": "HMC: A-Maze-Ing Emergency Exit"
+    },
+    {
+      "name": "HMC: Watch for Rolling Rocks"
+    },
+    {
+      "name": "HMC: 100 Coins"
+    },
+    {
+      "name": "LLL: Boil the Big Bully"
+    },
+    {
+      "name": "LLL: Bully the Bullies"
+    },
+    {
+      "name": "LLL: 8-Coin Puzzle with 15 Pieces"
+    },
+    {
+      "name": "LLL: Red-Hot Log Rolling"
+    },
+    {
+      "name": "LLL: Hot-Foot-It into the Volcano"
+    },
+    {
+      "name": "LLL: Elevator Tour in the Volcano"
+    },
+    {
+      "name": "LLL: 100 Coins"
+    },
+    {
+      "name": "SSL: In the Talons of the Big Bird"
+    },
+    {
+      "name": "SSL: Shining Atop the Pyramid"
+    },
+    {
+      "name": "SSL: Inside the Ancient Pyramid"
+    },
+    {
+      "name": "SSL: Stand Tall on the Four Pillars"
+    },
+    {
+      "name": "SSL: Free Flying for 8 Red Coins"
+    },
+    {
+      "name": "SSL: Pyramid Puzzle"
+    },
+    {
+      "name": "SSL: 100 Coins"
+    },
+    {
+      "name": "DDD: Board Bowser's Sub"
+    },
+    {
+      "name": "DDD: Chests in the Current"
+    },
+    {
+      "name": "DDD: Pole-Jumping for Red Coins"
+    },
+    {
+      "name": "DDD: Through the Jet Stream"
+    },
+    {
+      "name": "DDD: The Manta Ray's Reward"
+    },
+    {
+      "name": "DDD: Collect the Caps..."
+    },
+    {
+      "name": "DDD: 100 Coins"
+    },
+    {
+      "name": "SL: Snowman's Big Head"
+    },
+    {
+      "name": "SL: Chill with the Bully"
+    },
+    {
+      "name": "SL: In the Deep Freeze"
+    },
+    {
+      "name": "SL: Whirl from the Freezing Pond"
+    },
+    {
+      "name": "SL: Shell Shreddin' for Red Coins"
+    },
+    {
+      "name": "SL: Into the Igloo"
+    },
+    {
+      "name": "SL: 100 Coins"
+    },
+    {
+      "name": "WDW: Shocking Arrow Lifts!"
+    },
+    {
+      "name": "WDW: Top o' the Town"
+    },
+    {
+      "name": "WDW: Secrets in the Shallows & Sky"
+    },
+    {
+      "name": "WDW: Express Elevator--Hurry Up!"
+    },
+    {
+      "name": "WDW: Go to Town for Red Coins"
+    },
+    {
+      "name": "WDW: Quick Race Through Downtown!"
+    },
+    {
+      "name": "WDW: 100 Coins"
+    },
+    {
+      "name": "TTM: Scale the Mountain"
+    },
+    {
+      "name": "TTM: Mystery of the Monkey Cage"
+    },
+    {
+      "name": "TTM: Scary 'Shrooms, Red Coins"
+    },
+    {
+      "name": "TTM: Mysterious Mountainside"
+    },
+    {
+      "name": "TTM: Breathtaking View from Bridge"
+    },
+    {
+      "name": "TTM: Blast to the Lonely Mushroom"
+    },
+    {
+      "name": "TTM: 100 Coins"
+    },
+    {
+      "name": "THI: Pluck the Piranha Flower"
+    },
+    {
+      "name": "THI: The Tip Top of the Huge Island"
+    },
+    {
+      "name": "THI: Rematch with Koopa the Quick"
+    },
+    {
+      "name": "THI: Five Itty Bitty Secrets"
+    },
+    {
+      "name": "THI: Wiggler's Red Coins"
+    },
+    {
+      "name": "THI: Make Wiggler Squirm"
+    },
+    {
+      "name": "THI: 100 Coins"
+    },
+    {
+      "name": "TTC: Roll into the Cage"
+    },
+    {
+      "name": "TTC: The Pit and the Pendulums"
+    },
+    {
+      "name": "TTC: Get a Hand"
+    },
+    {
+      "name": "TTC: Stomp on the Thwomp"
+    },
+    {
+      "name": "TTC: Timed Jumps on Moving Bars"
+    },
+    {
+      "name": "TTC: Stop Time for Red Coins"
+    },
+    {
+      "name": "TTC: 100 Coins"
+    },
+    {
+      "name": "RR: Cruiser Crossing the Rainbow"
+    },
+    {
+      "name": "RR: The Big House in the Sky"
+    },
+    {
+      "name": "RR: Coins Amassed in a Maze"
+    },
+    {
+      "name": "RR: Swingin' in the Breeze"
+    },
+    {
+      "name": "RR: Tricky Triangles!"
+    },
+    {
+      "name": "RR: Somewhere Over the Rainbow"
+    },
+    {
+      "name": "RR: 100 Coins"
+    },
+    {
+      "name": "Bowser in the Dark World Red Coins"
+    },
+    {
+      "name": "Bowser in the Fire Sea Red Coins"
+    },
+    {
+      "name": "Bowser in the Sky Red Coins"
+    },
+    {
+      "name": "The Princess's Secret Slide Block"
+    },
+    {
+      "name": "The Princess's Secret Slide Fast"
+    },
+    {
+      "name": "Cavern of the Metal Cap Red Coins"
+    },
+    {
+      "name": "Tower of the Wing Cap Red Coins"
+    },
+    {
+      "name": "Vanish Cap Under the Moat Red Coins"
+    },
+    {
+      "name": "Wing Mario Over the Rainbow"
+    },
+    {
+      "name": "The Secret Aquarium"
+    },
+    {
+      "name": "Toad (Basement)"
+    },
+    {
+      "name": "Toad (Second Floor)"
+    },
+    {
+      "name": "Toad (Third Floor)"
+    },
+    {
+      "name": "MIPS 1"
+    },
+    {
+      "name": "MIPS 2"
+    },
+    {
+      "name": "Bowser in the Dark World Key"
+    },
+    {
+      "name": "Bowser in the Fire Sea Key"
+    },
+    {
+      "name": "Tower of the Wing Cap Switch"
+    },
+    {
+      "name": "Cavern of the Metal Cap Switch"
+    },
+    {
+      "name": "Vanish Cap Under the Moat Switch"
+    }
+  ]
+}

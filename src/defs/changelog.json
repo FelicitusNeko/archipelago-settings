@@ -1,4 +1,14 @@
 {
+  "1.0.1": [
+    "Update spec to **0.2.4**",
+    [
+      "**Raft**, **VVVVVV**, **Super Mario 64** added",
+      "**A Link to the Past**: Fix exotic prices and no longer mark them as unstable",
+      "**Rogue Legacy**: Added a mess of new options",
+      "**Risk of Rain 2**: Max locations is now 500, DBFs now a percentage",
+      "**Timespinner**: Locations update"
+    ]
+  ],
   "1.0.0": [
     "Massive internal rework",
     [

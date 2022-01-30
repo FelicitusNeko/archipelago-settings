@@ -18,6 +18,9 @@ import smetroid from "./008-sm.json";
 import evermore from "./009-soe.json";
 import ff1 from "./010-ff1.json";
 import roguelegacy from "./011-roguelegacy.json";
+import sm64 from "./012-sm64.json";
+import raft from "./013-raft.json";
+import v from "./014-vvvvvv.json";
 
 /**
  * The JSON representation of an Archipelago category.
@@ -67,6 +70,9 @@ const APCategoryData = ([
   evermore, // 0.2.0
   ff1, // 0.2.1, no real support (must go to FFR website)
   roguelegacy, // 0.2.3
+  sm64, // 0.2.4
+  raft, // 0.2.4
+  v, // 0.2.4
 ] as APCategoryJson[]).sort((a,b) => a.index - b.index);
 
 export { APCategoryData };

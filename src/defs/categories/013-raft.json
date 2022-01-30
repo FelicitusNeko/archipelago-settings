@@ -1,0 +1,1116 @@
+{
+  "category": "Raft",
+  "index": 13,
+  "settings": [
+    {
+      "type": "boolean",
+      "name": "use_resource_packs",
+      "readableName": "Use resource packs",
+      "description": "Uses Resource Packs to fill out the item pool from Raft. Resource Packs have basic earlygame items such as planks, plastic, or food.",
+      "default": true
+    },
+    {
+      "type": "numeric",
+      "name": "minimum_resource_pack_amount",
+      "readableName": "Minimum resource pack amount",
+      "description": "The minimum amount of resources available in a resource pack.",
+      "low": 1,
+      "high": 15,
+      "randomable": true,
+      "default": 1
+    },
+    {
+      "type": "numeric",
+      "name": "maximum_resource_pack_amount",
+      "readableName": "Maximum resource pack amount",
+      "description": "The maximum amount of resources available in a resource pack.",
+      "low": 1,
+      "high": 15,
+      "randomable": true,
+      "default": 5
+    },
+    {
+      "type": "string",
+      "name": "duplicate_items",
+      "readableName": "Duplicate items",
+      "description": "Adds duplicates of items to the item pool. These will be selected alongside Resource Packs (if configured). Note that there are not many progression items, and selecting Progression may produce many of the same duplicate item.",
+      "values": {
+        "disabled": "Disabled",
+        "progression": "Progression only",
+        "non_progression": "Non-progression only",
+        "any": "Any"
+      },
+      "default": "disabled"
+    },
+    {
+      "type": "string",
+      "name": "island_frequency_locations",
+      "readableName": "Island frequency locations",
+      "description": "Sets where frequencies for story islands are located.",
+      "values": {
+        "vanilla": "Vanilla",
+        "random_on_island": "Random on island",
+        "progressive": "Progressive",
+        "anywhere": "Anywhere"
+      },
+      "default": "random_on_island"
+    },
+    {
+      "type": "boolean",
+      "name": "progressive_items",
+      "readableName": "Progressive items",
+      "description": "Makes some items, like the Bow and Arrow, progressive rather than raw unlocks.",
+      "default": true
+    },
+    {
+      "type": "boolean",
+      "name": "big_island_early_crafting",
+      "readableName": "Big island early crafting",
+      "description": "Allows recipes that require items from big islands (e.g. leather) to lock earlygame items like the Receiver, Bolt, or Smelter.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "paddleboard_mode",
+      "readableName": "Paddleboard mode",
+      "description": "Sets later story islands to in logic without an Engine or Steering Wheel. May require lots of paddling. **Not recommended.**",
+      "default": true
+    }
+  ],
+  "items": [
+    {
+      "name": "Backpack"
+    },
+    {
+      "name": "Leather helmet"
+    },
+    {
+      "name": "Leather body armor"
+    },
+    {
+      "name": "Leather greaves"
+    },
+    {
+      "name": "Flippers"
+    },
+    {
+      "name": "Head light"
+    },
+    {
+      "name": "Oxygen bottle"
+    },
+    {
+      "name": "Zipline tool"
+    },
+    {
+      "name": "Empty bottle"
+    },
+    {
+      "name": "Clay bowl"
+    },
+    {
+      "name": "Bucket"
+    },
+    {
+      "name": "Healing salve"
+    },
+    {
+      "name": "Good healing salve"
+    },
+    {
+      "name": "Cookingpot"
+    },
+    {
+      "name": "Advanced grill"
+    },
+    {
+      "name": "Advanced purifier"
+    },
+    {
+      "name": "Electric purifier"
+    },
+    {
+      "name": "Medium crop plot"
+    },
+    {
+      "name": "Large crop plot"
+    },
+    {
+      "name": "Grass plot"
+    },
+    {
+      "name": "Scarecrow"
+    },
+    {
+      "name": "Sprinkler"
+    },
+    {
+      "name": "Honey"
+    },
+    {
+      "name": "Battery"
+    },
+    {
+      "name": "Bolt"
+    },
+    {
+      "name": "Circuit board"
+    },
+    {
+      "name": "Hinge"
+    },
+    {
+      "name": "Stationary anchor"
+    },
+    {
+      "name": "Engine controls"
+    },
+    {
+      "name": "Engine"
+    },
+    {
+      "name": "Receiver"
+    },
+    {
+      "name": "Antenna"
+    },
+    {
+      "name": "Steering Wheel"
+    },
+    {
+      "name": "Battery charger"
+    },
+    {
+      "name": "Hammock"
+    },
+    {
+      "name": "Beehive"
+    },
+    {
+      "name": "Biofuel refiner"
+    },
+    {
+      "name": "Birds nest"
+    },
+    {
+      "name": "Smelter"
+    },
+    {
+      "name": "Fuel tank"
+    },
+    {
+      "name": "Water tank"
+    },
+    {
+      "name": "Simple collection net"
+    },
+    {
+      "name": "Fuel pipe"
+    },
+    {
+      "name": "Water pipe"
+    },
+    {
+      "name": "Storage"
+    },
+    {
+      "name": "Large Storage"
+    },
+    {
+      "name": "Trashcan"
+    },
+    {
+      "name": "Zipline"
+    },
+    {
+      "name": "Firework"
+    },
+    {
+      "name": "Metal axe"
+    },
+    {
+      "name": "Binoculars"
+    },
+    {
+      "name": "Metal fishing rod"
+    },
+    {
+      "name": "Scrap hook"
+    },
+    {
+      "name": "Metal detector"
+    },
+    {
+      "name": "Shear"
+    },
+    {
+      "name": "Shovel"
+    },
+    {
+      "name": "Sweep net"
+    },
+    {
+      "name": "Basic bow"
+    },
+    {
+      "name": "Stone arrow"
+    },
+    {
+      "name": "Metal arrow"
+    },
+    {
+      "name": "Metal Spear"
+    },
+    {
+      "name": "Machete"
+    },
+    {
+      "name": "Net launcher"
+    },
+    {
+      "name": "Net canister"
+    },
+    {
+      "name": "Vasagatan Frequency"
+    },
+    {
+      "name": "Balboa Island Frequency"
+    },
+    {
+      "name": "Tangaroa Frequency"
+    },
+    {
+      "name": "Caravan Island Frequency"
+    },
+    {
+      "name": "progressive-salve"
+    },
+    {
+      "name": "progressive-purifier"
+    },
+    {
+      "name": "progressive-crop-plot"
+    },
+    {
+      "name": "progressive-battery"
+    },
+    {
+      "name": "progressive-engine"
+    },
+    {
+      "name": "progressive-storage"
+    },
+    {
+      "name": "progressive-zipline"
+    },
+    {
+      "name": "progressive-metals"
+    },
+    {
+      "name": "progressive-bow"
+    },
+    {
+      "name": "progressive-frequency"
+    },
+    {
+      "name": "Resource Pack: 1 Plank"
+    },
+    {
+      "name": "Resource Pack: 2 Plank"
+    },
+    {
+      "name": "Resource Pack: 3 Plank"
+    },
+    {
+      "name": "Resource Pack: 4 Plank"
+    },
+    {
+      "name": "Resource Pack: 5 Plank"
+    },
+    {
+      "name": "Resource Pack: 6 Plank"
+    },
+    {
+      "name": "Resource Pack: 7 Plank"
+    },
+    {
+      "name": "Resource Pack: 8 Plank"
+    },
+    {
+      "name": "Resource Pack: 9 Plank"
+    },
+    {
+      "name": "Resource Pack: 10 Plank"
+    },
+    {
+      "name": "Resource Pack: 11 Plank"
+    },
+    {
+      "name": "Resource Pack: 12 Plank"
+    },
+    {
+      "name": "Resource Pack: 13 Plank"
+    },
+    {
+      "name": "Resource Pack: 14 Plank"
+    },
+    {
+      "name": "Resource Pack: 15 Plank"
+    },
+    {
+      "name": "Resource Pack: 1 Plastic"
+    },
+    {
+      "name": "Resource Pack: 2 Plastic"
+    },
+    {
+      "name": "Resource Pack: 3 Plastic"
+    },
+    {
+      "name": "Resource Pack: 4 Plastic"
+    },
+    {
+      "name": "Resource Pack: 5 Plastic"
+    },
+    {
+      "name": "Resource Pack: 6 Plastic"
+    },
+    {
+      "name": "Resource Pack: 7 Plastic"
+    },
+    {
+      "name": "Resource Pack: 8 Plastic"
+    },
+    {
+      "name": "Resource Pack: 9 Plastic"
+    },
+    {
+      "name": "Resource Pack: 10 Plastic"
+    },
+    {
+      "name": "Resource Pack: 11 Plastic"
+    },
+    {
+      "name": "Resource Pack: 12 Plastic"
+    },
+    {
+      "name": "Resource Pack: 13 Plastic"
+    },
+    {
+      "name": "Resource Pack: 14 Plastic"
+    },
+    {
+      "name": "Resource Pack: 15 Plastic"
+    },
+    {
+      "name": "Resource Pack: 1 Clay"
+    },
+    {
+      "name": "Resource Pack: 2 Clay"
+    },
+    {
+      "name": "Resource Pack: 3 Clay"
+    },
+    {
+      "name": "Resource Pack: 4 Clay"
+    },
+    {
+      "name": "Resource Pack: 5 Clay"
+    },
+    {
+      "name": "Resource Pack: 6 Clay"
+    },
+    {
+      "name": "Resource Pack: 7 Clay"
+    },
+    {
+      "name": "Resource Pack: 8 Clay"
+    },
+    {
+      "name": "Resource Pack: 9 Clay"
+    },
+    {
+      "name": "Resource Pack: 10 Clay"
+    },
+    {
+      "name": "Resource Pack: 11 Clay"
+    },
+    {
+      "name": "Resource Pack: 12 Clay"
+    },
+    {
+      "name": "Resource Pack: 13 Clay"
+    },
+    {
+      "name": "Resource Pack: 14 Clay"
+    },
+    {
+      "name": "Resource Pack: 15 Clay"
+    },
+    {
+      "name": "Resource Pack: 1 Stone"
+    },
+    {
+      "name": "Resource Pack: 2 Stone"
+    },
+    {
+      "name": "Resource Pack: 3 Stone"
+    },
+    {
+      "name": "Resource Pack: 4 Stone"
+    },
+    {
+      "name": "Resource Pack: 5 Stone"
+    },
+    {
+      "name": "Resource Pack: 6 Stone"
+    },
+    {
+      "name": "Resource Pack: 7 Stone"
+    },
+    {
+      "name": "Resource Pack: 8 Stone"
+    },
+    {
+      "name": "Resource Pack: 9 Stone"
+    },
+    {
+      "name": "Resource Pack: 10 Stone"
+    },
+    {
+      "name": "Resource Pack: 11 Stone"
+    },
+    {
+      "name": "Resource Pack: 12 Stone"
+    },
+    {
+      "name": "Resource Pack: 13 Stone"
+    },
+    {
+      "name": "Resource Pack: 14 Stone"
+    },
+    {
+      "name": "Resource Pack: 15 Stone"
+    },
+    {
+      "name": "Resource Pack: 1 Scrap"
+    },
+    {
+      "name": "Resource Pack: 2 Scrap"
+    },
+    {
+      "name": "Resource Pack: 3 Scrap"
+    },
+    {
+      "name": "Resource Pack: 4 Scrap"
+    },
+    {
+      "name": "Resource Pack: 5 Scrap"
+    },
+    {
+      "name": "Resource Pack: 6 Scrap"
+    },
+    {
+      "name": "Resource Pack: 7 Scrap"
+    },
+    {
+      "name": "Resource Pack: 8 Scrap"
+    },
+    {
+      "name": "Resource Pack: 9 Scrap"
+    },
+    {
+      "name": "Resource Pack: 10 Scrap"
+    },
+    {
+      "name": "Resource Pack: 11 Scrap"
+    },
+    {
+      "name": "Resource Pack: 12 Scrap"
+    },
+    {
+      "name": "Resource Pack: 13 Scrap"
+    },
+    {
+      "name": "Resource Pack: 14 Scrap"
+    },
+    {
+      "name": "Resource Pack: 15 Scrap"
+    },
+    {
+      "name": "Resource Pack: 1 SeaVine"
+    },
+    {
+      "name": "Resource Pack: 2 SeaVine"
+    },
+    {
+      "name": "Resource Pack: 3 SeaVine"
+    },
+    {
+      "name": "Resource Pack: 4 SeaVine"
+    },
+    {
+      "name": "Resource Pack: 5 SeaVine"
+    },
+    {
+      "name": "Resource Pack: 6 SeaVine"
+    },
+    {
+      "name": "Resource Pack: 7 SeaVine"
+    },
+    {
+      "name": "Resource Pack: 8 SeaVine"
+    },
+    {
+      "name": "Resource Pack: 9 SeaVine"
+    },
+    {
+      "name": "Resource Pack: 10 SeaVine"
+    },
+    {
+      "name": "Resource Pack: 11 SeaVine"
+    },
+    {
+      "name": "Resource Pack: 12 SeaVine"
+    },
+    {
+      "name": "Resource Pack: 13 SeaVine"
+    },
+    {
+      "name": "Resource Pack: 14 SeaVine"
+    },
+    {
+      "name": "Resource Pack: 15 SeaVine"
+    },
+    {
+      "name": "Resource Pack: 1 Thatch"
+    },
+    {
+      "name": "Resource Pack: 2 Thatch"
+    },
+    {
+      "name": "Resource Pack: 3 Thatch"
+    },
+    {
+      "name": "Resource Pack: 4 Thatch"
+    },
+    {
+      "name": "Resource Pack: 5 Thatch"
+    },
+    {
+      "name": "Resource Pack: 6 Thatch"
+    },
+    {
+      "name": "Resource Pack: 7 Thatch"
+    },
+    {
+      "name": "Resource Pack: 8 Thatch"
+    },
+    {
+      "name": "Resource Pack: 9 Thatch"
+    },
+    {
+      "name": "Resource Pack: 10 Thatch"
+    },
+    {
+      "name": "Resource Pack: 11 Thatch"
+    },
+    {
+      "name": "Resource Pack: 12 Thatch"
+    },
+    {
+      "name": "Resource Pack: 13 Thatch"
+    },
+    {
+      "name": "Resource Pack: 14 Thatch"
+    },
+    {
+      "name": "Resource Pack: 15 Thatch"
+    },
+    {
+      "name": "Resource Pack: 1 Sand"
+    },
+    {
+      "name": "Resource Pack: 2 Sand"
+    },
+    {
+      "name": "Resource Pack: 3 Sand"
+    },
+    {
+      "name": "Resource Pack: 4 Sand"
+    },
+    {
+      "name": "Resource Pack: 5 Sand"
+    },
+    {
+      "name": "Resource Pack: 6 Sand"
+    },
+    {
+      "name": "Resource Pack: 7 Sand"
+    },
+    {
+      "name": "Resource Pack: 8 Sand"
+    },
+    {
+      "name": "Resource Pack: 9 Sand"
+    },
+    {
+      "name": "Resource Pack: 10 Sand"
+    },
+    {
+      "name": "Resource Pack: 11 Sand"
+    },
+    {
+      "name": "Resource Pack: 12 Sand"
+    },
+    {
+      "name": "Resource Pack: 13 Sand"
+    },
+    {
+      "name": "Resource Pack: 14 Sand"
+    },
+    {
+      "name": "Resource Pack: 15 Sand"
+    },
+    {
+      "name": "Resource Pack: 1 Raw_Beet"
+    },
+    {
+      "name": "Resource Pack: 2 Raw_Beet"
+    },
+    {
+      "name": "Resource Pack: 3 Raw_Beet"
+    },
+    {
+      "name": "Resource Pack: 4 Raw_Beet"
+    },
+    {
+      "name": "Resource Pack: 5 Raw_Beet"
+    },
+    {
+      "name": "Resource Pack: 6 Raw_Beet"
+    },
+    {
+      "name": "Resource Pack: 7 Raw_Beet"
+    },
+    {
+      "name": "Resource Pack: 8 Raw_Beet"
+    },
+    {
+      "name": "Resource Pack: 9 Raw_Beet"
+    },
+    {
+      "name": "Resource Pack: 10 Raw_Beet"
+    },
+    {
+      "name": "Resource Pack: 11 Raw_Beet"
+    },
+    {
+      "name": "Resource Pack: 12 Raw_Beet"
+    },
+    {
+      "name": "Resource Pack: 13 Raw_Beet"
+    },
+    {
+      "name": "Resource Pack: 14 Raw_Beet"
+    },
+    {
+      "name": "Resource Pack: 15 Raw_Beet"
+    },
+    {
+      "name": "Resource Pack: 1 Raw_Potato"
+    },
+    {
+      "name": "Resource Pack: 2 Raw_Potato"
+    },
+    {
+      "name": "Resource Pack: 3 Raw_Potato"
+    },
+    {
+      "name": "Resource Pack: 4 Raw_Potato"
+    },
+    {
+      "name": "Resource Pack: 5 Raw_Potato"
+    },
+    {
+      "name": "Resource Pack: 6 Raw_Potato"
+    },
+    {
+      "name": "Resource Pack: 7 Raw_Potato"
+    },
+    {
+      "name": "Resource Pack: 8 Raw_Potato"
+    },
+    {
+      "name": "Resource Pack: 9 Raw_Potato"
+    },
+    {
+      "name": "Resource Pack: 10 Raw_Potato"
+    },
+    {
+      "name": "Resource Pack: 11 Raw_Potato"
+    },
+    {
+      "name": "Resource Pack: 12 Raw_Potato"
+    },
+    {
+      "name": "Resource Pack: 13 Raw_Potato"
+    },
+    {
+      "name": "Resource Pack: 14 Raw_Potato"
+    },
+    {
+      "name": "Resource Pack: 15 Raw_Potato"
+    }
+  ],
+  "locations": [
+    {
+      "name": "Small trophy board"
+    },
+    {
+      "name": "Medium trophy board"
+    },
+    {
+      "name": "Simple collection net"
+    },
+    {
+      "name": "Advanced grill"
+    },
+    {
+      "name": "Large crop plot"
+    },
+    {
+      "name": "Scarecrow"
+    },
+    {
+      "name": "Hammock"
+    },
+    {
+      "name": "Smelter"
+    },
+    {
+      "name": "Medium crop plot"
+    },
+    {
+      "name": "Lantern"
+    },
+    {
+      "name": "Bucket"
+    },
+    {
+      "name": "Advanced purifier"
+    },
+    {
+      "name": "Grass plot"
+    },
+    {
+      "name": "Paint brush"
+    },
+    {
+      "name": "Birds nest"
+    },
+    {
+      "name": "Shovel"
+    },
+    {
+      "name": "Stone arrow"
+    },
+    {
+      "name": "Metal arrow"
+    },
+    {
+      "name": "Stationary anchor"
+    },
+    {
+      "name": "Paint mill"
+    },
+    {
+      "name": "Storage"
+    },
+    {
+      "name": "Metal axe"
+    },
+    {
+      "name": "Scrap hook"
+    },
+    {
+      "name": "Sweep net"
+    },
+    {
+      "name": "Basic bow"
+    },
+    {
+      "name": "Metal Spear"
+    },
+    {
+      "name": "Cookingpot"
+    },
+    {
+      "name": "Beehive"
+    },
+    {
+      "name": "Backpack"
+    },
+    {
+      "name": "Leather helmet"
+    },
+    {
+      "name": "Leather body armor"
+    },
+    {
+      "name": "Leather greaves"
+    },
+    {
+      "name": "Flippers"
+    },
+    {
+      "name": "Oxygen bottle"
+    },
+    {
+      "name": "Empty bottle"
+    },
+    {
+      "name": "Clay bowl"
+    },
+    {
+      "name": "Healing salve"
+    },
+    {
+      "name": "Good healing salve"
+    },
+    {
+      "name": "Sprinkler"
+    },
+    {
+      "name": "Honey"
+    },
+    {
+      "name": "Battery"
+    },
+    {
+      "name": "Bolt"
+    },
+    {
+      "name": "Circuit board"
+    },
+    {
+      "name": "Hinge"
+    },
+    {
+      "name": "Binoculars"
+    },
+    {
+      "name": "Metal fishing rod"
+    },
+    {
+      "name": "Shear"
+    },
+    {
+      "name": "Net launcher"
+    },
+    {
+      "name": "Net canister"
+    },
+    {
+      "name": "Large trophy board"
+    },
+    {
+      "name": "Head light blueprint"
+    },
+    {
+      "name": "Radio Tower Briefcase"
+    },
+    {
+      "name": "Radio Tower Frequency to Vasagatan"
+    },
+    {
+      "name": "Radio Tower Notepad 1"
+    },
+    {
+      "name": "Radio Tower Notepad 2"
+    },
+    {
+      "name": "Radio Tower Signalboard Trace"
+    },
+    {
+      "name": "Vasagatan Recording 1"
+    },
+    {
+      "name": "Vasagatan Recording 2"
+    },
+    {
+      "name": "Vasagatan Recording 3"
+    },
+    {
+      "name": "Vasagatan Recording 4"
+    },
+    {
+      "name": "Vasagatan Recording 5"
+    },
+    {
+      "name": "Vasagatan Note from Oskar"
+    },
+    {
+      "name": "Vasagatan Note from Celine"
+    },
+    {
+      "name": "Vasagatan Note from Hannes"
+    },
+    {
+      "name": "Vasagatan Magazine Clipping"
+    },
+    {
+      "name": "Vasagatan Captain's Log 1"
+    },
+    {
+      "name": "Vasagatan Captain's Log 2"
+    },
+    {
+      "name": "Vasagatan Frequency to Balboa"
+    },
+    {
+      "name": "Vasagatan Wilkstrom's report"
+    },
+    {
+      "name": "Engine blueprint"
+    },
+    {
+      "name": "Steering Wheel blueprint"
+    },
+    {
+      "name": "Machete blueprint"
+    },
+    {
+      "name": "Balboa Island Picture of two engineers"
+    },
+    {
+      "name": "Balboa Island Schedule of engineers"
+    },
+    {
+      "name": "Biofuel refiner blueprint"
+    },
+    {
+      "name": "Balboa Island Note from Hentry"
+    },
+    {
+      "name": "Balboa Island Correas diary 3"
+    },
+    {
+      "name": "Fuel tank blueprint"
+    },
+    {
+      "name": "Balboa Island Correas diary 1"
+    },
+    {
+      "name": "Balboa Island Correas diary 2"
+    },
+    {
+      "name": "Fuel pipe blueprint"
+    },
+    {
+      "name": "Balboa Island Bear map"
+    },
+    {
+      "name": "Balboa Island Doll murderer 4"
+    },
+    {
+      "name": "Balboa Island Doll murderer 1"
+    },
+    {
+      "name": "Balboa Island Doll murderer 3"
+    },
+    {
+      "name": "Balboa Island Doll murderer 5"
+    },
+    {
+      "name": "Balboa Island Doll murderer 2"
+    },
+    {
+      "name": "Caravan Island Journal 1 - First Entry"
+    },
+    {
+      "name": "Caravan Island Journal 2 - Pipe Experiment"
+    },
+    {
+      "name": "Caravan Island Journal 3 - Rocket Experiment"
+    },
+    {
+      "name": "Caravan Island Journal 4 - Mother's Letter"
+    },
+    {
+      "name": "Caravan Island Journal 5 - Dive Experiment"
+    },
+    {
+      "name": "Caravan Island Journal 6 - Kelp Experiment"
+    },
+    {
+      "name": "Caravan Island Journal 7 - Raft Society News Letter"
+    },
+    {
+      "name": "Caravan Island Journal 8 - Leaving Caravan Island"
+    },
+    {
+      "name": "Caravan Island Journal 9 - Doctor's Note"
+    },
+    {
+      "name": "Firework blueprint"
+    },
+    {
+      "name": "Battery Charger quest"
+    },
+    {
+      "name": "Zipline quest"
+    },
+    {
+      "name": "Caravan Island Frequency to Tangaroa"
+    },
+    {
+      "name": "Engine controls blueprint"
+    },
+    {
+      "name": "Metal detector blueprint"
+    },
+    {
+      "name": "Tangaroa Ruben 1"
+    },
+    {
+      "name": "Tangaroa Ruben 2"
+    },
+    {
+      "name": "Tangaroa Ruben 3"
+    },
+    {
+      "name": "Tangaroa Ruben 4"
+    },
+    {
+      "name": "Tangaroa Ruben 5"
+    },
+    {
+      "name": "Tangaroa Gardener Diary"
+    },
+    {
+      "name": "Tangaroa Riot Log"
+    },
+    {
+      "name": "Tangaroa Tulley Note"
+    },
+    {
+      "name": "Tangaroa Cipher"
+    },
+    {
+      "name": "Water pipe blueprint"
+    },
+    {
+      "name": "Electric purifier blueprint"
+    },
+    {
+      "name": "Water tank blueprint"
+    },
+    {
+      "name": "Large Storage blueprint"
+    },
+    {
+      "name": "Relay Station quest"
+    }
+  ]
+}
