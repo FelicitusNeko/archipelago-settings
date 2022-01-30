@@ -8,7 +8,8 @@
       "readableName": "Total locations",
       "description": "How many location checks will be added to the playthrough.",
       "low": 10,
-      "high": 100,
+      "high": 500,
+      "step": 5,
       "randomable": true,
       "default": 20
     },
@@ -23,7 +24,7 @@
       "type": "numeric",
       "name": "total_revivals",
       "readableName": "Total DBFs in pool",
-      "description": "How many Dio's Best Friends (extra lives) are in the multiworld pool.",
+      "description": "How much percent of the items in your pool will be Dio's Best Friends.",
       "low": 0,
       "high": 10,
       "randomable": true,
