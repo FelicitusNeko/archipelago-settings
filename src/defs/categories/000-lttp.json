@@ -975,7 +975,7 @@
       "type": "char",
       "name": "sprite",
       "readableName": "Sprite",
-      "description": "Your hero's sprite. Sorry there are no pictures; this is being done in a very hacky way to begin with. ZSPR files are hard."
+      "description": "Your hero's sprite. Sorry there are no pictures; this is being done in a very hacky way to begin with. ZSPR files are hard. There's a pretty good reference on the [ALTTPR website](https://alttpr.com/en/sprite_preview)."
     }
   ],
   "items": [
