@@ -188,7 +188,7 @@
     {
       "type": "numeric",
       "name": "extra_triforce_percentage",
-      "readableName": ["Triforce available", "percentage"],
+      "readableName": "Triforce available – percentage",
       "description": "The percentage of the Triforce piece goal to add to the multiworld pool as extras.",
       "low": 0,
       "high": 100,
@@ -400,6 +400,13 @@
       "name": "warp_songs",
       "readableName": "Entrance shuffle – warp songs",
       "description": "Randomizes warp song destinations.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "spawn_positions",
+      "readableName": "Entrance shuffle – spawn positions",
+      "description": "Randomizes the starting position on loading a save. Consistent between savewarps.",
       "default": false
     },
     {
