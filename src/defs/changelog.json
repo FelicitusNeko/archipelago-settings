@@ -8,7 +8,11 @@
       "**Risk of Rain 2**: Max locations is now 500, DBFs now a percentage",
       "**Timespinner**: Locations update"
     ],
-    "Fix issue where settings dependent on others would not show/hide correctly when dep values changed"
+    "Fix issue where settings dependent on others would not show/hide correctly when dep values changed",
+    "*Revision 1*",
+    [
+      "**Ocarina of Time**: added missing spawn_location setting, fixed incorrect defaults"
+    ]
   ],
   "1.0.0": [
     "Massive internal rework",
