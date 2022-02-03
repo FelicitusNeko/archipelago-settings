@@ -170,7 +170,7 @@
       "name": "triforce_hunt",
       "readableName": "Triforce Hunt",
       "description": "Gather pieces of the Triforce scattered across the world to complete the game.",
-      "default": true
+      "default": false
     },
     {
       "type": "numeric",
@@ -202,7 +202,7 @@
       "name": "bombchus_in_logic",
       "readableName": "Bombchus in logic",
       "description": "Bombchus are properly considered in logic. The first pack has 20 Bombchus, Kokiri Shop and Bazaar sell refills, and getting them opens up bowling minigame.",
-      "default": true
+      "default": false
     },
     {
       "type": "numeric",
@@ -634,7 +634,7 @@
       "name": "correct_chest_sizes",
       "readableName": "Big items, big chests",
       "description": "Progression items will always be in big chests.",
-      "default": true
+      "default": false
     },
     {
       "type": "string",
@@ -878,7 +878,7 @@
       "name": "ocarina_fanfares",
       "readableName": "Ocarina fanfares",
       "description": "Enable Ocarina songs as fanfares. These are longer than usual fanfares.",
-      "default": true,
+      "default": false,
       "dependsOn": {
         "fanfares": ["randomized"]
       }
