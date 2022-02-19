@@ -14,7 +14,7 @@
       "name": "DownloadableItems",
       "readableName": "Downloadable items",
       "description": "If enabled, you'll be able to download items at terminals using the Tablet.",
-      "default": false
+      "default": true
     },
     {
       "type": "boolean",
@@ -78,6 +78,36 @@
       "readableName": "Damage rando",
       "description": "Each orb has a high chance of having lower base damage and a low chance of having much higher base damage.",
       "default": false
+    },
+    {
+      "type": "string",
+      "name": "ShopFill",
+      "readableName": "Shop shuffle",
+      "description": "Sets the items for sale in the Merchant Crow's shops.",
+      "values": {
+        "default": ["Default", "No sunglasses or Trendy Jacket, but Sand Vials available."],
+        "randomized": ["Randomized", "Up to four random items in each shop."],
+        "vanilla": "Vanilla",
+        "empty": "Empty"
+      },
+      "default": "default"
+    },
+    {
+      "type": "boolean",
+      "name": "ShopWarpShards",
+      "readableName": "Always sell Warp Shards",
+      "description": "Shops always sell Warp Shards, regardless of shop shuffle setting.",
+      "default": true
+    },
+    {
+      "type": "numeric",
+      "name": "ShopMultiplier",
+      "readableName": "Shop price multiplier",
+      "description": "Multiplies shop item costs by the given value. Can be set to 0 for free shops.",
+      "min": 0,
+      "max": 10,
+      "randomable": true,
+      "default": 1
     },
     {
       "type": "boolean",
@@ -417,7 +447,7 @@
       "max": 9
     },
     {
-      "name": "Cheveux Breast",
+      "name": "Cheveur Breast",
       "max": 9
     },
     {
@@ -425,7 +455,7 @@
       "max": 9
     },
     {
-      "name": "Cheveux Feather",
+      "name": "Cheveur Feather",
       "max": 9
     },
     {

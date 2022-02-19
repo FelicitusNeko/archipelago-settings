@@ -1,4 +1,12 @@
 {
+  "1.0.2": [
+    "Update spec to **0.2.5**",
+    [
+      "**Super Mario 64**: added area rando, progressive keys, Bob-omb Buddy checks, and DeathLink",
+      "**Timespinner**: added shop shuffle and price multiplier, and option to always sell Warp Shards",
+      "**VVVVVV**: added area shuffle, door cost shuffle, and music shuffle"
+    ]
+  ],
   "1.0.1": [
     "Update spec to **0.2.4**",
     [

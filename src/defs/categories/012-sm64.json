@@ -4,6 +4,20 @@
   "settings": [
     {
       "type": "boolean",
+      "name": "AreaRandomizer",
+      "readableName": "Area Randomizer",
+      "description": "Randomizes entrances to courses.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "ProgressiveKeys",
+      "readableName": "Progressive Keys",
+      "description": "If enabled, keys received will always start with Basement, then Second Floor.",
+      "default": false
+    },
+    {
+      "type": "boolean",
       "name": "EnableCoinStars",
       "readableName": "Enable Coin Stars",
       "description": "Whether 100-Coin Stars will count toward checks.",
@@ -13,7 +27,14 @@
       "type": "boolean",
       "name": "StrictCapRequirements",
       "readableName": "Strict cap requirements",
-      "description": "Whether Power Stars that require specific Caps may not be considered in-logic without those Caps.",
+      "description": "Whether Power Stars that require specific Caps may _not_ be considered in-logic without those Caps.",
+      "default": true
+    },
+    {
+      "type": "boolean",
+      "name": "StrictCannonRequirements",
+      "readableName": "Strict cannon requirements",
+      "description": "Whether Power Stars that require specific cannons unlocked may _not_ be considered in-logic without those cannons unlocked.",
       "default": true
     },
     {
@@ -25,6 +46,30 @@
       "high": 100,
       "randomable": true,
       "default": 70
+    },
+    {
+      "type": "numeric",
+      "name": "StarsToFinish",
+      "readableName": "Extra stars",
+      "description": "How many additional Power Stars are added to the multiworld pool, beyond the number required to finish.",
+      "low": 0,
+      "high": 50,
+      "randomable": true,
+      "default": 50
+    },
+    {
+      "type": "boolean",
+      "name": "BuddyChecks",
+      "readableName": "Bob-omb Buddy Checks",
+      "description": "Whether Bob-omb Buddies and their respective cannon unlocks are included in the multiworld pool.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "death_link",
+      "readableName": "DeathLink",
+      "description": "If one DeathLinked player dies, all of them do.",
+      "default": false
     }
   ],
   "items": [
@@ -33,10 +78,22 @@
       "max": 120
     },
     {
-      "name": "Basement Key"
+      "name": "Basement Key",
+      "dependsOn": {
+        "ProgressiveKeys": [false]
+      }
     },
     {
-      "name": "Second Floor Key"
+      "name": "Second Floor Key",
+      "dependsOn": {
+        "ProgressiveKeys": [false]
+      }
+    },
+    {
+      "name": "Progressive Key",
+      "dependsOn": {
+        "ProgressiveKeys": [true]
+      }
     },
     {
       "name": "Wing Cap"
@@ -46,6 +103,50 @@
     },
     {
       "name": "Vanish Cap"
+    },
+    {
+      "name": "1Up Mushroom",
+      "readableName": "1-up Mushroom"
+    },
+    {
+      "name": "Cannon Unlock BoB",
+      "readableName": "Bob-omb Battlefield cannon unlock"
+    },
+    {
+      "name": "Cannon Unlock WF",
+      "readableName": "Whomp's Fortress cannon unlock"
+    },
+    {
+      "name": "Cannon Unlock JRB",
+      "readableName": "Jolly Roger Bay cannon unlock"
+    },
+    {
+      "name": "Cannon Unlock CCM",
+      "readableName": "Cool Cool Mountain cannon unlock"
+    },
+    {
+      "name": "Cannon Unlock SSL",
+      "readableName": "Shifting Sand Land cannon unlock"
+    },
+    {
+      "name": "Cannon Unlock SL",
+      "readableName": "Snowman's Land cannon unlock"
+    },
+    {
+      "name": "Cannon Unlock WDW",
+      "readableName": "Wet-Dry World cannon unlock"
+    },
+    {
+      "name": "Cannon Unlock TTM",
+      "readableName": "Tall Tall Mountain cannon unlock"
+    },
+    {
+      "name": "Cannon Unlock THI",
+      "readableName": "Tiny-Huge Island cannon unlock"
+    },
+    {
+      "name": "Cannon Unlock RR",
+      "readableName": "Rainbow Ride cannon unlock"
     }
   ],
   "locations": [
@@ -423,6 +524,36 @@
     },
     {
       "name": "Vanish Cap Under the Moat Switch"
+    },
+    {
+      "name": "BoB: Bob-omb Buddy"
+    },
+    {
+      "name": "WF: Bob-omb Buddy"
+    },
+    {
+      "name": "JRB: Bob-omb Buddy"
+    },
+    {
+      "name": "CCM: Bob-omb Buddy"
+    },
+    {
+      "name": "SSL: Bob-omb Buddy"
+    },
+    {
+      "name": "SL: Bob-omb Buddy"
+    },
+    {
+      "name": "WDW: Bob-omb Buddy"
+    },
+    {
+      "name": "TTM: Bob-omb Buddy"
+    },
+    {
+      "name": "THI: Bob-omb Buddy"
+    },
+    {
+      "name": "RR: Bob-omb Buddy"
     }
   ]
 }

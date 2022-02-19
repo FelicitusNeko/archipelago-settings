@@ -3,6 +3,20 @@
   "index": 14,
   "settings": [
     {
+      "type": "boolean",
+      "name": "MusicRandomizer",
+      "readableName": "Music shuffle",
+      "description": "Shuffles music between areas.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "AreaRandomizer",
+      "readableName": "Area shuffle",
+      "description": "Shuffles entrances to proper areas.",
+      "default": false
+    },
+    {
       "type": "numeric",
       "name": "DoorCost",
       "readableName": "Door cost",
@@ -11,6 +25,13 @@
       "high": 3,
       "randomable": true,
       "default": 3
+    },
+    {
+      "type": "boolean",
+      "name": "AreaCostRandomizer",
+      "readableName": "Door cost shuffle",
+      "description": "Shuffles which area entrances require which trinkets.",
+      "default": false
     },
     {
       "type": "boolean",
