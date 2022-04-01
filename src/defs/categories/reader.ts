@@ -75,6 +75,13 @@ const APCategoryData = ([
   sm64, // 0.2.4
   raft, // 0.2.4
   v, // 0.2.4
-] as APCategoryJson[]).sort((a,b) => a.index - b.index);
+//] as APCategoryJson[]).sort((a,b) => a.index - b.index);
+] as APCategoryJson[]).sort((a,b) => {
+  if (!a.category) return -1;
+  if (!b.category) return 1;
+  if ((a.readableName ?? a.category) < (b.readableName ?? b.category)) return -1;
+  if ((a.readableName ?? a.category) > (b.readableName ?? b.category)) return 1;
+  return 0;
+});
 
 export { APCategoryData };
