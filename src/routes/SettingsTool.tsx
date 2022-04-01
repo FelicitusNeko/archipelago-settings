@@ -378,9 +378,15 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
 
     // Create an <a> element to initiate the download
     const element = document.createElement("a");
-    const file = new Blob([yaml.stringify(outYaml)], {
-      type: "application/yaml",
-    });
+    const file = new Blob(
+      [
+        "# Generated using the unofficial Archipelago Settings Tool at https://lowbiasgaming.net/archipelago\n" +
+          yaml.stringify(outYaml),
+      ],
+      {
+        type: "application/yaml",
+      }
+    );
     element.href = URL.createObjectURL(file);
     element.download = `${playerName}.yaml`;
 
