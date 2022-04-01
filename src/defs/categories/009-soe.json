@@ -23,6 +23,7 @@
       "randomable": true,
       "low": 1,
       "high": 2500,
+      "step": 25,
       "default": 200
     },
     {
@@ -33,6 +34,7 @@
       "randomable": true,
       "low": 1,
       "high": 2500,
+      "step": 25,
       "default": 200
     },
     {
@@ -146,6 +148,73 @@
       "readableName": "Turdo Mode",
       "description": "Replaces offensive spells by Turd Balls with varying strength, and weakens weapons.",
       "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "death_link",
+      "readableName": "DeathLink",
+      "description": "If one DeathLinked player dies, all of them do.",
+      "default": false
+    },
+    {
+      "type": "numeric",
+      "name": "trap_count",
+      "readableName": "Trap count",
+      "description": "Replace some filler items with traps.",
+      "randomable": true,
+      "low": 0,
+      "high": 100,
+      "default": 0
+    },
+    {
+      "type": "numeric",
+      "name": "trap_chance_quake",
+      "readableName": "Quake trap ratio",
+      "description": "Determines the weighted chance of generating a Quake trap.",
+      "randomable": true,
+      "low": 0,
+      "high": 100,
+      "default": 20
+    },
+    {
+      "type": "numeric",
+      "name": "trap_chance_poison",
+      "readableName": "Poison trap ratio",
+      "description": "Determines the weighted chance of generating a Poison trap.",
+      "randomable": true,
+      "low": 0,
+      "high": 100,
+      "default": 20
+    },
+    {
+      "type": "numeric",
+      "name": "trap_chance_confound",
+      "readableName": "Confound trap ratio",
+      "description": "Determines the weighted chance of generating a Confound trap.",
+      "randomable": true,
+      "low": 0,
+      "high": 100,
+      "default": 20
+    },
+    {
+      "type": "numeric",
+      "name": "trap_chance_hud",
+      "readableName": "HUD trap ratio",
+      "description": "Determines the weighted chance of generating a HUD visibility trap.",
+      "randomable": true,
+      "low": 0,
+      "high": 100,
+      "default": 20
+    },
+    {
+      "type": "numeric",
+      "name": "trap_chance_ohko",
+      "readableName": "Sudden Death trap ratio",
+      "description": "Determines the weighted chance of generating a Sudden Death (OHKO) trap, reducing the player's HP to 1.",
+      "randomable": true,
+      "low": 0,
+      "high": 100,
+      "default": 20
     }
   ],
   "items": [
@@ -599,6 +668,26 @@
     },
     {
       "name": "4 Dry Ice"
+    },
+    {
+      "name": "Quake Trap",
+      "max": 0
+    },
+    {
+      "name": "Poison Trap",
+      "max": 0
+    },
+    {
+      "name": "Confound Trap",
+      "max": 0
+    },
+    {
+      "name": "HUD Trap",
+      "max": 0
+    },
+    {
+      "name": "OHKO Trap",
+      "max": 0
     }
   ],
   "locations": [

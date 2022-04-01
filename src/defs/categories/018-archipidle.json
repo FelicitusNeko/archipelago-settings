@@ -1,0 +1,1070 @@
+{
+  "category": "ArchipIDLE",
+  "index": 18,
+  "settings": [
+    {
+      "type": "string",
+      "name": "no_options",
+      "readableName": "No options",
+      "description": "This game has no options.",
+      "values": {
+        "0": "Dang"
+      },
+      "default": "0"
+    }
+  ],
+  "items": [
+    {
+      "name": "Staples Easy Button"
+    },
+    {
+      "name": "One Million Dollars"
+    },
+    {
+      "name": "Replica Master Sword"
+    },
+    {
+      "name": "VHS Copy of Jurassic Park"
+    },
+    {
+      "name": "32GB USB Drive"
+    },
+    {
+      "name": "Pocket Protector"
+    },
+    {
+      "name": "Leftover Parts from IKEA Furniture"
+    },
+    {
+      "name": "Half-Empty Ink Cartridge for a Printer"
+    },
+    {
+      "name": "Watch Battery"
+    },
+    {
+      "name": "Towel"
+    },
+    {
+      "name": "Scarf"
+    },
+    {
+      "name": "2012 Magic the Gathering Core Set Starter Box"
+    },
+    {
+      "name": "Pokemon Booster Pack"
+    },
+    {
+      "name": "USB Speakers"
+    },
+    {
+      "name": "Plastic Spork"
+    },
+    {
+      "name": "Cheeseburger"
+    },
+    {
+      "name": "Brand New Car"
+    },
+    {
+      "name": "Hunting Knife"
+    },
+    {
+      "name": "Zippo Lighter"
+    },
+    {
+      "name": "Red Shirt"
+    },
+    {
+      "name": "One-Up Mushroom"
+    },
+    {
+      "name": "Nokia N-GAGE"
+    },
+    {
+      "name": "2-Liter of Sprite"
+    },
+    {
+      "name": "Free trial of the critically acclaimed MMORPG Final Fantasy XIV, including the entirety of A Realm Reborn and the award winning Heavenasward expansion up to level 60 with no restrictions on playtime!"
+    },
+    {
+      "name": "Can of Compressed Air"
+    },
+    {
+      "name": "Striped Kitten"
+    },
+    {
+      "name": "USB Power Adapter"
+    },
+    {
+      "name": "Fortune Cookie"
+    },
+    {
+      "name": "Nintendo Power Glove"
+    },
+    {
+      "name": "The Lampshade of No Real Significance"
+    },
+    {
+      "name": "Kneepads of Allure"
+    },
+    {
+      "name": "Get Out of Jail Free Card"
+    },
+    {
+      "name": "Box Set of Stargate SG-1 Season 4"
+    },
+    {
+      "name": "The Missing Left Sock"
+    },
+    {
+      "name": "Poster Tube"
+    },
+    {
+      "name": "Electronic Picture Frame"
+    },
+    {
+      "name": "Bottle of Shampoo"
+    },
+    {
+      "name": "Your Mission, Should You Choose To Accept It"
+    },
+    {
+      "name": "Fanny Pack"
+    },
+    {
+      "name": "Robocop T-Shirt"
+    },
+    {
+      "name": "Suspiciously Small Monocle"
+    },
+    {
+      "name": "Table Saw"
+    },
+    {
+      "name": "Cookies and Cream Milkshake"
+    },
+    {
+      "name": "Deflated Accordion"
+    },
+    {
+      "name": "Grandma's Homemade Pie"
+    },
+    {
+      "name": "Invisible Lego on the Floor"
+    },
+    {
+      "name": "Pitfall Trap"
+    },
+    {
+      "name": "Flathead Screwdriver"
+    },
+    {
+      "name": "Leftover Pizza"
+    },
+    {
+      "name": "Voodoo Doll that Looks Like You"
+    },
+    {
+      "name": "Pink Shoelaces"
+    },
+    {
+      "name": "Half a Bottle of Scotch"
+    },
+    {
+      "name": "Reminder Not to Forget Aginah"
+    },
+    {
+      "name": "Medicine Ball"
+    },
+    {
+      "name": "Yoga Mat"
+    },
+    {
+      "name": "Chocolate Orange"
+    },
+    {
+      "name": "Old Concert Tickets"
+    },
+    {
+      "name": "The Pick of Destiny"
+    },
+    {
+      "name": "McGuffin"
+    },
+    {
+      "name": "Just a Regular McMuffin"
+    },
+    {
+      "name": "34 Tacos"
+    },
+    {
+      "name": "Duct Tape"
+    },
+    {
+      "name": "Copy of Untitled Goose Game"
+    },
+    {
+      "name": "Partially Used Bed Bath & Beyond Gift Card"
+    },
+    {
+      "name": "Mostly Popped Bubble Wrap"
+    },
+    {
+      "name": "Expired Driver's License"
+    },
+    {
+      "name": "The Look, You Know the One"
+    },
+    {
+      "name": "Transformers Lunch Box"
+    },
+    {
+      "name": "MP3 Player"
+    },
+    {
+      "name": "Dry Sharpie"
+    },
+    {
+      "name": "Chalkboard Eraser"
+    },
+    {
+      "name": "Overhead Projector"
+    },
+    {
+      "name": "Physical Copy of the Japanese 1.0 Link to the Past"
+    },
+    {
+      "name": "Collectable Action Figure"
+    },
+    {
+      "name": "Box Set of The Lord of the Rings Books"
+    },
+    {
+      "name": "Lite-Bright"
+    },
+    {
+      "name": "Stories from the Good-Old-Days"
+    },
+    {
+      "name": "Un-Reproducable Bug Reports"
+    },
+    {
+      "name": "Autographed Copy of Shaq-Fu"
+    },
+    {
+      "name": "Game-Winning Baseball"
+    },
+    {
+      "name": "Portable Battery Bank"
+    },
+    {
+      "name": "Blockbuster Membership Card"
+    },
+    {
+      "name": "Offensive Bumper Sticker"
+    },
+    {
+      "name": "Last Sunday's Crossword Puzzle"
+    },
+    {
+      "name": "Rubik's Cube"
+    },
+    {
+      "name": "Your First Grey Hair"
+    },
+    {
+      "name": "Embarrassing Childhood Photo"
+    },
+    {
+      "name": "Abandoned Sphere One Check"
+    },
+    {
+      "name": "The Internet"
+    },
+    {
+      "name": "Late-Night Cartoons"
+    },
+    {
+      "name": "The Correct Usage of a Semicolon"
+    },
+    {
+      "name": "Microsoft Windows 95 Resource Kit"
+    },
+    {
+      "name": "Car-Phone"
+    },
+    {
+      "name": "Walkman Radio"
+    },
+    {
+      "name": "Relevant XKCD Comic"
+    },
+    {
+      "name": "Razor Scooter"
+    },
+    {
+      "name": "Set of Beyblades"
+    },
+    {
+      "name": "Box of Pogs"
+    },
+    {
+      "name": "Beanie-Baby Collection"
+    },
+    {
+      "name": "Laser Tag Gun"
+    },
+    {
+      "name": "Radio Controlled Car"
+    },
+    {
+      "name": "Boogie Board"
+    },
+    {
+      "name": "Air Jordans"
+    },
+    {
+      "name": "Rubber Duckie"
+    },
+    {
+      "name": "The Last Cookie in the Cookie Jar"
+    },
+    {
+      "name": "Tin-Foil Hat"
+    },
+    {
+      "name": "Button-Up Shirt"
+    },
+    {
+      "name": "Designer Brand Bag"
+    },
+    {
+      "name": "Trapper Keeper"
+    },
+    {
+      "name": "Fake Moustache"
+    },
+    {
+      "name": "Colored Pencils"
+    },
+    {
+      "name": "Pair of 3D Glasses"
+    },
+    {
+      "name": "Pair of Movie Tickets"
+    },
+    {
+      "name": "Refrigerator Magnets"
+    },
+    {
+      "name": "NASCAR Dinner Plates"
+    },
+    {
+      "name": "The Final Boss"
+    },
+    {
+      "name": "Unskippable Cutscenes"
+    },
+    {
+      "name": "24 Rolls of Toilet Paper"
+    },
+    {
+      "name": "Canned Soup"
+    },
+    {
+      "name": "Warm Blanket"
+    },
+    {
+      "name": "3D Printer"
+    },
+    {
+      "name": "Jetpack"
+    },
+    {
+      "name": "Hoverboard"
+    },
+    {
+      "name": "Joycons with No Drift"
+    },
+    {
+      "name": "Double Rainbow"
+    },
+    {
+      "name": "Ping Pong Ball"
+    },
+    {
+      "name": "Area 51 Arcade Cabinet"
+    },
+    {
+      "name": "Elephant in the Room"
+    },
+    {
+      "name": "The Pink Panther"
+    },
+    {
+      "name": "Denim Shorts"
+    },
+    {
+      "name": "Tennis Racket"
+    },
+    {
+      "name": "Collection of Stuffed Animals"
+    },
+    {
+      "name": "Old Cell Phone"
+    },
+    {
+      "name": "Nintendo Virtual Boy"
+    },
+    {
+      "name": "Box of 5.25 Inch Floppy Disks"
+    },
+    {
+      "name": "Bag of Miscellaneous Wires"
+    },
+    {
+      "name": "Garden Shovel"
+    },
+    {
+      "name": "Leather Gloves"
+    },
+    {
+      "name": "Knife of +9 VS Ogres"
+    },
+    {
+      "name": "Old, Smelly Cheese"
+    },
+    {
+      "name": "Linksys BEFSR41 Router"
+    },
+    {
+      "name": "Ethernet Cables for a LAN Party"
+    },
+    {
+      "name": "Mechanical Pencil"
+    },
+    {
+      "name": "Book of Graph Paper"
+    },
+    {
+      "name": "300 Sheets of Printer Paper"
+    },
+    {
+      "name": "One AAA Battery"
+    },
+    {
+      "name": "Box of Old Game Controllers"
+    },
+    {
+      "name": "Sega Dreamcast"
+    },
+    {
+      "name": "Mario's Overalls"
+    },
+    {
+      "name": "Betamax Player"
+    },
+    {
+      "name": "Stray Lego"
+    },
+    {
+      "name": "Chocolate Chip Pancakes"
+    },
+    {
+      "name": "Two Blueberry Muffins"
+    },
+    {
+      "name": "Nintendo 64 Controller with a Perfect Thumbstick"
+    },
+    {
+      "name": "Cuckoo Crossing the Road"
+    },
+    {
+      "name": "One Eyed, One Horned, Flying Purple People-Eater"
+    },
+    {
+      "name": "Love Potion Number Nine"
+    },
+    {
+      "name": "Wireless Headphones"
+    },
+    {
+      "name": "Festive Keychain"
+    },
+    {
+      "name": "Bundle of Twisted Cables"
+    },
+    {
+      "name": "Plank of Wood"
+    },
+    {
+      "name": "Broken Ant Farm"
+    },
+    {
+      "name": "Thirty-six American Dollars"
+    },
+    {
+      "name": "Can of Shaving Cream"
+    },
+    {
+      "name": "Blue Hair Dye"
+    },
+    {
+      "name": "Mug Engraved with the AP Logo"
+    },
+    {
+      "name": "Tube of Toothpaste"
+    },
+    {
+      "name": "Album of Elevator Music"
+    },
+    {
+      "name": "Headlight Fluid"
+    },
+    {
+      "name": "Tickets to the Renaissance Faire"
+    },
+    {
+      "name": "Bag of Golf Balls"
+    },
+    {
+      "name": "Box of Packing Peanuts"
+    },
+    {
+      "name": "Bottle of Peanut Butter"
+    },
+    {
+      "name": "Breath of the Wild Cookbook"
+    },
+    {
+      "name": "Stardew Valley Cookbook"
+    },
+    {
+      "name": "Thirteen Angry Chickens"
+    },
+    {
+      "name": "Bowl of Cereal"
+    },
+    {
+      "name": "Rubber Snake"
+    },
+    {
+      "name": "Stale Sunflower Seeds"
+    },
+    {
+      "name": "Alarm Clock Without a Snooze Button"
+    },
+    {
+      "name": "Wet Pineapple"
+    },
+    {
+      "name": "Set of Scented Candles"
+    },
+    {
+      "name": "Adorable Stuffed Animal"
+    },
+    {
+      "name": "The Broodwitch"
+    },
+    {
+      "name": "Old Photo Album"
+    },
+    {
+      "name": "Trade Quest Item"
+    },
+    {
+      "name": "Pair of Fancy Boots"
+    },
+    {
+      "name": "Shoddy Pickaxe"
+    },
+    {
+      "name": "Adventurer's Sword"
+    },
+    {
+      "name": "Cute Puppy"
+    },
+    {
+      "name": "Box of Matches"
+    },
+    {
+      "name": "Set of Allen Wrenches"
+    },
+    {
+      "name": "Glass of Water"
+    },
+    {
+      "name": "Magic Shaggy Carpet"
+    },
+    {
+      "name": "Macaroni and Cheese"
+    },
+    {
+      "name": "Chocolate Chip Cookie Dough Ice Cream"
+    },
+    {
+      "name": "Fresh Strawberries"
+    },
+    {
+      "name": "Delicious Tacos"
+    },
+    {
+      "name": "The Krabby Patty Recipe"
+    },
+    {
+      "name": "Map to Waldo's Location"
+    },
+    {
+      "name": "Stray Cat"
+    },
+    {
+      "name": "Ham and Cheese Sandwich"
+    },
+    {
+      "name": "DVD Player"
+    },
+    {
+      "name": "Motorcycle Helmet"
+    },
+    {
+      "name": "Fake Flowers"
+    },
+    {
+      "name": "6-Pack of Sponges"
+    },
+    {
+      "name": "Heated Pants"
+    },
+    {
+      "name": "Empty Glass Bottle"
+    },
+    {
+      "name": "Brown Paper Bag"
+    },
+    {
+      "name": "Model Train Set"
+    },
+    {
+      "name": "TV Remote"
+    },
+    {
+      "name": "RC Car"
+    },
+    {
+      "name": "Super Soaker 9000"
+    },
+    {
+      "name": "Giant Sunglasses"
+    },
+    {
+      "name": "World's Smallest Violin"
+    },
+    {
+      "name": "Pile of Fresh Warm Laundry"
+    },
+    {
+      "name": "Half-Empty Ice Cube Tray"
+    },
+    {
+      "name": "Bob Ross Afro Wig"
+    },
+    {
+      "name": "Empty Cardboard Box"
+    },
+    {
+      "name": "Packet of Soy Sauce"
+    },
+    {
+      "name": "Solutions to a Math Test"
+    },
+    {
+      "name": "Pencil Eraser"
+    },
+    {
+      "name": "The Great Pumpkin"
+    },
+    {
+      "name": "Very Expensive Toaster"
+    },
+    {
+      "name": "Pack of Colored Sharpies"
+    },
+    {
+      "name": "Bag of Chocolate Chips"
+    },
+    {
+      "name": "Grandma's Homemade Cookies"
+    },
+    {
+      "name": "Collection of Bottle Caps"
+    },
+    {
+      "name": "Pack of Playing Cards"
+    },
+    {
+      "name": "Boom Box"
+    },
+    {
+      "name": "Toy Sail Boat"
+    },
+    {
+      "name": "Smooth Nail File"
+    },
+    {
+      "name": "Colored Chalk"
+    },
+    {
+      "name": "Missing Button"
+    },
+    {
+      "name": "Rubber Band Ball"
+    },
+    {
+      "name": "Joystick"
+    },
+    {
+      "name": "Galaga Arcade Cabinet"
+    },
+    {
+      "name": "Anime Mouse Pad"
+    },
+    {
+      "name": "Orange and Yellow Glow Sticks"
+    },
+    {
+      "name": "Odd Bookmark"
+    },
+    {
+      "name": "Stray Dice"
+    },
+    {
+      "name": "Tooth Picks"
+    },
+    {
+      "name": "Dirty Dishes"
+    },
+    {
+      "name": "Poke'mon Card Game Rule Book (Gen 1)"
+    },
+    {
+      "name": "Salt Shaker"
+    },
+    {
+      "name": "Digital Thermometer"
+    },
+    {
+      "name": "Infinite Improbability Drive"
+    },
+    {
+      "name": "Fire Extinguisher"
+    },
+    {
+      "name": "Beeping Smoke Alarm"
+    },
+    {
+      "name": "Greasy Spatula"
+    }
+  ],
+  "locations": [
+    {
+      "name": "IDLE for at least 0 minutes 30 seconds"
+    },
+    {
+      "name": "IDLE for at least 1 minutes 0 seconds"
+    },
+    {
+      "name": "IDLE for at least 1 minutes 30 seconds"
+    },
+    {
+      "name": "IDLE for at least 2 minutes 0 seconds"
+    },
+    {
+      "name": "IDLE for at least 2 minutes 30 seconds"
+    },
+    {
+      "name": "IDLE for at least 3 minutes 0 seconds"
+    },
+    {
+      "name": "IDLE for at least 3 minutes 30 seconds"
+    },
+    {
+      "name": "IDLE for at least 4 minutes 0 seconds"
+    },
+    {
+      "name": "IDLE for at least 4 minutes 30 seconds"
+    },
+    {
+      "name": "IDLE for at least 5 minutes 0 seconds"
+    },
+    {
+      "name": "IDLE for at least 5 minutes 30 seconds"
+    },
+    {
+      "name": "IDLE for at least 6 minutes 0 seconds"
+    },
+    {
+      "name": "IDLE for at least 6 minutes 30 seconds"
+    },
+    {
+      "name": "IDLE for at least 7 minutes 0 seconds"
+    },
+    {
+      "name": "IDLE for at least 7 minutes 30 seconds"
+    },
+    {
+      "name": "IDLE for at least 8 minutes 0 seconds"
+    },
+    {
+      "name": "IDLE for at least 8 minutes 30 seconds"
+    },
+    {
+      "name": "IDLE for at least 9 minutes 0 seconds"
+    },
+    {
+      "name": "IDLE for at least 9 minutes 30 seconds"
+    },
+    {
+      "name": "IDLE for at least 10 minutes 0 seconds"
+    },
+    {
+      "name": "IDLE for at least 10 minutes 30 seconds"
+    },
+    {
+      "name": "IDLE for at least 11 minutes 0 seconds"
+    },
+    {
+      "name": "IDLE for at least 11 minutes 30 seconds"
+    },
+    {
+      "name": "IDLE for at least 12 minutes 0 seconds"
+    },
+    {
+      "name": "IDLE for at least 12 minutes 30 seconds"
+    },
+    {
+      "name": "IDLE for at least 13 minutes 0 seconds"
+    },
+    {
+      "name": "IDLE for at least 13 minutes 30 seconds"
+    },
+    {
+      "name": "IDLE for at least 14 minutes 0 seconds"
+    },
+    {
+      "name": "IDLE for at least 14 minutes 30 seconds"
+    },
+    {
+      "name": "IDLE for at least 15 minutes 0 seconds"
+    },
+    {
+      "name": "IDLE for at least 15 minutes 30 seconds"
+    },
+    {
+      "name": "IDLE for at least 16 minutes 0 seconds"
+    },
+    {
+      "name": "IDLE for at least 16 minutes 30 seconds"
+    },
+    {
+      "name": "IDLE for at least 17 minutes 0 seconds"
+    },
+    {
+      "name": "IDLE for at least 17 minutes 30 seconds"
+    },
+    {
+      "name": "IDLE for at least 18 minutes 0 seconds"
+    },
+    {
+      "name": "IDLE for at least 18 minutes 30 seconds"
+    },
+    {
+      "name": "IDLE for at least 19 minutes 0 seconds"
+    },
+    {
+      "name": "IDLE for at least 19 minutes 30 seconds"
+    },
+    {
+      "name": "IDLE for at least 20 minutes 0 seconds"
+    },
+    {
+      "name": "IDLE for at least 20 minutes 30 seconds"
+    },
+    {
+      "name": "IDLE for at least 21 minutes 0 seconds"
+    },
+    {
+      "name": "IDLE for at least 21 minutes 30 seconds"
+    },
+    {
+      "name": "IDLE for at least 22 minutes 0 seconds"
+    },
+    {
+      "name": "IDLE for at least 22 minutes 30 seconds"
+    },
+    {
+      "name": "IDLE for at least 23 minutes 0 seconds"
+    },
+    {
+      "name": "IDLE for at least 23 minutes 30 seconds"
+    },
+    {
+      "name": "IDLE for at least 24 minutes 0 seconds"
+    },
+    {
+      "name": "IDLE for at least 24 minutes 30 seconds"
+    },
+    {
+      "name": "IDLE for at least 25 minutes 0 seconds"
+    },
+    {
+      "name": "IDLE for at least 25 minutes 30 seconds"
+    },
+    {
+      "name": "IDLE for at least 26 minutes 0 seconds"
+    },
+    {
+      "name": "IDLE for at least 26 minutes 30 seconds"
+    },
+    {
+      "name": "IDLE for at least 27 minutes 0 seconds"
+    },
+    {
+      "name": "IDLE for at least 27 minutes 30 seconds"
+    },
+    {
+      "name": "IDLE for at least 28 minutes 0 seconds"
+    },
+    {
+      "name": "IDLE for at least 28 minutes 30 seconds"
+    },
+    {
+      "name": "IDLE for at least 29 minutes 0 seconds"
+    },
+    {
+      "name": "IDLE for at least 29 minutes 30 seconds"
+    },
+    {
+      "name": "IDLE for at least 30 minutes 0 seconds"
+    },
+    {
+      "name": "IDLE for at least 30 minutes 30 seconds"
+    },
+    {
+      "name": "IDLE for at least 31 minutes 0 seconds"
+    },
+    {
+      "name": "IDLE for at least 31 minutes 30 seconds"
+    },
+    {
+      "name": "IDLE for at least 32 minutes 0 seconds"
+    },
+    {
+      "name": "IDLE for at least 32 minutes 30 seconds"
+    },
+    {
+      "name": "IDLE for at least 33 minutes 0 seconds"
+    },
+    {
+      "name": "IDLE for at least 33 minutes 30 seconds"
+    },
+    {
+      "name": "IDLE for at least 34 minutes 0 seconds"
+    },
+    {
+      "name": "IDLE for at least 34 minutes 30 seconds"
+    },
+    {
+      "name": "IDLE for at least 35 minutes 0 seconds"
+    },
+    {
+      "name": "IDLE for at least 35 minutes 30 seconds"
+    },
+    {
+      "name": "IDLE for at least 36 minutes 0 seconds"
+    },
+    {
+      "name": "IDLE for at least 36 minutes 30 seconds"
+    },
+    {
+      "name": "IDLE for at least 37 minutes 0 seconds"
+    },
+    {
+      "name": "IDLE for at least 37 minutes 30 seconds"
+    },
+    {
+      "name": "IDLE for at least 38 minutes 0 seconds"
+    },
+    {
+      "name": "IDLE for at least 38 minutes 30 seconds"
+    },
+    {
+      "name": "IDLE for at least 39 minutes 0 seconds"
+    },
+    {
+      "name": "IDLE for at least 39 minutes 30 seconds"
+    },
+    {
+      "name": "IDLE for at least 40 minutes 0 seconds"
+    },
+    {
+      "name": "IDLE for at least 40 minutes 30 seconds"
+    },
+    {
+      "name": "IDLE for at least 41 minutes 0 seconds"
+    },
+    {
+      "name": "IDLE for at least 41 minutes 30 seconds"
+    },
+    {
+      "name": "IDLE for at least 42 minutes 0 seconds"
+    },
+    {
+      "name": "IDLE for at least 42 minutes 30 seconds"
+    },
+    {
+      "name": "IDLE for at least 43 minutes 0 seconds"
+    },
+    {
+      "name": "IDLE for at least 43 minutes 30 seconds"
+    },
+    {
+      "name": "IDLE for at least 44 minutes 0 seconds"
+    },
+    {
+      "name": "IDLE for at least 44 minutes 30 seconds"
+    },
+    {
+      "name": "IDLE for at least 45 minutes 0 seconds"
+    },
+    {
+      "name": "IDLE for at least 45 minutes 30 seconds"
+    },
+    {
+      "name": "IDLE for at least 46 minutes 0 seconds"
+    },
+    {
+      "name": "IDLE for at least 46 minutes 30 seconds"
+    },
+    {
+      "name": "IDLE for at least 47 minutes 0 seconds"
+    },
+    {
+      "name": "IDLE for at least 47 minutes 30 seconds"
+    },
+    {
+      "name": "IDLE for at least 48 minutes 0 seconds"
+    },
+    {
+      "name": "IDLE for at least 48 minutes 30 seconds"
+    },
+    {
+      "name": "IDLE for at least 49 minutes 0 seconds"
+    },
+    {
+      "name": "IDLE for at least 49 minutes 30 seconds"
+    },
+    {
+      "name": "IDLE for at least 50 minutes 0 seconds"
+    }
+  ]
+}

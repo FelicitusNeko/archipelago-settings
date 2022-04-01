@@ -21,6 +21,10 @@ import roguelegacy from "./011-roguelegacy.json";
 import sm64 from "./012-sm64.json";
 import raft from "./013-raft.json";
 import v from "./014-vvvvvv.json";
+import meritous from "./015-meritous.json";
+import smz3 from "./016-smz3.json";
+import cf from "./017-checksfinder.json";
+import idle from "./018-archipidle.json";
 
 /**
  * The JSON representation of an Archipelago category.
@@ -75,6 +79,10 @@ const APCategoryData = ([
   sm64, // 0.2.4
   raft, // 0.2.4
   v, // 0.2.4
+  meritous, // 0.3.0
+  smz3, // 0.3.0
+  cf, // 0.3.0, no settings
+  idle, // 0.3.0, no settings
 //] as APCategoryJson[]).sort((a,b) => a.index - b.index);
 ] as APCategoryJson[]).sort((a,b) => {
   if (!a.category) return -1;

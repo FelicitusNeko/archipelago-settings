@@ -71,6 +71,13 @@
       "default": "landing_site"
     },
     {
+      "type": "boolean",
+      "name": "remote_items",
+      "readableName": "Remote",
+      "description": "Indicates you get items sent from your own world. This allows co-op play of a world. If unsure, set to Off.",
+      "default": false
+    },
+    {
       "type": "string",
       "name": "death_link",
       "readableName": "DeathLink",

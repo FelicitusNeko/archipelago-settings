@@ -199,6 +199,13 @@
       "readableName": "DeathLink",
       "description": "If one DeathLinked player dies, all of them do.",
       "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "energy_link",
+      "readableName": "EnergyLink",
+      "description": "Allow sending energy to other worlds. 25% of the energy is lost in the transfer.",
+      "default": false
     }
   ],
   "items": [

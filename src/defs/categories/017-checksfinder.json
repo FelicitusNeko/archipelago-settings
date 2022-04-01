@@ -1,0 +1,107 @@
+{
+  "category": "ChecksFinder",
+  "index": 17,
+  "settings": [
+    {
+      "type": "string",
+      "name": "no_options",
+      "readableName": "No options",
+      "description": "This game has no options.",
+      "values": {
+        "0": "Dang"
+      },
+      "default": "0"
+    }
+  ],
+  "items": [
+    {
+      "name": "Map Width",
+      "max": 5
+    },
+    {
+      "name": "Map Height",
+      "max": 5
+    },
+    {
+      "name": "Map Bombs",
+      "max": 15
+    }
+  ],
+  "locations": [
+    {
+      "name": "Tile 1"
+    },
+    {
+      "name": "Tile 2"
+    },
+    {
+      "name": "Tile 3"
+    },
+    {
+      "name": "Tile 4"
+    },
+    {
+      "name": "Tile 5"
+    },
+    {
+      "name": "Tile 6"
+    },
+    {
+      "name": "Tile 7"
+    },
+    {
+      "name": "Tile 8"
+    },
+    {
+      "name": "Tile 9"
+    },
+    {
+      "name": "Tile 10"
+    },
+    {
+      "name": "Tile 11"
+    },
+    {
+      "name": "Tile 12"
+    },
+    {
+      "name": "Tile 13"
+    },
+    {
+      "name": "Tile 14"
+    },
+    {
+      "name": "Tile 15"
+    },
+    {
+      "name": "Tile 16"
+    },
+    {
+      "name": "Tile 17"
+    },
+    {
+      "name": "Tile 18"
+    },
+    {
+      "name": "Tile 19"
+    },
+    {
+      "name": "Tile 20"
+    },
+    {
+      "name": "Tile 21"
+    },
+    {
+      "name": "Tile 22"
+    },
+    {
+      "name": "Tile 23"
+    },
+    {
+      "name": "Tile 24"
+    },
+    {
+      "name": "Tile 25"
+    }
+  ]
+}

@@ -1,0 +1,1446 @@
+{
+  "category": "SMZ3",
+  "readableName": "Super Metroid/Link to the Past Combo",
+  "index": 16,
+  "settings": [
+    {
+      "type": "string",
+      "name": "sm_logic",
+      "readableName": "Super Metroid Logic",
+      "description": "This option selects what kind of logic to use for item placement inside Super Metroid. See [the official SMZ3 page](https://samus.link/information) for required moves.",
+      "values": {
+        "Normal": ["Normal", "Normal logic includes only what Super Metroid teaches players itself. Anything that's not demonstrated in-game or by the intro cutscenes will not be required here."],
+        "Hard": ["Hard", "Hard logic is based upon the \"no major glitches\" ruleset and includes most tricks that are considered minor glitches, with some  restrictions. You'll want to be somewhat of a Super Metroid veteran for this logic."]
+      },
+      "default": "Normal"
+    },
+    {
+      "type": "string",
+      "name": "sword_location",
+      "readableName": "Fighter's Sword Location",
+      "description": "This option decides where the first sword will be placed.",
+      "values": {
+        "Randomized": "Randomized",
+        "Early": "Early",
+        "Uncle": "Guaranteed from Uncle"
+      },
+      "default": "Randomized"
+    },
+    {
+      "type": "string",
+      "name": "morph_location",
+      "readableName": "Morph Ball Location",
+      "description": "This option decides where the morph ball will be placed.",
+      "values": {
+        "Randomized": "Randomized",
+        "Early": "Early",
+        "Original": "Vanilla"
+      },
+      "default": "Randomized"
+    },
+    {
+      "type": "string",
+      "name": "key_shuffle",
+      "readableName": "Keysanity",
+      "description": "This option decides how dungeon items such as keys are shuffled.",
+      "values": {
+        "None": "Off",
+        "Keysanity": "On"
+      },
+      "default": "None"
+    }
+  ],
+  "items": [
+    {
+      "name": "Nothing"
+    },
+    {
+      "name": "Firerod"
+    },
+    {
+      "name": "Icerod"
+    },
+    {
+      "name": "Hammer"
+    },
+    {
+      "name": "Hookshot"
+    },
+    {
+      "name": "Bow"
+    },
+    {
+      "name": "BlueBoomerang"
+    },
+    {
+      "name": "Powder"
+    },
+    {
+      "name": "BeeContent"
+    },
+    {
+      "name": "Bombos"
+    },
+    {
+      "name": "Ether"
+    },
+    {
+      "name": "Quake"
+    },
+    {
+      "name": "Lamp"
+    },
+    {
+      "name": "Shovel"
+    },
+    {
+      "name": "Flute"
+    },
+    {
+      "name": "Somaria"
+    },
+    {
+      "name": "Bottle"
+    },
+    {
+      "name": "HeartPiece"
+    },
+    {
+      "name": "Byrna"
+    },
+    {
+      "name": "Cape"
+    },
+    {
+      "name": "Mirror"
+    },
+    {
+      "name": "Book"
+    },
+    {
+      "name": "Flippers"
+    },
+    {
+      "name": "MoonPearl"
+    },
+    {
+      "name": "Bugnet"
+    },
+    {
+      "name": "Key"
+    },
+    {
+      "name": "Compass"
+    },
+    {
+      "name": "ThreeBombs"
+    },
+    {
+      "name": "Mushroom"
+    },
+    {
+      "name": "RedBoomerang"
+    },
+    {
+      "name": "BottleWithRedPotion"
+    },
+    {
+      "name": "BottleWithGreenPotion"
+    },
+    {
+      "name": "BottleWithBluePotion"
+    },
+    {
+      "name": "RedContent"
+    },
+    {
+      "name": "GreenContent"
+    },
+    {
+      "name": "BlueContent"
+    },
+    {
+      "name": "BigKey"
+    },
+    {
+      "name": "Map"
+    },
+    {
+      "name": "OneRupee"
+    },
+    {
+      "name": "FiveRupees"
+    },
+    {
+      "name": "TwentyRupees"
+    },
+    {
+      "name": "BottleWithBee"
+    },
+    {
+      "name": "BottleWithFairy"
+    },
+    {
+      "name": "HeartContainer"
+    },
+    {
+      "name": "HeartContainerRefill"
+    },
+    {
+      "name": "OneHundredRupees"
+    },
+    {
+      "name": "FiftyRupees"
+    },
+    {
+      "name": "Arrow"
+    },
+    {
+      "name": "TenArrows"
+    },
+    {
+      "name": "ThreeHundredRupees"
+    },
+    {
+      "name": "TwentyRupees2"
+    },
+    {
+      "name": "BottleWithGoldBee"
+    },
+    {
+      "name": "Boots"
+    },
+    {
+      "name": "HalfMagic"
+    },
+    {
+      "name": "BombUpgrade5"
+    },
+    {
+      "name": "BombUpgrade10"
+    },
+    {
+      "name": "ArrowUpgrade5"
+    },
+    {
+      "name": "ArrowUpgrade10"
+    },
+    {
+      "name": "SilverArrows"
+    },
+    {
+      "name": "ProgressiveSword"
+    },
+    {
+      "name": "ProgressiveShield"
+    },
+    {
+      "name": "ProgressiveTunic"
+    },
+    {
+      "name": "ProgressiveGlove"
+    },
+    {
+      "name": "Something"
+    },
+    {
+      "name": "MapGT"
+    },
+    {
+      "name": "MapTR"
+    },
+    {
+      "name": "MapTT"
+    },
+    {
+      "name": "MapTH"
+    },
+    {
+      "name": "MapIP"
+    },
+    {
+      "name": "MapSW"
+    },
+    {
+      "name": "MapMM"
+    },
+    {
+      "name": "MapPD"
+    },
+    {
+      "name": "MapSP"
+    },
+    {
+      "name": "MapDP"
+    },
+    {
+      "name": "MapEP"
+    },
+    {
+      "name": "MapHC"
+    },
+    {
+      "name": "CompassGT"
+    },
+    {
+      "name": "CompassTR"
+    },
+    {
+      "name": "CompassTT"
+    },
+    {
+      "name": "CompassTH"
+    },
+    {
+      "name": "CompassIP"
+    },
+    {
+      "name": "CompassSW"
+    },
+    {
+      "name": "CompassMM"
+    },
+    {
+      "name": "CompassPD"
+    },
+    {
+      "name": "CompassSP"
+    },
+    {
+      "name": "CompassDP"
+    },
+    {
+      "name": "CompassEP"
+    },
+    {
+      "name": "BigKeyGT"
+    },
+    {
+      "name": "BigKeyTR"
+    },
+    {
+      "name": "BigKeyTT"
+    },
+    {
+      "name": "BigKeyTH"
+    },
+    {
+      "name": "BigKeyIP"
+    },
+    {
+      "name": "BigKeySW"
+    },
+    {
+      "name": "BigKeyMM"
+    },
+    {
+      "name": "BigKeyPD"
+    },
+    {
+      "name": "BigKeySP"
+    },
+    {
+      "name": "BigKeyDP"
+    },
+    {
+      "name": "BigKeyEP"
+    },
+    {
+      "name": "KeyHC"
+    },
+    {
+      "name": "KeyDP"
+    },
+    {
+      "name": "KeyCT"
+    },
+    {
+      "name": "KeySP"
+    },
+    {
+      "name": "KeyPD"
+    },
+    {
+      "name": "KeyMM"
+    },
+    {
+      "name": "KeySW"
+    },
+    {
+      "name": "KeyIP"
+    },
+    {
+      "name": "KeyTH"
+    },
+    {
+      "name": "KeyTT"
+    },
+    {
+      "name": "KeyTR"
+    },
+    {
+      "name": "KeyGT"
+    },
+    {
+      "name": "Grapple"
+    },
+    {
+      "name": "XRay"
+    },
+    {
+      "name": "Varia"
+    },
+    {
+      "name": "SpringBall"
+    },
+    {
+      "name": "Morph"
+    },
+    {
+      "name": "ScrewAttack"
+    },
+    {
+      "name": "Gravity"
+    },
+    {
+      "name": "HiJump"
+    },
+    {
+      "name": "SpaceJump"
+    },
+    {
+      "name": "Bombs"
+    },
+    {
+      "name": "SpeedBooster"
+    },
+    {
+      "name": "Charge"
+    },
+    {
+      "name": "Ice"
+    },
+    {
+      "name": "Wave"
+    },
+    {
+      "name": "Spazer"
+    },
+    {
+      "name": "Plasma"
+    },
+    {
+      "name": "ETank"
+    },
+    {
+      "name": "ReserveTank"
+    },
+    {
+      "name": "Missile"
+    },
+    {
+      "name": "Super"
+    },
+    {
+      "name": "PowerBomb"
+    },
+    {
+      "name": "CardCrateriaL1"
+    },
+    {
+      "name": "CardCrateriaL2"
+    },
+    {
+      "name": "CardCrateriaBoss"
+    },
+    {
+      "name": "CardBrinstarL1"
+    },
+    {
+      "name": "CardBrinstarL2"
+    },
+    {
+      "name": "CardBrinstarBoss"
+    },
+    {
+      "name": "CardNorfairL1"
+    },
+    {
+      "name": "CardNorfairL2"
+    },
+    {
+      "name": "CardNorfairBoss"
+    },
+    {
+      "name": "CardMaridiaL1"
+    },
+    {
+      "name": "CardMaridiaL2"
+    },
+    {
+      "name": "CardMaridiaBoss"
+    },
+    {
+      "name": "CardWreckedShipL1"
+    },
+    {
+      "name": "CardWreckedShipBoss"
+    },
+    {
+      "name": "CardLowerNorfairL1"
+    },
+    {
+      "name": "CardLowerNorfairBoss"
+    }
+  ],
+  "locations": [
+    {
+      "name": "Power Bomb (Crateria surface)"
+    },
+    {
+      "name": "Missile (outside Wrecked Ship bottom)"
+    },
+    {
+      "name": "Missile (outside Wrecked Ship top)"
+    },
+    {
+      "name": "Missile (outside Wrecked Ship middle)"
+    },
+    {
+      "name": "Missile (Crateria moat)"
+    },
+    {
+      "name": "Energy Tank, Gauntlet"
+    },
+    {
+      "name": "Missile (Crateria bottom)"
+    },
+    {
+      "name": "Bombs"
+    },
+    {
+      "name": "Energy Tank, Terminator"
+    },
+    {
+      "name": "Missile (Crateria gauntlet right)"
+    },
+    {
+      "name": "Missile (Crateria gauntlet left)"
+    },
+    {
+      "name": "Super Missile (Crateria)"
+    },
+    {
+      "name": "Missile (Crateria middle)"
+    },
+    {
+      "name": "Power Bomb (green Brinstar bottom)"
+    },
+    {
+      "name": "Super Missile (pink Brinstar)"
+    },
+    {
+      "name": "Missile (green Brinstar below super missile)"
+    },
+    {
+      "name": "Super Missile (green Brinstar top)"
+    },
+    {
+      "name": "Reserve Tank, Brinstar"
+    },
+    {
+      "name": "Missile (green Brinstar behind missile)"
+    },
+    {
+      "name": "Missile (green Brinstar behind reserve tank)"
+    },
+    {
+      "name": "Missile (pink Brinstar top)"
+    },
+    {
+      "name": "Missile (pink Brinstar bottom)"
+    },
+    {
+      "name": "Charge Beam"
+    },
+    {
+      "name": "Power Bomb (pink Brinstar)"
+    },
+    {
+      "name": "Missile (green Brinstar pipe)"
+    },
+    {
+      "name": "Morphing Ball"
+    },
+    {
+      "name": "Power Bomb (blue Brinstar)"
+    },
+    {
+      "name": "Missile (blue Brinstar middle)"
+    },
+    {
+      "name": "Energy Tank, Brinstar Ceiling"
+    },
+    {
+      "name": "Energy Tank, Etecoons"
+    },
+    {
+      "name": "Super Missile (green Brinstar bottom)"
+    },
+    {
+      "name": "Energy Tank, Waterway"
+    },
+    {
+      "name": "Missile (blue Brinstar bottom)"
+    },
+    {
+      "name": "Energy Tank, Brinstar Gate"
+    },
+    {
+      "name": "Missile (blue Brinstar top)"
+    },
+    {
+      "name": "Missile (blue Brinstar behind missile)"
+    },
+    {
+      "name": "X-Ray Scope"
+    },
+    {
+      "name": "Power Bomb (red Brinstar sidehopper room)"
+    },
+    {
+      "name": "Power Bomb (red Brinstar spike room)"
+    },
+    {
+      "name": "Missile (red Brinstar spike room)"
+    },
+    {
+      "name": "Spazer"
+    },
+    {
+      "name": "Energy Tank, Kraid"
+    },
+    {
+      "name": "Missile (Kraid)"
+    },
+    {
+      "name": "Varia Suit"
+    },
+    {
+      "name": "Missile (lava room)"
+    },
+    {
+      "name": "Ice Beam"
+    },
+    {
+      "name": "Missile (below Ice Beam)"
+    },
+    {
+      "name": "Energy Tank, Crocomire"
+    },
+    {
+      "name": "Hi-Jump Boots"
+    },
+    {
+      "name": "Missile (above Crocomire)"
+    },
+    {
+      "name": "Missile (Hi-Jump Boots)"
+    },
+    {
+      "name": "Energy Tank (Hi-Jump Boots)"
+    },
+    {
+      "name": "Power Bomb (Crocomire)"
+    },
+    {
+      "name": "Missile (below Crocomire)"
+    },
+    {
+      "name": "Missile (Grappling Beam)"
+    },
+    {
+      "name": "Grappling Beam"
+    },
+    {
+      "name": "Reserve Tank, Norfair"
+    },
+    {
+      "name": "Missile (Norfair Reserve Tank)"
+    },
+    {
+      "name": "Missile (bubble Norfair green door)"
+    },
+    {
+      "name": "Missile (bubble Norfair)"
+    },
+    {
+      "name": "Missile (Speed Booster)"
+    },
+    {
+      "name": "Speed Booster"
+    },
+    {
+      "name": "Missile (Wave Beam)"
+    },
+    {
+      "name": "Wave Beam"
+    },
+    {
+      "name": "Missile (Gold Torizo)"
+    },
+    {
+      "name": "Super Missile (Gold Torizo)"
+    },
+    {
+      "name": "Missile (Mickey Mouse room)"
+    },
+    {
+      "name": "Missile (lower Norfair above fire flea room)"
+    },
+    {
+      "name": "Power Bomb (lower Norfair above fire flea room)"
+    },
+    {
+      "name": "Power Bomb (Power Bombs of shame)"
+    },
+    {
+      "name": "Missile (lower Norfair near Wave Beam)"
+    },
+    {
+      "name": "Energy Tank, Ridley"
+    },
+    {
+      "name": "Screw Attack"
+    },
+    {
+      "name": "Energy Tank, Firefleas"
+    },
+    {
+      "name": "Missile (Wrecked Ship middle)"
+    },
+    {
+      "name": "Reserve Tank, Wrecked Ship"
+    },
+    {
+      "name": "Missile (Gravity Suit)"
+    },
+    {
+      "name": "Missile (Wrecked Ship top)"
+    },
+    {
+      "name": "Energy Tank, Wrecked Ship"
+    },
+    {
+      "name": "Super Missile (Wrecked Ship left)"
+    },
+    {
+      "name": "Right Super, Wrecked Ship"
+    },
+    {
+      "name": "Gravity Suit"
+    },
+    {
+      "name": "Missile (green Maridia shinespark)"
+    },
+    {
+      "name": "Super Missile (green Maridia)"
+    },
+    {
+      "name": "Energy Tank, Mama turtle"
+    },
+    {
+      "name": "Missile (green Maridia tatori)"
+    },
+    {
+      "name": "Super Missile (yellow Maridia)"
+    },
+    {
+      "name": "Missile (yellow Maridia super missile)"
+    },
+    {
+      "name": "Missile (yellow Maridia false wall)"
+    },
+    {
+      "name": "Plasma Beam"
+    },
+    {
+      "name": "Missile (left Maridia sand pit room)"
+    },
+    {
+      "name": "Reserve Tank, Maridia"
+    },
+    {
+      "name": "Missile (right Maridia sand pit room)"
+    },
+    {
+      "name": "Power Bomb (right Maridia sand pit room)"
+    },
+    {
+      "name": "Missile (pink Maridia)"
+    },
+    {
+      "name": "Super Missile (pink Maridia)"
+    },
+    {
+      "name": "Spring Ball"
+    },
+    {
+      "name": "Missile (Draygon)"
+    },
+    {
+      "name": "Energy Tank, Botwoon"
+    },
+    {
+      "name": "Space Jump"
+    },
+    {
+      "name": "Ether Tablet"
+    },
+    {
+      "name": "Spectacle Rock"
+    },
+    {
+      "name": "Spectacle Rock Cave"
+    },
+    {
+      "name": "Old Man"
+    },
+    {
+      "name": "Floating Island"
+    },
+    {
+      "name": "Spiral Cave"
+    },
+    {
+      "name": "Paradox Cave Upper - Left"
+    },
+    {
+      "name": "Paradox Cave Upper - Right"
+    },
+    {
+      "name": "Paradox Cave Lower - Far Left"
+    },
+    {
+      "name": "Paradox Cave Lower - Left"
+    },
+    {
+      "name": "Paradox Cave Lower - Middle"
+    },
+    {
+      "name": "Paradox Cave Lower - Right"
+    },
+    {
+      "name": "Paradox Cave Lower - Far Right"
+    },
+    {
+      "name": "Mimic Cave"
+    },
+    {
+      "name": "Master Sword Pedestal"
+    },
+    {
+      "name": "Mushroom"
+    },
+    {
+      "name": "Lost Woods Hideout"
+    },
+    {
+      "name": "Lumberjack Tree"
+    },
+    {
+      "name": "Pegasus Rocks"
+    },
+    {
+      "name": "Graveyard Ledge"
+    },
+    {
+      "name": "King's Tomb"
+    },
+    {
+      "name": "Kakariko Well - Top"
+    },
+    {
+      "name": "Kakariko Well - Left"
+    },
+    {
+      "name": "Kakariko Well - Middle"
+    },
+    {
+      "name": "Kakariko Well - Right"
+    },
+    {
+      "name": "Kakariko Well - Bottom"
+    },
+    {
+      "name": "Blind's Hideout - Top"
+    },
+    {
+      "name": "Blind's Hideout - Far Left"
+    },
+    {
+      "name": "Blind's Hideout - Left"
+    },
+    {
+      "name": "Blind's Hideout - Right"
+    },
+    {
+      "name": "Blind's Hideout - Far Right"
+    },
+    {
+      "name": "Bottle Merchant"
+    },
+    {
+      "name": "Sick Kid"
+    },
+    {
+      "name": "Kakariko Tavern"
+    },
+    {
+      "name": "Magic Bat"
+    },
+    {
+      "name": "King Zora"
+    },
+    {
+      "name": "Zora's Ledge"
+    },
+    {
+      "name": "Waterfall Fairy - Right"
+    },
+    {
+      "name": "Potion Shop"
+    },
+    {
+      "name": "Sahasrahla's Hut - Left"
+    },
+    {
+      "name": "Sahasrahla's Hut - Middle"
+    },
+    {
+      "name": "Sahasrahla's Hut - Right"
+    },
+    {
+      "name": "Sahasrahla"
+    },
+    {
+      "name": "Maze Race"
+    },
+    {
+      "name": "Mini Moldorm Cave - Far Left"
+    },
+    {
+      "name": "Mini Moldorm Cave - Left"
+    },
+    {
+      "name": "Mini Moldorm Cave - NPC"
+    },
+    {
+      "name": "Mini Moldorm Cave - Right"
+    },
+    {
+      "name": "Bombos Tablet"
+    },
+    {
+      "name": "Floodgate Chest"
+    },
+    {
+      "name": "Sunken Treasure"
+    },
+    {
+      "name": "Lake Hylia Island"
+    },
+    {
+      "name": "Hobo"
+    },
+    {
+      "name": "Ice Rod Cave"
+    },
+    {
+      "name": "Spike Cave"
+    },
+    {
+      "name": "Hookshot Cave - Top Right"
+    },
+    {
+      "name": "Hookshot Cave - Top Left"
+    },
+    {
+      "name": "Hookshot Cave - Bottom Left"
+    },
+    {
+      "name": "Hookshot Cave - Bottom Right"
+    },
+    {
+      "name": "Superbunny Cave - Top"
+    },
+    {
+      "name": "Superbunny Cave - Bottom"
+    },
+    {
+      "name": "Bumper Cave"
+    },
+    {
+      "name": "Chest Game"
+    },
+    {
+      "name": "C-Shaped House"
+    },
+    {
+      "name": "Brewery"
+    },
+    {
+      "name": "Hammer Pegs"
+    },
+    {
+      "name": "Blacksmith"
+    },
+    {
+      "name": "Purple Chest"
+    },
+    {
+      "name": "Catfish"
+    },
+    {
+      "name": "Pyramid"
+    },
+    {
+      "name": "Pyramid Fairy - Left"
+    },
+    {
+      "name": "Pyramid Fairy - Right"
+    },
+    {
+      "name": "Digging Game"
+    },
+    {
+      "name": "Stumpy"
+    },
+    {
+      "name": "Hype Cave - Top"
+    },
+    {
+      "name": "Hype Cave - Middle Right"
+    },
+    {
+      "name": "Hype Cave - Middle Left"
+    },
+    {
+      "name": "Hype Cave - Bottom"
+    },
+    {
+      "name": "Hype Cave - NPC"
+    },
+    {
+      "name": "Mire Shed - Left"
+    },
+    {
+      "name": "Mire Shed - Right"
+    },
+    {
+      "name": "Sanctuary"
+    },
+    {
+      "name": "Sewers - Secret Room - Left"
+    },
+    {
+      "name": "Sewers - Secret Room - Middle"
+    },
+    {
+      "name": "Sewers - Secret Room - Right"
+    },
+    {
+      "name": "Sewers - Dark Cross"
+    },
+    {
+      "name": "Hyrule Castle - Map Chest"
+    },
+    {
+      "name": "Hyrule Castle - Boomerang Chest"
+    },
+    {
+      "name": "Hyrule Castle - Zelda's Cell"
+    },
+    {
+      "name": "Link's Uncle"
+    },
+    {
+      "name": "Secret Passage"
+    },
+    {
+      "name": "Castle Tower - Foyer"
+    },
+    {
+      "name": "Castle Tower - Dark Maze"
+    },
+    {
+      "name": "Eastern Palace - Cannonball Chest"
+    },
+    {
+      "name": "Eastern Palace - Map Chest"
+    },
+    {
+      "name": "Eastern Palace - Compass Chest"
+    },
+    {
+      "name": "Eastern Palace - Big Chest"
+    },
+    {
+      "name": "Eastern Palace - Big Key Chest"
+    },
+    {
+      "name": "Eastern Palace - Armos Knights"
+    },
+    {
+      "name": "Desert Palace - Big Chest"
+    },
+    {
+      "name": "Desert Palace - Torch"
+    },
+    {
+      "name": "Desert Palace - Map Chest"
+    },
+    {
+      "name": "Desert Palace - Big Key Chest"
+    },
+    {
+      "name": "Desert Palace - Compass Chest"
+    },
+    {
+      "name": "Desert Palace - Lanmolas"
+    },
+    {
+      "name": "Tower of Hera - Basement Cage"
+    },
+    {
+      "name": "Tower of Hera - Map Chest"
+    },
+    {
+      "name": "Tower of Hera - Big Key Chest"
+    },
+    {
+      "name": "Tower of Hera - Compass Chest"
+    },
+    {
+      "name": "Tower of Hera - Big Chest"
+    },
+    {
+      "name": "Tower of Hera - Moldorm"
+    },
+    {
+      "name": "Palace of Darkness - Shooter Room"
+    },
+    {
+      "name": "Palace of Darkness - Big Key Chest"
+    },
+    {
+      "name": "Palace of Darkness - Stalfos Basement"
+    },
+    {
+      "name": "Palace of Darkness - The Arena - Bridge"
+    },
+    {
+      "name": "Palace of Darkness - The Arena - Ledge"
+    },
+    {
+      "name": "Palace of Darkness - Map Chest"
+    },
+    {
+      "name": "Palace of Darkness - Compass Chest"
+    },
+    {
+      "name": "Palace of Darkness - Harmless Hellway"
+    },
+    {
+      "name": "Palace of Darkness - Dark Basement - Left"
+    },
+    {
+      "name": "Palace of Darkness - Dark Basement - Right"
+    },
+    {
+      "name": "Palace of Darkness - Dark Maze - Top"
+    },
+    {
+      "name": "Palace of Darkness - Dark Maze - Bottom"
+    },
+    {
+      "name": "Palace of Darkness - Big Chest"
+    },
+    {
+      "name": "Palace of Darkness - Helmasaur King"
+    },
+    {
+      "name": "Swamp Palace - Entrance"
+    },
+    {
+      "name": "Swamp Palace - Map Chest"
+    },
+    {
+      "name": "Swamp Palace - Big Chest"
+    },
+    {
+      "name": "Swamp Palace - Compass Chest"
+    },
+    {
+      "name": "Swamp Palace - West Chest"
+    },
+    {
+      "name": "Swamp Palace - Big Key Chest"
+    },
+    {
+      "name": "Swamp Palace - Flooded Room - Left"
+    },
+    {
+      "name": "Swamp Palace - Flooded Room - Right"
+    },
+    {
+      "name": "Swamp Palace - Waterfall Room"
+    },
+    {
+      "name": "Swamp Palace - Arrghus"
+    },
+    {
+      "name": "Skull Woods - Pot Prison"
+    },
+    {
+      "name": "Skull Woods - Compass Chest"
+    },
+    {
+      "name": "Skull Woods - Big Chest"
+    },
+    {
+      "name": "Skull Woods - Map Chest"
+    },
+    {
+      "name": "Skull Woods - Pinball Room"
+    },
+    {
+      "name": "Skull Woods - Big Key Chest"
+    },
+    {
+      "name": "Skull Woods - Bridge Room"
+    },
+    {
+      "name": "Skull Woods - Mothula"
+    },
+    {
+      "name": "Thieves' Town - Map Chest"
+    },
+    {
+      "name": "Thieves' Town - Ambush Chest"
+    },
+    {
+      "name": "Thieves' Town - Compass Chest"
+    },
+    {
+      "name": "Thieves' Town - Big Key Chest"
+    },
+    {
+      "name": "Thieves' Town - Attic"
+    },
+    {
+      "name": "Thieves' Town - Blind's Cell"
+    },
+    {
+      "name": "Thieves' Town - Big Chest"
+    },
+    {
+      "name": "Thieves' Town - Blind"
+    },
+    {
+      "name": "Ice Palace - Compass Chest"
+    },
+    {
+      "name": "Ice Palace - Spike Room"
+    },
+    {
+      "name": "Ice Palace - Map Chest"
+    },
+    {
+      "name": "Ice Palace - Big Key Chest"
+    },
+    {
+      "name": "Ice Palace - Iced T Room"
+    },
+    {
+      "name": "Ice Palace - Freezor Chest"
+    },
+    {
+      "name": "Ice Palace - Big Chest"
+    },
+    {
+      "name": "Ice Palace - Kholdstare"
+    },
+    {
+      "name": "Misery Mire - Main Lobby"
+    },
+    {
+      "name": "Misery Mire - Map Chest"
+    },
+    {
+      "name": "Misery Mire - Bridge Chest"
+    },
+    {
+      "name": "Misery Mire - Spike Chest"
+    },
+    {
+      "name": "Misery Mire - Compass Chest"
+    },
+    {
+      "name": "Misery Mire - Big Key Chest"
+    },
+    {
+      "name": "Misery Mire - Big Chest"
+    },
+    {
+      "name": "Misery Mire - Vitreous"
+    },
+    {
+      "name": "Turtle Rock - Compass Chest"
+    },
+    {
+      "name": "Turtle Rock - Roller Room - Left"
+    },
+    {
+      "name": "Turtle Rock - Roller Room - Right"
+    },
+    {
+      "name": "Turtle Rock - Chain Chomps"
+    },
+    {
+      "name": "Turtle Rock - Big Key Chest"
+    },
+    {
+      "name": "Turtle Rock - Big Chest"
+    },
+    {
+      "name": "Turtle Rock - Crystaroller Room"
+    },
+    {
+      "name": "Turtle Rock - Eye Bridge - Top Right"
+    },
+    {
+      "name": "Turtle Rock - Eye Bridge - Top Left"
+    },
+    {
+      "name": "Turtle Rock - Eye Bridge - Bottom Right"
+    },
+    {
+      "name": "Turtle Rock - Eye Bridge - Bottom Left"
+    },
+    {
+      "name": "Turtle Rock - Trinexx"
+    },
+    {
+      "name": "Ganon's Tower - Bob's Torch"
+    },
+    {
+      "name": "Ganon's Tower - DMs Room - Top Left"
+    },
+    {
+      "name": "Ganon's Tower - DMs Room - Top Right"
+    },
+    {
+      "name": "Ganon's Tower - DMs Room - Bottom Left"
+    },
+    {
+      "name": "Ganon's Tower - DMs Room - Bottom Right"
+    },
+    {
+      "name": "Ganon's Tower - Map Chest"
+    },
+    {
+      "name": "Ganon's Tower - Firesnake Room"
+    },
+    {
+      "name": "Ganon's Tower - Randomizer Room - Top Left"
+    },
+    {
+      "name": "Ganon's Tower - Randomizer Room - Top Right"
+    },
+    {
+      "name": "Ganon's Tower - Randomizer Room - Bottom Left"
+    },
+    {
+      "name": "Ganon's Tower - Randomizer Room - Bottom Right"
+    },
+    {
+      "name": "Ganon's Tower - Hope Room - Left"
+    },
+    {
+      "name": "Ganon's Tower - Hope Room - Right"
+    },
+    {
+      "name": "Ganon's Tower - Tile Room"
+    },
+    {
+      "name": "Ganon's Tower - Compass Room - Top Left"
+    },
+    {
+      "name": "Ganon's Tower - Compass Room - Top Right"
+    },
+    {
+      "name": "Ganon's Tower - Compass Room - Bottom Left"
+    },
+    {
+      "name": "Ganon's Tower - Compass Room - Bottom Right"
+    },
+    {
+      "name": "Ganon's Tower - Bob's Chest"
+    },
+    {
+      "name": "Ganon's Tower - Big Chest"
+    },
+    {
+      "name": "Ganon's Tower - Big Key Chest"
+    },
+    {
+      "name": "Ganon's Tower - Big Key Room - Left"
+    },
+    {
+      "name": "Ganon's Tower - Big Key Room - Right"
+    },
+    {
+      "name": "Ganon's Tower - Mini Helmasaur Room - Left"
+    },
+    {
+      "name": "Ganon's Tower - Mini Helmasaur Room - Right"
+    },
+    {
+      "name": "Ganon's Tower - Pre-Moldorm Chest"
+    },
+    {
+      "name": "Ganon's Tower - Moldorm Chest"
+    },
+    {
+      "name": "Library"
+    },
+    {
+      "name": "Flute Spot"
+    },
+    {
+      "name": "South of Grove"
+    },
+    {
+      "name": "Link's House"
+    },
+    {
+      "name": "Aginah's Cave"
+    },
+    {
+      "name": "Chicken House"
+    },
+    {
+      "name": "Mini Moldorm Cave - Far Right"
+    },
+    {
+      "name": "Desert Ledge"
+    },
+    {
+      "name": "Checkerboard Cave"
+    },
+    {
+      "name": "Waterfall Fairy - Left"
+    }
+  ]
+}

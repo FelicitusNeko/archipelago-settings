@@ -1,4 +1,15 @@
 {
+  "1.0.3": [
+    "Update spec to **0.3.0**",
+    [
+      "**Meritous**, **SMZ3**, **ChecksFinder**, **ArchipIDLE** added",
+      "**Factorio**: added EnergyLink",
+      "**Timespinner**: fix location names related to Aelana",
+      "**Super Metroid**: option to make item checks remote",
+      "**Secret of Evermore**: added DeathLink, traps"
+    ],
+    "Category list now sorts alphabetically"
+  ],
   "1.0.2": [
     "Update spec to **0.2.5**",
     [

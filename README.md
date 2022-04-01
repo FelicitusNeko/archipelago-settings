@@ -5,7 +5,7 @@ This tool has been built to supplement the Archipelago Multiworld system, and ge
 ### Features
 
 - Import both Archipelago and Berserker LttP YAMLs
-- Settings for 11 Archipelago-supported games
+- Settings for 18 Archipelago-supported games
   - Final Fantasy does not have AP-based configuration support and [does its own thing](https://finalfantasyrandomizer.com/)
 - Per-setting weighted values for settings
 - Item selector for all games; designate items as local, non-local, starting inventory, and/or starting hints
@@ -19,6 +19,7 @@ This tool has been built to supplement the Archipelago Multiworld system, and ge
 - Ability to import externally generated YAMLs for certain advanced applications (e.g. Final Fantasy, Factorio world gen)
 - Meta ignore flags
 - Triggers
+- ItemLink
 
 ### Building
 
