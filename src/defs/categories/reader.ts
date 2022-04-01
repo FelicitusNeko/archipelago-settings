@@ -87,9 +87,7 @@ const APCategoryData = ([
 ] as APCategoryJson[]).sort((a,b) => {
   if (!a.category) return -1;
   if (!b.category) return 1;
-  if ((a.readableName ?? a.category) < (b.readableName ?? b.category)) return -1;
-  if ((a.readableName ?? a.category) > (b.readableName ?? b.category)) return 1;
-  return 0;
+  return (a.readableName ?? a.category).localeCompare(b.readableName ?? b.category);
 });
 
 export { APCategoryData };
