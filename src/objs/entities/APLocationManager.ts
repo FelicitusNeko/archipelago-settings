@@ -9,6 +9,7 @@ export class APLocationManager extends APEntityManager<APGameLocation> {
   constructor(entityList: APGameLocation[]) {
     super(entityList);
     this._exclusiveLists = {
+      priority_locations: [],
       exclude_locations: [],
     };
     this._inclusiveLists = {

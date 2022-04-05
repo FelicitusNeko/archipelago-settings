@@ -9,13 +9,14 @@ import { APEntitySelector } from "./APEntitySelector";
 export class APLocationSelector extends APEntitySelector<APLocationManager> {
   _dropLabels = {
     _unassigned: "Unassigned",
+    priority_locations: "Priority location",
     exclude_locations: "Exclude location",
   };
   _checkLabels = { start_location_hints: "Starting hint" };
 
   _title = "Location selector";
   _description =
-    "Select which locations will be guaranteed not to hold any progression items. " +
+    "Select which locations will be guaranteed to hold a progression item (priority) or not (exclude). " +
     "Check the box to start with a hint as to what's in that location. ";
   // + "Some locations cannot be excluded (⛔).";
 
