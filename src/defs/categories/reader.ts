@@ -25,6 +25,7 @@ import meritous from "./015-meritous.json";
 import smz3 from "./016-smz3.json";
 import cf from "./017-checksfinder.json";
 import idle from "./018-archipidle.json";
+import hk from "./019-hollowknight.json";
 
 /**
  * The JSON representation of an Archipelago category.
@@ -83,6 +84,8 @@ const APCategoryData = ([
   smz3, // 0.3.0
   cf, // 0.3.0, no settings
   idle, // 0.3.0, no settings
+  hk, // 0.3.1
+
 //] as APCategoryJson[]).sort((a,b) => a.index - b.index);
 ] as APCategoryJson[]).sort((a,b) => {
   if (!a.category) return -1;

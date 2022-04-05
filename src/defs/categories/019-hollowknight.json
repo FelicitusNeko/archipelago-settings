@@ -1,0 +1,3426 @@
+{
+  "category": "Hollow Knight",
+  "index": 19,
+  "settings": [
+    {
+      "type": "boolean",
+      "name": "RandomizeDreamers",
+      "readableName": "Randomize Dreamers",
+      "description": "Allow for Dreamers to be randomized into the item pool and opens their locations for randomization.",
+      "default": true
+    },
+    {
+      "type": "boolean",
+      "name": "RandomizeSkills",
+      "readableName": "Randomize Skills",
+      "description": "Allow for Skills, such as Mantis Claw or Shade Soul, to be randomized into the item pool. Also opens their locations for receiving randomized items.",
+      "default": true
+    },
+    {
+      "type": "boolean",
+      "name": "RandomizeFocus",
+      "readableName": "Randomize Focus",
+      "description": "Disabled Option. Not implemented.",
+      "default": false,
+      "disabled": true
+    },
+    {
+      "type": "boolean",
+      "name": "RandomizeSwim",
+      "readableName": "Randomize Swim",
+      "description": "Disabled Option. Not implemented.",
+      "default": true,
+      "disabled": true
+    },
+    {
+      "type": "boolean",
+      "name": "RandomizeCharms",
+      "readableName": "Randomize Charms",
+      "description": "Allow for Charms to be randomized into the item pool and open their locations for randomization. Includes Charms sold in shops.",
+      "default": true
+    },
+    {
+      "type": "boolean",
+      "name": "RandomizeKeys",
+      "readableName": "Randomize Keys",
+      "description": "Allow for Keys to be randomized into the item pool. Includes those sold in shops.",
+      "default": true
+    },
+    {
+      "type": "boolean",
+      "name": "RandomizeMaskShards",
+      "readableName": "Randomize Mask Shards",
+      "description": "Allow for Mask Shard to be randomized into the item pool and open their locations for randomization.",
+      "default": true
+    },
+    {
+      "type": "boolean",
+      "name": "RandomizeVesselFragments",
+      "readableName": "Randomize Vessel Fragments",
+      "description": "Allow for Vessel Fragments to be randomized into the item pool and open their locations for randomization.",
+      "default": true
+    },
+    {
+      "type": "boolean",
+      "name": "RandomizeCharmNotches",
+      "readableName": "Randomize Charm Notches",
+      "description": "Allow for Charm Notches to be randomized into the item pool. Includes those sold by Salubra.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "RandomizePaleOre",
+      "readableName": "Randomize Pale Ore",
+      "description": "Randomize Pale Ores into the item pool and open their locations for randomization.",
+      "default": true
+    },
+    {
+      "type": "boolean",
+      "name": "Randomize",
+      "readableName": "Randomize ",
+      "description": "",
+      "default": true
+    },
+    {
+      "type": "boolean",
+      "name": "RandomizeGeoChests",
+      "readableName": "Randomize Geo Chests",
+      "description": "Allow for Geo Chests to contain randomized items, as well as their Geo reward being randomized into the item pool.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "RandomizeJunkPitChests",
+      "readableName": "Randomize Junk Pit Chests",
+      "description": "Randomize the contents of junk pit chests into the item pool and open their locations for randomization.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "RandomizeRancidEggs",
+      "readableName": "Randomize Rancid Eggs",
+      "description": "Randomize Rancid Eggs into the item pool and open their locations for randomization.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "RandomizeRelics",
+      "readableName": "Randomize Relics",
+      "description": "Randomize Relics (King's Idol, et al.) into the item pool and open their locations for randomization.",
+      "default": true
+    },
+    {
+      "type": "boolean",
+      "name": "RandomizeWhisperingRoots",
+      "readableName": "Randomize Whispering Roots",
+      "description": "Randomize the essence rewards from Whispering Roots into the item pool. Whispering Roots will now grant a randomized item when completed. This can be previewed by standing on the root.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "RandomizeBossEssence",
+      "readableName": "Randomize Boss Essence",
+      "description": "Randomize boss essence drops, such as those for defeating Warrior Dreams, into the item pool and open their locations for randomization.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "RandomizeGrubs",
+      "readableName": "Randomize Grubs",
+      "description": "Randomize Grubs into the item pool and open their locations for randomization.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "RandomizeMimics",
+      "readableName": "Randomize Mimics",
+      "description": "Disabled Option. Not implemented.",
+      "default": false,
+      "disabled": true
+    },
+    {
+      "type": "boolean",
+      "name": "RandomizeMaps",
+      "readableName": "Randomize Maps",
+      "description": "Randomize Maps into the item pool. This causes Cornifer to give you a message allowing you to see and buy an item that is randomized into that location as well.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "RandomizeStags",
+      "readableName": "Randomize Stags",
+      "description": "Randomize Stag Stations unlocks into the item pool as well as placing randomized items on the stag station bell/toll.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "RandomizeLifebloodCocoons",
+      "readableName": "Randomize Lifeblood Cocoons",
+      "description": "Randomize Lifeblood Cocoon grants into the item pool and open their locations for randomization.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "RandomizeGrimmkinFlames",
+      "readableName": "Randomize Grimmkin Flames",
+      "description": "Randomize Grimmkin Flames into the item pool and open their locations for randomization.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "Randomize",
+      "readableName": "Randomize ",
+      "description": "",
+      "default": true
+    },
+    {
+      "type": "boolean",
+      "name": "RandomizeJournalEntries",
+      "readableName": "Randomize Journal Entries",
+      "description": "Randomize the Hunter's Journal as well as the findable journal entries into the item pool, and open their locations for randomization. Does not include journal entries gained by killing enemies.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "Randomize",
+      "readableName": "Randomize ",
+      "description": "",
+      "default": true
+    },
+    {
+      "type": "boolean",
+      "name": "RandomizeNail",
+      "readableName": "Randomize Nail",
+      "description": "Disabled Option. Not implemented.",
+      "default": false,
+      "disabled": true
+    },
+    {
+      "type": "boolean",
+      "name": "RandomizeGeoRocks",
+      "readableName": "Randomize Geo Rocks",
+      "description": "Randomize Geo Rock rewards into the item pool and open their locations for randomization.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "RandomizeBossGeo",
+      "readableName": "Randomize Boss Geo",
+      "description": "Randomize boss Geo drops into the item pool and open those locations for randomization.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "RandomizeSoulTotems",
+      "readableName": "Randomize Soul Totems",
+      "description": "Randomize Soul Refill items into the item pool and open the Soul Totem locations for randomization.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "RandomizeLoreTablets",
+      "readableName": "Randomize Lore Tablets",
+      "description": "Randomize Lore items into the itempool, one per Lore Tablet, and place randomized item grants on the tablets themselves. You must still read the tablet to get the item.",
+      "default": false
+    },
+
+    {
+      "type": "boolean",
+      "name": "PreciseMovement",
+      "readableName": "Precise Movement",
+      "description": "Places skips into logic which require extremely precise player movement, possibly without movement skills such as dash or hook.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "ProficientCombat",
+      "readableName": "Proficient Combat",
+      "description": "Places skips into logic which require proficient combat, possibly with limited items.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "BackgroundObjectPogos",
+      "readableName": "Background Object Pogos",
+      "description": "Places skips into logic for locations which are reachable via pogoing off of background objects.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "EnemyPogos",
+      "readableName": "Enemy Pogos",
+      "description": "Places skips into logic for locations which are reachable via pogos off of enemies.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "ObscureSkips",
+      "readableName": "Obscure Skips",
+      "description": "Places skips into logic which are considered obscure enough that a beginner is not expected to know them.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "ShadeSkips",
+      "readableName": "Shade Skips",
+      "description": "Places shade skips into logic which utilize the player's shade for pogoing or damage boosting.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "InfectionSkips",
+      "readableName": "Infection Skips",
+      "description": "Places skips into logic which are only possible after the crossroads become infected.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "FireballSkips",
+      "readableName": "Fireball Skips",
+      "description": "Places skips into logic which require the use of spells to reset fall speed while in mid-air.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "SpikeTunnels",
+      "readableName": "Spike Tunnels",
+      "description": "Places skips into logic which require the navigation of narrow tunnels filled with spikes.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "AcidSkips",
+      "readableName": "Acid Skips",
+      "description": "Places skips into logic which require crossing a pool of acid without Isma's Tear, or water if swim is disabled.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "DamageBoosts",
+      "readableName": "Damage Boosts",
+      "description": "Places skips into logic which require you to take damage from an enemy or hazard to progress.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "DangerousSkips",
+      "readableName": "Dangerous Skips",
+      "description": "Places skips into logic which contain a high risk of taking damage.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "DarkRooms",
+      "readableName": "Dark Rooms",
+      "description": "Places skips into logic which require navigating dark rooms without the use of the Lumafly Lantern.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "ComplexSkips",
+      "readableName": "Complex Skips",
+      "description": "Places skips into logic which require intense setup or are obscure even beyond advanced skip standards.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "DifficultSkips",
+      "readableName": "DifficultSkips",
+      "description": "Places skips into logic which are considered more difficult than typical.",
+      "default": false
+    },
+
+    {
+      "type": "boolean",
+      "name": "RemoveSpellUpgrades",
+      "readableName": "Remove Spell Upgrades",
+      "description": "Removes the second level of all spells from the item pool.",
+      "default": true
+    },
+
+    {
+      "type": "string",
+      "name": "StartLocation",
+      "readableName": "Starting Location",
+      "description": "Choose your start location.",
+      "values": {
+        "king's_pass": "King's Pass"
+      },
+      "default": "king's_pass",
+      "disabled": true
+    },
+
+    {
+      "type": "numeric",
+      "name": "MinimumGrubPrice",
+      "readableName": "Minimum Grub Price",
+      "description": "The minimum grub price in the range of prices that an item should cost from Grubfather.",
+      "low": 1,
+      "high": 46,
+      "randomable": true,
+      "default": 1
+    },
+    {
+      "type": "numeric",
+      "name": "MaximumGrubPrice",
+      "readableName": "Maximum Grub Price",
+      "description": "The maximum grub price in the range of prices that an item should cost from Grubfather.",
+      "low": 1,
+      "high": 46,
+      "randomable": true,
+      "default": 23
+    },
+    {
+      "type": "numeric",
+      "name": "MinimumEssencePrice",
+      "readableName": "Minimum Essence Price",
+      "description": "The minimum essence price in the range of prices that an item should cost from Seer.",
+      "low": 1,
+      "high": 2800,
+      "randomable": true,
+      "default": 1
+    },
+    {
+      "type": "numeric",
+      "name": "MaximumEssencePrice",
+      "readableName": "Maximum Essence Price",
+      "description": "The maximum essence price in the range of prices that an item should cost from Seer.",
+      "low": 1,
+      "high": 2800,
+      "randomable": true,
+      "default": 1400
+    },
+    {
+      "type": "numeric",
+      "name": "MinimumEggPrice",
+      "readableName": "Minimum Egg Price",
+      "description": "The minimum rancid egg price in the range of prices that an item should cost from Ijii. Only takes effect if the EggSlotShops option is greater than 0.",
+      "low": 1,
+      "high": 21,
+      "randomable": true,
+      "default": 1
+    },
+    {
+      "type": "numeric",
+      "name": "MaximumEggPrice",
+      "readableName": "Maximum Egg Price",
+      "description": "The minimum rancid egg price in the range of prices that an item should cost from Ijii. Only takes effect if the EggSlotShops option is greater than 0.",
+      "low": 1,
+      "high": 21,
+      "randomable": true,
+      "default": 10
+    },
+    {
+      "type": "numeric",
+      "name": "MinimumCharmPrice",
+      "readableName": "Minimum Charm Price",
+      "description": "The minimum charm price in the range of prices that an item should cost for Salubra's shop item which also carry a charm cost.",
+      "low": 1,
+      "high": 40,
+      "randomable": true,
+      "default": 1
+    },
+    {
+      "type": "numeric",
+      "name": "MaximumCharmPrice",
+      "readableName": "Maximum Charm Price",
+      "description": "The minimum charm price in the range of prices that an item should cost for Salubra's shop item which also carry a charm cost.",
+      "low": 1,
+      "high": 40,
+      "randomable": true,
+      "default": 20
+    },
+
+    {
+      "type": "numeric",
+      "name": "RandomCharmCosts",
+      "readableName": "Random Charm Costs",
+      "description": "Total Notch Cost of all Charms together. Set to -1 for vanilla costs. Vanilla sums to 90. This value is distributed among all charms in a random fashion.",
+      "low": -1,
+      "high": 240,
+      "randomable": true,
+      "default": -1
+    },
+    {
+      "type": "numeric",
+      "name": "EggShopSlots",
+      "readableName": "Egg Shop Slots",
+      "description": "For each slot, add a location to the Egg Shop and a Geo drop to the item pool.",
+      "low": 0,
+      "high": 16,
+      "randomable": true,
+      "default": 0
+    }
+  ],
+  "items": [
+    {
+      "name": "Lurien"
+    },
+    {
+      "name": "Monomon"
+    },
+    {
+      "name": "Herrah"
+    },
+    {
+      "name": "World_Sense"
+    },
+    {
+      "name": "Dreamer"
+    },
+    {
+      "name": "Mothwing_Cloak"
+    },
+    {
+      "name": "Mantis_Claw"
+    },
+    {
+      "name": "Crystal_Heart"
+    },
+    {
+      "name": "Monarch_Wings"
+    },
+    {
+      "name": "Shade_Cloak"
+    },
+    {
+      "name": "Isma's_Tear"
+    },
+    {
+      "name": "Dream_Nail"
+    },
+    {
+      "name": "Dream_Gate"
+    },
+    {
+      "name": "Awoken_Dream_Nail"
+    },
+    {
+      "name": "Vengeful_Spirit"
+    },
+    {
+      "name": "Shade_Soul"
+    },
+    {
+      "name": "Desolate_Dive"
+    },
+    {
+      "name": "Descending_Dark"
+    },
+    {
+      "name": "Howling_Wraiths"
+    },
+    {
+      "name": "Abyss_Shriek"
+    },
+    {
+      "name": "Cyclone_Slash"
+    },
+    {
+      "name": "Dash_Slash"
+    },
+    {
+      "name": "Great_Slash"
+    },
+    {
+      "name": "Focus"
+    },
+    {
+      "name": "Swim"
+    },
+    {
+      "name": "Gathering_Swarm"
+    },
+    {
+      "name": "Wayward_Compass"
+    },
+    {
+      "name": "Grubsong"
+    },
+    {
+      "name": "Stalwart_Shell"
+    },
+    {
+      "name": "Baldur_Shell"
+    },
+    {
+      "name": "Fury_of_the_Fallen"
+    },
+    {
+      "name": "Quick_Focus"
+    },
+    {
+      "name": "Lifeblood_Heart"
+    },
+    {
+      "name": "Lifeblood_Core"
+    },
+    {
+      "name": "Defender's_Crest"
+    },
+    {
+      "name": "Flukenest"
+    },
+    {
+      "name": "Thorns_of_Agony"
+    },
+    {
+      "name": "Mark_of_Pride"
+    },
+    {
+      "name": "Steady_Body"
+    },
+    {
+      "name": "Heavy_Blow"
+    },
+    {
+      "name": "Sharp_Shadow"
+    },
+    {
+      "name": "Spore_Shroom"
+    },
+    {
+      "name": "Longnail"
+    },
+    {
+      "name": "Shaman_Stone"
+    },
+    {
+      "name": "Soul_Catcher"
+    },
+    {
+      "name": "Soul_Eater"
+    },
+    {
+      "name": "Glowing_Womb"
+    },
+    {
+      "name": "Fragile_Heart"
+    },
+    {
+      "name": "Unbreakable_Heart"
+    },
+    {
+      "name": "Fragile_Greed"
+    },
+    {
+      "name": "Unbreakable_Greed"
+    },
+    {
+      "name": "Fragile_Strength"
+    },
+    {
+      "name": "Unbreakable_Strength"
+    },
+    {
+      "name": "Nailmaster's_Glory"
+    },
+    {
+      "name": "Joni's_Blessing"
+    },
+    {
+      "name": "Shape_of_Unn"
+    },
+    {
+      "name": "Hiveblood"
+    },
+    {
+      "name": "Dream_Wielder"
+    },
+    {
+      "name": "Dashmaster"
+    },
+    {
+      "name": "Quick_Slash"
+    },
+    {
+      "name": "Spell_Twister"
+    },
+    {
+      "name": "Deep_Focus"
+    },
+    {
+      "name": "Grubberfly's_Elegy"
+    },
+    {
+      "name": "Queen_Fragment"
+    },
+    {
+      "name": "King_Fragment"
+    },
+    {
+      "name": "Void_Heart"
+    },
+    {
+      "name": "Sprintmaster"
+    },
+    {
+      "name": "Dreamshield"
+    },
+    {
+      "name": "Weaversong"
+    },
+    {
+      "name": "Grimmchild1"
+    },
+    {
+      "name": "Grimmchild2"
+    },
+    {
+      "name": "City_Crest"
+    },
+    {
+      "name": "Lumafly_Lantern"
+    },
+    {
+      "name": "Tram_Pass"
+    },
+    {
+      "name": "Simple_Key"
+    },
+    {
+      "name": "Shopkeeper's_Key"
+    },
+    {
+      "name": "Elegant_Key"
+    },
+    {
+      "name": "Love_Key"
+    },
+    {
+      "name": "King's_Brand"
+    },
+    {
+      "name": "Godtuner"
+    },
+    {
+      "name": "Collector's_Map"
+    },
+    {
+      "name": "Mask_Shard"
+    },
+    {
+      "name": "Double_Mask_Shard"
+    },
+    {
+      "name": "Full_Mask"
+    },
+    {
+      "name": "Vessel_Fragment"
+    },
+    {
+      "name": "Double_Vessel_Fragment"
+    },
+    {
+      "name": "Full_Soul_Vessel"
+    },
+    {
+      "name": "Charm_Notch"
+    },
+    {
+      "name": "Salubra's_Blessing"
+    },
+    {
+      "name": "Pale_Ore"
+    },
+    {
+      "name": "Geo_Chest-False_Knight"
+    },
+    {
+      "name": "Geo_Chest-Soul_Master"
+    },
+    {
+      "name": "Geo_Chest-Watcher_Knights"
+    },
+    {
+      "name": "Geo_Chest-Greenpath"
+    },
+    {
+      "name": "Geo_Chest-Mantis_Lords"
+    },
+    {
+      "name": "Geo_Chest-Resting_Grounds"
+    },
+    {
+      "name": "Geo_Chest-Crystal_Peak"
+    },
+    {
+      "name": "Geo_Chest-Weavers_Den"
+    },
+    {
+      "name": "Geo_Chest-Junk_Pit_1"
+    },
+    {
+      "name": "Geo_Chest-Junk_Pit_2"
+    },
+    {
+      "name": "Geo_Chest-Junk_Pit_3"
+    },
+    {
+      "name": "Geo_Chest-Junk_Pit_5"
+    },
+    {
+      "name": "Lumafly_Escape"
+    },
+    {
+      "name": "One_Geo"
+    },
+    {
+      "name": "Rancid_Egg"
+    },
+    {
+      "name": "Wanderer's_Journal"
+    },
+    {
+      "name": "Hallownest_Seal"
+    },
+    {
+      "name": "King's_Idol"
+    },
+    {
+      "name": "Arcane_Egg"
+    },
+    {
+      "name": "Whispering_Root-Crossroads"
+    },
+    {
+      "name": "Whispering_Root-Greenpath"
+    },
+    {
+      "name": "Whispering_Root-Leg_Eater"
+    },
+    {
+      "name": "Whispering_Root-Mantis_Village"
+    },
+    {
+      "name": "Whispering_Root-Deepnest"
+    },
+    {
+      "name": "Whispering_Root-Queens_Gardens"
+    },
+    {
+      "name": "Whispering_Root-Kingdoms_Edge"
+    },
+    {
+      "name": "Whispering_Root-Waterways"
+    },
+    {
+      "name": "Whispering_Root-City"
+    },
+    {
+      "name": "Whispering_Root-Resting_Grounds"
+    },
+    {
+      "name": "Whispering_Root-Spirits_Glade"
+    },
+    {
+      "name": "Whispering_Root-Crystal_Peak"
+    },
+    {
+      "name": "Whispering_Root-Howling_Cliffs"
+    },
+    {
+      "name": "Whispering_Root-Ancestral_Mound"
+    },
+    {
+      "name": "Whispering_Root-Hive"
+    },
+    {
+      "name": "Boss_Essence-Elder_Hu"
+    },
+    {
+      "name": "Boss_Essence-Xero"
+    },
+    {
+      "name": "Boss_Essence-Gorb"
+    },
+    {
+      "name": "Boss_Essence-Marmu"
+    },
+    {
+      "name": "Boss_Essence-No_Eyes"
+    },
+    {
+      "name": "Boss_Essence-Galien"
+    },
+    {
+      "name": "Boss_Essence-Markoth"
+    },
+    {
+      "name": "Boss_Essence-Failed_Champion"
+    },
+    {
+      "name": "Boss_Essence-Soul_Tyrant"
+    },
+    {
+      "name": "Boss_Essence-Lost_Kin"
+    },
+    {
+      "name": "Boss_Essence-White_Defender"
+    },
+    {
+      "name": "Boss_Essence-Grey_Prince_Zote"
+    },
+    {
+      "name": "Grub"
+    },
+    {
+      "name": "Mimic_Grub"
+    },
+    {
+      "name": "Quill"
+    },
+    {
+      "name": "Crossroads_Map"
+    },
+    {
+      "name": "Greenpath_Map"
+    },
+    {
+      "name": "Fog_Canyon_Map"
+    },
+    {
+      "name": "Fungal_Wastes_Map"
+    },
+    {
+      "name": "Deepnest_Map"
+    },
+    {
+      "name": "Ancient_Basin_Map"
+    },
+    {
+      "name": "Kingdom's_Edge_Map"
+    },
+    {
+      "name": "City_of_Tears_Map"
+    },
+    {
+      "name": "Royal_Waterways_Map"
+    },
+    {
+      "name": "Howling_Cliffs_Map"
+    },
+    {
+      "name": "Crystal_Peak_Map"
+    },
+    {
+      "name": "Queen's_Gardens_Map"
+    },
+    {
+      "name": "Resting_Grounds_Map"
+    },
+    {
+      "name": "Dirtmouth_Stag"
+    },
+    {
+      "name": "Crossroads_Stag"
+    },
+    {
+      "name": "Greenpath_Stag"
+    },
+    {
+      "name": "Queen's_Station_Stag"
+    },
+    {
+      "name": "Queen's_Gardens_Stag"
+    },
+    {
+      "name": "City_Storerooms_Stag"
+    },
+    {
+      "name": "King's_Station_Stag"
+    },
+    {
+      "name": "Resting_Grounds_Stag"
+    },
+    {
+      "name": "Distant_Village_Stag"
+    },
+    {
+      "name": "Hidden_Station_Stag"
+    },
+    {
+      "name": "Stag_Nest_Stag"
+    },
+    {
+      "name": "Lifeblood_Cocoon_Small"
+    },
+    {
+      "name": "Lifeblood_Cocoon_Large"
+    },
+    {
+      "name": "Grimmkin_Flame"
+    },
+    {
+      "name": "Hunter's_Journal"
+    },
+    {
+      "name": "Journal_Entry-Void_Tendrils"
+    },
+    {
+      "name": "Journal_Entry-Charged_Lumafly"
+    },
+    {
+      "name": "Journal_Entry-Goam"
+    },
+    {
+      "name": "Journal_Entry-Garpede"
+    },
+    {
+      "name": "Journal_Entry-Seal_of_Binding"
+    },
+    {
+      "name": "Elevator_Pass"
+    },
+    {
+      "name": "Left_Mothwing_Cloak"
+    },
+    {
+      "name": "Right_Mothwing_Cloak"
+    },
+    {
+      "name": "Split_Shade_Cloak"
+    },
+    {
+      "name": "Left_Mantis_Claw"
+    },
+    {
+      "name": "Right_Mantis_Claw"
+    },
+    {
+      "name": "Leftslash"
+    },
+    {
+      "name": "Rightslash"
+    },
+    {
+      "name": "Upslash"
+    },
+    {
+      "name": "Downslash"
+    },
+    {
+      "name": "Left_Crystal_Heart"
+    },
+    {
+      "name": "Right_Crystal_Heart"
+    },
+    {
+      "name": "Geo_Rock-Default"
+    },
+    {
+      "name": "Geo_Rock-Deepnest"
+    },
+    {
+      "name": "Geo_Rock-Abyss"
+    },
+    {
+      "name": "Geo_Rock-GreenPath01"
+    },
+    {
+      "name": "Geo_Rock-Outskirts"
+    },
+    {
+      "name": "Geo_Rock-Outskirts420"
+    },
+    {
+      "name": "Geo_Rock-GreenPath02"
+    },
+    {
+      "name": "Geo_Rock-Fung01"
+    },
+    {
+      "name": "Geo_Rock-Fung02"
+    },
+    {
+      "name": "Geo_Rock-City"
+    },
+    {
+      "name": "Geo_Rock-Hive"
+    },
+    {
+      "name": "Geo_Rock-Mine"
+    },
+    {
+      "name": "Geo_Rock-Grave02"
+    },
+    {
+      "name": "Geo_Rock-Grave01"
+    },
+    {
+      "name": "Boss_Geo-Massive_Moss_Charger"
+    },
+    {
+      "name": "Boss_Geo-Gorgeous_Husk"
+    },
+    {
+      "name": "Boss_Geo-Sanctum_Soul_Warrior"
+    },
+    {
+      "name": "Boss_Geo-Elegant_Soul_Warrior"
+    },
+    {
+      "name": "Boss_Geo-Crystal_Guardian"
+    },
+    {
+      "name": "Boss_Geo-Enraged_Guardian"
+    },
+    {
+      "name": "Boss_Geo-Gruz_Mother"
+    },
+    {
+      "name": "Boss_Geo-Vengefly_King"
+    },
+    {
+      "name": "Soul_Refill"
+    },
+    {
+      "name": "Soul_Totem-A"
+    },
+    {
+      "name": "Soul_Totem-B"
+    },
+    {
+      "name": "Soul_Totem-C"
+    },
+    {
+      "name": "Soul_Totem-D"
+    },
+    {
+      "name": "Soul_Totem-E"
+    },
+    {
+      "name": "Soul_Totem-F"
+    },
+    {
+      "name": "Soul_Totem-G"
+    },
+    {
+      "name": "Soul_Totem-Palace"
+    },
+    {
+      "name": "Soul_Totem-Path_of_Pain"
+    },
+    {
+      "name": "Lore_Tablet-City_Entrance"
+    },
+    {
+      "name": "Lore_Tablet-Pleasure_House"
+    },
+    {
+      "name": "Lore_Tablet-Sanctum_Entrance"
+    },
+    {
+      "name": "Lore_Tablet-Sanctum_Past_Soul_Master"
+    },
+    {
+      "name": "Lore_Tablet-Watcher's_Spire"
+    },
+    {
+      "name": "Lore_Tablet-Archives_Upper"
+    },
+    {
+      "name": "Lore_Tablet-Archives_Left"
+    },
+    {
+      "name": "Lore_Tablet-Archives_Right"
+    },
+    {
+      "name": "Lore_Tablet-Pilgrim's_Way_1"
+    },
+    {
+      "name": "Lore_Tablet-Pilgrim's_Way_2"
+    },
+    {
+      "name": "Lore_Tablet-Mantis_Outskirts"
+    },
+    {
+      "name": "Lore_Tablet-Mantis_Village"
+    },
+    {
+      "name": "Lore_Tablet-Greenpath_Upper_Hidden"
+    },
+    {
+      "name": "Lore_Tablet-Greenpath_Below_Toll"
+    },
+    {
+      "name": "Lore_Tablet-Greenpath_Lifeblood"
+    },
+    {
+      "name": "Lore_Tablet-Greenpath_Stag"
+    },
+    {
+      "name": "Lore_Tablet-Greenpath_QG"
+    },
+    {
+      "name": "Lore_Tablet-Greenpath_Lower_Hidden"
+    },
+    {
+      "name": "Lore_Tablet-Dung_Defender"
+    },
+    {
+      "name": "Lore_Tablet-Spore_Shroom"
+    },
+    {
+      "name": "Lore_Tablet-Fungal_Wastes_Hidden"
+    },
+    {
+      "name": "Lore_Tablet-Fungal_Wastes_Below_Shrumal_Ogres"
+    },
+    {
+      "name": "Lore_Tablet-Fungal_Core"
+    },
+    {
+      "name": "Lore_Tablet-Ancient_Basin"
+    },
+    {
+      "name": "Lore_Tablet-King's_Pass_Focus"
+    },
+    {
+      "name": "Lore_Tablet-King's_Pass_Fury"
+    },
+    {
+      "name": "Lore_Tablet-King's_Pass_Exit"
+    },
+    {
+      "name": "Lore_Tablet-World_Sense"
+    },
+    {
+      "name": "Lore_Tablet-Howling_Cliffs"
+    },
+    {
+      "name": "Lore_Tablet-Kingdom's_Edge"
+    },
+    {
+      "name": "Lore_Tablet-Palace_Workshop"
+    },
+    {
+      "name": "Lore_Tablet-Palace_Throne"
+    },
+    {
+      "name": "Lore_Tablet-Path_of_Pain_Entrance"
+    }
+  ],
+  "locations": [
+    {
+      "name": "Sly_1"
+    },
+    {
+      "name": "Sly_2"
+    },
+    {
+      "name": "Sly_3"
+    },
+    {
+      "name": "Sly_4"
+    },
+    {
+      "name": "Sly_5"
+    },
+    {
+      "name": "Sly_6"
+    },
+    {
+      "name": "Sly_7"
+    },
+    {
+      "name": "Sly_8"
+    },
+    {
+      "name": "Sly_9"
+    },
+    {
+      "name": "Sly_10"
+    },
+    {
+      "name": "Sly_11"
+    },
+    {
+      "name": "Sly_12"
+    },
+    {
+      "name": "Sly_13"
+    },
+    {
+      "name": "Sly_14"
+    },
+    {
+      "name": "Sly_15"
+    },
+    {
+      "name": "Sly_16"
+    },
+    {
+      "name": "Sly_(Key)_1"
+    },
+    {
+      "name": "Sly_(Key)_2"
+    },
+    {
+      "name": "Sly_(Key)_3"
+    },
+    {
+      "name": "Sly_(Key)_4"
+    },
+    {
+      "name": "Sly_(Key)_5"
+    },
+    {
+      "name": "Sly_(Key)_6"
+    },
+    {
+      "name": "Sly_(Key)_7"
+    },
+    {
+      "name": "Sly_(Key)_8"
+    },
+    {
+      "name": "Sly_(Key)_9"
+    },
+    {
+      "name": "Sly_(Key)_10"
+    },
+    {
+      "name": "Sly_(Key)_11"
+    },
+    {
+      "name": "Sly_(Key)_12"
+    },
+    {
+      "name": "Sly_(Key)_13"
+    },
+    {
+      "name": "Sly_(Key)_14"
+    },
+    {
+      "name": "Sly_(Key)_15"
+    },
+    {
+      "name": "Sly_(Key)_16"
+    },
+    {
+      "name": "Iselda_1"
+    },
+    {
+      "name": "Iselda_2"
+    },
+    {
+      "name": "Iselda_3"
+    },
+    {
+      "name": "Iselda_4"
+    },
+    {
+      "name": "Iselda_5"
+    },
+    {
+      "name": "Iselda_6"
+    },
+    {
+      "name": "Iselda_7"
+    },
+    {
+      "name": "Iselda_8"
+    },
+    {
+      "name": "Iselda_9"
+    },
+    {
+      "name": "Iselda_10"
+    },
+    {
+      "name": "Iselda_11"
+    },
+    {
+      "name": "Iselda_12"
+    },
+    {
+      "name": "Iselda_13"
+    },
+    {
+      "name": "Iselda_14"
+    },
+    {
+      "name": "Iselda_15"
+    },
+    {
+      "name": "Iselda_16"
+    },
+    {
+      "name": "Salubra_1"
+    },
+    {
+      "name": "Salubra_2"
+    },
+    {
+      "name": "Salubra_3"
+    },
+    {
+      "name": "Salubra_4"
+    },
+    {
+      "name": "Salubra_5"
+    },
+    {
+      "name": "Salubra_6"
+    },
+    {
+      "name": "Salubra_7"
+    },
+    {
+      "name": "Salubra_8"
+    },
+    {
+      "name": "Salubra_9"
+    },
+    {
+      "name": "Salubra_10"
+    },
+    {
+      "name": "Salubra_11"
+    },
+    {
+      "name": "Salubra_12"
+    },
+    {
+      "name": "Salubra_13"
+    },
+    {
+      "name": "Salubra_14"
+    },
+    {
+      "name": "Salubra_15"
+    },
+    {
+      "name": "Salubra_16"
+    },
+    {
+      "name": "Salubra_(Requires_Charms)_1"
+    },
+    {
+      "name": "Salubra_(Requires_Charms)_2"
+    },
+    {
+      "name": "Salubra_(Requires_Charms)_3"
+    },
+    {
+      "name": "Salubra_(Requires_Charms)_4"
+    },
+    {
+      "name": "Salubra_(Requires_Charms)_5"
+    },
+    {
+      "name": "Salubra_(Requires_Charms)_6"
+    },
+    {
+      "name": "Salubra_(Requires_Charms)_7"
+    },
+    {
+      "name": "Salubra_(Requires_Charms)_8"
+    },
+    {
+      "name": "Salubra_(Requires_Charms)_9"
+    },
+    {
+      "name": "Salubra_(Requires_Charms)_10"
+    },
+    {
+      "name": "Salubra_(Requires_Charms)_11"
+    },
+    {
+      "name": "Salubra_(Requires_Charms)_12"
+    },
+    {
+      "name": "Salubra_(Requires_Charms)_13"
+    },
+    {
+      "name": "Salubra_(Requires_Charms)_14"
+    },
+    {
+      "name": "Salubra_(Requires_Charms)_15"
+    },
+    {
+      "name": "Salubra_(Requires_Charms)_16"
+    },
+    {
+      "name": "Leg_Eater_1"
+    },
+    {
+      "name": "Leg_Eater_2"
+    },
+    {
+      "name": "Leg_Eater_3"
+    },
+    {
+      "name": "Leg_Eater_4"
+    },
+    {
+      "name": "Leg_Eater_5"
+    },
+    {
+      "name": "Leg_Eater_6"
+    },
+    {
+      "name": "Leg_Eater_7"
+    },
+    {
+      "name": "Leg_Eater_8"
+    },
+    {
+      "name": "Leg_Eater_9"
+    },
+    {
+      "name": "Leg_Eater_10"
+    },
+    {
+      "name": "Leg_Eater_11"
+    },
+    {
+      "name": "Leg_Eater_12"
+    },
+    {
+      "name": "Leg_Eater_13"
+    },
+    {
+      "name": "Leg_Eater_14"
+    },
+    {
+      "name": "Leg_Eater_15"
+    },
+    {
+      "name": "Leg_Eater_16"
+    },
+    {
+      "name": "Grubfather_1"
+    },
+    {
+      "name": "Grubfather_2"
+    },
+    {
+      "name": "Grubfather_3"
+    },
+    {
+      "name": "Grubfather_4"
+    },
+    {
+      "name": "Grubfather_5"
+    },
+    {
+      "name": "Grubfather_6"
+    },
+    {
+      "name": "Grubfather_7"
+    },
+    {
+      "name": "Grubfather_8"
+    },
+    {
+      "name": "Grubfather_9"
+    },
+    {
+      "name": "Grubfather_10"
+    },
+    {
+      "name": "Grubfather_11"
+    },
+    {
+      "name": "Grubfather_12"
+    },
+    {
+      "name": "Grubfather_13"
+    },
+    {
+      "name": "Grubfather_14"
+    },
+    {
+      "name": "Grubfather_15"
+    },
+    {
+      "name": "Grubfather_16"
+    },
+    {
+      "name": "Seer_1"
+    },
+    {
+      "name": "Seer_2"
+    },
+    {
+      "name": "Seer_3"
+    },
+    {
+      "name": "Seer_4"
+    },
+    {
+      "name": "Seer_5"
+    },
+    {
+      "name": "Seer_6"
+    },
+    {
+      "name": "Seer_7"
+    },
+    {
+      "name": "Seer_8"
+    },
+    {
+      "name": "Seer_9"
+    },
+    {
+      "name": "Seer_10"
+    },
+    {
+      "name": "Seer_11"
+    },
+    {
+      "name": "Seer_12"
+    },
+    {
+      "name": "Seer_13"
+    },
+    {
+      "name": "Seer_14"
+    },
+    {
+      "name": "Seer_15"
+    },
+    {
+      "name": "Seer_16"
+    },
+    {
+      "name": "Egg_Shop_1"
+    },
+    {
+      "name": "Egg_Shop_2"
+    },
+    {
+      "name": "Egg_Shop_3"
+    },
+    {
+      "name": "Egg_Shop_4"
+    },
+    {
+      "name": "Egg_Shop_5"
+    },
+    {
+      "name": "Egg_Shop_6"
+    },
+    {
+      "name": "Egg_Shop_7"
+    },
+    {
+      "name": "Egg_Shop_8"
+    },
+    {
+      "name": "Egg_Shop_9"
+    },
+    {
+      "name": "Egg_Shop_10"
+    },
+    {
+      "name": "Egg_Shop_11"
+    },
+    {
+      "name": "Egg_Shop_12"
+    },
+    {
+      "name": "Egg_Shop_13"
+    },
+    {
+      "name": "Egg_Shop_14"
+    },
+    {
+      "name": "Egg_Shop_15"
+    },
+    {
+      "name": "Egg_Shop_16"
+    },
+    {
+      "name": "Lurien"
+    },
+    {
+      "name": "Monomon"
+    },
+    {
+      "name": "Herrah"
+    },
+    {
+      "name": "World_Sense"
+    },
+    {
+      "name": "Mothwing_Cloak"
+    },
+    {
+      "name": "Mantis_Claw"
+    },
+    {
+      "name": "Crystal_Heart"
+    },
+    {
+      "name": "Monarch_Wings"
+    },
+    {
+      "name": "Shade_Cloak"
+    },
+    {
+      "name": "Isma's_Tear"
+    },
+    {
+      "name": "Dream_Nail"
+    },
+    {
+      "name": "Vengeful_Spirit"
+    },
+    {
+      "name": "Shade_Soul"
+    },
+    {
+      "name": "Desolate_Dive"
+    },
+    {
+      "name": "Descending_Dark"
+    },
+    {
+      "name": "Howling_Wraiths"
+    },
+    {
+      "name": "Abyss_Shriek"
+    },
+    {
+      "name": "Cyclone_Slash"
+    },
+    {
+      "name": "Dash_Slash"
+    },
+    {
+      "name": "Great_Slash"
+    },
+    {
+      "name": "Focus"
+    },
+    {
+      "name": "Baldur_Shell"
+    },
+    {
+      "name": "Fury_of_the_Fallen"
+    },
+    {
+      "name": "Lifeblood_Core"
+    },
+    {
+      "name": "Defender's_Crest"
+    },
+    {
+      "name": "Flukenest"
+    },
+    {
+      "name": "Thorns_of_Agony"
+    },
+    {
+      "name": "Mark_of_Pride"
+    },
+    {
+      "name": "Sharp_Shadow"
+    },
+    {
+      "name": "Spore_Shroom"
+    },
+    {
+      "name": "Soul_Catcher"
+    },
+    {
+      "name": "Soul_Eater"
+    },
+    {
+      "name": "Glowing_Womb"
+    },
+    {
+      "name": "Nailmaster's_Glory"
+    },
+    {
+      "name": "Joni's_Blessing"
+    },
+    {
+      "name": "Shape_of_Unn"
+    },
+    {
+      "name": "Hiveblood"
+    },
+    {
+      "name": "Dashmaster"
+    },
+    {
+      "name": "Quick_Slash"
+    },
+    {
+      "name": "Spell_Twister"
+    },
+    {
+      "name": "Deep_Focus"
+    },
+    {
+      "name": "Queen_Fragment"
+    },
+    {
+      "name": "King_Fragment"
+    },
+    {
+      "name": "Void_Heart"
+    },
+    {
+      "name": "Dreamshield"
+    },
+    {
+      "name": "Weaversong"
+    },
+    {
+      "name": "Grimmchild"
+    },
+    {
+      "name": "Unbreakable_Heart"
+    },
+    {
+      "name": "Unbreakable_Greed"
+    },
+    {
+      "name": "Unbreakable_Strength"
+    },
+    {
+      "name": "City_Crest"
+    },
+    {
+      "name": "Tram_Pass"
+    },
+    {
+      "name": "Simple_Key-Basin"
+    },
+    {
+      "name": "Simple_Key-City"
+    },
+    {
+      "name": "Simple_Key-Lurker"
+    },
+    {
+      "name": "Shopkeeper's_Key"
+    },
+    {
+      "name": "Love_Key"
+    },
+    {
+      "name": "King's_Brand"
+    },
+    {
+      "name": "Godtuner"
+    },
+    {
+      "name": "Collector's_Map"
+    },
+    {
+      "name": "Mask_Shard-Brooding_Mawlek"
+    },
+    {
+      "name": "Mask_Shard-Crossroads_Goam"
+    },
+    {
+      "name": "Mask_Shard-Stone_Sanctuary"
+    },
+    {
+      "name": "Mask_Shard-Queen's_Station"
+    },
+    {
+      "name": "Mask_Shard-Deepnest"
+    },
+    {
+      "name": "Mask_Shard-Waterways"
+    },
+    {
+      "name": "Mask_Shard-Enraged_Guardian"
+    },
+    {
+      "name": "Mask_Shard-Hive"
+    },
+    {
+      "name": "Mask_Shard-Grey_Mourner"
+    },
+    {
+      "name": "Mask_Shard-Bretta"
+    },
+    {
+      "name": "Vessel_Fragment-Greenpath"
+    },
+    {
+      "name": "Vessel_Fragment-City"
+    },
+    {
+      "name": "Vessel_Fragment-Crossroads"
+    },
+    {
+      "name": "Vessel_Fragment-Basin"
+    },
+    {
+      "name": "Vessel_Fragment-Deepnest"
+    },
+    {
+      "name": "Vessel_Fragment-Stag_Nest"
+    },
+    {
+      "name": "Charm_Notch-Shrumal_Ogres"
+    },
+    {
+      "name": "Charm_Notch-Fog_Canyon"
+    },
+    {
+      "name": "Charm_Notch-Colosseum"
+    },
+    {
+      "name": "Charm_Notch-Grimm"
+    },
+    {
+      "name": "Pale_Ore-Basin"
+    },
+    {
+      "name": "Pale_Ore-Crystal_Peak"
+    },
+    {
+      "name": "Pale_Ore-Nosk"
+    },
+    {
+      "name": "Pale_Ore-Colosseum"
+    },
+    {
+      "name": "Geo_Chest-False_Knight"
+    },
+    {
+      "name": "Geo_Chest-Soul_Master"
+    },
+    {
+      "name": "Geo_Chest-Watcher_Knights"
+    },
+    {
+      "name": "Geo_Chest-Greenpath"
+    },
+    {
+      "name": "Geo_Chest-Mantis_Lords"
+    },
+    {
+      "name": "Geo_Chest-Resting_Grounds"
+    },
+    {
+      "name": "Geo_Chest-Crystal_Peak"
+    },
+    {
+      "name": "Geo_Chest-Weavers_Den"
+    },
+    {
+      "name": "Geo_Chest-Junk_Pit_1"
+    },
+    {
+      "name": "Geo_Chest-Junk_Pit_2"
+    },
+    {
+      "name": "Geo_Chest-Junk_Pit_3"
+    },
+    {
+      "name": "Geo_Chest-Junk_Pit_5"
+    },
+    {
+      "name": "Lumafly_Escape-Junk_Pit_Chest_4"
+    },
+    {
+      "name": "Rancid_Egg-Sheo"
+    },
+    {
+      "name": "Rancid_Egg-Fungal_Core"
+    },
+    {
+      "name": "Rancid_Egg-Queen's_Gardens"
+    },
+    {
+      "name": "Rancid_Egg-Blue_Lake"
+    },
+    {
+      "name": "Rancid_Egg-Crystal_Peak_Dive_Entrance"
+    },
+    {
+      "name": "Rancid_Egg-Crystal_Peak_Dark_Room"
+    },
+    {
+      "name": "Rancid_Egg-Crystal_Peak_Tall_Room"
+    },
+    {
+      "name": "Rancid_Egg-City_of_Tears_Left"
+    },
+    {
+      "name": "Rancid_Egg-City_of_Tears_Pleasure_House"
+    },
+    {
+      "name": "Rancid_Egg-Beast's_Den"
+    },
+    {
+      "name": "Rancid_Egg-Dark_Deepnest"
+    },
+    {
+      "name": "Rancid_Egg-Weaver's_Den"
+    },
+    {
+      "name": "Rancid_Egg-Near_Quick_Slash"
+    },
+    {
+      "name": "Rancid_Egg-Upper_Kingdom's_Edge"
+    },
+    {
+      "name": "Rancid_Egg-Waterways_East"
+    },
+    {
+      "name": "Rancid_Egg-Waterways_Main"
+    },
+    {
+      "name": "Rancid_Egg-Waterways_West_Bluggsac"
+    },
+    {
+      "name": "Rancid_Egg-Waterways_West_Pickup"
+    },
+    {
+      "name": "Rancid_Egg-Tuk_Defender's_Crest"
+    },
+    {
+      "name": "Wanderer's_Journal-Cliffs"
+    },
+    {
+      "name": "Wanderer's_Journal-Greenpath_Stag"
+    },
+    {
+      "name": "Wanderer's_Journal-Greenpath_Lower"
+    },
+    {
+      "name": "Wanderer's_Journal-Fungal_Wastes_Thorns_Gauntlet"
+    },
+    {
+      "name": "Wanderer's_Journal-Above_Mantis_Village"
+    },
+    {
+      "name": "Wanderer's_Journal-Crystal_Peak_Crawlers"
+    },
+    {
+      "name": "Wanderer's_Journal-Resting_Grounds_Catacombs"
+    },
+    {
+      "name": "Wanderer's_Journal-King's_Station"
+    },
+    {
+      "name": "Wanderer's_Journal-Pleasure_House"
+    },
+    {
+      "name": "Wanderer's_Journal-City_Storerooms"
+    },
+    {
+      "name": "Wanderer's_Journal-Ancient_Basin"
+    },
+    {
+      "name": "Wanderer's_Journal-Kingdom's_Edge_Entrance"
+    },
+    {
+      "name": "Wanderer's_Journal-Kingdom's_Edge_Camp"
+    },
+    {
+      "name": "Wanderer's_Journal-Kingdom's_Edge_Requires_Dive"
+    },
+    {
+      "name": "Hallownest_Seal-Crossroads_Well"
+    },
+    {
+      "name": "Hallownest_Seal-Greenpath"
+    },
+    {
+      "name": "Hallownest_Seal-Fog_Canyon_West"
+    },
+    {
+      "name": "Hallownest_Seal-Fog_Canyon_East"
+    },
+    {
+      "name": "Hallownest_Seal-Queen's_Station"
+    },
+    {
+      "name": "Hallownest_Seal-Fungal_Wastes_Sporgs"
+    },
+    {
+      "name": "Hallownest_Seal-Mantis_Lords"
+    },
+    {
+      "name": "Hallownest_Seal-Resting_Grounds_Catacombs"
+    },
+    {
+      "name": "Hallownest_Seal-King's_Station"
+    },
+    {
+      "name": "Hallownest_Seal-City_Rafters"
+    },
+    {
+      "name": "Hallownest_Seal-Soul_Sanctum"
+    },
+    {
+      "name": "Hallownest_Seal-Watcher_Knight"
+    },
+    {
+      "name": "Hallownest_Seal-Deepnest_By_Mantis_Lords"
+    },
+    {
+      "name": "Hallownest_Seal-Beast's_Den"
+    },
+    {
+      "name": "Hallownest_Seal-Queen's_Gardens"
+    },
+    {
+      "name": "King's_Idol-Cliffs"
+    },
+    {
+      "name": "King's_Idol-Crystal_Peak"
+    },
+    {
+      "name": "King's_Idol-Glade_of_Hope"
+    },
+    {
+      "name": "King's_Idol-Dung_Defender"
+    },
+    {
+      "name": "King's_Idol-Great_Hopper"
+    },
+    {
+      "name": "King's_Idol-Pale_Lurker"
+    },
+    {
+      "name": "King's_Idol-Deepnest"
+    },
+    {
+      "name": "Arcane_Egg-Lifeblood_Core"
+    },
+    {
+      "name": "Arcane_Egg-Shade_Cloak"
+    },
+    {
+      "name": "Arcane_Egg-Birthplace"
+    },
+    {
+      "name": "Whispering_Root-Crossroads"
+    },
+    {
+      "name": "Whispering_Root-Greenpath"
+    },
+    {
+      "name": "Whispering_Root-Leg_Eater"
+    },
+    {
+      "name": "Whispering_Root-Mantis_Village"
+    },
+    {
+      "name": "Whispering_Root-Deepnest"
+    },
+    {
+      "name": "Whispering_Root-Queens_Gardens"
+    },
+    {
+      "name": "Whispering_Root-Kingdoms_Edge"
+    },
+    {
+      "name": "Whispering_Root-Waterways"
+    },
+    {
+      "name": "Whispering_Root-City"
+    },
+    {
+      "name": "Whispering_Root-Resting_Grounds"
+    },
+    {
+      "name": "Whispering_Root-Spirits_Glade"
+    },
+    {
+      "name": "Whispering_Root-Crystal_Peak"
+    },
+    {
+      "name": "Whispering_Root-Howling_Cliffs"
+    },
+    {
+      "name": "Whispering_Root-Ancestral_Mound"
+    },
+    {
+      "name": "Whispering_Root-Hive"
+    },
+    {
+      "name": "Boss_Essence-Elder_Hu"
+    },
+    {
+      "name": "Boss_Essence-Xero"
+    },
+    {
+      "name": "Boss_Essence-Gorb"
+    },
+    {
+      "name": "Boss_Essence-Marmu"
+    },
+    {
+      "name": "Boss_Essence-No_Eyes"
+    },
+    {
+      "name": "Boss_Essence-Galien"
+    },
+    {
+      "name": "Boss_Essence-Markoth"
+    },
+    {
+      "name": "Boss_Essence-Failed_Champion"
+    },
+    {
+      "name": "Boss_Essence-Soul_Tyrant"
+    },
+    {
+      "name": "Boss_Essence-Lost_Kin"
+    },
+    {
+      "name": "Boss_Essence-White_Defender"
+    },
+    {
+      "name": "Boss_Essence-Grey_Prince_Zote"
+    },
+    {
+      "name": "Grub-Crossroads_Acid"
+    },
+    {
+      "name": "Grub-Crossroads_Center"
+    },
+    {
+      "name": "Grub-Crossroads_Stag"
+    },
+    {
+      "name": "Grub-Crossroads_Spike"
+    },
+    {
+      "name": "Grub-Crossroads_Guarded"
+    },
+    {
+      "name": "Grub-Greenpath_Cornifer"
+    },
+    {
+      "name": "Grub-Greenpath_Journal"
+    },
+    {
+      "name": "Grub-Greenpath_MMC"
+    },
+    {
+      "name": "Grub-Greenpath_Stag"
+    },
+    {
+      "name": "Grub-Fog_Canyon"
+    },
+    {
+      "name": "Grub-Fungal_Bouncy"
+    },
+    {
+      "name": "Grub-Fungal_Spore_Shroom"
+    },
+    {
+      "name": "Grub-Deepnest_Mimic"
+    },
+    {
+      "name": "Grub-Deepnest_Nosk"
+    },
+    {
+      "name": "Grub-Deepnest_Spike"
+    },
+    {
+      "name": "Grub-Dark_Deepnest"
+    },
+    {
+      "name": "Grub-Beast's_Den"
+    },
+    {
+      "name": "Grub-Kingdom's_Edge_Oro"
+    },
+    {
+      "name": "Grub-Kingdom's_Edge_Camp"
+    },
+    {
+      "name": "Grub-Hive_External"
+    },
+    {
+      "name": "Grub-Hive_Internal"
+    },
+    {
+      "name": "Grub-Basin_Requires_Wings"
+    },
+    {
+      "name": "Grub-Basin_Requires_Dive"
+    },
+    {
+      "name": "Grub-Waterways_Main"
+    },
+    {
+      "name": "Grub-Isma's_Grove"
+    },
+    {
+      "name": "Grub-Waterways_Requires_Tram"
+    },
+    {
+      "name": "Grub-City_of_Tears_Left"
+    },
+    {
+      "name": "Grub-Soul_Sanctum"
+    },
+    {
+      "name": "Grub-Watcher's_Spire"
+    },
+    {
+      "name": "Grub-City_of_Tears_Guarded"
+    },
+    {
+      "name": "Grub-King's_Station"
+    },
+    {
+      "name": "Grub-Resting_Grounds"
+    },
+    {
+      "name": "Grub-Crystal_Peak_Below_Chest"
+    },
+    {
+      "name": "Grub-Crystallized_Mound"
+    },
+    {
+      "name": "Grub-Crystal_Peak_Spike"
+    },
+    {
+      "name": "Grub-Crystal_Peak_Mimic"
+    },
+    {
+      "name": "Grub-Crystal_Peak_Crushers"
+    },
+    {
+      "name": "Grub-Crystal_Heart"
+    },
+    {
+      "name": "Grub-Hallownest_Crown"
+    },
+    {
+      "name": "Grub-Howling_Cliffs"
+    },
+    {
+      "name": "Grub-Queen's_Gardens_Stag"
+    },
+    {
+      "name": "Grub-Queen's_Gardens_Marmu"
+    },
+    {
+      "name": "Grub-Queen's_Gardens_Top"
+    },
+    {
+      "name": "Grub-Collector_1"
+    },
+    {
+      "name": "Grub-Collector_2"
+    },
+    {
+      "name": "Grub-Collector_3"
+    },
+    {
+      "name": "Mimic_Grub-Deepnest_1"
+    },
+    {
+      "name": "Mimic_Grub-Deepnest_2"
+    },
+    {
+      "name": "Mimic_Grub-Deepnest_3"
+    },
+    {
+      "name": "Mimic_Grub-Crystal_Peak"
+    },
+    {
+      "name": "Crossroads_Map"
+    },
+    {
+      "name": "Greenpath_Map"
+    },
+    {
+      "name": "Fog_Canyon_Map"
+    },
+    {
+      "name": "Fungal_Wastes_Map"
+    },
+    {
+      "name": "Deepnest_Map-Upper"
+    },
+    {
+      "name": "Deepnest_Map-Right"
+    },
+    {
+      "name": "Ancient_Basin_Map"
+    },
+    {
+      "name": "Kingdom's_Edge_Map"
+    },
+    {
+      "name": "City_of_Tears_Map"
+    },
+    {
+      "name": "Royal_Waterways_Map"
+    },
+    {
+      "name": "Howling_Cliffs_Map"
+    },
+    {
+      "name": "Crystal_Peak_Map"
+    },
+    {
+      "name": "Queen's_Gardens_Map"
+    },
+    {
+      "name": "Resting_Grounds_Map"
+    },
+    {
+      "name": "Dirtmouth_Stag"
+    },
+    {
+      "name": "Crossroads_Stag"
+    },
+    {
+      "name": "Greenpath_Stag"
+    },
+    {
+      "name": "Queen's_Station_Stag"
+    },
+    {
+      "name": "Queen's_Gardens_Stag"
+    },
+    {
+      "name": "City_Storerooms_Stag"
+    },
+    {
+      "name": "King's_Station_Stag"
+    },
+    {
+      "name": "Resting_Grounds_Stag"
+    },
+    {
+      "name": "Distant_Village_Stag"
+    },
+    {
+      "name": "Hidden_Station_Stag"
+    },
+    {
+      "name": "Stag_Nest_Stag"
+    },
+    {
+      "name": "Lifeblood_Cocoon-King's_Pass"
+    },
+    {
+      "name": "Lifeblood_Cocoon-Ancestral_Mound"
+    },
+    {
+      "name": "Lifeblood_Cocoon-Greenpath"
+    },
+    {
+      "name": "Lifeblood_Cocoon-Fog_Canyon_West"
+    },
+    {
+      "name": "Lifeblood_Cocoon-Mantis_Village"
+    },
+    {
+      "name": "Lifeblood_Cocoon-Failed_Tramway"
+    },
+    {
+      "name": "Lifeblood_Cocoon-Galien"
+    },
+    {
+      "name": "Lifeblood_Cocoon-Kingdom's_Edge"
+    },
+    {
+      "name": "Grimmkin_Flame-City_Storerooms"
+    },
+    {
+      "name": "Grimmkin_Flame-Greenpath"
+    },
+    {
+      "name": "Grimmkin_Flame-Crystal_Peak"
+    },
+    {
+      "name": "Grimmkin_Flame-King's_Pass"
+    },
+    {
+      "name": "Grimmkin_Flame-Resting_Grounds"
+    },
+    {
+      "name": "Grimmkin_Flame-Kingdom's_Edge"
+    },
+    {
+      "name": "Grimmkin_Flame-Fungal_Core"
+    },
+    {
+      "name": "Grimmkin_Flame-Ancient_Basin"
+    },
+    {
+      "name": "Grimmkin_Flame-Hive"
+    },
+    {
+      "name": "Grimmkin_Flame-Brumm"
+    },
+    {
+      "name": "Hunter's_Journal"
+    },
+    {
+      "name": "Journal_Entry-Void_Tendrils"
+    },
+    {
+      "name": "Journal_Entry-Charged_Lumafly"
+    },
+    {
+      "name": "Journal_Entry-Goam"
+    },
+    {
+      "name": "Journal_Entry-Garpede"
+    },
+    {
+      "name": "Journal_Entry-Seal_of_Binding"
+    },
+    {
+      "name": "Elevator_Pass"
+    },
+    {
+      "name": "Split_Mothwing_Cloak"
+    },
+    {
+      "name": "Left_Mantis_Claw"
+    },
+    {
+      "name": "Right_Mantis_Claw"
+    },
+    {
+      "name": "Leftslash"
+    },
+    {
+      "name": "Rightslash"
+    },
+    {
+      "name": "Upslash"
+    },
+    {
+      "name": "Split_Crystal_Heart"
+    },
+    {
+      "name": "Geo_Rock-Broken_Elevator_1"
+    },
+    {
+      "name": "Geo_Rock-Broken_Elevator_2"
+    },
+    {
+      "name": "Geo_Rock-Broken_Elevator_3"
+    },
+    {
+      "name": "Geo_Rock-Broken_Bridge_Upper"
+    },
+    {
+      "name": "Geo_Rock-Broken_Bridge_Lower"
+    },
+    {
+      "name": "Geo_Rock-Broken_Bridge_Lower_Dupe"
+    },
+    {
+      "name": "Geo_Rock-Abyss_1"
+    },
+    {
+      "name": "Geo_Rock-Abyss_2"
+    },
+    {
+      "name": "Geo_Rock-Abyss_3"
+    },
+    {
+      "name": "Geo_Rock-Basin_Tunnel"
+    },
+    {
+      "name": "Geo_Rock-Basin_Grub"
+    },
+    {
+      "name": "Geo_Rock-Basin_Before_Broken_Vessel"
+    },
+    {
+      "name": "Geo_Rock-Cliffs_Main_1"
+    },
+    {
+      "name": "Geo_Rock-Cliffs_Main_2"
+    },
+    {
+      "name": "Geo_Rock-Cliffs_Main_3"
+    },
+    {
+      "name": "Geo_Rock-Cliffs_Main_4"
+    },
+    {
+      "name": "Geo_Rock-Below_Gorb_Dupe"
+    },
+    {
+      "name": "Geo_Rock-Below_Gorb"
+    },
+    {
+      "name": "Geo_Rock-Crossroads_Well"
+    },
+    {
+      "name": "Geo_Rock-Crossroads_Center_Grub"
+    },
+    {
+      "name": "Geo_Rock-Crossroads_Root"
+    },
+    {
+      "name": "Geo_Rock-Crossroads_Root_Dupe_1"
+    },
+    {
+      "name": "Geo_Rock-Crossroads_Root_Dupe_2"
+    },
+    {
+      "name": "Geo_Rock-Crossroads_Aspid_Arena"
+    },
+    {
+      "name": "Geo_Rock-Crossroads_Aspid_Arena_Dupe_1"
+    },
+    {
+      "name": "Geo_Rock-Crossroads_Aspid_Arena_Dupe_2"
+    },
+    {
+      "name": "Geo_Rock-Crossroads_Aspid_Arena_Hidden"
+    },
+    {
+      "name": "Geo_Rock-Crossroads_Above_False_Knight"
+    },
+    {
+      "name": "Geo_Rock-Crossroads_Before_Acid_Grub"
+    },
+    {
+      "name": "Geo_Rock-Crossroads_Below_Goam_Mask_Shard"
+    },
+    {
+      "name": "Geo_Rock-Crossroads_After_Goam_Mask_Shard"
+    },
+    {
+      "name": "Geo_Rock-Crossroads_Above_Lever"
+    },
+    {
+      "name": "Geo_Rock-Crossroads_Before_Fungal"
+    },
+    {
+      "name": "Geo_Rock-Crossroads_Before_Fungal_Dupe_1"
+    },
+    {
+      "name": "Geo_Rock-Crossroads_Before_Fungal_Dupe_2"
+    },
+    {
+      "name": "Geo_Rock-Crossroads_Before_Shops"
+    },
+    {
+      "name": "Geo_Rock-Crossroads_Before_Glowing_Womb"
+    },
+    {
+      "name": "Geo_Rock-Crossroads_Above_Tram"
+    },
+    {
+      "name": "Geo_Rock-Crossroads_Above_Mawlek"
+    },
+    {
+      "name": "Geo_Rock-Crossroads_Vessel_Fragment"
+    },
+    {
+      "name": "Geo_Rock-Crossroads_Goam_Alcove"
+    },
+    {
+      "name": "Geo_Rock-Crossroads_Goam_Damage_Boost"
+    },
+    {
+      "name": "Geo_Rock-Crossroads_Tram"
+    },
+    {
+      "name": "Geo_Rock-Crossroads_Goam_Journal"
+    },
+    {
+      "name": "Geo_Rock-Crossroads_Goam_Journal_Dupe"
+    },
+    {
+      "name": "Geo_Rock-Ancestral_Mound"
+    },
+    {
+      "name": "Geo_Rock-Ancestral_Mound_Dupe"
+    },
+    {
+      "name": "Geo_Rock-Ancestral_Mound_Tree"
+    },
+    {
+      "name": "Geo_Rock-Ancestral_Mound_Tree_Dupe"
+    },
+    {
+      "name": "Geo_Rock-Moss_Prophet"
+    },
+    {
+      "name": "Geo_Rock-Moss_Prophet_Dupe"
+    },
+    {
+      "name": "Geo_Rock-Deepnest_Below_Mimics"
+    },
+    {
+      "name": "Geo_Rock-Deepnest_Below_Mimics_Dupe"
+    },
+    {
+      "name": "Geo_Rock-Deepnest_Below_Spike_Grub"
+    },
+    {
+      "name": "Geo_Rock-Deepnest_Below_Spike_Grub_Dupe"
+    },
+    {
+      "name": "Geo_Rock-Deepnest_Spike_Grub_Right"
+    },
+    {
+      "name": "Geo_Rock-Deepnest_By_Mantis_Lords_Garpede_Pogo"
+    },
+    {
+      "name": "Geo_Rock-Deepnest_By_Mantis_Lords_Garpede_Pogo_Dupe"
+    },
+    {
+      "name": "Geo_Rock-Deepnest_By_Mantis_Lords_Requires_Claw_1"
+    },
+    {
+      "name": "Geo_Rock-Deepnest_By_Mantis_Lords_Requires_Claw_2"
+    },
+    {
+      "name": "Geo_Rock-Deepnest_By_Mantis_Lords_Requires_Claw_3"
+    },
+    {
+      "name": "Geo_Rock-Deepnest_Nosk_1"
+    },
+    {
+      "name": "Geo_Rock-Deepnest_Nosk_2"
+    },
+    {
+      "name": "Geo_Rock-Deepnest_Nosk_3"
+    },
+    {
+      "name": "Geo_Rock-Deepnest_Above_Galien"
+    },
+    {
+      "name": "Geo_Rock-Deepnest_Galien_Spike"
+    },
+    {
+      "name": "Geo_Rock-Deepnest_Garpede_1"
+    },
+    {
+      "name": "Geo_Rock-Deepnest_Garpede_2"
+    },
+    {
+      "name": "Geo_Rock-Dark_Deepnest_Above_Grub_1"
+    },
+    {
+      "name": "Geo_Rock-Dark_Deepnest_Above_Grub_2"
+    },
+    {
+      "name": "Geo_Rock-Dark_Deepnest_Bottom_Left"
+    },
+    {
+      "name": "Geo_Rock-Above_Mask_Maker_1"
+    },
+    {
+      "name": "Geo_Rock-Above_Mask_Maker_2"
+    },
+    {
+      "name": "Geo_Rock-Lower_Kingdom's_Edge_1"
+    },
+    {
+      "name": "Geo_Rock-Lower_Kingdom's_Edge_2"
+    },
+    {
+      "name": "Geo_Rock-Lower_Kingdom's_Edge_3"
+    },
+    {
+      "name": "Geo_Rock-Lower_Kingdom's_Edge_Dive"
+    },
+    {
+      "name": "Geo_Rock-Kingdom's_Edge_Below_Bardoon"
+    },
+    {
+      "name": "Geo_Rock-Kingdom's_Edge_Oro_Far_Left"
+    },
+    {
+      "name": "Geo_Rock-Kingdom's_Edge_Oro_Middle_Left"
+    },
+    {
+      "name": "Geo_Rock-Kingdom's_Edge_Above_Root"
+    },
+    {
+      "name": "Geo_Rock-Kingdom's_Edge_Above_Tower"
+    },
+    {
+      "name": "Geo_Rock-Kingdom's_Edge_Below_Colosseum"
+    },
+    {
+      "name": "Geo_Rock-Kingdom's_Edge_Above_420_Geo_Rock"
+    },
+    {
+      "name": "Geo_Rock-Kingdom's_Edge_420_Geo_Rock"
+    },
+    {
+      "name": "Geo_Rock-Beast's_Den_Above_Trilobite"
+    },
+    {
+      "name": "Geo_Rock-Beast's_Den_Above_Trilobite_Dupe"
+    },
+    {
+      "name": "Geo_Rock-Beast's_Den_Below_Herrah"
+    },
+    {
+      "name": "Geo_Rock-Beast's_Den_Below_Egg"
+    },
+    {
+      "name": "Geo_Rock-Beast's_Den_Below_Egg_Dupe"
+    },
+    {
+      "name": "Geo_Rock-Beast's_Den_Bottom"
+    },
+    {
+      "name": "Geo_Rock-Beast's_Den_Bottom_Dupe"
+    },
+    {
+      "name": "Geo_Rock-Beast's_Den_After_Herrah"
+    },
+    {
+      "name": "Geo_Rock-Greenpath_Entrance"
+    },
+    {
+      "name": "Geo_Rock-Greenpath_Waterfall"
+    },
+    {
+      "name": "Geo_Rock-Greenpath_Below_Skip_Squit"
+    },
+    {
+      "name": "Geo_Rock-Greenpath_Skip_Squit"
+    },
+    {
+      "name": "Geo_Rock-Greenpath_Second_Skip_Fool_Eater"
+    },
+    {
+      "name": "Geo_Rock-Greenpath_Second_Skip_Fool_Eater_Dupe"
+    },
+    {
+      "name": "Geo_Rock-Greenpath_Second_Skip_Lower"
+    },
+    {
+      "name": "Geo_Rock-Greenpath_Below_Hornet"
+    },
+    {
+      "name": "Geo_Rock-Greenpath_Above_Thorns"
+    },
+    {
+      "name": "Geo_Rock-Greenpath_Hunter's_Journal"
+    },
+    {
+      "name": "Geo_Rock-Greenpath_Acid_Bridge"
+    },
+    {
+      "name": "Geo_Rock-Greenpath_After_MMC_Hidden"
+    },
+    {
+      "name": "Geo_Rock-Greenpath_After_MMC"
+    },
+    {
+      "name": "Geo_Rock-Greenpath_After_MMC_Dupe"
+    },
+    {
+      "name": "Geo_Rock-Greenpath_Obbles_Fool_Eater"
+    },
+    {
+      "name": "Geo_Rock-Greenpath_Moss_Knights"
+    },
+    {
+      "name": "Geo_Rock-Greenpath_Moss_Knights_Dupe_1"
+    },
+    {
+      "name": "Geo_Rock-Greenpath_Moss_Knights_Dupe_2"
+    },
+    {
+      "name": "Geo_Rock-Greenpath_Below_Stag"
+    },
+    {
+      "name": "Geo_Rock-Greenpath_Below_Stag_Fool_Eater"
+    },
+    {
+      "name": "Geo_Rock-Baldur_Shell_Top_Left"
+    },
+    {
+      "name": "Geo_Rock-Baldur_Shell_Alcove"
+    },
+    {
+      "name": "Geo_Rock-Greenpath_MMC"
+    },
+    {
+      "name": "Geo_Rock-Greenpath_Below_Toll"
+    },
+    {
+      "name": "Geo_Rock-Greenpath_Toll_Hidden"
+    },
+    {
+      "name": "Geo_Rock-Greenpath_Toll_Hidden_Dupe"
+    },
+    {
+      "name": "Geo_Rock-Fungal_Below_Shrumal_Ogres"
+    },
+    {
+      "name": "Geo_Rock-Fungal_Above_Cloth"
+    },
+    {
+      "name": "Geo_Rock-Fungal_After_Cloth"
+    },
+    {
+      "name": "Geo_Rock-Fungal_Below_Pilgrim's_Way"
+    },
+    {
+      "name": "Geo_Rock-Fungal_Below_Pilgrim's_Way_Dupe"
+    },
+    {
+      "name": "Geo_Rock-Mantis_Outskirts_Guarded"
+    },
+    {
+      "name": "Geo_Rock-Mantis_Outskirts_Guarded_Dupe"
+    },
+    {
+      "name": "Geo_Rock-Mantis_Outskirts_Alcove"
+    },
+    {
+      "name": "Geo_Rock-Mantis_Village_After_Lever"
+    },
+    {
+      "name": "Geo_Rock-Mantis_Village_Above_Claw"
+    },
+    {
+      "name": "Geo_Rock-Mantis_Village_Above_Claw_Dupe"
+    },
+    {
+      "name": "Geo_Rock-Mantis_Village_Below_Lore"
+    },
+    {
+      "name": "Geo_Rock-Mantis_Village_Above_Lever"
+    },
+    {
+      "name": "Geo_Rock-Above_Mantis_Lords_1"
+    },
+    {
+      "name": "Geo_Rock-Above_Mantis_Lords_2"
+    },
+    {
+      "name": "Geo_Rock-Fungal_After_Bouncy_Grub"
+    },
+    {
+      "name": "Geo_Rock-Fungal_After_Bouncy_Grub_Dupe"
+    },
+    {
+      "name": "Geo_Rock-Fungal_Bouncy_Grub_Lever"
+    },
+    {
+      "name": "Geo_Rock-Fungal_After_Cornifer"
+    },
+    {
+      "name": "Geo_Rock-Fungal_Above_City_Entrance"
+    },
+    {
+      "name": "Geo_Rock-Deepnest_By_Mantis_Lords_1"
+    },
+    {
+      "name": "Geo_Rock-Deepnest_By_Mantis_Lords_2"
+    },
+    {
+      "name": "Geo_Rock-Deepnest_Lower_Cornifer"
+    },
+    {
+      "name": "Geo_Rock-Fungal_Core_Entrance"
+    },
+    {
+      "name": "Geo_Rock-Fungal_Core_Hidden"
+    },
+    {
+      "name": "Geo_Rock-Fungal_Core_Above_Elder"
+    },
+    {
+      "name": "Geo_Rock-Queen's_Gardens_Acid_Entrance"
+    },
+    {
+      "name": "Geo_Rock-Queen's_Gardens_Below_Stag"
+    },
+    {
+      "name": "Geo_Rock-Fog_Canyon_East"
+    },
+    {
+      "name": "Geo_Rock-Love_Key"
+    },
+    {
+      "name": "Geo_Rock-Love_Key_Dupe"
+    },
+    {
+      "name": "Geo_Rock-Queen's_Gardens_Above_Marmu"
+    },
+    {
+      "name": "Geo_Rock-Pale_Lurker"
+    },
+    {
+      "name": "Geo_Rock-Godhome_Pipeway"
+    },
+    {
+      "name": "Geo_Rock-Hive_Entrance"
+    },
+    {
+      "name": "Geo_Rock-Hive_Outside_Bench"
+    },
+    {
+      "name": "Geo_Rock-Hive_Below_Root"
+    },
+    {
+      "name": "Geo_Rock-Hive_After_Root"
+    },
+    {
+      "name": "Geo_Rock-Hive_Below_Stash"
+    },
+    {
+      "name": "Geo_Rock-Hive_Stash"
+    },
+    {
+      "name": "Geo_Rock-Hive_Stash_Dupe"
+    },
+    {
+      "name": "Geo_Rock-Hive_Below_Grub"
+    },
+    {
+      "name": "Geo_Rock-Hive_Above_Mask"
+    },
+    {
+      "name": "Geo_Rock-Crystal_Peak_Lower_Middle"
+    },
+    {
+      "name": "Geo_Rock-Crystal_Peak_Lower_Conveyer_1"
+    },
+    {
+      "name": "Geo_Rock-Crystal_Peak_Lower_Conveyer_2"
+    },
+    {
+      "name": "Geo_Rock-Crystal_Peak_Before_Dark_Room"
+    },
+    {
+      "name": "Geo_Rock-Crystal_Peak_Before_Dark_Room_Dupe"
+    },
+    {
+      "name": "Geo_Rock-Crystal_Peak_Above_Spike_Grub"
+    },
+    {
+      "name": "Geo_Rock-Crystal_Peak_Mimic_Grub"
+    },
+    {
+      "name": "Geo_Rock-Crystal_Peak_Dive_Egg"
+    },
+    {
+      "name": "Geo_Rock-Crystal_Peak_Dive_Egg_Dupe"
+    },
+    {
+      "name": "Geo_Rock-Crystal_Peak_Conga_Line"
+    },
+    {
+      "name": "Geo_Rock-Hallownest_Crown_Dive"
+    },
+    {
+      "name": "Geo_Rock-Hallownest_Crown_Dive_Dupe"
+    },
+    {
+      "name": "Geo_Rock-Hallownest_Crown_Hidden"
+    },
+    {
+      "name": "Geo_Rock-Hallownest_Crown_Hidden_Dupe_1"
+    },
+    {
+      "name": "Geo_Rock-Hallownest_Crown_Hidden_Dupe_2"
+    },
+    {
+      "name": "Geo_Rock-Crystal_Peak_Before_Crystal_Heart"
+    },
+    {
+      "name": "Geo_Rock-Crystal_Peak_Entrance"
+    },
+    {
+      "name": "Geo_Rock-Crystal_Peak_Entrance_Dupe_1"
+    },
+    {
+      "name": "Geo_Rock-Crystal_Peak_Entrance_Dupe_2"
+    },
+    {
+      "name": "Geo_Rock-Crystal_Peak_Above_Crushers_Lower"
+    },
+    {
+      "name": "Geo_Rock-Crystal_Peak_Above_Crushers_Higher"
+    },
+    {
+      "name": "Geo_Rock-Resting_Grounds_Catacombs_Grub"
+    },
+    {
+      "name": "Geo_Rock-Resting_Grounds_Catacombs_Left_Dupe"
+    },
+    {
+      "name": "Geo_Rock-Resting_Grounds_Catacombs_Left"
+    },
+    {
+      "name": "Geo_Rock-Overgrown_Mound"
+    },
+    {
+      "name": "Geo_Rock-Fluke_Hermit_Dupe"
+    },
+    {
+      "name": "Geo_Rock-Fluke_Hermit"
+    },
+    {
+      "name": "Geo_Rock-Pleasure_House"
+    },
+    {
+      "name": "Geo_Rock-City_of_Tears_Quirrel"
+    },
+    {
+      "name": "Geo_Rock-City_of_Tears_Lemm"
+    },
+    {
+      "name": "Geo_Rock-City_of_Tears_Above_Lemm"
+    },
+    {
+      "name": "Geo_Rock-Soul_Sanctum"
+    },
+    {
+      "name": "Geo_Rock-Watcher's_Spire"
+    },
+    {
+      "name": "Geo_Rock-Above_King's_Station"
+    },
+    {
+      "name": "Geo_Rock-King's_Station"
+    },
+    {
+      "name": "Geo_Rock-King's_Pass_Left"
+    },
+    {
+      "name": "Geo_Rock-King's_Pass_Below_Fury"
+    },
+    {
+      "name": "Geo_Rock-King's_Pass_Hidden"
+    },
+    {
+      "name": "Geo_Rock-King's_Pass_Collapse"
+    },
+    {
+      "name": "Geo_Rock-King's_Pass_Above_Fury"
+    },
+    {
+      "name": "Geo_Rock-Waterways_Tuk"
+    },
+    {
+      "name": "Geo_Rock-Waterways_Tuk_Alcove"
+    },
+    {
+      "name": "Geo_Rock-Waterways_Left"
+    },
+    {
+      "name": "Geo_Rock-Waterways_East"
+    },
+    {
+      "name": "Geo_Rock-Waterways_Flukemarm"
+    },
+    {
+      "name": "Boss_Geo-Massive_Moss_Charger"
+    },
+    {
+      "name": "Boss_Geo-Gorgeous_Husk"
+    },
+    {
+      "name": "Boss_Geo-Sanctum_Soul_Warrior"
+    },
+    {
+      "name": "Boss_Geo-Elegant_Soul_Warrior"
+    },
+    {
+      "name": "Boss_Geo-Crystal_Guardian"
+    },
+    {
+      "name": "Boss_Geo-Enraged_Guardian"
+    },
+    {
+      "name": "Boss_Geo-Gruz_Mother"
+    },
+    {
+      "name": "Boss_Geo-Vengefly_King"
+    },
+    {
+      "name": "Soul_Totem-Basin"
+    },
+    {
+      "name": "Soul_Totem-Cliffs_Main"
+    },
+    {
+      "name": "Soul_Totem-Cliffs_Gorb"
+    },
+    {
+      "name": "Soul_Totem-Cliffs_Joni's"
+    },
+    {
+      "name": "Soul_Totem-Crossroads_Goam_Journal"
+    },
+    {
+      "name": "Soul_Totem-Crossroads_Shops"
+    },
+    {
+      "name": "Soul_Totem-Crossroads_Mawlek_Upper"
+    },
+    {
+      "name": "Soul_Totem-Crossroads_Acid"
+    },
+    {
+      "name": "Soul_Totem-Crossroads_Mawlek_Lower"
+    },
+    {
+      "name": "Soul_Totem-Crossroads_Myla"
+    },
+    {
+      "name": "Soul_Totem-Ancestral_Mound"
+    },
+    {
+      "name": "Soul_Totem-Distant_Village"
+    },
+    {
+      "name": "Soul_Totem-Deepnest_Vessel"
+    },
+    {
+      "name": "Soul_Totem-Mask_Maker"
+    },
+    {
+      "name": "Soul_Totem-Lower_Kingdom's_Edge_1"
+    },
+    {
+      "name": "Soul_Totem-Lower_Kingdom's_Edge_2"
+    },
+    {
+      "name": "Soul_Totem-Upper_Kingdom's_Edge"
+    },
+    {
+      "name": "Soul_Totem-Kingdom's_Edge_Camp"
+    },
+    {
+      "name": "Soul_Totem-Oro_Dive_2"
+    },
+    {
+      "name": "Soul_Totem-Oro_Dive_1"
+    },
+    {
+      "name": "Soul_Totem-Oro"
+    },
+    {
+      "name": "Soul_Totem-420_Geo_Rock"
+    },
+    {
+      "name": "Soul_Totem-Beast's_Den"
+    },
+    {
+      "name": "Soul_Totem-Greenpath_Hunter's_Journal"
+    },
+    {
+      "name": "Soul_Totem-Greenpath_MMC"
+    },
+    {
+      "name": "Soul_Totem-Greenpath_Below_Toll"
+    },
+    {
+      "name": "Soul_Totem-Before_Pilgrim's_Way"
+    },
+    {
+      "name": "Soul_Totem-Pilgrim's_Way"
+    },
+    {
+      "name": "Soul_Totem-Fungal_Core"
+    },
+    {
+      "name": "Soul_Totem-Top_Left_Queen's_Gardens"
+    },
+    {
+      "name": "Soul_Totem-Below_Marmu"
+    },
+    {
+      "name": "Soul_Totem-Upper_Crystal_Peak"
+    },
+    {
+      "name": "Soul_Totem-Hallownest_Crown"
+    },
+    {
+      "name": "Soul_Totem-Outside_Crystallized_Mound"
+    },
+    {
+      "name": "Soul_Totem-Crystal_Heart_1"
+    },
+    {
+      "name": "Soul_Totem-Crystal_Heart_2"
+    },
+    {
+      "name": "Soul_Totem-Crystallized_Mound"
+    },
+    {
+      "name": "Soul_Totem-Resting_Grounds"
+    },
+    {
+      "name": "Soul_Totem-Below_Xero"
+    },
+    {
+      "name": "Soul_Totem-Sanctum_Below_Soul_Master"
+    },
+    {
+      "name": "Soul_Totem-Sanctum_Below_Chest"
+    },
+    {
+      "name": "Soul_Totem-Sanctum_Above_Grub"
+    },
+    {
+      "name": "Soul_Totem-Waterways_Entrance"
+    },
+    {
+      "name": "Soul_Totem-Top_Left_Waterways"
+    },
+    {
+      "name": "Soul_Totem-Waterways_East"
+    },
+    {
+      "name": "Soul_Totem-Waterways_Flukemarm"
+    },
+    {
+      "name": "Soul_Totem-White_Palace_Entrance"
+    },
+    {
+      "name": "Soul_Totem-White_Palace_Hub"
+    },
+    {
+      "name": "Soul_Totem-White_Palace_Left"
+    },
+    {
+      "name": "Soul_Totem-White_Palace_Final"
+    },
+    {
+      "name": "Soul_Totem-White_Palace_Right"
+    },
+    {
+      "name": "Soul_Totem-Path_of_Pain_Below_Lever"
+    },
+    {
+      "name": "Soul_Totem-Path_of_Pain_Left_of_Lever"
+    },
+    {
+      "name": "Soul_Totem-Path_of_Pain_Entrance"
+    },
+    {
+      "name": "Soul_Totem-Path_of_Pain_Second"
+    },
+    {
+      "name": "Soul_Totem-Path_of_Pain_Hidden"
+    },
+    {
+      "name": "Soul_Totem-Path_of_Pain_Below_Thornskip"
+    },
+    {
+      "name": "Soul_Totem-Path_of_Pain_Final"
+    },
+    {
+      "name": "Soul_Totem-Pale_Lurker"
+    },
+    {
+      "name": "Lore_Tablet-City_Entrance"
+    },
+    {
+      "name": "Lore_Tablet-Pleasure_House"
+    },
+    {
+      "name": "Lore_Tablet-Sanctum_Entrance"
+    },
+    {
+      "name": "Lore_Tablet-Sanctum_Past_Soul_Master"
+    },
+    {
+      "name": "Lore_Tablet-Watcher's_Spire"
+    },
+    {
+      "name": "Lore_Tablet-Archives_Upper"
+    },
+    {
+      "name": "Lore_Tablet-Archives_Left"
+    },
+    {
+      "name": "Lore_Tablet-Archives_Right"
+    },
+    {
+      "name": "Lore_Tablet-Pilgrim's_Way_1"
+    },
+    {
+      "name": "Lore_Tablet-Pilgrim's_Way_2"
+    },
+    {
+      "name": "Lore_Tablet-Mantis_Outskirts"
+    },
+    {
+      "name": "Lore_Tablet-Mantis_Village"
+    },
+    {
+      "name": "Lore_Tablet-Greenpath_Upper_Hidden"
+    },
+    {
+      "name": "Lore_Tablet-Greenpath_Below_Toll"
+    },
+    {
+      "name": "Lore_Tablet-Greenpath_Lifeblood"
+    },
+    {
+      "name": "Lore_Tablet-Greenpath_Stag"
+    },
+    {
+      "name": "Lore_Tablet-Greenpath_QG"
+    },
+    {
+      "name": "Lore_Tablet-Greenpath_Lower_Hidden"
+    },
+    {
+      "name": "Lore_Tablet-Dung_Defender"
+    },
+    {
+      "name": "Lore_Tablet-Spore_Shroom"
+    },
+    {
+      "name": "Lore_Tablet-Fungal_Wastes_Hidden"
+    },
+    {
+      "name": "Lore_Tablet-Fungal_Wastes_Below_Shrumal_Ogres"
+    },
+    {
+      "name": "Lore_Tablet-Fungal_Core"
+    },
+    {
+      "name": "Lore_Tablet-Ancient_Basin"
+    },
+    {
+      "name": "Lore_Tablet-King's_Pass_Focus"
+    },
+    {
+      "name": "Lore_Tablet-King's_Pass_Fury"
+    },
+    {
+      "name": "Lore_Tablet-King's_Pass_Exit"
+    },
+    {
+      "name": "Lore_Tablet-World_Sense"
+    },
+    {
+      "name": "Lore_Tablet-Howling_Cliffs"
+    },
+    {
+      "name": "Lore_Tablet-Kingdom's_Edge"
+    },
+    {
+      "name": "Lore_Tablet-Palace_Workshop"
+    },
+    {
+      "name": "Lore_Tablet-Palace_Throne"
+    },
+    {
+      "name": "Lore_Tablet-Path_of_Pain_Entrance"
+    }
+  ]
+}
