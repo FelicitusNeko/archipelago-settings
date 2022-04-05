@@ -150,11 +150,7 @@
       "default": false
     },
     {
-      "type": "boolean",
-      "name": "death_link",
-      "readableName": "DeathLink",
-      "description": "If one DeathLinked player dies, all of them do.",
-      "default": false
+      "type": "deathlink"
     },
     {
       "type": "numeric",

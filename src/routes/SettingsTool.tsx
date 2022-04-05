@@ -432,7 +432,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
               update={UpdateIfNeeded}
             />
           );
-        if (i.isNumericSetting())
+        else if (i.isNumericSetting())
           return (
             <APNumericSettingNode
               key={key}
@@ -442,7 +442,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
               update={UpdateIfNeeded}
             />
           );
-        if (i.isBooleanSetting())
+        else if (i.isBooleanSetting())
           return (
             <APBooleanSettingNode
               key={key}
@@ -452,7 +452,10 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
               update={UpdateIfNeeded}
             />
           );
-        return null;
+        else {
+          console.debug('Unrecognised setting', i);
+          return null;
+        }
       });
 
     for (let x = retval.length - 1; x > 0; x--)

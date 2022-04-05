@@ -4,7 +4,7 @@ import { APSetting, APSettingJson, APWeightedValue } from "./APSetting";
 const truthy = ["true", "on"];
 
 export interface APBooleanSettingJson extends APSettingJson<boolean> {
-  type: SettingType.Boolean;
+  type: SettingType.Boolean | SettingType.DeathLink;
 }
 
 export class APBooleanSetting extends APSetting<boolean> {

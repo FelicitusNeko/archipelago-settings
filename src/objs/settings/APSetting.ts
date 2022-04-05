@@ -213,7 +213,10 @@ export abstract class APSetting<T> {
 
   /** Whether this setting is a Boolean setting. */
   isBooleanSetting(): this is APBooleanSetting {
-    return this.type === SettingType.Boolean;
+    return [
+      SettingType.Boolean,
+      SettingType.DeathLink,
+    ].includes(this.type);
   }
   /** Whether this setting is a numeric setting. */
   isNumericSetting(): this is APNumericSetting {
@@ -261,7 +264,10 @@ export abstract class APSetting<T> {
   static isBooleanJson(
     value: APSettingJson<any>
   ): value is APBooleanSettingJson {
-    return value.type === SettingType.Boolean;
+    return [
+      SettingType.Boolean,
+      SettingType.DeathLink
+    ].includes(value.type);
   }
 
   /**

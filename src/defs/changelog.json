@@ -1,4 +1,7 @@
 {
+  "1.0.5": [
+    "Internal: Unified DeathLink setting type in category definitions"
+  ],
   "1.0.4": [
     "Update spec to **0.3.1**",
     [

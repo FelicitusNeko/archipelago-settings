@@ -17,6 +17,8 @@ export enum SettingType {
   Numeric = "numeric",
   /** Refers to a setting whose value may be true/on or false/off. */
   Boolean = "boolean",
+  /** Refers to a Boolean setting related to DeathLink. Some assumptions are made as a result. */
+  DeathLink = "deathlink",
 }
 
 /** Indicates what type of entity is being used. */
