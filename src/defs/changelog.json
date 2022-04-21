@@ -1,6 +1,7 @@
 {
   "1.0.5": [
-    "Internal: Unified DeathLink setting type in category definitions"
+    "Internal: Unified DeathLink setting type in category definitions",
+    "*Revision 1*: Removed extraneous \"Randomize\" option in Hollow Knight"
   ],
   "1.0.4": [
     "Update spec to **0.3.1**",

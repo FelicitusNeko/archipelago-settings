@@ -76,13 +76,6 @@
     },
     {
       "type": "boolean",
-      "name": "Randomize",
-      "readableName": "Randomize ",
-      "description": "",
-      "default": true
-    },
-    {
-      "type": "boolean",
       "name": "RandomizeGeoChests",
       "readableName": "Randomize Geo Chests",
       "description": "Allow for Geo Chests to contain randomized items, as well as their Geo reward being randomized into the item pool.",
@@ -168,24 +161,10 @@
     },
     {
       "type": "boolean",
-      "name": "Randomize",
-      "readableName": "Randomize ",
-      "description": "",
-      "default": true
-    },
-    {
-      "type": "boolean",
       "name": "RandomizeJournalEntries",
       "readableName": "Randomize Journal Entries",
       "description": "Randomize the Hunter's Journal as well as the findable journal entries into the item pool, and open their locations for randomization. Does not include journal entries gained by killing enemies.",
       "default": false
-    },
-    {
-      "type": "boolean",
-      "name": "Randomize",
-      "readableName": "Randomize ",
-      "description": "",
-      "default": true
     },
     {
       "type": "boolean",
@@ -325,7 +304,7 @@
     {
       "type": "boolean",
       "name": "DifficultSkips",
-      "readableName": "DifficultSkips",
+      "readableName": "Difficult Skips",
       "description": "Places skips into logic which are considered more difficult than typical.",
       "default": false
     },
