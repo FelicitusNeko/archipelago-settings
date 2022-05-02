@@ -1,7 +1,8 @@
 {
   "1.0.5": [
     "Internal: Unified DeathLink setting type in category definitions",
-    "*Revision 1*: Removed extraneous \"Randomize\" option in Hollow Knight"
+    "*Revision 1*: **Hollow Knight**: Removed extraneous \"Randomize\" option",
+    "*Revision 2*: **Super Mario 64**: Fixed Extra Stars overwriting Stars to Finish value"
   ],
   "1.0.4": [
     "Update spec to **0.3.1**",

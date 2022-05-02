@@ -49,7 +49,7 @@
     },
     {
       "type": "numeric",
-      "name": "StarsToFinish",
+      "name": "ExtraStars",
       "readableName": "Extra stars",
       "description": "How many additional Power Stars are added to the multiworld pool, beyond the number required to finish.",
       "low": 0,
