@@ -8,7 +8,7 @@
       "readableName": "Advancement goal",
       "description": "How many advancements are needed for the Ender Dragon to spawn.",
       "low": 0,
-      "high": 92,
+      "high": 95,
       "randomable": true,
       "default": 40
     },
@@ -578,6 +578,18 @@
     },
     {
       "name": "Whatever Floats Your Goat!"
+    },
+    {
+      "name": "Caves & Cliffs"
+    },
+    {
+      "name": "Feels like home"
+    },
+    {
+      "name": "Sound of Music"
+    },
+    {
+      "name": "Star Trader"
     }
   ]
 }

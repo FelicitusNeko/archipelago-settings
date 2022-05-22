@@ -371,26 +371,6 @@
     },
     {
       "type": "numeric",
-      "name": "MinimumEggPrice",
-      "readableName": "Minimum Egg Price",
-      "description": "The minimum rancid egg price in the range of prices that an item should cost from Ijii. Only takes effect if the EggSlotShops option is greater than 0.",
-      "low": 1,
-      "high": 21,
-      "randomable": true,
-      "default": 1
-    },
-    {
-      "type": "numeric",
-      "name": "MaximumEggPrice",
-      "readableName": "Maximum Egg Price",
-      "description": "The minimum rancid egg price in the range of prices that an item should cost from Ijii. Only takes effect if the EggSlotShops option is greater than 0.",
-      "low": 1,
-      "high": 21,
-      "randomable": true,
-      "default": 10
-    },
-    {
-      "type": "numeric",
       "name": "MinimumCharmPrice",
       "readableName": "Minimum Charm Price",
       "description": "The minimum charm price in the range of prices that an item should cost for Salubra's shop item which also carry a charm cost.",
@@ -419,6 +399,26 @@
       "high": 240,
       "randomable": true,
       "default": -1
+    },
+    {
+      "type": "numeric",
+      "name": "MinimumEggPrice",
+      "readableName": "Minimum Egg Price",
+      "description": "The minimum rancid egg price in the range of prices that an item should cost from Ijii. Only takes effect if the EggSlotShops option is greater than 0.",
+      "low": 1,
+      "high": 21,
+      "randomable": true,
+      "default": 1
+    },
+    {
+      "type": "numeric",
+      "name": "MaximumEggPrice",
+      "readableName": "Maximum Egg Price",
+      "description": "The minimum rancid egg price in the range of prices that an item should cost from Ijii. Only takes effect if the EggSlotShops option is greater than 0.",
+      "low": 1,
+      "high": 21,
+      "randomable": true,
+      "default": 10
     },
     {
       "type": "numeric",

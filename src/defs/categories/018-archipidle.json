@@ -1,6 +1,7 @@
 {
   "category": "ArchipIDLE",
   "index": 18,
+  "disabled": true,
   "settings": [
     {
       "type": "string",

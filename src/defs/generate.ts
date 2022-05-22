@@ -80,10 +80,12 @@ const DeathLinkDefaults: APBooleanSettingJson = {
   name: "death_link",
   readableName: "DeathLink",
   description: "If one DeathLinked player dies, all of them do.",
-  default: false
-}
+  default: false,
+};
 
-const APCategoryList: APCategory[] = APCategoryData.map((i) => {
+const APCategoryList: APCategory[] = APCategoryData.filter(
+  (i) => i.disabled !== true
+).map((i) => {
   const savedCategory = storedData
     ? storedData.categories.find((ii) => i.category === ii.category)
     : undefined;
@@ -120,7 +122,11 @@ const APCategoryList: APCategory[] = APCategoryData.map((i) => {
           case SettingType.DeathLink:
             return new APBooleanSetting(
               i.category,
-              Object.assign<any, APBooleanSettingJson, Partial<APBooleanSettingJson>>({}, DeathLinkDefaults, setting),
+              Object.assign<
+                any,
+                APBooleanSettingJson,
+                Partial<APBooleanSettingJson>
+              >({}, DeathLinkDefaults, setting),
               savedCategory ? savedCategory.settings[setting.name] : undefined
             );
           case SettingType.Games: {

@@ -968,6 +968,13 @@
       }
     },
     {
+      "type": "boolean",
+      "name": "allow_collect",
+      "readableName": "Allow auto-collect",
+      "description": "If this is enabled, chests that have been `!collect`ed will be automatically opened. If you are playing on console, leave this off; this can make the game crash.",
+      "default": false
+    },
+    {
       "type": "char",
       "name": "sprite",
       "readableName": "Sprite",

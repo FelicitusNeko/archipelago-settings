@@ -26,6 +26,9 @@ import smz3 from "./016-smz3.json";
 import cf from "./017-checksfinder.json";
 import idle from "./018-archipidle.json";
 import hk from "./019-hollowknight.json";
+import witness from "./020-witness.json";
+import sa2b from "./021-sa2b.json";
+import sc2wol from "./022-starcraft2.json";
 
 /**
  * The JSON representation of an Archipelago category.
@@ -55,6 +58,8 @@ interface APCategoryJson {
   readableName?: string;
   /** The numeric index of the category. */
   index: number;
+  /** Whether this game is disabled. If so, it will not appear in the list. */
+  disabled: boolean;
   /** The collection of settings for this category. */
   settings: APMetaSettingJson[];
   /** The collection of defined items for this category. */
@@ -83,8 +88,11 @@ const APCategoryData = ([
   meritous, // 0.3.0
   smz3, // 0.3.0
   cf, // 0.3.0, no settings
-  idle, // 0.3.0, no settings
+  idle, // 0.3.0, no settings, getting hidden outside of April
   hk, // 0.3.1
+  witness, // 0.3.2
+  sa2b, // 0.3.2
+  sc2wol, // 0.3.2
 
 //] as APCategoryJson[]).sort((a,b) => a.index - b.index);
 ] as APCategoryJson[]).sort((a,b) => {
@@ -92,5 +100,9 @@ const APCategoryData = ([
   if (!b.category) return 1;
   return (a.readableName ?? a.category).localeCompare(b.readableName ?? b.category);
 });
+
+// only bring out ArchipIDLE in April
+// haha its funy geddit
+if (new Date().getMonth() === 3) idle.disabled = false;
 
 export { APCategoryData };

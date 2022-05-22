@@ -20,7 +20,7 @@
       "type": "boolean",
       "name": "FacebookMode",
       "readableName": "Facebook mode",
-      "description": "Enables the use of Oculus VR devices to find weak spots in walls and floors.",
+      "description": "Requires the use of Oculus Ring to find weak spots in walls and floors.",
       "default": false
     },
     {
@@ -73,11 +73,30 @@
       "default": false
     },
     {
-      "type": "boolean",
+      "type": "string",
       "name": "DamageRando",
       "readableName": "Damage rando",
-      "description": "Each orb has a high chance of having lower base damage and a low chance of having much higher base damage.",
-      "default": false
+      "description": "Randomly nerfs and buffs some orbs and their associated spells as well as some associated rings.",
+      "values": {
+        "off": "Off",
+        "allnerfs": "All nerfs",
+        "mostlynerfs": "Mostly nerfs",
+        "balanced": "Balanced",
+        "mostlybuffs": "Mostly buffs",
+        "allbuffs": "All buffs"
+      },
+      "default": "off"
+    },
+    {
+      "type": "numeric",
+      "name": "HpCap",
+      "readableName": "HP Cap",
+      "description": "Determines Lunais' maximum possible HP.",
+      "randomable": true,
+      "min": 1,
+      "max": 999,
+      "step": 10,
+      "default": 999
     },
     {
       "type": "string",
@@ -108,6 +127,31 @@
       "max": 10,
       "randomable": true,
       "default": 1
+    },
+    {
+      "type": "string",
+      "name": "LootPool",
+      "readableName": "Loot pool",
+      "description": "Sets the items that drop from enemies. This does not apply to boss reward checks.",
+      "values": {
+        "vanilla": "Vanilla",
+        "randomized": ["Randomized", "Each slot of every enemy's drop table is given a random use item or piece of equipment."],
+        "empty": ["Empty", "Enemies drop nothing."]
+      }
+    },
+    {
+      "type": "boolean",
+      "name": "ShowBestiaryEntries",
+      "readableName": "Show bestiary entries",
+      "description": "Determines whether all bestiary entries are accessible from the start of the game.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "ShowBestiaryItemDrops",
+      "readableName": "Show bestiary item drops",
+      "description": "Determines whether all complete bestiary drop tables are readable from the moment the enemy's entry is available.",
+      "default": false
     },
     {
       "type": "deathlink",
@@ -756,7 +800,7 @@
       "name": "Upper desolation double jump cave floor"
     },
     {
-      "name": "Fire-Locked sparrow chest"
+      "name": "Upper desolation sparrow chest"
     },
     {
       "name": "Crash site pedestal"
@@ -1182,46 +1226,46 @@
       "name": "Aelana's pedestal"
     },
     {
-      "name": "Library terminal 2"
+      "name": "Library terminal 2 (Lachiem)"
     },
     {
-      "name": "Library terminal 1"
+      "name": "Library terminal 1 (Windaria)"
     },
     {
-      "name": "Library terminal 3"
+      "name": "Library terminal 3 (Emporer Nuvius)"
     },
     {
-      "name": "V terminal 1"
+      "name": "V terminal 1 (War of the Sisters)"
     },
     {
-      "name": "V terminal 2"
+      "name": "V terminal 2 (Lake Desolation Map)"
     },
     {
-      "name": "V terminal 3"
+      "name": "V terminal 3 (Vilete)"
     },
     {
-      "name": "Backer room terminal"
+      "name": "Backer room terminal (Vandagray Metropolis Map)"
     },
     {
-      "name": "Medbay"
+      "name": "Medbay terminal (Bleakness Research)"
     },
     {
-      "name": "Chest and download terminal"
+      "name": "Chest and download terminal (Experiment #13)"
     },
     {
-      "name": "Lab terminal middle"
+      "name": "Lab terminal middle (Amadeus Laboratory Map)"
     },
     {
-      "name": "Sentry platform terminal"
+      "name": "Sentry platform terminal (Origins)"
     },
     {
-      "name": "Experiment 13 terminal"
+      "name": "Experiment 13 terminal (W.R.E.C Farewell)"
     },
     {
-      "name": "Lab terminal left"
+      "name": "Lab terminal left (Biotechnology)"
     },
     {
-      "name": "Lab terminal right"
+      "name": "Lab terminal right (Experiment #11)"
     },
     {
       "name": "Advisor jump"

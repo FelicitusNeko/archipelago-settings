@@ -1,0 +1,1877 @@
+{
+  "category": "The Witness",
+  "index": 20,
+  "settings": [
+    {
+      "type": "boolean",
+      "name": "hard_mode",
+      "readableName": "Hard Mode",
+      "description": "Play the randomizer in hard mode.",
+      "disabled": true,
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "unlock_symbols",
+      "readableName": "Unlock symbols",
+      "description": "All Puzzle symbols of a specific panel need to be unlocked before the panel can be used.",
+      "disabled": "true",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "disable_non_randomized_puzzles",
+      "readableName": "Disable non-randomized puzzles",
+      "description": "Disable puzzles that cannot be randomized (Shadows, Monastery, and Greenhouse). The lasers for those areas will be activated as you solve optional puzzles throughout the island.",
+      "default": true
+    },
+    {
+      "type": "boolean",
+      "name": "shuffle_discarded_panels",
+      "readableName": "Discarded Panels will have items on them. Even disabled, solving certain Discarded Panels may still be necessary!",
+      "description": "Shuffle Discarded Panels",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "shuffle_vault_boxes",
+      "readableName": "Shuffle Vault Boxes",
+      "description": "Vault Boxes will have items on them.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "shuffle_uncommon",
+      "readableName": "Shuffle uncommon locations",
+      "description": "Adds some optional puzzles that are somewhat difficult or out of the way. Examples: Mountaintop River Shape, Tutorial Patio Floor, Theater Videos",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "shuffle_hard",
+      "readableName": "Shuffle hard locations",
+      "description": "Adds some harder locations into the game, such as Mountain Secret Area panels.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "challenge_victory",
+      "readableName": "Challenge Victory",
+      "description": "The victory condition now becomes beating the Challenge area, instead of the final elevator.",
+      "default": false
+    },
+    {
+      "type": "numeric",
+      "name": "trap_percentage",
+      "readableName": "Trap percentage",
+      "description": "Replaces junk items with traps, at the specified rate.",
+      "low": 0,
+      "high": 100,
+      "randomable": true,
+      "default": 20
+    }
+  ],
+  "items": [
+    {
+      "name": "Dots"
+    },
+    {
+      "name": "Colored Dots"
+    },
+    {
+      "name": "Sound Dots"
+    },
+    {
+      "name": "Symmetry"
+    },
+    {
+      "name": "Triangles"
+    },
+    {
+      "name": "Eraser"
+    },
+    {
+      "name": "Shapers"
+    },
+    {
+      "name": "Rotated Shapers"
+    },
+    {
+      "name": "Negative Shapers"
+    },
+    {
+      "name": "Stars"
+    },
+    {
+      "name": "Stars + Same Colored Symbol"
+    },
+    {
+      "name": "Black/White Squares"
+    },
+    {
+      "name": "Colored Squares"
+    },
+    {
+      "name": "Speed Boost"
+    },
+    {
+      "name": "Slowness",
+      "max": 0
+    },
+    {
+      "name": "Power Surge",
+      "max": 0
+    }
+  ],
+  "locations": [
+    {
+      "name": "First Hallway Straight"
+    },
+    {
+      "name": "First Hallway Bend"
+    },
+    {
+      "name": "Tutorial Front Center"
+    },
+    {
+      "name": "Tutorial Center Left"
+    },
+    {
+      "name": "Tutorial Front Left"
+    },
+    {
+      "name": "Tutorial Back Left"
+    },
+    {
+      "name": "Tutorial Back Right"
+    },
+    {
+      "name": "Tutorial Gate Open"
+    },
+    {
+      "name": "Tutorial Gate Close"
+    },
+    {
+      "name": "Tutorial Pillar"
+    },
+    {
+      "name": "Tutorial Patio Floor"
+    },
+    {
+      "name": "Outside Tutorial Optional Door 1"
+    },
+    {
+      "name": "Outside Tutorial Optional Door 2"
+    },
+    {
+      "name": "Outside Tutorial Dots Introduction 1"
+    },
+    {
+      "name": "Outside Tutorial Dots Introduction 2"
+    },
+    {
+      "name": "Outside Tutorial Dots Introduction 3"
+    },
+    {
+      "name": "Outside Tutorial Dots Introduction 4"
+    },
+    {
+      "name": "Outside Tutorial Dots Introduction 5"
+    },
+    {
+      "name": "Outside Tutorial Squares Introduction 1"
+    },
+    {
+      "name": "Outside Tutorial Squares Introduction 2"
+    },
+    {
+      "name": "Outside Tutorial Squares Introduction 3"
+    },
+    {
+      "name": "Outside Tutorial Squares Introduction 4"
+    },
+    {
+      "name": "Outside Tutorial Squares Introduction 5"
+    },
+    {
+      "name": "Outside Tutorial Squares Introduction 6"
+    },
+    {
+      "name": "Outside Tutorial Squares Introduction 7"
+    },
+    {
+      "name": "Outside Tutorial Squares Introduction 8"
+    },
+    {
+      "name": "Outside Tutorial Squares Introduction 9"
+    },
+    {
+      "name": "Glass Factory Entry Door"
+    },
+    {
+      "name": "Glass Factory Vertical Symmetry 1"
+    },
+    {
+      "name": "Glass Factory Vertical Symmetry 2"
+    },
+    {
+      "name": "Glass Factory Vertical Symmetry 3"
+    },
+    {
+      "name": "Glass Factory Vertical Symmetry 4"
+    },
+    {
+      "name": "Glass Factory Vertical Symmetry 5"
+    },
+    {
+      "name": "Glass Factory Rotational Symmetry 1"
+    },
+    {
+      "name": "Glass Factory Rotational Symmetry 2"
+    },
+    {
+      "name": "Glass Factory Rotational Symmetry 3"
+    },
+    {
+      "name": "Glass Factory Melting 1"
+    },
+    {
+      "name": "Glass Factory Melting 2"
+    },
+    {
+      "name": "Glass Factory Melting 3"
+    },
+    {
+      "name": "Glass Factory Boat Spawn"
+    },
+    {
+      "name": "Symmetry Island Door to Symmetry Island Lower"
+    },
+    {
+      "name": "Symmetry Island Black Dots 1"
+    },
+    {
+      "name": "Symmetry Island Black Dots 2"
+    },
+    {
+      "name": "Symmetry Island Black Dots 3"
+    },
+    {
+      "name": "Symmetry Island Black Dots 4"
+    },
+    {
+      "name": "Symmetry Island Black Dots 5"
+    },
+    {
+      "name": "Symmetry Island Colored Dots 1"
+    },
+    {
+      "name": "Symmetry Island Colored Dots 2"
+    },
+    {
+      "name": "Symmetry Island Colored Dots 3"
+    },
+    {
+      "name": "Symmetry Island Colored Dots 4"
+    },
+    {
+      "name": "Symmetry Island Colored Dots 5"
+    },
+    {
+      "name": "Symmetry Island Colored Dots 6"
+    },
+    {
+      "name": "Symmetry Island Fading Lines 1"
+    },
+    {
+      "name": "Symmetry Island Fading Lines 2"
+    },
+    {
+      "name": "Symmetry Island Fading Lines 3"
+    },
+    {
+      "name": "Symmetry Island Fading Lines 4"
+    },
+    {
+      "name": "Symmetry Island Fading Lines 5"
+    },
+    {
+      "name": "Symmetry Island Fading Lines 6"
+    },
+    {
+      "name": "Symmetry Island Fading Lines 7"
+    },
+    {
+      "name": "Symmetry Island Scenery Outlines 1"
+    },
+    {
+      "name": "Symmetry Island Scenery Outlines 2"
+    },
+    {
+      "name": "Symmetry Island Scenery Outlines 3"
+    },
+    {
+      "name": "Symmetry Island Scenery Outlines 4"
+    },
+    {
+      "name": "Symmetry Island Scenery Outlines 5"
+    },
+    {
+      "name": "Symmetry Island Door to Symmetry Island Upper"
+    },
+    {
+      "name": "Symmetry Island Yellow 1"
+    },
+    {
+      "name": "Symmetry Island Yellow 2"
+    },
+    {
+      "name": "Symmetry Island Yellow 3"
+    },
+    {
+      "name": "Symmetry Island Blue 1"
+    },
+    {
+      "name": "Symmetry Island Blue 2"
+    },
+    {
+      "name": "Symmetry Island Blue 3"
+    },
+    {
+      "name": "Orchard Apple Tree 1"
+    },
+    {
+      "name": "Orchard Apple Tree 2"
+    },
+    {
+      "name": "Orchard Apple Tree 3"
+    },
+    {
+      "name": "Orchard Apple Tree 4"
+    },
+    {
+      "name": "Orchard Apple Tree 5"
+    },
+    {
+      "name": "Desert Sun Reflection 1"
+    },
+    {
+      "name": "Desert Sun Reflection 2"
+    },
+    {
+      "name": "Desert Sun Reflection 3"
+    },
+    {
+      "name": "Desert Reflection 3 Control"
+    },
+    {
+      "name": "Desert Sun Reflection 4"
+    },
+    {
+      "name": "Desert Sun Reflection 5"
+    },
+    {
+      "name": "Desert Sun Reflection 6"
+    },
+    {
+      "name": "Desert Sun Reflection 7"
+    },
+    {
+      "name": "Desert Sun Reflection 8"
+    },
+    {
+      "name": "Desert Reflection 8 Control"
+    },
+    {
+      "name": "Desert Door to Desert Flood Light Room"
+    },
+    {
+      "name": "Desert Light Control"
+    },
+    {
+      "name": "Desert Artificial Light Reflection 1"
+    },
+    {
+      "name": "Desert Artificial Light Reflection 2"
+    },
+    {
+      "name": "Desert Artificial Light Reflection 3"
+    },
+    {
+      "name": "Desert Pond Reflection 1"
+    },
+    {
+      "name": "Desert Pond Reflection 2"
+    },
+    {
+      "name": "Desert Pond Reflection 3"
+    },
+    {
+      "name": "Desert Pond Reflection 4"
+    },
+    {
+      "name": "Desert Pond Reflection 5"
+    },
+    {
+      "name": "Desert Door to Desert Water Levels Room"
+    },
+    {
+      "name": "Desert Reduce Water Level Far Left"
+    },
+    {
+      "name": "Desert Reduce Water Level Far Right"
+    },
+    {
+      "name": "Desert Reduce Water Level Near Left"
+    },
+    {
+      "name": "Desert Reduce Water Level Near Right"
+    },
+    {
+      "name": "Desert Raise Water Level Far Left"
+    },
+    {
+      "name": "Desert Raise Water Level Far Right"
+    },
+    {
+      "name": "Desert Raise Water Level Near Left"
+    },
+    {
+      "name": "Desert Raise Water Level Near Right"
+    },
+    {
+      "name": "Desert Flood Reflection 1"
+    },
+    {
+      "name": "Desert Flood Reflection 2"
+    },
+    {
+      "name": "Desert Flood Reflection 3"
+    },
+    {
+      "name": "Desert Flood Reflection 4"
+    },
+    {
+      "name": "Desert Flood Reflection 5"
+    },
+    {
+      "name": "Desert Flood Reflection 6"
+    },
+    {
+      "name": "Desert Final Transparent Reflection"
+    },
+    {
+      "name": "Desert Final Reflection"
+    },
+    {
+      "name": "Desert Final Reflection Control"
+    },
+    {
+      "name": "Desert Final Bent Reflection 1"
+    },
+    {
+      "name": "Desert Final Bent Reflection 2"
+    },
+    {
+      "name": "Desert Final Bent Reflection 3"
+    },
+    {
+      "name": "Quarry Door to Quarry 1"
+    },
+    {
+      "name": "Quarry Door to Quarry 2"
+    },
+    {
+      "name": "Quarry Elevator Control"
+    },
+    {
+      "name": "Quarry Door to Mill Left"
+    },
+    {
+      "name": "Quarry Door to Mill Right"
+    },
+    {
+      "name": "Quarry Mill Ground Floor Shortcut Door"
+    },
+    {
+      "name": "Quarry Mill Lower Ramp Control"
+    },
+    {
+      "name": "Quarry Mill Eraser and Dots 1"
+    },
+    {
+      "name": "Quarry Mill Eraser and Dots 2"
+    },
+    {
+      "name": "Quarry Mill Eraser and Dots 3"
+    },
+    {
+      "name": "Quarry Mill Eraser and Dots 4"
+    },
+    {
+      "name": "Quarry Mill Eraser and Dots 5"
+    },
+    {
+      "name": "Quarry Mill Eraser and Dots 6"
+    },
+    {
+      "name": "Quarry Mill Lower Lift Control"
+    },
+    {
+      "name": "Quarry Mill Upper Ramp Control"
+    },
+    {
+      "name": "Quarry Mill Upper Lift Control"
+    },
+    {
+      "name": "Quarry Mill Eraser and Squares 1"
+    },
+    {
+      "name": "Quarry Mill Eraser and Squares 2"
+    },
+    {
+      "name": "Quarry Mill Eraser and Squares 3"
+    },
+    {
+      "name": "Quarry Mill Eraser and Squares 4"
+    },
+    {
+      "name": "Quarry Mill Eraser and Squares 5"
+    },
+    {
+      "name": "Quarry Mill Eraser and Squares 6"
+    },
+    {
+      "name": "Quarry Mill Eraser and Squares 7"
+    },
+    {
+      "name": "Quarry Mill Eraser and Squares 8"
+    },
+    {
+      "name": "Quarry Mill Stair Control"
+    },
+    {
+      "name": "Quarry Mill Big Squares & Dots & and Eraser"
+    },
+    {
+      "name": "Quarry Mill Small Squares & Dots & and Eraser"
+    },
+    {
+      "name": "Quarry Mill Door to Outside Quarry Stairs"
+    },
+    {
+      "name": "Quarry Boathouse Intro Stars"
+    },
+    {
+      "name": "Quarry Boathouse Intro Shapers"
+    },
+    {
+      "name": "Quarry Boathouse Ramp Height Control"
+    },
+    {
+      "name": "Quarry Boathouse Eraser and Shapers 1"
+    },
+    {
+      "name": "Quarry Boathouse Eraser and Shapers 2"
+    },
+    {
+      "name": "Quarry Boathouse Eraser and Shapers 3"
+    },
+    {
+      "name": "Quarry Boathouse Eraser and Shapers 4"
+    },
+    {
+      "name": "Quarry Boathouse Eraser and Shapers 5"
+    },
+    {
+      "name": "Quarry Boathouse Ramp Horizontal Control"
+    },
+    {
+      "name": "Quarry Boathouse Shortcut Door"
+    },
+    {
+      "name": "Quarry Boathouse Stars and Colored Eraser 1"
+    },
+    {
+      "name": "Quarry Boathouse Stars and Colored Eraser 2"
+    },
+    {
+      "name": "Quarry Boathouse Stars and Colored Eraser 3"
+    },
+    {
+      "name": "Quarry Boathouse Stars and Colored Eraser 4"
+    },
+    {
+      "name": "Quarry Boathouse Stars and Colored Eraser 5"
+    },
+    {
+      "name": "Quarry Boathouse Stars and Colored Eraser 6"
+    },
+    {
+      "name": "Quarry Boathouse Stars and Colored Eraser 7"
+    },
+    {
+      "name": "Quarry Boathouse Stars & Eraser & and Shapers 1"
+    },
+    {
+      "name": "Quarry Boathouse Stars & Eraser & and Shapers 2"
+    },
+    {
+      "name": "Quarry Boathouse Hook Control"
+    },
+    {
+      "name": "Quarry Boathouse Boat Spawn"
+    },
+    {
+      "name": "Quarry Boathouse Stars & Eraser & and Shapers 3"
+    },
+    {
+      "name": "Quarry Boathouse Stars & Eraser & and Shapers 4"
+    },
+    {
+      "name": "Quarry Boathouse Stars & Eraser & and Shapers 5"
+    },
+    {
+      "name": "Shadows Door Timer Outside"
+    },
+    {
+      "name": "Shadows Lower Avoid 6"
+    },
+    {
+      "name": "Shadows Lower Avoid 7"
+    },
+    {
+      "name": "Shadows Lower Avoid 8"
+    },
+    {
+      "name": "Shadows Environmental Avoid 1"
+    },
+    {
+      "name": "Shadows Environmental Avoid 2"
+    },
+    {
+      "name": "Shadows Environmental Avoid 3"
+    },
+    {
+      "name": "Shadows Environmental Avoid 4"
+    },
+    {
+      "name": "Shadows Environmental Avoid 5"
+    },
+    {
+      "name": "Shadows Environmental Avoid 6"
+    },
+    {
+      "name": "Shadows Environmental Avoid 7"
+    },
+    {
+      "name": "Shadows Environmental Avoid 8"
+    },
+    {
+      "name": "Shadows Follow 1"
+    },
+    {
+      "name": "Shadows Follow 2"
+    },
+    {
+      "name": "Shadows Follow 3"
+    },
+    {
+      "name": "Shadows Follow 4"
+    },
+    {
+      "name": "Shadows Follow 5"
+    },
+    {
+      "name": "Shadows Door Timer Inside"
+    },
+    {
+      "name": "Shadows Lower Avoid 1"
+    },
+    {
+      "name": "Shadows Lower Avoid 2"
+    },
+    {
+      "name": "Shadows Lower Avoid 3"
+    },
+    {
+      "name": "Shadows Lower Avoid 4"
+    },
+    {
+      "name": "Shadows Lower Avoid 5"
+    },
+    {
+      "name": "Keep Hedge Maze 1"
+    },
+    {
+      "name": "Keep Hedge Maze 2"
+    },
+    {
+      "name": "Keep Hedge Maze 3"
+    },
+    {
+      "name": "Keep Hedge Maze 4"
+    },
+    {
+      "name": "Keep Reset Pressure Plates 1"
+    },
+    {
+      "name": "Keep Pressure Plates 1"
+    },
+    {
+      "name": "Keep Reset Pressure Plates 2"
+    },
+    {
+      "name": "Keep Pressure Plates 2"
+    },
+    {
+      "name": "Keep Reset Pressure Plates 3"
+    },
+    {
+      "name": "Keep Pressure Plates 3"
+    },
+    {
+      "name": "Keep Reset Pressure Plates 4"
+    },
+    {
+      "name": "Keep Pressure Plates 4"
+    },
+    {
+      "name": "Keep Shortcut to Shadows"
+    },
+    {
+      "name": "Keep Shortcut to Keep Glass Plates"
+    },
+    {
+      "name": "Monastery Shortcut"
+    },
+    {
+      "name": "Monastery Door Open Left"
+    },
+    {
+      "name": "Monastery Door Open Right"
+    },
+    {
+      "name": "Monastery Rhombic Avoid 1"
+    },
+    {
+      "name": "Monastery Rhombic Avoid 2"
+    },
+    {
+      "name": "Monastery Rhombic Avoid 3"
+    },
+    {
+      "name": "Monastery Overhead Door Control"
+    },
+    {
+      "name": "Monastery Branch Avoid 1"
+    },
+    {
+      "name": "Monastery Branch Avoid 2"
+    },
+    {
+      "name": "Monastery Branch Follow 1"
+    },
+    {
+      "name": "Monastery Branch Follow 2"
+    },
+    {
+      "name": "Town Boat Summon"
+    },
+    {
+      "name": "Town Cargo Box"
+    },
+    {
+      "name": "Town Tree Outlines"
+    },
+    {
+      "name": "Town Vines Shadows Follow"
+    },
+    {
+      "name": "Town Four-way Apple Tree"
+    },
+    {
+      "name": "Town Triple Environmental Puzzle"
+    },
+    {
+      "name": "Town Hexagonal Reflection"
+    },
+    {
+      "name": "Town Tinted Door to RGB House"
+    },
+    {
+      "name": "Town Door to Church"
+    },
+    {
+      "name": "Town Square Avoid"
+    },
+    {
+      "name": "Town Maze Stair Control"
+    },
+    {
+      "name": "Town Maze Rooftop Bridge Control"
+    },
+    {
+      "name": "Town Symmetry Squares 1"
+    },
+    {
+      "name": "Town Symmetry Squares 2"
+    },
+    {
+      "name": "Town Symmetry Squares 3 + Dots"
+    },
+    {
+      "name": "Town Symmetry Squares 4 + Dots"
+    },
+    {
+      "name": "Town Symmetry Squares 5 + Dots"
+    },
+    {
+      "name": "Town Full Dot Grid Shapers 1"
+    },
+    {
+      "name": "Town Full Dot Grid Shapers 2"
+    },
+    {
+      "name": "Town Full Dot Grid Shapers 3"
+    },
+    {
+      "name": "Town Full Dot Grid Shapers 4"
+    },
+    {
+      "name": "Town Full Dot Grid Shapers 5"
+    },
+    {
+      "name": "Town Shapers & Dots & and Eraser"
+    },
+    {
+      "name": "Town Windmill Door"
+    },
+    {
+      "name": "Town Sound Room Left"
+    },
+    {
+      "name": "Town Sound Room Right"
+    },
+    {
+      "name": "Town RGB Control"
+    },
+    {
+      "name": "Town RGB Squares"
+    },
+    {
+      "name": "Town RGB Stars"
+    },
+    {
+      "name": "Windmill Turn Control"
+    },
+    {
+      "name": "Windmill Door to Front of Theater"
+    },
+    {
+      "name": "Theater Door to Cargo Box Left"
+    },
+    {
+      "name": "Theater Door to Cargo Box Right"
+    },
+    {
+      "name": "Jungle Shore Boat Spawn"
+    },
+    {
+      "name": "Jungle Waves 1"
+    },
+    {
+      "name": "Jungle Waves 2"
+    },
+    {
+      "name": "Jungle Waves 3"
+    },
+    {
+      "name": "Jungle Waves 4"
+    },
+    {
+      "name": "Jungle Waves 5"
+    },
+    {
+      "name": "Jungle Waves 6"
+    },
+    {
+      "name": "Jungle Waves 7"
+    },
+    {
+      "name": "Jungle Popup Wall Control"
+    },
+    {
+      "name": "Jungle Popup Wall 1"
+    },
+    {
+      "name": "Jungle Popup Wall 2"
+    },
+    {
+      "name": "Jungle Popup Wall 3"
+    },
+    {
+      "name": "Jungle Popup Wall 4"
+    },
+    {
+      "name": "Jungle Popup Wall 5"
+    },
+    {
+      "name": "Jungle Popup Wall 6"
+    },
+    {
+      "name": "Jungle Shortcut to River"
+    },
+    {
+      "name": "River Rhombic Avoid to Monastery Garden"
+    },
+    {
+      "name": "Bunker Door to Bunker"
+    },
+    {
+      "name": "Bunker Drawn Squares 1"
+    },
+    {
+      "name": "Bunker Drawn Squares 2"
+    },
+    {
+      "name": "Bunker Drawn Squares 3"
+    },
+    {
+      "name": "Bunker Drawn Squares 4"
+    },
+    {
+      "name": "Bunker Drawn Squares 5"
+    },
+    {
+      "name": "Bunker Drawn Squares 6"
+    },
+    {
+      "name": "Bunker Drawn Squares 7"
+    },
+    {
+      "name": "Bunker Drawn Squares 8"
+    },
+    {
+      "name": "Bunker Drawn Squares 9"
+    },
+    {
+      "name": "Bunker Door to Bunker Proper"
+    },
+    {
+      "name": "Bunker Drawn Squares through Tinted Glass 1"
+    },
+    {
+      "name": "Bunker Drawn Squares through Tinted Glass 2"
+    },
+    {
+      "name": "Bunker Drawn Squares through Tinted Glass 3"
+    },
+    {
+      "name": "Bunker Drop-Down Door Open"
+    },
+    {
+      "name": "Bunker Drop-Down Door Close"
+    },
+    {
+      "name": "Bunker Drop-Down Door Squares 1"
+    },
+    {
+      "name": "Bunker Drop-Down Door Squares 2"
+    },
+    {
+      "name": "Bunker Elevator Control"
+    },
+    {
+      "name": "Swamp Entry Door"
+    },
+    {
+      "name": "Swamp Seperatable Shapers 1"
+    },
+    {
+      "name": "Swamp Seperatable Shapers 2"
+    },
+    {
+      "name": "Swamp Seperatable Shapers 3"
+    },
+    {
+      "name": "Swamp Seperatable Shapers 4"
+    },
+    {
+      "name": "Swamp Seperatable Shapers 5"
+    },
+    {
+      "name": "Swamp Seperatable Shapers 6"
+    },
+    {
+      "name": "Swamp Combinable Shapers 1"
+    },
+    {
+      "name": "Swamp Combinable Shapers 2"
+    },
+    {
+      "name": "Swamp Combinable Shapers 3"
+    },
+    {
+      "name": "Swamp Combinable Shapers 4"
+    },
+    {
+      "name": "Swamp Combinable Shapers 5"
+    },
+    {
+      "name": "Swamp Combinable Shapers 6"
+    },
+    {
+      "name": "Swamp Combinable Shapers 7"
+    },
+    {
+      "name": "Swamp Combinable Shapers 8"
+    },
+    {
+      "name": "Swamp Slide Bridge"
+    },
+    {
+      "name": "Swamp Broken Shapers 1"
+    },
+    {
+      "name": "Swamp Broken Shapers 2"
+    },
+    {
+      "name": "Swamp Broken Shapers 3"
+    },
+    {
+      "name": "Swamp Broken Shapers 4"
+    },
+    {
+      "name": "Swamp Cyan Underwater Negative Shapers 1"
+    },
+    {
+      "name": "Swamp Cyan Underwater Negative Shapers 2"
+    },
+    {
+      "name": "Swamp Cyan Underwater Negative Shapers 3"
+    },
+    {
+      "name": "Swamp Cyan Underwater Negative Shapers 4"
+    },
+    {
+      "name": "Swamp Cyan Underwater Negative Shapers 5"
+    },
+    {
+      "name": "Swamp Cyan Underwater Sliding Bridge Control"
+    },
+    {
+      "name": "Swamp Platform Shapers 1"
+    },
+    {
+      "name": "Swamp Platform Shapers 2"
+    },
+    {
+      "name": "Swamp Platform Shapers 3"
+    },
+    {
+      "name": "Swamp Platform Shapers 4"
+    },
+    {
+      "name": "Swamp Platform Shortcut Door Left"
+    },
+    {
+      "name": "Swamp Platform Shortcut Door Right"
+    },
+    {
+      "name": "Swamp Rotated Shapers 1"
+    },
+    {
+      "name": "Swamp Rotated Shapers 2"
+    },
+    {
+      "name": "Swamp Rotated Shapers 3"
+    },
+    {
+      "name": "Swamp Rotated Shapers 4"
+    },
+    {
+      "name": "Swamp Red Underwater Negative Shapers 1"
+    },
+    {
+      "name": "Swamp Red Underwater Negative Shapers 2"
+    },
+    {
+      "name": "Swamp Red Underwater Negative Shapers 3"
+    },
+    {
+      "name": "Swamp Red Underwater Negative Shapers 4"
+    },
+    {
+      "name": "Swamp Rotating Bridge"
+    },
+    {
+      "name": "Swamp Boat Spawn"
+    },
+    {
+      "name": "Swamp More Rotated Shapers 1"
+    },
+    {
+      "name": "Swamp More Rotated Shapers 2"
+    },
+    {
+      "name": "Swamp More Rotated Shapers 3"
+    },
+    {
+      "name": "Swamp More Rotated Shapers 4"
+    },
+    {
+      "name": "Swamp Underwater Back Optional"
+    },
+    {
+      "name": "Swamp Blue Underwater Negative Shapers 1"
+    },
+    {
+      "name": "Swamp Blue Underwater Negative Shapers 2"
+    },
+    {
+      "name": "Swamp Blue Underwater Negetive Shapers 3"
+    },
+    {
+      "name": "Swamp Blue Underwater Negative Shapers 4"
+    },
+    {
+      "name": "Swamp Blue Underwater Negative Shapers 5"
+    },
+    {
+      "name": "Swamp Long Bridge Control"
+    },
+    {
+      "name": "Swamp Maze Control"
+    },
+    {
+      "name": "Swamp Near Laser Shortcut Door Left"
+    },
+    {
+      "name": "Swamp Near Laser Shortcut Door Right"
+    },
+    {
+      "name": "Treehouse Boat Spawn"
+    },
+    {
+      "name": "Treehouse First Door"
+    },
+    {
+      "name": "Treehouse Second Door"
+    },
+    {
+      "name": "Treehouse Yellow Bridge 1"
+    },
+    {
+      "name": "Treehouse Yellow Bridge 2"
+    },
+    {
+      "name": "Treehouse Yellow Bridge 3"
+    },
+    {
+      "name": "Treehouse Yellow Bridge 4"
+    },
+    {
+      "name": "Treehouse Yellow Bridge 5"
+    },
+    {
+      "name": "Treehouse Yellow Bridge 6"
+    },
+    {
+      "name": "Treehouse Yellow Bridge 7"
+    },
+    {
+      "name": "Treehouse Yellow Bridge 8"
+    },
+    {
+      "name": "Treehouse Yellow Bridge 9"
+    },
+    {
+      "name": "Treehouse Beyond Yellow Bridge Door"
+    },
+    {
+      "name": "Treehouse Laser House Door Timer Outside Control"
+    },
+    {
+      "name": "Treehouse First Purple Bridge 1"
+    },
+    {
+      "name": "Treehouse First Purple Bridge 2"
+    },
+    {
+      "name": "Treehouse First Purple Bridge 3"
+    },
+    {
+      "name": "Treehouse First Purple Bridge 4"
+    },
+    {
+      "name": "Treehouse First Purple Bridge 5"
+    },
+    {
+      "name": "Treehouse Second Purple Bridge 1"
+    },
+    {
+      "name": "Treehouse Second Purple Bridge 2"
+    },
+    {
+      "name": "Treehouse Second Purple Bridge 3"
+    },
+    {
+      "name": "Treehouse Second Purple Bridge 4"
+    },
+    {
+      "name": "Treehouse Second Purple Bridge 5"
+    },
+    {
+      "name": "Treehouse Second Purple Bridge 6"
+    },
+    {
+      "name": "Treehouse Second Purple Bridge 7"
+    },
+    {
+      "name": "Treehouse Green Bridge 1"
+    },
+    {
+      "name": "Treehouse Green Bridge 2"
+    },
+    {
+      "name": "Treehouse Green Bridge 3"
+    },
+    {
+      "name": "Treehouse Green Bridge 4 & Directional"
+    },
+    {
+      "name": "Treehouse Green Bridge 5"
+    },
+    {
+      "name": "Treehouse Green Bridge 6"
+    },
+    {
+      "name": "Treehouse Green Bridge 7"
+    },
+    {
+      "name": "Treehouse Left Orange Bridge 1"
+    },
+    {
+      "name": "Treehouse Left Orange Bridge 2"
+    },
+    {
+      "name": "Treehouse Left Orange Bridge 3"
+    },
+    {
+      "name": "Treehouse Left Orange Bridge 4"
+    },
+    {
+      "name": "Treehouse Left Orange Bridge 5"
+    },
+    {
+      "name": "Treehouse Left Orange Bridge 6"
+    },
+    {
+      "name": "Treehouse Left Orange Bridge 7"
+    },
+    {
+      "name": "Treehouse Left Orange Bridge 8"
+    },
+    {
+      "name": "Treehouse Left Orange Bridge 9 & Directional"
+    },
+    {
+      "name": "Treehouse Left Orange Bridge 10"
+    },
+    {
+      "name": "Treehouse Left Orange Bridge 11"
+    },
+    {
+      "name": "Treehouse Left Orange Bridge 12"
+    },
+    {
+      "name": "Treehouse Left Orange Bridge 13"
+    },
+    {
+      "name": "Treehouse Left Orange Bridge 14"
+    },
+    {
+      "name": "Treehouse Left Orange Bridge 15"
+    },
+    {
+      "name": "Treehouse Right Orange Bridge 1"
+    },
+    {
+      "name": "Treehouse Right Orange Bridge 2"
+    },
+    {
+      "name": "Treehouse Right Orange Bridge 3"
+    },
+    {
+      "name": "Treehouse Right Orange Bridge 4 & Directional"
+    },
+    {
+      "name": "Treehouse Right Orange Bridge 5"
+    },
+    {
+      "name": "Treehouse Right Orange Bridge 6"
+    },
+    {
+      "name": "Treehouse Right Orange Bridge 7"
+    },
+    {
+      "name": "Treehouse Right Orange Bridge 8"
+    },
+    {
+      "name": "Treehouse Right Orange Bridge 9"
+    },
+    {
+      "name": "Treehouse Right Orange Bridge 10 & Directional"
+    },
+    {
+      "name": "Treehouse Right Orange Bridge 11"
+    },
+    {
+      "name": "Treehouse Right Orange Bridge 12"
+    },
+    {
+      "name": "Treehouse Laser House Door Timer Inside Control"
+    },
+    {
+      "name": "Treehouse Bridge Control"
+    },
+    {
+      "name": "Mountaintop River Shape"
+    },
+    {
+      "name": "Mountaintop Box Open"
+    },
+    {
+      "name": "Mountaintop Trap Door Triple Exit"
+    },
+    {
+      "name": "Inside Mountain Light Bridge Controller"
+    },
+    {
+      "name": "Inside Mountain Obscured Vision 1"
+    },
+    {
+      "name": "Inside Mountain Obscured Vision 2"
+    },
+    {
+      "name": "Inside Mountain Obscured Vision 3"
+    },
+    {
+      "name": "Inside Mountain Obscured Vision 4"
+    },
+    {
+      "name": "Inside Mountain Obscured Vision 5"
+    },
+    {
+      "name": "Inside Mountain Moving Background 1"
+    },
+    {
+      "name": "Inside Mountain Moving Background 2"
+    },
+    {
+      "name": "Inside Mountain Moving Background 3"
+    },
+    {
+      "name": "Inside Mountain Moving Background 4"
+    },
+    {
+      "name": "Inside Mountain Moving Background 5"
+    },
+    {
+      "name": "Inside Mountain Moving Background 6"
+    },
+    {
+      "name": "Inside Mountain Moving Background 7"
+    },
+    {
+      "name": "Inside Mountain Physically Obstructed 1"
+    },
+    {
+      "name": "Inside Mountain Physically Obstructed 2"
+    },
+    {
+      "name": "Inside Mountain Physically Obstructed 3"
+    },
+    {
+      "name": "Inside Mountain Angled Inside Trash 1"
+    },
+    {
+      "name": "Inside Mountain Angled Inside Trash 2"
+    },
+    {
+      "name": "Inside Mountain Color Cycle 1"
+    },
+    {
+      "name": "Inside Mountain Color Cycle 2"
+    },
+    {
+      "name": "Inside Mountain Color Cycle 3"
+    },
+    {
+      "name": "Inside Mountain Color Cycle 4"
+    },
+    {
+      "name": "Inside Mountain Color Cycle 5"
+    },
+    {
+      "name": "Inside Mountain Light Bridge Controller 2"
+    },
+    {
+      "name": "Inside Mountain Same Solution 1"
+    },
+    {
+      "name": "Inside Mountain Same Solution 2"
+    },
+    {
+      "name": "Inside Mountain Same Solution 3"
+    },
+    {
+      "name": "Inside Mountain Same Solution 4"
+    },
+    {
+      "name": "Inside Mountain Same Solution 5"
+    },
+    {
+      "name": "Inside Mountain Same Solution 6"
+    },
+    {
+      "name": "Inside Mountain Light Bridge Controller 3"
+    },
+    {
+      "name": "Inside Mountain Elevator Control Panel"
+    },
+    {
+      "name": "Inside Mountain Giant Puzzle Bottom Left"
+    },
+    {
+      "name": "Inside Mountain Giant Puzzle Bottom Right"
+    },
+    {
+      "name": "Inside Mountain Giant Puzzle Top Right"
+    },
+    {
+      "name": "Inside Mountain Giant Puzzle Top Left"
+    },
+    {
+      "name": "Inside Mountain Giant Puzzle"
+    },
+    {
+      "name": "Inside Mountain Door to Final Room Left"
+    },
+    {
+      "name": "Inside Mountain Door to Final Room Right"
+    },
+    {
+      "name": "Inside Mountain Door to Secret Area"
+    },
+    {
+      "name": "Inside Mountain Rock Control"
+    },
+    {
+      "name": "Inside Mountain Secret Area Shortcut to Mountain"
+    },
+    {
+      "name": "Inside Mountain Secret Area Shortcut to Swamp"
+    },
+    {
+      "name": "Inside Mountain Secret Area Elevator Inside Control"
+    },
+    {
+      "name": "Inside Mountain Secret Area Elevator Upper Outside Control"
+    },
+    {
+      "name": "Inside Mountain Secret Area Elevator Lower Outside Control"
+    },
+    {
+      "name": "Inside Mountain Secret Area Dot Grid Triangles 1"
+    },
+    {
+      "name": "Inside Mountain Secret Area Dot Grid Triangles 2"
+    },
+    {
+      "name": "Inside Mountain Secret Area Dot Grid Triangles 3"
+    },
+    {
+      "name": "Inside Mountain Secret Area Dot Grid Triangles 4"
+    },
+    {
+      "name": "Inside Mountain Secret Area Symmetry Triangles"
+    },
+    {
+      "name": "Inside Mountain Secret Area Squares and Triangles"
+    },
+    {
+      "name": "Inside Mountain Secret Area Stars and Triangles"
+    },
+    {
+      "name": "Inside Mountain Secret Area Stars and Triangles of same color"
+    },
+    {
+      "name": "Inside Mountain Secret Area Stars & Squares and Triangles"
+    },
+    {
+      "name": "Inside Mountain Secret Area Stars & Squares and Triangles 2"
+    },
+    {
+      "name": "Inside Mountain Secret Area Rotated Shapers and Triangles 1"
+    },
+    {
+      "name": "Inside Mountain Secret Area Rotated Shapers and Triangles 2"
+    },
+    {
+      "name": "Inside Mountain Secret Area Rotated Shapers and Triangles 3"
+    },
+    {
+      "name": "Inside Mountain Secret Area Shapers and Triangles 1"
+    },
+    {
+      "name": "Inside Mountain Secret Area Shapers and Triangles 2"
+    },
+    {
+      "name": "Inside Mountain Secret Area Broken Shapers"
+    },
+    {
+      "name": "Inside Mountain Secret Area Symmetry Shapers"
+    },
+    {
+      "name": "Inside Mountain Secret Area Broken and Negative Shapers"
+    },
+    {
+      "name": "Inside Mountain Secret Area Rotated Broken Shapers"
+    },
+    {
+      "name": "Inside Mountain Secret Area Stars and Squares"
+    },
+    {
+      "name": "Inside Mountain Secret Area Rainbow Squares"
+    },
+    {
+      "name": "Inside Mountain Secret Area Squares & Stars and Colored Eraser"
+    },
+    {
+      "name": "Inside Mountain Secret Area Lone Pillar"
+    },
+    {
+      "name": "Inside Mountain Secret Area Door to Challenge"
+    },
+    {
+      "name": "Inside Mountain Secret Area Wooden Beam Shapers"
+    },
+    {
+      "name": "Inside Mountain Secret Area Wooden Beam Squares and Shapers"
+    },
+    {
+      "name": "Inside Mountain Secret Area Wooden Beam Shapers and Squares"
+    },
+    {
+      "name": "Inside Mountain Secret Area Wooden Beam Shapers and Stars"
+    },
+    {
+      "name": "Inside Mountain Secret Area Upstairs Dot Grid Negative Shapers"
+    },
+    {
+      "name": "Inside Mountain Secret Area Upstairs Dot Grid Squares"
+    },
+    {
+      "name": "Inside Mountain Secret Area Upstairs Dot Grid Stars"
+    },
+    {
+      "name": "Inside Mountain Secret Area Upstairs Dot Grid Triangles"
+    },
+    {
+      "name": "Inside Mountain Secret Area Upstairs Dot Grid Shapers"
+    },
+    {
+      "name": "Inside Mountain Secret Area Upstairs Dot Grid Rotated Shapers"
+    },
+    {
+      "name": "Inside Mountain Secret Area Upstairs Invisible Dots 1"
+    },
+    {
+      "name": "Inside Mountain Secret Area Upstairs Invisible Dots 2"
+    },
+    {
+      "name": "Inside Mountain Secret Area Upstairs Invisible Dots 3"
+    },
+    {
+      "name": "Inside Mountain Secret Area Upstairs Invisible Dots 4"
+    },
+    {
+      "name": "Inside Mountain Secret Area Upstairs Invisible Dots 5"
+    },
+    {
+      "name": "Inside Mountain Secret Area Upstairs Invisible Dots 6"
+    },
+    {
+      "name": "Inside Mountain Secret Area Upstairs Invisible Dots 7"
+    },
+    {
+      "name": "Inside Mountain Secret Area Upstairs Invisible Dots 8"
+    },
+    {
+      "name": "Inside Mountain Secret Area Upstairs Invisible Dot Symmetry 1"
+    },
+    {
+      "name": "Inside Mountain Secret Area Upstairs Invisible Dot Symmetry 2"
+    },
+    {
+      "name": "Inside Mountain Secret Area Upstairs Invisible Dot Symmetry 3"
+    },
+    {
+      "name": "Challenge Start Timer"
+    },
+    {
+      "name": "Challenge Small Basic"
+    },
+    {
+      "name": "Challenge Big Basic"
+    },
+    {
+      "name": "Challenge Square"
+    },
+    {
+      "name": "Challenge Maze Map"
+    },
+    {
+      "name": "Challenge Stars and Dots"
+    },
+    {
+      "name": "Challenge Symmetry"
+    },
+    {
+      "name": "Challenge Stars and Shapers"
+    },
+    {
+      "name": "Challenge Big Basic 2"
+    },
+    {
+      "name": "Challenge Choice Squares Right"
+    },
+    {
+      "name": "Challenge Choice Squares Middle"
+    },
+    {
+      "name": "Challenge Choice Squares Left"
+    },
+    {
+      "name": "Challenge Choice Squares 2 Right"
+    },
+    {
+      "name": "Challenge Choice Squares 2 Middle"
+    },
+    {
+      "name": "Challenge Choice Squares 2 Left"
+    },
+    {
+      "name": "Challenge Maze Hidden 1"
+    },
+    {
+      "name": "Challenge Maze Hidden 2"
+    },
+    {
+      "name": "Challenge Dots Pillar"
+    },
+    {
+      "name": "Challenge Squares Pillar"
+    },
+    {
+      "name": "Challenge Door to Theater Walkway"
+    },
+    {
+      "name": "Theater Walkway Door to Back of Theater"
+    },
+    {
+      "name": "Theater Walkway Door to Desert Elevator Room"
+    },
+    {
+      "name": "Theater Walkway Door to Town"
+    },
+    {
+      "name": "Inside Mountain Final Room Stars Pillar"
+    },
+    {
+      "name": "Inside Mountain Final Room Stars and Dots Pillar"
+    },
+    {
+      "name": "Inside Mountain Final Room Dot Grid Pillar"
+    },
+    {
+      "name": "Inside Mountain Final Room Sparse Dots Pillar"
+    },
+    {
+      "name": "Inside Mountain Final Room Dot Maze Pillar"
+    },
+    {
+      "name": "Inside Mountain Final Room Squares Pillar"
+    },
+    {
+      "name": "Inside Mountain Final Room Shapers Pillar"
+    },
+    {
+      "name": "Inside Mountain Final Room Squares and Stars"
+    },
+    {
+      "name": "Inside Mountain Final Room Elevator Door Closer Left"
+    },
+    {
+      "name": "Inside Mountain Final Room Elevator Door Close Right"
+    },
+    {
+      "name": "Inside Mountain Final Room Elevator Door Open Left"
+    },
+    {
+      "name": "Inside Mountain Final Room Elevator Door Open Right"
+    },
+    {
+      "name": "Inside Mountain Final Room Back Wall Left"
+    },
+    {
+      "name": "Inside Mountain Final Room Back Wall Right"
+    },
+    {
+      "name": "Inside Mountain Final Room Elevator Start"
+    },
+    {
+      "name": "Outside Tutorial Discard"
+    },
+    {
+      "name": "Glass Factory Discard"
+    },
+    {
+      "name": "Desert Discard"
+    },
+    {
+      "name": "Quarry Discard"
+    },
+    {
+      "name": "Keep Discard"
+    },
+    {
+      "name": "Shipwreck Discard"
+    },
+    {
+      "name": "Town Cargo Box Discard"
+    },
+    {
+      "name": "Town Rooftop Discard"
+    },
+    {
+      "name": "Theater Discard"
+    },
+    {
+      "name": "Jungle Discard"
+    },
+    {
+      "name": "Treehouse Green Bridge Discard"
+    },
+    {
+      "name": "Treehouse Burned House Discard"
+    },
+    {
+      "name": "Mountaintop Discard"
+    },
+    {
+      "name": "Inside Mountain Elevator Discard"
+    },
+    {
+      "name": "Inside Mountain Bottom Layer Discard"
+    },
+    {
+      "name": "Outside Tutorial Vault"
+    },
+    {
+      "name": "Outside Tutorial Vault Box"
+    },
+    {
+      "name": "Desert Vault"
+    },
+    {
+      "name": "Desert Vault Box"
+    },
+    {
+      "name": "Shipwreck Vault"
+    },
+    {
+      "name": "Shipwreck Vault Box"
+    },
+    {
+      "name": "Theater Video Input"
+    },
+    {
+      "name": "Theater Tutorial Video"
+    },
+    {
+      "name": "Theater Desert Video"
+    },
+    {
+      "name": "Theater Jungle Video"
+    },
+    {
+      "name": "Theater Challenge Video"
+    },
+    {
+      "name": "Theater Shipwreck Video"
+    },
+    {
+      "name": "Theater Mountain Video"
+    },
+    {
+      "name": "River Vault"
+    },
+    {
+      "name": "River Vault Box"
+    },
+    {
+      "name": "Mountaintop Vault"
+    },
+    {
+      "name": "Mountaintop Vault Box"
+    },
+    {
+      "name": "Challenge Vault Box"
+    },
+    {
+      "name": "Theater Walkway Vault Box"
+    },
+    {
+      "name": "Symmetry Island Laser"
+    },
+    {
+      "name": "Desert Laser"
+    },
+    {
+      "name": "Quarry Laser"
+    },
+    {
+      "name": "Shadows Laser"
+    },
+    {
+      "name": "Keep Laser Hedges"
+    },
+    {
+      "name": "Keep Laser Pressure Plates"
+    },
+    {
+      "name": "Monastery Laser"
+    },
+    {
+      "name": "Town Desert Laser Redirect"
+    },
+    {
+      "name": "Town Laser"
+    },
+    {
+      "name": "Jungle Laser"
+    },
+    {
+      "name": "Bunker Laser"
+    },
+    {
+      "name": "Swamp Laser"
+    },
+    {
+      "name": "Treehouse Laser"
+    }
+  ]
+}

@@ -1,4 +1,15 @@
 {
+  "1.0.6": [
+    "Update spec to **0.3.2**",
+    [
+      "**The Witness**, **Sonic Adventure 2 Battle**, **StarCraft 2: Wings of Liberty** added",
+      "**A Link to the Past**: auto-collecting chests is now an option",
+      "**Minecraft**: now 95 max advancements",
+      "**Timespinner**: new damage rando, a few new options, renamed terminal-based locations",
+      "**ArchipIDLE**: Where'd it go? (for reals, if you want it back, let me know; if not, it'll be auto-enabled in April)"
+    ],
+    "Internal: Updated most Node packages"
+  ],
   "1.0.5": [
     "Internal: Unified DeathLink setting type in category definitions",
     "*Revision 1*: **Hollow Knight**: Removed extraneous \"Randomize\" option",

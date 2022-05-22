@@ -248,8 +248,8 @@
     {
       "type": "string",
       "name": "shuffle_fortresskeys",
-      "readableName": "Fortress Key Shuffle",
-      "description": "Determine where fortress keys will be located.",
+      "readableName": "Thieves' Hideout Key Shuffle",
+      "description": "Determine where Thieves' Hideout keys will be located.",
       "values": {
         "vanilla": "Vanilla",
         "any_dungeon": "Any dungeon",

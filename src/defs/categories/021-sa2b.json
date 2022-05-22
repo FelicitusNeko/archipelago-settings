@@ -1,0 +1,743 @@
+{
+  "category": "Sonic Adventure 2 Battle",
+  "index": 21,
+  "settings": [
+    {
+      "type": "deathlink"
+    },
+    {
+      "type": "string",
+      "name": "music_shuffle",
+      "readableName": "Music shuffle",
+      "description": "Determines whether music will be shuffled.",
+      "values": {
+        "none": "Off",
+        "levels": ["Levels", "Level music is shuffled"],
+        "full": ["Full", "Level, Menu, and Additional music is shuffled."]
+      },
+      "default": "none"
+    },
+    {
+      "type": "numeric",
+      "name": "include_missions",
+      "readableName": "Include missions",
+      "description": "How many missions per level to include. In order, they are: Base mission, 100 Rings, Lost Chao, Time Attack, Hard Mode",
+      "low": 1,
+      "high": 5,
+      "randomable": true,
+      "default": 2
+    },
+    {
+      "type": "numeric",
+      "name": "emblem_percentage_for_cannons_core",
+      "readableName": "Emblem percentage for Cannon's Core",
+      "description": "What percentage of Emblems in the item pool are required to access the final level, Cannon's Core.",
+      "low": 0,
+      "high": 75,
+      "randomable": true,
+      "default": 50
+    },
+    {
+      "type": "numeric",
+      "name": "number_of_level_gates",
+      "readableName": "Number of Emblem count gates",
+      "description": "Determines whether levels can be gated behind a certain number of Emblems, and, if so, how many gates there are.",
+      "low": 0,
+      "high": 5,
+      "randomable": true,
+      "default": 3
+    },
+    {
+      "type": "string",
+      "name": "level_gate_distribution",
+      "readableName": "Emblem gate distribution",
+      "description": "Determines how levels are distributed between Emblem gates.",
+      "values": {
+        "early": ["Early", "More levels will be placed before Emblem gates."],
+        "even": [
+          "Even",
+          "Levels will be evenly distributed between Emblem gates."
+        ],
+        "late": ["Late", "More levels will be placed after Emblem gates."]
+      },
+      "default": "even",
+      "dependsOn": {
+        "number_of_level_gates": [1, 2, 3, 4, 5]
+      }
+    }
+  ],
+  "items": [
+    {
+      "name": "Emblem",
+      "max": 180
+    },
+    {
+      "name": "Sonic - Magic Glove"
+    },
+    {
+      "name": "Sonic - Light Shoes"
+    },
+    {
+      "name": "Sonic - Ancient Light"
+    },
+    {
+      "name": "Sonic - Bounce Bracelet"
+    },
+    {
+      "name": "Sonic - Flame Ring"
+    },
+    {
+      "name": "Sonic - Mystic Melody"
+    },
+    {
+      "name": "Tails - Laser Blaster"
+    },
+    {
+      "name": "Tails - Booster"
+    },
+    {
+      "name": "Tails - Mystic Melody"
+    },
+    {
+      "name": "Tails - Bazooka"
+    },
+    {
+      "name": "Knuckles - Mystic Melody"
+    },
+    {
+      "name": "Knuckles - Shovel Claws"
+    },
+    {
+      "name": "Knuckles - Air Necklace"
+    },
+    {
+      "name": "Knuckles - Hammer Gloves"
+    },
+    {
+      "name": "Knuckles - Sunglasses"
+    },
+    {
+      "name": "Shadow - Flame Ring"
+    },
+    {
+      "name": "Shadow - Air Shoes"
+    },
+    {
+      "name": "Shadow - Ancient Light"
+    },
+    {
+      "name": "Shadow - Mystic Melody"
+    },
+    {
+      "name": "Eggman - Laser Blaster"
+    },
+    {
+      "name": "Eggman - Mystic Melody"
+    },
+    {
+      "name": "Eggman - Jet Engine"
+    },
+    {
+      "name": "Eggman - Large Cannon"
+    },
+    {
+      "name": "Eggman - Protective Armor"
+    },
+    {
+      "name": "Rouge - Mystic Melody"
+    },
+    {
+      "name": "Rouge - Pick Nails"
+    },
+    {
+      "name": "Rouge - Treasure Scope"
+    },
+    {
+      "name": "Rouge - Iron Boots"
+    },
+    {
+      "name": "What Maria Wanted"
+    }
+  ],
+  "locations": [
+    {
+      "name": "City Escape - 1"
+    },
+    {
+      "name": "Wild Canyon - 1"
+    },
+    {
+      "name": "Prison Lane - 1"
+    },
+    {
+      "name": "Metal Harbor - 1"
+    },
+    {
+      "name": "Green Forest - 1"
+    },
+    {
+      "name": "Pumpkin Hill - 1"
+    },
+    {
+      "name": "Mission Street - 1"
+    },
+    {
+      "name": "Aquatic Mine - 1"
+    },
+    {
+      "name": "Route 101 - 1"
+    },
+    {
+      "name": "Hidden Base - 1"
+    },
+    {
+      "name": "Pyramid Cave - 1"
+    },
+    {
+      "name": "Death Chamber - 1"
+    },
+    {
+      "name": "Eternal Engine - 1"
+    },
+    {
+      "name": "Meteor Herd - 1"
+    },
+    {
+      "name": "Crazy Gadget - 1"
+    },
+    {
+      "name": "Final Rush - 1"
+    },
+    {
+      "name": "Iron Gate - 1"
+    },
+    {
+      "name": "Dry Lagoon - 1"
+    },
+    {
+      "name": "Sand Ocean - 1"
+    },
+    {
+      "name": "Radical Highway - 1"
+    },
+    {
+      "name": "Egg Quarters - 1"
+    },
+    {
+      "name": "Lost Colony - 1"
+    },
+    {
+      "name": "Weapons Bed - 1"
+    },
+    {
+      "name": "Security Hall - 1"
+    },
+    {
+      "name": "White Jungle - 1"
+    },
+    {
+      "name": "Route 280 - 1"
+    },
+    {
+      "name": "Sky Rail - 1"
+    },
+    {
+      "name": "Mad Space - 1"
+    },
+    {
+      "name": "Cosmic Wall - 1"
+    },
+    {
+      "name": "Final Chase - 1"
+    },
+    {
+      "name": "Cannon Core - 1"
+    },
+    {
+      "name": "City Escape - 2"
+    },
+    {
+      "name": "Wild Canyon - 2"
+    },
+    {
+      "name": "Prison Lane - 2"
+    },
+    {
+      "name": "Metal Harbor - 2"
+    },
+    {
+      "name": "Green Forest - 2"
+    },
+    {
+      "name": "Pumpkin Hill - 2"
+    },
+    {
+      "name": "Mission Street - 2"
+    },
+    {
+      "name": "Aquatic Mine - 2"
+    },
+    {
+      "name": "Route 101 - 2"
+    },
+    {
+      "name": "Hidden Base - 2"
+    },
+    {
+      "name": "Pyramid Cave - 2"
+    },
+    {
+      "name": "Death Chamber - 2"
+    },
+    {
+      "name": "Eternal Engine - 2"
+    },
+    {
+      "name": "Meteor Herd - 2"
+    },
+    {
+      "name": "Crazy Gadget - 2"
+    },
+    {
+      "name": "Final Rush - 2"
+    },
+    {
+      "name": "Iron Gate - 2"
+    },
+    {
+      "name": "Dry Lagoon - 2"
+    },
+    {
+      "name": "Sand Ocean - 2"
+    },
+    {
+      "name": "Radical Highway - 2"
+    },
+    {
+      "name": "Egg Quarters - 2"
+    },
+    {
+      "name": "Lost Colony - 2"
+    },
+    {
+      "name": "Weapons Bed - 2"
+    },
+    {
+      "name": "Security Hall - 2"
+    },
+    {
+      "name": "White Jungle - 2"
+    },
+    {
+      "name": "Route 280 - 2"
+    },
+    {
+      "name": "Sky Rail - 2"
+    },
+    {
+      "name": "Mad Space - 2"
+    },
+    {
+      "name": "Cosmic Wall - 2"
+    },
+    {
+      "name": "Final Chase - 2"
+    },
+    {
+      "name": "Cannon Core - 2"
+    },
+    {
+      "name": "Biolizard"
+    },
+    {
+      "name": "City Escape - 3"
+    },
+    {
+      "name": "Wild Canyon - 3"
+    },
+    {
+      "name": "Prison Lane - 3"
+    },
+    {
+      "name": "Metal Harbor - 3"
+    },
+    {
+      "name": "Green Forest - 3"
+    },
+    {
+      "name": "Pumpkin Hill - 3"
+    },
+    {
+      "name": "Mission Street - 3"
+    },
+    {
+      "name": "Aquatic Mine - 3"
+    },
+    {
+      "name": "Route 101 - 3"
+    },
+    {
+      "name": "Hidden Base - 3"
+    },
+    {
+      "name": "Pyramid Cave - 3"
+    },
+    {
+      "name": "Death Chamber - 3"
+    },
+    {
+      "name": "Eternal Engine - 3"
+    },
+    {
+      "name": "Meteor Herd - 3"
+    },
+    {
+      "name": "Crazy Gadget - 3"
+    },
+    {
+      "name": "Final Rush - 3"
+    },
+    {
+      "name": "Iron Gate - 3"
+    },
+    {
+      "name": "Dry Lagoon - 3"
+    },
+    {
+      "name": "Sand Ocean - 3"
+    },
+    {
+      "name": "Radical Highway - 3"
+    },
+    {
+      "name": "Egg Quarters - 3"
+    },
+    {
+      "name": "Lost Colony - 3"
+    },
+    {
+      "name": "Weapons Bed - 3"
+    },
+    {
+      "name": "Security Hall - 3"
+    },
+    {
+      "name": "White Jungle - 3"
+    },
+    {
+      "name": "Route 280 - 3"
+    },
+    {
+      "name": "Sky Rail - 3"
+    },
+    {
+      "name": "Mad Space - 3"
+    },
+    {
+      "name": "Cosmic Wall - 3"
+    },
+    {
+      "name": "Final Chase - 3"
+    },
+    {
+      "name": "Cannon Core - 3"
+    },
+    {
+      "name": "City Escape - 4"
+    },
+    {
+      "name": "Wild Canyon - 4"
+    },
+    {
+      "name": "Prison Lane - 4"
+    },
+    {
+      "name": "Metal Harbor - 4"
+    },
+    {
+      "name": "Green Forest - 4"
+    },
+    {
+      "name": "Pumpkin Hill - 4"
+    },
+    {
+      "name": "Mission Street - 4"
+    },
+    {
+      "name": "Aquatic Mine - 4"
+    },
+    {
+      "name": "Route 101 - 4"
+    },
+    {
+      "name": "Hidden Base - 4"
+    },
+    {
+      "name": "Pyramid Cave - 4"
+    },
+    {
+      "name": "Death Chamber - 4"
+    },
+    {
+      "name": "Eternal Engine - 4"
+    },
+    {
+      "name": "Meteor Herd - 4"
+    },
+    {
+      "name": "Crazy Gadget - 4"
+    },
+    {
+      "name": "Final Rush - 4"
+    },
+    {
+      "name": "Iron Gate - 4"
+    },
+    {
+      "name": "Dry Lagoon - 4"
+    },
+    {
+      "name": "Sand Ocean - 4"
+    },
+    {
+      "name": "Radical Highway - 4"
+    },
+    {
+      "name": "Egg Quarters - 4"
+    },
+    {
+      "name": "Lost Colony - 4"
+    },
+    {
+      "name": "Weapons Bed - 4"
+    },
+    {
+      "name": "Security Hall - 4"
+    },
+    {
+      "name": "White Jungle - 4"
+    },
+    {
+      "name": "Route 280 - 4"
+    },
+    {
+      "name": "Sky Rail - 4"
+    },
+    {
+      "name": "Mad Space - 4"
+    },
+    {
+      "name": "Cosmic Wall - 4"
+    },
+    {
+      "name": "Final Chase - 4"
+    },
+    {
+      "name": "Cannon Core - 4"
+    },
+    {
+      "name": "City Escape - 5"
+    },
+    {
+      "name": "Wild Canyon - 5"
+    },
+    {
+      "name": "Prison Lane - 5"
+    },
+    {
+      "name": "Metal Harbor - 5"
+    },
+    {
+      "name": "Green Forest - 5"
+    },
+    {
+      "name": "Pumpkin Hill - 5"
+    },
+    {
+      "name": "Mission Street - 5"
+    },
+    {
+      "name": "Aquatic Mine - 5"
+    },
+    {
+      "name": "Route 101 - 5"
+    },
+    {
+      "name": "Hidden Base - 5"
+    },
+    {
+      "name": "Pyramid Cave - 5"
+    },
+    {
+      "name": "Death Chamber - 5"
+    },
+    {
+      "name": "Eternal Engine - 5"
+    },
+    {
+      "name": "Meteor Herd - 5"
+    },
+    {
+      "name": "Crazy Gadget - 5"
+    },
+    {
+      "name": "Final Rush - 5"
+    },
+    {
+      "name": "Iron Gate - 5"
+    },
+    {
+      "name": "Dry Lagoon - 5"
+    },
+    {
+      "name": "Sand Ocean - 5"
+    },
+    {
+      "name": "Radical Highway - 5"
+    },
+    {
+      "name": "Egg Quarters - 5"
+    },
+    {
+      "name": "Lost Colony - 5"
+    },
+    {
+      "name": "Weapons Bed - 5"
+    },
+    {
+      "name": "Security Hall - 5"
+    },
+    {
+      "name": "White Jungle - 5"
+    },
+    {
+      "name": "Route 280 - 5"
+    },
+    {
+      "name": "Sky Rail - 5"
+    },
+    {
+      "name": "Mad Space - 5"
+    },
+    {
+      "name": "Cosmic Wall - 5"
+    },
+    {
+      "name": "Final Chase - 5"
+    },
+    {
+      "name": "Cannon Core - 5"
+    },
+    {
+      "name": "City Escape - Upgrade"
+    },
+    {
+      "name": "Wild Canyon - Upgrade"
+    },
+    {
+      "name": "Prison Lane - Upgrade"
+    },
+    {
+      "name": "Metal Harbor - Upgrade"
+    },
+    {
+      "name": "Green Forest - Upgrade"
+    },
+    {
+      "name": "Pumpkin Hill - Upgrade"
+    },
+    {
+      "name": "Mission Street - Upgrade"
+    },
+    {
+      "name": "Aquatic Mine - Upgrade"
+    },
+    {
+      "name": "Hidden Base - Upgrade"
+    },
+    {
+      "name": "Pyramid Cave - Upgrade"
+    },
+    {
+      "name": "Death Chamber - Upgrade"
+    },
+    {
+      "name": "Eternal Engine - Upgrade"
+    },
+    {
+      "name": "Meteor Herd - Upgrade"
+    },
+    {
+      "name": "Crazy Gadget - Upgrade"
+    },
+    {
+      "name": "Final Rush - Upgrade"
+    },
+    {
+      "name": "Iron Gate - Upgrade"
+    },
+    {
+      "name": "Dry Lagoon - Upgrade"
+    },
+    {
+      "name": "Sand Ocean - Upgrade"
+    },
+    {
+      "name": "Radical Highway - Upgrade"
+    },
+    {
+      "name": "Egg Quarters - Upgrade"
+    },
+    {
+      "name": "Lost Colony - Upgrade"
+    },
+    {
+      "name": "Weapons Bed - Upgrade"
+    },
+    {
+      "name": "Security Hall - Upgrade"
+    },
+    {
+      "name": "White Jungle - Upgrade"
+    },
+    {
+      "name": "Sky Rail - Upgrade"
+    },
+    {
+      "name": "Mad Space - Upgrade"
+    },
+    {
+      "name": "Cosmic Wall - Upgrade"
+    },
+    {
+      "name": "Final Chase - Upgrade"
+    },
+    {
+      "name": "Chao Garden - Beginner Race"
+    },
+    {
+      "name": "Chao Garden - Jewel Race"
+    },
+    {
+      "name": "Chao Garden - Challenge Race"
+    },
+    {
+      "name": "Chao Garden - Hero Race"
+    },
+    {
+      "name": "Chao Garden - Dark Race"
+    },
+    {
+      "name": "Chao Garden - Beginner Karate"
+    },
+    {
+      "name": "Chao Garden - Standard Karate"
+    },
+    {
+      "name": "Chao Garden - Expert Karate"
+    },
+    {
+      "name": "Chao Garden - Super Karate"
+    }
+  ]
+}

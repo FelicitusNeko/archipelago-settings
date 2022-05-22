@@ -1,0 +1,744 @@
+{
+  "category": "Starcraft 2 Wings of Liberty",
+  "readableName": "Starcraft 2: Wings of Liberty",
+  "index": 22,
+  "settings": [
+    {
+      "type": "string",
+      "name": "game_difficulty",
+      "readableName": "Game difficulty",
+      "description": "The difficulty of the campaign, affects enemy AI, starting units, and game speed.",
+      "values": {
+        "casual": "Casual",
+        "normal": "Normal",
+        "hard": "Hard",
+        "brutal": "Brutal"
+      },
+      "default": "casual"
+    },
+    {
+      "type": "string",
+      "name": "upgrade_bonus",
+      "readableName": "Upgrade bonus",
+      "description": "Determines what lab upgrade to use.",
+      "values": {
+        "ultra_capacitors": ["Ultra-Capacitors", "Boosts attack speed with every weapon upgrade"],
+        "vanadium_plating": ["Vanadium Plating", "Boosts life with every armor upgrade"]
+      },
+      "default": "ultra_capacitors"
+    },
+    {
+      "type": "string",
+      "name": "bunker_upgrade",
+      "readableName": "Bunker upgrade",
+      "description": "Determines what bunker lab upgrade to use, whether it is Shrike Turret which outfits bunkers with an automated turret or Fortified Bunker which boosts the life of bunkers.",
+      "values": {
+        "shrike_turret": ["Shrike Turret", "Outfits bunkers with an automated turret"],
+        "fortified_bunker": ["Fortified Bunker", "Boosts the life of bunkers"]
+      },
+      "default": "shrike_turret"
+    },
+    {
+      "type": "string",
+      "name": "all_in_map",
+      "readableName": "All-In map type",
+      "description": "Determines what version of All-In (final map) that will be generated for the campaign.",
+      "values": {
+        "ground": "Ground",
+        "air": "Air"
+      },
+      "default": "ground"
+    }
+  ],
+  "items": [
+    {
+      "name": "Marine"
+    },
+    {
+      "name": "Medic"
+    },
+    {
+      "name": "Firebat"
+    },
+    {
+      "name": "Marauder"
+    },
+    {
+      "name": "Reaper"
+    },
+    {
+      "name": "Hellion"
+    },
+    {
+      "name": "Vulture"
+    },
+    {
+      "name": "Goliath"
+    },
+    {
+      "name": "Diamondback"
+    },
+    {
+      "name": "Siege Tank"
+    },
+    {
+      "name": "Medivac"
+    },
+    {
+      "name": "Wraith"
+    },
+    {
+      "name": "Viking"
+    },
+    {
+      "name": "Banshee"
+    },
+    {
+      "name": "Battlecruiser"
+    },
+    {
+      "name": "Ghost"
+    },
+    {
+      "name": "Spectre"
+    },
+    {
+      "name": "Thor"
+    },
+    {
+      "name": "Progressive Infantry Weapon"
+    },
+    {
+      "name": "Progressive Infantry Armor"
+    },
+    {
+      "name": "Progressive Vehicle Weapon"
+    },
+    {
+      "name": "Progressive Vehicle Armor"
+    },
+    {
+      "name": "Progressive Ship Weapon"
+    },
+    {
+      "name": "Progressive Ship Armor"
+    },
+    {
+      "name": "Projectile Accelerator (Bunker)"
+    },
+    {
+      "name": "Neosteel Bunker (Bunker)"
+    },
+    {
+      "name": "Titanium Housing (Missile Turret)"
+    },
+    {
+      "name": "Hellstorm Batteries (Missile Turret)"
+    },
+    {
+      "name": "Advanced Construction (SCV)"
+    },
+    {
+      "name": "Dual-Fusion Welders (SCV)"
+    },
+    {
+      "name": "Fire-Suppression System (Building)"
+    },
+    {
+      "name": "Orbital Command (Building)"
+    },
+    {
+      "name": "Stimpack (Marine)"
+    },
+    {
+      "name": "Combat Shield (Marine)"
+    },
+    {
+      "name": "Advanced Medic Facilities (Medic)"
+    },
+    {
+      "name": "Stabilizer Medpacks (Medic)"
+    },
+    {
+      "name": "Incinerator Gauntlets (Firebat)"
+    },
+    {
+      "name": "Juggernaut Plating (Firebat)"
+    },
+    {
+      "name": "Concussive Shells (Marauder)"
+    },
+    {
+      "name": "Kinetic Foam (Marauder)"
+    },
+    {
+      "name": "U-238 Rounds (Reaper)"
+    },
+    {
+      "name": "G-4 Clusterbomb (Reaper)"
+    },
+    {
+      "name": "Twin-Linked Flamethrower (Hellion)"
+    },
+    {
+      "name": "Thermite Filaments (Hellion)"
+    },
+    {
+      "name": "Cerberus Mine (Vulture)"
+    },
+    {
+      "name": "Replenishable Magazine (Vulture)"
+    },
+    {
+      "name": "Multi-Lock Weapons System (Goliath)"
+    },
+    {
+      "name": "Ares-Class Targeting System (Goliath)"
+    },
+    {
+      "name": "Tri-Lithium Power Cell (Diamondback)"
+    },
+    {
+      "name": "Shaped Hull (Diamondback)"
+    },
+    {
+      "name": "Maelstrom Rounds (Siege Tank)"
+    },
+    {
+      "name": "Shaped Blast (Siege Tank)"
+    },
+    {
+      "name": "Rapid Deployment Tube (Medivac)"
+    },
+    {
+      "name": "Advanced Healing AI (Medivac)"
+    },
+    {
+      "name": "Tomahawk Power Cells (Wraith)"
+    },
+    {
+      "name": "Displacement Field (Wraith)"
+    },
+    {
+      "name": "Ripwave Missiles (Viking)"
+    },
+    {
+      "name": "Phobos-Class Weapons System (Viking)"
+    },
+    {
+      "name": "Cross-Spectrum Dampeners (Banshee)"
+    },
+    {
+      "name": "Shockwave Missile Battery (Banshee)"
+    },
+    {
+      "name": "Missile Pods (Battlecruiser)"
+    },
+    {
+      "name": "Defensive Matrix (Battlecruiser)"
+    },
+    {
+      "name": "Ocular Implants (Ghost)"
+    },
+    {
+      "name": "Crius Suit (Ghost)"
+    },
+    {
+      "name": "Psionic Lash (Spectre)"
+    },
+    {
+      "name": "Nyx-Class Cloaking Module (Spectre)"
+    },
+    {
+      "name": "330mm Barrage Cannon (Thor)"
+    },
+    {
+      "name": "Immortality Protocol (Thor)"
+    },
+    {
+      "name": "Bunker"
+    },
+    {
+      "name": "Missile Turret"
+    },
+    {
+      "name": "Sensor Tower"
+    },
+    {
+      "name": "War Pigs"
+    },
+    {
+      "name": "Devil Dogs"
+    },
+    {
+      "name": "Hammer Securities"
+    },
+    {
+      "name": "Spartan Company"
+    },
+    {
+      "name": "Siege Breakers"
+    },
+    {
+      "name": "Hel's Angel"
+    },
+    {
+      "name": "Dusk Wings"
+    },
+    {
+      "name": "Jackson's Revenge"
+    },
+    {
+      "name": "Ultra-Capacitors"
+    },
+    {
+      "name": "Vanadium Plating"
+    },
+    {
+      "name": "Orbital Depots"
+    },
+    {
+      "name": "Micro-Filtering"
+    },
+    {
+      "name": "Automated Refinery"
+    },
+    {
+      "name": "Command Center Reactor"
+    },
+    {
+      "name": "Raven"
+    },
+    {
+      "name": "Science Vessel"
+    },
+    {
+      "name": "Tech Reactor"
+    },
+    {
+      "name": "Orbital Strike"
+    },
+    {
+      "name": "Shrike Turret"
+    },
+    {
+      "name": "Fortified Bunker"
+    },
+    {
+      "name": "Planetary Fortress"
+    },
+    {
+      "name": "Perdition Turret"
+    },
+    {
+      "name": "Predator"
+    },
+    {
+      "name": "Hercules"
+    },
+    {
+      "name": "Cellular Reactor"
+    },
+    {
+      "name": "Regenerative Bio-Steel"
+    },
+    {
+      "name": "Hive Mind Emulator"
+    },
+    {
+      "name": "Psi Disrupter"
+    },
+    {
+      "name": "Zealot"
+    },
+    {
+      "name": "Stalker"
+    },
+    {
+      "name": "High Templar"
+    },
+    {
+      "name": "Dark Templar"
+    },
+    {
+      "name": "Immortal"
+    },
+    {
+      "name": "Colossus"
+    },
+    {
+      "name": "Phoenix"
+    },
+    {
+      "name": "Void Ray"
+    },
+    {
+      "name": "Carrier"
+    },
+    {
+      "name": "+5 Starting Minerals"
+    },
+    {
+      "name": "+5 Starting Vespene"
+    }
+  ],
+  "locations": [
+    {
+      "name": "Liberation Day: Victory"
+    },
+    {
+      "name": "Liberation Day: First Statue"
+    },
+    {
+      "name": "Liberation Day: Second Statue"
+    },
+    {
+      "name": "Liberation Day: Third Statue"
+    },
+    {
+      "name": "Liberation Day: Fourth Statue"
+    },
+    {
+      "name": "Liberation Day: Fifth Statue"
+    },
+    {
+      "name": "Liberation Day: Sixth Statue"
+    },
+    {
+      "name": "The Outlaws: Victory"
+    },
+    {
+      "name": "The Outlaws: Rebel Base"
+    },
+    {
+      "name": "Zero Hour: Victory"
+    },
+    {
+      "name": "Zero Hour: First Group Rescued"
+    },
+    {
+      "name": "Zero Hour: Second Group Rescued"
+    },
+    {
+      "name": "Zero Hour: Third Group Rescued"
+    },
+    {
+      "name": "Evacuation: Victory"
+    },
+    {
+      "name": "Evacuation: First Chysalis"
+    },
+    {
+      "name": "Evacuation: Second Chysalis"
+    },
+    {
+      "name": "Evacuation: Third Chysalis"
+    },
+    {
+      "name": "Outbreak: Victory"
+    },
+    {
+      "name": "Outbreak: Left Infestor"
+    },
+    {
+      "name": "Outbreak: Right Infestor"
+    },
+    {
+      "name": "Safe Haven: Victory"
+    },
+    {
+      "name": "Haven's Fall: Victory"
+    },
+    {
+      "name": "Smash and Grab: Victory"
+    },
+    {
+      "name": "Smash and Grab: First Relic"
+    },
+    {
+      "name": "Smash and Grab: Second Relic"
+    },
+    {
+      "name": "Smash and Grab: Third Relic"
+    },
+    {
+      "name": "Smash and Grab: Fourth Relic"
+    },
+    {
+      "name": "The Dig: Victory"
+    },
+    {
+      "name": "The Dig: Left Relic"
+    },
+    {
+      "name": "The Dig: Right Ground Relic"
+    },
+    {
+      "name": "The Dig: Right Cliff Relic"
+    },
+    {
+      "name": "The Moebius Factor: 3rd Data Core"
+    },
+    {
+      "name": "The Moebius Factor: 1st Data Core "
+    },
+    {
+      "name": "The Moebius Factor: 2nd Data Core"
+    },
+    {
+      "name": "The Moebius Factor: South Rescue"
+    },
+    {
+      "name": "The Moebius Factor: Wall Rescue"
+    },
+    {
+      "name": "The Moebius Factor: Mid Rescue"
+    },
+    {
+      "name": "The Moebius Factor: Nydus Roof Rescue"
+    },
+    {
+      "name": "The Moebius Factor: Alive Inside Rescue"
+    },
+    {
+      "name": "The Moebius Factor: Brutalisk"
+    },
+    {
+      "name": "Supernova: Victory"
+    },
+    {
+      "name": "Supernova: West Relic"
+    },
+    {
+      "name": "Supernova: North Relic"
+    },
+    {
+      "name": "Supernova: South Relic"
+    },
+    {
+      "name": "Supernova: East Relic"
+    },
+    {
+      "name": "Maw of the Void: Xel'Naga Vault"
+    },
+    {
+      "name": "Maw of the Void: Landing Zone Cleared"
+    },
+    {
+      "name": "Maw of the Void: Expansion Prisoners"
+    },
+    {
+      "name": "Maw of the Void: South Close Prisoners"
+    },
+    {
+      "name": "Maw of the Void: South Far Prisoners"
+    },
+    {
+      "name": "Maw of the Void: North Prisoners"
+    },
+    {
+      "name": "Devil's Playground: 8000 Minerals"
+    },
+    {
+      "name": "Devil's Playground: Tosh's Miners"
+    },
+    {
+      "name": "Devil's Playground: Brutalisk"
+    },
+    {
+      "name": "Welcome to the Jungle: 7 Canisters"
+    },
+    {
+      "name": "Welcome to the Jungle: Close Relic"
+    },
+    {
+      "name": "Welcome to the Jungle: West Relic"
+    },
+    {
+      "name": "Welcome to the Jungle: North-East Relic"
+    },
+    {
+      "name": "Breakout: Main Prison"
+    },
+    {
+      "name": "Breakout: Diamondback Prison"
+    },
+    {
+      "name": "Breakout: Siegetank Prison"
+    },
+    {
+      "name": "Ghost of a Chance: Psi-Indoctrinator"
+    },
+    {
+      "name": "Ghost of a Chance: Terrazine Tank"
+    },
+    {
+      "name": "Ghost of a Chance: Jorium Stockpile"
+    },
+    {
+      "name": "Ghost of a Chance: First Island Spectres"
+    },
+    {
+      "name": "Ghost of a Chance: Second Island Spectres"
+    },
+    {
+      "name": "Ghost of a Chance: Third Island Spectres"
+    },
+    {
+      "name": "The Great Train Robbery: 8 Trains"
+    },
+    {
+      "name": "The Great Train Robbery: North Defiler"
+    },
+    {
+      "name": "The Great Train Robbery: Mid Defiler"
+    },
+    {
+      "name": "The Great Train Robbery: South Defiler"
+    },
+    {
+      "name": "Cutthroat: Orlan's Planetary"
+    },
+    {
+      "name": "Cutthroat: Mira Han"
+    },
+    {
+      "name": "Cutthroat: North Relic"
+    },
+    {
+      "name": "Cutthroat: Mid Relic"
+    },
+    {
+      "name": "Cutthroat: Southwest Relic"
+    },
+    {
+      "name": "Engine of Destruction: Dominion Bases"
+    },
+    {
+      "name": "Engine of Destruction: Odin"
+    },
+    {
+      "name": "Engine of Destruction: Loki"
+    },
+    {
+      "name": "Engine of Destruction: Lab Devourer"
+    },
+    {
+      "name": "Engine of Destruction: North Devourer"
+    },
+    {
+      "name": "Engine of Destruction: Southeast Devourer"
+    },
+    {
+      "name": "Media Blitz: Full Upload"
+    },
+    {
+      "name": "Media Blitz: Tower 1"
+    },
+    {
+      "name": "Media Blitz: Tower 2"
+    },
+    {
+      "name": "Media Blitz: Tower 3"
+    },
+    {
+      "name": "Media Blitz: Science Facility"
+    },
+    {
+      "name": "Piercing the Shroud: Facility Escape"
+    },
+    {
+      "name": "Piercing the Shroud: Holding Cell Relic"
+    },
+    {
+      "name": "Piercing the Shroud: Brutalisk Relic"
+    },
+    {
+      "name": "Piercing the Shroud: First Escape Relic"
+    },
+    {
+      "name": "Piercing the Shroud: Second Escape Relic"
+    },
+    {
+      "name": "Piercing the Shroud: Brutalisk "
+    },
+    {
+      "name": "Whispers of Doom: Void Seeker Escape"
+    },
+    {
+      "name": "Whispers of Doom: First Hatchery"
+    },
+    {
+      "name": "Whispers of Doom: Second Hatchery"
+    },
+    {
+      "name": "Whispers of Doom: Third Hatchery"
+    },
+    {
+      "name": "A Sinister Turn: Preservers Freed"
+    },
+    {
+      "name": "A Sinister Turn: Robotics Facility"
+    },
+    {
+      "name": "A Sinister Turn: Dark Shrine"
+    },
+    {
+      "name": "A Sinister Turn: Templar Archives"
+    },
+    {
+      "name": "Echoes of the Future: Overmind"
+    },
+    {
+      "name": "Echoes of the Future: Close Obelisk"
+    },
+    {
+      "name": "Echoes of the Future: West Obelisk"
+    },
+    {
+      "name": "In Utter Darkness: Kills"
+    },
+    {
+      "name": "In Utter Darkness: Protoss Archive"
+    },
+    {
+      "name": "In Utter Darkness: Defeat"
+    },
+    {
+      "name": "Gates of Hell: Nydus Worms"
+    },
+    {
+      "name": "Gates of Hell: Large Army"
+    },
+    {
+      "name": "Belly of the Beast: Extract"
+    },
+    {
+      "name": "Belly of the Beast: First Charge"
+    },
+    {
+      "name": "Belly of the Beast: Second Charge"
+    },
+    {
+      "name": "Belly of the Beast: Third Charge"
+    },
+    {
+      "name": "Shatter the Sky: Platform Destroyed"
+    },
+    {
+      "name": "Shatter the Sky: Close Coolant Tower"
+    },
+    {
+      "name": "Shatter the Sky: Northwest Coolant Tower"
+    },
+    {
+      "name": "Shatter the Sky: Southeast Coolant Tower"
+    },
+    {
+      "name": "Shatter the Sky: Southwest Coolant Tower"
+    },
+    {
+      "name": "Shatter the Sky: Leviathan"
+    }
+  ]
+}
