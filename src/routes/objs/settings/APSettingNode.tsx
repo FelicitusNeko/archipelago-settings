@@ -116,12 +116,14 @@ export abstract class APSettingNode<
     if (!Array.isArray(value)) return null;
 
     /** An event handler which fires when the value for the weight is changed. */
-    const onWeightChange = (newVal: number) => {
-      const wValue = value.find((i) => i.value === valueName);
-      if (wValue) wValue.weight = newVal;
-      this.setState({
-        value: [...value],
-      });
+    const onWeightChange = (newVal: number|number[]) => {
+      if (!Array.isArray(newVal)) {
+        const wValue = value.find((i) => i.value === valueName);
+        if (wValue) wValue.weight = newVal;
+        this.setState({
+          value: [...value],
+        });
+      }
     };
 
     /** An event handler which fires when the delete button on a weight is clicked. */

@@ -89,7 +89,7 @@ const RealSaveToStorage = (() => {
   /** Data for a queued save operation, if any. */
   let queueAnother: [string, string] | undefined = undefined;
   /** The timeout for the next save operation, if any. */
-  let timeout: number | undefined = undefined;
+  let timeout: NodeJS.Timeout | undefined = undefined;
   const save = (playerName: string, description: string) => {
     // mark as running
     running = true;
@@ -128,7 +128,7 @@ const RealSaveToStorage = (() => {
   };
   return (playerName: string, description: string) => {
     if (!running) {
-      if (timeout) clearTimeout(timeout);
+      clearTimeout(timeout);
       timeout = setTimeout(save, 1000, playerName, description);
     } else queueAnother = [playerName, description];
   };

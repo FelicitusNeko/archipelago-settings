@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import * as serviceWorker from './serviceWorker';
 import './index.css';
@@ -13,10 +13,10 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <Router>
-        <Switch>
-          <Route path="/reduxtest" component={App} />
-          <Route component={SettingsTool} />
-        </Switch>
+        <Routes>
+          <Route path="/reduxtest" element={<App />} />
+          <Route element={<SettingsTool />} />
+        </Routes>
       </Router>
     </Provider>
   </React.StrictMode>,

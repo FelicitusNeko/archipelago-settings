@@ -53,10 +53,11 @@ export class APNumericSettingNode extends APSettingNode<APNumericSetting> {
     if (Array.isArray(value)) return null;
 
     /** An event handler which fires when the value for this setting is changed. */
-    const onSettingChange = (newVal: number) => {
-      this.setState({
-        value: newVal,
-      });
+    const onSettingChange = (newVal: number | number[]) => {
+      if (!Array.isArray(newVal))
+        this.setState({
+          value: newVal,
+        });
     };
 
     return (
@@ -105,10 +106,11 @@ export class APNumericSettingNode extends APSettingNode<APNumericSetting> {
       );
 
     /** An event handler that fires when the value selector's value changes. */
-    const onSettingChange = (newVal: number) => {
-      this.setState({
-        selector: newVal,
-      });
+    const onSettingChange = (newVal: number | number[]) => {
+      if (!Array.isArray(newVal))
+        this.setState({
+          selector: newVal,
+        });
     };
 
     /** An event handler that fires when the "Add value" button is clicked. */

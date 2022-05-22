@@ -25,9 +25,11 @@ function APItemQtyNode({
   const entityQty = entity as APGameItemAndQty;
   const { max, qty } = entityQty;
 
-  const onQtyChange = (newVal: number) => {
-    manager.setQty(entity, newVal);
-    save();
+  const onQtyChange = (newVal: number|number[]) => {
+    if (!Array.isArray(newVal)) {
+      manager.setQty(entity, newVal);
+      save();
+    }
   };
 
   const onCheckChange: React.ChangeEventHandler<HTMLInputElement> = ({
