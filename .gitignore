@@ -31,3 +31,4 @@ yarn-debug.log*
 yarn-error.log*
 **/*.code-workspace
 **/scripts/itemloc
+src/defs/categories/999-template.json
