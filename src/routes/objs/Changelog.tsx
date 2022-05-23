@@ -1,12 +1,10 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
-import changelogData from '../../defs/changelog.json';
 
 type ChangelogLine = (string | ChangelogLine)[];
+const changelogData:Record<string, ChangelogLine> = require("../../defs/changelog.json");
 
 const Changelog: React.FC = () => {
-  /** Changelog data, but typed. */
-  const tChangelogData = changelogData as Record<string, ChangelogLine>;
   /** Parsed data to display in the changelog. */
   const parsedData: string[] = [];
   /**
@@ -19,9 +17,9 @@ const Changelog: React.FC = () => {
     for (const line of data) if (Array.isArray(line)) Reader(line, level + 1);
     else parsedData.push(spacing + line);
   }
-  for (const version in tChangelogData) {
+  for (const version in changelogData) {
     parsedData.push(`#### ${version}`);
-    Reader(tChangelogData[version]);
+    Reader(changelogData[version]);
     parsedData.push('---');
   }
   parsedData.pop();

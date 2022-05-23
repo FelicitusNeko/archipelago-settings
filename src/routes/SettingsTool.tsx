@@ -17,7 +17,6 @@ import {
   APSavedSettingsCategory,
   useForceUpdate,
 } from "../defs/core";
-import { version } from "../../package.json";
 import {
   APCategoryList,
   GameSetting,
@@ -34,11 +33,12 @@ import { APHeaderStringNode } from "./objs/settings/APHeaderStringNode";
 import "./SettingsTool.css";
 
 const { localStorage, location, confirm } = window;
+const { version } = require("../../package.json");
 
 /**
  * Check a setting or item against its dependencies.
  * @param {string|null} category The category to check.
- * @param {ArchipelagoDependency} dep The dependency list to check against.
+ * @param {APDependency} dep The dependency list to check against.
  * @returns {boolean} True if all dependencies are met; otherwise false.
  */
 const checkDependencyV2 = (
@@ -453,7 +453,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
             />
           );
         else {
-          console.debug('Unrecognised setting', i);
+          console.debug("Unrecognised setting", i);
           return null;
         }
       });

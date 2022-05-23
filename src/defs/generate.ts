@@ -7,7 +7,6 @@ import {
 } from "./core";
 import { APCategoryData, APCategory } from "./categories/reader";
 
-import lttpSprites from "./LttP/sprites.json";
 import {
   APStringSetting,
   APStringSettingJson,
@@ -41,12 +40,11 @@ interface LttPSprite {
   author: string;
 }
 
+const lttpSprites: LttPSprite[] = require("./LttP/sprites.json");
+
 const LttPSpriteValue: Record<string, string> = Object.fromEntries([
   ["none", "LttP Link (Nintendo)"],
-  ...(lttpSprites as LttPSprite[]).map(({ file, name, author }) => [
-    file,
-    `${name} (${author})`,
-  ]),
+  ...lttpSprites.map(({ file, name, author }) => [file, `${name} (${author})`]),
 ]);
 
 const gameList: [string, string][] = APCategoryData.filter(

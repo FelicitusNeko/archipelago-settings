@@ -4,32 +4,6 @@ import { APMetaSetting, APMetaSettingJson } from "../generate";
 import { APItemManager } from "../../objs/entities/APItemManager";
 import { APLocationManager } from "../../objs/entities/APLocationManager";
 
-// afaik there really isn't any better way to do this with create-react-app
-import root from "./null.json";
-import lttp from "./000-lttp.json";
-import factorio from "./001-factorio.json";
-import minecraft from "./002-minecraft.json";
-import subnautica from "./003-subnautica.json";
-import sts from "./004-sts.json";
-import ror2 from "./005-ror2.json";
-import oot from "./006-oot.json";
-import timespin from "./007-timespin.json";
-import smetroid from "./008-sm.json";
-import evermore from "./009-soe.json";
-import ff1 from "./010-ff1.json";
-import roguelegacy from "./011-roguelegacy.json";
-import sm64 from "./012-sm64.json";
-import raft from "./013-raft.json";
-import v from "./014-vvvvvv.json";
-import meritous from "./015-meritous.json";
-import smz3 from "./016-smz3.json";
-import cf from "./017-checksfinder.json";
-import idle from "./018-archipidle.json";
-import hk from "./019-hollowknight.json";
-import witness from "./020-witness.json";
-import sa2b from "./021-sa2b.json";
-import sc2wol from "./022-starcraft2.json";
-
 /**
  * The JSON representation of an Archipelago category.
  * @since 1.0.0
@@ -68,34 +42,33 @@ interface APCategoryJson {
   locations?: APGameLocation[];
 }
 
-const APCategoryData = ([
-  root, // global settings
-  lttp, // inaugural
-  factorio, // 0.0.2
-  minecraft, // 0.1.0
-  subnautica, // 0.1.5
-  sts, // 0.1.7
-  ror2, // 0.1.7
-  oot, // 0.1.7
-  timespin, // 0.1.9
-  smetroid, // 0.2.0
-  evermore, // 0.2.0
-  ff1, // 0.2.1, no real support (must go to FFR website)
-  roguelegacy, // 0.2.3
-  sm64, // 0.2.4
-  raft, // 0.2.4
-  v, // 0.2.4
-  meritous, // 0.3.0
-  smz3, // 0.3.0
-  cf, // 0.3.0, no settings
-  idle, // 0.3.0, no settings, getting hidden outside of April
-  hk, // 0.3.1
-  witness, // 0.3.2
-  sa2b, // 0.3.2
-  sc2wol, // 0.3.2
-
+const APCategoryData:APCategoryJson[] = [
+  require("./null.json"),             // global settings
+  require("./000-lttp.json"),         // inaugural
+  require("./001-factorio.json"),     // 0.0.2
+  require("./002-minecraft.json"),    // 0.1.0
+  require("./003-subnautica.json"),   // 0.1.5
+  require("./004-sts.json"),          // 0.1.7
+  require("./005-ror2.json"),         // 0.1.7
+  require("./006-oot.json"),          // 0.1.7
+  require("./007-timespin.json"),     // 0.1.9
+  require("./008-sm.json"),           // 0.2.0
+  require("./009-soe.json"),          // 0.2.1
+  require("./010-ff1.json"),          // 0.2.1, no real support (must go to FFR website)
+  require("./011-roguelegacy.json"),  // 0.2.3
+  require("./012-sm64.json"),         // 0.2.4
+  require("./013-raft.json"),         // 0.2.4
+  require("./014-vvvvvv.json"),       // 0.2.4
+  require("./015-meritous.json"),     // 0.3.0
+  require("./016-smz3.json"),         // 0.3.0
+  require("./017-checksfinder.json"), // 0.3.0, no settings
+  require("./018-archipidle.json"),   // 0.3.0, no settings, only enabled in April
+  require("./019-hollowknight.json"), // 0.3.1
+  require("./020-witness.json"),      // 0.3.2
+  require("./021-sa2b.json"),         // 0.3.2
+  require("./022-starcraft2.json"),   // 0.3.2
 //] as APCategoryJson[]).sort((a,b) => a.index - b.index);
-] as APCategoryJson[]).sort((a,b) => {
+].sort((a,b) => {
   if (!a.category) return -1;
   if (!b.category) return 1;
   return (a.readableName ?? a.category).localeCompare(b.readableName ?? b.category);
@@ -103,6 +76,9 @@ const APCategoryData = ([
 
 // only bring out ArchipIDLE in April
 // haha its funy geddit
-if (new Date().getMonth() === 3) idle.disabled = false;
+if (new Date().getMonth() === 3) {
+  const idle = APCategoryData.find((i) => i.category === "ArchipIDLE");
+  if (idle) idle.disabled = false;
+}
 
 export { APCategoryData };
