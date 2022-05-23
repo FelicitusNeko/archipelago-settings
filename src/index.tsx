@@ -1,24 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import * as serviceWorker from './serviceWorker';
 import './index.css';
-import { store } from './app/store';
-import App from './routes/App';
 import SettingsTool from './routes/SettingsTool';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <Router>
-        <Routes>
-          <Route path="/reduxtest" element={<App />} />
-          <Route element={<SettingsTool />} />
-        </Routes>
-      </Router>
-    </Provider>
+    <SettingsTool />
   </React.StrictMode>,
   document.getElementById('root')
 );
