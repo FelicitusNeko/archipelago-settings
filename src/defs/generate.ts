@@ -81,9 +81,7 @@ const DeathLinkDefaults: APBooleanSettingJson = {
   default: false,
 };
 
-const APCategoryList: APCategory[] = APCategoryData.filter(
-  (i) => i.disabled !== true
-).map((i) => {
+const APCategoryList: APCategory[] = APCategoryData.map((i) => {
   const savedCategory = storedData
     ? storedData.categories.find((ii) => i.category === ii.category)
     : undefined;

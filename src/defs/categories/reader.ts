@@ -42,43 +42,51 @@ interface APCategoryJson {
   locations?: APGameLocation[];
 }
 
-const APCategoryData:APCategoryJson[] = [
-  require("./null.json"),             // global settings
-  require("./000-lttp.json"),         // inaugural
-  require("./001-factorio.json"),     // 0.0.2
-  require("./002-minecraft.json"),    // 0.1.0
-  require("./003-subnautica.json"),   // 0.1.5
-  require("./004-sts.json"),          // 0.1.7
-  require("./005-ror2.json"),         // 0.1.7
-  require("./006-oot.json"),          // 0.1.7
-  require("./007-timespin.json"),     // 0.1.9
-  require("./008-sm.json"),           // 0.2.0
-  require("./009-soe.json"),          // 0.2.1
-  require("./010-ff1.json"),          // 0.2.1, no real support (must go to FFR website)
-  require("./011-roguelegacy.json"),  // 0.2.3
-  require("./012-sm64.json"),         // 0.2.4
-  require("./013-raft.json"),         // 0.2.4
-  require("./014-vvvvvv.json"),       // 0.2.4
-  require("./015-meritous.json"),     // 0.3.0
-  require("./016-smz3.json"),         // 0.3.0
+const APCategoryData: APCategoryJson[] = [
+  require("./null.json"), // global settings
+  require("./000-lttp.json"), // inaugural
+  require("./001-factorio.json"), // 0.0.2
+  require("./002-minecraft.json"), // 0.1.0
+  require("./003-subnautica.json"), // 0.1.5
+  require("./004-sts.json"), // 0.1.7
+  require("./005-ror2.json"), // 0.1.7
+  require("./006-oot.json"), // 0.1.7
+  require("./007-timespin.json"), // 0.1.9
+  require("./008-sm.json"), // 0.2.0
+  require("./009-soe.json"), // 0.2.1
+  require("./010-ff1.json"), // 0.2.1, no real support (must go to FFR website)
+  require("./011-roguelegacy.json"), // 0.2.3
+  require("./012-sm64.json"), // 0.2.4
+  require("./013-raft.json"), // 0.2.4
+  require("./014-vvvvvv.json"), // 0.2.4
+  require("./015-meritous.json"), // 0.3.0
+  require("./016-smz3.json"), // 0.3.0
   require("./017-checksfinder.json"), // 0.3.0, no settings
-  require("./018-archipidle.json"),   // 0.3.0, no settings, only enabled in April
+  require("./018-archipidle.json"), // 0.3.0, no settings, only enabled in April
   require("./019-hollowknight.json"), // 0.3.1
-  require("./020-witness.json"),      // 0.3.2
-  require("./021-sa2b.json"),         // 0.3.2
-  require("./022-starcraft2.json"),   // 0.3.2
-//] as APCategoryJson[]).sort((a,b) => a.index - b.index);
-].sort((a,b) => {
-  if (!a.category) return -1;
-  if (!b.category) return 1;
-  return (a.readableName ?? a.category).localeCompare(b.readableName ?? b.category);
-});
+  require("./020-witness.json"), // 0.3.2
+  require("./021-sa2b.json"), // 0.3.2
+  require("./022-starcraft2.json"), // 0.3.2
+]
+  .map((i) => {
+    // only bring out ArchipIDLE in April
+    // haha its funy geddit
+    if (new Date().getMonth() === 3 && i.category === "ArchipIDLE")
+      i.disabled = false;
+    return i;
+  })
+  .filter((i) => i.disabled !== true)
+  //.sort((a,b) => a.index - b.index);
+  .sort((a, b) => {
+    if (!a.category) return -1;
+    if (!b.category) return 1;
+    return (a.readableName ?? a.category).localeCompare(
+      b.readableName ?? b.category
+    );
+  });
 
-// only bring out ArchipIDLE in April
-// haha its funy geddit
-if (new Date().getMonth() === 3) {
-  const idle = APCategoryData.find((i) => i.category === "ArchipIDLE");
-  if (idle) idle.disabled = false;
-}
+console.debug(
+  APCategoryData.map((i) => i.readableName ?? i.category ?? "Globals")
+);
 
 export { APCategoryData };
