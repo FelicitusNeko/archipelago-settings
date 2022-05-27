@@ -34,8 +34,7 @@
       "default": false
     },
     {
-      "type": "deathlink",
-      "name": "DeathLink"
+      "type": "deathlink"
     },
     {
       "type": "numeric",
@@ -47,7 +46,7 @@
       "randomable": true,
       "default": 15,
       "dependsOn": {
-        "DeathLink": [true]
+        "death_link": [true]
       }
     }
   ],
