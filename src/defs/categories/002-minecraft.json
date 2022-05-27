@@ -236,7 +236,8 @@
       "name": "Spyglass"
     },
     {
-      "name": "Bee Trap (Minecraft)"
+      "name": "Bee Trap",
+      "max": 0
     },
     {
       "name": "Structure Compass (Village)",
