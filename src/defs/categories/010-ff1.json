@@ -1,5 +1,6 @@
 {
   "category": "Final Fantasy",
+  "index": 10,
   "settings": [
     {
       "type": "string",
