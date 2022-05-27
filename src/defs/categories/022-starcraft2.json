@@ -22,8 +22,14 @@
       "readableName": "Upgrade bonus",
       "description": "Determines what lab upgrade to use.",
       "values": {
-        "ultra_capacitors": ["Ultra-Capacitors", "Boosts attack speed with every weapon upgrade"],
-        "vanadium_plating": ["Vanadium Plating", "Boosts life with every armor upgrade"]
+        "ultra_capacitors": [
+          "Ultra-Capacitors",
+          "Boosts attack speed with every weapon upgrade"
+        ],
+        "vanadium_plating": [
+          "Vanadium Plating",
+          "Boosts life with every armor upgrade"
+        ]
       },
       "default": "ultra_capacitors"
     },
@@ -33,7 +39,10 @@
       "readableName": "Bunker upgrade",
       "description": "Determines what bunker lab upgrade to use, whether it is Shrike Turret which outfits bunkers with an automated turret or Fortified Bunker which boosts the life of bunkers.",
       "values": {
-        "shrike_turret": ["Shrike Turret", "Outfits bunkers with an automated turret"],
+        "shrike_turret": [
+          "Shrike Turret",
+          "Outfits bunkers with an automated turret"
+        ],
         "fortified_bunker": ["Fortified Bunker", "Boosts the life of bunkers"]
       },
       "default": "shrike_turret"
@@ -48,6 +57,33 @@
         "air": "Air"
       },
       "default": "ground"
+    },
+    {
+      "type": "string",
+      "name": "mission_order",
+      "readableName": "Mission order",
+      "description": "Determines the order the missions are played in.",
+      "values": {
+        "vanilla": [
+          "Vanilla",
+          "Keeps the standard mission order and branching from the WoL Campaign."
+        ],
+        "vanilla_shuffled": [
+          "Vanilla Shuffled",
+          "Keeps same branching paths from the WoL Campaign but randomizes the order of missions within."
+        ]
+      },
+      "default": "vanilla"
+    },
+    {
+      "type": "boolean",
+      "name": "shuffle_protoss",
+      "readableName": "Shuffle Protoss missions",
+      "description": "Determines whether the three Protoss missions are included in the shuffle, if Vanilla Shuffled is enabled. If not, they will stay in their vanilla order, making them optional to complete the game.",
+      "default": false,
+      "dependsOn": {
+        "mission_order": ["vanilla_shuffled"]
+      }
     }
   ],
   "items": [
@@ -477,7 +513,7 @@
       "name": "The Dig: Right Cliff Relic"
     },
     {
-      "name": "The Moebius Factor: 3rd Data Core"
+      "name": "The Moebius Factor: Victory"
     },
     {
       "name": "The Moebius Factor: 1st Data Core "
@@ -519,7 +555,7 @@
       "name": "Supernova: East Relic"
     },
     {
-      "name": "Maw of the Void: Xel'Naga Vault"
+      "name": "Maw of the Void: Victory"
     },
     {
       "name": "Maw of the Void: Landing Zone Cleared"
@@ -537,7 +573,7 @@
       "name": "Maw of the Void: North Prisoners"
     },
     {
-      "name": "Devil's Playground: 8000 Minerals"
+      "name": "Devil's Playground: Victory"
     },
     {
       "name": "Devil's Playground: Tosh's Miners"
@@ -546,7 +582,7 @@
       "name": "Devil's Playground: Brutalisk"
     },
     {
-      "name": "Welcome to the Jungle: 7 Canisters"
+      "name": "Welcome to the Jungle: Victory"
     },
     {
       "name": "Welcome to the Jungle: Close Relic"
@@ -558,7 +594,7 @@
       "name": "Welcome to the Jungle: North-East Relic"
     },
     {
-      "name": "Breakout: Main Prison"
+      "name": "Breakout: Victory"
     },
     {
       "name": "Breakout: Diamondback Prison"
@@ -567,7 +603,7 @@
       "name": "Breakout: Siegetank Prison"
     },
     {
-      "name": "Ghost of a Chance: Psi-Indoctrinator"
+      "name": "Ghost of a Chance: Victory"
     },
     {
       "name": "Ghost of a Chance: Terrazine Tank"
@@ -585,7 +621,7 @@
       "name": "Ghost of a Chance: Third Island Spectres"
     },
     {
-      "name": "The Great Train Robbery: 8 Trains"
+      "name": "The Great Train Robbery: Victory"
     },
     {
       "name": "The Great Train Robbery: North Defiler"
@@ -597,7 +633,7 @@
       "name": "The Great Train Robbery: South Defiler"
     },
     {
-      "name": "Cutthroat: Orlan's Planetary"
+      "name": "Cutthroat: Victory"
     },
     {
       "name": "Cutthroat: Mira Han"
@@ -612,7 +648,7 @@
       "name": "Cutthroat: Southwest Relic"
     },
     {
-      "name": "Engine of Destruction: Dominion Bases"
+      "name": "Engine of Destruction: Victory"
     },
     {
       "name": "Engine of Destruction: Odin"
@@ -630,7 +666,7 @@
       "name": "Engine of Destruction: Southeast Devourer"
     },
     {
-      "name": "Media Blitz: Full Upload"
+      "name": "Media Blitz: Victory"
     },
     {
       "name": "Media Blitz: Tower 1"
@@ -645,7 +681,7 @@
       "name": "Media Blitz: Science Facility"
     },
     {
-      "name": "Piercing the Shroud: Facility Escape"
+      "name": "Piercing the Shroud: Victory"
     },
     {
       "name": "Piercing the Shroud: Holding Cell Relic"
@@ -663,7 +699,7 @@
       "name": "Piercing the Shroud: Brutalisk "
     },
     {
-      "name": "Whispers of Doom: Void Seeker Escape"
+      "name": "Whispers of Doom: Victory"
     },
     {
       "name": "Whispers of Doom: First Hatchery"
@@ -675,7 +711,7 @@
       "name": "Whispers of Doom: Third Hatchery"
     },
     {
-      "name": "A Sinister Turn: Preservers Freed"
+      "name": "A Sinister Turn: Victory"
     },
     {
       "name": "A Sinister Turn: Robotics Facility"
@@ -687,7 +723,7 @@
       "name": "A Sinister Turn: Templar Archives"
     },
     {
-      "name": "Echoes of the Future: Overmind"
+      "name": "Echoes of the Future: Victory"
     },
     {
       "name": "Echoes of the Future: Close Obelisk"
@@ -696,22 +732,22 @@
       "name": "Echoes of the Future: West Obelisk"
     },
     {
-      "name": "In Utter Darkness: Kills"
+      "name": "In Utter Darkness: Defeat"
     },
     {
       "name": "In Utter Darkness: Protoss Archive"
     },
     {
-      "name": "In Utter Darkness: Defeat"
+      "name": "In Utter Darkness: Kills"
     },
     {
-      "name": "Gates of Hell: Nydus Worms"
+      "name": "Gates of Hell: Victory"
     },
     {
       "name": "Gates of Hell: Large Army"
     },
     {
-      "name": "Belly of the Beast: Extract"
+      "name": "Belly of the Beast: Victory"
     },
     {
       "name": "Belly of the Beast: First Charge"
@@ -723,7 +759,7 @@
       "name": "Belly of the Beast: Third Charge"
     },
     {
-      "name": "Shatter the Sky: Platform Destroyed"
+      "name": "Shatter the Sky: Victory"
     },
     {
       "name": "Shatter the Sky: Close Coolant Tower"
