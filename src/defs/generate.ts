@@ -138,7 +138,14 @@ const APCategoryList: APCategory[] = APCategoryData.map((i) => {
 
             const stringJson = setting as APStringSettingJson;
             stringJson.values = Object.fromEntries(gameList);
-            stringJson.default = gameList[0][0];
+            const lowestIndex = Math.min(
+              ...APCategoryData.filter((i) => i.category !== null).map(
+                (i) => i.index
+              )
+            );
+            stringJson.default = APCategoryData.find(
+              (i) => i.index === lowestIndex
+            )!.category!;
             return new APStringSetting(
               i.category,
               stringJson,
