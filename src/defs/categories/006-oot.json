@@ -630,6 +630,16 @@
       "default": 7
     },
     {
+      "type": "numeric",
+      "name": "big_poe_count",
+      "readableName": "Big Poe Count",
+      "description": "Number of Big Poes required for the Poe Collector's item.",
+      "low": 0,
+      "high": 10,
+      "randomable": true,
+      "default": 1
+    },
+    {
       "type": "boolean",
       "name": "correct_chest_sizes",
       "readableName": "Big items, big chests",

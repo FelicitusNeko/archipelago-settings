@@ -48,7 +48,7 @@
       "name": "shuffle_structures",
       "readableName": "Shuffle structures",
       "description": "Enable shuffling of villages, outposts, fortresses, bastions, and cities.",
-      "default": true
+      "default": false
     },
     {
       "type": "boolean",
