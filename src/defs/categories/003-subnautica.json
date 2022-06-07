@@ -22,573 +22,609 @@
       "name": "Compass",
       "max": 1,
       "dependsOn": {
-        "item_pool": ["standard"]
+        "item_pool": [
+          "standard"
+        ]
       }
     },
     {
-      "name": "PlasteelTank",
-      "max": 1,
-      "readableName": "Lightweight High Capacity Tank"
+      "name": "Lightweight High Capacity Tank",
+      "max": 1
     },
     {
-      "name": "BaseUpgradeConsole",
-      "max": 1,
-      "readableName": "Vehicle Upgrade Console"
+      "name": "Vehicle Upgrade Console",
+      "max": 1
     },
     {
-      "name": "UltraGlideFins",
-      "max": 1,
-      "readableName": "Ultra Glide Fins"
+      "name": "Ultra Glide Fins",
+      "max": 1
     },
     {
-      "name": "CyclopsSonarModule",
+      "name": "Cyclops Sonar Upgrade",
       "max": 1,
-      "readableName": "Cyclops Sonar Upgrade",
       "dependsOn": {
-        "item_pool": ["standard"]
+        "item_pool": [
+          "standard"
+        ]
       }
     },
     {
-      "name": "ReinforcedDiveSuit",
+      "name": "Reinforced Dive Suit",
       "max": 1,
-      "readableName": "Reinforced Dive Suit",
       "dependsOn": {
-        "item_pool": ["standard"]
+        "item_pool": [
+          "standard"
+        ]
       }
     },
     {
-      "name": "CyclopsThermalReactorModule",
+      "name": "Cyclops Thermal Reactor Module",
       "max": 1,
-      "readableName": "Cyclops Thermal Reactor Module",
       "dependsOn": {
-        "item_pool": ["standard"]
+        "item_pool": [
+          "standard"
+        ]
       }
     },
     {
       "name": "Stillsuit",
       "max": 1,
       "dependsOn": {
-        "item_pool": ["standard"]
+        "item_pool": [
+          "standard"
+        ]
       }
     },
     {
-      "name": "BaseWaterParkFragment",
+      "name": "Alien Containment Fragment",
       "max": 2,
-      "readableName": "Alien Containment Fragment",
       "dependsOn": {
-        "item_pool": ["standard"]
+        "item_pool": [
+          "standard"
+        ]
       }
     },
     {
-      "name": "CyclopsDecoy",
+      "name": "Creature Decoy",
       "max": 1,
-      "readableName": "Creature Decoy",
       "dependsOn": {
-        "item_pool": ["standard"]
+        "item_pool": [
+          "standard"
+        ]
       }
     },
     {
-      "name": "CyclopsFireSuppressionModule",
+      "name": "Cyclops Fire Suppression System",
       "max": 1,
-      "readableName": "Cyclops Fire Suppression System",
       "dependsOn": {
-        "item_pool": ["standard"]
+        "item_pool": [
+          "standard"
+        ]
       }
     },
     {
-      "name": "SwimChargeFins",
+      "name": "Swim Charge Fins",
       "max": 1,
-      "readableName": "Swim Charge Fins",
       "dependsOn": {
-        "item_pool": ["standard"]
+        "item_pool": [
+          "standard"
+        ]
       }
     },
     {
-      "name": "RepulsionCannon",
+      "name": "Repulsion Cannon",
       "max": 1,
-      "readableName": "Repulsion Cannon",
       "dependsOn": {
-        "item_pool": ["standard"]
+        "item_pool": [
+          "standard"
+        ]
       }
     },
     {
-      "name": "CyclopsDecoyModule",
+      "name": "Cyclops Decoy Tube Upgrade",
       "max": 1,
-      "readableName": "Cyclops Decoy Tube Upgrade",
       "dependsOn": {
-        "item_pool": ["standard"]
+        "item_pool": [
+          "standard"
+        ]
       }
     },
     {
-      "name": "CyclopsShieldModule",
-      "max": 1,
-      "readableName": "Cyclops Shield Generator"
+      "name": "Cyclops Shield Generator",
+      "max": 1
     },
     {
-      "name": "CyclopsHullModule1",
-      "max": 1,
-      "readableName": "Cyclops Depth Module MK1"
+      "name": "Cyclops Depth Module MK1",
+      "max": 1
     },
     {
-      "name": "CyclopsSeamothRepairModule",
+      "name": "Cyclops Docking Bay Repair Module",
       "max": 1,
-      "readableName": "Cyclops Docking Bay Repair Module",
       "dependsOn": {
-        "item_pool": ["standard"]
+        "item_pool": [
+          "standard"
+        ]
       }
     },
     {
-      "name": "BatteryChargerFragment",
+      "name": "Battery Charger fragment",
       "max": 2,
-      "readableName": "Battery Charger fragment",
       "dependsOn": {
-        "item_pool": ["standard"]
+        "item_pool": [
+          "standard"
+        ]
       }
     },
     {
-      "name": "BeaconFragment",
+      "name": "Beacon Fragment",
       "max": 2,
-      "readableName": "Beacon Fragment",
       "dependsOn": {
-        "item_pool": ["standard"]
+        "item_pool": [
+          "standard"
+        ]
       }
     },
     {
-      "name": "BaseBioReactorFragment",
+      "name": "Bioreactor Fragment",
       "max": 2,
-      "readableName": "Bioreactor Fragment",
       "dependsOn": {
-        "item_pool": ["standard"]
+        "item_pool": [
+          "standard"
+        ]
       }
     },
     {
-      "name": "CyclopsBridgeFragment",
+      "name": "Cyclops Bridge Fragment",
+      "max": 3
+    },
+    {
+      "name": "Cyclops Engine Fragment",
+      "max": 3
+    },
+    {
+      "name": "Cyclops Hull Fragment",
+      "max": 3
+    },
+    {
+      "name": "Grav Trap Fragment",
+      "max": 2,
+      "dependsOn": {
+        "item_pool": [
+          "standard"
+        ]
+      }
+    },
+    {
+      "name": "Laser Cutter Fragment",
+      "max": 3
+    },
+    {
+      "name": "Light Stick Fragment",
+      "max": 1,
+      "dependsOn": {
+        "item_pool": [
+          "standard"
+        ]
+      }
+    },
+    {
+      "name": "Mobile Vehicle Bay Fragment",
+      "max": 3
+    },
+    {
+      "name": "Modification Station Fragment",
+      "max": 3
+    },
+    {
+      "name": "Moonpool Fragment",
+      "max": 2
+    },
+    {
+      "name": "Nuclear Reactor Fragment",
       "max": 3,
-      "readableName": "Cyclops Bridge Fragment"
+      "dependsOn": {
+        "item_pool": [
+          "standard"
+        ]
+      }
     },
     {
-      "name": "CyclopsEngineFragment",
+      "name": "Power Cell Charger Fragment",
+      "max": 2,
+      "dependsOn": {
+        "item_pool": [
+          "standard"
+        ]
+      }
+    },
+    {
+      "name": "Power Transmitter Fragment",
+      "max": 1,
+      "dependsOn": {
+        "item_pool": [
+          "standard"
+        ]
+      }
+    },
+    {
+      "name": "Prawn Suit Fragment",
+      "max": 4
+    },
+    {
+      "name": "Prawn Suit Drill Arm Fragment",
+      "max": 2,
+      "dependsOn": {
+        "item_pool": [
+          "standard"
+        ]
+      }
+    },
+    {
+      "name": "Prawn Suit Grappling Arm Fragment",
+      "max": 2,
+      "dependsOn": {
+        "item_pool": [
+          "standard"
+        ]
+      }
+    },
+    {
+      "name": "Prawn Suit Propulsion Cannon Fragment",
+      "max": 2,
+      "dependsOn": {
+        "item_pool": [
+          "standard"
+        ]
+      }
+    },
+    {
+      "name": "Prawn Suit Torpedo Arm Fragment",
+      "max": 2,
+      "dependsOn": {
+        "item_pool": [
+          "standard"
+        ]
+      }
+    },
+    {
+      "name": "Scanner Room Fragment",
       "max": 3,
-      "readableName": "Cyclops Engine Fragment"
-    },
-    {
-      "name": "CyclopsHullFragment",
-      "max": 3,
-      "readableName": "Cyclops Hull Fragment"
-    },
-    {
-      "name": "GravSphereFragment",
-      "max": 2,
-      "readableName": "Grav Trap Fragment",
       "dependsOn": {
-        "item_pool": ["standard"]
+        "item_pool": [
+          "standard"
+        ]
       }
     },
     {
-      "name": "LaserCutterFragment",
-      "max": 3,
-      "readableName": "Laser Cutter Fragment"
+      "name": "Seamoth Fragment",
+      "max": 5
     },
     {
-      "name": "TechlightFragment",
+      "name": "Stasis Rifle Fragment",
+      "max": 2,
+      "dependsOn": {
+        "item_pool": [
+          "standard"
+        ]
+      }
+    },
+    {
+      "name": "Thermal Plant Fragment",
+      "max": 2,
+      "dependsOn": {
+        "item_pool": [
+          "standard"
+        ]
+      }
+    },
+    {
+      "name": "Seaglide Fragment",
+      "max": 4
+    },
+    {
+      "name": "Radiation Suit",
+      "max": 1
+    },
+    {
+      "name": "Propulsion Cannon Fragment",
+      "max": 2
+    },
+    {
+      "name": "Neptune Launch Platform",
+      "max": 1
+    },
+    {
+      "name": "Ion Power Cell",
+      "max": 1
+    },
+    {
+      "name": "Exterior Growbed Fragment",
+      "max": 2,
+      "dependsOn": {
+        "item_pool": [
+          "standard"
+        ]
+      }
+    },
+    {
+      "name": "Picture Frame",
       "max": 1,
-      "readableName": "Light Stick Fragment",
       "dependsOn": {
-        "item_pool": ["standard"]
+        "item_pool": [
+          "standard"
+        ]
       }
     },
     {
-      "name": "ConstructorFragment",
-      "max": 3,
-      "readableName": "Mobile Vehicle Bay Fragment"
-    },
-    {
-      "name": "WorkbenchFragment",
-      "max": 3,
-      "readableName": "Modification Station Fragment"
-    },
-    {
-      "name": "MoonpoolFragment",
+      "name": "Bench Fragment",
       "max": 2,
-      "readableName": "Moonpool Fragment"
-    },
-    {
-      "name": "BaseNuclearReactorFragment",
-      "max": 3,
-      "readableName": "Nuclear Reactor Fragment",
       "dependsOn": {
-        "item_pool": ["standard"]
+        "item_pool": [
+          "standard"
+        ]
       }
     },
     {
-      "name": "PowerCellChargerFragment",
-      "max": 2,
-      "readableName": "Power Cell Charger Fragment",
-      "dependsOn": {
-        "item_pool": ["standard"]
-      }
-    },
-    {
-      "name": "PowerTransmitterFragment",
+      "name": "Basic Plant Pot",
       "max": 1,
-      "readableName": "Power Transmitter Fragment",
       "dependsOn": {
-        "item_pool": ["standard"]
+        "item_pool": [
+          "standard"
+        ]
       }
     },
     {
-      "name": "ExosuitFragment",
-      "max": 4,
-      "readableName": "Prawn Suit Fragment"
-    },
-    {
-      "name": "ExosuitDrillArmFragment",
-      "max": 2,
-      "readableName": "Prawn Suit Drill Arm Fragment",
-      "dependsOn": {
-        "item_pool": ["standard"]
-      }
-    },
-    {
-      "name": "ExosuitGrapplingArmFragment",
-      "max": 2,
-      "readableName": "Prawn Suit Grappling Arm Fragment",
-      "dependsOn": {
-        "item_pool": ["standard"]
-      }
-    },
-    {
-      "name": "ExosuitPropulsionArmFragment",
-      "max": 2,
-      "readableName": "Prawn Suit Propulsion Cannon Fragment",
-      "dependsOn": {
-        "item_pool": ["standard"]
-      }
-    },
-    {
-      "name": "ExosuitTorpedoArmFragment",
-      "max": 2,
-      "readableName": "Prawn Suit Torpedo Arm Fragment",
-      "dependsOn": {
-        "item_pool": ["standard"]
-      }
-    },
-    {
-      "name": "BaseMapRoomFragment",
-      "max": 3,
-      "readableName": "Scanner Room Fragment",
-      "dependsOn": {
-        "item_pool": ["standard"]
-      }
-    },
-    {
-      "name": "SeamothFragment",
-      "max": 5,
-      "readableName": "Seamoth Fragment"
-    },
-    {
-      "name": "StasisRifleFragment",
-      "max": 2,
-      "readableName": "Stasis Rifle Fragment",
-      "dependsOn": {
-        "item_pool": ["standard"]
-      }
-    },
-    {
-      "name": "ThermalPlantFragment",
-      "max": 2,
-      "readableName": "Thermal Plant Fragment",
-      "dependsOn": {
-        "item_pool": ["standard"]
-      }
-    },
-    {
-      "name": "SeaglideFragment",
-      "max": 4,
-      "readableName": "Seaglide Fragment"
-    },
-    {
-      "name": "RadiationSuit",
+      "name": "Interior Growbed",
       "max": 1,
-      "readableName": "Radiation Suit"
+      "dependsOn": {
+        "item_pool": [
+          "standard"
+        ]
+      }
     },
     {
-      "name": "PropulsionCannonFragment",
-      "max": 2,
-      "readableName": "Propulsion Cannon Fragment"
-    },
-    {
-      "name": "RocketBase",
+      "name": "Plant Shelf",
       "max": 1,
-      "readableName": "Neptune Launch Platform"
+      "dependsOn": {
+        "item_pool": [
+          "standard"
+        ]
+      }
     },
     {
-      "name": "PrecursorIonPowerCell",
-      "max": 1,
-      "readableName": "Ion Power Cell"
-    },
-    {
-      "name": "FarmingTrayFragment",
+      "name": "Observatory Fragment",
       "max": 2,
-      "readableName": "Exterior Growbed Fragment",
       "dependsOn": {
-        "item_pool": ["standard"]
+        "item_pool": [
+          "standard"
+        ]
       }
     },
     {
-      "name": "PictureFrameFragment",
-      "max": 1,
-      "readableName": "Picture Frame",
-      "dependsOn": {
-        "item_pool": ["standard"]
-      }
-    },
-    {
-      "name": "BenchFragment",
+      "name": "Multipurpose Room Fragment",
       "max": 2,
-      "readableName": "Bench Fragment",
       "dependsOn": {
-        "item_pool": ["standard"]
+        "item_pool": [
+          "standard"
+        ]
       }
     },
     {
-      "name": "PlanterPotFragment",
-      "max": 1,
-      "readableName": "Basic Plant Pot",
-      "dependsOn": {
-        "item_pool": ["standard"]
-      }
-    },
-    {
-      "name": "PlanterBoxFragment",
-      "max": 1,
-      "readableName": "Interior Growbed",
-      "dependsOn": {
-        "item_pool": ["standard"]
-      }
-    },
-    {
-      "name": "PlanterShelfFragment",
-      "max": 1,
-      "readableName": "Plant Shelf",
-      "dependsOn": {
-        "item_pool": ["standard"]
-      }
-    },
-    {
-      "name": "BaseObservatoryFragment",
+      "name": "Bulkhead Fragment",
       "max": 2,
-      "readableName": "Observatory Fragment",
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
-    },
-    {
-      "name": "BaseRoomFragment",
-      "max": 2,
-      "readableName": "Multipurpose Room Fragment",
-      "dependsOn": {
-        "item_pool": ["standard"]
-      }
-    },
-    {
-      "name": "BaseBulkheadFragment",
-      "max": 2,
-      "readableName": "Bulkhead Fragment",
-      "dependsOn": {
-        "item_pool": ["standard"]
+        "item_pool": [
+          "standard"
+        ]
       }
     },
     {
       "name": "Spotlight",
       "max": 1,
       "dependsOn": {
-        "item_pool": ["standard"]
+        "item_pool": [
+          "standard"
+        ]
       }
     },
     {
-      "name": "StarshipDesk",
+      "name": "Desk",
       "max": 2,
-      "readableName": "Desk",
       "dependsOn": {
-        "item_pool": ["standard"]
+        "item_pool": [
+          "standard"
+        ]
       }
     },
     {
-      "name": "StarshipChair",
+      "name": "Swivel Chair",
       "max": 1,
-      "readableName": "Swivel Chair",
       "dependsOn": {
-        "item_pool": ["standard"]
+        "item_pool": [
+          "standard"
+        ]
       }
     },
     {
-      "name": "StarshipChair2",
+      "name": "Office Chair",
       "max": 1,
-      "readableName": "Office Chair",
       "dependsOn": {
-        "item_pool": ["standard"]
+        "item_pool": [
+          "standard"
+        ]
       }
     },
     {
-      "name": "StarshipChair3",
+      "name": "Command Chair",
       "max": 1,
-      "readableName": "Command Chair",
       "dependsOn": {
-        "item_pool": ["standard"]
+        "item_pool": [
+          "standard"
+        ]
       }
     },
     {
-      "name": "LabCounter",
+      "name": "Counter",
       "max": 2,
-      "readableName": "Counter",
       "dependsOn": {
-        "item_pool": ["standard"]
+        "item_pool": [
+          "standard"
+        ]
       }
     },
     {
-      "name": "NarrowBed",
+      "name": "Single Bed",
       "max": 1,
-      "readableName": "Single Bed",
       "dependsOn": {
-        "item_pool": ["standard"]
+        "item_pool": [
+          "standard"
+        ]
       }
     },
     {
-      "name": "Bed1",
+      "name": "Basic Double Bed",
       "max": 1,
-      "readableName": "Basic Double Bed",
       "dependsOn": {
-        "item_pool": ["standard"]
+        "item_pool": [
+          "standard"
+        ]
       }
     },
     {
-      "name": "Bed2",
+      "name": "Quilted Double Bed",
       "max": 1,
-      "readableName": "Quilted Double Bed",
       "dependsOn": {
-        "item_pool": ["standard"]
+        "item_pool": [
+          "standard"
+        ]
       }
     },
     {
-      "name": "CoffeeVendingMachine",
+      "name": "Coffee Vending Machine",
       "max": 2,
-      "readableName": "Coffee Vending Machine",
       "dependsOn": {
-        "item_pool": ["standard"]
+        "item_pool": [
+          "standard"
+        ]
       }
     },
     {
-      "name": "Trashcans",
+      "name": "Trash Can",
       "max": 2,
-      "readableName": "Trash Can",
       "dependsOn": {
-        "item_pool": ["standard"]
+        "item_pool": [
+          "standard"
+        ]
       }
     },
     {
-      "name": "Techlight",
+      "name": "Floodlight",
       "max": 1,
-      "readableName": "Floodlight",
       "dependsOn": {
-        "item_pool": ["standard"]
+        "item_pool": [
+          "standard"
+        ]
       }
     },
     {
-      "name": "BarTable",
+      "name": "Bar Table",
       "max": 1,
-      "readableName": "Bar Table",
       "dependsOn": {
-        "item_pool": ["standard"]
+        "item_pool": [
+          "standard"
+        ]
       }
     },
     {
-      "name": "VendingMachine",
+      "name": "Vending Machine",
       "max": 1,
-      "readableName": "Vending Machine",
       "dependsOn": {
-        "item_pool": ["standard"]
+        "item_pool": [
+          "standard"
+        ]
       }
     },
     {
-      "name": "SingleWallShelf",
+      "name": "Single Wall Shelf",
       "max": 1,
-      "readableName": "Single Wall Shelf",
       "dependsOn": {
-        "item_pool": ["standard"]
+        "item_pool": [
+          "standard"
+        ]
       }
     },
     {
-      "name": "WallShelves",
+      "name": "Wall Shelves",
       "max": 1,
-      "readableName": "Wall Shelves",
       "dependsOn": {
-        "item_pool": ["standard"]
+        "item_pool": [
+          "standard"
+        ]
       }
     },
     {
-      "name": "PlanterPot2",
+      "name": "Round Plant Pot",
       "max": 1,
-      "readableName": "Round Plant Pot",
       "dependsOn": {
-        "item_pool": ["standard"]
+        "item_pool": [
+          "standard"
+        ]
       }
     },
     {
-      "name": "PlanterPot3",
+      "name": "Chic Plant Pot",
       "max": 1,
-      "readableName": "Chic Plant Pot",
       "dependsOn": {
-        "item_pool": ["standard"]
+        "item_pool": [
+          "standard"
+        ]
       }
     },
     {
-      "name": "LabTrashcan",
+      "name": "Nuclear Waste Disposal",
       "max": 1,
-      "readableName": "Nuclear Waste Disposal",
       "dependsOn": {
-        "item_pool": ["standard"]
+        "item_pool": [
+          "standard"
+        ]
       }
     },
     {
-      "name": "BasePlanter",
+      "name": "Wall Planter",
       "max": 1,
-      "readableName": "Wall Planter",
       "dependsOn": {
-        "item_pool": ["standard"]
+        "item_pool": [
+          "standard"
+        ]
       }
     },
     {
-      "name": "PrecursorIonBattery",
-      "max": 1,
-      "readableName": "Ion Battery"
+      "name": "Ion Battery",
+      "max": 1
     },
     {
-      "name": "RocketBaseLadder",
-      "max": 1,
-      "readableName": "Neptune Gantry"
+      "name": "Neptune Gantry",
+      "max": 1
     },
     {
-      "name": "RocketStage1",
-      "max": 1,
-      "readableName": "Neptune Boosters"
+      "name": "Neptune Boosters",
+      "max": 1
     },
     {
-      "name": "RocketStage2",
-      "max": 1,
-      "readableName": "Neptune Fuel Reserve"
+      "name": "Neptune Fuel Reserve",
+      "max": 1
     },
     {
-      "name": "RocketStage3",
-      "max": 1,
-      "readableName": "Neptune Cockpit"
+      "name": "Neptune Cockpit",
+      "max": 1
     },
     {
-      "name": "BaseFiltrationMachine",
+      "name": "Water Filtration Machine",
       "max": 1,
-      "readableName": "Water Filtration Machine",
       "dependsOn": {
-        "item_pool": ["standard"]
+        "item_pool": [
+          "standard"
+        ]
       }
     }
   ],

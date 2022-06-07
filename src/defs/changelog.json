@@ -10,7 +10,12 @@
       "**Ocarina of Time**: New option for Big Poe requirements"
     ],
     "**Ocarina of Time**: fixed descriptions of tunics",
-    "Internal: updated most Node packages"
+    "Internal: updated most Node packages",
+    "*Revision 1*:",
+    [
+      "**Subnautica**: Fixed item names (previously, game-internal names were being used instead of AP ones)",
+      "**The Witness**: Fixed an instance of mixed-up setting name and description"
+    ]
   ],
   "1.0.5": [
     "Internal: Unified DeathLink setting type in category definitions",
