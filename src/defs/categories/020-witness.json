@@ -28,8 +28,8 @@
     {
       "type": "boolean",
       "name": "shuffle_discarded_panels",
-      "readableName": "Discarded Panels will have items on them. Even disabled, solving certain Discarded Panels may still be necessary!",
-      "description": "Shuffle Discarded Panels",
+      "readableName": "Shuffle Discarded Panels",
+      "description": "Discarded Panels will have items on them. Even disabled, solving certain Discarded Panels may still be necessary!",
       "default": false
     },
     {
