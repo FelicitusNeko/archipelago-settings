@@ -1,6 +1,7 @@
 {
   "category": "Minecraft",
   "index": 2,
+  "notice": "The current Archipelago-compatible version of Minecraft is Java 1.19.",
   "settings": [
     {
       "type": "numeric",
@@ -234,6 +235,9 @@
     },
     {
       "name": "Spyglass"
+    },
+    {
+      "name": "Lead"
     },
     {
       "name": "Bee Trap",
@@ -591,6 +595,27 @@
     },
     {
       "name": "Star Trader"
+    },
+    {
+      "name": "Birthday Song"
+    },
+    {
+      "name": "Bukkit Bukkit"
+    },
+    {
+      "name": "It Spreads"
+    },
+    {
+      "name": "Sneak 100"
+    },
+    {
+      "name": "When the Squad Hops into Town"
+    },
+    {
+      "name": "With Our Powers Combined!"
+    },
+    {
+      "name": "You've Got a Friend in Me"
     }
   ]
 }

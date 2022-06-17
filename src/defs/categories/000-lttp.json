@@ -604,26 +604,42 @@
     },
     {
       "type": "boolean",
-      "name": "retro",
-      "readableName": "Retro mode",
-      "description": "This requires you to buy a quiver and pay rupees to shoot arrows, and adds Take Any caves to the game.",
+      "name": "retro_bow",
+      "readableName": "Retro Bow",
+      "description": "This requires you to buy a quiver and pay rupees to shoot arrows.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "retro_caves",
+      "readableName": "Retro Caves",
+      "description": "This adds Take Any caves to the game.",
       "default": false
     },
     {
       "type": "string",
       "name": "hints",
       "readableName": "In-game hint system",
-      "description": "Whether hints about important/expensive items or difficult locations show up in the in-game hint system.",
+      "description": "Whether hints about important items or difficult locations show up in the in-game hint system.",
       "values": {
         "off": "Off",
-        "vendors": [
-          "Vendors",
-          "No hint tiles, but Bottle Vendor and King Zora will tell you what they're selling"
-        ],
         "on": "On",
         "full": ["Full-on", "Every hint is good; no trolls"]
       },
       "default": "on"
+    },
+    {
+      "type": "string",
+      "name": "scams",
+      "readableName": "Vendor scams",
+      "description": "Whether or not the vendors will tell you what they're selling, or just immediately take your money.",
+      "values": {
+        "off": "Off",
+        "king_zora": "King Zora scams",
+        "bottle_merchant": "Bottle Merchant scams",
+        "all": "Both vendors scam"
+      },
+      "default": "off"
     },
     {
       "type": "boolean",
@@ -1010,7 +1026,7 @@
     {
       "name": "Silver Arrows",
       "dependsOn": {
-        "retro": [true]
+        "retro_bow": [true]
       }
     },
     {

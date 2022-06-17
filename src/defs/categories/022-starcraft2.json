@@ -84,6 +84,16 @@
       "dependsOn": {
         "mission_order": ["vanilla_shuffled"]
       }
+    },
+    {
+      "type": "boolean",
+      "name": "relegate_no_build",
+      "readableName": "Relegate no-build missions",
+      "description": "If enabled, all no-build missions besides the needed first one will be placed at the end of optional routes, so that none of them become required to complete the game.",
+      "default": true,
+      "dependsOn": {
+        "mission_order": ["vanilla_shuffled"]
+      }
     }
   ],
   "items": [
@@ -412,10 +422,13 @@
       "name": "Carrier"
     },
     {
-      "name": "+5 Starting Minerals"
+      "name": "+15 Starting Minerals"
     },
     {
-      "name": "+5 Starting Vespene"
+      "name": "+15 Starting Vespene"
+    },
+    {
+      "name": "+2 Starting Supply"
     }
   ],
   "locations": [

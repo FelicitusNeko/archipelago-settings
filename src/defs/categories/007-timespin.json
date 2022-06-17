@@ -73,6 +73,30 @@
       "default": false
     },
     {
+      "type": "boolean",
+      "name": "BossRando",
+      "readableName": "Boss randomizer",
+      "description": "Whether bosses will be shuffled.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "BossScaling",
+      "readableName": "Boss randomizer scaling",
+      "description": "Scales shuffled bosses' HP, Attack, and Experience awarded based on their new location.",
+      "default": true,
+      "dependsOn": {
+        "BossRando": [true]
+      }
+    },
+    {
+      "type": "boolean",
+      "name": "LoreChecks",
+      "readableName": "Lore checks",
+      "description": "Whether memories and journal entries will provide items.",
+      "default": false
+    },
+    {
       "type": "string",
       "name": "DamageRando",
       "readableName": "Damage rando",
@@ -99,12 +123,25 @@
       "default": 999
     },
     {
+      "type": "boolean",
+      "name": "BossHealing",
+      "readableName": "Heal after bosses",
+      "description": "Whether bosses heal Lunais to full health after defeat.",
+      "default": true,
+      "dependsOn": {
+        "BossRando": [true]
+      }
+    },
+    {
       "type": "string",
       "name": "ShopFill",
       "readableName": "Shop shuffle",
       "description": "Sets the items for sale in the Merchant Crow's shops.",
       "values": {
-        "default": ["Default", "No sunglasses or Trendy Jacket, but Sand Vials available."],
+        "default": [
+          "Default",
+          "No sunglasses or Trendy Jacket, but Sand Vials available."
+        ],
         "randomized": ["Randomized", "Up to four random items in each shop."],
         "vanilla": "Vanilla",
         "empty": "Empty"
@@ -135,7 +172,10 @@
       "description": "Sets the items that drop from enemies. This does not apply to boss reward checks.",
       "values": {
         "vanilla": "Vanilla",
-        "randomized": ["Randomized", "Each slot of every enemy's drop table is given a random use item or piece of equipment."],
+        "randomized": [
+          "Randomized",
+          "Each slot of every enemy's drop table is given a random use item or piece of equipment."
+        ],
         "empty": ["Empty", "Enemies drop nothing."]
       }
     },
@@ -758,640 +798,640 @@
   ],
   "locations": [
     {
-      "name": "Yo Momma 1"
+      "name": "Tutorial: Yo Momma 1"
     },
     {
-      "name": "Yo Momma 2"
+      "name": "Tutorial: Yo Momma 2"
     },
     {
-      "name": "Starter chest 2"
+      "name": "Lake Desolation: Starter chest 2"
     },
     {
-      "name": "Starter chest 3"
+      "name": "Lake Desolation: Starter chest 3"
     },
     {
-      "name": "Starter chest 1"
+      "name": "Lake Desolation: Starter chest 1"
     },
     {
-      "name": "Timespinner Wheel room"
+      "name": "Lake Desolation (Lower): Timespinner Wheel room"
     },
     {
-      "name": "Forget me not chest"
+      "name": "Lake Desolation: Forget me not chest"
     },
     {
-      "name": "Chicken chest"
+      "name": "Lake Desolation (Lower): Chicken chest"
     },
     {
-      "name": "Not so secret room"
+      "name": "Lake Desolation (Lower): Not so secret room"
     },
     {
-      "name": "Tank chest"
+      "name": "Lake Desolation (Upper): Tank chest"
     },
     {
-      "name": "Upper desolation Oxygen recovery room"
+      "name": "Lake Desolation (Upper): Oxygen recovery room"
     },
     {
-      "name": "Upper desolation secret"
+      "name": "Lake Desolation (Upper): Secret room"
     },
     {
-      "name": "Upper desolation double jump cave platform"
+      "name": "Lake Desolation (Upper): Double jump cave platform"
     },
     {
-      "name": "Upper desolation double jump cave floor"
+      "name": "Lake Desolation (Upper): Double jump cave floor"
     },
     {
-      "name": "Upper desolation sparrow chest"
+      "name": "Lake Desolation (Upper): Sparrow chest"
     },
     {
-      "name": "Crash site pedestal"
+      "name": "Lake Desolation (Upper): Crash site pedestal"
     },
     {
-      "name": "Crash site chest 1"
+      "name": "Lake Desolation (Upper): Crash site chest 1"
     },
     {
-      "name": "Crash site chest 2"
+      "name": "Lake Desolation (Upper): Crash site chest 2"
     },
     {
-      "name": "Kitty Boss"
+      "name": "Lake Desolation: Kitty Boss"
     },
     {
-      "name": "Library Basement"
+      "name": "Library: Basement"
     },
     {
-      "name": "Library warp gate"
+      "name": "Library: Warp gate"
     },
     {
-      "name": "Librarian"
+      "name": "Library: Librarian"
     },
     {
-      "name": "Reading nook chest"
+      "name": "Library: Reading nook chest"
     },
     {
-      "name": "Storage room chest 1"
+      "name": "Library: Storage room chest 1"
     },
     {
-      "name": "Storage room chest 2"
+      "name": "Library: Storage room chest 2"
     },
     {
-      "name": "Storage room chest 3"
+      "name": "Library: Storage room chest 3"
     },
     {
-      "name": "Backer room chest 5"
+      "name": "Library: Backer room chest 5"
     },
     {
-      "name": "Backer room chest 4"
+      "name": "Library: Backer room chest 4"
     },
     {
-      "name": "Backer room chest 3"
+      "name": "Library: Backer room chest 3"
     },
     {
-      "name": "Backer room chest 2"
+      "name": "Library: Backer room chest 2"
     },
     {
-      "name": "Backer room chest 1"
+      "name": "Library: Backer room chest 1"
     },
     {
-      "name": "Elevator Key not required"
+      "name": "Varndagroth Towers (Left): Elevator Key not required"
     },
     {
-      "name": "Ye olde Timespinner"
+      "name": "Varndagroth Towers (Left): Ye olde Timespinner"
     },
     {
-      "name": "Varndagroth left bottom floor"
+      "name": "Varndagroth Towers (Left): Bottom floor"
     },
     {
-      "name": "Left air vents secret"
+      "name": "Varndagroth Towers (Left): Air vents secret"
     },
     {
-      "name": "Left elevator chest"
+      "name": "Varndagroth Towers (Left): Elevator chest"
     },
     {
-      "name": "Varndagroth bridge"
+      "name": "Varndagroth Towers: Bridge"
     },
     {
-      "name": "Right Varndagroth elevator chest"
+      "name": "Varndagroth Towers (Right): Elevator chest"
     },
     {
-      "name": "Elevator card chest"
+      "name": "Varndagroth Towers (Right): Elevator card chest"
     },
     {
-      "name": "Air vents right"
+      "name": "Varndagroth Towers (Right): Air vents right chest"
     },
     {
-      "name": "Air Vents left"
+      "name": "Varndagroth Towers (Right): Air vents left chest"
     },
     {
-      "name": "Varndagroth right bottom floor"
+      "name": "Varndagroth Towers (Right): Bottom floor"
     },
     {
-      "name": "Varndagroth"
+      "name": "Varndagroth Towers (Right): Varndagroth"
     },
     {
-      "name": "Varndagroth Spider hell"
+      "name": "Varndagroth Towers (Right): Spider Hell"
     },
     {
-      "name": "Skeleton"
+      "name": "Sealed Caves (Xarion): Skeleton"
     },
     {
-      "name": "Sealed cave shroom jump room"
+      "name": "Sealed Caves (Xarion): Shroom jump room"
     },
     {
-      "name": "Sealed cave double shroom room"
+      "name": "Sealed Caves (Xarion): Double shroom room"
     },
     {
-      "name": "Sealed cave Mini jackpot room"
+      "name": "Sealed Caves (Xarion): Mini jackpot room"
     },
     {
-      "name": "Below sealed cave mini jackpot room"
+      "name": "Sealed Caves (Xarion): Below mini jackpot room"
     },
     {
-      "name": "Sealed cave secret room"
+      "name": "Sealed Caves (Xarion): Secret room"
     },
     {
-      "name": "Sealed cave bottom left"
+      "name": "Sealed Caves (Xarion): Bottom left room"
     },
     {
-      "name": "Last chance before Xarion"
+      "name": "Sealed Caves (Xarion): Last chance before Xarion"
     },
     {
-      "name": "Xarion"
+      "name": "Sealed Caves (Xarion): Xarion"
     },
     {
-      "name": "Upper sealed cave water hook"
+      "name": "Sealed Caves (Sirens): Water hook"
     },
     {
-      "name": "Upper sealed cave siren room right"
+      "name": "Sealed Caves (Sirens): Siren room underwater right"
     },
     {
-      "name": "Upper sealed cave siren room left"
+      "name": "Sealed Caves (Sirens): Siren room underwater left"
     },
     {
-      "name": "Upper sealed cave after sirens chest 1"
+      "name": "Sealed Caves (Sirens): Cave after sirens chest 1"
     },
     {
-      "name": "Upper sealed cave after sirens chest 2"
+      "name": "Sealed Caves (Sirens): Cave after sirens chest 2"
     },
     {
-      "name": "Military bomber chest"
+      "name": "Military Fortress: Bomber chest"
     },
     {
-      "name": "Close combat room"
+      "name": "Military Fortress: Close combat room"
     },
     {
-      "name": "Military soldiers bridge"
+      "name": "Military Fortress: Soldiers bridge"
     },
     {
-      "name": "Military giantess room"
+      "name": "Military Fortress: Giantess room"
     },
     {
-      "name": "Military giantess bridge"
+      "name": "Military Fortress: Giantess bridge"
     },
     {
-      "name": "Military B door chest 2"
+      "name": "Military Fortress: B door chest 2"
     },
     {
-      "name": "Military B door chest 1"
+      "name": "Military Fortress: B door chest 1"
     },
     {
-      "name": "Military pedestal"
+      "name": "Military Fortress: Pedestal"
     },
     {
-      "name": "Coffee break"
+      "name": "Lab: Coffee break"
     },
     {
-      "name": "Lower trash right"
+      "name": "Lab: Lower trash right"
     },
     {
-      "name": "Lower trash left"
+      "name": "Lab: Lower trash left"
     },
     {
-      "name": "Below lab entrance"
+      "name": "Lab: Below lab entrance"
     },
     {
-      "name": "Trash jump room"
+      "name": "Lab: Trash jump room"
     },
     {
-      "name": "Dynamo Works"
+      "name": "Lab: Dynamo Works"
     },
     {
-      "name": "Blob mom"
+      "name": "Lab: Genza (Blob Mom)"
     },
     {
-      "name": "Experiment #13"
+      "name": "Lab: Experiment #13"
     },
     {
-      "name": "Download and chest room"
+      "name": "Lab: Download and chest room chest"
     },
     {
-      "name": "Lab secret"
+      "name": "Lab: Lab secret"
     },
     {
-      "name": "Lab Spider hell"
+      "name": "Lab: Spider Hell"
     },
     {
-      "name": "Dad's bottom"
+      "name": "Emperor's Tower: Courtyard bottom chest"
     },
     {
-      "name": "Dad's courtyard floor secret"
+      "name": "Emperor's Tower: Courtyard floor secret"
     },
     {
-      "name": "Dad's courtyard chest"
+      "name": "Emperor's Tower: Courtyard upper chest"
     },
     {
-      "name": "Galactic sage room"
+      "name": "Emperor's Tower: Galactic sage room"
     },
     {
-      "name": "Bottom of Dad's right tower"
+      "name": "Emperor's Tower: Bottom right tower"
     },
     {
-      "name": "Wayyyy up there"
+      "name": "Emperor's Tower: Wayyyy up there"
     },
     {
-      "name": "Dad's left tower balcony"
+      "name": "Emperor's Tower: Left tower balcony"
     },
     {
-      "name": "Dad's Chambers chest"
+      "name": "Emperor's Tower: Emperor's Chambers chest"
     },
     {
-      "name": "Dad's Chambers pedestal"
+      "name": "Emperor's Tower: Emperor's Chambers pedestal"
     },
     {
-      "name": "Neliste's Bra"
+      "name": "Refugee Camp: Neliste's Bra"
     },
     {
-      "name": "Refugee camp storage chest 3"
+      "name": "Refugee Camp: Storage chest 3"
     },
     {
-      "name": "Refugee camp storage chest 2"
+      "name": "Refugee Camp: Storage chest 2"
     },
     {
-      "name": "Refugee camp storage chest 1"
+      "name": "Refugee Camp: Storage chest 1"
     },
     {
-      "name": "Refugee camp roof"
+      "name": "Forest: Refugee camp roof"
     },
     {
-      "name": "Forest bat jump ledge"
+      "name": "Forest: Bat jump ledge"
     },
     {
-      "name": "Forest green platform secret"
+      "name": "Forest: Green platform secret"
     },
     {
-      "name": "Forest rats guarded chest"
+      "name": "Forest: Rats guarded chest"
     },
     {
-      "name": "Waterfall chest 1"
+      "name": "Forest: Waterfall chest 1"
     },
     {
-      "name": "Waterfall chest 2"
+      "name": "Forest: Waterfall chest 2"
     },
     {
-      "name": "Forest batcave"
+      "name": "Forest: Batcave"
     },
     {
-      "name": "In the moat"
+      "name": "Castle Ramparts: In the moat"
     },
     {
-      "name": "Before Serene single bat cave"
+      "name": "Forest: Before Serene single bat cave"
     },
     {
-      "name": "Upper Serene rat nest"
+      "name": "Lake Serene (Upper): Rat nest"
     },
     {
-      "name": "Upper Serene double jump cave platform"
+      "name": "Lake Serene (Upper): Double jump cave platform"
     },
     {
-      "name": "Upper Serene double jump cave floor"
+      "name": "Lake Serene (Upper): Double jump cave floor"
     },
     {
-      "name": "Upper Serene cave secret"
+      "name": "Lake Serene (Upper): Cave secret"
     },
     {
-      "name": "Serene behind the vines"
+      "name": "Lake Serene: Behind the vines"
     },
     {
-      "name": "Pyramid keys room"
+      "name": "Lake Serene: Pyramid keys room"
     },
     {
-      "name": "Deep dive"
+      "name": "Lake Serene (Lower): Deep dive"
     },
     {
-      "name": "Under the eels"
+      "name": "Lake Serene (Lower): Under the eels"
     },
     {
-      "name": "Water spikes room"
+      "name": "Lake Serene (Lower): Water spikes room"
     },
     {
-      "name": "Underwater secret"
+      "name": "Lake Serene (Lower): Underwater secret"
     },
     {
-      "name": "T chest"
+      "name": "Lake Serene (Lower): T chest"
     },
     {
-      "name": "Past the eels"
+      "name": "Lake Serene (Lower): Past the eels"
     },
     {
-      "name": "Underwater pedestal"
+      "name": "Lake Serene (Lower): Underwater pedestal"
     },
     {
-      "name": "Banishment shroom jump room"
+      "name": "Caves of Banishment (Maw): Shroom jump room"
     },
     {
-      "name": "Banishment secret room"
+      "name": "Caves of Banishment (Maw): Secret room"
     },
     {
-      "name": "Banishment bottom left"
+      "name": "Caves of Banishment (Maw): Bottom left room"
     },
     {
-      "name": "Banishment single shroom room"
+      "name": "Caves of Banishment (Maw): Single shroom room"
     },
     {
-      "name": "Banishment jackpot room chest 1"
+      "name": "Caves of Banishment (Maw): Jackpot room chest 1"
     },
     {
-      "name": "Banishment jackpot room chest 2"
+      "name": "Caves of Banishment (Maw): Jackpot room chest 2"
     },
     {
-      "name": "Banishment jackpot room chest 3"
+      "name": "Caves of Banishment (Maw): Jackpot room chest 3"
     },
     {
-      "name": "Banishment jackpot room chest 4"
+      "name": "Caves of Banishment (Maw): Jackpot room chest 4"
     },
     {
-      "name": "Banishment pedestal"
+      "name": "Caves of Banishment (Maw): Pedestal"
     },
     {
-      "name": "Last chance before Maw"
+      "name": "Caves of Banishment (Maw): Last chance before Maw"
     },
     {
-      "name": "Mineshaft"
+      "name": "Caves of Banishment (Maw): Mineshaft"
     },
     {
-      "name": "Wyvern room"
+      "name": "Caves of Banishment (Sirens): Wyvern room"
     },
     {
-      "name": "Upper banishment above sirens"
+      "name": "Caves of Banishment (Sirens): Siren room above water chest"
     },
     {
-      "name": "Under banishment sirens left"
+      "name": "Caves of Banishment (Sirens): Siren room underwater left chest"
     },
     {
-      "name": "Under banishment sirens right"
+      "name": "Caves of Banishment (Sirens): Siren room underwater right chest"
     },
     {
-      "name": "Banishment water hook"
+      "name": "Caves of Banishment (Sirens): Water hook"
     },
     {
-      "name": "Castle bomber chest"
+      "name": "Castle Ramparts: Bomber chest"
     },
     {
-      "name": "Ramparts Freeze the engineer"
+      "name": "Castle Ramparts: Freeze the engineer"
     },
     {
-      "name": "Ramparts Giantess guarded room"
+      "name": "Castle Ramparts: Giantess guarded room"
     },
     {
-      "name": "Ramparts Knight and archer guarded room"
+      "name": "Castle Ramparts: Knight and archer guarded room"
     },
     {
-      "name": "Ramparts pedestal"
+      "name": "Castle Ramparts: Pedestal"
     },
     {
-      "name": "Castle basement secret pedestal"
+      "name": "Castle Keep: Basement secret pedestal"
     },
     {
-      "name": "Clean the castle basement"
+      "name": "Castle Keep: Clean the castle basement"
     },
     {
-      "name": "Yas queen room"
+      "name": "Castle Keep: Yas queen room"
     },
     {
-      "name": "Castle basement giantess"
+      "name": "Castle Keep: Giantess guarded chest"
     },
     {
-      "name": "Omelette chest"
+      "name": "Castle Keep: Omelette chest"
     },
     {
-      "name": "Just an egg"
+      "name": "Castle Keep: Just an egg"
     },
     {
-      "name": "Under the twins"
+      "name": "Castle Keep: Under the twins"
     },
     {
-      "name": "Twins"
+      "name": "Castle Keep: Twins"
     },
     {
-      "name": "Royal guard tiny room"
+      "name": "Castle Keep: Royal guard tiny room"
     },
     {
-      "name": "Royal tower floor secret"
+      "name": "Royal Towers: Floor secret"
     },
     {
-      "name": "Royal towers pre-climb gap"
+      "name": "Royal Towers: Pre-climb gap"
     },
     {
-      "name": "Royal towers long balcony"
+      "name": "Royal Towers: Long balcony"
     },
     {
-      "name": "Next to bottom royal tower struggle juggle"
+      "name": "Royal Towers: Past bottom struggle juggle"
     },
     {
-      "name": "Bottom royal tower struggle juggle"
+      "name": "Royal Towers: Bottom struggle juggle"
     },
     {
-      "name": "Top royal tower struggle juggle"
+      "name": "Royal Towers: Top struggle juggle"
     },
     {
-      "name": "No struggle required"
+      "name": "Royal Towers: No struggle required"
     },
     {
-      "name": "Right tower freebie"
+      "name": "Royal Towers: Right tower freebie"
     },
     {
-      "name": "Royal towers left small balcony"
+      "name": "Royal Towers: Left tower small balcony"
     },
     {
-      "name": "Royal tower left royal guard"
+      "name": "Royal Towers: Left tower royal guard"
     },
     {
-      "name": "Before Aelana"
+      "name": "Royal Towers: Before Aelana"
     },
     {
-      "name": "Aelana's attic"
+      "name": "Royal Towers: Aelana's attic"
     },
     {
-      "name": "Aelana's chest"
+      "name": "Royal Towers: Aelana's chest"
     },
     {
-      "name": "Aelana's pedestal"
+      "name": "Royal Towers: Aelana's pedestal"
     },
     {
-      "name": "Library terminal 2 (Lachiem)"
+      "name": "Library: Terminal 2 (Lachiem)"
     },
     {
-      "name": "Library terminal 1 (Windaria)"
+      "name": "Library: Terminal 1 (Windaria)"
     },
     {
-      "name": "Library terminal 3 (Emporer Nuvius)"
+      "name": "Library: Terminal 3 (Emporer Nuvius)"
     },
     {
-      "name": "V terminal 1 (War of the Sisters)"
+      "name": "Library: V terminal 1 (War of the Sisters)"
     },
     {
-      "name": "V terminal 2 (Lake Desolation Map)"
+      "name": "Library: V terminal 2 (Lake Desolation Map)"
     },
     {
-      "name": "V terminal 3 (Vilete)"
+      "name": "Library: V terminal 3 (Vilete)"
     },
     {
-      "name": "Backer room terminal (Vandagray Metropolis Map)"
+      "name": "Library: Backer room terminal (Vandagray Metropolis Map)"
     },
     {
-      "name": "Medbay terminal (Bleakness Research)"
+      "name": "Varndagroth Towers (Right): Medbay terminal (Bleakness Research)"
     },
     {
-      "name": "Chest and download terminal (Experiment #13)"
+      "name": "Lab: Download and chest room terminal (Experiment #13)"
     },
     {
-      "name": "Lab terminal middle (Amadeus Laboratory Map)"
+      "name": "Lab: Middle terminal (Amadeus Laboratory Map)"
     },
     {
-      "name": "Sentry platform terminal (Origins)"
+      "name": "Lab: Sentry platform terminal (Origins)"
     },
     {
-      "name": "Experiment 13 terminal (W.R.E.C Farewell)"
+      "name": "Lab: Experiment 13 terminal (W.R.E.C Farewell)"
     },
     {
-      "name": "Lab terminal left (Biotechnology)"
+      "name": "Lab: Left terminal (Biotechnology)"
     },
     {
-      "name": "Lab terminal right (Experiment #11)"
+      "name": "Lab: Right terminal (Experiment #11)"
     },
     {
-      "name": "Advisor jump"
+      "name": "Castle Keep: Advisor jump"
     },
     {
-      "name": "Underwater banishment sirens right ground"
+      "name": "Caves of Banishment (Sirens): Siren room underwater right ground"
     },
     {
-      "name": "Plasma Crystal"
+      "name": "Caves of Banishment (Maw): Plasma Crystal"
     },
     {
-      "name": "Chicken ledge"
+      "name": "Lake Serene (Upper): Chicken ledge"
     },
     {
-      "name": "Before Big Bird"
+      "name": "Lake Serene: Before Big Bird"
     },
     {
-      "name": "Cantoran"
+      "name": "Lake Serene: Cantoran"
     },
     {
-      "name": "Memory - Coyote Jump (Time Messenger)"
+      "name": "Lake Desolation: Memory - Coyote Jump (Time Messenger)"
     },
     {
-      "name": "Memory - Waterway (A Message)"
+      "name": "Library: Memory - Waterway (A Message)"
     },
     {
-      "name": "Memory - Library Gap (Lachiemi Sun)"
+      "name": "Library: Memory - Library Gap (Lachiemi Sun)"
     },
     {
-      "name": "Memory - Mr. Hat Portrait (Moonlit Night)"
+      "name": "Library: Memory - Mr. Hat Portrait (Moonlit Night)"
     },
     {
-      "name": "Memory - Left Elevator (Nomads)"
+      "name": "Varndagroth Towers (Left): Memory - Elevator (Nomads)"
     },
     {
-      "name": "Memory - Siren Elevator (Childhood)"
+      "name": "Varndagroth Towers: Memory - Siren Elevator (Childhood)"
     },
     {
-      "name": "Memory - Varndagroth Right Bottom (Faron)"
+      "name": "Varndagroth Towers (Right): Memory - Bottom (Faron)"
     },
     {
-      "name": "Memory - Bomber Climb (A Solution)"
+      "name": "Military Fortress: Memory - Bomber Climb (A Solution)"
     },
     {
-      "name": "Memory - Genza's Secret Stash 1 (An Old Friend)"
+      "name": "Lab: Memory - Genza's Secret Stash 1 (An Old Friend)"
     },
     {
-      "name": "Memory - Genza's Secret Stash 2 (Twilight Dinner)"
+      "name": "Lab: Memory - Genza's Secret Stash 2 (Twilight Dinner)"
     },
     {
-      "name": "Memory - Way Up There (Final Circle)"
+      "name": "Emperor's Tower: Memory - Way Up There (Final Circle)"
     },
     {
-      "name": "Journal - Forest Rats (Lachiem Expedition)"
+      "name": "Forest: Journal - Rats (Lachiem Expedition)"
     },
     {
-      "name": "Journal - Forest Bat Jump Ledge (Peace Treaty)"
+      "name": "Forest: Journal - Bat Jump Ledge (Peace Treaty)"
     },
     {
-      "name": "Journal - Floating in Moat (Prime Edicts)"
+      "name": "Castle Ramparts: Journal - Floating in Moat (Prime Edicts)"
     },
     {
-      "name": "Journal - Archer + Knight (Declaration of Independence)"
+      "name": "Castle Ramparts: Journal - Archer + Knight (Declaration of Independence)"
     },
     {
-      "name": "Journal - Under the Twins (Letter of Reference)"
+      "name": "Castle Keep: Journal - Under the Twins (Letter of Reference)"
     },
     {
-      "name": "Journal - Castle Loop Giantess (Political Advice)"
+      "name": "Castle Keep: Journal - Castle Loop Giantess (Political Advice)"
     },
     {
-      "name": "Journal - Aelana's Room (Diplomatic Missive)"
+      "name": "Royal Towers: Journal - Aelana's Room (Diplomatic Missive)"
     },
     {
-      "name": "Journal - Top Struggle Juggle Base (War of the Sisters)"
+      "name": "Royal Towers: Journal - Top Struggle Juggle Base (War of the Sisters)"
     },
     {
-      "name": "Journal - Aelana Boss (Stained Letter)"
+      "name": "Royal Towers: Journal - Aelana Boss (Stained Letter)"
     },
     {
-      "name": "Journal - Near Bottom Struggle Juggle (Mission Findings)"
+      "name": "Royal Towers: Journal - Near Bottom Struggle Juggle (Mission Findings)"
     },
     {
-      "name": "Journal - Lower Left Maw Caves (Naivety)"
+      "name": "Caves of Banishment (Maw): Journal - Lower Left Caves (Naivety)"
     },
     {
-      "name": "Nightmare Door chest"
+      "name": "Ancient Pyramid: Nightmare Door chest"
     },
     {
-      "name": "Ravenlord post fight (pedestal)"
+      "name": "Ravenlord: Post fight (pedestal)"
     },
     {
-      "name": "Ifrit post fight (pedestal)"
+      "name": "Ifrit: Post fight (pedestal)"
     },
     {
-      "name": "Gyre chest 1"
+      "name": "Temporal Gyre: Chest 1"
     },
     {
-      "name": "Gyre chest 2"
+      "name": "Temporal Gyre: Chest 2"
     },
     {
-      "name": "Gyre chest 3"
+      "name": "Temporal Gyre: Chest 3"
     },
     {
-      "name": "Ravenlord pre fight"
+      "name": "Ravenlord: Pre fight"
     },
     {
-      "name": "Ravenlord post fight (chest)"
+      "name": "Ravenlord: Post fight (chest)"
     },
     {
-      "name": "Ifrit pre fight"
+      "name": "Ifrit: Pre fight"
     },
     {
-      "name": "Ifrit post fight (chest)"
+      "name": "Ifrit: Post fight (chest)"
     },
     {
-      "name": "Why not it's right there"
+      "name": "Ancient Pyramid: Why not it's right there"
     },
     {
-      "name": "Conviction guarded room"
+      "name": "Ancient Pyramid: Conviction guarded room"
     },
     {
-      "name": "Pit secret room"
+      "name": "Ancient Pyramid: Pit secret room"
     },
     {
-      "name": "Regret chest"
+      "name": "Ancient Pyramid: Regret chest"
     }
   ]
 }

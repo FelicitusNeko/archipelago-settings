@@ -394,8 +394,8 @@
       "type": "numeric",
       "name": "RandomCharmCosts",
       "readableName": "Random Charm Costs",
-      "description": "Total Notch Cost of all Charms together. Set to -1 for vanilla costs. Vanilla sums to 90. This value is distributed among all charms in a random fashion.",
-      "low": -1,
+      "description": "Total Notch Cost of all Charms together. Set to -1 for vanilla costs, or to -2 to shuffle the vanilla costs. Vanilla sums to 90. This value is distributed among all charms in a random fashion.",
+      "low": -2,
       "high": 240,
       "randomable": true,
       "default": -1
@@ -427,6 +427,43 @@
       "description": "For each slot, add a location to the Egg Shop and a Geo drop to the item pool.",
       "low": 0,
       "high": 16,
+      "randomable": true,
+      "default": 0
+    },
+    {
+      "type": "string",
+      "name": "Goal",
+      "readableName": "Goal",
+      "description": "Determines which goal will send a victory condition to the AP server.",
+      "values": {
+        "any": "Any",
+        "hollowknight": "Hollow Knight",
+        "siblings": "Siblings",
+        "radiance": "Radiance"
+      },
+      "default": "any"
+    },
+    {
+      "type": "string",
+      "name": "WhitePalace",
+      "readableName": "White Palace",
+      "description": "Whether or not to include White Palace or not. *Note*: Even if excluded, the King Fragment check may still be required if charms are vanilla.",
+      "values": {
+        "exclude": "Exclude",
+        "kingfragment": "King Fragment only",
+        "nopathofpain": "Exclude Path of Pain",
+        "include": "Include everything"
+      },
+      "default": "exclude"
+    },
+    {
+      "type": "numeric",
+      "name": "StartingGeo",
+      "readableName": "Starting Geo",
+      "description": "The amount of Geo you start with.",
+      "low": 0,
+      "high": 1000,
+      "step": 10,
       "randomable": true,
       "default": 0
     }

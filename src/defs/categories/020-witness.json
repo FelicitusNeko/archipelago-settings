@@ -15,7 +15,7 @@
       "name": "unlock_symbols",
       "readableName": "Unlock symbols",
       "description": "All Puzzle symbols of a specific panel need to be unlocked before the panel can be used.",
-      "disabled": "true",
+      "disabled": true,
       "default": false
     },
     {
@@ -54,11 +54,17 @@
       "default": false
     },
     {
-      "type": "boolean",
-      "name": "challenge_victory",
-      "readableName": "Challenge Victory",
-      "description": "The victory condition now becomes beating the Challenge area, instead of the final elevator.",
-      "default": false
+      "type": "string",
+      "name": "victory_condition",
+      "readableName": "Victory condition",
+      "description": "Determines which objective will send a victory signal to the AP server.",
+      "values": {
+        "elevator": ["Vanilla", "Using the final elevator will complete the game."],
+        "challenge": "Complete the Challenge",
+        "mountain_box_short": ["Mountain Box (short)", "The objective is to unlock the Mountain (vanilla: 7 lasers)."],
+        "mountain_box_long": ["Mountain Box (long)", "The objective is to unlock the Challenge (vanilla: 11 lasers)."]
+      },
+      "default": "elevator"
     },
     {
       "type": "numeric",
@@ -69,6 +75,43 @@
       "high": 100,
       "randomable": true,
       "default": 20
+    },
+    {
+      "type": "boolean",
+      "name": "early_secret_area",
+      "readableName": "Early Secret Area",
+      "description": "Whether the Mountainside shortcut to the Mountain Secret Area is open from the start.",
+      "default": false
+    },
+    {
+      "type": "numeric",
+      "name": "mountain_lasers",
+      "readableName": "Required lasers for Mountain entry",
+      "description": "Sets the amount of beams required to enter the final area.",
+      "low": 1,
+      "high": 7,
+      "randomable": true,
+      "default": 7
+    },
+    {
+      "type": "numeric",
+      "name": "challenge_lasers",
+      "readableName": "Required lasers for Challenge",
+      "description": "Sets the amount of beams required to enter the secret area through the Mountain Bottom Layer Discard.",
+      "low": 1,
+      "high": 11,
+      "randomable": true,
+      "default": 11
+    },
+    {
+      "type": "numeric",
+      "name": "puzzle_skip_amount",
+      "readableName": "Required lasers for Challenge",
+      "description": "Adds this number of Puzzle Skips into the pool, if there is room. Puzzle Skips let you skip one panel, but cannot be used on Challenge puzzles.",
+      "low": 0,
+      "high": 20,
+      "randomable": true,
+      "default": 5
     }
   ],
   "items": [
@@ -112,7 +155,104 @@
       "name": "Colored Squares"
     },
     {
+      "name": "Glass Factory Entry Door"
+    },
+    {
+      "name": "Functioning Brain"
+    },
+    {
+      "name": "Door to Symmetry Island Lower"
+    },
+    {
+      "name": "Door to Symmetry Island Upper"
+    },
+    {
+      "name": "Door to Desert Flood Light Room"
+    },
+    {
+      "name": "Desert Flood Room Flood Controls"
+    },
+    {
+      "name": "Quarry Mill Ramp Control"
+    },
+    {
+      "name": "Quarry Mill Elevator Control"
+    },
+    {
+      "name": "Quarry Boathouse Ramp Height Control"
+    },
+    {
+      "name": "Quarry Boathouse Ramp Horizontal Control"
+    },
+    {
+      "name": "Shadows Door Timer"
+    },
+    {
+      "name": "Monastery Entry Door Left"
+    },
+    {
+      "name": "Monastery Entry Door Right"
+    },
+    {
+      "name": "Town Door to RGB House"
+    },
+    {
+      "name": "Town Door to Church"
+    },
+    {
+      "name": "Town Maze Panel (Drop-Down Staircase)"
+    },
+    {
+      "name": "Windmill Door"
+    },
+    {
+      "name": "Jungle Popup Wall"
+    },
+    {
+      "name": "Bunker Entry Door"
+    },
+    {
+      "name": "Inside Bunker Door to Bunker Proper"
+    },
+    {
+      "name": "Bunker Elevator Control"
+    },
+    {
+      "name": "Swamp Entry Door"
+    },
+    {
+      "name": "Swamp Sliding Bridge"
+    },
+    {
+      "name": "Swamp Rotating Bridge"
+    },
+    {
+      "name": "Swamp Maze Control"
+    },
+    {
+      "name": "Treehouse First & Second Door"
+    },
+    {
+      "name": "Treehouse Third Door"
+    },
+    {
+      "name": "Treehouse Laser House Door Timer"
+    },
+    {
+      "name": "Treehouse Shortcut Drop-Down Bridge"
+    },
+    {
+      "name": "Mountaintop River Shape Panel (Shortcut to Secret Area)"
+    },
+    {
+      "name": "Boat"
+    },
+    {
       "name": "Speed Boost"
+    },
+    {
+      "name": "Puzzle Skip",
+      "max": 20
     },
     {
       "name": "Slowness",
@@ -461,6 +601,9 @@
       "name": "Desert Final Transparent Reflection"
     },
     {
+      "name": "Swamp Maze Control Other Side"
+    },
+    {
       "name": "Desert Final Reflection"
     },
     {
@@ -551,10 +694,10 @@
       "name": "Quarry Mill Stair Control"
     },
     {
-      "name": "Quarry Mill Big Squares & Dots & and Eraser"
+      "name": "Quarry Mill Big Squares & Dots & Eraser"
     },
     {
-      "name": "Quarry Mill Small Squares & Dots & and Eraser"
+      "name": "Quarry Mill Small Squares & Dots & Eraser"
     },
     {
       "name": "Quarry Mill Door to Outside Quarry Stairs"
@@ -611,10 +754,10 @@
       "name": "Quarry Boathouse Stars and Colored Eraser 7"
     },
     {
-      "name": "Quarry Boathouse Stars & Eraser & and Shapers 1"
+      "name": "Quarry Boathouse Stars & Eraser & Shapers 1"
     },
     {
-      "name": "Quarry Boathouse Stars & Eraser & and Shapers 2"
+      "name": "Quarry Boathouse Stars & Eraser & Shapers 2"
     },
     {
       "name": "Quarry Boathouse Hook Control"
@@ -623,13 +766,13 @@
       "name": "Quarry Boathouse Boat Spawn"
     },
     {
-      "name": "Quarry Boathouse Stars & Eraser & and Shapers 3"
+      "name": "Quarry Boathouse Stars & Eraser & Shapers 3"
     },
     {
-      "name": "Quarry Boathouse Stars & Eraser & and Shapers 4"
+      "name": "Quarry Boathouse Stars & Eraser & Shapers 4"
     },
     {
-      "name": "Quarry Boathouse Stars & Eraser & and Shapers 5"
+      "name": "Quarry Boathouse Stars & Eraser & Shapers 5"
     },
     {
       "name": "Shadows Door Timer Outside"
@@ -842,7 +985,7 @@
       "name": "Town Full Dot Grid Shapers 5"
     },
     {
-      "name": "Town Shapers & Dots & and Eraser"
+      "name": "Town Shapers & Dots & Eraser"
     },
     {
       "name": "Town Windmill Door"
@@ -1028,7 +1171,7 @@
       "name": "Swamp Combinable Shapers 8"
     },
     {
-      "name": "Swamp Slide Bridge"
+      "name": "Swamp Sliding Bridge"
     },
     {
       "name": "Swamp Broken Shapers 1"
@@ -1340,7 +1483,7 @@
       "name": "Mountaintop River Shape"
     },
     {
-      "name": "Mountaintop Box Open"
+      "name": "Mountaintop Box Short"
     },
     {
       "name": "Mountaintop Trap Door Triple Exit"
@@ -1562,7 +1705,7 @@
       "name": "Inside Mountain Secret Area Wooden Beam Squares and Shapers"
     },
     {
-      "name": "Inside Mountain Secret Area Wooden Beam Shapers and Squares"
+      "name": "Inside Mountain Secret Area Wooden Beam Stars and Squares"
     },
     {
       "name": "Inside Mountain Secret Area Wooden Beam Shapers and Stars"
@@ -1571,13 +1714,13 @@
       "name": "Inside Mountain Secret Area Upstairs Dot Grid Negative Shapers"
     },
     {
-      "name": "Inside Mountain Secret Area Upstairs Dot Grid Squares"
+      "name": "Inside Mountain Secret Area Upstairs Dot Grid Gap Dots"
     },
     {
       "name": "Inside Mountain Secret Area Upstairs Dot Grid Stars"
     },
     {
-      "name": "Inside Mountain Secret Area Upstairs Dot Grid Triangles"
+      "name": "Inside Mountain Secret Area Upstairs Dot Grid Stars & Squares"
     },
     {
       "name": "Inside Mountain Secret Area Upstairs Dot Grid Shapers"
@@ -1872,6 +2015,9 @@
     },
     {
       "name": "Treehouse Laser"
+    },
+    {
+      "name": "Mountaintop Box Long"
     }
   ]
 }

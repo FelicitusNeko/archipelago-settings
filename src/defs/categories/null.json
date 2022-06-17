@@ -21,11 +21,14 @@
       "default": "locations"
     },
     {
-      "type": "boolean",
+      "type": "numeric",
       "name": "progression_balancing",
       "readableName": "Progression balancing",
-      "description": "The more players have this off, the more likely BK/DQ mode is to happen for people who have this off even if everyone's playing at an even tick.",
-      "default": true
+      "description": "The higher this number is, the less likely you are to end up in BK mode for too long.",
+      "min": 0,
+      "max": 99,
+      "randomable": true,
+      "default": 50
     }
   ]
 }
