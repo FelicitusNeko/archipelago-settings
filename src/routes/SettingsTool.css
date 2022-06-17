@@ -72,6 +72,17 @@ div.settingsBody {
   box-shadow: 4px 4px 4px black;
 }
 
+div.gamenotice {
+  margin: 5px;
+  padding: 3px;
+  border: 2px ridge #3667B1;
+  border-radius: 4px;
+  background-color: #8E6A3F;
+  box-shadow: 4px 4px 4px black;
+  text-align: center;
+  color: white;
+}
+
 ul.settingsTabs {
   margin-top: 5px;
   margin-bottom: 0;

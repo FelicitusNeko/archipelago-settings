@@ -2,9 +2,10 @@ import { gzipSync } from "zlib";
 
 import React, { useState, useEffect, ReactElement } from "react";
 import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
-import yaml from "yaml";
 import { DateTime } from "luxon";
+import yaml from "yaml";
 import cogoToast from "cogo-toast";
+import ReactMarkdown from "react-markdown";
 import "react-tabs/style/react-tabs.css";
 
 import Changelog from "./objs/Changelog";
@@ -418,6 +419,18 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
     // If the game is not selected, nothing to return
     if (!isGameEnabledV2(category.category)) return null;
 
+    if (category.settings.length === 0)
+      return [
+        <div className="setting">
+          <p
+            key={`${category.category}-nosettings`}
+            style={{ fontWeight: "bold" }}
+          >
+            There are no settings for this game.
+          </p>
+        </div>,
+      ];
+
     const retval = category.settings
       .filter((i) => checkDependencyV2(i.category, i.dependsOn))
       .map((i) => {
@@ -524,6 +537,11 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
           {APCategoryList.filter((i) => isGameEnabledV2(i.category)).map(
             (i) => (
               <TabPanel key={`tabpanel-${i.category}`} className="settingsBody">
+                {i.notice ? (
+                  <div className="gamenotice">
+                    <ReactMarkdown children={`**NOTICE**: ${i.notice}`} />
+                  </div>
+                ) : null}
                 {outputSettingCollectionV2(i)}
                 {i.category && i.items ? (
                   <>
