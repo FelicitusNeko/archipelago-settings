@@ -103,7 +103,15 @@ export abstract class APSettingNode<
     });
   };
 
-  /** Outputs a slider for a weighted value, within the context of {@link onWeightedCheck}. */
+  /**
+   * Outputs a slider for a weighted value, within the context of {@link onWeightedCheck}.
+   * @param valueName The value to be weighted.
+   * @param displayName The readable name of the value to be weighted.
+   * @param weight The weight attributed to this value.
+   * @param deletable Optional. Whether the weight for this value may be deleted. Defaults to `true`.
+   * @param altText Optional. Additional text to be displayed by hovering over this option.
+   * @returns The weight selector for this value.
+   */
   protected outputWeightedValue = (
     valueName: SettingValueType<TSetting>,
     displayName: string,
