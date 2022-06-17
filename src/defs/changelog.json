@@ -12,7 +12,8 @@
     ],
     "Notice displays at the top of certain settings pages (such as Minecraft)",
     "Settings pages for games that have no settings just show \"There are no settings for this game\" now",
-    "As a result, removed dummy options from games that had them (e.g. Final Fantasy)"
+    "As a result, removed dummy options from games that had them (e.g. Final Fantasy)",
+    "Alt text for choice-based options is now more visible (look for options with ℹ️ next to them)"
   ],
   "1.0.6": [
     "Update spec to **0.3.2**",

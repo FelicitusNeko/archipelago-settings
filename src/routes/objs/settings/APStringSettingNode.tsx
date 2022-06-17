@@ -79,26 +79,34 @@ export class APStringSettingNode extends APSettingNode<APStringSetting> {
     };
 
     return (
-      <select
-        className="settingDropdown"
-        key={`${category}-${setting.name}-val`}
-        value={value}
-        onChange={onSettingChange}
-      >
-        {Object.entries(setting.values).map((i) => {
-          const [name, readable] = i;
-          // Output the option
-          return (
-            <option
-              key={`${category}-${setting.name}-val-${name}`}
-              title={Array.isArray(readable) ? readable[1] : undefined}
-              value={name}
-            >
-              {Array.isArray(readable) ? `${readable[0]} ℹ️` : readable}
-            </option>
-          );
-        })}
-      </select>
+      <>
+        <select
+          className="settingDropdown"
+          key={`${category}-${setting.name}-val`}
+          value={value}
+          onChange={onSettingChange}
+        >
+          {Object.entries(setting.values).map((i) => {
+            const [name, readable] = i;
+            // Output the option
+            return (
+              <option
+                key={`${category}-${setting.name}-val-${name}`}
+                title={Array.isArray(readable) ? readable[1] : undefined}
+                value={name}
+              >
+                {Array.isArray(readable) ? `${readable[0]} ℹ️` : readable}
+              </option>
+            );
+          })}
+        </select>
+        {Array.isArray(setting.values[value]) ? (
+          <>
+            <br />
+            {setting.values[value][1]}
+          </>
+        ) : null}
+      </>
     );
   };
 
@@ -129,7 +137,8 @@ export class APStringSettingNode extends APSettingNode<APStringSetting> {
           wValue.value,
           displayName,
           wValue.weight,
-          count > 1
+          count > 1,
+          Array.isArray(setting.values[wValue.value]) ? setting.values[wValue.value][1] : undefined
         )
       );
     }

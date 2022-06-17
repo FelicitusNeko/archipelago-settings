@@ -108,7 +108,8 @@ export abstract class APSettingNode<
     valueName: SettingValueType<TSetting>,
     displayName: string,
     weight: number,
-    deletable?: boolean
+    deletable?: boolean,
+    altText?: string
   ) => {
     const { category, setting } = this.props;
     const { value } = this.state;
@@ -116,7 +117,7 @@ export abstract class APSettingNode<
     if (!Array.isArray(value)) return null;
 
     /** An event handler which fires when the value for the weight is changed. */
-    const onWeightChange = (newVal: number|number[]) => {
+    const onWeightChange = (newVal: number | number[]) => {
       if (!Array.isArray(newVal)) {
         const wValue = value.find((i) => i.value === valueName);
         if (wValue) wValue.weight = newVal;
@@ -151,7 +152,11 @@ export abstract class APSettingNode<
           trackStyle={WeightRail}
           onChange={onWeightChange}
         />
-        <b>{displayName}</b>: {weight}{" "}
+        <b title={altText}>
+          {displayName}
+          {altText ? " ℹ️" : null}
+        </b>
+        : {weight}{" "}
         {deletable ? (
           // Only display the delete button if the weight is designated as deletable
           <button
