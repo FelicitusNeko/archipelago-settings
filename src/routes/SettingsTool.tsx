@@ -421,11 +421,8 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
 
     if (category.settings.length === 0)
       return [
-        <div className="setting">
-          <p
-            key={`${category.category}-nosettings`}
-            style={{ fontWeight: "bold" }}
-          >
+        <div key={`${category.category}-nosettings`} className="setting">
+          <p style={{ fontWeight: "bold" }}>
             There are no settings for this game.
           </p>
         </div>,
