@@ -1,4 +1,19 @@
 {
+  "1.0.7": [
+    "Update spec to **0.3.3**",
+    [
+      "**Global settings**: Progression balancing is now a range from 0 to 99 (and has been for a couple of versions, oops)",
+      "**A Link to the Past**: Retro mode split in two, vendor scams split from Hints option",
+      "**Hollow Knight**: New Goal, White Palace, and Starting Geo options",
+      "**Minecraft**: Updated with new 1.19 item and advancements",
+      "**StarCraft 2: Wings of Liberty**: New option to relegate no-build missions to end, \"filler\" items updated",
+      "**Timespinner**: Boss shuffle options, revamped location names",
+      "**The Witness**: Many options to configure objectives, a whole mess of new items and locations (including new Puzzle Skips)"
+    ],
+    "Notice displays at the top of certain settings pages (such as Minecraft)",
+    "Settings pages for games that have no settings just show \"There are no settings for this game\" now",
+    "As a result, removed dummy options from games that had them (e.g. Final Fantasy)"
+  ],
   "1.0.6": [
     "Update spec to **0.3.2**",
     [
