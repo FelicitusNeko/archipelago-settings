@@ -15,6 +15,11 @@ export interface APCategory {
   readableName?: string;
   /** The numeric index of the category. */
   index: number;
+  /**
+   * A Markdown-formatted notice to display at the top of the page.
+   * @since 1.0.7
+   */
+  notice?: string;
   /** The collection of settings for this category. */
   settings: APMetaSetting[];
   /** The collection of defined items for this category. */
@@ -34,6 +39,11 @@ interface APCategoryJson {
   index: number;
   /** Whether this game is disabled. If so, it will not appear in the list. */
   disabled: boolean;
+  /**
+   * A Markdown-formatted notice to display at the top of the page.
+   * @since 1.0.7
+   */
+   notice?: string;
   /** The collection of settings for this category. */
   settings: APMetaSettingJson[];
   /** The collection of defined items for this category. */

@@ -90,6 +90,7 @@ const APCategoryList: APCategory[] = APCategoryData.map((i) => {
     category: i.category,
     readableName: i.readableName,
     index: i.index,
+    notice: i.notice,
     settings: i.settings
       .filter((i) => i.disabled !== true)
       .map((setting) => {
