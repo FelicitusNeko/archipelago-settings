@@ -2,18 +2,7 @@
   "category": "ArchipIDLE",
   "index": 18,
   "disabled": true,
-  "settings": [
-    {
-      "type": "string",
-      "name": "no_options",
-      "readableName": "No options",
-      "description": "This game has no options.",
-      "values": {
-        "0": "Dang"
-      },
-      "default": "0"
-    }
-  ],
+  "settings": [],
   "items": [
     {
       "name": "Staples Easy Button"
