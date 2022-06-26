@@ -3,21 +3,6 @@
   "index": 21,
   "settings": [
     {
-      "type": "deathlink"
-    },
-    {
-      "type": "string",
-      "name": "music_shuffle",
-      "readableName": "Music shuffle",
-      "description": "Determines whether music will be shuffled.",
-      "values": {
-        "none": "Off",
-        "levels": ["Levels", "Level music is shuffled"],
-        "full": ["Full", "Level, Menu, and Additional music is shuffled."]
-      },
-      "default": "none"
-    },
-    {
       "type": "numeric",
       "name": "include_missions",
       "readableName": "Include missions",
@@ -26,6 +11,20 @@
       "high": 5,
       "randomable": true,
       "default": 2
+    },
+    {
+      "type": "string",
+      "name": "required_rank",
+      "readableName": "Required rank",
+      "description": "Determines what minimum rank is required in order to send an end-stage check.",
+      "values": {
+        "e": "Rank E",
+        "d": "Rank D",
+        "c": "Rank C",
+        "b": "Rank B",
+        "a": "Rank A"
+      },
+      "default": "e"
     },
     {
       "type": "numeric",
@@ -64,6 +63,145 @@
       "dependsOn": {
         "number_of_level_gates": [1, 2, 3, 4, 5]
       }
+    },
+    {
+      "type": "string",
+      "name": "level_gate_cost",
+      "readableName": "Emblem gate cost",
+      "description": "Determines how many Emblems are required to unlock gates.",
+      "values": {
+        "low": "Low",
+        "medium": "Medium",
+        "high": "High"
+      },
+      "default": "high",
+      "dependsOn": {
+        "number_of_level_gates": [1, 2, 3, 4, 5]
+      }
+    },
+    {
+      "type": "boolean",
+      "name": "include_chao_karate",
+      "readableName": "Include Chao Karate",
+      "description": "Determines whether the Chao Karate should be included as checks. *(This requires the SA2:Battle DLC)*",
+      "default": false
+    },
+    {
+      "type": "string",
+      "name": "chao_garden_difficulty",
+      "readableName": "Chao Garden race difficulty",
+      "description": "Determines the number of Chao Garden difficulty levels included. Easier difficulty settings means fewer Chao Garden checks.",
+      "values": {
+        "none": ["None", "No Chao Garden activities have checks"],
+        "beginner": ["Beginner", "Beginner Races"],
+        "intermediate": ["Intermediate", "Beginner and Jewel Races"],
+        "expert": ["Expert", "Beginner, Jewel, Challenge, Hero, and Dark Races"]
+      },
+      "default": "high"
+    },
+    {
+      "type": "string",
+      "name": "chao_race_checks",
+      "readableName": "Chao race checks",
+      "description": "Determines which Chao Races grant checks.",
+      "values": {
+        "all": ["All", "Each individual race grants a check"],
+        "prize": [
+          "Prize races only",
+          "Only the races which grant Chao Toys grant checks (final race of each Beginner and Jewel cup, 4th, 8th, and 12th Challenge Races, 2nd and 4th Hero and Dark Races)"
+        ]
+      },
+      "default": "high",
+      "dependsOn": {
+        "chao_garden_difficulty": ["beginner", "intermediate", "expert"]
+      }
+    },
+    {
+      "type": "numeric",
+      "name": "junk_fill_percentage",
+      "readableName": "Junk fill percentage",
+      "description": "Replace a percentage of non-required emblems in the item pool with random junk items.",
+      "low": 0,
+      "high": 100,
+      "randomable": true,
+      "default": 50
+    },
+    {
+      "type": "numeric",
+      "name": "trap_fill_percentage",
+      "readableName": "Trap fill percentage",
+      "description": "Replace a percentage of junk items in the item pool with random traps.",
+      "low": 0,
+      "high": 100,
+      "randomable": true,
+      "default": 0
+    },
+    {
+      "type": "string",
+      "name": "omochao_trap_weight",
+      "readableName": "Omochao trap weight",
+      "description": "Likelihood of a receiving a trap which spawns several Omochao around the player.",
+      "values": {
+        "none": "None",
+        "low": "Low",
+        "medium": "Medium",
+        "high": "High"
+      },
+      "default": "medium"
+    },
+    {
+      "type": "string",
+      "name": "timestop_trap_weight",
+      "readableName": "Chaos Control trap weight",
+      "description": "Likelihood of a receiving a trap which briefly stops time.",
+      "values": {
+        "none": "None",
+        "low": "Low",
+        "medium": "Medium",
+        "high": "High"
+      },
+      "default": "medium"
+    },
+    {
+      "type": "string",
+      "name": "confusion_trap_weight",
+      "readableName": "Confusion trap weight",
+      "description": "Likelihood of a receiving a trap which causes the controls to be skewed for a period of time.",
+      "values": {
+        "none": "None",
+        "low": "Low",
+        "medium": "Medium",
+        "high": "High"
+      },
+      "default": "medium"
+    },
+    {
+      "type": "string",
+      "name": "tiny_trap_weight",
+      "readableName": "Tiny trap weight",
+      "description": "Likelihood of a receiving a trap which causes the player to become tiny.",
+      "values": {
+        "none": "None",
+        "low": "Low",
+        "medium": "Medium",
+        "high": "High"
+      },
+      "default": "medium"
+    },
+    {
+      "type": "string",
+      "name": "music_shuffle",
+      "readableName": "Music shuffle",
+      "description": "Determines whether music will be shuffled.",
+      "values": {
+        "none": "Off",
+        "levels": ["Levels", "Level music is shuffled"],
+        "full": ["Full", "Level, Menu, and Additional music is shuffled."]
+      },
+      "default": "none"
+    },
+    {
+      "type": "deathlink"
     }
   ],
   "items": [
@@ -157,6 +295,43 @@
     },
     {
       "name": "What Maria Wanted"
+    },
+    {
+      "name": "Five Rings"
+    },
+    {
+      "name": "Ten Rings"
+    },
+    {
+      "name": "Twenty Rings"
+    },
+    {
+      "name": "Extra Life"
+    },
+    {
+      "name": "Shield"
+    },
+    {
+      "name": "Magnetic Shield"
+    },
+    {
+      "name": "Invincibility"
+    },
+    {
+      "name": "OmoTrap",
+      "max": 0
+    },
+    {
+      "name": "Chaos Control Trap",
+      "max": 0
+    },
+    {
+      "name": "Confusion Trap",
+      "max": 0
+    },
+    {
+      "name": "Tiny Trap",
+      "max": 0
     }
   ],
   "locations": [
@@ -713,31 +888,217 @@
       "name": "Final Chase - Upgrade"
     },
     {
-      "name": "Chao Garden - Beginner Race"
+      "name": "Gate 1 Boss"
     },
     {
-      "name": "Chao Garden - Jewel Race"
+      "name": "Gate 2 Boss"
     },
     {
-      "name": "Chao Garden - Challenge Race"
+      "name": "Gate 3 Boss"
     },
     {
-      "name": "Chao Garden - Hero Race"
+      "name": "Gate 4 Boss"
     },
     {
-      "name": "Chao Garden - Dark Race"
+      "name": "Gate 5 Boss"
     },
     {
-      "name": "Chao Garden - Beginner Karate"
+      "name": "Chao Race - Beginner - Crab Pool 1"
     },
     {
-      "name": "Chao Garden - Standard Karate"
+      "name": "Chao Race - Beginner - Crab Pool 2"
     },
     {
-      "name": "Chao Garden - Expert Karate"
+      "name": "Chao Race - Beginner - Crab Pool 3"
     },
     {
-      "name": "Chao Garden - Super Karate"
+      "name": "Chao Race - Beginner - Stump Valley 1"
+    },
+    {
+      "name": "Chao Race - Beginner - Stump Valley 2"
+    },
+    {
+      "name": "Chao Race - Beginner - Stump Valley 3"
+    },
+    {
+      "name": "Chao Race - Beginner - Mushroom Forest 1"
+    },
+    {
+      "name": "Chao Race - Beginner - Mushroom Forest 2"
+    },
+    {
+      "name": "Chao Race - Beginner - Mushroom Forest 3"
+    },
+    {
+      "name": "Chao Race - Beginner - Block Canyon 1"
+    },
+    {
+      "name": "Chao Race - Beginner - Block Canyon 2"
+    },
+    {
+      "name": "Chao Race - Beginner - Block Canyon 3"
+    },
+    {
+      "name": "Chao Race - Jewel - Aquamarine 1"
+    },
+    {
+      "name": "Chao Race - Jewel - Aquamarine 2"
+    },
+    {
+      "name": "Chao Race - Jewel - Aquamarine 3"
+    },
+    {
+      "name": "Chao Race - Jewel - Aquamarine 4"
+    },
+    {
+      "name": "Chao Race - Jewel - Aquamarine 5"
+    },
+    {
+      "name": "Chao Race - Jewel - Topaz 1"
+    },
+    {
+      "name": "Chao Race - Jewel - Topaz 2"
+    },
+    {
+      "name": "Chao Race - Jewel - Topaz 3"
+    },
+    {
+      "name": "Chao Race - Jewel - Topaz 4"
+    },
+    {
+      "name": "Chao Race - Jewel - Topaz 5"
+    },
+    {
+      "name": "Chao Race - Jewel - Peridot 1"
+    },
+    {
+      "name": "Chao Race - Jewel - Peridot 2"
+    },
+    {
+      "name": "Chao Race - Jewel - Peridot 3"
+    },
+    {
+      "name": "Chao Race - Jewel - Peridot 4"
+    },
+    {
+      "name": "Chao Race - Jewel - Peridot 5"
+    },
+    {
+      "name": "Chao Race - Jewel - Garnet 1"
+    },
+    {
+      "name": "Chao Race - Jewel - Garnet 2"
+    },
+    {
+      "name": "Chao Race - Jewel - Garnet 3"
+    },
+    {
+      "name": "Chao Race - Jewel - Garnet 4"
+    },
+    {
+      "name": "Chao Race - Jewel - Garnet 5"
+    },
+    {
+      "name": "Chao Race - Jewel - Onyx 1"
+    },
+    {
+      "name": "Chao Race - Jewel - Onyx 2"
+    },
+    {
+      "name": "Chao Race - Jewel - Onyx 3"
+    },
+    {
+      "name": "Chao Race - Jewel - Onyx 4"
+    },
+    {
+      "name": "Chao Race - Jewel - Onyx 5"
+    },
+    {
+      "name": "Chao Race - Jewel - Diamond 1"
+    },
+    {
+      "name": "Chao Race - Jewel - Diamond 2"
+    },
+    {
+      "name": "Chao Race - Jewel - Diamond 3"
+    },
+    {
+      "name": "Chao Race - Jewel - Diamond 4"
+    },
+    {
+      "name": "Chao Race - Jewel - Diamond 5"
+    },
+    {
+      "name": "Chao Race - Challenge 1"
+    },
+    {
+      "name": "Chao Race - Challenge 2"
+    },
+    {
+      "name": "Chao Race - Challenge 3"
+    },
+    {
+      "name": "Chao Race - Challenge 4"
+    },
+    {
+      "name": "Chao Race - Challenge 5"
+    },
+    {
+      "name": "Chao Race - Challenge 6"
+    },
+    {
+      "name": "Chao Race - Challenge 7"
+    },
+    {
+      "name": "Chao Race - Challenge 8"
+    },
+    {
+      "name": "Chao Race - Challenge 9"
+    },
+    {
+      "name": "Chao Race - Challenge 10"
+    },
+    {
+      "name": "Chao Race - Challenge 11"
+    },
+    {
+      "name": "Chao Race - Challenge 12"
+    },
+    {
+      "name": "Chao Race - Hero 1"
+    },
+    {
+      "name": "Chao Race - Hero 2"
+    },
+    {
+      "name": "Chao Race - Hero 3"
+    },
+    {
+      "name": "Chao Race - Hero 4"
+    },
+    {
+      "name": "Chao Race - Dark 1"
+    },
+    {
+      "name": "Chao Race - Dark 2"
+    },
+    {
+      "name": "Chao Race - Dark 3"
+    },
+    {
+      "name": "Chao Race - Dark 4"
+    },
+    {
+      "name": "Chao Karate - Beginner"
+    },
+    {
+      "name": "Chao Karate - Standard"
+    },
+    {
+      "name": "Chao Karate - Expert"
+    },
+    {
+      "name": "Chao Karate - Super"
     }
   ]
 }
