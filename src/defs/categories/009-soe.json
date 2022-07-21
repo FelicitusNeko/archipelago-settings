@@ -21,7 +21,7 @@
       "readableName": "Money modifier",
       "description": "Percentage by which money drops will be modified.",
       "randomable": true,
-      "low": 1,
+      "low": 25,
       "high": 2500,
       "step": 25,
       "default": 200
@@ -32,7 +32,7 @@
       "readableName": "Experience modifier",
       "description": "Percentage by which experience gains will be modified.",
       "randomable": true,
-      "low": 1,
+      "low": 25,
       "high": 2500,
       "step": 25,
       "default": 200
