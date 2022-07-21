@@ -634,7 +634,7 @@
       "name": "big_poe_count",
       "readableName": "Big Poe Count",
       "description": "Number of Big Poes required for the Poe Collector's item.",
-      "low": 0,
+      "low": 1,
       "high": 10,
       "randomable": true,
       "default": 1
