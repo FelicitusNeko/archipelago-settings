@@ -16,6 +16,44 @@
       "default": "normal"
     },
     {
+      "type": "string",
+      "name": "energy_core",
+      "readableName": "Energy Core",
+      "description": "Determines how to obtain the Energy Core.",
+      "values": {
+        "vanilla": "Vanilla",
+        "shuffle": "Shuffled",
+        "fragments": "Fragment Hunt"
+      },
+      "default": "shuffle"
+    },
+    {
+      "type": "numeric",
+      "name": "required_fragments",
+      "readableName": "Required Fragments",
+      "description": "How many Energy Core Fragments will be required to beat the game.",
+      "randomable": true,
+      "low": 1,
+      "high": 99,
+      "default": 10,
+      "dependsOn": {
+        "energy_core": ["fragments"]
+      }
+    },
+    {
+      "type": "numeric",
+      "name": "available_fragments",
+      "readableName": "Available Fragments",
+      "description": "How many Energy Core Fragments will be available in the game.",
+      "randomable": true,
+      "low": 1,
+      "high": 99,
+      "default": 11,
+      "dependsOn": {
+        "energy_core": ["fragments"]
+      }
+    },
+    {
       "type": "numeric",
       "name": "money_modifier",
       "readableName": "Money modifier",
@@ -93,8 +131,8 @@
       "description": "Shuffles or randomizes spell ingredients",
       "values": {
         "off": "Off",
-        "on": "On – Shuffled",
-        "full": "Full – Randomized"
+        "on": "Shuffled",
+        "full": "Fully randomized"
       },
       "default": "on"
     },
@@ -105,8 +143,8 @@
       "description": "Shuffles or randomizes drops in sniff locations.",
       "values": {
         "off": "Off",
-        "on": "On – Shuffled",
-        "full": "Full – Randomized"
+        "on": "Shuffled",
+        "full": "Fully randomized"
       },
       "default": "on"
     },
@@ -117,8 +155,8 @@
       "description": "Shuffles Call Bead characters or spells.",
       "values": {
         "off": "Off",
-        "on": "On – Shuffles call bead characters",
-        "full": "Full – Shuffles individual spells"
+        "on": ["On", "Shuffles call bead characters"],
+        "full": ["Full", "Shuffles individual spells"]
       },
       "default": "on"
     },
@@ -136,9 +174,9 @@
       "description": "Randomize the dog in certain situations.",
       "values": {
         "off": "Off",
-        "on": "On – Shuffled every act",
-        "full": "Full – Randomized every screen",
-        "pupdunk": "Pupdunk – Everypupper everywhere!"
+        "on": ["On", "Shuffled every act"],
+        "full": ["Full", "Randomized every screen"],
+        "pupdunk": ["Pupdunk", "Everypupper everywhere!"]
       },
       "default": "off"
     },
@@ -664,6 +702,13 @@
     },
     {
       "name": "4 Dry Ice"
+    },
+    {
+      "name": "Energy Core"
+    },
+    {
+      "name": "Energy Core Fragment",
+      "max": 0
     },
     {
       "name": "Quake Trap",
@@ -1697,6 +1742,9 @@
     },
     {
       "name": "Storage room #284"
+    },
+    {
+      "name": "Energy Core #285"
     }
   ]
 }

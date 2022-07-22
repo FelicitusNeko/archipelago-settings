@@ -15,16 +15,37 @@
         ]
       },
       "default": "standard"
-    }
+    },
+    {
+      "type": "string",
+      "name": "goal",
+      "readableName": "Goal",
+      "description": "Determines your victory condition.",
+      "values": {
+        "launch": "Leave the planet",
+        "free": "Disable the quarantine",
+        "infected": "Reach maximum infection",
+        "drive": "Repair the Aurora's drive core"
+      },
+      "default": "standard"
+    },
+    {
+      "type": "numeric",
+      "name": "creature_scans",
+      "readableName": "Creature Scans",
+      "description": "Randomly places location checks on creature scans. **Warning**: This can include Leviathans.",
+      "low": 0,
+      "high": 100,
+      "default": 0
+    },
+    { "type": "deathlink" }
   ],
   "items": [
     {
       "name": "Compass",
       "max": 1,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
@@ -43,90 +64,70 @@
       "name": "Cyclops Sonar Upgrade",
       "max": 1,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
       "name": "Reinforced Dive Suit",
       "max": 1,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
       "name": "Cyclops Thermal Reactor Module",
       "max": 1,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
       "name": "Stillsuit",
       "max": 1,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
       "name": "Alien Containment Fragment",
       "max": 2,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
       "name": "Creature Decoy",
       "max": 1,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
       "name": "Cyclops Fire Suppression System",
       "max": 1,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
       "name": "Swim Charge Fins",
       "max": 1,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
       "name": "Repulsion Cannon",
       "max": 1,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
       "name": "Cyclops Decoy Tube Upgrade",
       "max": 1,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
@@ -141,36 +142,28 @@
       "name": "Cyclops Docking Bay Repair Module",
       "max": 1,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
       "name": "Battery Charger fragment",
       "max": 2,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
       "name": "Beacon Fragment",
       "max": 2,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
       "name": "Bioreactor Fragment",
       "max": 2,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
@@ -189,9 +182,7 @@
       "name": "Grav Trap Fragment",
       "max": 2,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
@@ -202,9 +193,7 @@
       "name": "Light Stick Fragment",
       "max": 1,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
@@ -223,27 +212,21 @@
       "name": "Nuclear Reactor Fragment",
       "max": 3,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
       "name": "Power Cell Charger Fragment",
       "max": 2,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
       "name": "Power Transmitter Fragment",
       "max": 1,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
@@ -254,45 +237,35 @@
       "name": "Prawn Suit Drill Arm Fragment",
       "max": 2,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
       "name": "Prawn Suit Grappling Arm Fragment",
       "max": 2,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
       "name": "Prawn Suit Propulsion Cannon Fragment",
       "max": 2,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
       "name": "Prawn Suit Torpedo Arm Fragment",
       "max": 2,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
       "name": "Scanner Room Fragment",
       "max": 3,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
@@ -303,18 +276,14 @@
       "name": "Stasis Rifle Fragment",
       "max": 2,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
       "name": "Thermal Plant Fragment",
       "max": 2,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
@@ -341,261 +310,203 @@
       "name": "Exterior Growbed Fragment",
       "max": 2,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
       "name": "Picture Frame",
       "max": 1,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
       "name": "Bench Fragment",
       "max": 2,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
       "name": "Basic Plant Pot",
       "max": 1,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
       "name": "Interior Growbed",
       "max": 1,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
       "name": "Plant Shelf",
       "max": 1,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
       "name": "Observatory Fragment",
       "max": 2,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
       "name": "Multipurpose Room Fragment",
       "max": 2,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
       "name": "Bulkhead Fragment",
       "max": 2,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
       "name": "Spotlight",
       "max": 1,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
       "name": "Desk",
       "max": 2,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
       "name": "Swivel Chair",
       "max": 1,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
       "name": "Office Chair",
       "max": 1,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
       "name": "Command Chair",
       "max": 1,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
       "name": "Counter",
       "max": 2,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
       "name": "Single Bed",
       "max": 1,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
       "name": "Basic Double Bed",
       "max": 1,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
       "name": "Quilted Double Bed",
       "max": 1,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
       "name": "Coffee Vending Machine",
       "max": 2,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
       "name": "Trash Can",
       "max": 2,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
       "name": "Floodlight",
       "max": 1,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
       "name": "Bar Table",
       "max": 1,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
       "name": "Vending Machine",
       "max": 1,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
       "name": "Single Wall Shelf",
       "max": 1,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
       "name": "Wall Shelves",
       "max": 1,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
       "name": "Round Plant Pot",
       "max": 1,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
       "name": "Chic Plant Pot",
       "max": 1,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
       "name": "Nuclear Waste Disposal",
       "max": 1,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
       "name": "Wall Planter",
       "max": 1,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     },
     {
@@ -622,9 +533,7 @@
       "name": "Water Filtration Machine",
       "max": 1,
       "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
+        "item_pool": ["standard"]
       }
     }
   ],

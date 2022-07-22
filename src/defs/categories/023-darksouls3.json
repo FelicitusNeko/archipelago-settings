@@ -1,0 +1,1941 @@
+{
+  "category": "Dark Souls III",
+  "index": 23,
+  "settings": [
+    {
+      "type": "boolean",
+      "name": "auto_equip",
+      "readableName": "Auto Equip",
+      "description": "Automatically equips any received armor or left/right weapons.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "lock_equip",
+      "readableName": "Lock Equipement Slots",
+      "description": "Lock the equipment slots so you cannot change your armor or your left/right weapons. Works great with the Auto-equip option.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "no_weapon_requirements",
+      "readableName": "No Weapon Requirements",
+      "description": "Disable the weapon requirements by removing any movement or damage penalties, permitting you to use any weapon early.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "randomize_weapons_level",
+      "readableName": "Randomize weapons level",
+      "description": "Enable this option to upgrade 33% (based on the probability chance) of the pool of weapons to a random value between +1 and +5/+10.",
+      "default": true
+    },
+    {
+      "type": "boolean",
+      "name": "late_basin_of_vows",
+      "readableName": "Late Basin of Vows",
+      "description": "Force the Basin of Vows to be located as a reward of defeating Pontiff Sulyvahn. It permits to ease the progression by preventing having to kill the Dancer of the Boreal Valley as the first boss.",
+      "default": true
+    }
+  ],
+  "items": [
+    {
+      "name": "Irithyll Straight Sword"
+    },
+    {
+      "name": "Chaos Blade"
+    },
+    {
+      "name": "Dragonrider Bow"
+    },
+    {
+      "name": "White Hair Talisman"
+    },
+    {
+      "name": "Izalith Staff"
+    },
+    {
+      "name": "Fume Ultra Greatsword"
+    },
+    {
+      "name": "Black Knight Sword"
+    },
+    {
+      "name": "Yorshka's Spear"
+    },
+    {
+      "name": "Smough's Great Hammer"
+    },
+    {
+      "name": "Dragonslayer Greatbow"
+    },
+    {
+      "name": "Golden Ritual Spear"
+    },
+    {
+      "name": "Eleonora"
+    },
+    {
+      "name": "Witch's Locks"
+    },
+    {
+      "name": "Crystal Chime"
+    },
+    {
+      "name": "Black Knight Glaive"
+    },
+    {
+      "name": "Dragonslayer Spear"
+    },
+    {
+      "name": "Caitha's Chime"
+    },
+    {
+      "name": "Sunlight Straight Sword"
+    },
+    {
+      "name": "Firelink Greatsword"
+    },
+    {
+      "name": "Hollowslayer Greatsword"
+    },
+    {
+      "name": "Arstor's Spear"
+    },
+    {
+      "name": "Vordt's Great Hammer"
+    },
+    {
+      "name": "Crystal Sage's Rapier"
+    },
+    {
+      "name": "Farron Greatsword"
+    },
+    {
+      "name": "Wolf Knight's Greatsword"
+    },
+    {
+      "name": "Dancer's Enchanted Swords"
+    },
+    {
+      "name": "Wolnir's Holy Sword"
+    },
+    {
+      "name": "Demon's Greataxe"
+    },
+    {
+      "name": "Demon's Fist"
+    },
+    {
+      "name": "Old King's Great Hammer"
+    },
+    {
+      "name": "Greatsword of Judgment"
+    },
+    {
+      "name": "Profaned Greatsword"
+    },
+    {
+      "name": "Yhorm's Great Machete"
+    },
+    {
+      "name": "Cleric's Candlestick"
+    },
+    {
+      "name": "Dragonslayer Greataxe"
+    },
+    {
+      "name": "Moonlight Greatsword"
+    },
+    {
+      "name": "Gundyr's Halberd"
+    },
+    {
+      "name": "Lothric's Holy Sword"
+    },
+    {
+      "name": "Lorian's Greatsword"
+    },
+    {
+      "name": "Twin Princes' Greatsword"
+    },
+    {
+      "name": "Storm Curved Sword"
+    },
+    {
+      "name": "Dragonslayer Swordspear"
+    },
+    {
+      "name": "Broken Straight Sword"
+    },
+    {
+      "name": "Deep Battle Axe"
+    },
+    {
+      "name": "Club"
+    },
+    {
+      "name": "Claymore"
+    },
+    {
+      "name": "Longbow"
+    },
+    {
+      "name": "Mail Breaker"
+    },
+    {
+      "name": "Broadsword"
+    },
+    {
+      "name": "Astora's Straight Sword"
+    },
+    {
+      "name": "Rapier"
+    },
+    {
+      "name": "Lucerne"
+    },
+    {
+      "name": "Whip"
+    },
+    {
+      "name": "Reinforced Club"
+    },
+    {
+      "name": "Caestus"
+    },
+    {
+      "name": "Partizan"
+    },
+    {
+      "name": "Red Hilted Halberd"
+    },
+    {
+      "name": "Saint's Talisman"
+    },
+    {
+      "name": "Large Club"
+    },
+    {
+      "name": "Brigand Twindaggers"
+    },
+    {
+      "name": "Butcher Knife"
+    },
+    {
+      "name": "Brigand Axe"
+    },
+    {
+      "name": "Heretic's Staff"
+    },
+    {
+      "name": "Great Club"
+    },
+    {
+      "name": "Exile Greatsword"
+    },
+    {
+      "name": "Sellsword Twinblades"
+    },
+    {
+      "name": "Notched Whip"
+    },
+    {
+      "name": "Astora Greatsword"
+    },
+    {
+      "name": "Executioner's Greatsword"
+    },
+    {
+      "name": "Saint-tree Bellvine"
+    },
+    {
+      "name": "Saint Bident"
+    },
+    {
+      "name": "Drang Hammers"
+    },
+    {
+      "name": "Arbalest"
+    },
+    {
+      "name": "Sunlight Talisman"
+    },
+    {
+      "name": "Greatsword"
+    },
+    {
+      "name": "Black Bow of Pharis"
+    },
+    {
+      "name": "Great Axe"
+    },
+    {
+      "name": "Black Blade"
+    },
+    {
+      "name": "Blacksmith Hammer"
+    },
+    {
+      "name": "Witchtree Branch"
+    },
+    {
+      "name": "Painting Guardian's Curved Sword"
+    },
+    {
+      "name": "Pickaxe"
+    },
+    {
+      "name": "Court Sorcerer's Staff"
+    },
+    {
+      "name": "Avelyn"
+    },
+    {
+      "name": "Onikiri and Ubadachi"
+    },
+    {
+      "name": "Ricard's Rapier"
+    },
+    {
+      "name": "Drakeblood Greatsword"
+    },
+    {
+      "name": "Greatlance"
+    },
+    {
+      "name": "Sniper Crossbow"
+    },
+    {
+      "name": "Claw"
+    },
+    {
+      "name": "East-West Shield"
+    },
+    {
+      "name": "Silver Eagle Kite Shield"
+    },
+    {
+      "name": "Small Leather Shield"
+    },
+    {
+      "name": "Blue Wooden Shield"
+    },
+    {
+      "name": "Plank Shield"
+    },
+    {
+      "name": "Caduceus Round Shield"
+    },
+    {
+      "name": "Wargod Wooden Shield"
+    },
+    {
+      "name": "Grass Crest Shield"
+    },
+    {
+      "name": "Golden Falcon Shield"
+    },
+    {
+      "name": "Twin Dragon Greatshield"
+    },
+    {
+      "name": "Spider Shield"
+    },
+    {
+      "name": "Crest Shield"
+    },
+    {
+      "name": "Curse Ward Greatshield"
+    },
+    {
+      "name": "Stone Parma"
+    },
+    {
+      "name": "Dragon Crest Shield"
+    },
+    {
+      "name": "Shield of Want"
+    },
+    {
+      "name": "Black Iron Greatshield"
+    },
+    {
+      "name": "Great Magic Shield"
+    },
+    {
+      "name": "Greatshield of Glory"
+    },
+    {
+      "name": "Sacred Bloom Shield"
+    },
+    {
+      "name": "Golden Wing Crest Shield"
+    },
+    {
+      "name": "Ancient Dragon Greatshield"
+    },
+    {
+      "name": "Spirit Tree Crest Shield"
+    },
+    {
+      "name": "Fire Keeper Robe"
+    },
+    {
+      "name": "Fire Keeper Gloves"
+    },
+    {
+      "name": "Fire Keeper Skirt"
+    },
+    {
+      "name": "Deserter Trousers"
+    },
+    {
+      "name": "Cleric Hat"
+    },
+    {
+      "name": "Cleric Blue Robe"
+    },
+    {
+      "name": "Cleric Gloves"
+    },
+    {
+      "name": "Cleric Trousers"
+    },
+    {
+      "name": "Northern Helm"
+    },
+    {
+      "name": "Northern Armor"
+    },
+    {
+      "name": "Northern Gloves"
+    },
+    {
+      "name": "Northern Trousers"
+    },
+    {
+      "name": "Loincloth"
+    },
+    {
+      "name": "Brigand Hood"
+    },
+    {
+      "name": "Brigand Armor"
+    },
+    {
+      "name": "Brigand Gauntlets"
+    },
+    {
+      "name": "Brigand Trousers"
+    },
+    {
+      "name": "Sorcerer Hood"
+    },
+    {
+      "name": "Sorcerer Robe"
+    },
+    {
+      "name": "Sorcerer Gloves"
+    },
+    {
+      "name": "Sorcerer Trousers"
+    },
+    {
+      "name": "Fallen Knight Helm"
+    },
+    {
+      "name": "Fallen Knight Armor"
+    },
+    {
+      "name": "Fallen Knight Gauntlets"
+    },
+    {
+      "name": "Fallen Knight Trousers"
+    },
+    {
+      "name": "Conjurator Hood"
+    },
+    {
+      "name": "Conjurator Robe"
+    },
+    {
+      "name": "Conjurator Manchettes"
+    },
+    {
+      "name": "Conjurator Boots"
+    },
+    {
+      "name": "Sellsword Helm"
+    },
+    {
+      "name": "Sellsword Armor"
+    },
+    {
+      "name": "Sellsword Gauntlet"
+    },
+    {
+      "name": "Sellsword Trousers"
+    },
+    {
+      "name": "Herald Helm"
+    },
+    {
+      "name": "Herald Armor"
+    },
+    {
+      "name": "Herald Gloves"
+    },
+    {
+      "name": "Herald Trousers"
+    },
+    {
+      "name": "Maiden Hood"
+    },
+    {
+      "name": "Maiden Robe"
+    },
+    {
+      "name": "Maiden Gloves"
+    },
+    {
+      "name": "Maiden Skirt"
+    },
+    {
+      "name": "Drang Armor"
+    },
+    {
+      "name": "Drang Gauntlets"
+    },
+    {
+      "name": "Drang Shoes"
+    },
+    {
+      "name": "Archdeacon White Crown"
+    },
+    {
+      "name": "Archdeacon Holy Garb"
+    },
+    {
+      "name": "Archdeacon Skirt"
+    },
+    {
+      "name": "Antiquated Dress"
+    },
+    {
+      "name": "Antiquated Gloves"
+    },
+    {
+      "name": "Antiquated Skirt"
+    },
+    {
+      "name": "Ragged Mask"
+    },
+    {
+      "name": "Crown of Dusk"
+    },
+    {
+      "name": "Pharis's Hat"
+    },
+    {
+      "name": "Old Sage's Blindfold"
+    },
+    {
+      "name": "Painting Guardian Hood"
+    },
+    {
+      "name": "Painting Guardian Gown"
+    },
+    {
+      "name": "Painting Guardian Gloves"
+    },
+    {
+      "name": "Painting Guardian Waistcloth"
+    },
+    {
+      "name": "Brass Helm"
+    },
+    {
+      "name": "Brass Armor"
+    },
+    {
+      "name": "Brass Gauntlets"
+    },
+    {
+      "name": "Brass Leggings"
+    },
+    {
+      "name": "Old Sorcerer Hat"
+    },
+    {
+      "name": "Old Sorcerer Coat"
+    },
+    {
+      "name": "Old Sorcerer Gauntlets"
+    },
+    {
+      "name": "Old Sorcerer Boots"
+    },
+    {
+      "name": "Court Sorcerer Hood"
+    },
+    {
+      "name": "Court Sorcerer Robe"
+    },
+    {
+      "name": "Court Sorcerer Gloves"
+    },
+    {
+      "name": "Court Sorcerer Trousers"
+    },
+    {
+      "name": "Dragonslayer Helm"
+    },
+    {
+      "name": "Dragonslayer Armor"
+    },
+    {
+      "name": "Dragonslayer Gauntlets"
+    },
+    {
+      "name": "Dragonslayer Leggings"
+    },
+    {
+      "name": "Hood of Prayer"
+    },
+    {
+      "name": "Robe of Prayer"
+    },
+    {
+      "name": "Skirt of Prayer"
+    },
+    {
+      "name": "Winged Knight Helm"
+    },
+    {
+      "name": "Winged Knight Armor"
+    },
+    {
+      "name": "Winged Knight Gauntlets"
+    },
+    {
+      "name": "Winged Knight Leggings"
+    },
+    {
+      "name": "Shadow Mask"
+    },
+    {
+      "name": "Shadow Garb"
+    },
+    {
+      "name": "Shadow Gauntlets"
+    },
+    {
+      "name": "Shadow Leggings"
+    },
+    {
+      "name": "Estus Ring"
+    },
+    {
+      "name": "Covetous Silver Serpent Ring"
+    },
+    {
+      "name": "Fire Clutch Ring"
+    },
+    {
+      "name": "Flame Stoneplate Ring"
+    },
+    {
+      "name": "Flynn's Ring"
+    },
+    {
+      "name": "Chloranthy Ring"
+    },
+    {
+      "name": "Morne's Ring"
+    },
+    {
+      "name": "Sage Ring"
+    },
+    {
+      "name": "Aldrich's Sapphire"
+    },
+    {
+      "name": "Lloyd's Sword Ring"
+    },
+    {
+      "name": "Poisonbite Ring"
+    },
+    {
+      "name": "Deep Ring"
+    },
+    {
+      "name": "Lingering Dragoncrest Ring"
+    },
+    {
+      "name": "Carthus Milkring"
+    },
+    {
+      "name": "Witch's Ring"
+    },
+    {
+      "name": "Carthus Bloodring"
+    },
+    {
+      "name": "Speckled Stoneplate Ring"
+    },
+    {
+      "name": "Magic Clutch Ring"
+    },
+    {
+      "name": "Ring of the Sun's First Born"
+    },
+    {
+      "name": "Pontiff's Right Eye"
+    },
+    {
+      "name": "Leo Ring"
+    },
+    {
+      "name": "Dark Stoneplate Ring"
+    },
+    {
+      "name": "Reversal Ring"
+    },
+    {
+      "name": "Ring of Favor"
+    },
+    {
+      "name": "Bellowing Dragoncrest Ring"
+    },
+    {
+      "name": "Covetous Gold Serpent Ring"
+    },
+    {
+      "name": "Dusk Crown Ring"
+    },
+    {
+      "name": "Dark Clutch Ring"
+    },
+    {
+      "name": "Cursebite Ring"
+    },
+    {
+      "name": "Sun Princess Ring"
+    },
+    {
+      "name": "Aldrich's Ruby"
+    },
+    {
+      "name": "Scholar Ring"
+    },
+    {
+      "name": "Fleshbite Ring"
+    },
+    {
+      "name": "Hunter's Ring"
+    },
+    {
+      "name": "Ashen Estus Ring"
+    },
+    {
+      "name": "Hornet Ring"
+    },
+    {
+      "name": "Lightning Clutch Ring"
+    },
+    {
+      "name": "Ring of Steel Protection"
+    },
+    {
+      "name": "Calamity Ring"
+    },
+    {
+      "name": "Thunder Stoneplate Ring"
+    },
+    {
+      "name": "Knight's Ring"
+    },
+    {
+      "name": "Red Tearstone Ring"
+    },
+    {
+      "name": "Dragonscale Ring"
+    },
+    {
+      "name": "Seek Guidance"
+    },
+    {
+      "name": "Lightning Spear"
+    },
+    {
+      "name": "Atonement"
+    },
+    {
+      "name": "Great Magic Weapon"
+    },
+    {
+      "name": "Iron Flesh"
+    },
+    {
+      "name": "Lightning Stake"
+    },
+    {
+      "name": "Toxic Mist"
+    },
+    {
+      "name": "Sacred Flame"
+    },
+    {
+      "name": "Dorhys' Gnawing"
+    },
+    {
+      "name": "Great Heal"
+    },
+    {
+      "name": "Lightning Blade"
+    },
+    {
+      "name": "Profaned Flame"
+    },
+    {
+      "name": "Wrath of the Gods"
+    },
+    {
+      "name": "Power Within"
+    },
+    {
+      "name": "Soul Stream"
+    },
+    {
+      "name": "Divine Pillars of Light"
+    },
+    {
+      "name": "Great Magic Barrier"
+    },
+    {
+      "name": "Cell Key"
+    },
+    {
+      "name": "Small Lothric Banner"
+    },
+    {
+      "name": "Mortician's Ashes"
+    },
+    {
+      "name": "Braille Divine Tome of Carim"
+    },
+    {
+      "name": "Great Swamp Pyromancy Tome"
+    },
+    {
+      "name": "Farron Coal "
+    },
+    {
+      "name": "Paladin's Ashes"
+    },
+    {
+      "name": "Deep Braille Divine Tome"
+    },
+    {
+      "name": "Small Doll"
+    },
+    {
+      "name": "Golden Scroll"
+    },
+    {
+      "name": "Sage's Coal"
+    },
+    {
+      "name": "Sage's Scroll"
+    },
+    {
+      "name": "Dreamchaser's Ashes"
+    },
+    {
+      "name": "Cinders of a Lord - Abyss Watcher"
+    },
+    {
+      "name": "Cinders of a Lord - Yhorm the Giant"
+    },
+    {
+      "name": "Cinders of a Lord - Aldrich"
+    },
+    {
+      "name": "Grand Archives Key"
+    },
+    {
+      "name": "Basin of Vows"
+    },
+    {
+      "name": "Cinders of a Lord - Lothric Prince"
+    },
+    {
+      "name": "Carthus Pyromancy Tome"
+    },
+    {
+      "name": "Grave Warden's Ashes"
+    },
+    {
+      "name": "Grave Warden Pyromancy Tome"
+    },
+    {
+      "name": "Quelana Pyromancy Tome"
+    },
+    {
+      "name": "Izalith Pyromancy Tome"
+    },
+    {
+      "name": "Greirat's Ashes"
+    },
+    {
+      "name": "Excrement-covered Ashes"
+    },
+    {
+      "name": "Easterner's Ashes"
+    },
+    {
+      "name": "Prisoner Chief's Ashes"
+    },
+    {
+      "name": "Jailbreaker's Key"
+    },
+    {
+      "name": "Dragon Torso Stone"
+    },
+    {
+      "name": "Profaned Coal"
+    },
+    {
+      "name": "Xanthous Ashes"
+    },
+    {
+      "name": "Old Cell Key"
+    },
+    {
+      "name": "Jailer's Key Ring"
+    },
+    {
+      "name": "Path of the Dragon Gesture"
+    },
+    {
+      "name": "Logan's Scroll"
+    },
+    {
+      "name": "Storm Ruler"
+    },
+    {
+      "name": "Giant's Coal"
+    },
+    {
+      "name": "Coiled Sword Fragment"
+    },
+    {
+      "name": "Dragon Chaser's Ashes"
+    },
+    {
+      "name": "Twinkling Dragon Torso Stone"
+    },
+    {
+      "name": "Braille Divine Tome of Lothric"
+    },
+    {
+      "name": "Soul of an Intrepid Hero"
+    },
+    {
+      "name": "Soul of the Nameless King"
+    },
+    {
+      "name": "Soul of Champion Gundyr"
+    },
+    {
+      "name": "Soul of the Twin Princes"
+    },
+    {
+      "name": "Soul of Consumed Oceiros"
+    },
+    {
+      "name": "Soul of Aldrich"
+    },
+    {
+      "name": "Soul of Yhorm the Giant"
+    },
+    {
+      "name": "Soul of Pontiff Sulyvahn"
+    },
+    {
+      "name": "Soul of the Old Demon King"
+    },
+    {
+      "name": "Soul of High Lord Wolnir"
+    },
+    {
+      "name": "Soul of the Blood of the Wolf"
+    },
+    {
+      "name": "Soul of the Deacons of the Deep"
+    },
+    {
+      "name": "Soul of a Crystal Sage"
+    },
+    {
+      "name": "Soul of Boreal Valley Vordt"
+    },
+    {
+      "name": "Soul of a Stray Demon"
+    },
+    {
+      "name": "Soul of a Demon"
+    }
+  ],
+  "locations": [
+    {
+      "name": "FS: Broken Straight Sword"
+    },
+    {
+      "name": "FS: East-West Shield"
+    },
+    {
+      "name": "FSBT: Covetous Silver Serpent Ring"
+    },
+    {
+      "name": "FSBT: Fire Keeper Robe"
+    },
+    {
+      "name": "FSBT: Fire Keeper Gloves"
+    },
+    {
+      "name": "FSBT: Fire Keeper Skirt"
+    },
+    {
+      "name": "FSBT: Estus Ring"
+    },
+    {
+      "name": "FSBT: Fire Keeper Soul"
+    },
+    {
+      "name": "HWL: Deep Battle Axe"
+    },
+    {
+      "name": "HWL: Club"
+    },
+    {
+      "name": "HWL: Claymore"
+    },
+    {
+      "name": "HWL: Binoculars"
+    },
+    {
+      "name": "HWL: Longbow"
+    },
+    {
+      "name": "HWL: Mail Breaker"
+    },
+    {
+      "name": "HWL: Broadsword"
+    },
+    {
+      "name": "HWL: Silver Eagle Kite Shield"
+    },
+    {
+      "name": "HWL: Astora's Straight Sword"
+    },
+    {
+      "name": "HWL: Cell Key"
+    },
+    {
+      "name": "HWL: Rapier"
+    },
+    {
+      "name": "HWL: Lucerne"
+    },
+    {
+      "name": "HWL: Small Lothric Banner"
+    },
+    {
+      "name": "HWL: Basin of Vows"
+    },
+    {
+      "name": "HWL: Soul of Boreal Valley Vordt"
+    },
+    {
+      "name": "HWL: Soul of the Dancer"
+    },
+    {
+      "name": "HWL: Way of Blue Covenant"
+    },
+    {
+      "name": "US: Small Leather Shield"
+    },
+    {
+      "name": "US: Whip"
+    },
+    {
+      "name": "US: Reinforced Club"
+    },
+    {
+      "name": "US: Blue Wooden Shield"
+    },
+    {
+      "name": "US: Cleric Hat"
+    },
+    {
+      "name": "US: Cleric Blue Robe"
+    },
+    {
+      "name": "US: Cleric Gloves"
+    },
+    {
+      "name": "US: Cleric Trousers"
+    },
+    {
+      "name": "US: Mortician's Ashes"
+    },
+    {
+      "name": "US: Caestus"
+    },
+    {
+      "name": "US: Plank Shield"
+    },
+    {
+      "name": "US: Flame Stoneplate Ring"
+    },
+    {
+      "name": "US: Caduceus Round Shield"
+    },
+    {
+      "name": "US: Fire Clutch Ring"
+    },
+    {
+      "name": "US: Partizan"
+    },
+    {
+      "name": "US: Bloodbite Ring"
+    },
+    {
+      "name": "US: Red Hilted Halberd"
+    },
+    {
+      "name": "US: Saint's Talisman"
+    },
+    {
+      "name": "US: Irithyll Straight Sword"
+    },
+    {
+      "name": "US: Large Club"
+    },
+    {
+      "name": "US: Northern Helm"
+    },
+    {
+      "name": "US: Northern Armor"
+    },
+    {
+      "name": "US: Northern Gloves"
+    },
+    {
+      "name": "US: Northern Trousers"
+    },
+    {
+      "name": "US: Flynn's Ring"
+    },
+    {
+      "name": "US: Mirrah Vest"
+    },
+    {
+      "name": "US: Mirrah Gloves"
+    },
+    {
+      "name": "US: Mirrah Trousers"
+    },
+    {
+      "name": "US: Chloranthy Ring"
+    },
+    {
+      "name": "US: Loincloth"
+    },
+    {
+      "name": "US: Wargod Wooden Shield"
+    },
+    {
+      "name": "US: Loretta's Bone"
+    },
+    {
+      "name": "US: Hand Axe"
+    },
+    {
+      "name": "US: Great Scythe"
+    },
+    {
+      "name": "US: Soul of the Rotted Greatwood"
+    },
+    {
+      "name": "US: Hawk Ring"
+    },
+    {
+      "name": "US: Warrior of Sunlight Covenant"
+    },
+    {
+      "name": "RS: Brigand Twindaggers"
+    },
+    {
+      "name": "RS: Brigand Hood"
+    },
+    {
+      "name": "RS: Brigand Armor"
+    },
+    {
+      "name": "RS: Brigand Gauntlets"
+    },
+    {
+      "name": "RS: Brigand Trousers"
+    },
+    {
+      "name": "RS: Butcher Knife"
+    },
+    {
+      "name": "RS: Brigand Axe"
+    },
+    {
+      "name": "RS: Braille Divine Tome of Carim"
+    },
+    {
+      "name": "RS: Morne's Ring"
+    },
+    {
+      "name": "RS: Twin Dragon Greatshield"
+    },
+    {
+      "name": "RS: Heretic's Staff"
+    },
+    {
+      "name": "RS: Sorcerer Hood"
+    },
+    {
+      "name": "RS: Sorcerer Robe"
+    },
+    {
+      "name": "RS: Sorcerer Gloves"
+    },
+    {
+      "name": "RS: Sorcerer Trousers"
+    },
+    {
+      "name": "RS: Sage Ring"
+    },
+    {
+      "name": "RS: Fallen Knight Helm"
+    },
+    {
+      "name": "RS: Fallen Knight Armor"
+    },
+    {
+      "name": "RS: Fallen Knight Gauntlets"
+    },
+    {
+      "name": "RS: Fallen Knight Trousers"
+    },
+    {
+      "name": "RS: Conjurator Hood"
+    },
+    {
+      "name": "RS: Conjurator Robe"
+    },
+    {
+      "name": "RS: Conjurator Manchettes"
+    },
+    {
+      "name": "RS: Conjurator Boots"
+    },
+    {
+      "name": "RS: Great Swamp Pyromancy Tome"
+    },
+    {
+      "name": "RS: Great Club"
+    },
+    {
+      "name": "RS: Exile Greatsword"
+    },
+    {
+      "name": "RS: Farron Coal "
+    },
+    {
+      "name": "RS: Sellsword Twinblades"
+    },
+    {
+      "name": "RS: Sellsword Helm"
+    },
+    {
+      "name": "RS: Sellsword Armor"
+    },
+    {
+      "name": "RS: Sellsword Gauntlet"
+    },
+    {
+      "name": "RS: Sellsword Trousers"
+    },
+    {
+      "name": "RS: Golden Falcon Shield"
+    },
+    {
+      "name": "RS: Herald Helm"
+    },
+    {
+      "name": "RS: Herald Armor"
+    },
+    {
+      "name": "RS: Herald Gloves"
+    },
+    {
+      "name": "RS: Herald Trousers"
+    },
+    {
+      "name": "RS: Grass Crest Shield"
+    },
+    {
+      "name": "RS: Soul of a Crystal Sage"
+    },
+    {
+      "name": "RS: Great Swamp Ring"
+    },
+    {
+      "name": "CD: Paladin's Ashes"
+    },
+    {
+      "name": "CD: Spider Shield"
+    },
+    {
+      "name": "CD: Crest Shield"
+    },
+    {
+      "name": "CD: Notched Whip"
+    },
+    {
+      "name": "CD: Astora Greatsword"
+    },
+    {
+      "name": "CD: Executioner's Greatsword"
+    },
+    {
+      "name": "CD: Curse Ward Greatshield"
+    },
+    {
+      "name": "CD: Saint-tree Bellvine"
+    },
+    {
+      "name": "CD: Poisonbite Ring"
+    },
+    {
+      "name": "CD: Lloyd's Sword Ring"
+    },
+    {
+      "name": "CD: Seek Guidance"
+    },
+    {
+      "name": "CD: Aldrich's Sapphire"
+    },
+    {
+      "name": "CD: Deep Braille Divine Tome"
+    },
+    {
+      "name": "CD: Saint Bident"
+    },
+    {
+      "name": "CD: Maiden Hood"
+    },
+    {
+      "name": "CD: Maiden Robe"
+    },
+    {
+      "name": "CD: Maiden Gloves"
+    },
+    {
+      "name": "CD: Maiden Skirt"
+    },
+    {
+      "name": "CD: Drang Armor"
+    },
+    {
+      "name": "CD: Drang Gauntlets"
+    },
+    {
+      "name": "CD: Drang Shoes"
+    },
+    {
+      "name": "CD: Drang Hammers"
+    },
+    {
+      "name": "CD: Deep Ring"
+    },
+    {
+      "name": "CD: Archdeacon White Crown"
+    },
+    {
+      "name": "CD: Archdeacon Holy Garb"
+    },
+    {
+      "name": "CD: Archdeacon Skirt"
+    },
+    {
+      "name": "CD: Arbalest"
+    },
+    {
+      "name": "CD: Small Doll"
+    },
+    {
+      "name": "CD: Soul of the Deacons of the Deep"
+    },
+    {
+      "name": "CD: Rosaria's Fingers Covenant"
+    },
+    {
+      "name": "FK: Ragged Mask"
+    },
+    {
+      "name": "FK: Iron Flesh"
+    },
+    {
+      "name": "FK: Golden Scroll"
+    },
+    {
+      "name": "FK: Antiquated Dress"
+    },
+    {
+      "name": "FK: Antiquated Gloves"
+    },
+    {
+      "name": "FK: Antiquated Skirt"
+    },
+    {
+      "name": "FK: Nameless Knight Helm"
+    },
+    {
+      "name": "FK: Nameless Knight Armor"
+    },
+    {
+      "name": "FK: Nameless Knight Gauntlets"
+    },
+    {
+      "name": "FK: Nameless Knight Leggings"
+    },
+    {
+      "name": "FK: Sunlight Talisman"
+    },
+    {
+      "name": "FK: Wolf's Blood Swordgrass"
+    },
+    {
+      "name": "FK: Greatsword"
+    },
+    {
+      "name": "FK: Sage's Coal"
+    },
+    {
+      "name": "FK: Stone Parma"
+    },
+    {
+      "name": "FK: Sage's Scroll"
+    },
+    {
+      "name": "FK: Crown of Dusk"
+    },
+    {
+      "name": "FK: Lingering Dragoncrest Ring"
+    },
+    {
+      "name": "FK: Pharis's Hat"
+    },
+    {
+      "name": "FK: Black Bow of Pharis"
+    },
+    {
+      "name": "FK: Dreamchaser's Ashes"
+    },
+    {
+      "name": "FK: Great Axe"
+    },
+    {
+      "name": "FK: Dragon Crest Shield"
+    },
+    {
+      "name": "FK: Lightning Spear"
+    },
+    {
+      "name": "FK: Atonement"
+    },
+    {
+      "name": "FK: Great Magic Weapon"
+    },
+    {
+      "name": "FK: Cinders of a Lord - Abyss Watcher"
+    },
+    {
+      "name": "FK: Soul of the Blood of the Wolf"
+    },
+    {
+      "name": "FK: Soul of a Stray Demon"
+    },
+    {
+      "name": "FK: Watchdogs of Farron Covenant"
+    },
+    {
+      "name": "CC: Carthus Pyromancy Tome"
+    },
+    {
+      "name": "CC: Carthus Milkring"
+    },
+    {
+      "name": "CC: Grave Warden's Ashes"
+    },
+    {
+      "name": "CC: Carthus Bloodring"
+    },
+    {
+      "name": "CC: Grave Warden Pyromancy Tome"
+    },
+    {
+      "name": "CC: Old Sage's Blindfold"
+    },
+    {
+      "name": "CC: Witch's Ring"
+    },
+    {
+      "name": "CC: Black Blade"
+    },
+    {
+      "name": "CC: Soul of High Lord Wolnir"
+    },
+    {
+      "name": "CC: Soul of a Demon"
+    },
+    {
+      "name": "SL: Shield of Want"
+    },
+    {
+      "name": "SL: Speckled Stoneplate Ring"
+    },
+    {
+      "name": "SL: Dragonrider Bow"
+    },
+    {
+      "name": "SL: Lightning Stake"
+    },
+    {
+      "name": "SL: Izalith Pyromancy Tome"
+    },
+    {
+      "name": "SL: Black Knight Sword"
+    },
+    {
+      "name": "SL: Quelana Pyromancy Tome"
+    },
+    {
+      "name": "SL: Toxic Mist"
+    },
+    {
+      "name": "SL: White Hair Talisman"
+    },
+    {
+      "name": "SL: Izalith Staff"
+    },
+    {
+      "name": "SL: Sacred Flame"
+    },
+    {
+      "name": "SL: Fume Ultra Greatsword"
+    },
+    {
+      "name": "SL: Black Iron Greatshield"
+    },
+    {
+      "name": "SL: Soul of the Old Demon King"
+    },
+    {
+      "name": "IBV: Dorhys' Gnawing"
+    },
+    {
+      "name": "IBV: Witchtree Branch"
+    },
+    {
+      "name": "IBV: Magic Clutch Ring"
+    },
+    {
+      "name": "IBV: Ring of the Sun's First Born"
+    },
+    {
+      "name": "IBV: Roster of Knights"
+    },
+    {
+      "name": "IBV: Pontiff's Right Eye"
+    },
+    {
+      "name": "IBV: Yorshka's Spear"
+    },
+    {
+      "name": "IBV: Great Heal"
+    },
+    {
+      "name": "IBV: Smough's Great Hammer"
+    },
+    {
+      "name": "IBV: Leo Ring"
+    },
+    {
+      "name": "IBV: Greirat's Ashes"
+    },
+    {
+      "name": "IBV: Excrement-covered Ashes"
+    },
+    {
+      "name": "IBV: Dark Stoneplate Ring"
+    },
+    {
+      "name": "IBV: Easterner's Ashes"
+    },
+    {
+      "name": "IBV: Painting Guardian's Curved Sword"
+    },
+    {
+      "name": "IBV: Painting Guardian Hood"
+    },
+    {
+      "name": "IBV: Painting Guardian Gown"
+    },
+    {
+      "name": "IBV: Painting Guardian Gloves"
+    },
+    {
+      "name": "IBV: Painting Guardian Waistcloth"
+    },
+    {
+      "name": "IBV: Dragonslayer Greatbow"
+    },
+    {
+      "name": "IBV: Reversal Ring"
+    },
+    {
+      "name": "IBV: Brass Helm"
+    },
+    {
+      "name": "IBV: Brass Armor"
+    },
+    {
+      "name": "IBV: Brass Gauntlets"
+    },
+    {
+      "name": "IBV: Brass Leggings"
+    },
+    {
+      "name": "IBV: Ring of Favor"
+    },
+    {
+      "name": "IBV: Golden Ritual Spear"
+    },
+    {
+      "name": "IBV: Soul of Pontiff Sulyvahn"
+    },
+    {
+      "name": "IBV: Aldrich Faithful Covenant"
+    },
+    {
+      "name": "ID: Bellowing Dragoncrest Ring"
+    },
+    {
+      "name": "ID: Jailbreaker's Key"
+    },
+    {
+      "name": "ID: Prisoner Chief's Ashes"
+    },
+    {
+      "name": "ID: Old Sorcerer Hat"
+    },
+    {
+      "name": "ID: Old Sorcerer Coat"
+    },
+    {
+      "name": "ID: Old Sorcerer Gauntlets"
+    },
+    {
+      "name": "ID: Old Sorcerer Boots"
+    },
+    {
+      "name": "ID: Great Magic Shield"
+    },
+    {
+      "name": "ID: Dragon Torso Stone"
+    },
+    {
+      "name": "ID: Lightning Blade"
+    },
+    {
+      "name": "ID: Profaned Coal"
+    },
+    {
+      "name": "ID: Xanthous Ashes"
+    },
+    {
+      "name": "ID: Old Cell Key"
+    },
+    {
+      "name": "ID: Pickaxe"
+    },
+    {
+      "name": "ID: Profaned Flame"
+    },
+    {
+      "name": "ID: Covetous Gold Serpent Ring"
+    },
+    {
+      "name": "ID: Jailer's Key Ring"
+    },
+    {
+      "name": "ID: Dusk Crown Ring"
+    },
+    {
+      "name": "ID: Dark Clutch Ring"
+    },
+    {
+      "name": "PC: Cursebite Ring"
+    },
+    {
+      "name": "PC: Court Sorcerer Hood"
+    },
+    {
+      "name": "PC: Court Sorcerer Robe"
+    },
+    {
+      "name": "PC: Court Sorcerer Gloves"
+    },
+    {
+      "name": "PC: Court Sorcerer Trousers"
+    },
+    {
+      "name": "PC: Wrath of the Gods"
+    },
+    {
+      "name": "PC: Logan's Scroll"
+    },
+    {
+      "name": "PC: Eleonora"
+    },
+    {
+      "name": "PC: Court Sorcerer's Staff"
+    },
+    {
+      "name": "PC: Greatshield of Glory"
+    },
+    {
+      "name": "PC: Storm Ruler"
+    },
+    {
+      "name": "PC: Cinders of a Lord - Yhorm the Giant"
+    },
+    {
+      "name": "PC: Soul of Yhorm the Giant"
+    },
+    {
+      "name": "AL: Giant's Coal"
+    },
+    {
+      "name": "AL: Sun Princess Ring"
+    },
+    {
+      "name": "AL: Aldrich's Ruby"
+    },
+    {
+      "name": "AL: Cinders of a Lord - Aldrich"
+    },
+    {
+      "name": "AL: Soul of Aldrich"
+    },
+    {
+      "name": "LC: Hood of Prayer"
+    },
+    {
+      "name": "LC: Robe of Prayer"
+    },
+    {
+      "name": "LC: Skirt of Prayer"
+    },
+    {
+      "name": "LC: Sacred Bloom Shield"
+    },
+    {
+      "name": "LC: Winged Knight Helm"
+    },
+    {
+      "name": "LC: Winged Knight Armor"
+    },
+    {
+      "name": "LC: Winged Knight Gauntlets"
+    },
+    {
+      "name": "LC: Winged Knight Leggings"
+    },
+    {
+      "name": "LC: Greatlance"
+    },
+    {
+      "name": "LC: Sniper Crossbow"
+    },
+    {
+      "name": "LC: Spirit Tree Crest Shield"
+    },
+    {
+      "name": "LC: Red Tearstone Ring"
+    },
+    {
+      "name": "LC: Caitha's Chime"
+    },
+    {
+      "name": "LC: Braille Divine Tome of Lothric"
+    },
+    {
+      "name": "LC: Knight's Ring"
+    },
+    {
+      "name": "LC: Sunlight Straight Sword"
+    },
+    {
+      "name": "LC: Grand Archives Key"
+    },
+    {
+      "name": "LC: Soul of Dragonslayer Armour"
+    },
+    {
+      "name": "CKG: Dragonscale Ring"
+    },
+    {
+      "name": "CKG: Shadow Mask"
+    },
+    {
+      "name": "CKG: Shadow Garb"
+    },
+    {
+      "name": "CKG: Shadow Gauntlets"
+    },
+    {
+      "name": "CKG: Shadow Leggings"
+    },
+    {
+      "name": "CKG: Claw"
+    },
+    {
+      "name": "CKG: Soul of Consumed Oceiros"
+    },
+    {
+      "name": "CKG: Path of the Dragon Gesture"
+    },
+    {
+      "name": "GA: Avelyn"
+    },
+    {
+      "name": "GA: Witch's Locks"
+    },
+    {
+      "name": "GA: Power Within"
+    },
+    {
+      "name": "GA: Scholar Ring"
+    },
+    {
+      "name": "GA: Soul Stream"
+    },
+    {
+      "name": "GA: Fleshbite Ring"
+    },
+    {
+      "name": "GA: Crystal Chime"
+    },
+    {
+      "name": "GA: Golden Wing Crest Shield"
+    },
+    {
+      "name": "GA: Onikiri and Ubadachi"
+    },
+    {
+      "name": "GA: Hunter's Ring"
+    },
+    {
+      "name": "GA: Divine Pillars of Light"
+    },
+    {
+      "name": "GA: Cinders of a Lord - Lothric Prince"
+    },
+    {
+      "name": "GA: Soul of the Twin Princes"
+    },
+    {
+      "name": "UG: Ashen Estus Ring"
+    },
+    {
+      "name": "UG: Black Knight Glaive"
+    },
+    {
+      "name": "UG: Hornet Ring"
+    },
+    {
+      "name": "UG: Chaos Blade"
+    },
+    {
+      "name": "UG: Blacksmith Hammer"
+    },
+    {
+      "name": "UG: Eyes of a Fire Keeper"
+    },
+    {
+      "name": "UG: Coiled Sword Fragment"
+    },
+    {
+      "name": "UG: Soul of Champion Gundyr"
+    },
+    {
+      "name": "AP: Lightning Clutch Ring"
+    },
+    {
+      "name": "AP: Ancient Dragon Greatshield"
+    },
+    {
+      "name": "AP: Ring of Steel Protection"
+    },
+    {
+      "name": "AP: Calamity Ring"
+    },
+    {
+      "name": "AP: Drakeblood Greatsword"
+    },
+    {
+      "name": "AP: Dragonslayer Spear"
+    },
+    {
+      "name": "AP: Thunder Stoneplate Ring"
+    },
+    {
+      "name": "AP: Great Magic Barrier"
+    },
+    {
+      "name": "AP: Dragon Chaser's Ashes"
+    },
+    {
+      "name": "AP: Twinkling Dragon Torso Stone"
+    },
+    {
+      "name": "AP: Dragonslayer Helm"
+    },
+    {
+      "name": "AP: Dragonslayer Armor"
+    },
+    {
+      "name": "AP: Dragonslayer Gauntlets"
+    },
+    {
+      "name": "AP: Dragonslayer Leggings"
+    },
+    {
+      "name": "AP: Ricard's Rapier"
+    },
+    {
+      "name": "AP: Soul of the Nameless King"
+    }
+  ]
+}

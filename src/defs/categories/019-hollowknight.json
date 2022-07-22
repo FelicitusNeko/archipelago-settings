@@ -20,17 +20,15 @@
       "type": "boolean",
       "name": "RandomizeFocus",
       "readableName": "Randomize Focus",
-      "description": "Disabled Option. Not implemented.",
-      "default": false,
-      "disabled": true
+      "description": "Removes the ability to focus and randomizes it into the item pool.",
+      "default": false
     },
     {
       "type": "boolean",
       "name": "RandomizeSwim",
       "readableName": "Randomize Swim",
-      "description": "Disabled Option. Not implemented.",
-      "default": true,
-      "disabled": true
+      "description": "Removes the ability to swim in water and randomizes it into the item pool.",
+      "default": false
     },
     {
       "type": "boolean",
@@ -127,9 +125,8 @@
       "type": "boolean",
       "name": "RandomizeMimics",
       "readableName": "Randomize Mimics",
-      "description": "Disabled Option. Not implemented.",
-      "default": false,
-      "disabled": true
+      "description": "Randomize Mimic Grubs into the item pool and open their locations for randomization. Mimic Grubs are always placed in your own game.",
+      "default": false
     },
     {
       "type": "boolean",
@@ -170,9 +167,8 @@
       "type": "boolean",
       "name": "RandomizeNail",
       "readableName": "Randomize Nail",
-      "description": "Disabled Option. Not implemented.",
-      "default": false,
-      "disabled": true
+      "description": "Removes the ability to swing the nail left, right and up, and shuffles these into the item pool.",
+      "default": false
     },
     {
       "type": "boolean",
@@ -200,6 +196,13 @@
       "name": "RandomizeLoreTablets",
       "readableName": "Randomize Lore Tablets",
       "description": "Randomize Lore items into the itempool, one per Lore Tablet, and place randomized item grants on the tablets themselves. You must still read the tablet to get the item.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "RandomizeElevatorPass",
+      "readableName": "Randomize Elevator Pass",
+      "description": "Adds an Elevator Pass item to the item pool, which is then required to use the large elevators connecting City of Tears to the Forgotten Crossroads and Resting Grounds.",
       "default": false
     },
 
@@ -330,6 +333,88 @@
     },
 
     {
+      "type": "string",
+      "name": "Goal",
+      "readableName": "Goal",
+      "description": "Determines which goal will send a victory condition to the AP server.",
+      "values": {
+        "any": "Any",
+        "hollowknight": "Hollow Knight",
+        "siblings": "Siblings",
+        "radiance": "Radiance"
+      },
+      "default": "any"
+    },
+    {
+      "type": "string",
+      "name": "WhitePalace",
+      "readableName": "White Palace",
+      "description": "Whether or not to include White Palace or not. *Note*: Even if excluded, the King Fragment check may still be required if charms are vanilla.",
+      "values": {
+        "exclude": "Exclude",
+        "kingfragment": "King Fragment only",
+        "nopathofpain": "Exclude Path of Pain",
+        "include": "Include everything"
+      },
+      "default": "exclude"
+    },
+
+    {
+      "type": "numeric",
+      "name": "StartingGeo",
+      "readableName": "Starting Geo",
+      "description": "The amount of Geo you start with.",
+      "low": 0,
+      "high": 1000,
+      "step": 10,
+      "randomable": true,
+      "default": 0
+    },
+    {
+      "type": "string",
+      "name": "DeathLink",
+      "readableName": "DeathLink",
+      "description": "If one DeathLinked player dies, all of them do.",
+      "values": {
+        "off": "Off",
+        "shadeless": [
+          "Shadeless",
+          "DeathLink kills you, but no shade spawns and no Geo is lost. Your previous shade, if any, is untouched."
+        ],
+        "vanilla": [
+          "As vanilla",
+          "DeathLink kills you and is just like any other death.  RIP your previous shade and Geo."
+        ],
+        "shade": [
+          "No new shade",
+          "DeathLink functions like a normal death if you do not already have a shade, shadeless otherwise."
+        ]
+      },
+      "default": "off"
+    },
+
+    {
+      "type": "numeric",
+      "name": "MinimumGeoPrice",
+      "readableName": "Minimum Geo Price",
+      "description": "The minimum Geo price for items in Geo shops.",
+      "low": 1,
+      "high": 200,
+      "randomable": true,
+      "default": 1
+    },
+    {
+      "type": "numeric",
+      "name": "MaximumGeoPrice",
+      "readableName": "Maximum Geo Price",
+      "description": "The maximum Geo price for items in Geo shops.",
+      "low": 25,
+      "high": 2000,
+      "step": 25,
+      "randomable": true,
+      "default": 400
+    },
+    {
       "type": "numeric",
       "name": "MinimumGrubPrice",
       "readableName": "Minimum Grub Price",
@@ -424,48 +509,221 @@
       "type": "numeric",
       "name": "EggShopSlots",
       "readableName": "Egg Shop Slots",
-      "description": "For each slot, add a location to the Egg Shop and a Geo drop to the item pool.",
+      "description": "For each slot, add a location to the Egg Shop and a filler item to the item pool.",
       "low": 0,
       "high": 16,
       "randomable": true,
       "default": 0
     },
     {
-      "type": "string",
-      "name": "Goal",
-      "readableName": "Goal",
-      "description": "Determines which goal will send a victory condition to the AP server.",
-      "values": {
-        "any": "Any",
-        "hollowknight": "Hollow Knight",
-        "siblings": "Siblings",
-        "radiance": "Radiance"
-      },
-      "default": "any"
-    },
-    {
-      "type": "string",
-      "name": "WhitePalace",
-      "readableName": "White Palace",
-      "description": "Whether or not to include White Palace or not. *Note*: Even if excluded, the King Fragment check may still be required if charms are vanilla.",
-      "values": {
-        "exclude": "Exclude",
-        "kingfragment": "King Fragment only",
-        "nopathofpain": "Exclude Path of Pain",
-        "include": "Include everything"
-      },
-      "default": "exclude"
+      "type": "numeric",
+      "name": "SlyShopSlots",
+      "readableName": "Sly Shop Slots",
+      "description": "For each slot, add a location to the Sly Shop and a filler item to the item pool.",
+      "low": 0,
+      "high": 16,
+      "randomable": true,
+      "default": 8
     },
     {
       "type": "numeric",
-      "name": "StartingGeo",
-      "readableName": "Starting Geo",
-      "description": "The amount of Geo you start with.",
+      "name": "SlyKeyShopSlots",
+      "readableName": "Sly Key Shop Slots",
+      "description": "For each slot, add a location to the Sly Key Shop and a filler item to the item pool.",
       "low": 0,
-      "high": 1000,
-      "step": 10,
+      "high": 16,
+      "randomable": true,
+      "default": 6
+    },
+    {
+      "type": "numeric",
+      "name": "IseldaShopSlots",
+      "readableName": "Iselda Shop Slots",
+      "description": "For each slot, add a location to the Iselda Shop and a filler item to the item pool.",
+      "low": 0,
+      "high": 16,
+      "randomable": true,
+      "default": 2
+    },
+    {
+      "type": "numeric",
+      "name": "SalubraShopSlots",
+      "readableName": "Salubra Shop Slots",
+      "description": "For each slot, add a location to the Salubra Shop and a filler item to the item pool.",
+      "low": 0,
+      "high": 16,
+      "randomable": true,
+      "default": 5
+    },
+    {
+      "type": "numeric",
+      "name": "SalubraCharmShopSlots",
+      "readableName": "Salubra Charm Shop Slots",
+      "description": "For each slot, add a location to the Salubra Charm Shop and a filler item to the item pool.",
+      "low": 0,
+      "high": 16,
+      "randomable": true,
+      "default": 5
+    },
+    {
+      "type": "numeric",
+      "name": "LegEaterShopSlots",
+      "readableName": "Leg Eater Shop Slots",
+      "description": "For each slot, add a location to the Leg Eater Shop and a filler item to the item pool.",
+      "low": 0,
+      "high": 16,
+      "randomable": true,
+      "default": 3
+    },
+    {
+      "type": "numeric",
+      "name": "GrubfatherShopSlots",
+      "readableName": "Grubfather Shop Slots",
+      "description": "For each slot, add a location to the Grubfather Shop and a filler item to the item pool.",
+      "low": 0,
+      "high": 16,
+      "randomable": true,
+      "default": 7
+    },
+    {
+      "type": "numeric",
+      "name": "SeerRewardSlots",
+      "readableName": "Seer Reward Slots",
+      "description": "For each slot, add a location to the Seer and a filler item to the item pool.",
+      "low": 0,
+      "high": 16,
+      "randomable": true,
+      "default": 8
+    },
+    {
+      "type": "numeric",
+      "name": "ExtraShopSlots",
+      "readableName": "Extra Shop Slots",
+      "description": "For each slot, add a location to a randomly selected shop and a filler item to the item pool. If Egg Shop Slots are at 0, it will be excluded, and any one shop can have up to 16 items.",
+      "low": 0,
+      "high": 144,
       "randomable": true,
       "default": 0
+    },
+
+    {
+      "type": "boolean",
+      "name": "SplitCrystalHeart",
+      "readableName": "Split Crystal Heart",
+      "description": "Splits the Crystal Heart into left- and right-only versions of the item.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "SplitMothwingCloak",
+      "readableName": "Split Mothwing Cloak",
+      "description": "Splits the Mothwing Cloak into left- and right-only versions of the item. Randomly adds a second left or right Mothwing cloak item which functions as the upgrade to Shade Cloak.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "SplitMantisClaw",
+      "readableName": "Split Mantis Claw",
+      "description": "Splits the Mantis Claw into left- and right-only versions of the item.",
+      "default": false
+    },
+
+    {
+      "type": "string",
+      "name": "CostSanity",
+      "readableName": "CostSanity",
+      "description": "If enabled, most locations with costs (like Stag Stations) will have randomly determined costs.",
+      "values": {
+        "off": "Off",
+        "on": "On",
+        "shopsonly": [
+          "Shops only",
+          "CostSanity will only apply to shops (including Grubfather, Seer and Egg Shop)."
+        ],
+        "notshops": [
+          "Not shops",
+          "CostSanity will only apply to non-shops (e.g. Stag Stations and Cornifer locations)."
+        ]
+      },
+      "default": "off"
+    },
+    {
+      "type": "numeric",
+      "name": "CostSanityHybridChance",
+      "readableName": "CostSanity — Hybrid Chance",
+      "description": "The chance that a CostSanity cost will include two components instead of one, e.g. Grubs + Essence",
+      "low": 0,
+      "high": 100,
+      "randomable": true,
+      "default": 10,
+      "dependsOn": {
+        "CostSanity": ["on", "shopsonly", "notshops"]
+      }
+    },
+    {
+      "type": "numeric",
+      "name": "CostSanityEggWeight",
+      "readableName": "CostSanity — Egg Weight",
+      "description": "The likelihood of Costsanity choosing a Egg cost. Chosen as a sum of all weights from other types.",
+      "low": 0,
+      "high": 1000,
+      "randomable": true,
+      "default": 1,
+      "dependsOn": {
+        "CostSanity": ["on", "shopsonly", "notshops"]
+      }
+    },
+    {
+      "type": "numeric",
+      "name": "CostSanityGrubWeight",
+      "readableName": "CostSanity — Grub Weight",
+      "description": "The likelihood of Costsanity choosing a Grub cost. Chosen as a sum of all weights from other types.",
+      "low": 0,
+      "high": 1000,
+      "randomable": true,
+      "default": 1,
+      "dependsOn": {
+        "CostSanity": ["on", "shopsonly", "notshops"]
+      }
+    },
+    {
+      "type": "numeric",
+      "name": "CostSanityEssenceWeight",
+      "readableName": "CostSanity — Essence Weight",
+      "description": "The likelihood of Costsanity choosing an Essence cost. Chosen as a sum of all weights from other types.",
+      "low": 0,
+      "high": 1000,
+      "randomable": true,
+      "default": 1,
+      "dependsOn": {
+        "CostSanity": ["on", "shopsonly", "notshops"]
+      }
+    },
+    {
+      "type": "numeric",
+      "name": "CostSanityCharmWeight",
+      "readableName": "CostSanity — Charm Weight",
+      "description": "The likelihood of Costsanity choosing a Charm cost. Chosen as a sum of all weights from other types.",
+      "low": 0,
+      "high": 1000,
+      "randomable": true,
+      "default": 1,
+      "dependsOn": {
+        "CostSanity": ["on", "shopsonly", "notshops"]
+      }
+    },
+    {
+      "type": "numeric",
+      "name": "CostSanityGeoWeight",
+      "readableName": "CostSanity — Geo Weight",
+      "description": "The likelihood of Costsanity choosing a Geo cost. Chosen as a sum of all weights from other types.",
+      "low": 0,
+      "high": 1000,
+      "randomable": true,
+      "default": 8,
+      "dependsOn": {
+        "CostSanity": ["on", "shopsonly", "notshops"]
+      }
     }
   ],
   "items": [

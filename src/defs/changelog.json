@@ -1,4 +1,23 @@
 {
+  "1.0.8": [
+    "Update spec to **0.3.4**",
+    [
+      "**Dark Souls III** added",
+      "**Risk of Rain 2**: Dying in Commencement to win can be turned off",
+      "**Super Mario 64**: Additional options for three major Star Doors aside from Infinite Staircase",
+      "**Secret of Evermore**: Energy Core Fragment Hunt mode",
+      "**Subnautica**: Goal selector, checks on creature scans",
+      "**Timespinner**: Additional drop table rando options",
+      "**The Witness**: Additional progression shuffle options",
+      "**Raft**: A couple of new options",
+      "**Hollow Knight**: Holy moly, look at all these new options"
+    ],
+    "**Ocarina of Time**: Adjust minimum Big Poes to 1",
+    "**Secret of Evermore**: Adjust minimum money and experience modifiers to 25",
+    [
+      "This is because changing the value away from 25 would lock the slider on 25+1's rather than 25's"
+    ]
+  ],
   "1.0.7": [
     "Update spec to **0.3.3**",
     [

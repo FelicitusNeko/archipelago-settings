@@ -31,6 +31,13 @@
       "default": 4
     },
     {
+      "type": "boolean",
+      "name": "final_stage_death",
+      "readableName": "Final Stage Death is Win",
+      "description": "Death on the final boss stage counts as a win.",
+      "default": true
+    },
+    {
       "type": "numeric",
       "name": "item_pickup_step",
       "readableName": "Item pickup step",

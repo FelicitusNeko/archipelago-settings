@@ -54,6 +54,26 @@
         "anywhere": "Anywhere"
       },
       "default": "random_on_island"
+    },    {
+      "type": "string",
+      "name": "island_generation_distance",
+      "readableName": "Island distance",
+      "description": "Sets how far away islands spawn from you when you input their coordinates into the Receiver.",
+      "values": {
+        "quarter": "Four times shorter than vanilla",
+        "half": "Two times shorter than vanilla",
+        "vanilla": "Vanilla",
+        "double": "Two times longer than vanilla",
+        "quadrouple": "Four times longer than vanilla"
+      },
+      "default": "vanilla"
+    },
+    {
+      "type": "boolean",
+      "name": "expensive_research",
+      "readableName": "Expensive research",
+      "description": "Makes unlocking items in the Crafting Table consume the researched items.",
+      "default": false
     },
     {
       "type": "boolean",
@@ -82,6 +102,9 @@
       "name": "Backpack"
     },
     {
+      "name": "Big backpack"
+    },
+    {
       "name": "Leather helmet"
     },
     {
@@ -97,19 +120,31 @@
       "name": "Head light"
     },
     {
+      "name": "Advanced head light"
+    },
+    {
       "name": "Oxygen bottle"
     },
     {
       "name": "Zipline tool"
     },
     {
+      "name": "Electric zipline tool"
+    },
+    {
       "name": "Empty bottle"
+    },
+    {
+      "name": "Empty canteen"
+    },
+    {
+      "name": "Bucket"
     },
     {
       "name": "Clay bowl"
     },
     {
-      "name": "Bucket"
+      "name": "Drinking glass"
     },
     {
       "name": "Healing salve"
@@ -121,7 +156,13 @@
       "name": "Cookingpot"
     },
     {
+      "name": "Juicer"
+    },
+    {
       "name": "Advanced grill"
+    },
+    {
+      "name": "Electric grill"
     },
     {
       "name": "Advanced purifier"
@@ -130,16 +171,28 @@
       "name": "Electric purifier"
     },
     {
+      "name": "Advanced small crop plot"
+    },
+    {
+      "name": "Advanced medium crop plot"
+    },
+    {
+      "name": "Advanced large crop plot"
+    },
+    {
+      "name": "Grass plot"
+    },
+    {
       "name": "Medium crop plot"
     },
     {
       "name": "Large crop plot"
     },
     {
-      "name": "Grass plot"
+      "name": "Scarecrow"
     },
     {
-      "name": "Scarecrow"
+      "name": "Advanced Scarecrow"
     },
     {
       "name": "Sprinkler"
@@ -149,6 +202,9 @@
     },
     {
       "name": "Battery"
+    },
+    {
+      "name": "Advanced Battery"
     },
     {
       "name": "Bolt"
@@ -161,6 +217,9 @@
     },
     {
       "name": "Stationary anchor"
+    },
+    {
+      "name": "Advanced stationary anchor"
     },
     {
       "name": "Engine controls"
@@ -181,6 +240,9 @@
       "name": "Battery charger"
     },
     {
+      "name": "Wind turbine"
+    },
+    {
       "name": "Hammock"
     },
     {
@@ -190,10 +252,22 @@
       "name": "Biofuel refiner"
     },
     {
+      "name": "Advanced biofuel refiner"
+    },
+    {
       "name": "Birds nest"
     },
     {
+      "name": "Simple collection net"
+    },
+    {
+      "name": "Advanced collection net"
+    },
+    {
       "name": "Smelter"
+    },
+    {
+      "name": "Electric Smelter"
     },
     {
       "name": "Fuel tank"
@@ -202,13 +276,13 @@
       "name": "Water tank"
     },
     {
-      "name": "Simple collection net"
-    },
-    {
       "name": "Fuel pipe"
     },
     {
       "name": "Water pipe"
+    },
+    {
+      "name": "Recycler"
     },
     {
       "name": "Storage"
@@ -229,6 +303,9 @@
       "name": "Metal axe"
     },
     {
+      "name": "Titanium axe"
+    },
+    {
       "name": "Binoculars"
     },
     {
@@ -236,6 +313,9 @@
     },
     {
       "name": "Scrap hook"
+    },
+    {
+      "name": "Titanium hook"
     },
     {
       "name": "Metal detector"
@@ -259,10 +339,16 @@
       "name": "Metal arrow"
     },
     {
-      "name": "Metal Spear"
+      "name": "Titanium arrow"
+    },
+    {
+      "name": "Metal spear"
     },
     {
       "name": "Machete"
+    },
+    {
+      "name": "Titanium sword"
     },
     {
       "name": "Net launcher"
@@ -280,10 +366,37 @@
       "name": "Tangaroa Frequency"
     },
     {
+      "name": "Varuna Point Frequency"
+    },
+    {
+      "name": "Temperance Frequency"
+    },
+    {
+      "name": "Utopia Frequency"
+    },
+    {
       "name": "Caravan Island Frequency"
     },
     {
       "name": "progressive-salve"
+    },
+    {
+      "name": "progressive-backpack"
+    },
+    {
+      "name": "progressive-containers"
+    },
+    {
+      "name": "progressive-headlight"
+    },
+    {
+      "name": "progressive-biofuel"
+    },
+    {
+      "name": "progressive-bottle"
+    },
+    {
+      "name": "progressive-grill"
     },
     {
       "name": "progressive-purifier"
@@ -295,7 +408,16 @@
       "name": "progressive-battery"
     },
     {
+      "name": "progressive-anchor"
+    },
+    {
       "name": "progressive-engine"
+    },
+    {
+      "name": "progressive-scarecrow"
+    },
+    {
+      "name": "progressive-net"
     },
     {
       "name": "progressive-storage"
@@ -308,6 +430,15 @@
     },
     {
       "name": "progressive-bow"
+    },
+    {
+      "name": "progressive-axe"
+    },
+    {
+      "name": "progressive-hook"
+    },
+    {
+      "name": "progressive-spear"
     },
     {
       "name": "progressive-frequency"
@@ -761,71 +892,266 @@
     },
     {
       "name": "Resource Pack: 15 Raw_Potato"
+    },
+    {
+      "name": "Resource Pack: 1 MetalOre"
+    },
+    {
+      "name": "Resource Pack: 2 MetalOre"
+    },
+    {
+      "name": "Resource Pack: 3 MetalOre"
+    },
+    {
+      "name": "Resource Pack: 4 MetalOre"
+    },
+    {
+      "name": "Resource Pack: 5 MetalOre"
+    },
+    {
+      "name": "Resource Pack: 6 MetalOre"
+    },
+    {
+      "name": "Resource Pack: 7 MetalOre"
+    },
+    {
+      "name": "Resource Pack: 8 MetalOre"
+    },
+    {
+      "name": "Resource Pack: 9 MetalOre"
+    },
+    {
+      "name": "Resource Pack: 10 MetalOre"
+    },
+    {
+      "name": "Resource Pack: 11 MetalOre"
+    },
+    {
+      "name": "Resource Pack: 12 MetalOre"
+    },
+    {
+      "name": "Resource Pack: 13 MetalOre"
+    },
+    {
+      "name": "Resource Pack: 14 MetalOre"
+    },
+    {
+      "name": "Resource Pack: 15 MetalOre"
+    },
+    {
+      "name": "Resource Pack: 1 TitaniumOre"
+    },
+    {
+      "name": "Resource Pack: 2 TitaniumOre"
+    },
+    {
+      "name": "Resource Pack: 3 TitaniumOre"
+    },
+    {
+      "name": "Resource Pack: 4 TitaniumOre"
+    },
+    {
+      "name": "Resource Pack: 5 TitaniumOre"
+    },
+    {
+      "name": "Resource Pack: 6 TitaniumOre"
+    },
+    {
+      "name": "Resource Pack: 7 TitaniumOre"
+    },
+    {
+      "name": "Resource Pack: 8 TitaniumOre"
+    },
+    {
+      "name": "Resource Pack: 9 TitaniumOre"
+    },
+    {
+      "name": "Resource Pack: 10 TitaniumOre"
+    },
+    {
+      "name": "Resource Pack: 11 TitaniumOre"
+    },
+    {
+      "name": "Resource Pack: 12 TitaniumOre"
+    },
+    {
+      "name": "Resource Pack: 13 TitaniumOre"
+    },
+    {
+      "name": "Resource Pack: 14 TitaniumOre"
+    },
+    {
+      "name": "Resource Pack: 15 TitaniumOre"
+    },
+    {
+      "name": "Resource Pack: 1 CopperOre"
+    },
+    {
+      "name": "Resource Pack: 2 CopperOre"
+    },
+    {
+      "name": "Resource Pack: 3 CopperOre"
+    },
+    {
+      "name": "Resource Pack: 4 CopperOre"
+    },
+    {
+      "name": "Resource Pack: 5 CopperOre"
+    },
+    {
+      "name": "Resource Pack: 6 CopperOre"
+    },
+    {
+      "name": "Resource Pack: 7 CopperOre"
+    },
+    {
+      "name": "Resource Pack: 8 CopperOre"
+    },
+    {
+      "name": "Resource Pack: 9 CopperOre"
+    },
+    {
+      "name": "Resource Pack: 10 CopperOre"
+    },
+    {
+      "name": "Resource Pack: 11 CopperOre"
+    },
+    {
+      "name": "Resource Pack: 12 CopperOre"
+    },
+    {
+      "name": "Resource Pack: 13 CopperOre"
+    },
+    {
+      "name": "Resource Pack: 14 CopperOre"
+    },
+    {
+      "name": "Resource Pack: 15 CopperOre"
+    },
+    {
+      "name": "Resource Pack: 1 ExplosiveGoo"
+    },
+    {
+      "name": "Resource Pack: 2 ExplosiveGoo"
+    },
+    {
+      "name": "Resource Pack: 3 ExplosiveGoo"
+    },
+    {
+      "name": "Resource Pack: 4 ExplosiveGoo"
+    },
+    {
+      "name": "Resource Pack: 5 ExplosiveGoo"
+    },
+    {
+      "name": "Resource Pack: 6 ExplosiveGoo"
+    },
+    {
+      "name": "Resource Pack: 7 ExplosiveGoo"
+    },
+    {
+      "name": "Resource Pack: 8 ExplosiveGoo"
+    },
+    {
+      "name": "Resource Pack: 9 ExplosiveGoo"
+    },
+    {
+      "name": "Resource Pack: 10 ExplosiveGoo"
+    },
+    {
+      "name": "Resource Pack: 11 ExplosiveGoo"
+    },
+    {
+      "name": "Resource Pack: 12 ExplosiveGoo"
+    },
+    {
+      "name": "Resource Pack: 13 ExplosiveGoo"
+    },
+    {
+      "name": "Resource Pack: 14 ExplosiveGoo"
+    },
+    {
+      "name": "Resource Pack: 15 ExplosiveGoo"
     }
   ],
   "locations": [
     {
-      "name": "Small trophy board"
+      "name": "Honey"
     },
     {
-      "name": "Medium trophy board"
-    },
-    {
-      "name": "Simple collection net"
-    },
-    {
-      "name": "Advanced grill"
-    },
-    {
-      "name": "Large crop plot"
-    },
-    {
-      "name": "Scarecrow"
-    },
-    {
-      "name": "Hammock"
-    },
-    {
-      "name": "Smelter"
-    },
-    {
-      "name": "Medium crop plot"
-    },
-    {
-      "name": "Lantern"
-    },
-    {
-      "name": "Bucket"
-    },
-    {
-      "name": "Advanced purifier"
-    },
-    {
-      "name": "Grass plot"
-    },
-    {
-      "name": "Paint brush"
+      "name": "Flippers"
     },
     {
       "name": "Birds nest"
     },
     {
-      "name": "Shovel"
+      "name": "Battery"
     },
     {
-      "name": "Stone arrow"
+      "name": "Circuit board"
     },
     {
-      "name": "Metal arrow"
+      "name": "Bolt"
+    },
+    {
+      "name": "Hinge"
+    },
+    {
+      "name": "Shear"
+    },
+    {
+      "name": "Net launcher"
+    },
+    {
+      "name": "Drinking glass"
+    },
+    {
+      "name": "Clay bowl"
+    },
+    {
+      "name": "Net canister"
+    },
+    {
+      "name": "Binoculars"
+    },
+    {
+      "name": "Metal fishing rod"
+    },
+    {
+      "name": "Oxygen bottle"
+    },
+    {
+      "name": "Sprinkler"
+    },
+    {
+      "name": "Empty bottle"
+    },
+    {
+      "name": "Cookingpot"
+    },
+    {
+      "name": "Juicer"
     },
     {
       "name": "Stationary anchor"
     },
     {
-      "name": "Paint mill"
+      "name": "Advanced grill"
+    },
+    {
+      "name": "Metal Spear"
     },
     {
       "name": "Storage"
+    },
+    {
+      "name": "Smelter"
+    },
+    {
+      "name": "Paint mill"
+    },
+    {
+      "name": "Hammock"
     },
     {
       "name": "Metal axe"
@@ -834,19 +1160,58 @@
       "name": "Scrap hook"
     },
     {
+      "name": "Large crop plot"
+    },
+    {
       "name": "Sweep net"
     },
     {
       "name": "Basic bow"
     },
     {
-      "name": "Metal Spear"
+      "name": "Scarecrow"
     },
     {
-      "name": "Cookingpot"
+      "name": "Metal arrow"
     },
     {
-      "name": "Beehive"
+      "name": "Shovel"
+    },
+    {
+      "name": "Advanced collection net"
+    },
+    {
+      "name": "Bucket"
+    },
+    {
+      "name": "Collection net"
+    },
+    {
+      "name": "Paint brush"
+    },
+    {
+      "name": "Advanced purifier"
+    },
+    {
+      "name": "Grass plot"
+    },
+    {
+      "name": "Stone arrow"
+    },
+    {
+      "name": "Medium crop plot"
+    },
+    {
+      "name": "Lantern"
+    },
+    {
+      "name": "Small trophy board"
+    },
+    {
+      "name": "Medium trophy board"
+    },
+    {
+      "name": "Large trophy board"
     },
     {
       "name": "Backpack"
@@ -861,61 +1226,22 @@
       "name": "Leather greaves"
     },
     {
-      "name": "Flippers"
-    },
-    {
-      "name": "Oxygen bottle"
-    },
-    {
-      "name": "Empty bottle"
-    },
-    {
-      "name": "Clay bowl"
-    },
-    {
-      "name": "Healing salve"
+      "name": "Beehive"
     },
     {
       "name": "Good healing salve"
     },
     {
-      "name": "Sprinkler"
+      "name": "Healing salve"
     },
     {
-      "name": "Honey"
-    },
-    {
-      "name": "Battery"
-    },
-    {
-      "name": "Bolt"
-    },
-    {
-      "name": "Circuit board"
-    },
-    {
-      "name": "Hinge"
-    },
-    {
-      "name": "Binoculars"
-    },
-    {
-      "name": "Metal fishing rod"
-    },
-    {
-      "name": "Shear"
-    },
-    {
-      "name": "Net launcher"
-    },
-    {
-      "name": "Net canister"
-    },
-    {
-      "name": "Large trophy board"
+      "name": "Tala (Radio Tower)"
     },
     {
       "name": "Head light blueprint"
+    },
+    {
+      "name": "Recycler blueprint"
     },
     {
       "name": "Radio Tower Briefcase"
@@ -933,6 +1259,24 @@
       "name": "Radio Tower Signalboard Trace"
     },
     {
+      "name": "Hannes Letter 1"
+    },
+    {
+      "name": "Hannes Letter 2"
+    },
+    {
+      "name": "Hannes Letter 3"
+    },
+    {
+      "name": "Olof Log 1"
+    },
+    {
+      "name": "Olof Log 2"
+    },
+    {
+      "name": "Olof Log 3"
+    },
+    {
       "name": "Vasagatan Recording 1"
     },
     {
@@ -942,34 +1286,10 @@
       "name": "Vasagatan Recording 3"
     },
     {
-      "name": "Vasagatan Recording 4"
-    },
-    {
-      "name": "Vasagatan Recording 5"
-    },
-    {
-      "name": "Vasagatan Note from Oskar"
-    },
-    {
-      "name": "Vasagatan Note from Celine"
-    },
-    {
-      "name": "Vasagatan Note from Hannes"
-    },
-    {
       "name": "Vasagatan Magazine Clipping"
     },
     {
-      "name": "Vasagatan Captain's Log 1"
-    },
-    {
-      "name": "Vasagatan Captain's Log 2"
-    },
-    {
       "name": "Vasagatan Frequency to Balboa"
-    },
-    {
-      "name": "Vasagatan Wilkstrom's report"
     },
     {
       "name": "Engine blueprint"
@@ -981,7 +1301,7 @@
       "name": "Machete blueprint"
     },
     {
-      "name": "Balboa Island Picture of two engineers"
+      "name": "Balboa Island Correa twins picture"
     },
     {
       "name": "Balboa Island Schedule of engineers"
@@ -990,7 +1310,7 @@
       "name": "Biofuel refiner blueprint"
     },
     {
-      "name": "Balboa Island Note from Hentry"
+      "name": "Balboa Island Note from Henry"
     },
     {
       "name": "Balboa Island Correas diary 3"
@@ -1011,6 +1331,9 @@
       "name": "Balboa Island Bear map"
     },
     {
+      "name": "Johnny (Balboa Island)"
+    },
+    {
       "name": "Balboa Island Doll murderer 4"
     },
     {
@@ -1026,31 +1349,31 @@
       "name": "Balboa Island Doll murderer 2"
     },
     {
-      "name": "Caravan Island Journal 1 - First Entry"
+      "name": "Caravan Island Detto journal 1"
     },
     {
-      "name": "Caravan Island Journal 2 - Pipe Experiment"
+      "name": "Caravan Island Detto journal 2"
     },
     {
-      "name": "Caravan Island Journal 3 - Rocket Experiment"
+      "name": "Caravan Island Detto journal 3"
     },
     {
-      "name": "Caravan Island Journal 4 - Mother's Letter"
+      "name": "Caravan Island Detto journal 4"
     },
     {
-      "name": "Caravan Island Journal 5 - Dive Experiment"
+      "name": "Caravan Island Detto journal 5"
     },
     {
-      "name": "Caravan Island Journal 6 - Kelp Experiment"
+      "name": "Caravan Island Detto journal 6"
     },
     {
-      "name": "Caravan Island Journal 7 - Raft Society News Letter"
+      "name": "Caravan Island Olaf speech"
     },
     {
-      "name": "Caravan Island Journal 8 - Leaving Caravan Island"
+      "name": "Caravan Island Raft town article"
     },
     {
-      "name": "Caravan Island Journal 9 - Doctor's Note"
+      "name": "Caravan Island Doctor's note"
     },
     {
       "name": "Firework blueprint"
@@ -1098,6 +1421,9 @@
       "name": "Tangaroa Cipher"
     },
     {
+      "name": "Tangaroa Frequency to Varuna Point"
+    },
+    {
       "name": "Water pipe blueprint"
     },
     {
@@ -1108,6 +1434,105 @@
     },
     {
       "name": "Large Storage blueprint"
+    },
+    {
+      "name": "Elaine (Tangaroa)"
+    },
+    {
+      "name": "Varuna Point Grabber diary 1"
+    },
+    {
+      "name": "Varuna Point Grabber diary 2"
+    },
+    {
+      "name": "Varuna Point Grabber diary 3"
+    },
+    {
+      "name": "Varuna Point Grabber diary 4"
+    },
+    {
+      "name": "Varuna Point Grabber diary 5"
+    },
+    {
+      "name": "Varuna Point Grabber diary 6"
+    },
+    {
+      "name": "Varuna Point Frequency to Temperance"
+    },
+    {
+      "name": "Wind Turbine blueprint"
+    },
+    {
+      "name": "Advanced Battery blueprint"
+    },
+    {
+      "name": "Advanced Headlight blueprint"
+    },
+    {
+      "name": "Electric Grill blueprint"
+    },
+    {
+      "name": "Temperance Bruno diary 1"
+    },
+    {
+      "name": "Temperance Bruno diary 2"
+    },
+    {
+      "name": "Temperance Bruno diary 3"
+    },
+    {
+      "name": "Temperance Bruno diary 4"
+    },
+    {
+      "name": "Temperance Bruno diary 5"
+    },
+    {
+      "name": "Temperance Sparrow note 1"
+    },
+    {
+      "name": "Temperance Sparrow note 2"
+    },
+    {
+      "name": "Temperance Frequency to Utopia"
+    },
+    {
+      "name": "Temperance Star sign 1"
+    },
+    {
+      "name": "Temperance Star sign 2"
+    },
+    {
+      "name": "Temperance Star sign 3"
+    },
+    {
+      "name": "Temperance Star sign 4"
+    },
+    {
+      "name": "Electric Smelter blueprint"
+    },
+    {
+      "name": "Advanced Biofuel Extractor blueprint"
+    },
+    {
+      "name": "Advanced Stationary Anchor blueprint"
+    },
+    {
+      "name": "Shogo (Temperance)"
+    },
+    {
+      "name": "Electric Zipline blueprint"
+    },
+    {
+      "name": "Advanced Backpack blueprint"
+    },
+    {
+      "name": "Titanium Tools blueprint"
+    },
+    {
+      "name": "Utopia Captives note"
+    },
+    {
+      "name": "Utopia Detto map"
     },
     {
       "name": "Relay Station quest"

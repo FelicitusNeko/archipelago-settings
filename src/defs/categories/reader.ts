@@ -77,6 +77,7 @@ const APCategoryData: APCategoryJson[] = [
   require("./020-witness.json"), // 0.3.2
   require("./021-sa2b.json"), // 0.3.2
   require("./022-starcraft2.json"), // 0.3.2
+  require("./023-darksouls3.json"), // 0.3.4
 ]
   .map((i) => {
     // only bring out ArchipIDLE in April

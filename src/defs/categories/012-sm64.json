@@ -39,10 +39,40 @@
     },
     {
       "type": "numeric",
+      "name": "FirstBowserStarDoorCost",
+      "readableName": "First Bowser Star Door cost",
+      "description": "How many Power Stars are required at the Star Door to Bowser in the Dark World.",
+      "low": 0,
+      "high": 20,
+      "randomable": true,
+      "default": 8
+    },
+    {
+      "type": "numeric",
+      "name": "BasementStarDoorCost",
+      "readableName": "Basement Star Door cost",
+      "description": "How many Power Stars are required at the Star Door in the Basement.",
+      "low": 0,
+      "high": 50,
+      "randomable": true,
+      "default": 30
+    },
+    {
+      "type": "numeric",
+      "name": "SecondFloorStarDoorCost",
+      "readableName": "Second floor Star Door cost",
+      "description": "How many Power Stars are required to access the third floor.",
+      "low": 0,
+      "high": 50,
+      "randomable": true,
+      "default": 50
+    },
+{
+      "type": "numeric",
       "name": "StarsToFinish",
       "readableName": "Stars to finish",
       "description": "How many Power Stars are needed to dispel the Infinite Staircase to Bowser's final lair.",
-      "low": 50,
+      "low": 0,
       "high": 100,
       "randomable": true,
       "default": 70

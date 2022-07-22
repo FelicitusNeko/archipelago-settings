@@ -18,8 +18,8 @@
     },
     {
       "type": "boolean",
-      "name": "FacebookMode",
-      "readableName": "Facebook mode",
+      "name": "EyeSpy",
+      "readableName": "Eye Spy",
       "description": "Requires the use of Oculus Ring to find weak spots in walls and floors.",
       "default": false
     },
@@ -88,13 +88,6 @@
       "dependsOn": {
         "BossRando": [true]
       }
-    },
-    {
-      "type": "boolean",
-      "name": "LoreChecks",
-      "readableName": "Lore checks",
-      "description": "Whether memories and journal entries will provide items.",
-      "default": false
     },
     {
       "type": "string",
@@ -168,6 +161,52 @@
     {
       "type": "string",
       "name": "LootPool",
+      "readableName": "Loot pool",
+      "description": "Sets the items that drop from enemies. This does not apply to boss reward checks.",
+      "values": {
+        "vanilla": "Vanilla",
+        "randomized": [
+          "Randomized",
+          "Each slot of every enemy's drop table is given a random use item or piece of equipment."
+        ],
+        "empty": ["Empty", "Enemies drop nothing."]
+      }
+    },
+    {
+      "type": "string",
+      "name": "DropRateCategory",
+      "readableName": "Drop rate category",
+      "description": "Sets the drop rate when 'Loot Pool' is set to 'Random'.",
+      "values": {
+        "tiered": ["Tiered", "Based on item rarity/value"],
+        "vanilla": ["Vanilla", "Based on bestiary slot the item is placed into"],
+        "randomized": [
+          "Randomized",
+          "Assigned a random tier/drop rate"
+        ],
+        "fixed": ["Fixed", "Set by the 'Fixed drop rate' setting"]
+      },
+      "dependsOn": {
+        "LootPool": ["randomized"]
+      }
+    },
+    {
+      "type": "numeric",
+      "name": "FixedDropRate",
+      "readableName": "Fixed drop rate",
+      "description": "Base drop rate percentage when 'Drop Rate Category' is set to 'Fixed'",
+      "randomable": true,
+      "min": 1,
+      "max": 100,
+      "default": 5,
+      "dependsOn": {
+        "LootPool": ["randomized"],
+        "DropRateCategory": ["fixed"]
+      }
+    },
+    {
+      "type": "string",
+      "name": "LootTierDistro",
       "readableName": "Loot pool",
       "description": "Sets the items that drop from enemies. This does not apply to boss reward checks.",
       "values": {
