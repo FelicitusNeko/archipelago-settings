@@ -1,0 +1,733 @@
+{
+  "category": "Donkey Kong Country 3",
+  "readableName": "Donkey Kong Country 3: Dixie Kong's Double Trouble!",
+  "index": 24,
+  "settings": [
+    {
+      "type": "deathlink",
+      "disabled": true
+    },
+    {
+      "type": "string",
+      "name": "goal",
+      "readableName": "Goal",
+      "description": "Determines the victory condition for this game.",
+      "values": {
+        "knautilus": ["Battle on the Knautilus", "Defeat Baron K. Roolenstein on the Knautilus"],
+        "banana_bird_hunt": ["Banana Bird Hunt", "Find enough Banana Birds to meet Mama Bird"]
+      },
+      "default": "knautilus"
+    },
+    {
+      "type": "boolean",
+      "name": "include_trade_sequence",
+      "readableName": "Include trade sequence",
+      "description": "Include Brothers Bear trading locations as checks.",
+      "default": false,
+      "disabled": true
+    },
+    {
+      "type": "numeric",
+      "name": "dk_coins_for_gyrocopter",
+      "readableName": "Hero Coins for Gyrocopter",
+      "description": "Determines how many Hero (DK) Coins are needed to unlock the Gyrocopter.\n*Note: Achieving this number before unlocking the Turbo Ski will cause the game to grant you a one-time upgrade to the next non-unlocked boat, until you return to Funky. Logic does not assume that you will use this.*",
+      "low": 10,
+      "high": 41,
+      "randomable": true,
+      "default": 30
+    },
+    {
+      "type": "numeric",
+      "name": "krematoa_bonus_coin_cost",
+      "readableName": "Krematoa Bonus Coin cost",
+      "description": "Determines how many Bonus Coins are needed to unlock each level in Krematoa.",
+      "low": 1,
+      "high": 17,
+      "randomable": true,
+      "default": 15
+    },
+    {
+      "type": "numeric",
+      "name": "percentage_of_extra_bonus_coins",
+      "readableName": "Percentage of extra Bonus Coins",
+      "description": "Determines how many additional Bonus Coins over how many are needed will be added to the multiworld pool.",
+      "low": 0,
+      "high": 100,
+      "randomable": true,
+      "default": 100
+    },
+    {
+      "type": "numeric",
+      "name": "number_of_banana_birds",
+      "readableName": "Number of Banana Birds",
+      "description": "Determines how many Banana Birds are added to the multiworld pool.",
+      "low": 5,
+      "high": 15,
+      "randomable": true,
+      "default": 15
+    },
+    {
+      "type": "numeric",
+      "name": "percentage_of_banana_birds",
+      "readableName": "Percentage of Banana Birds",
+      "description": "Determines what percentage of Banana Birds available will be needed to complete Banana Bird Hunt.",
+      "low": 20,
+      "high": 100,
+      "randomable": true,
+      "default": 100,
+      "dependsOn": {
+        "goal": ["banana_bird_hunt"]
+      }
+    },
+    {
+      "type": "boolean",
+      "name": "level_shuffle",
+      "readableName": "Level Shuffle",
+      "description": "Whether levels are shuffled.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "music_shuffle",
+      "readableName": "Music Shuffle",
+      "description": "Whether music is shuffled.",
+      "default": false
+    },
+    {
+      "type": "string",
+      "name": "kong_palette_swap",
+      "readableName": "Kong Palette Swap",
+      "description": "Determines which color will be used for the Kongs.",
+      "values": {
+        "default": "Default",
+        "purple": "Purple",
+        "spooky": "Spooky",
+        "dark": "Dark",
+        "chocolate": "Chocolate",
+        "shadow": "Shadow",
+        "red_gold": "Red/Gold",
+        "gbc": "Game Boy Color",
+        "halloween": "Halloween"
+      },
+      "default": "default"
+    },
+    {
+      "type": "numeric",
+      "name": "starting_life_count",
+      "readableName": "Starting Lives",
+      "description": "Determines the starting number of lives.",
+      "low": 1,
+      "high": 99,
+      "randomable": true,
+      "default": 5
+    }
+  ],
+  "items": [
+    {
+      "name": "Donkey Kong",
+      "max": 0
+    },
+    {
+      "name": "1-Up Balloon"
+    },
+    {
+      "name": "Bear Coin",
+      "max": 99
+    },
+    {
+      "name": "Bonus Coin",
+      "max": 85
+    },
+    {
+      "name": "DK Coin",
+      "max": 41
+    },
+    {
+      "name": "Banana Bird",
+      "max": 15
+    },
+    {
+      "name": "Krematoa Cog",
+      "max": 5
+    },
+    {
+      "name": "Progressive Boat Upgrade",
+      "max": 3
+    }
+  ],
+  "locations": [
+    {
+      "name": "Lakeside Limbo - Flag"
+    },
+    {
+      "name": "Lakeside Limbo - Bonus 1"
+    },
+    {
+      "name": "Lakeside Limbo - Bonus 2"
+    },
+    {
+      "name": "Lakeside Limbo - DK Coin"
+    },
+    {
+      "name": "Doorstop Dash - Flag"
+    },
+    {
+      "name": "Doorstop Dash - Bonus 1"
+    },
+    {
+      "name": "Doorstop Dash - Bonus 2"
+    },
+    {
+      "name": "Doorstop Dash - DK Coin"
+    },
+    {
+      "name": "Tidal Trouble - Flag"
+    },
+    {
+      "name": "Tidal Trouble - Bonus 1"
+    },
+    {
+      "name": "Tidal Trouble - Bonus 2"
+    },
+    {
+      "name": "Tidal Trouble - DK Coin"
+    },
+    {
+      "name": "Skidda's Row - Flag"
+    },
+    {
+      "name": "Skidda's Row - Bonus 1"
+    },
+    {
+      "name": "Skidda's Row - Bonus 2"
+    },
+    {
+      "name": "Skidda's Row - DK Coin"
+    },
+    {
+      "name": "Murky Mill - Flag"
+    },
+    {
+      "name": "Murky Mill - Bonus 1"
+    },
+    {
+      "name": "Murky Mill - Bonus 2"
+    },
+    {
+      "name": "Murky Mill - DK Coin"
+    },
+    {
+      "name": "Barrel Shield Bust-Up - Flag"
+    },
+    {
+      "name": "Barrel Shield Bust-Up - Bonus 1"
+    },
+    {
+      "name": "Barrel Shield Bust-Up - Bonus 2"
+    },
+    {
+      "name": "Barrel Shield Bust-Up - DK Coin"
+    },
+    {
+      "name": "Riverside Race - Flag"
+    },
+    {
+      "name": "Riverside Race - Bonus 1"
+    },
+    {
+      "name": "Riverside Race - Bonus 2"
+    },
+    {
+      "name": "Riverside Race - DK Coin"
+    },
+    {
+      "name": "Squeals On Wheels - Flag"
+    },
+    {
+      "name": "Squeals On Wheels - Bonus 1"
+    },
+    {
+      "name": "Squeals On Wheels - Bonus 2"
+    },
+    {
+      "name": "Squeals On Wheels - DK Coin"
+    },
+    {
+      "name": "Springin' Spiders - Flag"
+    },
+    {
+      "name": "Springin' Spiders - Bonus 1"
+    },
+    {
+      "name": "Springin' Spiders - Bonus 2"
+    },
+    {
+      "name": "Springin' Spiders - DK Coin"
+    },
+    {
+      "name": "Bobbing Barrel Brawl - Flag"
+    },
+    {
+      "name": "Bobbing Barrel Brawl - Bonus 1"
+    },
+    {
+      "name": "Bobbing Barrel Brawl - Bonus 2"
+    },
+    {
+      "name": "Bobbing Barrel Brawl - DK Coin"
+    },
+    {
+      "name": "Bazza's Blockade - Flag"
+    },
+    {
+      "name": "Bazza's Blockade - Bonus 1"
+    },
+    {
+      "name": "Bazza's Blockade - Bonus 2"
+    },
+    {
+      "name": "Bazza's Blockade - DK Coin"
+    },
+    {
+      "name": "Rocket Barrel Ride - Flag"
+    },
+    {
+      "name": "Rocket Barrel Ride - Bonus 1"
+    },
+    {
+      "name": "Rocket Barrel Ride - Bonus 2"
+    },
+    {
+      "name": "Rocket Barrel Ride - DK Coin"
+    },
+    {
+      "name": "Kreeping Klasps - Flag"
+    },
+    {
+      "name": "Kreeping Klasps - Bonus 1"
+    },
+    {
+      "name": "Kreeping Klasps - Bonus 2"
+    },
+    {
+      "name": "Kreeping Klasps - DK Coin"
+    },
+    {
+      "name": "Tracker Barrel Trek - Flag"
+    },
+    {
+      "name": "Tracker Barrel Trek - Bonus 1"
+    },
+    {
+      "name": "Tracker Barrel Trek - Bonus 2"
+    },
+    {
+      "name": "Tracker Barrel Trek - DK Coin"
+    },
+    {
+      "name": "Fish Food Frenzy - Flag"
+    },
+    {
+      "name": "Fish Food Frenzy - Bonus 1"
+    },
+    {
+      "name": "Fish Food Frenzy - Bonus 2"
+    },
+    {
+      "name": "Fish Food Frenzy - DK Coin"
+    },
+    {
+      "name": "Fire-Ball Frenzy - Flag"
+    },
+    {
+      "name": "Fire-Ball Frenzy - Bonus 1"
+    },
+    {
+      "name": "Fire-Ball Frenzy - Bonus 2"
+    },
+    {
+      "name": "Fire-Ball Frenzy - DK Coin"
+    },
+    {
+      "name": "Demolition Drain-Pipe - Flag"
+    },
+    {
+      "name": "Demolition Drain-Pipe - Bonus 1"
+    },
+    {
+      "name": "Demolition Drain-Pipe - Bonus 2"
+    },
+    {
+      "name": "Demolition Drain-Pipe - DK Coin"
+    },
+    {
+      "name": "Ripsaw Rage - Flag"
+    },
+    {
+      "name": "Ripsaw Rage - Bonus 1"
+    },
+    {
+      "name": "Ripsaw Rage - Bonus 2"
+    },
+    {
+      "name": "Ripsaw Rage - DK Coin"
+    },
+    {
+      "name": "Blazing Bazookas - Flag"
+    },
+    {
+      "name": "Blazing Bazookas - Bonus 1"
+    },
+    {
+      "name": "Blazing Bazookas - Bonus 2"
+    },
+    {
+      "name": "Blazing Bazookas - DK Coin"
+    },
+    {
+      "name": "Low-G Labyrinth - Flag"
+    },
+    {
+      "name": "Low-G Labyrinth - Bonus 1"
+    },
+    {
+      "name": "Low-G Labyrinth - Bonus 2"
+    },
+    {
+      "name": "Low-G Labyrinth - DK Coin"
+    },
+    {
+      "name": "Krevice Kreepers - Flag"
+    },
+    {
+      "name": "Krevice Kreepers - Bonus 1"
+    },
+    {
+      "name": "Krevice Kreepers - Bonus 2"
+    },
+    {
+      "name": "Krevice Kreepers - DK Coin"
+    },
+    {
+      "name": "Tearaway Toboggan - Flag"
+    },
+    {
+      "name": "Tearaway Toboggan - Bonus 1"
+    },
+    {
+      "name": "Tearaway Toboggan - Bonus 2"
+    },
+    {
+      "name": "Tearaway Toboggan - DK Coin"
+    },
+    {
+      "name": "Barrel Drop Bounce - Flag"
+    },
+    {
+      "name": "Barrel Drop Bounce - Bonus 1"
+    },
+    {
+      "name": "Barrel Drop Bounce - Bonus 2"
+    },
+    {
+      "name": "Barrel Drop Bounce - DK Coin"
+    },
+    {
+      "name": "Krack-Shot Kroc - Flag"
+    },
+    {
+      "name": "Krack-Shot Kroc - Bonus 1"
+    },
+    {
+      "name": "Krack-Shot Kroc - Bonus 2"
+    },
+    {
+      "name": "Krack-Shot Kroc - DK Coin"
+    },
+    {
+      "name": "Lemguin Lunge - Flag"
+    },
+    {
+      "name": "Lemguin Lunge - Bonus 1"
+    },
+    {
+      "name": "Lemguin Lunge - Bonus 2"
+    },
+    {
+      "name": "Lemguin Lunge - DK Coin"
+    },
+    {
+      "name": "Buzzer Barrage - Flag"
+    },
+    {
+      "name": "Buzzer Barrage - Bonus 1"
+    },
+    {
+      "name": "Buzzer Barrage - Bonus 2"
+    },
+    {
+      "name": "Buzzer Barrage - DK Coin"
+    },
+    {
+      "name": "Kong-Fused Cliffs - Flag"
+    },
+    {
+      "name": "Kong-Fused Cliffs - Bonus 1"
+    },
+    {
+      "name": "Kong-Fused Cliffs - Bonus 2"
+    },
+    {
+      "name": "Kong-Fused Cliffs - DK Coin"
+    },
+    {
+      "name": "Floodlit Fish - Flag"
+    },
+    {
+      "name": "Floodlit Fish - Bonus 1"
+    },
+    {
+      "name": "Floodlit Fish - Bonus 2"
+    },
+    {
+      "name": "Floodlit Fish - DK Coin"
+    },
+    {
+      "name": "Pothole Panic - Flag"
+    },
+    {
+      "name": "Pothole Panic - Bonus 1"
+    },
+    {
+      "name": "Pothole Panic - Bonus 2"
+    },
+    {
+      "name": "Pothole Panic - DK Coin"
+    },
+    {
+      "name": "Ropey Rumpus - Flag"
+    },
+    {
+      "name": "Ropey Rumpus - Bonus 1"
+    },
+    {
+      "name": "Ropey Rumpus - Bonus 2"
+    },
+    {
+      "name": "Ropey Rumpus - DK Coin"
+    },
+    {
+      "name": "Konveyor Rope Klash - Flag"
+    },
+    {
+      "name": "Konveyor Rope Klash - Bonus 1"
+    },
+    {
+      "name": "Konveyor Rope Klash - Bonus 2"
+    },
+    {
+      "name": "Konveyor Rope Klash - DK Coin"
+    },
+    {
+      "name": "Creepy Caverns - Flag"
+    },
+    {
+      "name": "Creepy Caverns - Bonus 1"
+    },
+    {
+      "name": "Creepy Caverns - Bonus 2"
+    },
+    {
+      "name": "Creepy Caverns - DK Coin"
+    },
+    {
+      "name": "Lightning Lookout - Flag"
+    },
+    {
+      "name": "Lightning Lookout - Bonus 1"
+    },
+    {
+      "name": "Lightning Lookout - Bonus 2"
+    },
+    {
+      "name": "Lightning Lookout - DK Coin"
+    },
+    {
+      "name": "Koindozer Klamber - Flag"
+    },
+    {
+      "name": "Koindozer Klamber - Bonus 1"
+    },
+    {
+      "name": "Koindozer Klamber - Bonus 2"
+    },
+    {
+      "name": "Koindozer Klamber - DK Coin"
+    },
+    {
+      "name": "Poisonous Pipeline - Flag"
+    },
+    {
+      "name": "Poisonous Pipeline - Bonus 1"
+    },
+    {
+      "name": "Poisonous Pipeline - Bonus 2"
+    },
+    {
+      "name": "Poisonous Pipeline - DK Coin"
+    },
+    {
+      "name": "Stampede Sprint - Flag"
+    },
+    {
+      "name": "Stampede Sprint - Bonus 1"
+    },
+    {
+      "name": "Stampede Sprint - Bonus 2"
+    },
+    {
+      "name": "Stampede Sprint - Bonus 3"
+    },
+    {
+      "name": "Stampede Sprint - DK Coin"
+    },
+    {
+      "name": "Criss Kross Cliffs - Flag"
+    },
+    {
+      "name": "Criss Kross Cliffs - Bonus 1"
+    },
+    {
+      "name": "Criss Kross Cliffs - Bonus 2"
+    },
+    {
+      "name": "Criss Kross Cliffs - DK Coin"
+    },
+    {
+      "name": "Tyrant Twin Tussle - Flag"
+    },
+    {
+      "name": "Tyrant Twin Tussle - Bonus 1"
+    },
+    {
+      "name": "Tyrant Twin Tussle - Bonus 2"
+    },
+    {
+      "name": "Tyrant Twin Tussle - Bonus 3"
+    },
+    {
+      "name": "Tyrant Twin Tussle - DK Coin"
+    },
+    {
+      "name": "Swoopy Salvo - Flag"
+    },
+    {
+      "name": "Swoopy Salvo - Bonus 1"
+    },
+    {
+      "name": "Swoopy Salvo - Bonus 2"
+    },
+    {
+      "name": "Swoopy Salvo - Bonus 3"
+    },
+    {
+      "name": "Swoopy Salvo - DK Coin"
+    },
+    {
+      "name": "Rocket Rush - Flag"
+    },
+    {
+      "name": "Rocket Rush - DK Coin"
+    },
+    {
+      "name": "Belcha's Barn"
+    },
+    {
+      "name": "Arich's Ambush"
+    },
+    {
+      "name": "Squirt's Showdown"
+    },
+    {
+      "name": "KAOS Karnage"
+    },
+    {
+      "name": "Bleak's House"
+    },
+    {
+      "name": "Barbos's Barrier"
+    },
+    {
+      "name": "Kastle KAOS"
+    },
+    {
+      "name": "Knautilus"
+    },
+    {
+      "name": "Belcha's Burrow"
+    },
+    {
+      "name": "Kong Cave"
+    },
+    {
+      "name": "Undercover Cove"
+    },
+    {
+      "name": "K's Cache"
+    },
+    {
+      "name": "Hill-Top Hoard"
+    },
+    {
+      "name": "Bounty Beach"
+    },
+    {
+      "name": "Smuggler's Cove"
+    },
+    {
+      "name": "Arich's Hoard"
+    },
+    {
+      "name": "Bounty Bay"
+    },
+    {
+      "name": "Sky-High Secret"
+    },
+    {
+      "name": "Glacial Grotto"
+    },
+    {
+      "name": "Clifftop Cache"
+    },
+    {
+      "name": "Sewer Stockpile"
+    },
+    {
+      "name": "Banana Bird Mother"
+    },
+    {
+      "name": "Bazaar's General Store - 1"
+    },
+    {
+      "name": "Bazaar's General Store - 2"
+    },
+    {
+      "name": "Bramble's Bungalow"
+    },
+    {
+      "name": "Flower Spot"
+    },
+    {
+      "name": "Barter's Swap Shop"
+    },
+    {
+      "name": "Barnacle's Island"
+    },
+    {
+      "name": "Blue's Beach Hut"
+    },
+    {
+      "name": "Bizzard's Basecamp"
+    }
+  ]
+}

@@ -166,6 +166,9 @@
       "name": "Dragonslayer Swordspear"
     },
     {
+      "name": "Sage's Crystal Staff"
+    },
+    {
       "name": "Broken Straight Sword"
     },
     {
@@ -310,6 +313,9 @@
       "name": "Claw"
     },
     {
+      "name": "Drang Twinspears"
+    },
+    {
       "name": "East-West Shield"
     },
     {
@@ -359,9 +365,6 @@
     },
     {
       "name": "Black Iron Greatshield"
-    },
-    {
-      "name": "Great Magic Shield"
     },
     {
       "name": "Greatshield of Glory"
@@ -763,6 +766,9 @@
       "name": "Dragonscale Ring"
     },
     {
+      "name": "Knight Slayer's Ring"
+    },
+    {
       "name": "Seek Guidance"
     },
     {
@@ -812,6 +818,15 @@
     },
     {
       "name": "Great Magic Barrier"
+    },
+    {
+      "name": "Great Magic Shield"
+    },
+    {
+      "name": "Tower Key"
+    },
+    {
+      "name": "Grave Key"
     },
     {
       "name": "Cell Key"
@@ -916,9 +931,6 @@
       "name": "Jailer's Key Ring"
     },
     {
-      "name": "Path of the Dragon Gesture"
-    },
-    {
       "name": "Logan's Scroll"
     },
     {
@@ -996,6 +1008,15 @@
       "name": "FS: East-West Shield"
     },
     {
+      "name": "FS: Uchigatana"
+    },
+    {
+      "name": "FS: Master's Attire"
+    },
+    {
+      "name": "FS: Master's Gloves"
+    },
+    {
       "name": "FSBT: Covetous Silver Serpent Ring"
     },
     {
@@ -1063,6 +1084,9 @@
     },
     {
       "name": "HWL: Way of Blue Covenant"
+    },
+    {
+      "name": "HWL: Greirat's Ashes"
     },
     {
       "name": "US: Small Leather Shield"
@@ -1551,6 +1575,9 @@
       "name": "SL: Soul of the Old Demon King"
     },
     {
+      "name": "SL: Knight Slayer's Ring"
+    },
+    {
       "name": "IBV: Dorhys' Gnawing"
     },
     {
@@ -1579,9 +1606,6 @@
     },
     {
       "name": "IBV: Leo Ring"
-    },
-    {
-      "name": "IBV: Greirat's Ashes"
     },
     {
       "name": "IBV: Excrement-covered Ashes"
@@ -1636,6 +1660,9 @@
     },
     {
       "name": "IBV: Aldrich Faithful Covenant"
+    },
+    {
+      "name": "IBV: Drang Twinspears"
     },
     {
       "name": "ID: Bellowing Dragoncrest Ring"
@@ -1797,10 +1824,13 @@
       "name": "LC: Sunlight Straight Sword"
     },
     {
+      "name": "LC: Soul of Dragonslayer Armour"
+    },
+    {
       "name": "LC: Grand Archives Key"
     },
     {
-      "name": "LC: Soul of Dragonslayer Armour"
+      "name": "LC: Gotthard Twinswords"
     },
     {
       "name": "CKG: Dragonscale Ring"
@@ -1822,9 +1852,6 @@
     },
     {
       "name": "CKG: Soul of Consumed Oceiros"
-    },
-    {
-      "name": "CKG: Path of the Dragon Gesture"
     },
     {
       "name": "GA: Avelyn"
@@ -1864,6 +1891,9 @@
     },
     {
       "name": "GA: Soul of the Twin Princes"
+    },
+    {
+      "name": "GA: Sage's Crystal Staff"
     },
     {
       "name": "UG: Ashen Estus Ring"
@@ -1936,6 +1966,12 @@
     },
     {
       "name": "AP: Soul of the Nameless King"
+    },
+    {
+      "name": "AP: Dragon Tooth"
+    },
+    {
+      "name": "AP: Havel's Greatshield"
     }
   ]
 }

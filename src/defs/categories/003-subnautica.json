@@ -356,7 +356,7 @@
       }
     },
     {
-      "name": "Multipurpose Room Fragment",
+      "name": "Multipurpose Room",
       "max": 2,
       "dependsOn": {
         "item_pool": ["standard"]

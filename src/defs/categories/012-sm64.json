@@ -3,11 +3,16 @@
   "index": 12,
   "settings": [
     {
-      "type": "boolean",
+      "type": "string",
       "name": "AreaRandomizer",
       "readableName": "Area Randomizer",
-      "description": "Randomizes entrances to courses.",
-      "default": false
+      "description": "Randomizes entrances to courses and/or secrets.",
+      "values": {
+        "Off": "Off",
+        "Courses_Only": "Courses only",
+        "Courses_And_Secrets": "Courses and secret areas"
+      },
+      "default": "Off"
     },
     {
       "type": "boolean",
@@ -22,6 +27,16 @@
       "readableName": "Enable Coin Stars",
       "description": "Whether 100-Coin Stars will count toward checks.",
       "default": true
+    },
+    {
+      "type": "numeric",
+      "name": "AmountOfStars",
+      "readableName": "Amount of stars",
+      "description": "How many total Power Stars are added to the multiworld pool.",
+      "low": 35,
+      "high": 120,
+      "randomable": true,
+      "default": 120
     },
     {
       "type": "boolean",
@@ -67,7 +82,27 @@
       "randomable": true,
       "default": 50
     },
-{
+    {
+      "type": "numeric",
+      "name": "MIPS1Cost",
+      "readableName": "Stars for Mips 1",
+      "description": "How many Power Stars are required for Mips the Rabbit to appear in their first location.",
+      "low": 0,
+      "high": 40,
+      "randomable": true,
+      "default": 15
+    },
+    {
+      "type": "numeric",
+      "name": "MIPS2Cost",
+      "readableName": "Stars for Mips 2",
+      "description": "How many Power Stars are required for Mips the Rabbit to appear in their second location. Must be higher than or equal to Mips 1.",
+      "low": 0,
+      "high": 80,
+      "randomable": true,
+      "default": 50
+    },
+    {
       "type": "numeric",
       "name": "StarsToFinish",
       "readableName": "Stars to finish",
@@ -76,16 +111,6 @@
       "high": 100,
       "randomable": true,
       "default": 70
-    },
-    {
-      "type": "numeric",
-      "name": "ExtraStars",
-      "readableName": "Extra stars",
-      "description": "How many additional Power Stars are added to the multiworld pool, beyond the number required to finish.",
-      "low": 0,
-      "high": 50,
-      "randomable": true,
-      "default": 50
     },
     {
       "type": "boolean",
