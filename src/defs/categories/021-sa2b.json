@@ -97,7 +97,7 @@
         "intermediate": ["Intermediate", "Beginner and Jewel Races"],
         "expert": ["Expert", "Beginner, Jewel, Challenge, Hero, and Dark Races"]
       },
-      "default": "high"
+      "default": "none"
     },
     {
       "type": "string",
@@ -111,7 +111,7 @@
           "Only the races which grant Chao Toys grant checks (final race of each Beginner and Jewel cup, 4th, 8th, and 12th Challenge Races, 2nd and 4th Hero and Dark Races)"
         ]
       },
-      "default": "high",
+      "default": "all",
       "dependsOn": {
         "chao_garden_difficulty": ["beginner", "intermediate", "expert"]
       }
