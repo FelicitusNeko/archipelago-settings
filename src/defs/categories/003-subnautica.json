@@ -35,7 +35,7 @@
       "readableName": "Creature Scans",
       "description": "Randomly places location checks on creature scans. **Warning**: This can include Leviathans.",
       "low": 0,
-      "high": 100,
+      "high": 50,
       "default": 0
     },
     { "type": "deathlink" }
