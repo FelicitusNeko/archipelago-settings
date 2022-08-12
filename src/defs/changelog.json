@@ -23,7 +23,12 @@
     [
       "This is because changing the value away from 25 would lock the slider on 25+1's rather than 25's"
     ],
-    "*Revision 1*: **Sonic Adventure 2 Battle**: Fixed broken defaults"
+    "*Revision 1*: **Sonic Adventure 2 Battle**: Fixed broken defaults",
+    "*Revision 2*:",
+    [
+      "**Subnautica**: Fix maximum scans to 50 rather than 100",
+      "Fix range-type sliders using incorrect names for low/high values"
+    ]
   ],
   "1.0.7": [
     "Update spec to **0.3.3**",
