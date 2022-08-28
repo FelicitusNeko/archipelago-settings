@@ -310,7 +310,7 @@
     },
     {
       "type": "boolean",
-      "name": "speedkeep",
+      "name": "rando_speed",
       "readableName": "Speedkeep",
       "description": "Allows Samus to keep her horizontal momentum when landing on the ground.",
       "default": false

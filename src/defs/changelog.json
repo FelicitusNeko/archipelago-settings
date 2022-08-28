@@ -28,7 +28,8 @@
     [
       "**Subnautica**: Fix maximum scans to 50 rather than 100",
       "Fix range-type sliders using incorrect names for low/high values"
-    ]
+    ],
+    "*Revision 3*: **Super Metroid**: Fix option name for Speedkeep"
   ],
   "1.0.7": [
     "Update spec to **0.3.3**",
