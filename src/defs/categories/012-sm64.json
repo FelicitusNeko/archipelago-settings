@@ -120,6 +120,17 @@
       "default": false
     },
     {
+      "type": "string",
+      "name": "ExclamationBoxes",
+      "readableName": "! Boxes",
+      "description": "Include ! Boxes which contain 1ups as checks.",
+      "values": {
+        "Off": "Off",
+        "1Ups_Only": "1ups only"
+      },
+      "default": "Off"
+    },
+    {
       "type": "deathlink"
     }
   ],
@@ -541,7 +552,7 @@
       "name": "Vanish Cap Under the Moat Red Coins"
     },
     {
-      "name": "Wing Mario Over the Rainbow"
+      "name": "Wing Mario Over the Rainbow Red Coins"
     },
     {
       "name": "The Secret Aquarium"
@@ -605,6 +616,93 @@
     },
     {
       "name": "RR: Bob-omb Buddy"
+    },
+    {
+      "name": "CCM: 1Up Block Near Snowman"
+    },
+    {
+      "name": "CCM: 1Up Block Ice Pillar"
+    },
+    {
+      "name": "CCM: 1Up Block Secret Slide"
+    },
+    {
+      "name": "BBH: 1Up Block Top of Mansion"
+    },
+    {
+      "name": "HMC: 1Up Block above Pit"
+    },
+    {
+      "name": "HMC: 1Up Block Past Rolling Rocks"
+    },
+    {
+      "name": "SSL: 1Up Block Outside Pyramid"
+    },
+    {
+      "name": "SSL: 1Up Block Pyramid Left Path"
+    },
+    {
+      "name": "SSL: 1Up Block Pyramid Back"
+    },
+    {
+      "name": "SL: 1Up Block Near Moneybags"
+    },
+    {
+      "name": "SL: 1Up Block inside Igloo"
+    },
+    {
+      "name": "WDW: 1Up Block in Downtown"
+    },
+    {
+      "name": "TTM: 1Up Block on Red Mushroom"
+    },
+    {
+      "name": "THI: 1Up Block THI Small near Start"
+    },
+    {
+      "name": "THI: 1Up Block THI Large near Start"
+    },
+    {
+      "name": "THI: 1Up Block Windy Area"
+    },
+    {
+      "name": "TTC: 1Up Block Midway Up"
+    },
+    {
+      "name": "TTC: 1Up Block at the Top"
+    },
+    {
+      "name": "RR: 1Up Block Top of Red Coin Maze"
+    },
+    {
+      "name": "RR: 1Up Block Under Fly Guy"
+    },
+    {
+      "name": "RR: 1Up Block On House in the Sky"
+    },
+    {
+      "name": "Bowser in the Dark World 1Up Block on Tower"
+    },
+    {
+      "name": "Bowser in the Dark World 1Up Block near Goombas"
+    },
+    {
+      "name": "Bowser in the Fire Sea 1Up Block Swaying Stairs"
+    },
+    {
+      "name": "Bowser in the Fire Sea 1Up Block Near Poles"
+    },
+    {
+      "name": "Bowser in the Sky 1Up Block"
+    },
+    {
+      "name": "Cavern of the Metal Cap 1Up Block"
+    },
+    {
+      "name": "Vanish Cap Under the Moat 1Up Block"
+    },
+    {
+      "name": "Wing Mario Over the Rainbow 1Up Block"
     }
   ]
 }

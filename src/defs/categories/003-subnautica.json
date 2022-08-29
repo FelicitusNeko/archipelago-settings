@@ -38,6 +38,19 @@
       "high": 50,
       "default": 0
     },
+    {
+      "type": "string",
+      "name": "creature_scan_logic",
+      "readableName": "Aggressive Creature Scan Logic",
+      "description": "Determines what sort of logic should be applied when considering creature scans as checks.\n*Notes: ✪ Containment, Either and None adds Cuddlefish as an option for scans. ✪ This is purely a logic expectation, and does not affect gameplay, only placement.*",
+      "values": {
+        "stasis": ["Stasis (default)", "Aggressive Creature Scans are logically expected only with a Stasis Rifle."],
+        "containment": ["Alien Containment", "Removes Stasis Rifle as expected solution and expects Alien Containment instead."],
+        "either": ["Either of the above", "Creatures may be expected to be scanned via Stasis Rifle or Containment, whichever is found first."],
+        "none": ["Neither", "Aggressive Creatures are assumed to not need any tools to scan."]
+      },
+      "default": "stasis"
+    },
     { "type": "deathlink" }
   ],
   "items": [

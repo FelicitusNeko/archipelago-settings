@@ -13,7 +13,7 @@
       "readableName": "Goal",
       "description": "Determines the victory condition for this game.",
       "values": {
-        "knautilus": ["Battle on the Knautilus", "Defeat Baron K. Roolenstein on the Knautilus"],
+        "knautilus": ["Battle on the Knautilus", "Defeat Baron K. Roolenstein on the Knautilus in Krematoa"],
         "banana_bird_hunt": ["Banana Bird Hunt", "Find enough Banana Birds to meet Mama Bird"]
       },
       "default": "knautilus"
@@ -81,9 +81,42 @@
     },
     {
       "type": "boolean",
+      "name": "kongsanity",
+      "readableName": "KONGsanity",
+      "description": "Whether collecting all K-O-N-G letters in a stage results in a check.",
+      "default": false
+    },
+    {
+      "type": "boolean",
       "name": "level_shuffle",
       "readableName": "Level Shuffle",
       "description": "Whether levels are shuffled.",
+      "default": false
+    },
+    {
+      "type": "string",
+      "name": "difficulty",
+      "readableName": "Difficulty",
+      "description": "Which difficulty level to use. This can also be selected using the associated cheat codes.",
+      "values": {
+        "norml": ["NORML", "Normal difficulty."],
+        "hardr": ["HARDR", "Many DK barrels are removed."],
+        "tufst": ["TUFST", "Almost all DK barrels and Midway barrels are removed. Start each stage with both Kongs."]
+      },
+      "default": "norml"
+    },
+    {
+      "type": "boolean",
+      "name": "autosave",
+      "readableName": "Autosave (ASAVE)",
+      "description": "Whether the game should autosave after each stage.",
+      "default": true
+    },
+    {
+      "type": "boolean",
+      "name": "merry",
+      "readableName": "MERRY",
+      "description": "Whether the Bonus areas will be Christmas-themed.",
       "default": false
     },
     {
@@ -373,16 +406,16 @@
       "name": "Ripsaw Rage - DK Coin"
     },
     {
-      "name": "Blazing Bazookas - Flag"
+      "name": "Blazing Bazukas - Flag"
     },
     {
-      "name": "Blazing Bazookas - Bonus 1"
+      "name": "Blazing Bazukas - Bonus 1"
     },
     {
-      "name": "Blazing Bazookas - Bonus 2"
+      "name": "Blazing Bazukas - Bonus 2"
     },
     {
-      "name": "Blazing Bazookas - DK Coin"
+      "name": "Blazing Bazukas - DK Coin"
     },
     {
       "name": "Low-G Labyrinth - Flag"
@@ -728,6 +761,123 @@
     },
     {
       "name": "Bizzard's Basecamp"
+    },
+    {
+      "name": "Lakeside Limbo - KONG"
+    },
+    {
+      "name": "Doorstop Dash - KONG"
+    },
+    {
+      "name": "Tidal Trouble - KONG"
+    },
+    {
+      "name": "Skidda's Row - KONG"
+    },
+    {
+      "name": "Murky Mill - KONG"
+    },
+    {
+      "name": "Barrel Shield Bust-Up - KONG"
+    },
+    {
+      "name": "Riverside Race - KONG"
+    },
+    {
+      "name": "Squeals On Wheels - KONG"
+    },
+    {
+      "name": "Springin' Spiders - KONG"
+    },
+    {
+      "name": "Bobbing Barrel Brawl - KONG"
+    },
+    {
+      "name": "Bazza's Blockade - KONG"
+    },
+    {
+      "name": "Rocket Barrel Ride - KONG"
+    },
+    {
+      "name": "Kreeping Klasps - KONG"
+    },
+    {
+      "name": "Tracker Barrel Trek - KONG"
+    },
+    {
+      "name": "Fish Food Frenzy - KONG"
+    },
+    {
+      "name": "Fire-Ball Frenzy - KONG"
+    },
+    {
+      "name": "Demolition Drain-Pipe - KONG"
+    },
+    {
+      "name": "Ripsaw Rage - KONG"
+    },
+    {
+      "name": "Blazing Bazukas - KONG"
+    },
+    {
+      "name": "Low-G Labyrinth - KONG"
+    },
+    {
+      "name": "Krevice Kreepers - KONG"
+    },
+    {
+      "name": "Tearaway Toboggan - KONG"
+    },
+    {
+      "name": "Barrel Drop Bounce - KONG"
+    },
+    {
+      "name": "Krack-Shot Kroc - KONG"
+    },
+    {
+      "name": "Lemguin Lunge - KONG"
+    },
+    {
+      "name": "Buzzer Barrage - KONG"
+    },
+    {
+      "name": "Kong-Fused Cliffs - KONG"
+    },
+    {
+      "name": "Floodlit Fish - KONG"
+    },
+    {
+      "name": "Pothole Panic - KONG"
+    },
+    {
+      "name": "Ropey Rumpus - KONG"
+    },
+    {
+      "name": "Konveyor Rope Klash - KONG"
+    },
+    {
+      "name": "Creepy Caverns - KONG"
+    },
+    {
+      "name": "Lightning Lookout - KONG"
+    },
+    {
+      "name": "Koindozer Klamber - KONG"
+    },
+    {
+      "name": "Poisonous Pipeline - KONG"
+    },
+    {
+      "name": "Stampede Sprint - KONG"
+    },
+    {
+      "name": "Criss Kross Cliffs - KONG"
+    },
+    {
+      "name": "Tyrant Twin Tussle - KONG"
+    },
+    {
+      "name": "Swoopy Salvo - KONG"
     }
   ]
 }

@@ -496,7 +496,25 @@
       "name": "Safe Haven: Victory"
     },
     {
+      "name": "Safe Haven: North Nexus"
+    },
+    {
+      "name": "Safe Haven: East Nexus"
+    },
+    {
+      "name": "Safe Haven: South Nexus"
+    },
+    {
       "name": "Haven's Fall: Victory"
+    },
+    {
+      "name": "Haven's Fall: North Hive"
+    },
+    {
+      "name": "Haven's Fall: East Hive"
+    },
+    {
+      "name": "Haven's Fall: South Hive"
     },
     {
       "name": "Smash and Grab: Victory"
@@ -527,12 +545,6 @@
     },
     {
       "name": "The Moebius Factor: Victory"
-    },
-    {
-      "name": "The Moebius Factor: 1st Data Core "
-    },
-    {
-      "name": "The Moebius Factor: 2nd Data Core"
     },
     {
       "name": "The Moebius Factor: South Rescue"

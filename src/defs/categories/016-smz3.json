@@ -17,7 +17,7 @@
     {
       "type": "string",
       "name": "sword_location",
-      "readableName": "Fighter's Sword Location",
+      "readableName": "Fighter's Sword Location (LttP)",
       "description": "This option decides where the first sword will be placed.",
       "values": {
         "Randomized": "Randomized",
@@ -40,6 +40,18 @@
     },
     {
       "type": "string",
+      "name": "goal",
+      "readableName": "Goal",
+      "description": "Determines the goal to clear the randomizer. Mostly affects LttP.",
+      "values": {
+        "DefeatBoth": ["Defeat Ganon & Mother Brain", "Standard goal; just defeat both."],
+        "FastGanonDefeatMotherBrain": ["Fast Ganon & Defeat Mother Brain", "Defeat both, but don't need to defeat Agahnim to fight Ganon."],
+        "AllDungeonsDefeatMotherBrain": ["All LttP Dungeons & Defeat Mother Brain", "Defeat both, and must clear all dungeons in LttP before fighting Ganon."]
+      },
+      "default": "DefeatBoth"
+    },
+    {
+      "type": "string",
       "name": "key_shuffle",
       "readableName": "Keysanity",
       "description": "This option decides how dungeon items such as keys are shuffled.",
@@ -48,6 +60,87 @@
         "Keysanity": "On"
       },
       "default": "None"
+    },
+    {
+      "type": "numeric",
+      "name": "open_tower",
+      "readableName": "Crystals needed for Ganon's Tower (LttP)",
+      "description": "How many crystals are required to access the Ganon's Tower entrance. If this is set to Random, the amount can be found in-game on a sign next to Ganon's Tower.",
+      "low": 0,
+      "high": 7,
+      "default": 7,
+      "randomable": true
+    },
+    {
+      "type": "numeric",
+      "name": "ganon_vulnerable",
+      "readableName": "Crystals needed for Ganon (LttP)",
+      "description": "How many crystals are required to defeat Ganon, if the goal is not All Dungeons. The amount can be found in-game on a sign near the top of the Pyramid.",
+      "low": 0,
+      "high": 7,
+      "default": 7,
+      "randomable": true,
+      "dependsOn": {
+        "goal": ["DefeatBoth", "FastGanonDefeatMotherBrain"]
+      }
+    },
+    {
+      "type": "string",
+      "name": "open_tourian",
+      "readableName": "Bosses needed for Tourian access",
+      "description": "How many SM bosses are required to enter Tourian. The amount can be found in-game on a sign above the door leading to the Tourian entrance.",
+      "low": 0,
+      "high": 4,
+      "randomable": true,
+      "default": 4
+    },
+    {
+      "type": "boolean",
+      "name": "spin_jumps_animation",
+      "readableName": "Spin Jumps Animation",
+      "description": "Enable separate space/screw jump animations.",
+      "default": false
+    },
+    {
+      "type": "string",
+      "name": "heart_beep_speed",
+      "readableName": "Low health beep frequency (LttP)",
+      "description": "How frequently LttP will beep at you for low health.",
+      "values": {
+        "double": "Two times faster than usual",
+        "normal": "Normal",
+        "half": "Two times slower than usual",
+        "quarter": "Four times slower than usual",
+        "off": "Not at all"
+      },
+      "default": "normal"
+    },
+    {
+      "type": "string",
+      "name": "heart_color",
+      "readableName": "Heart color (LttP)",
+      "description": "The color of hearts in the LttP HUD.",
+      "values": {
+        "red": "Red",
+        "blue": "Blue",
+        "green": "Green",
+        "yellow": "Yellow"
+      },
+      "default": "red"
+    },
+    {
+      "type": "boolean",
+      "name": "quick_swap",
+      "readableName": "Quick swap (LttP)",
+      "description": "Whether you can use the L and R buttons to cycle through use items in LttP.",
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "energy_beep",
+      "readableName": "Low energy beep (SM)",
+      "description": "Whether SM will beep at you for low energy.",
+      "default": true
     }
   ],
   "items": [
@@ -103,7 +196,8 @@
       "name": "Bottle"
     },
     {
-      "name": "HeartPiece"
+      "name": "HeartPiece",
+      "max": 24
     },
     {
       "name": "Byrna"
@@ -133,7 +227,8 @@
       "name": "Compass"
     },
     {
-      "name": "ThreeBombs"
+      "name": "ThreeBombs",
+      "max": 20
     },
     {
       "name": "Mushroom"
@@ -166,13 +261,16 @@
       "name": "Map"
     },
     {
-      "name": "OneRupee"
+      "name": "OneRupee",
+      "max": 100
     },
     {
-      "name": "FiveRupees"
+      "name": "FiveRupees",
+      "max": 100
     },
     {
-      "name": "TwentyRupees"
+      "name": "TwentyRupees",
+      "max": 100
     },
     {
       "name": "BottleWithBee"
@@ -181,22 +279,27 @@
       "name": "BottleWithFairy"
     },
     {
-      "name": "HeartContainer"
+      "name": "HeartContainer",
+      "max": 19
     },
     {
       "name": "HeartContainerRefill"
     },
     {
-      "name": "OneHundredRupees"
+      "name": "OneHundredRupees",
+      "max": 100
     },
     {
-      "name": "FiftyRupees"
+      "name": "FiftyRupees",
+      "max": 100
     },
     {
-      "name": "Arrow"
+      "name": "Arrow",
+      "max": 99
     },
     {
-      "name": "TenArrows"
+      "name": "TenArrows",
+      "max": 10
     },
     {
       "name": "ThreeHundredRupees"
@@ -214,13 +317,15 @@
       "name": "HalfMagic"
     },
     {
-      "name": "BombUpgrade5"
+      "name": "BombUpgrade5",
+      "max": 6
     },
     {
       "name": "BombUpgrade10"
     },
     {
-      "name": "ArrowUpgrade5"
+      "name": "ArrowUpgrade5",
+      "max": 6
     },
     {
       "name": "ArrowUpgrade10"
@@ -229,16 +334,20 @@
       "name": "SilverArrows"
     },
     {
-      "name": "ProgressiveSword"
+      "name": "ProgressiveSword",
+      "max": 3
     },
     {
-      "name": "ProgressiveShield"
+      "name": "ProgressiveShield",
+      "max": 3
     },
     {
-      "name": "ProgressiveTunic"
+      "name": "ProgressiveTunic",
+      "max": 2
     },
     {
-      "name": "ProgressiveGlove"
+      "name": "ProgressiveGlove",
+      "max": 2
     },
     {
       "name": "Something"
@@ -430,19 +539,24 @@
       "name": "Plasma"
     },
     {
-      "name": "ETank"
+      "name": "ETank",
+      "max": 14
     },
     {
-      "name": "ReserveTank"
+      "name": "ReserveTank",
+      "max": 4
     },
     {
-      "name": "Missile"
+      "name": "Missile",
+      "max": 100
     },
     {
-      "name": "Super"
+      "name": "Super",
+      "max": 25
     },
     {
-      "name": "PowerBomb"
+      "name": "PowerBomb",
+      "max": 25
     },
     {
       "name": "CardCrateriaL1"
