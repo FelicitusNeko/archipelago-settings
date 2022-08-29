@@ -1,0 +1,65 @@
+{
+  "A JSON definition for a choice setting.": {
+    "prefix": "apChoiceSetting",
+    "scope": "json",
+    "body": [
+      "{",
+      "  \"type\": \"string\",",
+      "  \"name\": \"$1\",",
+      "  \"readableName\": \"$2\",",
+      "  \"description\": \"$3\",",
+      "  \"values\": {",
+      "    $0",
+      "  },",
+      "  \"default\": \"$4\"",
+      "}"
+    ],
+    "description": "A JSON definition for a choice setting."
+  },
+  "A JSON definition for a range setting.": {
+    "prefix": "apRangeSetting",
+    "scope": "json",
+    "body": [
+      "{",
+      "  \"type\": \"string\",",
+      "  \"name\": \"$1\",",
+      "  \"readableName\": \"$2\",",
+      "  \"description\": \"$3\",",
+      "  \"low\": $4,",
+      "  \"high\": $5,",
+      "  \"randomable\": true,",
+      "  \"default\": $0",
+      "}"
+    ],
+    "description": "A JSON definition for a range setting."
+  },
+  "A JSON definition for a Toggle setting.": {
+    "prefix": "apToggleSetting",
+    "scope": "json",
+    "body": [
+      "{",
+      "  \"type\": \"boolean\",",
+      "  \"name\": \"$1\",",
+      "  \"readableName\": \"$2\",",
+      "  \"description\": \"$3\",",
+      "  \"default\": ${4|true,false|}",
+      "}$0"
+    ],
+    "description": "A JSON definition for a Toggle setting."
+  },
+  "A JSON definition for an option in a Choice.": {
+    "prefix": "apChoiceOption",
+    "scope": "json",
+    "body": [
+      "\"$1\": \"$0\""
+    ],
+    "description": "A JSON definition for an option in a Choice."
+  },
+  "A JSON definition for an option with a description in a Choice.": {
+    "prefix": "apChoiceDescribedOption",
+    "body": [
+      "\"$1\": [\"$2\", \"$0\"]"
+    ],
+    "description": "A JSON definition for an option with a description in a Choice."
+  }
+}
