@@ -105,4 +105,4 @@ const APCategoryData: APCategoryJson[] = [
 //   APCategoryData.map((i) => i.readableName ?? i.category ?? "Globals")
 // );
 
-export { APCategoryData };
+export { APUniversalSettings, APCategoryData };
