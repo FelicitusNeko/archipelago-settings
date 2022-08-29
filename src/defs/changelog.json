@@ -1,4 +1,12 @@
 {
+  "1.0.9": [
+    "Update spec to **0.3.5**",
+    ["Text goes here"],
+    "Created a new category of \"universal\" options, and added item accessibility and progression balancing to it; these are now available for every game and globally",
+    [
+      "A future update may make it so that these can be toggled, as per-game settings will always supercede globals"
+    ]
+  ],
   "1.0.8": [
     "Update spec to **0.3.4**, and it's a big one",
     [

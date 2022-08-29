@@ -52,8 +52,11 @@ interface APCategoryJson {
   locations?: APGameLocation[];
 }
 
+const APUniversalSettings: APCategoryJson = require("./_universal.json");
+APUniversalSettings.settings.forEach(i => i.readableName = `🌐 ${i.readableName ?? i.name}`)
+
 const APCategoryData: APCategoryJson[] = [
-  require("./null.json"), // global settings
+  require("./_root.json"), // global settings
   require("./000-lttp.json"), // inaugural
   require("./001-factorio.json"), // 0.0.2
   require("./002-minecraft.json"), // 0.1.0
@@ -80,11 +83,12 @@ const APCategoryData: APCategoryJson[] = [
   require("./023-darksouls3.json"), // 0.3.4
   require("./024-dkc3.json"), // 0.3.4
 ]
-  .map((i) => {
+  .map((i:APCategoryJson) => {
     // only bring out ArchipIDLE in April
     // haha its funy geddit
     if (new Date().getMonth() === 3 && i.category === "ArchipIDLE")
       i.disabled = false;
+    i.settings = i.settings.concat(APUniversalSettings.settings);
     return i;
   })
   .filter((i) => i.disabled !== true)
@@ -97,8 +101,8 @@ const APCategoryData: APCategoryJson[] = [
     );
   });
 
-console.debug(
-  APCategoryData.map((i) => i.readableName ?? i.category ?? "Globals")
-);
+// console.debug(
+//   APCategoryData.map((i) => i.readableName ?? i.category ?? "Globals")
+// );
 
 export { APCategoryData };

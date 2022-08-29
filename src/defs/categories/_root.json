@@ -1,0 +1,12 @@
+{
+  "category": null,
+  "index": -1,
+  "settings": [
+    {
+      "type": "games",
+      "name": "game",
+      "readableName": "Game",
+      "description": "Determines which game you'll be playing."
+    }
+  ]
+}

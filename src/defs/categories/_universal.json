@@ -1,13 +1,7 @@
 {
-  "category": null,
-  "index": -1,
+  "category": "Universal",
+  "index": -2,
   "settings": [
-    {
-      "type": "games",
-      "name": "game",
-      "readableName": "Game",
-      "description": "Determines which game you'll be playing."
-    },
     {
       "type": "string",
       "name": "accessibility",
