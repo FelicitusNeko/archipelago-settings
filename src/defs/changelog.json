@@ -8,7 +8,7 @@
       "**SMZ3**: Several options that may seem familiar to rando players (mostly) for LttP",
       "**Subnautica**: New option for aggressive creature scan logic"
     ],
-    "Created a new category of \"universal\" options, and added item accessibility and progression balancing to it; these are now available for every game and globally",
+    "Created a new category of \"universal\" options, and added item accessibility and progression balancing to it; these are now available for every game as well as globally",
     [
       "A future update may make it so that these can be toggled, as per-game settings will always supercede globals"
     ]
