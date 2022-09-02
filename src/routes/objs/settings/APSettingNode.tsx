@@ -218,6 +218,7 @@ export abstract class APSettingNode<
             </button>
           )}
           <br />
+          {/* eslint-disable-next-line react/no-children-prop */}
           <ReactMarkdown children={setting.description} />
           {(weighted ? this.renderWeightedChoice : this.renderLinearChoice)()}
         </div>

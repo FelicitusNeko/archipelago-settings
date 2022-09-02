@@ -5,7 +5,7 @@ import {
   Draggable,
   DragStart,
   DropResult,
-} from "react-beautiful-dnd";
+} from "@hello-pangea/dnd";
 import "rc-slider/assets/index.css";
 
 import { APMetaManager } from "../../../defs/generate";
@@ -298,6 +298,7 @@ export abstract class APEntitySelector<
           </button>
         ) : null}
         <br />
+        {/* eslint-disable-next-line react/no-children-prop */}
         <ReactMarkdown children={this._description} />
         {this._additionalComponents.map((I, x) => (
           <I

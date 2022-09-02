@@ -1,15 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import { createRoot } from "react-dom/client";
 
-import * as serviceWorker from './serviceWorker';
-import './index.css';
-import SettingsTool from './routes/SettingsTool';
+import * as serviceWorker from "./serviceWorker";
+import "./index.css";
+import SettingsTool from "./routes/SettingsTool";
 
-ReactDOM.render(
+// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <SettingsTool />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );
 
 // If you want your app to work offline and load faster, you can change

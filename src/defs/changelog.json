@@ -12,7 +12,8 @@
     "Created a new category of \"universal\" options, and added item accessibility and progression balancing to it; these are now available for every game as well as globally",
     [
       "A future update may make it so that these can be toggled, as per-game settings will always supercede globals"
-    ]
+    ],
+    "Upgrade core to `create-react-app` 5.0.1 (with much trepidation holy moly you wouldn't believe)"
   ],
   "1.0.8": [
     "Update spec to **0.3.4**, and it's a big one",

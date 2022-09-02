@@ -34,6 +34,7 @@ import { APHeaderStringNode } from "./objs/settings/APHeaderStringNode";
 import "./SettingsTool.css";
 
 const { localStorage, location, confirm } = window;
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const { version } = require("../../package.json");
 
 /**
@@ -86,7 +87,7 @@ const isGameEnabledV2 = (category: string | null): boolean => {
  */
 const RealSaveToStorage = (() => {
   /** Whether the save operation is running. */
-  let running: boolean = false;
+  let running = false;
   /** Data for a queued save operation, if any. */
   let queueAnother: [string, string] | undefined = undefined;
   /** The timeout for the next save operation, if any. */
@@ -274,7 +275,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
           setting.value = setting.default;
         } else {
           // Fetch the data
-          let oldSetting = yamlIn[setting.legacyName ?? setting.name];
+          const oldSetting = yamlIn[setting.legacyName ?? setting.name];
 
           // "weapons" as a string setting changed to "swordless" as a boolean setting, so special handling is needed
           if (setting.name === "swordless") {
@@ -536,6 +537,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
               <TabPanel key={`tabpanel-${i.category}`} className="settingsBody">
                 {i.notice ? (
                   <div className="gamenotice">
+                    {/* eslint-disable-next-line react/no-children-prop */}
                     <ReactMarkdown children={`**NOTICE**: ${i.notice}`} />
                   </div>
                 ) : null}

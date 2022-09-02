@@ -5,6 +5,7 @@ type ChangelogLine = (string | ChangelogLine)[];
 const changelogData: Record<
   string,
   ChangelogLine
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 > = require("../../defs/changelog.json");
 
 const Changelog: React.FC = () => {
@@ -32,6 +33,7 @@ const Changelog: React.FC = () => {
   }
   parsedData.pop();
 
+  // eslint-disable-next-line react/no-children-prop
   return <ReactMarkdown children={parsedData.join("\n")} />;
 };
 

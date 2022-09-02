@@ -52,6 +52,7 @@ interface APCategoryJson {
   locations?: APGameLocation[];
 }
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const APUniversalSettings: APCategoryJson = require("./_universal.json");
 APUniversalSettings.settings.forEach(i => i.readableName = `🌐 ${i.readableName ?? i.name}`)
 

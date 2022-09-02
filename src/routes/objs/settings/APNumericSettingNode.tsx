@@ -1,4 +1,4 @@
-import { ChangeEvent } from "react";
+import React, { ChangeEvent } from "react";
 import Slider from "rc-slider";
 
 import { APNumericSetting } from "../../../objs/settings/APNumericSetting";
