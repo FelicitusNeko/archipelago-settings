@@ -178,7 +178,7 @@
       "readableName": "Triforce Goal",
       "description": "The number of Triforce pieces required to complete the goal.",
       "low": 1,
-      "high": 100,
+      "high": 80,
       "randomable": true,
       "default": 20,
       "dependsOn": {
@@ -189,7 +189,7 @@
       "type": "numeric",
       "name": "extra_triforce_percentage",
       "readableName": "Triforce available – percentage",
-      "description": "The percentage of the Triforce piece goal to add to the multiworld pool as extras.",
+      "description": "The percentage of the Triforce piece goal to add to the multiworld pool as extras. With high numbers, you may need to randomize additional locations to have enough items.",
       "low": 0,
       "high": 100,
       "default": 50,

@@ -42,12 +42,13 @@
       "type": "string",
       "name": "creature_scan_logic",
       "readableName": "Aggressive Creature Scan Logic",
-      "description": "Determines what sort of logic should be applied when considering creature scans as checks.\n*Notes: ✪ Containment, Either and None adds Cuddlefish as an option for scans. ✪ This is purely a logic expectation, and does not affect gameplay, only placement.*",
+      "description": "Determines what sort of logic should be applied when considering creature scans as checks.\n*Note: This is purely a logic expectation, and does not affect gameplay, only placement.*",
       "values": {
-        "stasis": ["Stasis (default)", "Aggressive Creature Scans are logically expected only with a Stasis Rifle."],
-        "containment": ["Alien Containment", "Removes Stasis Rifle as expected solution and expects Alien Containment instead."],
-        "either": ["Either of the above", "Creatures may be expected to be scanned via Stasis Rifle or Containment, whichever is found first."],
-        "none": ["Neither", "Aggressive Creatures are assumed to not need any tools to scan."]
+        "stasis": ["Stasis (default)", "Aggressive Creature Scans are logically expected only with a Stasis Rifle. Adds unhatchable aggressive species, such as Warper."],
+        "containment": ["Alien Containment", "Removes Stasis Rifle as expected solution and expects Alien Containment instead. Adds Cuddlefish as an option for scans."],
+        "either": ["Either of the above", "Creatures may be expected to be scanned via Stasis Rifle or Containment, whichever is found first. Adds Cuddlefish as an option for scans. Adds unhatchable aggressive species, such as Warper."],
+        "none": ["Neither", "Aggressive Creatures are assumed to not need any tools to scan. Adds Cuddlefish as an option for scans. Adds unhatchable aggressive species, such as Warper."],
+        "removed": ["Removed", "No Creatures needing Stasis or Containment will be in the pool at all."]
       },
       "default": "stasis"
     },
