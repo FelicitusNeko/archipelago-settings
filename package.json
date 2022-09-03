@@ -22,6 +22,7 @@
     "yaml": "2.0.1"
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.18.9",
     "@testing-library/dom": "^8.11.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -38,7 +39,6 @@
     "@typescript-eslint/parser": "latest",
     "@yarnpkg/sdks": "^3.0.0-rc.15",
     "assert": "^2.0.0",
-    "babel-eslint": "^10.1.0",
     "browserify-zlib": "^0.2.0",
     "buffer": "^6.0.3",
     "crypto-browserify": "^3.12.0",
