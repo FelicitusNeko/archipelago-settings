@@ -7,7 +7,8 @@
       "**Super Mario 64**: Option to add ! boxes as checks",
       "**SMZ3**: Several options that may seem familiar to rando players (mostly) for LttP",
       "**Subnautica**: New option for aggressive creature scan logic",
-      "**Ocarina of Time**: Reduced maximum Triforce Pieces to 80"
+      "**Ocarina of Time**: Reduced maximum Triforce Pieces to 80",
+      "**Raft**: DeathLink, option for resource packs, duplicates, or both as fillers"
     ],
     "Created a new category of \"universal\" options, and added item accessibility and progression balancing to it; these are now available for every game as well as globally",
     [
