@@ -30,7 +30,7 @@ export enum EntityType {
 }
 
 /** Refers to a setting dependency. */
-export type APDependency = Record<string, any[]>;
+export type APDependency = Record<string, unknown[]>;
 
 /**
  * The base class for game entities.
