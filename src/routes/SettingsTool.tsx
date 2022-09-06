@@ -537,8 +537,7 @@ const SettingsTool: React.FC = (): ReactElement<unknown> | null => {
               <TabPanel key={`tabpanel-${i.category}`} className="settingsBody">
                 {i.notice ? (
                   <div className="gamenotice">
-                    {/* eslint-disable-next-line react/no-children-prop */}
-                    <ReactMarkdown children={`**NOTICE**: ${i.notice}`} />
+                    <ReactMarkdown>{`**NOTICE**: ${i.notice}`}</ReactMarkdown>
                   </div>
                 ) : null}
                 {outputSettingCollectionV2(i)}

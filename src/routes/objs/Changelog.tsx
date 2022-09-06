@@ -65,8 +65,7 @@ const Changelog: React.FC = () => {
   return (<>
     <button onClick={() => setCurPage(Math.max(curPage - 1, 0))} disabled={curPage === 0}>Prev</button>
     <button onClick={() => setCurPage(Math.min(curPage + 1, changelogPages.length - 1))} disabled={curPage + 1 == changelogPages.length}>Next</button><br />
-    {/* eslint-disable-next-line react/no-children-prop */}
-    <ReactMarkdown children={pageData.lines.join("\n")} />
+    <ReactMarkdown>{pageData.lines.join("\n")}</ReactMarkdown>
   </>);
 };
 

@@ -298,8 +298,7 @@ export abstract class APEntitySelector<
           </button>
         ) : null}
         <br />
-        {/* eslint-disable-next-line react/no-children-prop */}
-        <ReactMarkdown children={this._description} />
+        <ReactMarkdown>{this._description}</ReactMarkdown>
         {this._additionalComponents.map((I, x) => (
           <I
             key={`extracomp-${category}-${this._title.substring(0, 4)}-${x}`}
