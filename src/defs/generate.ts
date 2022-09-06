@@ -147,7 +147,7 @@ const APCategoryList: APCategory[] = APCategoryData.map((i) => {
             );
             stringJson.default = APCategoryData.find(
               (i) => i.index === lowestIndex
-            )!.category!;
+            )?.category ?? "A Link to the Past";
             return new APStringSetting(
               i.category,
               stringJson,
