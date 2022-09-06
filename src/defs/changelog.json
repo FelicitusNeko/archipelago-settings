@@ -10,6 +10,7 @@
       "**Ocarina of Time**: Reduced maximum Triforce Pieces to 80",
       "**Raft**: DeathLink, option for resource packs, duplicates, or both as fillers"
     ],
+    "**Rogue Legacy**: Fixed names for Blueprint items",
     "Created a new category of \"universal\" options, and added item accessibility and progression balancing to it; these are now available for every game as well as globally",
     [
       "A future update may make it so that these can be toggled, as per-game settings will always supercede globals"

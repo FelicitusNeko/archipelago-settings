@@ -408,91 +408,91 @@
       "name": "5000 Gold"
     },
     {
-      "name": "Squire Armor Blueprints",
+      "name": "Squire Blueprints",
       "dependsOn": {
         "progressive_blueprints": [false]
       }
     },
     {
-      "name": "Silver Armor Blueprints",
+      "name": "Silver Blueprints",
       "dependsOn": {
         "progressive_blueprints": [false]
       }
     },
     {
-      "name": "Guardian Armor Blueprints",
+      "name": "Guardian Blueprints",
       "dependsOn": {
         "progressive_blueprints": [false]
       }
     },
     {
-      "name": "Imperial Armor Blueprints",
+      "name": "Imperial Blueprints",
       "dependsOn": {
         "progressive_blueprints": [false]
       }
     },
     {
-      "name": "Royal Armor Blueprints",
+      "name": "Royal Blueprints",
       "dependsOn": {
         "progressive_blueprints": [false]
       }
     },
     {
-      "name": "Knight Armor Blueprints",
+      "name": "Knight Blueprints",
       "dependsOn": {
         "progressive_blueprints": [false]
       }
     },
     {
-      "name": "Ranger Armor Blueprints",
+      "name": "Ranger Blueprints",
       "dependsOn": {
         "progressive_blueprints": [false]
       }
     },
     {
-      "name": "Sky Armor Blueprints",
+      "name": "Sky Blueprints",
       "dependsOn": {
         "progressive_blueprints": [false]
       }
     },
     {
-      "name": "Dragon Armor Blueprints",
+      "name": "Dragon Blueprints",
       "dependsOn": {
         "progressive_blueprints": [false]
       }
     },
     {
-      "name": "Slayer Armor Blueprints",
+      "name": "Slayer Blueprints",
       "dependsOn": {
         "progressive_blueprints": [false]
       }
     },
     {
-      "name": "Blood Armor Blueprints",
+      "name": "Blood Blueprints",
       "dependsOn": {
         "progressive_blueprints": [false]
       }
     },
     {
-      "name": "Sage Armor Blueprints",
+      "name": "Sage Blueprints",
       "dependsOn": {
         "progressive_blueprints": [false]
       }
     },
     {
-      "name": "Retribution Armor Blueprints",
+      "name": "Retribution Blueprints",
       "dependsOn": {
         "progressive_blueprints": [false]
       }
     },
     {
-      "name": "Holy Armor Blueprints",
+      "name": "Holy Blueprints",
       "dependsOn": {
         "progressive_blueprints": [false]
       }
     },
     {
-      "name": "Dark Armor Blueprints",
+      "name": "Dark Blueprints",
       "dependsOn": {
         "progressive_blueprints": [false]
       }
