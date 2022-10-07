@@ -16,7 +16,12 @@
       "A future update may make it so that these can be toggled, as per-game settings will always supercede globals"
     ],
     "Changelog is now paginated",
-    "Internal: Upgrade core to `create-react-app` 5.0.1 (with much trepidation holy moly you wouldn't believe); updated most other libraries as well"
+    "Internal: Upgrade core to `create-react-app` 5.0.1 (with much trepidation holy moly you wouldn't believe); updated most other libraries as well",
+    "*Revision 1*:",
+    [
+      "**SMZ3**: Fixed a malformed option that broke its settings page",
+      "**Ocarina of Time**: Fixed some item and location names"
+    ]
   ],
   "1.0.8": [
     "Update spec to **0.3.4**, and it's a big one",
