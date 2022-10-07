@@ -85,7 +85,7 @@
       }
     },
     {
-      "type": "string",
+      "type": "numeric",
       "name": "open_tourian",
       "readableName": "Bosses needed for Tourian access",
       "description": "How many SM bosses are required to enter Tourian. The amount can be found in-game on a sign above the door leading to the Tourian entrance.",
