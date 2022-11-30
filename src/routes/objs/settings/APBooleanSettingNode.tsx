@@ -1,4 +1,4 @@
-import { ChangeEvent } from "react";
+import React, { ChangeEvent } from "react";
 
 import { APBooleanSetting } from "../../../objs/settings/APBooleanSetting";
 import { APSettingNode } from "./APSettingNode";

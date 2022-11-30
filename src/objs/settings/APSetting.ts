@@ -50,6 +50,12 @@ export interface APSettingJson<T> {
 
   /** Whether this setting is currently disabled and should not be included in setting generation. */
   disabled?: boolean;
+
+  /**
+   * Whether this setting is universal.
+   * @since 1.0.9
+   */
+  isUniversal?: boolean;
 }
 
 /**
@@ -79,6 +85,11 @@ export abstract class APSetting<T> {
    * If the Berserker value no longer exists in Archipelago, the value here should be null.
    */
   private readonly _legacyValues?: Record<string, T | null>;
+  /**
+   * Whether this setting is universal.
+   * @since 1.0.9
+   */
+  private readonly _isUniversal?: boolean;
 
   /** The value for this setting. */
   private _value: APWeightableValue<T>;
@@ -102,6 +113,7 @@ export abstract class APSetting<T> {
     this._dependsOn = settingData.dependsOn;
     this._legacyName = settingData.legacyName;
     this._legacyValues = settingData.legacyValues;
+    this._isUniversal = settingData.isUniversal;
 
     this._value = this._default;
     if (initialValue) this.storageValue = initialValue;
@@ -145,6 +157,13 @@ export abstract class APSetting<T> {
    */
   get legacyValues(): Readonly<Record<string, T | null>> | undefined {
     return this._legacyValues;
+  }
+  /**
+   * Whether this setting is universal.
+   * @since 1.0.9
+   */
+  get isUniversal() {
+    return this._isUniversal;
   }
 
   /** The value for this setting. */
@@ -213,10 +232,7 @@ export abstract class APSetting<T> {
 
   /** Whether this setting is a Boolean setting. */
   isBooleanSetting(): this is APBooleanSetting {
-    return [
-      SettingType.Boolean,
-      SettingType.DeathLink,
-    ].includes(this.type);
+    return [SettingType.Boolean, SettingType.DeathLink].includes(this.type);
   }
   /** Whether this setting is a numeric setting. */
   isNumericSetting(): this is APNumericSetting {
@@ -237,7 +253,7 @@ export abstract class APSetting<T> {
    * @param value The setting definition to evalute.
    * @returns Whether the given setting definition is for a string-based setting.
    */
-  static isStringJson(value: APSettingJson<any>): value is APStringSettingJson {
+  static isStringJson(value: APSettingJson<unknown>): value is APStringSettingJson {
     return [
       SettingType.String,
       SettingType.Games,
@@ -251,7 +267,7 @@ export abstract class APSetting<T> {
    * @returns Whether the given setting definition is for a numeric setting.
    */
   static isNumericJson(
-    value: APSettingJson<any>
+    value: APSettingJson<unknown>
   ): value is APNumericSettingJson {
     return value.type === SettingType.Numeric;
   }
@@ -262,12 +278,9 @@ export abstract class APSetting<T> {
    * @returns Whether the given setting definition is for a Boolean setting.
    */
   static isBooleanJson(
-    value: APSettingJson<any>
+    value: APSettingJson<unknown>
   ): value is APBooleanSettingJson {
-    return [
-      SettingType.Boolean,
-      SettingType.DeathLink
-    ].includes(value.type);
+    return [SettingType.Boolean, SettingType.DeathLink].includes(value.type);
   }
 
   /**
@@ -277,8 +290,8 @@ export abstract class APSetting<T> {
    * @returns Whether the value is weighted. If so, it should be treated as an {@link APWeightedValue}.
    */
   static isWeighted(
-    value: APWeightableValue<any>
-  ): value is APWeightedValue<any> {
+    value: APWeightableValue<unknown>
+  ): value is APWeightedValue<unknown> {
     return Array.isArray(value);
   }
 }

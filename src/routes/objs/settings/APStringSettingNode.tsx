@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { ChangeEvent } from "react";
+import React, { ChangeEvent } from "react";
 import { APWeightedValue } from "../../../objs/settings/APSetting";
 import { APStringSetting } from "../../../objs/settings/APStringSetting";
 import { APSettingNode } from "./APSettingNode";

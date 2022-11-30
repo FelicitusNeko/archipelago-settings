@@ -64,7 +64,7 @@ export class APItemManager extends APEntityManager<APGameItem> {
   }
 
   /** @override Special handling is needed for `start_inventory`. */
-  protected deserializeList(list: string, content: any) {
+  protected deserializeList(list: string, content: unknown) {
     if (list === "start_inventory") {
       const setList: APGameItemAndQty[] = [];
       for (const entry of Object.entries(content as Record<string, number>)) {

@@ -43,7 +43,7 @@ interface APCategoryJson {
    * A Markdown-formatted notice to display at the top of the page.
    * @since 1.0.7
    */
-   notice?: string;
+  notice?: string;
   /** The collection of settings for this category. */
   settings: APMetaSettingJson[];
   /** The collection of defined items for this category. */
@@ -52,8 +52,12 @@ interface APCategoryJson {
   locations?: APGameLocation[];
 }
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const APUniversalSettings: APCategoryJson = require("./_universal.json");
-APUniversalSettings.settings.forEach(i => i.readableName = `🌐 ${i.readableName ?? i.name}`)
+//APUniversalSettings.settings.forEach(i => i.readableName = `🌐 ${i.readableName ?? i.name}`)
+APUniversalSettings.settings.forEach((i) => {
+  i.isUniversal = true;
+});
 
 const APCategoryData: APCategoryJson[] = [
   require("./_root.json"), // global settings
@@ -83,7 +87,7 @@ const APCategoryData: APCategoryJson[] = [
   require("./023-darksouls3.json"), // 0.3.4
   require("./024-dkc3.json"), // 0.3.4
 ]
-  .map((i:APCategoryJson) => {
+  .map((i: APCategoryJson) => {
     // only bring out ArchipIDLE in April
     // haha its funy geddit
     if (new Date().getMonth() === 3 && i.category === "ArchipIDLE")

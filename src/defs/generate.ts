@@ -40,6 +40,7 @@ interface LttPSprite {
   author: string;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const lttpSprites: LttPSprite[] = require("./LttP/sprites.json");
 
 const LttPSpriteValue: Record<string, string> = Object.fromEntries([
@@ -120,7 +121,7 @@ const APCategoryList: APCategory[] = APCategoryData.map((i) => {
             return new APBooleanSetting(
               i.category,
               Object.assign<
-                any,
+                Partial<APBooleanSettingJson>,
                 APBooleanSettingJson,
                 Partial<APBooleanSettingJson>
               >({}, DeathLinkDefaults, setting),
@@ -146,7 +147,7 @@ const APCategoryList: APCategory[] = APCategoryData.map((i) => {
             );
             stringJson.default = APCategoryData.find(
               (i) => i.index === lowestIndex
-            )!.category!;
+            )?.category ?? "A Link to the Past";
             return new APStringSetting(
               i.category,
               stringJson,

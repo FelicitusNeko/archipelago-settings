@@ -1,3 +1,5 @@
+import React from "react";
+
 interface APHeaderStringNodeProps {
   label: string;
   value: string;
@@ -21,7 +23,12 @@ const APHeaderStringNode: React.FC<APHeaderStringNodeProps> = ({
   return (
     <div className="setting">
       <b>{label}</b>:{" "}
-      <input type="text" value={value} onChange={onNameChange} maxLength={maxLength} />
+      <input
+        type="text"
+        value={value}
+        onChange={onNameChange}
+        maxLength={maxLength}
+      />
       {restrict ? restrict(value) : null}
     </div>
   );
