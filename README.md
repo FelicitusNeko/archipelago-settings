@@ -26,7 +26,7 @@ This tool has been built to supplement the Archipelago Multiworld system, and ge
 This site was built using `create-react-app`, which means standard `cra` commands work when running or building this project locally.
 
 Requirements:
-- NodeJS 16.x LTS (17 not currently supported by `react-scripts`)
+- NodeJS 18.x LTS
 - Yarn Berry 3.0.x or higher
 - TypeScript 4.2.x or higher
 
