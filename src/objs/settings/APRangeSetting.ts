@@ -10,14 +10,13 @@ const randomOrder = ["random", "random-low", "random-middle", "random-high"];
 /**
  * The interface for Archipelago numeric settings as stored in JSON.
  * @since 1.0.0
- * @deprecated Use `APRangeSettingJson` or `APNumberSettingJson` instead
  */
-export interface APNumericSettingJson extends APSettingJson<number | string> {
+export interface APRangeSettingJson extends APSettingJson<number | string> {
   /**
-   * The type of setting. Must be {@link SettingType.Numeric}.
+   * The type of setting. Must be {@link SettingType.Range}.
    * @override
    */
-  type: SettingType.Numeric;
+  type: SettingType.Range;
   /** The lowest valid value for this setting. */
   low: number;
   /** The highest valid value for this setting. */
@@ -29,27 +28,20 @@ export interface APNumericSettingJson extends APSettingJson<number | string> {
   step?: number;
   /** @override */
   default: number;
-  /**
-   * Whether the setting can be randomized. If so, and if the setting is weighted, "random", "random-low",
-   * "random-mid", and "random-high" are added as options.
-   */
-  randomable?: boolean;
 }
 
 /**
  * The renderable representation of an Archipelago numeric setting.
  * @since 1.0.0
- * @deprecated Use `APRangeSetting` or `APNumericSetting` instead
  */
-export class APNumericSetting extends APSetting<number | string> {
+export class APRangeSetting extends APSetting<number | string> {
   private readonly _low: number;
   private readonly _high: number;
   private readonly _step?: number;
-  private readonly _randomable: boolean;
 
   constructor(
     category: string | null,
-    settingData: APNumericSettingJson,
+    settingData: APRangeSettingJson,
     initialValue?: string
   ) {
     super(category, settingData, initialValue);
@@ -57,7 +49,6 @@ export class APNumericSetting extends APSetting<number | string> {
     this._low = settingData.low;
     this._high = settingData.high;
     this._step = settingData.step;
-    this._randomable = settingData.randomable ?? false;
   }
 
   /** The lowest valid value for this setting. */
@@ -74,13 +65,6 @@ export class APNumericSetting extends APSetting<number | string> {
    */
   get step() {
     return this._step;
-  }
-  /**
-   * Whether the setting can be randomized. If so, and if the setting is weighted, "random", "random-low", and
-   * "random-high" are added as options.
-   */
-  get randomable() {
-    return this._randomable;
   }
 
   /** @override */
@@ -103,16 +87,17 @@ export class APNumericSetting extends APSetting<number | string> {
           value: wValue[0],
           weight: wValue[1],
         });
-      if (this._randomable) {
-        const missingRandoms = randomOrder.filter(
-          (i) => !wValues.map((ii) => ii.value.toString()).includes(i)
-        );
-        wValues.push(
-          ...missingRandoms.map((i) => {
-            return { value: i, weight: 0 };
-          })
-        );
-      }
+
+      // assume Range to always be "randomable"
+      const missingRandoms = randomOrder.filter(
+        (i) => !wValues.map((ii) => ii.value.toString()).includes(i)
+      );
+      wValues.push(
+        ...missingRandoms.map((i) => {
+          return { value: i, weight: 0 };
+        })
+      );
+
       this.value = wValues.sort((a, b) => {
         if (typeof a.value === typeof b.value) {
           if (typeof a.value === "number") return a.value - (b.value as number);

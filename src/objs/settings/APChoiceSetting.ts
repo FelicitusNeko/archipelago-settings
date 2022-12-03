@@ -5,33 +5,38 @@ import {
   APWeightedValue,
 } from "./APSetting";
 
+export interface APChoiceValue {
+  name: string;
+  readableName?: string;
+  description?: string;
+  aliases?: string[];
+}
+
 /**
  * The interface for Archipelago string-based settings as stored in JSON.
  * @since 1.0.0
- * @deprecated Use `APChoiceSettingJson` instead
  */
-export interface APStringSettingJson extends APSettingJson<string> {
+export interface APChoiceSettingJson extends APSettingJson<string> {
   /**
-   * The type of setting. Must be {@link SettingType.String}.
+   * The type of setting. Must be {@link SettingType.Choice}.
    * @override
    */
-  type: SettingType.String | SettingType.Games | SettingType.Character;
+  type: SettingType.Choice | SettingType.Games | SettingType.Character;
   /** The list of valid values. The key should be the internal value name, and the value should be the user-readable description. */
-  values: Record<string, string | string[]>;
+  values: APChoiceValue[];
 }
 
 /**
  * The renderable representation of an Archipelago string-based setting.
  * @since 1.0.0
- * @deprecated Use `APChoiceSetting` instead
  */
-export class APStringSetting extends APSetting<string> {
+export class APChoiceSetting extends APSetting<string> {
   /** The list of valid values and their descriptions. */
-  private readonly _values: Record<string, string | string[]>;
+  private readonly _values: APChoiceValue[];
 
   constructor(
     category: string | null,
-    settingData: APStringSettingJson,
+    settingData: APChoiceSettingJson,
     initialValue?: string
   ) {
     super(category, settingData, initialValue);

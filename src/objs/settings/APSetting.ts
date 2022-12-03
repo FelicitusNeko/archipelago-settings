@@ -1,6 +1,9 @@
 import { APDependency, SettingType } from "../../defs/core";
 import { APBooleanSetting, APBooleanSettingJson } from "./APBooleanSetting";
+import { APChoiceSetting, APChoiceSettingJson } from "./APChoiceSetting";
+import { APNumberSetting, APNumberSettingJson } from "./APNumberSetting";
 import { APNumericSetting, APNumericSettingJson } from "./APNumericSetting";
+import { APRangeSetting, APRangeSettingJson } from "./APRangeSetting";
 import { APStringSetting, APStringSettingJson } from "./APStringSetting";
 
 /**
@@ -234,16 +237,38 @@ export abstract class APSetting<T> {
   isBooleanSetting(): this is APBooleanSetting {
     return [SettingType.Boolean, SettingType.DeathLink].includes(this.type);
   }
-  /** Whether this setting is a numeric setting. */
+  /**
+   * Whether this setting is a numeric setting.
+   * @deprecated Use `Range` or `Number` instead
+   */
   isNumericSetting(): this is APNumericSetting {
     return this.type === SettingType.Numeric;
   }
-  /** Whether this setting is a string-based setting. */
+  /** Whether this setting is a randomizable numeric setting within a given range. */
+  isRangeSetting():this is APRangeSetting{
+    return this.type === SettingType.Range;
+  }
+  /** Whether this setting is an open-ended numeric setting. */
+  isNumberSetting():this is APNumberSetting{
+    return this.type === SettingType.Number;
+  }
+  /**
+   * Whether this setting is a string-based setting.
+   * @deprecated Use `Choice` instead
+   */
   isStringSetting(): this is APStringSetting {
     return [
       SettingType.String,
       SettingType.Games,
       SettingType.Character,
+    ].includes(this.type);
+  }
+  /** Whether this setting is a choice-based setting from a list of options. */
+  isChoiceSetting(): this is APChoiceSetting {
+    return [
+      SettingType.Choice,
+      SettingType.Games,
+      SettingType.Character
     ].includes(this.type);
   }
 
@@ -252,6 +277,7 @@ export abstract class APSetting<T> {
    * @static
    * @param value The setting definition to evalute.
    * @returns Whether the given setting definition is for a string-based setting.
+   * @deprecated Use `Choice` instead
    */
   static isStringJson(value: APSettingJson<unknown>): value is APStringSettingJson {
     return [
@@ -261,15 +287,54 @@ export abstract class APSetting<T> {
     ].includes(value.type);
   }
   /**
+   * Evaluates whether a setting definition is for a string-based setting.
+   * @static
+   * @param value The setting definition to evalute.
+   * @returns Whether the given setting definition is for a string-based setting.
+   * @deprecated Use `Choice` instead
+   */
+  static isChoiceJson(value: APSettingJson<unknown>): value is APChoiceSettingJson {
+    return [
+      SettingType.Choice,
+      SettingType.Games,
+      SettingType.Character,
+    ].includes(value.type);
+  }
+  /**
    * Evaluates whether a setting definition is for a numeric setting.
    * @static
    * @param value The setting definition to evalute.
    * @returns Whether the given setting definition is for a numeric setting.
+   * @deprecated Use `Number` or `Range` instead
    */
-  static isNumericJson(
+   static isNumericJson(
     value: APSettingJson<unknown>
   ): value is APNumericSettingJson {
     return value.type === SettingType.Numeric;
+  }
+  /**
+   * Evaluates whether a setting definition is for a numeric setting.
+   * @static
+   * @param value The setting definition to evalute.
+   * @returns Whether the given setting definition is for a numeric setting.
+   * @deprecated Use `Number` or `Range` instead
+   */
+   static isRangeJson(
+    value: APSettingJson<unknown>
+  ): value is APRangeSettingJson {
+    return value.type === SettingType.Range;
+  }
+  /**
+   * Evaluates whether a setting definition is for a numeric setting.
+   * @static
+   * @param value The setting definition to evalute.
+   * @returns Whether the given setting definition is for a numeric setting.
+   * @deprecated Use `Number` or `Range` instead
+   */
+   static isNumberJson(
+    value: APSettingJson<unknown>
+  ): value is APNumberSettingJson {
+    return value.type === SettingType.Number;
   }
   /**
    * Evaluates whether a setting definition is for a Boolean setting.

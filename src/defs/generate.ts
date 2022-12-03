@@ -19,6 +19,9 @@ import {
   APBooleanSetting,
   APBooleanSettingJson,
 } from "../objs/settings/APBooleanSetting";
+import { APChoiceSetting, APChoiceSettingJson, APChoiceValue } from "../objs/settings/APChoiceSetting";
+import { APRangeSetting, APRangeSettingJson } from "../objs/settings/APRangeSetting";
+import { APNumberSetting, APNumberSettingJson } from "../objs/settings/APNumberSetting";
 import { APItemManager } from "../objs/entities/APItemManager";
 import { APLocationManager } from "../objs/entities/APLocationManager";
 import { gunzipSync } from "zlib";
@@ -26,11 +29,11 @@ import { gunzipSync } from "zlib";
 export type APMetaSetting =
   | APStringSetting
   | APNumericSetting
-  | APBooleanSetting;
+  | APBooleanSetting | APChoiceSetting | APRangeSetting | APNumberSetting;
 export type APMetaSettingJson =
   | APStringSettingJson
   | APNumericSettingJson
-  | APBooleanSettingJson;
+  | APBooleanSettingJson | APChoiceSettingJson | APRangeSettingJson | APNumberSettingJson;
 
 export type APMetaManager = APItemManager | APLocationManager;
 
@@ -138,37 +141,37 @@ const APCategoryList: APCategory[] = APCategoryData.map((i) => {
               );
             gameListUsed = true;
 
-            const stringJson = setting as APStringSettingJson;
-            stringJson.values = Object.fromEntries(gameList);
+            const choiceJson = setting as APChoiceSettingJson;
+            choiceJson.values = gameList.map<APChoiceValue>(i => { return { name: i[0], readableName: i[1] } });
             const lowestIndex = Math.min(
               ...APCategoryData.filter((i) => i.category !== null).map(
                 (i) => i.index
               )
             );
-            stringJson.default = APCategoryData.find(
+            choiceJson.default = APCategoryData.find(
               (i) => i.index === lowestIndex
             )?.category ?? "A Link to the Past";
-            return new APStringSetting(
+            return new APChoiceSetting(
               i.category,
-              stringJson,
+              choiceJson,
               savedCategory ? savedCategory.settings[setting.name] : undefined
             );
           }
           case SettingType.Character: {
-            const stringJson = setting as APStringSettingJson;
+            const choiceJson = setting as APChoiceSettingJson;
             switch (i.category) {
               case "A Link to the Past":
-                stringJson.values = LttPSpriteValue;
+                choiceJson.values = Object.entries(LttPSpriteValue).map(i => { return { name: i[0], readableName: i[1] } });
                 break;
               default:
                 throw new Error(
                   `Game "${i.category}" does not have a known list of character sprites/models`
                 );
             }
-            stringJson.default = Object.keys(stringJson.values)[0];
-            return new APStringSetting(
+            choiceJson.default = Object.keys(choiceJson.values)[0];
+            return new APChoiceSetting(
               i.category,
-              stringJson,
+              choiceJson,
               savedCategory ? savedCategory.settings[setting.name] : undefined
             );
           }
@@ -207,7 +210,7 @@ export { APCategoryList };
 
 const GameSetting = APCategoryList[0].settings.find(
   (i) => i.type === SettingType.Games
-) as APStringSetting;
+) as APChoiceSetting;
 if (GameSetting === undefined)
   throw new Error("No game selection setting found");
 export { GameSetting };
