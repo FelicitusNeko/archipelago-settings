@@ -34,6 +34,7 @@ import { APHeaderStringNode } from "./objs/settings/APHeaderStringNode";
 import "./SettingsTool.css";
 
 const { localStorage, location, confirm } = window;
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const { version } = require("../../package.json");
 
 /**
@@ -86,7 +87,7 @@ const isGameEnabledV2 = (category: string | null): boolean => {
  */
 const RealSaveToStorage = (() => {
   /** Whether the save operation is running. */
-  let running: boolean = false;
+  let running = false;
   /** Data for a queued save operation, if any. */
   let queueAnother: [string, string] | undefined = undefined;
   /** The timeout for the next save operation, if any. */
@@ -152,9 +153,9 @@ const restrictName = (value: string) => {
 
 /**
  * The Archipelago Settings Tool, a tool to generate .YAML settings files for Archipelago Multiworld.
- * @returns {ReactElement<any, any>|null} The body of the Archipelago Settings Tool.
+ * @returns {ReactElement<unknown>|null} The body of the Archipelago Settings Tool.
  */
-const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
+const SettingsTool: React.FC = (): ReactElement<unknown> | null => {
   const [playerName, setPlayerName] = useState("Player");
   const [description, setDescription] = useState(
     "Generated using Kewlio's Archipelago Settings Tool"
@@ -241,7 +242,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
       // if the category has items/locs and so does the YAML, then import those
       for (const manager of [items, locations])
         if (manager) {
-          const importEntities: Record<string, any> = {};
+          const importEntities: Record<string, unknown> = {};
           for (const list of manager.lists)
             if (curImport[list]) importEntities[list] = curImport[list];
           manager.yamlValue = importEntities;
@@ -274,7 +275,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
           setting.value = setting.default;
         } else {
           // Fetch the data
-          let oldSetting = yamlIn[setting.legacyName ?? setting.name];
+          const oldSetting = yamlIn[setting.legacyName ?? setting.name];
 
           // "weapons" as a string setting changed to "swordless" as a boolean setting, so special handling is needed
           if (setting.name === "swordless") {
@@ -358,7 +359,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
     // TODO: Scan for any obvious problems that would prevent the YAML from working (all-zero weights, bad name, etc.)
 
     // Create the YAML structure
-    let outYaml: any = Object.assign({
+    let outYaml: Record<string, unknown> = Object.assign({
       name: playerName,
       description,
       requires: { version: process.env.REACT_APP_CURRENT_ARCHIPELAGO_VER },
@@ -536,7 +537,7 @@ const SettingsTool: React.FC = (): ReactElement<any, any> | null => {
               <TabPanel key={`tabpanel-${i.category}`} className="settingsBody">
                 {i.notice ? (
                   <div className="gamenotice">
-                    <ReactMarkdown children={`**NOTICE**: ${i.notice}`} />
+                    <ReactMarkdown>{`**NOTICE**: ${i.notice}`}</ReactMarkdown>
                   </div>
                 ) : null}
                 {outputSettingCollectionV2(i)}

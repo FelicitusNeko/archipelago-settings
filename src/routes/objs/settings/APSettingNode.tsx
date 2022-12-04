@@ -197,7 +197,7 @@ export abstract class APSettingNode<
     return (
       <>
         <div className="setting">
-          <b>{setting.readableName}</b>{" "}
+          <b>{setting.isUniversal ? <><span title="This setting is universal; it exists for every game.">🌐</span>&nbsp;</> : null}{setting.readableName}</b>{" "}
           <label className="switch switch-weight" title="Weighted toggle">
             <input
               className="switch-input"
@@ -218,7 +218,7 @@ export abstract class APSettingNode<
             </button>
           )}
           <br />
-          <ReactMarkdown children={setting.description} />
+          <ReactMarkdown>{setting.description}</ReactMarkdown>
           {(weighted ? this.renderWeightedChoice : this.renderLinearChoice)()}
         </div>
       </>

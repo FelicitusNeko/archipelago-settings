@@ -1,9 +1,9 @@
 import React, { ChangeEvent } from "react";
 import { APWeightedValue } from "../../../objs/settings/APSetting";
-import { APStringSetting } from "../../../objs/settings/APStringSetting";
+import { APChoiceSetting } from "../../../objs/settings/APChoiceSetting";
 import { APSettingNode } from "./APSettingNode";
 
-export class APStringSettingNode extends APSettingNode<APStringSetting> {
+export class APChoiceSettingNode extends APSettingNode<APChoiceSetting> {
   componentDidMount() {
     const { selector } = this.state;
     if (selector === undefined)
@@ -64,6 +64,8 @@ export class APStringSettingNode extends APSettingNode<APStringSetting> {
       });
     };
 
+    const curVal = setting.values.find(i => i.name == value);
+
     return (
       <>
         <select
@@ -72,24 +74,21 @@ export class APStringSettingNode extends APSettingNode<APStringSetting> {
           value={value}
           onChange={onSettingChange}
         >
-          {Object.entries(setting.values).map((i) => {
-            const [name, readable] = i;
-            // Output the option
-            return (
+          {
+            setting.values.map(i =>
               <option
-                key={`${category}-${setting.name}-val-${name}`}
-                title={Array.isArray(readable) ? readable[1] : undefined}
-                value={name}
-              >
-                {Array.isArray(readable) ? `${readable[0]} ℹ️` : readable}
+                key={`${category}-${setting.name}-val-${i.name}`}
+                title={i.description}
+                value={i.name}>
+                {i.readableName ?? i.name}{i.description ? '  ℹ️' : null}
               </option>
-            );
-          })}
+            )
+          }
         </select>
-        {Array.isArray(setting.values[value]) ? (
+        {curVal && curVal.description ? (
           <>
             <br />
-            {setting.values[value][1]}
+            {curVal.description}
           </>
         ) : null}
       </>
@@ -111,7 +110,9 @@ export class APStringSettingNode extends APSettingNode<APStringSetting> {
 
     // Create weighted value sliders for selected values
     for (const wValue of value) {
-      const valueDef = setting.values[wValue.value];
+      let valueDef = setting.values.find(i => i.name === wValue.value);
+      if (!valueDef) valueDef = { name: "!!!UNKNOWN" };
+
       const displayName = valueDef
         ? Array.isArray(valueDef)
           ? valueDef[0]
@@ -124,7 +125,7 @@ export class APStringSettingNode extends APSettingNode<APStringSetting> {
           displayName,
           wValue.weight,
           count > 1,
-          Array.isArray(setting.values[wValue.value]) ? setting.values[wValue.value][1] : undefined
+          valueDef.description
         )
       );
     }
@@ -153,9 +154,10 @@ export class APStringSettingNode extends APSettingNode<APStringSetting> {
     };
 
     /** The list of unselected values. */
-    const remainingValues = Object.entries(setting.values).filter(
-      (i) => !value.map((i) => i.value).includes(i[0])
-    );
+    // const remainingValues = Object.entries(setting.values).filter(
+    //   (i) => !value.map((i) => i.value).includes(i[0])
+    // );
+    const remainingValues = setting.values.filter(i => !value.map(i => i.value).includes(i.name));
 
     return (
       <>
@@ -170,16 +172,12 @@ export class APStringSettingNode extends APSettingNode<APStringSetting> {
               onChange={onAddWeightChange}
             >
               {remainingValues.map((i) => {
-                const [name, readable] = i;
-                return (
-                  <option
-                    key={`${category}-${setting.name}-val-${name}`}
-                    title={Array.isArray(readable) ? readable[1] : undefined}
-                    value={name}
-                  >
-                    {Array.isArray(readable) ? `${readable[0]} ℹ️` : readable}
-                  </option>
-                );
+                return (<option
+                  key={`${category}-${setting.name}-val-${i.name}`}
+                  title={i.description}
+                  value={i.name}>
+                  {i.readableName ?? i.name}{i.description ? '  ℹ️' : null}
+                </option>);
               })}
             </select>{" "}
             <button

@@ -2238,7 +2238,7 @@
       "max": 2
     },
     {
-      "name": "Magic Mirror"
+      "name": "Magic Meter"
     },
     {
       "name": "Lens of Truth"
@@ -2355,7 +2355,7 @@
       "name": "Song from Saria"
     },
     {
-      "name": "Song from Composers Grave"
+      "name": "Song from Royal Familys Tomb"
     },
     {
       "name": "Song from Ocarina of Time"
@@ -2784,7 +2784,7 @@
       "name": "Graveyard Heart Piece Grave Chest"
     },
     {
-      "name": "Graveyard Composers Grave Chest"
+      "name": "Graveyard Royal Familys Tomb Chest"
     },
     {
       "name": "Graveyard Freestanding PoH"
@@ -3090,19 +3090,19 @@
       "name": "GV GS Pillar"
     },
     {
-      "name": "GF North F1 Carpenter"
+      "name": "Hideout Jail Guard (1 Torch)"
     },
     {
-      "name": "GF North F2 Carpenter"
+      "name": "Hideout Jail Guard (2 Torches)"
     },
     {
-      "name": "GF South F1 Carpenter"
+      "name": "Hideout Jail Guard (3 Torches)"
     },
     {
-      "name": "GF South F2 Carpenter"
+      "name": "Hideout Jail Guard (4 Torches)"
     },
     {
-      "name": "GF Gerudo Membership Card"
+      "name": "Hideout Gerudo Membership Card"
     },
     {
       "name": "GF Chest"
@@ -4104,121 +4104,121 @@
       "name": "Ice Cavern MQ GS Scarecrow"
     },
     {
-      "name": "Gerudo Training Grounds Lobby Left Chest"
+      "name": "Gerudo Training Ground Lobby Left Chest"
     },
     {
-      "name": "Gerudo Training Grounds Lobby Right Chest"
+      "name": "Gerudo Training Ground Lobby Right Chest"
     },
     {
-      "name": "Gerudo Training Grounds Stalfos Chest"
+      "name": "Gerudo Training Ground Stalfos Chest"
     },
     {
-      "name": "Gerudo Training Grounds Before Heavy Block Chest"
+      "name": "Gerudo Training Ground Before Heavy Block Chest"
     },
     {
-      "name": "Gerudo Training Grounds Heavy Block First Chest"
+      "name": "Gerudo Training Ground Heavy Block First Chest"
     },
     {
-      "name": "Gerudo Training Grounds Heavy Block Second Chest"
+      "name": "Gerudo Training Ground Heavy Block Second Chest"
     },
     {
-      "name": "Gerudo Training Grounds Heavy Block Third Chest"
+      "name": "Gerudo Training Ground Heavy Block Third Chest"
     },
     {
-      "name": "Gerudo Training Grounds Heavy Block Fourth Chest"
+      "name": "Gerudo Training Ground Heavy Block Fourth Chest"
     },
     {
-      "name": "Gerudo Training Grounds Eye Statue Chest"
+      "name": "Gerudo Training Ground Eye Statue Chest"
     },
     {
-      "name": "Gerudo Training Grounds Near Scarecrow Chest"
+      "name": "Gerudo Training Ground Near Scarecrow Chest"
     },
     {
-      "name": "Gerudo Training Grounds Hammer Room Clear Chest"
+      "name": "Gerudo Training Ground Hammer Room Clear Chest"
     },
     {
-      "name": "Gerudo Training Grounds Hammer Room Switch Chest"
+      "name": "Gerudo Training Ground Hammer Room Switch Chest"
     },
     {
-      "name": "Gerudo Training Grounds Freestanding Key"
+      "name": "Gerudo Training Ground Freestanding Key"
     },
     {
-      "name": "Gerudo Training Grounds Maze Right Central Chest"
+      "name": "Gerudo Training Ground Maze Right Central Chest"
     },
     {
-      "name": "Gerudo Training Grounds Maze Right Side Chest"
+      "name": "Gerudo Training Ground Maze Right Side Chest"
     },
     {
-      "name": "Gerudo Training Grounds Underwater Silver Rupee Chest"
+      "name": "Gerudo Training Ground Underwater Silver Rupee Chest"
     },
     {
-      "name": "Gerudo Training Grounds Beamos Chest"
+      "name": "Gerudo Training Ground Beamos Chest"
     },
     {
-      "name": "Gerudo Training Grounds Hidden Ceiling Chest"
+      "name": "Gerudo Training Ground Hidden Ceiling Chest"
     },
     {
-      "name": "Gerudo Training Grounds Maze Path First Chest"
+      "name": "Gerudo Training Ground Maze Path First Chest"
     },
     {
-      "name": "Gerudo Training Grounds Maze Path Second Chest"
+      "name": "Gerudo Training Ground Maze Path Second Chest"
     },
     {
-      "name": "Gerudo Training Grounds Maze Path Third Chest"
+      "name": "Gerudo Training Ground Maze Path Third Chest"
     },
     {
-      "name": "Gerudo Training Grounds Maze Path Final Chest"
+      "name": "Gerudo Training Ground Maze Path Final Chest"
     },
     {
-      "name": "Gerudo Training Grounds MQ Lobby Left Chest"
+      "name": "Gerudo Training Ground MQ Lobby Left Chest"
     },
     {
-      "name": "Gerudo Training Grounds MQ Lobby Right Chest"
+      "name": "Gerudo Training Ground MQ Lobby Right Chest"
     },
     {
-      "name": "Gerudo Training Grounds MQ First Iron Knuckle Chest"
+      "name": "Gerudo Training Ground MQ First Iron Knuckle Chest"
     },
     {
-      "name": "Gerudo Training Grounds MQ Before Heavy Block Chest"
+      "name": "Gerudo Training Ground MQ Before Heavy Block Chest"
     },
     {
-      "name": "Gerudo Training Grounds MQ Heavy Block Chest"
+      "name": "Gerudo Training Ground MQ Heavy Block Chest"
     },
     {
-      "name": "Gerudo Training Grounds MQ Eye Statue Chest"
+      "name": "Gerudo Training Ground MQ Eye Statue Chest"
     },
     {
-      "name": "Gerudo Training Grounds MQ Ice Arrows Chest"
+      "name": "Gerudo Training Ground MQ Ice Arrows Chest"
     },
     {
-      "name": "Gerudo Training Grounds MQ Second Iron Knuckle Chest"
+      "name": "Gerudo Training Ground MQ Second Iron Knuckle Chest"
     },
     {
-      "name": "Gerudo Training Grounds MQ Flame Circle Chest"
+      "name": "Gerudo Training Ground MQ Flame Circle Chest"
     },
     {
-      "name": "Gerudo Training Grounds MQ Maze Right Central Chest"
+      "name": "Gerudo Training Ground MQ Maze Right Central Chest"
     },
     {
-      "name": "Gerudo Training Grounds MQ Maze Right Side Chest"
+      "name": "Gerudo Training Ground MQ Maze Right Side Chest"
     },
     {
-      "name": "Gerudo Training Grounds MQ Underwater Silver Rupee Chest"
+      "name": "Gerudo Training Ground MQ Underwater Silver Rupee Chest"
     },
     {
-      "name": "Gerudo Training Grounds MQ Dinolfos Chest"
+      "name": "Gerudo Training Ground MQ Dinolfos Chest"
     },
     {
-      "name": "Gerudo Training Grounds MQ Hidden Ceiling Chest"
+      "name": "Gerudo Training Ground MQ Hidden Ceiling Chest"
     },
     {
-      "name": "Gerudo Training Grounds MQ Maze Path First Chest"
+      "name": "Gerudo Training Ground MQ Maze Path First Chest"
     },
     {
-      "name": "Gerudo Training Grounds MQ Maze Path Third Chest"
+      "name": "Gerudo Training Ground MQ Maze Path Third Chest"
     },
     {
-      "name": "Gerudo Training Grounds MQ Maze Path Second Chest"
+      "name": "Gerudo Training Ground MQ Maze Path Second Chest"
     },
     {
       "name": "Ganons Castle Forest Trial Chest"

@@ -72,7 +72,7 @@ export abstract class APEntityManager<T extends APGameEntity> {
    * @param list The list to deserialize.
    * @param content The serialized content of the {@link list}.
    */
-  protected deserializeList(list: string, content: any) {
+  protected deserializeList(list: string, content: unknown) {
     if (content !== undefined) return this.setList(list, content as string[]);
   }
 

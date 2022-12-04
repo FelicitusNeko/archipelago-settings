@@ -6,12 +6,21 @@
       "**StarCraft 2: Wings of Liberty**: New locations",
       "**Super Mario 64**: Option to add ! boxes as checks",
       "**SMZ3**: Several options that may seem familiar to rando players (mostly) for LttP",
-      "**Subnautica**: New option for aggressive creature scan logic",
-      "**Ocarina of Time**: Reduced maximum Triforce Pieces to 80"
+      "**Subnautica**: New option for aggressive creature scan logic, adjusted some items",
+      "**Ocarina of Time**: Reduced maximum Triforce Pieces to 80",
+      "**Raft**: DeathLink, option for resource packs, duplicates, or both as fillers"
     ],
+    "**Rogue Legacy**: Fixed names for Blueprint items",
     "Created a new category of \"universal\" options, and added item accessibility and progression balancing to it; these are now available for every game as well as globally",
     [
       "A future update may make it so that these can be toggled, as per-game settings will always supercede globals"
+    ],
+    "Changelog is now paginated",
+    "Internal: Upgrade core to `create-react-app` 5.0.1 (with much trepidation holy moly you wouldn't believe); updated most other libraries as well",
+    "*Revision 1*:",
+    [
+      "**SMZ3**: Fixed a malformed option that broke its settings page",
+      "**Ocarina of Time**: Fixed some item and location names"
     ]
   ],
   "1.0.8": [

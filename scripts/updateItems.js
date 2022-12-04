@@ -6,6 +6,7 @@ const {
   unlinkSync,
   writeSync,
 } = require('fs');
+const { get: httpGet } = require('http');
 const { get: httpsGet } = require('https');
 
 const { DATAPACKAGE_URL } = process.env;
@@ -13,8 +14,12 @@ const { DATAPACKAGE_URL } = process.env;
 const getDataPackage = () => {
   const url =
     DATAPACKAGE_URL ?? "https://archipelago.gg/api/datapackage";
+  const matcher = /^http(s?):\/\//.exec(url);
+  if (matcher === null) throw new Error("Invalid URL");
+  const get = matcher[1] ? httpsGet : httpGet;
+  console.debug(`Retrieving data from ${url}`);
   return new Promise((f, r) => {
-    httpsGet(url, (res) => {
+    get(url, (res) => {
       let data = "";
       res.on("data", (chunk) => (data += chunk.toString()));
       res.on("close", () => f(JSON.parse(data)));
@@ -23,9 +28,7 @@ const getDataPackage = () => {
   });
 };
 
-(async () => {
-  const dataPackage = await getDataPackage();
-
+getDataPackage().then(dataPackage => {
   if (!existsSync(__dirname + "/itemloc")) {
     console.debug('Creating itemloc subdir');
     mkdirSync(__dirname + "/itemloc");
@@ -56,4 +59,4 @@ const getDataPackage = () => {
 
     closeSync(outFile);
   }
-})();
+});

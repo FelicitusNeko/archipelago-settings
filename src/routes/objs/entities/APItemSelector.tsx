@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Draggable } from "react-beautiful-dnd";
+import React, { useState } from "react";
+import { Draggable } from "@hello-pangea/dnd";
 import Slider from "rc-slider";
 
 import { APGameItem, APGameItemAndQty } from "../../../defs/core";

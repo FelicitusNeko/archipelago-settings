@@ -908,7 +908,8 @@
         "sick": ["Sick", "Full random but keep lightness"],
         "puke": ["Puke", "Completely random without regard to anything"]
       },
-      "default": "default"
+      "default": "default",
+      "disabled": true
     },
     {
       "type": "string",

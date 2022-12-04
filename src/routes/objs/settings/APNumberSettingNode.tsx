@@ -1,15 +1,12 @@
 import React, { ChangeEvent } from "react";
 import Slider from "rc-slider";
 
-import { APNumericSetting } from "../../../objs/settings/APNumericSetting";
+import { APNumberSetting } from "../../../objs/settings/APNumberSetting";
 import { APWeightedValue } from "../../../objs/settings/APSetting";
 import { APSettingNode } from "./APSettingNode";
 import { SelectRail } from "../../../defs/core";
 
-const randomOrder = ["random", "random-low", "random-middle", "random-high"];
-
-type APNumericType = number | string;
-export class APNumericSettingNode extends APSettingNode<APNumericSetting> {
+export class APNumberSettingNode extends APSettingNode<APNumberSetting> {
   componentDidMount() {
     const { selector } = this.state;
     if (selector === undefined) {
@@ -25,15 +22,9 @@ export class APNumericSettingNode extends APSettingNode<APNumericSetting> {
     const { setting } = this.props;
     const { value } = this.state;
     if (currentTarget.checked) {
-      const newValue: APWeightedValue<APNumericType>[] = [
-        { value: value as number | string, weight: 50 },
+      const newValue: APWeightedValue<number>[] = [
+        { value: value as number, weight: 50 },
       ];
-      if (setting.randomable)
-        newValue.push(
-          ...randomOrder.map((i) => {
-            return { value: i, weight: 0 };
-          })
-        );
       this.setState({
         value: newValue,
       });
@@ -47,7 +38,7 @@ export class APNumericSettingNode extends APSettingNode<APNumericSetting> {
   /** @override */
   protected renderLinearChoice = () => {
     const { category, setting } = this.props;
-    const { name, low, high, step, value, default: vDefault } = setting;
+    const { name, low, high, value, default: vDefault } = setting;
 
     // if this is a weighted setting, output nothing; it should output correctly on the next frame
     if (Array.isArray(value)) return null;
@@ -60,6 +51,7 @@ export class APNumericSettingNode extends APSettingNode<APNumericSetting> {
         });
     };
 
+    // TODO: this should now be a numeric text entry field
     return (
       // Output the value slider for this numeric value.
       <>
@@ -68,7 +60,6 @@ export class APNumericSettingNode extends APSettingNode<APNumericSetting> {
           className="archslider"
           min={low}
           max={high}
-          step={step}
           value={(value as number) ?? vDefault}
           onChange={onSettingChange}
           trackStyle={SelectRail}
@@ -82,7 +73,7 @@ export class APNumericSettingNode extends APSettingNode<APNumericSetting> {
   protected renderWeightedChoice = () => {
     const { category, setting } = this.props;
     const { selector } = this.state;
-    const { name, low, high, step, value, default: vDefault } = setting;
+    const { name, low, high, value, default: vDefault } = setting;
 
     // if this is not a weighted setting, output nothing; it should output correctly on the next frame
     if (!Array.isArray(value)) return null;
@@ -97,9 +88,7 @@ export class APNumericSettingNode extends APSettingNode<APNumericSetting> {
       weightSliders.push(
         this.outputWeightedValue(
           wValue.value,
-          typeof wValue.value === "number"
-            ? wValue.value.toString()
-            : wValue.value.replace("-", " "),
+          wValue.value.toString(),
           wValue.weight,
           count > 1 && !(typeof wValue.value === "string")
         )
@@ -118,7 +107,7 @@ export class APNumericSettingNode extends APSettingNode<APNumericSetting> {
       // If the specified value is already selected, don't add it again
       if (value.findIndex((i) => i.value === selector) >= 0) return;
       // Otherwise, add the new value
-      const newValue: APWeightedValue<APNumericType>[] = value
+      const newValue: APWeightedValue<number>[] = value
         .slice()
         .concat([
           {
@@ -127,19 +116,14 @@ export class APNumericSettingNode extends APSettingNode<APNumericSetting> {
           },
         ])
         .sort((a, b) => {
-          if (typeof a.value === typeof b.value) {
-            if (typeof a.value === "number")
+          if (typeof a.value === typeof b.value)
               return a.value - (b.value as number);
-            else
-              return (
-                randomOrder.findIndex((i) => i === a.value) -
-                randomOrder.findIndex((i) => i === b.value)
-              );
-          } else return typeof a.value === "number" ? -1 : 1;
+          else return typeof a.value === "number" ? -1 : 1;
         });
       this.setState({ value: newValue });
     };
 
+    // TODO: change value selector to numeric text entry field
     return (
       <>
         {weightSliders}
@@ -147,7 +131,6 @@ export class APNumericSettingNode extends APSettingNode<APNumericSetting> {
           className="archslider"
           min={low}
           max={high}
-          step={step}
           value={(selector ?? vDefault) as number}
           onChange={onSettingChange}
           trackStyle={SelectRail}

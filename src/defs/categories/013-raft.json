@@ -3,13 +3,6 @@
   "index": 13,
   "settings": [
     {
-      "type": "boolean",
-      "name": "use_resource_packs",
-      "readableName": "Use resource packs",
-      "description": "Uses Resource Packs to fill out the item pool from Raft. Resource Packs have basic earlygame items such as planks, plastic, or food.",
-      "default": true
-    },
-    {
       "type": "numeric",
       "name": "minimum_resource_pack_amount",
       "readableName": "Minimum resource pack amount",
@@ -41,6 +34,18 @@
         "any": "Any"
       },
       "default": "disabled"
+    },
+    {
+      "type": "string",
+      "name": "filler_item_types",
+      "readableName": "Filler item types",
+      "description": "Determines whether to use Resource Packs, Duplicate Items (as configured), or both.",
+      "values": {
+        "resource_packs": "Resource Packs",
+        "duplicates": "Duplicate items",
+        "both": "both"
+      },
+      "default": "resource_packs"
     },
     {
       "type": "string",
@@ -95,7 +100,8 @@
       "readableName": "Paddleboard mode",
       "description": "Sets later story islands to in logic without an Engine or Steering Wheel. May require lots of paddling. **Not recommended.**",
       "default": true
-    }
+    },
+    {"type": "deathlink"}
   ],
   "items": [
     {

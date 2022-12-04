@@ -1,15 +1,15 @@
 import React, { ChangeEvent } from "react";
 import Slider from "rc-slider";
 
-import { APNumericSetting } from "../../../objs/settings/APNumericSetting";
+import { APRangeSetting } from "../../../objs/settings/APRangeSetting";
 import { APWeightedValue } from "../../../objs/settings/APSetting";
 import { APSettingNode } from "./APSettingNode";
 import { SelectRail } from "../../../defs/core";
 
 const randomOrder = ["random", "random-low", "random-middle", "random-high"];
 
-type APNumericType = number | string;
-export class APNumericSettingNode extends APSettingNode<APNumericSetting> {
+type APRangeType = number | string;
+export class APRangeSettingNode extends APSettingNode<APRangeSetting> {
   componentDidMount() {
     const { selector } = this.state;
     if (selector === undefined) {
@@ -25,15 +25,15 @@ export class APNumericSettingNode extends APSettingNode<APNumericSetting> {
     const { setting } = this.props;
     const { value } = this.state;
     if (currentTarget.checked) {
-      const newValue: APWeightedValue<APNumericType>[] = [
+      const newValue: APWeightedValue<APRangeType>[] = [
         { value: value as number | string, weight: 50 },
       ];
-      if (setting.randomable)
-        newValue.push(
-          ...randomOrder.map((i) => {
-            return { value: i, weight: 0 };
-          })
-        );
+
+      newValue.push(
+        ...randomOrder.map((i) => {
+          return { value: i, weight: 0 };
+        })
+      );
       this.setState({
         value: newValue,
       });
@@ -118,7 +118,7 @@ export class APNumericSettingNode extends APSettingNode<APNumericSetting> {
       // If the specified value is already selected, don't add it again
       if (value.findIndex((i) => i.value === selector) >= 0) return;
       // Otherwise, add the new value
-      const newValue: APWeightedValue<APNumericType>[] = value
+      const newValue: APWeightedValue<APRangeType>[] = value
         .slice()
         .concat([
           {

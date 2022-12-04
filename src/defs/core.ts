@@ -7,14 +7,26 @@ export { BuildTimestamp };
 
 /** Indicates what type of setting is being used. */
 export enum SettingType {
-  /** Refers to a string-based setting. */
+  /**
+   * Refers to a string-based setting.
+   * @deprecated Use `Choice` instead
+   */
   String = "string",
+  /** Refers to a string-based setting based on a list of options. */
+  Choice = "choice",
   /** Refers to the string-based game selection setting. This should only exist once. */
   Games = "games",
   /** Refers to the string-based sprite/model selection setting, if one exists. This typically should only exist no more than once per game. */
   Character = "char",
-  /** Refers to a numeric setting. */
+  /**
+   * Refers to a numeric setting.
+   * @deprecated Use `Range` or `Number` instead
+   */
   Numeric = "numeric",
+  /** Refers to a numeric setting within a given range. */
+  Range = "numeric",
+  /** Refers to an open-ended numeric setting. */
+  Number = "number",
   /** Refers to a setting whose value may be true/on or false/off. */
   Boolean = "boolean",
   /** Refers to a Boolean setting related to DeathLink. Some assumptions are made as a result. */
@@ -30,7 +42,7 @@ export enum EntityType {
 }
 
 /** Refers to a setting dependency. */
-export type APDependency = Record<string, any[]>;
+export type APDependency = Record<string, unknown[]>;
 
 /**
  * The base class for game entities.

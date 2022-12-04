@@ -245,7 +245,7 @@
     },
     {
       "name": "Prawn Suit Fragment",
-      "max": 4
+      "max": 5
     },
     {
       "name": "Prawn Suit Drill Arm Fragment",
@@ -284,7 +284,7 @@
     },
     {
       "name": "Seamoth Fragment",
-      "max": 5
+      "max": 4
     },
     {
       "name": "Stasis Rifle Fragment",
@@ -335,8 +335,8 @@
       }
     },
     {
-      "name": "Bench Fragment",
-      "max": 2,
+      "name": "Bench",
+      "max": 1,
       "dependsOn": {
         "item_pool": ["standard"]
       }
@@ -549,6 +549,10 @@
       "dependsOn": {
         "item_pool": ["standard"]
       }
+    },
+    {
+      "name": "Ultra High Capacity Tank",
+      "max": 1
     }
   ],
   "locations": [
