@@ -610,6 +610,7 @@ const SettingsTool: React.FC = (): ReactElement<unknown> | null => {
         author does not promise any support and holds no liability from your use
         of the tool. Author: KewlioMZX{" "}
         <a href="https://twitter.com/squaresym/">(Twitter)</a>{" "}
+        <a href="https://mastodon.online/@kewliomzx">(Mastodon)</a>{" "}
         <a href="https://github.com/FelicitusNeko/archipelago-settings/">
           (GitHub)
         </a>
