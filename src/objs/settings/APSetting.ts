@@ -1,5 +1,5 @@
 import { APDependency, SettingType } from "../../defs/core";
-import { APBooleanSetting, APBooleanSettingJson } from "./APBooleanSetting";
+import { APToggleSetting, APToggleSettingJson } from "./APToggleSetting";
 import { APChoiceSetting, APChoiceSettingJson } from "./APChoiceSetting";
 import { APNumberSetting, APNumberSettingJson } from "./APNumberSetting";
 import { APNumericSetting, APNumericSettingJson } from "./APNumericSetting";
@@ -234,8 +234,8 @@ export abstract class APSetting<T> {
   }
 
   /** Whether this setting is a Boolean setting. */
-  isBooleanSetting(): this is APBooleanSetting {
-    return [SettingType.Boolean, SettingType.DeathLink].includes(this.type);
+  isToggleSetting(): this is APToggleSetting {
+    return [SettingType.Boolean, SettingType.Toggle, SettingType.DeathLink].includes(this.type);
   }
   /**
    * Whether this setting is a numeric setting.
@@ -245,11 +245,11 @@ export abstract class APSetting<T> {
     return this.type === SettingType.Numeric;
   }
   /** Whether this setting is a randomizable numeric setting within a given range. */
-  isRangeSetting():this is APRangeSetting{
+  isRangeSetting(): this is APRangeSetting {
     return this.type === SettingType.Range;
   }
   /** Whether this setting is an open-ended numeric setting. */
-  isNumberSetting():this is APNumberSetting{
+  isNumberSetting(): this is APNumberSetting {
     return this.type === SettingType.Number;
   }
   /**
@@ -307,7 +307,7 @@ export abstract class APSetting<T> {
    * @returns Whether the given setting definition is for a numeric setting.
    * @deprecated Use `Number` or `Range` instead
    */
-   static isNumericJson(
+  static isNumericJson(
     value: APSettingJson<unknown>
   ): value is APNumericSettingJson {
     return value.type === SettingType.Numeric;
@@ -319,7 +319,7 @@ export abstract class APSetting<T> {
    * @returns Whether the given setting definition is for a numeric setting.
    * @deprecated Use `Number` or `Range` instead
    */
-   static isRangeJson(
+  static isRangeJson(
     value: APSettingJson<unknown>
   ): value is APRangeSettingJson {
     return value.type === SettingType.Range;
@@ -331,7 +331,7 @@ export abstract class APSetting<T> {
    * @returns Whether the given setting definition is for a numeric setting.
    * @deprecated Use `Number` or `Range` instead
    */
-   static isNumberJson(
+  static isNumberJson(
     value: APSettingJson<unknown>
   ): value is APNumberSettingJson {
     return value.type === SettingType.Number;
@@ -342,10 +342,10 @@ export abstract class APSetting<T> {
    * @param value The setting definition to evalute.
    * @returns Whether the given setting definition is for a Boolean setting.
    */
-  static isBooleanJson(
+  static isToggleJson(
     value: APSettingJson<unknown>
-  ): value is APBooleanSettingJson {
-    return [SettingType.Boolean, SettingType.DeathLink].includes(value.type);
+  ): value is APToggleSettingJson {
+    return [SettingType.Boolean, SettingType.Toggle, SettingType.DeathLink].includes(value.type);
   }
 
   /**

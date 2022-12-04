@@ -16,9 +16,9 @@ import {
   APNumericSettingJson,
 } from "../objs/settings/APNumericSetting";
 import {
-  APBooleanSetting,
-  APBooleanSettingJson,
-} from "../objs/settings/APBooleanSetting";
+  APToggleSetting,
+  APToggleSettingJson,
+} from "../objs/settings/APToggleSetting";
 import { APChoiceSetting, APChoiceSettingJson, APChoiceValue } from "../objs/settings/APChoiceSetting";
 import { APRangeSetting, APRangeSettingJson } from "../objs/settings/APRangeSetting";
 import { APNumberSetting, APNumberSettingJson } from "../objs/settings/APNumberSetting";
@@ -29,11 +29,11 @@ import { gunzipSync } from "zlib";
 export type APMetaSetting =
   | APStringSetting
   | APNumericSetting
-  | APBooleanSetting | APChoiceSetting | APRangeSetting | APNumberSetting;
+  | APToggleSetting | APChoiceSetting | APRangeSetting | APNumberSetting;
 export type APMetaSettingJson =
   | APStringSettingJson
   | APNumericSettingJson
-  | APBooleanSettingJson | APChoiceSettingJson | APRangeSettingJson | APNumberSettingJson;
+  | APToggleSettingJson | APChoiceSettingJson | APRangeSettingJson | APNumberSettingJson;
 
 export type APMetaManager = APItemManager | APLocationManager;
 
@@ -77,7 +77,7 @@ const [storedName, storedDesc] = (() => {
 })();
 export { storedName, storedDesc };
 
-const DeathLinkDefaults: APBooleanSettingJson = {
+const DeathLinkDefaults: APToggleSettingJson = {
   type: SettingType.DeathLink,
   name: "death_link",
   readableName: "DeathLink",
@@ -115,18 +115,19 @@ const APCategoryList: APCategory[] = APCategoryData.map((i) => {
               savedCategory ? savedCategory.settings[setting.name] : undefined
             );
           case SettingType.Boolean:
-            return new APBooleanSetting(
+          case SettingType.Toggle:
+            return new APToggleSetting(
               i.category,
-              setting as APBooleanSettingJson,
+              setting as APToggleSettingJson,
               savedCategory ? savedCategory.settings[setting.name] : undefined
             );
           case SettingType.DeathLink:
-            return new APBooleanSetting(
+            return new APToggleSetting(
               i.category,
               Object.assign<
-                Partial<APBooleanSettingJson>,
-                APBooleanSettingJson,
-                Partial<APBooleanSettingJson>
+                Partial<APToggleSettingJson>,
+                APToggleSettingJson,
+                Partial<APToggleSettingJson>
               >({}, DeathLinkDefaults, setting),
               savedCategory ? savedCategory.settings[setting.name] : undefined
             );

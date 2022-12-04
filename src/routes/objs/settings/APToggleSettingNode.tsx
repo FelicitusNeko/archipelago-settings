@@ -1,9 +1,9 @@
 import React, { ChangeEvent } from "react";
 
-import { APBooleanSetting } from "../../../objs/settings/APBooleanSetting";
+import { APToggleSetting } from "../../../objs/settings/APToggleSetting";
 import { APSettingNode } from "./APSettingNode";
 
-export class APBooleanSettingNode extends APSettingNode<APBooleanSetting> {
+export class APToggleSettingNode extends APSettingNode<APToggleSetting> {
   protected onWeightedCheck = ({
     currentTarget,
   }: ChangeEvent<HTMLInputElement>) => {

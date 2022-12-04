@@ -3,11 +3,11 @@ import { APSetting, APSettingJson, APWeightedValue } from "./APSetting";
 
 const truthy = ["true", "on"];
 
-export interface APBooleanSettingJson extends APSettingJson<boolean> {
-  type: SettingType.Boolean | SettingType.DeathLink;
+export interface APToggleSettingJson extends APSettingJson<boolean> {
+  type: SettingType.Boolean | SettingType.Toggle | SettingType.DeathLink;
 }
 
-export class APBooleanSetting extends APSetting<boolean> {
+export class APToggleSetting extends APSetting<boolean> {
   /** @override */
   get yamlValue() {
     const { value } = this;

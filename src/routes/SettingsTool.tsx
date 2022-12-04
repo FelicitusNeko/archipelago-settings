@@ -27,7 +27,7 @@ import {
 import { APCategory } from "../defs/categories/reader";
 import { APStringSettingNode } from "./objs/settings/APStringSettingNode";
 import { APNumericSettingNode } from "./objs/settings/APNumericSettingNode";
-import { APBooleanSettingNode } from "./objs/settings/APBooleanSettingNode";
+import { APToggleSettingNode } from "./objs/settings/APToggleSettingNode";
 import { APItemSelector } from "./objs/entities/APItemSelector";
 import { APLocationSelector } from "./objs/entities/APLocationSelector";
 import { APHeaderStringNode } from "./objs/settings/APHeaderStringNode";
@@ -453,9 +453,9 @@ const SettingsTool: React.FC = (): ReactElement<unknown> | null => {
               update={UpdateIfNeeded}
             />
           );
-        else if (i.isBooleanSetting())
+        else if (i.isToggleSetting())
           return (
-            <APBooleanSettingNode
+            <APToggleSettingNode
               key={key}
               category={i.category}
               setting={i}

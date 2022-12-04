@@ -27,8 +27,13 @@ export enum SettingType {
   Range = "numeric",
   /** Refers to an open-ended numeric setting. */
   Number = "number",
-  /** Refers to a setting whose value may be true/on or false/off. */
+  /**
+   * Refers to a setting whose value may be true/on or false/off.
+   * @deprecated Use `Toggle` instead (it is identical, but lines up with AP nomenclature)
+   */
   Boolean = "boolean",
+  /** Refers to a setting whose value may be true/on or false/off. */
+  Toggle = "toggle",
   /** Refers to a Boolean setting related to DeathLink. Some assumptions are made as a result. */
   DeathLink = "deathlink",
 }
