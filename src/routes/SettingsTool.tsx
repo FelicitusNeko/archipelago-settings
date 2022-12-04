@@ -32,6 +32,9 @@ import { APItemSelector } from "./objs/entities/APItemSelector";
 import { APLocationSelector } from "./objs/entities/APLocationSelector";
 import { APHeaderStringNode } from "./objs/settings/APHeaderStringNode";
 import "./SettingsTool.css";
+import { APChoiceSettingNode } from "./objs/settings/APChoiceSettingNode";
+import { APRangeSettingNode } from "./objs/settings/APRangeSettingNode";
+import { APNumberSettingNode } from "./objs/settings/APNumberSettingNode";
 
 const { localStorage, location, confirm } = window;
 // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -383,7 +386,7 @@ const SettingsTool: React.FC = (): ReactElement<unknown> | null => {
     const file = new Blob(
       [
         "# Generated using the unofficial Archipelago Settings Tool at https://lowbiasgaming.net/archipelago\n" +
-          yaml.stringify(outYaml),
+        yaml.stringify(outYaml),
       ],
       {
         type: "application/yaml",
@@ -443,9 +446,39 @@ const SettingsTool: React.FC = (): ReactElement<unknown> | null => {
               update={UpdateIfNeeded}
             />
           );
+        else if (i.isChoiceSetting())
+          return (
+            <APChoiceSettingNode
+              key={key}
+              category={i.category}
+              setting={i}
+              save={SaveToStorage}
+              update={UpdateIfNeeded}
+            />
+          );
         else if (i.isNumericSetting())
           return (
             <APNumericSettingNode
+              key={key}
+              category={i.category}
+              setting={i}
+              save={SaveToStorage}
+              update={UpdateIfNeeded}
+            />
+          );
+        else if (i.isRangeSetting())
+          return (
+            <APRangeSettingNode
+              key={key}
+              category={i.category}
+              setting={i}
+              save={SaveToStorage}
+              update={UpdateIfNeeded}
+            />
+          );
+        else if (i.isNumberSetting())
+          return (
+            <APNumberSettingNode
               key={key}
               category={i.category}
               setting={i}

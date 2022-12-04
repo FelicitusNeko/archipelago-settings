@@ -108,10 +108,28 @@ const APCategoryList: APCategory[] = APCategoryData.map((i) => {
               setting as APStringSettingJson,
               savedCategory ? savedCategory.settings[setting.name] : undefined
             );
+          case SettingType.Choice:
+            return new APChoiceSetting(
+              i.category,
+              setting as APChoiceSettingJson,
+              savedCategory ? savedCategory.settings[setting.name] : undefined
+            );
           case SettingType.Numeric:
             return new APNumericSetting(
               i.category,
               setting as APNumericSettingJson,
+              savedCategory ? savedCategory.settings[setting.name] : undefined
+            );
+          case SettingType.Range:
+            return new APRangeSetting(
+              i.category,
+              setting as APRangeSettingJson,
+              savedCategory ? savedCategory.settings[setting.name] : undefined
+            );
+          case SettingType.Number:
+            return new APNumberSetting(
+              i.category,
+              setting as APNumberSettingJson,
               savedCategory ? savedCategory.settings[setting.name] : undefined
             );
           case SettingType.Boolean:
