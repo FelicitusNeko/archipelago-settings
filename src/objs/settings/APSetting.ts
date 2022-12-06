@@ -257,11 +257,7 @@ export abstract class APSetting<T> {
    * @deprecated Use `Choice` instead
    */
   isStringSetting(): this is APStringSetting {
-    return [
-      SettingType.String,
-      SettingType.Games,
-      SettingType.Character,
-    ].includes(this.type);
+    return this.type == SettingType.String;
   }
   /** Whether this setting is a choice-based setting from a list of options. */
   isChoiceSetting(): this is APChoiceSetting {
@@ -280,11 +276,7 @@ export abstract class APSetting<T> {
    * @deprecated Use `Choice` instead
    */
   static isStringJson(value: APSettingJson<unknown>): value is APStringSettingJson {
-    return [
-      SettingType.String,
-      SettingType.Games,
-      SettingType.Character,
-    ].includes(value.type);
+    return value.type == SettingType.String;
   }
   /**
    * Evaluates whether a setting definition is for a string-based setting.
