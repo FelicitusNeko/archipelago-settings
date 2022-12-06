@@ -60,14 +60,6 @@
         {
           "name": "solution",
           "readableName": "Solution"
-        },
-        {
-          "name": "custom",
-          "readableName": "*custom"
-        },
-        {
-          "name": "varia_custom",
-          "readableName": "*varia custom"
         }
       ],
       "type": "choice",
@@ -499,31 +491,17 @@
     },
     {
       "name": "custom_preset",
-      "description": "DOC ME",
+      "description": "",
       "readableName": "custom preset",
-      "values": [
-        {
-          "name": "controller",
-          "readableName": "*controller"
-        },
-        {
-          "name": "knows",
-          "readableName": "*knows"
-        },
-        {
-          "name": "settings",
-          "readableName": "*settings"
-        }
-      ],
-      "type": "choice",
+      "type": "ignore",
       "default": "null"
     },
     {
       "name": "varia_custom_preset",
-      "description": "DOC ME",
+      "description": "",
       "readableName": "varia custom preset",
       "values": [],
-      "type": "choice",
+      "type": "ignore",
       "default": "null"
     }
   ],

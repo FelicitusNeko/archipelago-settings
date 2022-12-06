@@ -93,20 +93,20 @@
     },
     {
       "name": "level_gate_costs",
-      "description": "DOC ME",
+      "description": "Determines how many Emblems are required to unlock level gates.",
       "readableName": "level gate costs",
       "values": [
         {
           "name": "low",
-          "readableName": "*low"
+          "readableName": "Low"
         },
         {
           "name": "medium",
-          "readableName": "*medium"
+          "readableName": "Medium"
         },
         {
           "name": "high",
-          "readableName": "*high"
+          "readableName": "High"
         }
       ],
       "type": "choice",

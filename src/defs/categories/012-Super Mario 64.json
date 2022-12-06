@@ -9,19 +9,19 @@
       "values": [
         {
           "name": "off",
-          "readableName": "*off"
+          "readableName": "Off"
         },
         {
           "name": "courses_only",
-          "readableName": "*courses only"
+          "readableName": "Courses only"
         },
         {
           "name": "courses_and_secrets_separate",
-          "readableName": "*courses and secrets separate"
+          "readableName": "Courses and secrets separate"
         },
         {
           "name": "courses_and_secrets",
-          "readableName": "*courses and secrets"
+          "readableName": "Courses and secrets"
         }
       ],
       "type": "choice",
@@ -136,11 +136,11 @@
       "values": [
         {
           "name": "off",
-          "readableName": "*off"
+          "readableName": "Off"
         },
         {
           "name": "1ups_only",
-          "readableName": "*1ups only"
+          "readableName": "1ups only"
         }
       ],
       "type": "choice",

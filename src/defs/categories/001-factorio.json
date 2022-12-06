@@ -115,27 +115,27 @@
     },
     {
       "name": "min_tech_cost",
-      "description": "DOC ME",
+      "description": "The cheapest a Technology can be in Science Packs.",
       "high": 10000,
-      "readableName": "min tech cost",
+      "readableName": "Minimum tech cost",
       "low": 1,
       "type": "range",
       "default": 5
     },
     {
       "name": "max_tech_cost",
-      "description": "DOC ME",
+      "description": "The most expensive a Technology can be in Science Packs.",
       "high": 10000,
-      "readableName": "max tech cost",
+      "readableName": "Maximum tech cost",
       "low": 1,
       "type": "range",
       "default": 500
     },
     {
       "name": "tech_cost_mix",
-      "description": "DOC ME",
+      "description": "Percent chance that a preceding Science Pack is also required. Chance is rolled per preceding pack.",
       "high": 100,
-      "readableName": "tech cost mix",
+      "readableName": "Tech cost mix",
       "low": 0,
       "type": "range",
       "default": 70
@@ -226,19 +226,9 @@
     },
     {
       "name": "starting_items",
-      "description": "DOC ME",
+      "description": "",
       "readableName": "starting items",
-      "values": [
-        {
-          "name": "burner-mining-drill",
-          "readableName": "*burner-mining-drill"
-        },
-        {
-          "name": "stone-furnace",
-          "readableName": "*stone-furnace"
-        }
-      ],
-      "type": "choice",
+      "type": "ignore",
       "default": "burner-mining-drill"
     },
     {

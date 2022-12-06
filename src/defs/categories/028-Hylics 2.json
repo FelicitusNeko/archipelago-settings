@@ -4,27 +4,27 @@
   "settings": [
     {
       "name": "party_shuffle",
-      "description": "DOC ME",
-      "readableName": "party shuffle",
+      "description": "Shuffles party members into the pool. Note that enabling this can potentially increase both the difficulty and length of a run.",
+      "readableName": "Party shuffle",
       "type": "toggle",
       "default": false
     },
     {
       "name": "gesture_shuffle",
-      "description": "DOC ME",
+      "description": "Choose where gestures will appear in the item pool.",
       "readableName": "gesture shuffle",
       "values": [
         {
           "name": "anywhere",
-          "readableName": "*anywhere"
+          "readableName": "Anywhere"
         },
         {
           "name": "tvs_only",
-          "readableName": "*tvs only"
+          "readableName": "TVs only"
         },
         {
           "name": "default_locations",
-          "readableName": "*default locations"
+          "readableName": "Default locations"
         }
       ],
       "type": "choice",
@@ -32,31 +32,27 @@
     },
     {
       "name": "medallion_shuffle",
-      "description": "DOC ME",
-      "readableName": "medallion shuffle",
+      "description": "Shuffles Red Medallions into the pool.",
+      "readableName": "Medallion shuffle",
       "type": "toggle",
       "default": false
     },
     {
       "name": "random_start",
-      "description": "DOC ME",
-      "readableName": "random start",
+      "description": "Start the randomizer in 1 of 4 positions. (Waynehouse, Viewax's Edifice, TV Island, Shield Facility)",
+      "readableName": "Random start",
       "type": "toggle",
       "default": false
     },
     {
       "name": "extra_items_in_logic",
-      "description": "DOC ME",
-      "readableName": "extra items in logic",
+      "description": "Include some extra items in logic (CHARGE UP, 1x PAPER CUP) to prevent the game from becoming too difficult.",
+      "readableName": "Extra items in logic",
       "type": "toggle",
       "default": true
     },
     {
-      "name": "death_link",
-      "description": "DOC ME",
-      "readableName": "death link",
-      "type": "toggle",
-      "default": false
+      "type": "deathlink"
     }
   ],
   "items": [

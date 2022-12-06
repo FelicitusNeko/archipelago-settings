@@ -4,20 +4,20 @@
   "settings": [
     {
       "name": "game_version",
-      "description": "DOC ME",
+      "description": "Select Red or Blue version.",
       "readableName": "game version",
       "values": [
         {
           "name": "red",
-          "readableName": "*red"
+          "readableName": "Red"
         },
         {
           "name": "blue",
-          "readableName": "*blue"
+          "readableName": "Blue"
         },
         {
           "name": "random",
-          "readableName": "*random"
+          "readableName": "Random"
         }
       ],
       "type": "choice",
@@ -25,12 +25,12 @@
     },
     {
       "name": "trainer_name",
-      "description": "DOC ME",
-      "readableName": "trainer name",
+      "description": "Your trainer's name. Cannot exceed 7 characters. See the [setup guide on archipelago.gg](https://archipelago.gg/tutorial/Pokemon%20Red%20and%20Blue/setup/en) for a list of allowed characters.",
+      "readableName": "Trainer name",
       "values": [
         {
           "name": "ASH",
-          "readableName": "*ASH"
+          "readableName": "ASH (edit your YAML manually if you want a different name)"
         }
       ],
       "type": "choice",
@@ -38,12 +38,12 @@
     },
     {
       "name": "rival_name",
-      "description": "DOC ME",
-      "readableName": "rival name",
+      "description": "Your rival's name. Cannot exceed 7 characters. See the [setup guide on archipelago.gg](https://archipelago.gg/tutorial/Pokemon%20Red%20and%20Blue/setup/en) for a list of allowed characters.",
+      "readableName": "Rival name",
       "values": [
         {
           "name": "GARY",
-          "readableName": "*GARY"
+          "readableName": "GARY (edit your YAML manually if you want a different name)"
         }
       ],
       "type": "choice",
@@ -51,72 +51,72 @@
     },
     {
       "name": "elite_four_condition",
-      "description": "DOC ME",
+      "description": "Number of badges required to challenge the Elite Four once the Indigo Plateau has been reached. Your rival will reveal the amount needed on the first Route 22 battle (after turning in Oak's Parcel).",
       "high": 8,
-      "readableName": "elite four condition",
+      "readableName": "Elite Four condition",
       "low": 0,
       "type": "range",
       "default": 8
     },
     {
       "name": "victory_road_condition",
-      "description": "DOC ME",
+      "description": "Number of badges required to reach Victory Road.",
       "high": 8,
-      "readableName": "victory road condition",
+      "readableName": "Victory Road condition",
       "low": 0,
       "type": "range",
       "default": 8
     },
     {
       "name": "viridian_gym_condition",
-      "description": "DOC ME",
+      "description": "Number of badges required to enter Viridian Gym.",
       "high": 7,
-      "readableName": "viridian gym condition",
+      "readableName": "Viridian Gym condition",
       "low": 0,
       "type": "range",
       "default": 7
     },
     {
       "name": "cerulean_cave_condition",
-      "description": "DOC ME",
+      "description": "Number of badges, HMs, and key items (not counting items you can lose) required to access Cerulean Cave.",
       "high": 25,
-      "readableName": "cerulean cave condition",
+      "readableName": "Cerulean Cave condition",
       "low": 0,
       "type": "range",
       "default": 20
     },
     {
       "name": "second_fossil_check_condition",
-      "description": "DOC ME",
+      "description": "After choosing one of the fossil location items, you can obtain the remaining item from the Cinnabar Lab Scientist after reviving this number of fossils.",
       "high": 3,
-      "readableName": "second fossil check condition",
+      "readableName": "Second fossil check condition",
       "low": 0,
       "type": "range",
       "default": 3
     },
     {
       "name": "badgesanity",
-      "description": "DOC ME",
+      "description": "Shuffle gym badges into the general item pool. If turned off, badges will be shuffled across the 8 gyms.",
       "readableName": "badgesanity",
       "type": "toggle",
       "default": false
     },
     {
       "name": "old_man",
-      "description": "DOC ME",
-      "readableName": "old man",
+      "description": "With Open Viridian City, the Old Man will let you through without needing to turn in Oak's Parcel.",
+      "readableName": "Old Man",
       "values": [
         {
           "name": "vanilla",
-          "readableName": "*vanilla"
+          "readableName": "Vanilla"
         },
         {
           "name": "early_parcel",
-          "readableName": "*early parcel"
+          "readableName": "Early parcel"
         },
         {
           "name": "open_viridian_city",
-          "readableName": "*open viridian city"
+          "readableName": "Open Viridian City"
         }
       ],
       "type": "choice",
@@ -124,48 +124,49 @@
     },
     {
       "name": "tea",
-      "description": "DOC ME",
-      "readableName": "tea",
+      "description": "Adds a Tea item to the item pool which the Saffron guards require instead of the vending machine drinks. Adds a location check to the Celadon Mansion 1F, where Tea is acquired in FireRed and LeafGreen.",
+      "readableName": "Tea",
       "type": "toggle",
       "default": false
     },
     {
       "name": "extra_key_items",
-      "description": "DOC ME",
-      "readableName": "extra key items",
+      "description": "Adds key items that are required to access the Rocket Hideout, Cinnabar Mansion, Safari Zone, and Power Plant. Adds four item pickups to Rock Tunnel B1F.",
+      "readableName": "Extra key items",
       "type": "toggle",
       "default": false
     },
     {
       "name": "extra_strength_boulders",
-      "description": "DOC ME",
-      "readableName": "extra strength boulders",
+      "description": "Adds Strength Boulders blocking the Route 11 gate, and in Route 13 (can be bypassed with Surf). This potentially increases the usefulness of Strength as well as the Bicycle.",
+      "readableName": "Extra Strength Boulders",
       "type": "toggle",
       "default": false
     },
     {
       "name": "require_item_finder",
-      "description": "DOC ME",
-      "readableName": "require item finder",
+      "description": "Require Item Finder to pick up hidden items.",
+      "readableName": "Require Item Finder",
       "type": "toggle",
       "default": false
     },
     {
       "name": "randomize_hidden_items",
-      "description": "DOC ME",
-      "readableName": "randomize hidden items",
+      "description": "Randomize hidden items. If you choose exclude, they will be randomized but will be guaranteed junk items.",
+      "readableName": "Randomize hidden items",
       "values": [
         {
           "name": "on",
-          "readableName": "*on"
+          "readableName": "On"
         },
         {
           "name": "off",
-          "readableName": "*off"
+          "readableName": "Off"
         },
         {
           "name": "exclude",
-          "readableName": "*exclude"
+          "readableName": "Exclude",
+          "description": "Hidden items will always be junk."
         }
       ],
       "type": "choice",
@@ -173,24 +174,28 @@
     },
     {
       "name": "badges_needed_for_hm_moves",
-      "description": "DOC ME",
-      "readableName": "badges needed for hm moves",
+      "description": "Determines whether badges are required for HM moves.",
+      "readableName": "Badges needed for HM moves",
       "values": [
         {
           "name": "on",
-          "readableName": "*on"
+          "readableName": "On",
+          "description": "Badges are required for HMs as vanilla."
         },
         {
           "name": "off",
-          "readableName": "*off"
+          "readableName": "Off",
+          "description": "Removes the requirement for badges to use HM moves."
         },
         {
           "name": "extra",
-          "readableName": "*extra"
+          "readableName": "Extra",
+          "description": "Gives the Marsh, Volcano, and Earth Badges a random HM move to enable."
         },
         {
           "name": "extra_plus",
-          "readableName": "*extra plus"
+          "readableName": "Extra Plus",
+          "description": "Gives the Marsh, Volcano, and Earth Badges a random HM move to enable, AND picks two random badges to enable a second HM move. You will only need one of the required badges to use the HM move."
         }
       ],
       "type": "choice",
@@ -198,50 +203,50 @@
     },
     {
       "name": "free_fly_location",
-      "description": "DOC ME",
-      "readableName": "free fly location",
+      "description": "One random fly destination will be unlocked by default.",
+      "readableName": "Free Fly location",
       "type": "toggle",
       "default": true
     },
     {
       "name": "oaks_aide_rt_2",
-      "description": "DOC ME",
+      "description": "Number of Pokémon registered in the Pokedex required to receive the item from Oak's Aide on Route 2. *(Vanilla is 10)*",
       "high": 80,
-      "readableName": "oaks aide rt 2",
+      "readableName": "Oak's Aide Route 2",
       "low": 0,
       "type": "range",
       "default": 10
     },
     {
       "name": "oaks_aide_rt_11",
-      "description": "DOC ME",
+      "description": "Number of Pokémon registered in the Pokedex required to receive the item from Oak's Aide on Route 11. *(Vanilla is 30)*",
       "high": 80,
-      "readableName": "oaks aide rt 11",
+      "readableName": "Oak's Aide Route 11",
       "low": 0,
       "type": "range",
       "default": 20
     },
     {
       "name": "oaks_aide_rt_15",
-      "description": "DOC ME",
+      "description": "Number of Pokémon registered in the Pokedex required to receive the item from Oak's Aide on Route 15. *(Vanilla is 50)*",
       "high": 80,
-      "readableName": "oaks aide rt 15",
+      "readableName": "Oak's Aide Route 15",
       "low": 0,
       "type": "range",
       "default": 30
     },
     {
       "name": "blind_trainers",
-      "description": "DOC ME",
+      "description": "Chance each frame that you are standing on a tile in a trainer's line of sight that they will fail to initiate a battle. If you move into and out of their line of sight without stopping, this chance will only trigger once.",
       "high": 100,
-      "readableName": "blind trainers",
+      "readableName": "Blind trainers",
       "low": 0,
       "type": "range",
       "default": 0
     },
     {
       "name": "minimum_steps_between_encounters",
-      "description": "DOC ME",
+      "description": "Minimum number of steps between wild Pokémon encounters.",
       "high": 255,
       "readableName": "minimum steps between encounters",
       "low": 0,
@@ -250,37 +255,51 @@
     },
     {
       "name": "exp_modifier",
-      "description": "DOC ME",
+      "description": "Modifier for EXP gained. When specifying a number, experience is multiplied by this amount and divided by 16.",
       "high": 255,
-      "readableName": "exp modifier",
+      "readableName": "EXP modifier",
       "low": 0,
       "type": "range",
-      "default": null
+      "aliases": {
+        "half": 8,
+        "normal": 16,
+        "double": 32,
+        "triple": 48,
+        "quadruple": 64,
+        "quintuple": 80,
+        "sextuple": 96,
+        "septuple": 112,
+        "octuple": 128
+      },
+      "default": 16
     },
     {
       "name": "randomize_wild_pokemon",
-      "description": "DOC ME",
-      "readableName": "randomize wild pokemon",
+      "description": "Randomize all wild Pokemon and game corner prize Pokémon.",
+      "readableName": "Randomize wild Pokémon",
       "values": [
         {
           "name": "vanilla",
-          "readableName": "*vanilla"
+          "readableName": "Vanilla"
         },
         {
           "name": "match_types",
-          "readableName": "*match types"
+          "readableName": "Match types",
+          "description": "Select a Pokemon with at least one type matching the original type of the original Pokémon."
         },
         {
           "name": "match_base_stats",
-          "readableName": "*match base stats"
+          "readableName": "Match base stats",
+          "description": "Prefer Pokémon with closer base stat totals."
         },
         {
           "name": "match_types_and_base_stats",
-          "readableName": "*match types and base stats"
+          "readableName": "Match types and base stats",
+          "description": "Matches types and will weight towards similar base stats, but there may not be many to choose from."
         },
         {
           "name": "completely_random",
-          "readableName": "*completely random"
+          "readableName": "Completely random"
         }
       ],
       "type": "choice",
@@ -288,28 +307,31 @@
     },
     {
       "name": "randomize_starter_pokemon",
-      "description": "DOC ME",
-      "readableName": "randomize starter pokemon",
+      "description": "Randomize the starter Pokemon choices.",
+      "readableName": "Randomize starter Pokémon",
       "values": [
         {
           "name": "vanilla",
-          "readableName": "*vanilla"
+          "readableName": "Vanilla"
         },
         {
           "name": "match_types",
-          "readableName": "*match types"
+          "readableName": "Match types",
+          "description": "Select a Pokemon with at least one type matching the original type of the original Pokémon."
         },
         {
           "name": "match_base_stats",
-          "readableName": "*match base stats"
+          "readableName": "Match base stats",
+          "description": "Prefer Pokémon with closer base stat totals."
         },
         {
           "name": "match_types_and_base_stats",
-          "readableName": "*match types and base stats"
+          "readableName": "Match types and base stats",
+          "description": "Matches types and will weight towards similar base stats, but there may not be many to choose from."
         },
         {
           "name": "completely_random",
-          "readableName": "*completely random"
+          "readableName": "Completely random"
         }
       ],
       "type": "choice",
@@ -317,28 +339,31 @@
     },
     {
       "name": "randomize_static_pokemon",
-      "description": "DOC ME",
-      "readableName": "randomize static pokemon",
+      "description": "Randomize one-time gift and encountered Pokémon. These will always be first evolution stage Pokémon.",
+      "readableName": "Randomize static Pokémon",
       "values": [
         {
           "name": "vanilla",
-          "readableName": "*vanilla"
+          "readableName": "Vanilla"
         },
         {
           "name": "match_types",
-          "readableName": "*match types"
+          "readableName": "Match types",
+          "description": "Select a Pokemon with at least one type matching the original type of the original Pokémon."
         },
         {
           "name": "match_base_stats",
-          "readableName": "*match base stats"
+          "readableName": "Match base stats",
+          "description": "Prefer Pokémon with closer base stat totals."
         },
         {
           "name": "match_types_and_base_stats",
-          "readableName": "*match types and base stats"
+          "readableName": "Match types and base stats",
+          "description": "Matches types and will weight towards similar base stats, but there may not be many to choose from."
         },
         {
           "name": "completely_random",
-          "readableName": "*completely random"
+          "readableName": "Completely random"
         }
       ],
       "type": "choice",
@@ -346,24 +371,27 @@
     },
     {
       "name": "randomize_legendary_pokemon",
-      "description": "DOC ME",
-      "readableName": "randomize legendary pokemon",
+      "description": "Randomize Legendaries. Mew has been added as an encounter at the Vermillion dock truck.",
+      "readableName": "Randomize Legendary Pokémon",
       "values": [
         {
           "name": "vanilla",
-          "readableName": "*vanilla"
+          "readableName": "Vanilla"
         },
         {
           "name": "shuffle",
-          "readableName": "*shuffle"
+          "readableName": "Shuffle",
+          "description": "Shuffle the legendaries with each other."
         },
         {
           "name": "static",
-          "readableName": "*static"
+          "readableName": "Static",
+          "description": "Shuffle Legendaries into other static Pokémon locations."
         },
         {
           "name": "any",
-          "readableName": "*any"
+          "readableName": "Any",
+          "description": "Allow legendaries to appear anywhere based on wild and static randomization options, and their locations will be randomized according to static Pokémon randomization options."
         }
       ],
       "type": "choice",
@@ -371,20 +399,20 @@
     },
     {
       "name": "catch_em_all",
-      "description": "DOC ME",
-      "readableName": "catch em all",
+      "description": "Guarantee all first evolution stage Pokémon are available, or all Pokémon of all stages. Currently only has an effect if wild Pokémon are randomized.",
+      "readableName": "Catch 'Em All mode",
       "values": [
         {
           "name": "off",
-          "readableName": "*off"
+          "readableName": "Off"
         },
         {
           "name": "first_stage",
-          "readableName": "*first stage"
+          "readableName": "First stage"
         },
         {
           "name": "all_pokemon",
-          "readableName": "*all pokemon"
+          "readableName": "All Pokémon"
         }
       ],
       "type": "choice",
@@ -392,20 +420,22 @@
     },
     {
       "name": "randomize_pokemon_stats",
-      "description": "DOC ME",
-      "readableName": "randomize pokemon stats",
+      "description": "Randomize base stats for each Pokémon.",
+      "readableName": "Randomize Pokémon stats",
       "values": [
         {
           "name": "vanilla",
-          "readableName": "*vanilla"
+          "readableName": "Vanilla"
         },
         {
           "name": "shuffle",
-          "readableName": "*shuffle"
+          "readableName": "Shuffle",
+          "description": "Shuffle the 5 base stat values amongst each other."
         },
         {
           "name": "randomize",
-          "readableName": "*randomize"
+          "readableName": "Randomize",
+          "description": "Completely randomize each stat, but will still add up to the same base stat total."
         }
       ],
       "type": "choice",
@@ -413,44 +443,47 @@
     },
     {
       "name": "randomize_pokemon_catch_rates",
-      "description": "DOC ME",
-      "readableName": "randomize pokemon catch rates",
+      "description": "Randomize the catch rate for each Pokémon.",
+      "readableName": "Randomize Pokémon catch rates",
       "type": "toggle",
       "default": false
     },
     {
       "name": "minimum_catch_rate",
-      "description": "DOC ME",
+      "description": "Minimum catch rate for each Pokémon. If \"Randomize catch rates\" is on, this will be the minimum value that can be chosen. Otherwise, it will raise any Pokémon's catch rate up to this value if its normal catch rate is lower.",
       "high": 255,
-      "readableName": "minimum catch rate",
+      "readableName": "Minimum catch rate",
       "low": 1,
       "type": "range",
       "default": 3
     },
     {
       "name": "randomize_trainer_parties",
-      "description": "DOC ME",
-      "readableName": "randomize trainer parties",
+      "description": "Randomize enemy Pokémon encountered in trainer battles.",
+      "readableName": "Randomize trainer parties",
       "values": [
         {
           "name": "vanilla",
-          "readableName": "*vanilla"
+          "readableName": "Vanilla"
         },
         {
           "name": "match_types",
-          "readableName": "*match types"
+          "readableName": "Match types",
+          "description": "Select a Pokemon with at least one type matching the original type of the original Pokémon."
         },
         {
           "name": "match_base_stats",
-          "readableName": "*match base stats"
+          "readableName": "Match base stats",
+          "description": "Prefer Pokémon with closer base stat totals."
         },
         {
           "name": "match_types_and_base_stats",
-          "readableName": "*match types and base stats"
+          "readableName": "Match types and base stats",
+          "description": "Matches types and will weight towards similar base stats, but there may not be many to choose from."
         },
         {
           "name": "completely_random",
-          "readableName": "*completely random"
+          "readableName": "Completely random"
         }
       ],
       "type": "choice",
@@ -458,27 +491,28 @@
     },
     {
       "name": "trainer_legendaries",
-      "description": "DOC ME",
-      "readableName": "trainer legendaries",
+      "description": "Allow Legendary Pokémon in randomized trainer parties.",
+      "readableName": "Trainer Legendaries",
       "type": "toggle",
       "default": false
     },
     {
       "name": "randomize_pokemon_movesets",
-      "description": "DOC ME",
-      "readableName": "randomize pokemon movesets",
+      "description": "Randomize the moves learned by Pokemon.",
+      "readableName": "Randomize Pokémon movesets",
       "values": [
         {
           "name": "vanilla",
-          "readableName": "*vanilla"
+          "readableName": "Vanilla"
         },
         {
           "name": "prefer_types",
-          "readableName": "*prefer types"
+          "readableName": "Prefer types",
+          "description": "Prefer moves that match the type of the Pokemon."
         },
         {
           "name": "completely_random",
-          "readableName": "*completely random"
+          "readableName": "Completely random"
         }
       ],
       "type": "choice",
@@ -486,31 +520,32 @@
     },
     {
       "name": "start_with_four_moves",
-      "description": "DOC ME",
-      "readableName": "start with four moves",
+      "description": "If movesets are randomized, this will give all Pokémon 4 starting moves.",
+      "readableName": "Start with four moves",
       "type": "toggle",
       "default": false
     },
     {
       "name": "tm_compatibility",
-      "description": "DOC ME",
-      "readableName": "tm compatibility",
+      "description": "Randomize which Pokémon can learn each TM.",
+      "readableName": "TM compatibility",
       "values": [
         {
           "name": "vanilla",
-          "readableName": "*vanilla"
+          "readableName": "Vanilla"
         },
         {
           "name": "prefer_types",
-          "readableName": "*prefer types"
+          "readableName": "Prefer types",
+          "description": "90% chance if Pokemon's type matches the move, 50% chance if move is Normal type and the Pokemon is not, and 25% chance otherwise. Pokemon will retain the same TM compatibility when they evolve if the evolved form has the same type(s). Mew will always be able to learn every TM."
         },
         {
           "name": "completely_random",
-          "readableName": "*completely random"
+          "readableName": "Completely random"
         },
         {
           "name": "full_compatibility",
-          "readableName": "*full compatibility"
+          "readableName": "Full compatibility"
         }
       ],
       "type": "choice",
@@ -518,24 +553,25 @@
     },
     {
       "name": "hm_compatibility",
-      "description": "DOC ME",
-      "readableName": "hm compatibility",
+      "description": "Randomize which Pokemon can learn each HM.",
+      "readableName": "HM compatibility",
       "values": [
         {
           "name": "vanilla",
-          "readableName": "*vanilla"
+          "readableName": "Vanilla"
         },
         {
           "name": "prefer_types",
-          "readableName": "*prefer types"
+          "readableName": "Prefer types",
+          "description": "100% chance if Pokemon's type matches the move, 75% chance if move is Normal type and the Pokemon is not, and 25% chance otherwise. Pokemon will retain the same HM compatibility when they evolve if the evolved form has the same type(s). Mew will always be able to learn every HM."
         },
         {
           "name": "completely_random",
-          "readableName": "*completely random"
+          "readableName": "Completely random"
         },
         {
           "name": "full_compatibility",
-          "readableName": "*full compatibility"
+          "readableName": "Full compatibility"
         }
       ],
       "type": "choice",
@@ -543,20 +579,21 @@
     },
     {
       "name": "randomize_pokemon_types",
-      "description": "DOC ME",
-      "readableName": "randomize pokemon types",
+      "description": "Randomize the types of each Pokémon.",
+      "readableName": "Randomize Pokémon types",
       "values": [
         {
           "name": "vanilla",
-          "readableName": "*vanilla"
+          "readableName": "Vanilla"
         },
         {
           "name": "follow_evolutions",
-          "readableName": "*follow evolutions"
+          "readableName": "Follow evolutions",
+          "description": "Ensure Pokémon's types remain the same when evolving (except possibly gaining a type)."
         },
         {
           "name": "randomize",
-          "readableName": "*randomize"
+          "readableName": "Randomize"
         }
       ],
       "type": "choice",
@@ -564,29 +601,34 @@
     },
     {
       "name": "secondary_type_chance",
-      "description": "DOC ME",
+      "description": "If \"Randomize Pokémon types\" is on, this is the chance each Pokemon will have a secondary type. If \"Follow evolutions\" is selected, it is the chance a second type will be added at each evolution stage. Vanilla (-1) will give secondary types to Pokémon that normally have a secondary type.",
       "high": 100,
-      "readableName": "secondary type chance",
+      "readableName": "Secondary type chance",
       "low": -1,
       "type": "range",
-      "default": null
+      "aliases": {
+        "vanilla": -1
+      },
+      "default": -1
     },
     {
       "name": "randomize_type_matchup_types",
-      "description": "DOC ME",
-      "readableName": "randomize type matchup types",
+      "description": "The game's type chart consists of 3 columns: attacking type, defending type, and type effectiveness. Matchups that have regular type effectiveness are not in the chart.",
+      "readableName": "Randomize type matchup types",
       "values": [
         {
           "name": "vanilla",
-          "readableName": "*vanilla"
+          "readableName": "Vanilla"
         },
         {
           "name": "shuffle",
-          "readableName": "*shuffle"
+          "readableName": "Shuffle",
+          "description": "Shuffle the attacking types across the attacking type column and the defending types across the defending type column (so for example Normal type will still have exactly 2 types that it receives non-regular damage from, and 2 types it deals non-regular damage to)."
         },
         {
           "name": "randomize",
-          "readableName": "*randomize"
+          "readableName": "Randomize",
+          "description": "Randomize each type in both columns to any random type."
         }
       ],
       "type": "choice",
@@ -594,24 +636,27 @@
     },
     {
       "name": "randomize_type_matchup_type_effectiveness",
-      "description": "DOC ME",
-      "readableName": "randomize type matchup type effectiveness",
+      "description": "The game's type chart consists of 3 columns: attacking type, defending type, and type effectiveness. Matchups that have regular type effectiveness are not in the chart.",
+      "readableName": "Randomize type matchup type effectiveness",
       "values": [
         {
           "name": "vanilla",
-          "readableName": "*vanilla"
+          "readableName": "Vanilla"
         },
         {
           "name": "shuffle",
-          "readableName": "*shuffle"
+          "readableName": "Shuffle",
+          "description": "Shuffle the type effectiveness across the type effectiveness column (so for example there will always be 6 type immunities)."
         },
         {
           "name": "randomize",
-          "readableName": "*randomize"
+          "readableName": "Randomize",
+          "description": "Randomize each entry in the table to no effect, not very effective, or super effective; with no effect occurring at a low chance."
         },
         {
           "name": "chaos",
-          "readableName": "*chaos"
+          "readableName": "Chaos",
+          "description": "Randomize the values to anywhere between 0% and 200% damage, in 10% increments."
         }
       ],
       "type": "choice",
@@ -619,31 +664,32 @@
     },
     {
       "name": "safari_zone_normal_battles",
-      "description": "DOC ME",
-      "readableName": "safari zone normal battles",
+      "description": "Change the Safari Zone to have standard wild Pokémon battles.",
+      "readableName": "Safari Zone normal battles",
       "type": "toggle",
       "default": false
     },
     {
       "name": "normalize_encounter_chances",
-      "description": "DOC ME",
-      "readableName": "normalize encounter chances",
+      "description": "Each wild encounter table has 10 slots for Pokémon. Normally the chance for each being chosen ranges from 19.9% to 1.2%. Turn this on to normalize them all to 10% each.",
+      "readableName": "Normalize encounter chances",
       "type": "toggle",
       "default": false
     },
     {
       "name": "reusable_tms",
-      "description": "DOC ME",
-      "readableName": "reusable tms",
+      "description": "Makes TMs reusable, so they will not be consumed upon use.",
+      "readableName": "reusable TMs",
       "type": "toggle",
       "default": false
     },
     {
       "name": "starting_money",
-      "description": "DOC ME",
-      "high": 999999,
-      "readableName": "starting money",
+      "description": "The amount of money you start with.",
+      "high": 999000,
+      "readableName": "Starting money",
       "low": 0,
+      "step": 1000,
       "type": "range",
       "default": 3000
     }
@@ -659,7 +705,8 @@
       "name": "Great Ball"
     },
     {
-      "name": "Poke Ball"
+      "name": "Poke Ball",
+      "readableName": "Pokéball"
     },
     {
       "name": "Town Map"

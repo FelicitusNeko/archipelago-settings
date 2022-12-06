@@ -3,24 +3,22 @@
   "index": 25,
   "settings": [
     {
-      "name": "death_link",
-      "description": "DOC ME",
-      "readableName": "death link",
-      "type": "toggle",
-      "default": false
+      "type": "deathlink"
     },
     {
       "name": "goal",
-      "description": "DOC ME",
+      "description": "Determines the goal of the seed.",
       "readableName": "goal",
       "values": [
         {
           "name": "bowser",
-          "readableName": "*bowser"
+          "readableName": "Bowser",
+          "description": "Defeat Koopalings, reach Bowser's Castle and defeat Bowser."
         },
         {
           "name": "yoshi_egg_hunt",
-          "readableName": "*yoshi egg hunt"
+          "readableName": "Yoshi Egg hunt",
+          "description": "Find a certain number of Yoshi Eggs."
         }
       ],
       "type": "choice",
@@ -28,54 +26,66 @@
     },
     {
       "name": "bosses_required",
-      "description": "DOC ME",
+      "description": "How many Bosses (Koopalings or Reznor) must be defeated in order to defeat Bowser.",
       "high": 11,
-      "readableName": "bosses required",
+      "readableName": "Bosses required",
       "low": 0,
       "type": "range",
-      "default": 7
+      "default": 7,
+      "dependsOn": {
+        "goal": ["bowser"]
+      }
     },
     {
       "name": "number_of_yoshi_eggs",
-      "description": "DOC ME",
+      "description": "How many Yoshi Eggs are in the pool for Yoshi Egg Hunt.",
       "high": 80,
-      "readableName": "number of yoshi eggs",
+      "readableName": "Yoshi Egg Hunt – Item pool",
       "low": 1,
       "type": "range",
-      "default": 50
+      "default": 50,
+      "dependsOn": {
+        "goal": ["yoshi_egg_hunt"]
+      }
     },
     {
       "name": "percentage_of_yoshi_eggs",
-      "description": "DOC ME",
+      "description": "What Percentage of Yoshi Eggs are required to finish Yoshi Egg Hunt.",
       "high": 100,
-      "readableName": "percentage of yoshi eggs",
+      "readableName": "Yoshi Egg Hunt – Percentage required",
       "low": 1,
       "type": "range",
-      "default": 100
+      "default": 100,
+      "dependsOn": {
+        "goal": ["yoshi_egg_hunt"]
+      }
     },
     {
       "name": "dragon_coin_checks",
-      "description": "DOC ME",
-      "readableName": "dragon coin checks",
+      "description": "Whether collecting 5 Dragon Coins in each level will grant a check.",
+      "readableName": "Dragon Coin checks",
       "type": "toggle",
       "default": false
     },
     {
       "name": "bowser_castle_doors",
-      "description": "DOC ME",
-      "readableName": "bowser castle doors",
+      "description": "How the doors of Bowser's Castle (on the World 8 map) behave. \"Front Door\" requires going through the challenge rooms; \"Back Door\" skips them and goes straight to the hallway out to Bowser.",
+      "readableName": "Bowser's Castle doors",
       "values": [
         {
           "name": "vanilla",
-          "readableName": "*vanilla"
+          "readableName": "Vanilla",
+          "description": "Front and Back Doors behave as vanilla."
         },
         {
           "name": "fast",
-          "readableName": "*fast"
+          "readableName": "Fast",
+          "description": "Both doors behave as the Back Door."
         },
         {
           "name": "slow",
-          "readableName": "*slow"
+          "readableName": "Slow",
+          "description": "Both doors behave as the Front Door."
         }
       ],
       "type": "choice",
@@ -83,34 +93,34 @@
     },
     {
       "name": "level_shuffle",
-      "description": "DOC ME",
-      "readableName": "level shuffle",
+      "description": "Whether levels are shuffled.",
+      "readableName": "Level shuffle",
       "type": "toggle",
       "default": false
     },
     {
       "name": "swap_donut_gh_exits",
-      "description": "DOC ME",
-      "readableName": "swap donut gh exits",
+      "description": "If enabled, the normal exit of the Donut Ghost House will lead right while the secret exit leads up, opposite of vanilla.",
+      "readableName": "Swap Donut Ghost House exits",
       "type": "toggle",
       "default": false
     },
     {
       "name": "display_received_item_popups",
-      "description": "DOC ME",
-      "readableName": "display received item popups",
+      "description": "What messages to display in-game for items received.",
+      "readableName": "Display received item popups",
       "values": [
         {
           "name": "none",
-          "readableName": "*none"
+          "readableName": "None"
         },
         {
           "name": "all",
-          "readableName": "*all"
+          "readableName": "All items"
         },
         {
           "name": "progression",
-          "readableName": "*progression"
+          "readableName": "Progression only"
         }
       ],
       "type": "choice",
@@ -118,33 +128,33 @@
     },
     {
       "name": "trap_fill_percentage",
-      "description": "DOC ME",
+      "description": "Replace a percentage of junk items in the item pool with random traps.",
       "high": 100,
-      "readableName": "trap fill percentage",
+      "readableName": "Trap fill percentage",
       "low": 0,
       "type": "range",
       "default": 0
     },
     {
       "name": "ice_trap_weight",
-      "description": "DOC ME",
+      "description": "Likelihood of a receiving a trap which causes the level to become slippery.",
       "readableName": "ice trap weight",
       "values": [
         {
           "name": "none",
-          "readableName": "*none"
+          "readableName": "None"
         },
         {
           "name": "low",
-          "readableName": "*low"
+          "readableName": "Low"
         },
         {
           "name": "medium",
-          "readableName": "*medium"
+          "readableName": "Medium"
         },
         {
           "name": "high",
-          "readableName": "*high"
+          "readableName": "High"
         }
       ],
       "type": "choice",
@@ -152,24 +162,24 @@
     },
     {
       "name": "stun_trap_weight",
-      "description": "DOC ME",
+      "description": "Likelihood of a receiving a trap which briefly stuns Mario.",
       "readableName": "stun trap weight",
       "values": [
         {
           "name": "none",
-          "readableName": "*none"
+          "readableName": "None"
         },
         {
           "name": "low",
-          "readableName": "*low"
+          "readableName": "Low"
         },
         {
           "name": "medium",
-          "readableName": "*medium"
+          "readableName": "Medium"
         },
         {
           "name": "high",
-          "readableName": "*high"
+          "readableName": "High"
         }
       ],
       "type": "choice",
@@ -177,24 +187,24 @@
     },
     {
       "name": "literature_trap_weight",
-      "description": "DOC ME",
+      "description": "Likelihood of a receiving a trap which causes the player to read literature.",
       "readableName": "literature trap weight",
       "values": [
         {
           "name": "none",
-          "readableName": "*none"
+          "readableName": "None"
         },
         {
           "name": "low",
-          "readableName": "*low"
+          "readableName": "Low"
         },
         {
           "name": "medium",
-          "readableName": "*medium"
+          "readableName": "Medium"
         },
         {
           "name": "high",
-          "readableName": "*high"
+          "readableName": "High"
         }
       ],
       "type": "choice",
@@ -202,31 +212,34 @@
     },
     {
       "name": "autosave",
-      "description": "DOC ME",
+      "description": "Whether a save prompt will appear after every level.",
       "readableName": "autosave",
       "type": "toggle",
       "default": true
     },
     {
       "name": "music_shuffle",
-      "description": "DOC ME",
-      "readableName": "music shuffle",
+      "description": "Determines whether and how music will be shuffled.",
+      "readableName": "Music shuffle",
       "values": [
         {
           "name": "none",
-          "readableName": "*none"
+          "readableName": "None"
         },
         {
           "name": "consistent",
-          "readableName": "*consistent"
+          "readableName": "Consistent",
+          "description": "Each music track is consistently shuffled throughout the game."
         },
         {
           "name": "full",
-          "readableName": "*full"
+          "readableName": "Full",
+          "description": "Each individual level has a random music track."
         },
         {
           "name": "singularity",
-          "readableName": "*singularity"
+          "readableName": "Singularity",
+          "description": "The entire game uses one song for overworld and one song for levels"
         }
       ],
       "type": "choice",
@@ -234,40 +247,40 @@
     },
     {
       "name": "mario_palette",
-      "description": "DOC ME",
+      "description": "Determines Mario's color palette.",
       "readableName": "mario palette",
       "values": [
         {
           "name": "mario",
-          "readableName": "*mario"
+          "readableName": "Mario"
         },
         {
           "name": "luigi",
-          "readableName": "*luigi"
+          "readableName": "Luigi"
         },
         {
           "name": "wario",
-          "readableName": "*wario"
+          "readableName": "Wario"
         },
         {
           "name": "waluigi",
-          "readableName": "*waluigi"
+          "readableName": "Waluigi"
         },
         {
           "name": "geno",
-          "readableName": "*geno"
+          "readableName": "Geno"
         },
         {
           "name": "princess",
-          "readableName": "*princess"
+          "readableName": "Princess Toadstool"
         },
         {
           "name": "dark",
-          "readableName": "*dark"
+          "readableName": "Dark"
         },
         {
           "name": "sponge",
-          "readableName": "*sponge"
+          "readableName": "Sponge"
         }
       ],
       "type": "choice",
@@ -275,21 +288,21 @@
     },
     {
       "name": "foreground_palette_shuffle",
-      "description": "DOC ME",
-      "readableName": "foreground palette shuffle",
+      "description": "Whether to shuffle level foreground palettes.",
+      "readableName": "Foreground palette shuffle",
       "type": "toggle",
       "default": false
     },
     {
       "name": "background_palette_shuffle",
-      "description": "DOC ME",
+      "description": "Whether to shuffle level background palettes.",
       "readableName": "background palette shuffle",
       "type": "toggle",
       "default": false
     },
     {
       "name": "starting_life_count",
-      "description": "DOC ME",
+      "description": "How many extra lives to start the game with.",
       "high": 99,
       "readableName": "starting life count",
       "low": 1,
@@ -299,13 +312,15 @@
   ],
   "items": [
     {
-      "name": "The Princess"
+      "name": "The Princess",
+      "max": 0
     },
     {
       "name": "1-Up Mushroom"
     },
     {
-      "name": "Yoshi Egg"
+      "name": "Yoshi Egg",
+      "max": 80
     },
     {
       "name": "Run"
@@ -353,13 +368,16 @@
       "name": "Boss Token"
     },
     {
-      "name": "Ice Trap"
+      "name": "Ice Trap",
+      "max": 0
     },
     {
-      "name": "Stun Trap"
+      "name": "Stun Trap",
+      "max": 0
     },
     {
-      "name": "Literature Trap"
+      "name": "Literature Trap",
+      "max": 0
     }
   ],
   "locations": [

@@ -4,42 +4,47 @@
   "settings": [
     {
       "name": "continues",
-      "description": "DOC ME",
+      "description": "Determine the number of continues before hitting Game Over. 21 is unlimited.",
       "high": 21,
-      "readableName": "continues",
+      "readableName": "Continues",
       "low": 0,
       "type": "range",
+      "aliases": {
+        "vanilla": 3,
+        "infinity": 21
+      },
       "default": 3
     },
     {
       "name": "floppy_req",
-      "description": "DOC ME",
+      "description": "Determines how many Floppy Disks are required.",
       "high": 8,
-      "readableName": "floppy req",
+      "readableName": "Floppy Disks",
       "low": 0,
       "type": "range",
       "default": 5
     },
     {
       "name": "gun_levels",
-      "description": "DOC ME",
-      "readableName": "gun levels",
+      "description": "Determines Zillion gun power for the number of Zillion power ups you pick up.",
+      "readableName": "Gun levels",
       "values": [
         {
           "name": "vanilla",
-          "readableName": "*vanilla"
+          "readableName": "Vanilla"
         },
         {
           "name": "balanced",
-          "readableName": "*balanced"
+          "readableName": "Balanced"
         },
         {
           "name": "low",
-          "readableName": "*low"
+          "readableName": "Low"
         },
         {
           "name": "restrictive",
-          "readableName": "*restrictive"
+          "readableName": "Restrictive",
+          "description": "Champ is the only one that can get Zillion gun power level 3."
         }
       ],
       "type": "choice",
@@ -47,24 +52,25 @@
     },
     {
       "name": "jump_levels",
-      "description": "DOC ME",
-      "readableName": "jump levels",
+      "description": "Determines jump levels for each character level.",
+      "readableName": "Jump levels",
       "values": [
         {
           "name": "vanilla",
-          "readableName": "*vanilla"
+          "readableName": "Vanilla"
         },
         {
           "name": "balanced",
-          "readableName": "*balanced"
+          "readableName": "Balanced"
         },
         {
           "name": "low",
-          "readableName": "*low"
+          "readableName": "Low"
         },
         {
           "name": "restrictive",
-          "readableName": "*restrictive"
+          "readableName": "Restrictive",
+          "description": "Apple is the only one that can get jump level 3."
         }
       ],
       "type": "choice",
@@ -72,40 +78,40 @@
     },
     {
       "name": "randomize_alarms",
-      "description": "DOC ME",
-      "readableName": "randomize alarms",
+      "description": "Whether to randomize the locations of alarm sensors.",
+      "readableName": "Randomize alarms",
       "type": "toggle",
       "default": true
     },
     {
       "name": "max_level",
-      "description": "DOC ME",
+      "description": "Determines the maximum level reachable.",
       "high": 8,
-      "readableName": "max level",
+      "readableName": "Max level",
       "low": 3,
       "type": "range",
       "default": 8
     },
     {
       "name": "start_char",
-      "description": "DOC ME",
-      "readableName": "start char",
+      "description": "Determines your starting character.",
+      "readableName": "Start character",
       "values": [
         {
           "name": "jj",
-          "readableName": "*jj"
+          "readableName": "JJ"
         },
         {
           "name": "apple",
-          "readableName": "*apple"
+          "readableName": "Apple"
         },
         {
           "name": "champ",
-          "readableName": "*champ"
+          "readableName": "Champ"
         },
         {
           "name": "random",
-          "readableName": "*random"
+          "readableName": "Random"
         }
       ],
       "type": "choice",
@@ -113,104 +119,104 @@
     },
     {
       "name": "opas_per_level",
-      "description": "DOC ME",
+      "description": "Determines how many Opa-Opas required to level up.",
       "high": 5,
-      "readableName": "opas per level",
+      "readableName": "Opa-Opas per level",
       "low": 1,
       "type": "range",
       "default": 2
     },
     {
       "name": "id_card_count",
-      "description": "DOC ME",
+      "description": "Determines how many ID cards are in the game. *(Vanilla is 63)*",
       "high": 126,
-      "readableName": "id card count",
+      "readableName": "ID Card count",
       "low": 0,
       "type": "range",
       "default": 42
     },
     {
       "name": "bread_count",
-      "description": "DOC ME",
+      "description": "Determines how many Bread are in the game. *(Vanilla is 33)*",
       "high": 126,
-      "readableName": "bread count",
+      "readableName": "Bread count",
       "low": 0,
       "type": "range",
       "default": 50
     },
     {
       "name": "opa_opa_count",
-      "description": "DOC ME",
+      "description": "Determines how many Opa-Opas are in the game. *(Vanilla is 26)*",
       "high": 126,
-      "readableName": "opa opa count",
+      "readableName": "Opa-Opa count",
       "low": 0,
       "type": "range",
       "default": 26
     },
     {
       "name": "zillion_count",
-      "description": "DOC ME",
+      "description": "Determines how many Zillion gun power ups are in the game. *(Vanilla is 6)",
       "high": 126,
-      "readableName": "zillion count",
+      "readableName": "Zillion count",
       "low": 0,
       "type": "range",
       "default": 8
     },
     {
       "name": "floppy_disk_count",
-      "description": "DOC ME",
+      "description": "Determines how many Floppy Disks are in the game. *(Vanilla is 5)*",
       "high": 126,
-      "readableName": "floppy disk count",
+      "readableName": "Floppy Disk count",
       "low": 0,
       "type": "range",
       "default": 7
     },
     {
       "name": "scope_count",
-      "description": "DOC ME",
+      "description": "Determines how many Scopes are in the game. *(Vanilla is 4)*",
       "high": 126,
-      "readableName": "scope count",
+      "readableName": "Scope count",
       "low": 0,
       "type": "range",
       "default": 4
     },
     {
       "name": "red_id_card_count",
-      "description": "DOC ME",
+      "description": "Determines how many Red ID Cards are in the game. *(Vanilla is 1)*",
       "high": 126,
-      "readableName": "red id card count",
+      "readableName": "Red ID Card count",
       "low": 0,
       "type": "range",
       "default": 2
     },
     {
       "name": "early_scope",
-      "description": "DOC ME",
-      "readableName": "early scope",
+      "description": "Ensures Scope is available early.",
+      "readableName": "Early Scope",
       "type": "toggle",
       "default": false
     },
     {
       "name": "skill",
-      "description": "DOC ME",
+      "description": "The difficulty level of the game. The higher the number, the harder the game.",
       "high": 5,
-      "readableName": "skill",
+      "readableName": "Skill level",
       "low": 0,
       "type": "range",
       "default": 2
     },
     {
       "name": "starting_cards",
-      "description": "DOC ME",
+      "description": "Determines how many ID Cards to start the game with.",
       "high": 10,
-      "readableName": "starting cards",
+      "readableName": "Starting Cards",
       "low": 0,
       "type": "range",
       "default": 2
     },
     {
       "name": "room_gen",
-      "description": "DOC ME",
+      "description": "Whether to generate rooms with random terrain.",
       "readableName": "room gen",
       "type": "toggle",
       "default": false
@@ -227,10 +233,12 @@
       "name": "JJ"
     },
     {
-      "name": "Win"
+      "name": "Win",
+      "max": 0
     },
     {
-      "name": "Empty"
+      "name": "Empty",
+      "max": 0
     },
     {
       "name": "ID Card"

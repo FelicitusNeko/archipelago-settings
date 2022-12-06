@@ -195,7 +195,7 @@
         },
         {
           "name": "all",
-          "readableName": "*all"
+          "readableName": "All"
         }
       ],
       "type": "choice",
@@ -1062,24 +1062,24 @@
     },
     {
       "name": "item_pool_value",
-      "description": "DOC ME",
+      "description": "Changes the number of items available in the game.",
       "readableName": "item pool value",
       "values": [
         {
           "name": "plentiful",
-          "readableName": "*plentiful"
+          "readableName": "Plentiful"
         },
         {
           "name": "balanced",
-          "readableName": "*balanced"
+          "readableName": "Balanced"
         },
         {
           "name": "scarce",
-          "readableName": "*scarce"
+          "readableName": "Scarce"
         },
         {
           "name": "minimal",
-          "readableName": "*minimal"
+          "readableName": "Minimal"
         }
       ],
       "type": "choice",
@@ -1366,7 +1366,7 @@
         },
         {
           "name": "fuchsia",
-          "readableName": "*fuchsia"
+          "readableName": "Fuschia"
         },
         {
           "name": "purple",
@@ -1508,7 +1508,7 @@
         },
         {
           "name": "fuchsia",
-          "readableName": "*fuchsia"
+          "readableName": "Fuschia"
         },
         {
           "name": "purple",
@@ -1650,7 +1650,7 @@
         },
         {
           "name": "fuchsia",
-          "readableName": "*fuchsia"
+          "readableName": "Fuschia"
         },
         {
           "name": "purple",
@@ -3931,11 +3931,11 @@
         },
         {
           "name": "switch",
-          "readableName": "*switch"
+          "readableName": "Switch"
         },
         {
           "name": "sword_bonk",
-          "readableName": "*sword bonk"
+          "readableName": "Sword bonk"
         },
         {
           "name": "tambourine",
@@ -4181,11 +4181,11 @@
         },
         {
           "name": "switch",
-          "readableName": "*switch"
+          "readableName": "Switch"
         },
         {
           "name": "sword_bonk",
-          "readableName": "*sword bonk"
+          "readableName": "Sword bonk"
         },
         {
           "name": "talon_hmm",
@@ -4291,7 +4291,7 @@
         },
         {
           "name": "child_cringe",
-          "readableName": "*child cringe"
+          "readableName": "Child cringe"
         },
         {
           "name": "child_pant",
@@ -4299,7 +4299,7 @@
         },
         {
           "name": "child_scream",
-          "readableName": "*child scream"
+          "readableName": "Child scream"
         },
         {
           "name": "cluck",
@@ -4463,11 +4463,11 @@
         },
         {
           "name": "switch",
-          "readableName": "*switch"
+          "readableName": "Switch"
         },
         {
           "name": "sword_bonk",
-          "readableName": "*sword bonk"
+          "readableName": "Sword bonk"
         },
         {
           "name": "talon_hmm",

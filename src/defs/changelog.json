@@ -1,4 +1,16 @@
 {
+  "1.1.0": [
+    "Big internal rework which will allow for updating of Settings Tool via update utility",
+    "Update spec to **0.3.6**",
+    [
+      "**Super Mario World**, **Pokémon Red and Blue**, **Zillion**, **Hylics 2**, **Overcooked! 2**, BK **Sudoku** added",
+      "Many other additions, adjustments, and corrections to existing settings, items, and locations, but too many to list off due to setting up the update utility mentioned above",
+      [
+        "As a result, there should no longer be any inconsistencies between official specifications and the Settings Tool (with maybe the exception of A Link to the Past)",
+        "Hopefully, an update in the near future will also guarantee that your saved settings are all valid, and correct them if they're not"
+      ]
+    ]
+  ],
   "1.0.9": [
     "Update spec to **0.3.5**",
     [

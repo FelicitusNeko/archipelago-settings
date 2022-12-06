@@ -39,24 +39,20 @@
     },
     {
       "name": "no_spell_requirements",
-      "description": "DOC ME",
-      "readableName": "no spell requirements",
+      "description": "Disable the spell requirements permitting you to use any spell.",
+      "readableName": "No spell requirements",
       "type": "toggle",
       "default": false
     },
     {
       "name": "no_equip_load",
-      "description": "DOC ME",
+      "description": "Disable the equip load constraint from the game.",
       "readableName": "no equip load",
       "type": "toggle",
       "default": false
     },
     {
-      "name": "death_link",
-      "description": "DOC ME",
-      "readableName": "death link",
-      "type": "toggle",
-      "default": false
+      "type": "deathlink"
     }
   ],
   "defver": 2,

@@ -9,11 +9,11 @@
       "values": [
         {
           "name": "normal",
-          "readableName": "*normal"
+          "readableName": "Normal"
         },
         {
           "name": "hard",
-          "readableName": "*hard"
+          "readableName": "Hard"
         }
       ],
       "type": "choice",
@@ -26,15 +26,15 @@
       "values": [
         {
           "name": "randomized",
-          "readableName": "*randomized"
+          "readableName": "Randomized"
         },
         {
           "name": "early",
-          "readableName": "*early"
+          "readableName": "Early"
         },
         {
           "name": "uncle",
-          "readableName": "*uncle"
+          "readableName": "Assured (on Uncle)"
         }
       ],
       "type": "choice",
@@ -47,15 +47,15 @@
       "values": [
         {
           "name": "randomized",
-          "readableName": "*randomized"
+          "readableName": "Randomized"
         },
         {
           "name": "early",
-          "readableName": "*early"
+          "readableName": "Early"
         },
         {
           "name": "original",
-          "readableName": "*original"
+          "readableName": "Vanilla (start of Crateria)"
         }
       ],
       "type": "choice",
@@ -68,15 +68,18 @@
       "values": [
         {
           "name": "defeatboth",
-          "readableName": "*defeatboth"
+          "readableName": "Defeat Ganon & Mother Brain",
+          "description": "Find the required crystals and boss tokens kill both bosses."
         },
         {
           "name": "fastganondefeatmotherbrain",
-          "readableName": "*fastganondefeatmotherbrain"
+          "readableName": "Fast Ganon & Mother Brain",
+          "description": "The hole to ganon is open without having to defeat Agahnim in Ganon's Tower and Ganon can be defeat as soon you have the required crystals to make Ganon vulnerable. For keysanity, this mode also removes the Crateria Boss Key requirement from Tourian to allow faster access."
         },
         {
           "name": "alldungeonsdefeatmotherbrain",
-          "readableName": "*alldungeonsdefeatmotherbrain"
+          "readableName": "All Dungeons & Mother Brain",
+          "description": "Similar to \"Defeat Ganon & Mother Brain\", but also requires all dungeons to be beaten including Castle Tower and Agahnim."
         }
       ],
       "type": "choice",
@@ -89,11 +92,11 @@
       "values": [
         {
           "name": "none",
-          "readableName": "*none"
+          "readableName": "None"
         },
         {
           "name": "keysanity",
-          "readableName": "*keysanity"
+          "readableName": "Keysanity"
         }
       ],
       "type": "choice",

@@ -77,11 +77,11 @@
         },
         {
           "name": "random_island_order",
-          "readableName": "*random island order"
+          "readableName": "Random island order"
         },
         {
           "name": "random_on_island_random_order",
-          "readableName": "*random on island random order"
+          "readableName": "Random on island random order"
         },
         {
           "name": "progressive",

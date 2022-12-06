@@ -17,7 +17,7 @@
         },
         {
           "name": "random",
-          "readableName": "*random"
+          "readableName": "Random"
         }
       ],
       "type": "choice",
@@ -153,11 +153,11 @@
         },
         {
           "name": "early",
-          "readableName": "*early"
+          "readableName": "Early"
         },
         {
           "name": "anywhere",
-          "readableName": "*anywhere"
+          "readableName": "Anywhere"
         },
         {
           "name": "disabled",
@@ -244,16 +244,16 @@
     },
     {
       "name": "khidr",
-      "description": "DOC ME",
-      "readableName": "khidr",
+      "description": "Determines if Neo Khidr replaces Khidr in their boss room.",
+      "readableName": "Khidr → Neo Khidr",
       "values": [
         {
           "name": "vanilla",
-          "readableName": "*vanilla"
+          "readableName": "Vanilla"
         },
         {
           "name": "challenge",
-          "readableName": "*challenge"
+          "readableName": "Challenge"
         }
       ],
       "type": "choice",
@@ -261,16 +261,16 @@
     },
     {
       "name": "alexander",
-      "description": "DOC ME",
-      "readableName": "alexander",
+      "description": "Determines if Alexander Ⅳ replaces Alexander in their boss room.",
+      "readableName": "Alexander → Alexander Ⅳ",
       "values": [
         {
           "name": "vanilla",
-          "readableName": "*vanilla"
+          "readableName": "Vanilla"
         },
         {
           "name": "challenge",
-          "readableName": "*challenge"
+          "readableName": "Challenge"
         }
       ],
       "type": "choice",
@@ -278,16 +278,16 @@
     },
     {
       "name": "leon",
-      "description": "DOC ME",
-      "readableName": "leon",
+      "description": "Determines if Ponce de Freon replaces Ponce de Leon in their boss room.",
+      "readableName": "Ponce de Leon → Ponce de Freon",
       "values": [
         {
           "name": "vanilla",
-          "readableName": "*vanilla"
+          "readableName": "Vanilla"
         },
         {
           "name": "challenge",
-          "readableName": "*challenge"
+          "readableName": "Challenge"
         }
       ],
       "type": "choice",
@@ -295,16 +295,16 @@
     },
     {
       "name": "herodotus",
-      "description": "DOC ME",
-      "readableName": "herodotus",
+      "description": "Determines if Astrodotus replaces Herodotus in their boss room.",
+      "readableName": "Herodotus → Astrodotus",
       "values": [
         {
           "name": "vanilla",
-          "readableName": "*vanilla"
+          "readableName": "Vanilla"
         },
         {
           "name": "challenge",
-          "readableName": "*challenge"
+          "readableName": "Vhallenge"
         }
       ],
       "type": "choice",
@@ -312,80 +312,80 @@
     },
     {
       "name": "health_pool",
-      "description": "DOC ME",
+      "description": "Determines the number of Health Ups in the item pool.",
       "high": 15,
-      "readableName": "health pool",
+      "readableName": "Health pool",
       "low": 0,
       "type": "range",
       "default": 15
     },
     {
       "name": "mana_pool",
-      "description": "DOC ME",
+      "description": "Determines the number of Mana Ups in the item pool.",
       "high": 15,
-      "readableName": "mana pool",
+      "readableName": "Mana pool",
       "low": 0,
       "type": "range",
       "default": 15
     },
     {
       "name": "attack_pool",
-      "description": "DOC ME",
+      "description": "Determines the number of Attack Ups in the item pool.",
       "high": 15,
-      "readableName": "attack pool",
+      "readableName": "Attack pool",
       "low": 0,
       "type": "range",
       "default": 15
     },
     {
       "name": "magic_damage_pool",
-      "description": "DOC ME",
+      "description": "Determines the number of Magic Damage Ups in the item pool.",
       "high": 15,
-      "readableName": "magic damage pool",
+      "readableName": "Magic Damage pool",
       "low": 0,
       "type": "range",
       "default": 15
     },
     {
       "name": "armor_pool",
-      "description": "DOC ME",
+      "description": "Determines the number of Armor Ups in the item pool.",
       "high": 10,
-      "readableName": "armor pool",
+      "readableName": "Armor pool",
       "low": 0,
       "type": "range",
       "default": 10
     },
     {
       "name": "equip_pool",
-      "description": "DOC ME",
+      "description": "Determines the number of Equip Ups in the item pool.",
       "high": 10,
-      "readableName": "equip pool",
+      "readableName": "Equip pool",
       "low": 0,
       "type": "range",
       "default": 10
     },
     {
       "name": "crit_chance_pool",
-      "description": "DOC ME",
+      "description": "Determines the number of Crit Chance Ups in the item pool.",
       "high": 5,
-      "readableName": "crit chance pool",
+      "readableName": "Crit Chance pool",
       "low": 0,
       "type": "range",
       "default": 5
     },
     {
       "name": "crit_damage_pool",
-      "description": "DOC ME",
+      "description": "Determines the number of Crit Damage Ups in the item pool.",
       "high": 5,
-      "readableName": "crit damage pool",
+      "readableName": "Crit Damage pool",
       "low": 0,
       "type": "range",
       "default": 5
     },
     {
       "name": "allow_default_names",
-      "description": "DOC ME",
-      "readableName": "allow default names",
+      "description": "Determines if the default names defined in the vanilla game are allowed to be used. Warning: Your world will not generate if the number of Additional Names defined is less than the Number of Children value.",
+      "readableName": "Allow default names",
       "type": "toggle",
       "default": true
     },

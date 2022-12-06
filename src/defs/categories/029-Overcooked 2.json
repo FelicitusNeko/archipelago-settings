@@ -4,34 +4,37 @@
   "settings": [
     {
       "name": "shuffle_level_order",
-      "description": "DOC ME",
-      "readableName": "shuffle level order",
+      "description": "Shuffles the order of kitchens on the overworld map. Also draws from DLC maps.",
+      "readableName": "Shuffle level order",
       "type": "toggle",
       "default": true
     },
     {
       "name": "include_horde_levels",
-      "description": "DOC ME",
-      "readableName": "include horde levels",
+      "description": "Includes \"Horde Defence\" levels in the pool of possible kitchens when Shuffle Level Order is enabled. Also adds two horde-specific items into the item pool.",
+      "readableName": "Include Horde levels",
       "type": "toggle",
       "default": true
     },
     {
       "name": "prep_levels",
-      "description": "DOC ME",
-      "readableName": "prep levels",
+      "description": "Choose How \"Prep Levels\" are handled (levels where the timer does not start until the first order is served).",
+      "readableName": "Prep levels",
       "values": [
         {
           "name": "original",
-          "readableName": "*original"
+          "readableName": "Original",
+          "description": "Prep Levels may appear."
         },
         {
           "name": "excluded",
-          "readableName": "*excluded"
+          "readableName": "Excluded",
+          "description": "Prep Levels are excluded from the pool during level shuffling."
         },
         {
           "name": "all_you_can_eat",
-          "readableName": "*all you can eat"
+          "readableName": "All You Can Eat",
+          "description": "Prep Levels may appear, but the timer automatically starts. The star score requirements are also adjusted to use the All You Can Eat World Record (if it exists)."
         }
       ],
       "type": "choice",
@@ -39,60 +42,60 @@
     },
     {
       "name": "kevin_levels",
-      "description": "DOC ME",
-      "readableName": "kevin levels",
+      "description": "Includes the 8 Kevin level locations on the map as unlockables. Turn off to make games shorter.",
+      "readableName": "Kevin levels",
       "type": "toggle",
       "default": true
     },
     {
       "name": "fix_bugs",
-      "description": "DOC ME",
-      "readableName": "fix bugs",
+      "description": "Fixes Bugs Present in the base game:\n - Double Serving Exploit\n - Sink Bug\n - Control Stick Cancel/Throw Bug\n - Can't Throw Near Empty Burner Bug",
+      "readableName": "Fix bugs",
       "type": "toggle",
       "default": true
     },
     {
       "name": "shorter_level_duration",
-      "description": "DOC ME",
-      "readableName": "shorter level duration",
+      "description": "Modifies level duration to be about ⅓ shorter than in the original game, thus bringing the item discovery pace in line with other popular Archipelago games.\nPoints required to earn stars are scaled accordingly. (\"Boss Levels\" which change scenery mid-game are not affected.)",
+      "readableName": "Shorter level duration",
       "type": "toggle",
       "default": true
     },
     {
       "name": "always_preserve_cooking_progress",
-      "description": "DOC ME",
-      "readableName": "always preserve cooking progress",
+      "description": "Modifies the game to behave more like AYCE, where adding an item to an in-progress container doesn't reset the entire progress bar.",
+      "readableName": "Always preserve cooking progress",
       "type": "toggle",
       "default": true
     },
     {
       "name": "always_serve_oldest_order",
-      "description": "DOC ME",
-      "readableName": "always serve oldest order",
+      "description": "Modifies the game so that serving an expired order doesn't target the ticket with the highest tip. This helps players dig out of a broken tip combo faster.",
+      "readableName": "Always serve oldest order",
       "type": "toggle",
       "default": true
     },
     {
       "name": "display_leaderboard_scores",
-      "description": "DOC ME",
-      "readableName": "display leaderboard scores",
+      "description": "Modifies the Overworld map to fetch and display the current world records for each level. Press number keys 1-4 to view leaderboard scores for that number of players.",
+      "readableName": "Display leaderboard scores",
       "type": "toggle",
       "default": true
     },
     {
       "name": "stars_to_win",
-      "description": "DOC ME",
+      "description": "Number of stars required to unlock 6-6.\nLevel purchase requirements between 1-1 and 6-6 will be spread between these two numbers. Using too high of a number may result in more frequent generation failures, especially when horde levels are enabled.",
       "high": 100,
-      "readableName": "stars to win",
+      "readableName": "Stars to win",
       "low": 0,
       "type": "range",
       "default": 66
     },
     {
       "name": "star_threshold_scale",
-      "description": "DOC ME",
+      "description": "How difficult should the third star for each level be on a scale of 1-100%, where 100% is the current world record score and 45% is the average vanilla 4-star score.",
       "high": 100,
-      "readableName": "star threshold scale",
+      "readableName": "Star threshold scale",
       "low": 1,
       "type": "range",
       "default": 45

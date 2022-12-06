@@ -89,33 +89,38 @@
       "values": [
         {
           "name": "vanilla",
-          "description": "Keeps the standard mission order and branching from the WoL Campaign.",
+          "description": "Keeps the standard mission order and branching from the WoL Campaign. 29 missions.",
           "readableName": "Vanilla"
         },
         {
           "name": "vanilla_shuffled",
-          "description": "Keeps same branching paths from the WoL Campaign but randomizes the order of missions within.",
+          "description": "Keeps same branching paths from the WoL Campaign but randomizes the order of missions within. 29 missions.",
           "readableName": "Vanilla Shuffled"
         },
         {
           "name": "mini_campaign",
-          "readableName": "*mini campaign"
+          "readableName": "Mini campaign",
+          "description": "Shorter version of the campaign with randomized missions and optional branches. 15 missions."
         },
         {
           "name": "grid",
-          "readableName": "*grid"
+          "readableName": "Grid", 
+          "description": "A 4×4 grid of random missions. Start at the top-left and forge a path towards All-In. 16 missions."
         },
         {
           "name": "mini_grid",
-          "readableName": "*mini grid"
+          "readableName": "Mini grid",
+          "description": "A 3×3 version of Grid. Complete the bottom-right mission to win. 9 missions."
         },
         {
           "name": "blitz",
-          "readableName": "*blitz"
+          "readableName": "Blitz", 
+          "description": "12 random missions that open up very quickly. Complete the bottom-right mission to win. 12 missions."
         },
         {
           "name": "gauntlet",
-          "readableName": "*gauntlet"
+          "readableName": "Gauntlet",
+          "description": "Linear series of 7 random missions to complete the campaign."
         }
       ],
       "type": "choice",
@@ -135,34 +140,37 @@
     },
     {
       "name": "shuffle_no_build",
-      "description": "DOC ME",
-      "readableName": "shuffle no build",
+      "description": "Determines if the 5 no-build missions are included in the shuffle if Vanilla mission order is not enabled.\nIf turned off with Vanilla Shuffled, one no-build mission will be placed as the first mission and the rest will be placed at the end of optional routes.\nIf turned off with reduced mission settings, the 5 no-build missions will not appear.",
+      "readableName": "Shuffle no-build missions",
       "type": "toggle",
       "default": true
     },
     {
       "name": "early_unit",
-      "description": "DOC ME",
-      "readableName": "early unit",
+      "description": "Guarantees that the first mission will contain a unit.",
+      "readableName": "Early unit",
       "type": "toggle",
       "default": true
     },
     {
       "name": "required_tactics",
-      "description": "DOC ME",
-      "readableName": "required tactics",
+      "description": "Determines the maximum tactical difficulty of the seed (separate from mission difficulty).  Higher settings increase randomness.",
+      "readableName": "Required tactics",
       "values": [
         {
           "name": "standard",
-          "readableName": "*standard"
+          "readableName": "Standard",
+          "description": "All missions can be completed with good micro and macro."
         },
         {
           "name": "advanced",
-          "readableName": "*advanced"
+          "readableName": "Advanced",
+          "description": "Completing missions may require relying on starting units and micro-heavy units."
         },
         {
           "name": "no_logic",
-          "readableName": "*no logic"
+          "readableName": "No logic",
+          "description": "Units and upgrades may be placed anywhere.  LIKELY TO RENDER THE RUN IMPOSSIBLE ON HARDER DIFFICULTIES!"
         }
       ],
       "type": "choice",
@@ -170,8 +178,8 @@
     },
     {
       "name": "units_always_have_upgrades",
-      "description": "DOC ME",
-      "readableName": "units always have upgrades",
+      "description": "If turned on, both upgrades will be present for each unit and structure in the seed. This usually results in fewer units.",
+      "readableName": "Units always have upgrades",
       "type": "toggle",
       "default": true
     }

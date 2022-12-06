@@ -502,10 +502,9 @@
     },
     {
       "name": "PlandoCharmCosts",
-      "description": "DOC ME",
+      "description": "",
       "readableName": "PlandoCharmCosts",
-      "values": [],
-      "type": "choice",
+      "type": "ignore",
       "default": "null"
     },
     {
@@ -591,9 +590,9 @@
     },
     {
       "name": "GrubfatherRewardSlots",
-      "description": "DOC ME",
+      "description": "For each extra slot, add a location to the Grubfather and a filler item to the item pool.",
       "high": 16,
-      "readableName": "GrubfatherRewardSlots",
+      "readableName": "Grubfather Reward Slots",
       "low": 0,
       "type": "range",
       "default": 7

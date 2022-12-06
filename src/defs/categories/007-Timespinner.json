@@ -122,7 +122,7 @@
         },
         {
           "name": "manual",
-          "readableName": "*manual"
+          "readableName": "Manual (will also need to define manually after exporting)"
         }
       ],
       "type": "choice",
@@ -130,75 +130,9 @@
     },
     {
       "name": "DamageRandoOverrides",
-      "description": "DOC ME",
+      "description": "",
       "readableName": "DamageRandoOverrides",
-      "values": [
-        {
-          "name": "Blade",
-          "readableName": "*Blade"
-        },
-        {
-          "name": "Blood",
-          "readableName": "*Blood"
-        },
-        {
-          "name": "Blue",
-          "readableName": "*Blue"
-        },
-        {
-          "name": "Empire",
-          "readableName": "*Empire"
-        },
-        {
-          "name": "Eye",
-          "readableName": "*Eye"
-        },
-        {
-          "name": "Fire",
-          "readableName": "*Fire"
-        },
-        {
-          "name": "ForbiddenTome",
-          "readableName": "*ForbiddenTome"
-        },
-        {
-          "name": "Gun",
-          "readableName": "*Gun"
-        },
-        {
-          "name": "Ice",
-          "readableName": "*Ice"
-        },
-        {
-          "name": "Iron",
-          "readableName": "*Iron"
-        },
-        {
-          "name": "Nether",
-          "readableName": "*Nether"
-        },
-        {
-          "name": "Plasma",
-          "readableName": "*Plasma"
-        },
-        {
-          "name": "Radiant",
-          "readableName": "*Radiant"
-        },
-        {
-          "name": "Shattered",
-          "readableName": "*Shattered"
-        },
-        {
-          "name": "Umbra",
-          "readableName": "*Umbra"
-        },
-        {
-          "name": "Wind",
-          "readableName": "*Wind"
-        }
-      ],
-      "type": "choice",
+      "type": "ignore",
       "default": "null"
     },
     {
@@ -347,15 +281,18 @@
       "values": [
         {
           "name": "default_weight",
-          "readableName": "*default weight"
+          "readableName": "Default weight",
+          "description": "Rarer items will be assigned to enemy drop slots less frequently than common items."
         },
         {
           "name": "full_random",
-          "readableName": "*full random"
+          "readableName": "Full random",
+          "description": "Any item has an equal chance of being placed in an enemy's drop slot."
         },
         {
           "name": "inverted_weight",
-          "readableName": "*inverted weight"
+          "readableName": "Inverted weight",
+          "description": "Rarest items show up the most frequently, while common items are the rarest"
         }
       ],
       "type": "choice",
@@ -363,14 +300,14 @@
     },
     {
       "name": "ShowBestiary",
-      "description": "DOC ME",
+      "description": "All entries in the bestiary are visible, without needing to kill one of a given enemy first.",
       "readableName": "ShowBestiary",
       "type": "toggle",
       "default": false
     },
     {
       "name": "ShowDrops",
-      "description": "DOC ME",
+      "description": "All item drops in the bestiary are visible, without needing an enemy to drop one of a given item first.",
       "readableName": "ShowDrops",
       "type": "toggle",
       "default": false
