@@ -36,6 +36,9 @@ export enum SettingType {
   Toggle = "toggle",
   /** Refers to a Boolean setting related to DeathLink. Some assumptions are made as a result. */
   DeathLink = "deathlink",
+
+  /** Refers to a setting which should be ignored by the Settings Tool and its updater. */
+  Ignore = "ignore",
 }
 
 /** Indicates what type of entity is being used. */

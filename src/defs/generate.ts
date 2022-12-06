@@ -35,6 +35,7 @@ import {
 import { APItemManager } from "../objs/entities/APItemManager";
 import { APLocationManager } from "../objs/entities/APLocationManager";
 import { gunzipSync } from "zlib";
+import { APSettingJson } from "../objs/settings/APSetting";
 
 export type APMetaSetting =
   | APStringSetting
@@ -112,7 +113,11 @@ const APCategoryList: APCategory[] = APCategoryData.map((i) => {
     index: i.index,
     notice: i.notice,
     settings: i.settings
-      .filter((i) => i.disabled !== true)
+      .filter(
+        (i) =>
+          i.disabled !== true &&
+          (i as APSettingJson<never>).type !== SettingType.Ignore
+      )
       .map((setting) => {
         if (setting.dependsOn)
           Object.keys(setting.dependsOn).forEach((i) => hasDeps.add(i));
