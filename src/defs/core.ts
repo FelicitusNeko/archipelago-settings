@@ -24,7 +24,7 @@ export enum SettingType {
    */
   Numeric = "numeric",
   /** Refers to a numeric setting within a given range. */
-  Range = "numeric",
+  Range = "range",
   /** Refers to an open-ended numeric setting. */
   Number = "number",
   /**
