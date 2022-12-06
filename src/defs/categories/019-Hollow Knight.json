@@ -675,7 +675,7 @@
         ]
       },
       "high": 100,
-      "readableName": "CostSanity <?> Hybrid Chance",
+      "readableName": "CostSanity –  Hybrid Chance",
       "low": 0,
       "type": "range",
       "default": 10
@@ -691,7 +691,7 @@
         ]
       },
       "high": 1000,
-      "readableName": "CostSanity <?> Egg Weight",
+      "readableName": "CostSanity –  Egg Weight",
       "low": 0,
       "type": "range",
       "default": 1
@@ -707,7 +707,7 @@
         ]
       },
       "high": 1000,
-      "readableName": "CostSanity <?> Grub Weight",
+      "readableName": "CostSanity –  Grub Weight",
       "low": 0,
       "type": "range",
       "default": 1
@@ -723,7 +723,7 @@
         ]
       },
       "high": 1000,
-      "readableName": "CostSanity <?> Essence Weight",
+      "readableName": "CostSanity –  Essence Weight",
       "low": 0,
       "type": "range",
       "default": 1
@@ -739,7 +739,7 @@
         ]
       },
       "high": 1000,
-      "readableName": "CostSanity <?> Charm Weight",
+      "readableName": "CostSanity –  Charm Weight",
       "low": 0,
       "type": "range",
       "default": 1
@@ -755,7 +755,7 @@
         ]
       },
       "high": 1000,
-      "readableName": "CostSanity <?> Geo Weight",
+      "readableName": "CostSanity –  Geo Weight",
       "low": 0,
       "type": "range",
       "default": 8

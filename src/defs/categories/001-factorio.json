@@ -252,22 +252,22 @@
         },
         {
           "name": "fast",
-          "description": ".25<?>to 1<?>speed",
+          "description": ".25× to 1× speed",
           "readableName": "Fast"
         },
         {
           "name": "normal",
-          "description": ".5<?>to 2<?>speed",
+          "description": ".5× to 2× speed",
           "readableName": "Normal"
         },
         {
           "name": "slow",
-          "description": "1<?>to 4<?>speed",
+          "description": "1× to 4× speed",
           "readableName": "Slow"
         },
         {
           "name": "chaos",
-          "description": ".25<?>to 4<?>speed",
+          "description": ".25× to 4× speed",
           "readableName": "Chaos"
         },
         {
@@ -315,56 +315,10 @@
     },
     {
       "name": "world_gen",
-      "description": "DOC ME",
-      "readableName": "world gen",
-      "values": [
-        {
-          "name": "autoplace_controls",
-          "readableName": "*autoplace controls"
-        },
-        {
-          "name": "cliff_settings",
-          "readableName": "*cliff settings"
-        },
-        {
-          "name": "enemy_evolution",
-          "readableName": "*enemy evolution"
-        },
-        {
-          "name": "enemy_expansion",
-          "readableName": "*enemy expansion"
-        },
-        {
-          "name": "peaceful_mode",
-          "readableName": "*peaceful mode"
-        },
-        {
-          "name": "pollution",
-          "readableName": "*pollution"
-        },
-        {
-          "name": "property_expression_names",
-          "readableName": "*property expression names"
-        },
-        {
-          "name": "seed",
-          "readableName": "*seed"
-        },
-        {
-          "name": "starting_area",
-          "readableName": "*starting area"
-        },
-        {
-          "name": "terrain_segmentation",
-          "readableName": "*terrain segmentation"
-        },
-        {
-          "name": "water",
-          "readableName": "*water"
-        }
-      ],
-      "type": "choice",
-      "default": "starting_area"
+      "readableName": "World gen",
+      "description": "",
+      "type": "ignore",
+      "default": ""
     },
     {
       "name": "progressive",

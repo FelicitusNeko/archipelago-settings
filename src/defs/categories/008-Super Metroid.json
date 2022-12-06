@@ -202,7 +202,7 @@
         },
         {
           "name": "infinity",
-          "readableName": "<?>"
+          "readableName": "∞"
         }
       ],
       "type": "choice",
@@ -401,7 +401,7 @@
     },
     {
       "name": "nerfed_charge",
-      "description": "Samus begins with a starter Charge Beam that works at <?> capacity. Once the Charge Beam item has been collected, it does full damage and special attacks are back to normal.",
+      "description": "Samus begins with a starter Charge Beam that works at ⅓ capacity. Once the Charge Beam item has been collected, it does full damage and special attacks are back to normal.",
       "readableName": "Start with Nerfed Charge Beam",
       "type": "toggle",
       "default": false

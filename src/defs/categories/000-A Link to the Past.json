@@ -192,7 +192,7 @@
         ]
       },
       "high": 400,
-      "readableName": "Triforce pieces <?> plus percent",
+      "readableName": "Triforce pieces – plus percent",
       "low": 100,
       "step": 5,
       "type": "range",
@@ -759,7 +759,7 @@
         },
         {
           "name": "hard",
-          "description": "Less potion healing, can't catch faeries, 2<?>Magic Cape mana cost, no Cane of Byrna invul, no Boomerang stun, no silvers except Ganon",
+          "description": "Less potion healing, can't catch faeries, 2× Magic Cape mana cost, no Cane of Byrna invul, no Boomerang stun, no silvers except Ganon",
           "readableName": "Hard"
         },
         {

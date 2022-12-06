@@ -183,7 +183,7 @@
     {
       "name": "shuffle_interior_entrances",
       "description": "Shuffles interior entrances. \"Simple\" shuffles houses and Great Fairies; \"Full\" includes Windmill, Link's House, Temple of Time, and Kak potion shop.",
-      "readableName": "Entrance shuffle <?> interiors",
+      "readableName": "Entrance shuffle – interiors",
       "values": [
         {
           "name": "off",
@@ -204,21 +204,21 @@
     {
       "name": "shuffle_grotto_entrances",
       "description": "Shuffles grotto and grave entrances.",
-      "readableName": "Entrance shuffle <?> grotto",
+      "readableName": "Entrance shuffle –  grotto",
       "type": "toggle",
       "default": false
     },
     {
       "name": "shuffle_dungeon_entrances",
       "description": "Shuffles dungeon entrances, excluding Ganon's Castle. Opens Deku, Fire and BotW to both ages.",
-      "readableName": "Entrance shuffle <?> dungeons",
+      "readableName": "Entrance shuffle –  dungeons",
       "type": "toggle",
       "default": false
     },
     {
       "name": "shuffle_overworld_entrances",
       "description": "Shuffles overworld loading zones.",
-      "readableName": "Entrance shuffle <?> overworld",
+      "readableName": "Entrance shuffle –  overworld",
       "type": "toggle",
       "default": false
     },
@@ -232,14 +232,14 @@
     {
       "name": "warp_songs",
       "description": "Randomizes warp song destinations.",
-      "readableName": "Entrance shuffle <?> warp songs",
+      "readableName": "Entrance shuffle –  warp songs",
       "type": "toggle",
       "default": false
     },
     {
       "name": "spawn_positions",
       "description": "Randomizes the starting position on loading a save. Consistent between savewarps.",
-      "readableName": "Entrance shuffle <?> spawn positions",
+      "readableName": "Entrance shuffle –  spawn positions",
       "type": "toggle",
       "default": false
     },
@@ -273,7 +273,7 @@
         ]
       },
       "high": 100,
-      "readableName": "Triforce available <?> percentage",
+      "readableName": "Triforce available –  percentage",
       "low": 0,
       "type": "range",
       "default": 50
@@ -832,7 +832,7 @@
     },
     {
       "name": "fast_bunny_hood",
-      "description": "Bunny Hood lets you move 1.5<?>faster, like in Majora's Mask.",
+      "description": "Bunny Hood lets you move 1.5× faster, like in Majora's Mask.",
       "readableName": "Fast Bunny Hood",
       "type": "toggle",
       "default": false
