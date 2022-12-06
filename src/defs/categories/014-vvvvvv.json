@@ -3,53 +3,55 @@
   "index": 14,
   "settings": [
     {
-      "type": "boolean",
       "name": "MusicRandomizer",
-      "readableName": "Music shuffle",
       "description": "Shuffles music between areas.",
+      "readableName": "Music shuffle",
+      "type": "toggle",
       "default": false
     },
     {
-      "type": "boolean",
       "name": "AreaRandomizer",
-      "readableName": "Area shuffle",
       "description": "Shuffles entrances to proper areas.",
+      "readableName": "Area shuffle",
+      "type": "toggle",
       "default": false
     },
     {
-      "type": "numeric",
       "name": "DoorCost",
-      "readableName": "Door cost",
       "description": "Amount of Trinkets required to enter Areas. Set to 0 to disable artificial locks.",
-      "low": 0,
       "high": 3,
-      "randomable": true,
+      "readableName": "Door cost",
+      "low": 0,
+      "type": "range",
       "default": 3
     },
     {
-      "type": "boolean",
       "name": "AreaCostRandomizer",
-      "readableName": "Door cost shuffle",
       "description": "Shuffles which area entrances require which trinkets.",
+      "readableName": "Door cost shuffle",
+      "type": "toggle",
       "default": false
     },
     {
+      "name": "death_link",
       "type": "deathlink"
     },
     {
-      "type": "numeric",
       "name": "DeathLinkAmnesty",
-      "readableName": "DeathLink amnesty",
       "description": "How many times you have to die before the next one sends DeathLink to the server.",
-      "low": 0,
-      "high": 30,
-      "randomable": true,
-      "default": 15,
       "dependsOn": {
-        "death_link": [true]
-      }
+        "death_link": [
+          true
+        ]
+      },
+      "high": 30,
+      "readableName": "DeathLink amnesty",
+      "low": 0,
+      "type": "range",
+      "default": 15
     }
   ],
+  "defver": 2,
   "items": [
     {
       "name": "Trinket 01"

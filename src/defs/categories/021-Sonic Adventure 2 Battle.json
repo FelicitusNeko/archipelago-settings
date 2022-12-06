@@ -3,207 +3,324 @@
   "index": 21,
   "settings": [
     {
-      "type": "numeric",
       "name": "include_missions",
-      "readableName": "Include missions",
       "description": "How many missions per level to include. In order, they are: Base mission, 100 Rings, Lost Chao, Time Attack, Hard Mode",
-      "low": 1,
       "high": 5,
-      "randomable": true,
+      "readableName": "Include missions",
+      "low": 1,
+      "type": "range",
       "default": 2
     },
     {
-      "type": "string",
       "name": "required_rank",
-      "readableName": "Required rank",
       "description": "Determines what minimum rank is required in order to send an end-stage check.",
-      "values": {
-        "e": "Rank E",
-        "d": "Rank D",
-        "c": "Rank C",
-        "b": "Rank B",
-        "a": "Rank A"
-      },
+      "readableName": "Required rank",
+      "values": [
+        {
+          "name": "e",
+          "readableName": "Rank E"
+        },
+        {
+          "name": "d",
+          "readableName": "Rank D"
+        },
+        {
+          "name": "c",
+          "readableName": "Rank C"
+        },
+        {
+          "name": "b",
+          "readableName": "Rank B"
+        },
+        {
+          "name": "a",
+          "readableName": "Rank A"
+        }
+      ],
+      "type": "choice",
       "default": "e"
     },
     {
-      "type": "numeric",
       "name": "emblem_percentage_for_cannons_core",
-      "readableName": "Emblem percentage for Cannon's Core",
       "description": "What percentage of Emblems in the item pool are required to access the final level, Cannon's Core.",
-      "low": 0,
       "high": 75,
-      "randomable": true,
+      "readableName": "Emblem percentage for Cannon's Core",
+      "low": 0,
+      "type": "range",
       "default": 50
     },
     {
-      "type": "numeric",
       "name": "number_of_level_gates",
-      "readableName": "Number of Emblem count gates",
       "description": "Determines whether levels can be gated behind a certain number of Emblems, and, if so, how many gates there are.",
-      "low": 0,
       "high": 5,
-      "randomable": true,
+      "readableName": "Number of Emblem count gates",
+      "low": 0,
+      "type": "range",
       "default": 3
     },
     {
-      "type": "string",
       "name": "level_gate_distribution",
-      "readableName": "Emblem gate distribution",
       "description": "Determines how levels are distributed between Emblem gates.",
-      "values": {
-        "early": ["Early", "More levels will be placed before Emblem gates."],
-        "even": [
-          "Even",
-          "Levels will be evenly distributed between Emblem gates."
-        ],
-        "late": ["Late", "More levels will be placed after Emblem gates."]
-      },
-      "default": "even",
       "dependsOn": {
-        "number_of_level_gates": [1, 2, 3, 4, 5]
-      }
+        "number_of_level_gates": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "readableName": "Emblem gate distribution",
+      "values": [
+        {
+          "name": "early",
+          "description": "More levels will be placed before Emblem gates.",
+          "readableName": "Early"
+        },
+        {
+          "name": "even",
+          "description": "Levels will be evenly distributed between Emblem gates.",
+          "readableName": "Even"
+        },
+        {
+          "name": "late",
+          "description": "More levels will be placed after Emblem gates.",
+          "readableName": "Late"
+        }
+      ],
+      "type": "choice",
+      "default": "even"
     },
     {
-      "type": "string",
-      "name": "level_gate_cost",
-      "readableName": "Emblem gate cost",
-      "description": "Determines how many Emblems are required to unlock gates.",
-      "values": {
-        "low": "Low",
-        "medium": "Medium",
-        "high": "High"
-      },
-      "default": "high",
-      "dependsOn": {
-        "number_of_level_gates": [1, 2, 3, 4, 5]
-      }
+      "name": "level_gate_costs",
+      "description": "DOC ME",
+      "readableName": "level gate costs",
+      "values": [
+        {
+          "name": "low",
+          "readableName": "*low"
+        },
+        {
+          "name": "medium",
+          "readableName": "*medium"
+        },
+        {
+          "name": "high",
+          "readableName": "*high"
+        }
+      ],
+      "type": "choice",
+      "default": "high"
     },
     {
-      "type": "boolean",
+      "name": "chao_garden_difficulty",
+      "description": "Determines the number of Chao Garden difficulty levels included. Easier difficulty settings means fewer Chao Garden checks.",
+      "readableName": "Chao Garden race difficulty",
+      "values": [
+        {
+          "name": "none",
+          "description": "No Chao Garden activities have checks",
+          "readableName": "None"
+        },
+        {
+          "name": "beginner",
+          "description": "Beginner Races",
+          "readableName": "Beginner"
+        },
+        {
+          "name": "intermediate",
+          "description": "Beginner and Jewel Races",
+          "readableName": "Intermediate"
+        },
+        {
+          "name": "expert",
+          "description": "Beginner, Jewel, Challenge, Hero, and Dark Races",
+          "readableName": "Expert"
+        }
+      ],
+      "type": "choice",
+      "default": "none"
+    },
+    {
       "name": "include_chao_karate",
-      "readableName": "Include Chao Karate",
       "description": "Determines whether the Chao Karate should be included as checks. *(This requires the SA2:Battle DLC)*",
+      "readableName": "Include Chao Karate",
+      "type": "toggle",
       "default": false
     },
     {
-      "type": "string",
-      "name": "chao_garden_difficulty",
-      "readableName": "Chao Garden race difficulty",
-      "description": "Determines the number of Chao Garden difficulty levels included. Easier difficulty settings means fewer Chao Garden checks.",
-      "values": {
-        "none": ["None", "No Chao Garden activities have checks"],
-        "beginner": ["Beginner", "Beginner Races"],
-        "intermediate": ["Intermediate", "Beginner and Jewel Races"],
-        "expert": ["Expert", "Beginner, Jewel, Challenge, Hero, and Dark Races"]
-      },
-      "default": "none"
-    },
-    {
-      "type": "string",
       "name": "chao_race_checks",
-      "readableName": "Chao race checks",
       "description": "Determines which Chao Races grant checks.",
-      "values": {
-        "all": ["All", "Each individual race grants a check"],
-        "prize": [
-          "Prize races only",
-          "Only the races which grant Chao Toys grant checks (final race of each Beginner and Jewel cup, 4th, 8th, and 12th Challenge Races, 2nd and 4th Hero and Dark Races)"
+      "dependsOn": {
+        "chao_garden_difficulty": [
+          "beginner",
+          "intermediate",
+          "expert"
         ]
       },
-      "default": "all",
-      "dependsOn": {
-        "chao_garden_difficulty": ["beginner", "intermediate", "expert"]
-      }
+      "readableName": "Chao race checks",
+      "values": [
+        {
+          "name": "all",
+          "description": "Each individual race grants a check",
+          "readableName": "All"
+        },
+        {
+          "name": "prize",
+          "description": "Only the races which grant Chao Toys grant checks (final race of each Beginner and Jewel cup, 4th, 8th, and 12th Challenge Races, 2nd and 4th Hero and Dark Races)",
+          "readableName": "Prize races only"
+        }
+      ],
+      "type": "choice",
+      "default": "all"
     },
     {
-      "type": "numeric",
       "name": "junk_fill_percentage",
-      "readableName": "Junk fill percentage",
       "description": "Replace a percentage of non-required emblems in the item pool with random junk items.",
-      "low": 0,
       "high": 100,
-      "randomable": true,
+      "readableName": "Junk fill percentage",
+      "low": 0,
+      "type": "range",
       "default": 50
     },
     {
-      "type": "numeric",
       "name": "trap_fill_percentage",
-      "readableName": "Trap fill percentage",
       "description": "Replace a percentage of junk items in the item pool with random traps.",
-      "low": 0,
       "high": 100,
-      "randomable": true,
+      "readableName": "Trap fill percentage",
+      "low": 0,
+      "type": "range",
       "default": 0
     },
     {
-      "type": "string",
       "name": "omochao_trap_weight",
-      "readableName": "Omochao trap weight",
       "description": "Likelihood of a receiving a trap which spawns several Omochao around the player.",
-      "values": {
-        "none": "None",
-        "low": "Low",
-        "medium": "Medium",
-        "high": "High"
-      },
+      "readableName": "Omochao trap weight",
+      "values": [
+        {
+          "name": "none",
+          "readableName": "None"
+        },
+        {
+          "name": "low",
+          "readableName": "Low"
+        },
+        {
+          "name": "medium",
+          "readableName": "Medium"
+        },
+        {
+          "name": "high",
+          "readableName": "High"
+        }
+      ],
+      "type": "choice",
       "default": "medium"
     },
     {
-      "type": "string",
       "name": "timestop_trap_weight",
-      "readableName": "Chaos Control trap weight",
       "description": "Likelihood of a receiving a trap which briefly stops time.",
-      "values": {
-        "none": "None",
-        "low": "Low",
-        "medium": "Medium",
-        "high": "High"
-      },
+      "readableName": "Chaos Control trap weight",
+      "values": [
+        {
+          "name": "none",
+          "readableName": "None"
+        },
+        {
+          "name": "low",
+          "readableName": "Low"
+        },
+        {
+          "name": "medium",
+          "readableName": "Medium"
+        },
+        {
+          "name": "high",
+          "readableName": "High"
+        }
+      ],
+      "type": "choice",
       "default": "medium"
     },
     {
-      "type": "string",
       "name": "confusion_trap_weight",
-      "readableName": "Confusion trap weight",
       "description": "Likelihood of a receiving a trap which causes the controls to be skewed for a period of time.",
-      "values": {
-        "none": "None",
-        "low": "Low",
-        "medium": "Medium",
-        "high": "High"
-      },
+      "readableName": "Confusion trap weight",
+      "values": [
+        {
+          "name": "none",
+          "readableName": "None"
+        },
+        {
+          "name": "low",
+          "readableName": "Low"
+        },
+        {
+          "name": "medium",
+          "readableName": "Medium"
+        },
+        {
+          "name": "high",
+          "readableName": "High"
+        }
+      ],
+      "type": "choice",
       "default": "medium"
     },
     {
-      "type": "string",
       "name": "tiny_trap_weight",
-      "readableName": "Tiny trap weight",
       "description": "Likelihood of a receiving a trap which causes the player to become tiny.",
-      "values": {
-        "none": "None",
-        "low": "Low",
-        "medium": "Medium",
-        "high": "High"
-      },
+      "readableName": "Tiny trap weight",
+      "values": [
+        {
+          "name": "none",
+          "readableName": "None"
+        },
+        {
+          "name": "low",
+          "readableName": "Low"
+        },
+        {
+          "name": "medium",
+          "readableName": "Medium"
+        },
+        {
+          "name": "high",
+          "readableName": "High"
+        }
+      ],
+      "type": "choice",
       "default": "medium"
     },
     {
-      "type": "string",
       "name": "music_shuffle",
-      "readableName": "Music shuffle",
       "description": "Determines whether music will be shuffled.",
-      "values": {
-        "none": "Off",
-        "levels": ["Levels", "Level music is shuffled"],
-        "full": ["Full", "Level, Menu, and Additional music is shuffled."]
-      },
+      "readableName": "Music shuffle",
+      "values": [
+        {
+          "name": "none",
+          "readableName": "Off"
+        },
+        {
+          "name": "levels",
+          "description": "Level music is shuffled",
+          "readableName": "Levels"
+        },
+        {
+          "name": "full",
+          "description": "Level, Menu, and Additional music is shuffled.",
+          "readableName": "Full"
+        }
+      ],
+      "type": "choice",
       "default": "none"
     },
     {
+      "name": "death_link",
       "type": "deathlink"
     }
   ],
+  "defver": 2,
   "items": [
     {
       "name": "Emblem",
@@ -1100,5 +1217,6 @@
     {
       "name": "Chao Karate - Super"
     }
-  ]
+  ],
+  "status": "Updated"
 }

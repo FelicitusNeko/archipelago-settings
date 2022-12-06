@@ -1,148 +1,214 @@
 {
   "category": "SMZ3",
-  "readableName": "Super Metroid/Link to the Past Combo",
   "index": 16,
   "settings": [
     {
-      "type": "string",
       "name": "sm_logic",
-      "readableName": "Super Metroid Logic",
       "description": "This option selects what kind of logic to use for item placement inside Super Metroid. See [the official SMZ3 page](https://samus.link/information) for required moves.",
-      "values": {
-        "Normal": ["Normal", "Normal logic includes only what Super Metroid teaches players itself. Anything that's not demonstrated in-game or by the intro cutscenes will not be required here."],
-        "Hard": ["Hard", "Hard logic is based upon the \"no major glitches\" ruleset and includes most tricks that are considered minor glitches, with some  restrictions. You'll want to be somewhat of a Super Metroid veteran for this logic."]
-      },
-      "default": "Normal"
-    },
-    {
-      "type": "string",
-      "name": "sword_location",
-      "readableName": "Fighter's Sword Location (LttP)",
-      "description": "This option decides where the first sword will be placed.",
-      "values": {
-        "Randomized": "Randomized",
-        "Early": "Early",
-        "Uncle": "Guaranteed from Uncle"
-      },
-      "default": "Randomized"
-    },
-    {
-      "type": "string",
-      "name": "morph_location",
-      "readableName": "Morph Ball Location",
-      "description": "This option decides where the morph ball will be placed.",
-      "values": {
-        "Randomized": "Randomized",
-        "Early": "Early",
-        "Original": "Vanilla"
-      },
-      "default": "Randomized"
-    },
-    {
-      "type": "string",
-      "name": "goal",
-      "readableName": "Goal",
-      "description": "Determines the goal to clear the randomizer. Mostly affects LttP.",
-      "values": {
-        "DefeatBoth": ["Defeat Ganon & Mother Brain", "Standard goal; just defeat both."],
-        "FastGanonDefeatMotherBrain": ["Fast Ganon & Defeat Mother Brain", "Defeat both, but don't need to defeat Agahnim to fight Ganon."],
-        "AllDungeonsDefeatMotherBrain": ["All LttP Dungeons & Defeat Mother Brain", "Defeat both, and must clear all dungeons in LttP before fighting Ganon."]
-      },
-      "default": "DefeatBoth"
-    },
-    {
-      "type": "string",
-      "name": "key_shuffle",
-      "readableName": "Keysanity",
-      "description": "This option decides how dungeon items such as keys are shuffled.",
-      "values": {
-        "None": "Off",
-        "Keysanity": "On"
-      },
-      "default": "None"
-    },
-    {
-      "type": "numeric",
-      "name": "open_tower",
-      "readableName": "Crystals needed for Ganon's Tower (LttP)",
-      "description": "How many crystals are required to access the Ganon's Tower entrance. If this is set to Random, the amount can be found in-game on a sign next to Ganon's Tower.",
-      "low": 0,
-      "high": 7,
-      "default": 7,
-      "randomable": true
-    },
-    {
-      "type": "numeric",
-      "name": "ganon_vulnerable",
-      "readableName": "Crystals needed for Ganon (LttP)",
-      "description": "How many crystals are required to defeat Ganon, if the goal is not All Dungeons. The amount can be found in-game on a sign near the top of the Pyramid.",
-      "low": 0,
-      "high": 7,
-      "default": 7,
-      "randomable": true,
-      "dependsOn": {
-        "goal": ["DefeatBoth", "FastGanonDefeatMotherBrain"]
-      }
-    },
-    {
-      "type": "numeric",
-      "name": "open_tourian",
-      "readableName": "Bosses needed for Tourian access",
-      "description": "How many SM bosses are required to enter Tourian. The amount can be found in-game on a sign above the door leading to the Tourian entrance.",
-      "low": 0,
-      "high": 4,
-      "randomable": true,
-      "default": 4
-    },
-    {
-      "type": "boolean",
-      "name": "spin_jumps_animation",
-      "readableName": "Spin Jumps Animation",
-      "description": "Enable separate space/screw jump animations.",
-      "default": false
-    },
-    {
-      "type": "string",
-      "name": "heart_beep_speed",
-      "readableName": "Low health beep frequency (LttP)",
-      "description": "How frequently LttP will beep at you for low health.",
-      "values": {
-        "double": "Two times faster than usual",
-        "normal": "Normal",
-        "half": "Two times slower than usual",
-        "quarter": "Four times slower than usual",
-        "off": "Not at all"
-      },
+      "readableName": "Super Metroid Logic",
+      "values": [
+        {
+          "name": "normal",
+          "readableName": "*normal"
+        },
+        {
+          "name": "hard",
+          "readableName": "*hard"
+        }
+      ],
+      "type": "choice",
       "default": "normal"
     },
     {
-      "type": "string",
-      "name": "heart_color",
-      "readableName": "Heart color (LttP)",
-      "description": "The color of hearts in the LttP HUD.",
-      "values": {
-        "red": "Red",
-        "blue": "Blue",
-        "green": "Green",
-        "yellow": "Yellow"
-      },
-      "default": "red"
+      "name": "sword_location",
+      "description": "This option decides where the first sword will be placed.",
+      "readableName": "Fighter's Sword Location (LttP)",
+      "values": [
+        {
+          "name": "randomized",
+          "readableName": "*randomized"
+        },
+        {
+          "name": "early",
+          "readableName": "*early"
+        },
+        {
+          "name": "uncle",
+          "readableName": "*uncle"
+        }
+      ],
+      "type": "choice",
+      "default": "randomized"
     },
     {
-      "type": "boolean",
-      "name": "quick_swap",
-      "readableName": "Quick swap (LttP)",
-      "description": "Whether you can use the L and R buttons to cycle through use items in LttP.",
+      "name": "morph_location",
+      "description": "This option decides where the morph ball will be placed.",
+      "readableName": "Morph Ball Location",
+      "values": [
+        {
+          "name": "randomized",
+          "readableName": "*randomized"
+        },
+        {
+          "name": "early",
+          "readableName": "*early"
+        },
+        {
+          "name": "original",
+          "readableName": "*original"
+        }
+      ],
+      "type": "choice",
+      "default": "randomized"
+    },
+    {
+      "name": "goal",
+      "description": "Determines the goal to clear the randomizer. Mostly affects LttP.",
+      "readableName": "Goal",
+      "values": [
+        {
+          "name": "defeatboth",
+          "readableName": "*defeatboth"
+        },
+        {
+          "name": "fastganondefeatmotherbrain",
+          "readableName": "*fastganondefeatmotherbrain"
+        },
+        {
+          "name": "alldungeonsdefeatmotherbrain",
+          "readableName": "*alldungeonsdefeatmotherbrain"
+        }
+      ],
+      "type": "choice",
+      "default": "defeatboth"
+    },
+    {
+      "name": "key_shuffle",
+      "description": "This option decides how dungeon items such as keys are shuffled.",
+      "readableName": "Keysanity",
+      "values": [
+        {
+          "name": "none",
+          "readableName": "*none"
+        },
+        {
+          "name": "keysanity",
+          "readableName": "*keysanity"
+        }
+      ],
+      "type": "choice",
+      "default": "none"
+    },
+    {
+      "name": "open_tower",
+      "description": "How many crystals are required to access the Ganon's Tower entrance. If this is set to Random, the amount can be found in-game on a sign next to Ganon's Tower.",
+      "high": 7,
+      "readableName": "Crystals needed for Ganon's Tower (LttP)",
+      "low": 0,
+      "type": "range",
+      "default": 7
+    },
+    {
+      "name": "ganon_vulnerable",
+      "description": "How many crystals are required to defeat Ganon, if the goal is not All Dungeons. The amount can be found in-game on a sign near the top of the Pyramid.",
+      "dependsOn": {
+        "goal": [
+          "DefeatBoth",
+          "FastGanonDefeatMotherBrain"
+        ]
+      },
+      "high": 7,
+      "readableName": "Crystals needed for Ganon (LttP)",
+      "low": 0,
+      "type": "range",
+      "default": 7
+    },
+    {
+      "name": "open_tourian",
+      "description": "How many SM bosses are required to enter Tourian. The amount can be found in-game on a sign above the door leading to the Tourian entrance.",
+      "high": 4,
+      "readableName": "Bosses needed for Tourian access",
+      "low": 0,
+      "type": "range",
+      "default": 4
+    },
+    {
+      "name": "spin_jumps_animation",
+      "description": "Enable separate space/screw jump animations.",
+      "readableName": "Spin Jumps Animation",
+      "type": "toggle",
       "default": false
     },
     {
-      "type": "boolean",
+      "name": "heart_beep_speed",
+      "description": "How frequently LttP will beep at you for low health.",
+      "readableName": "Low health beep frequency (LttP)",
+      "values": [
+        {
+          "name": "double",
+          "readableName": "Two times faster than usual"
+        },
+        {
+          "name": "normal",
+          "readableName": "Normal"
+        },
+        {
+          "name": "half",
+          "readableName": "Two times slower than usual"
+        },
+        {
+          "name": "quarter",
+          "readableName": "Four times slower than usual"
+        },
+        {
+          "name": "off",
+          "readableName": "Not at all"
+        }
+      ],
+      "type": "choice",
+      "default": "normal"
+    },
+    {
+      "name": "heart_color",
+      "description": "The color of hearts in the LttP HUD.",
+      "readableName": "Heart color (LttP)",
+      "values": [
+        {
+          "name": "red",
+          "readableName": "Red"
+        },
+        {
+          "name": "blue",
+          "readableName": "Blue"
+        },
+        {
+          "name": "green",
+          "readableName": "Green"
+        },
+        {
+          "name": "yellow",
+          "readableName": "Yellow"
+        }
+      ],
+      "type": "choice",
+      "default": "red"
+    },
+    {
+      "name": "quick_swap",
+      "description": "Whether you can use the L and R buttons to cycle through use items in LttP.",
+      "readableName": "Quick swap (LttP)",
+      "type": "toggle",
+      "default": false
+    },
+    {
       "name": "energy_beep",
-      "readableName": "Low energy beep (SM)",
       "description": "Whether SM will beep at you for low energy.",
+      "readableName": "Low energy beep (SM)",
+      "type": "toggle",
       "default": true
     }
   ],
+  "defver": 2,
   "items": [
     {
       "name": "Nothing"
@@ -557,6 +623,18 @@
     {
       "name": "PowerBomb",
       "max": 25
+    },
+    {
+      "name": "SmMapBrinstar"
+    },
+    {
+      "name": "SmMapWreckedShip"
+    },
+    {
+      "name": "SmMapMaridia"
+    },
+    {
+      "name": "SmMapLowerNorfair"
     },
     {
       "name": "CardCrateriaL1"
@@ -1556,5 +1634,7 @@
     {
       "name": "Waterfall Fairy - Left"
     }
-  ]
+  ],
+  "readableName": "Super Metroid/Link to the Past Combo",
+  "status": "Updated"
 }

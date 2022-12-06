@@ -1,0 +1,7210 @@
+{
+  "category": "Ocarina of Time",
+  "index": 6,
+  "settings": [
+    {
+      "name": "logic_rules",
+      "description": "What placement logic is to be used to generate the world.",
+      "readableName": "Logic rules",
+      "values": [
+        {
+          "name": "glitchless",
+          "readableName": "No glitches"
+        },
+        {
+          "name": "glitched",
+          "readableName": "Glitches required"
+        },
+        {
+          "name": "no_logic",
+          "readableName": "Screw it, put everything anywhere (beware!)"
+        }
+      ],
+      "type": "choice",
+      "default": "glitchless"
+    },
+    {
+      "name": "logic_no_night_tokens_without_suns_song",
+      "description": "Nighttime Skulltulas will logically require Sun's Song.",
+      "readableName": "Sun's Song for Skulltulas",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "open_forest",
+      "description": "Set the state of Kokiri Forest and the path to the Deku Tree.",
+      "readableName": "Open Kokiri Forest",
+      "values": [
+        {
+          "name": "open",
+          "readableName": "Open"
+        },
+        {
+          "name": "closed_deku",
+          "readableName": "Open Forest, closed Deku"
+        },
+        {
+          "name": "closed",
+          "readableName": "Closed"
+        }
+      ],
+      "type": "choice",
+      "default": "open"
+    },
+    {
+      "name": "open_kakariko",
+      "description": "Set the state of the Kakariko Village gate.",
+      "readableName": "Open Kakariko Village",
+      "values": [
+        {
+          "name": "open",
+          "readableName": "Open"
+        },
+        {
+          "name": "zelda",
+          "readableName": "Zelda"
+        },
+        {
+          "name": "closed",
+          "readableName": "Closed"
+        }
+      ],
+      "type": "choice",
+      "default": "open"
+    },
+    {
+      "name": "open_door_of_time",
+      "description": "Open the Door of Time by default, without the Song of Time.",
+      "readableName": "Open Door of Time",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "zora_fountain",
+      "description": "Set the state of King Zora, blocking the way to Zora's Fountain.",
+      "readableName": "Zora Fountain",
+      "values": [
+        {
+          "name": "open",
+          "readableName": "Open"
+        },
+        {
+          "name": "adult",
+          "readableName": "Adult"
+        },
+        {
+          "name": "closed",
+          "readableName": "Closed"
+        }
+      ],
+      "type": "choice",
+      "default": "closed"
+    },
+    {
+      "name": "gerudo_fortress",
+      "description": "Set the requirements to access Gerudo Fortress.",
+      "readableName": "Gerudo Fortress",
+      "values": [
+        {
+          "name": "normal",
+          "readableName": "Normal"
+        },
+        {
+          "name": "fast",
+          "readableName": "Fast"
+        },
+        {
+          "name": "open",
+          "readableName": "Open"
+        }
+      ],
+      "type": "choice",
+      "default": "fast"
+    },
+    {
+      "name": "bridge",
+      "description": "Set the requirements for Rainbow Bridge.",
+      "readableName": "Rainbow Bridge",
+      "values": [
+        {
+          "name": "open",
+          "readableName": "Open"
+        },
+        {
+          "name": "vanilla",
+          "readableName": "Vanilla"
+        },
+        {
+          "name": "stones",
+          "readableName": "Spiritual Stones"
+        },
+        {
+          "name": "medallions",
+          "readableName": "Medallions"
+        },
+        {
+          "name": "dungeons",
+          "readableName": "Dungeons"
+        },
+        {
+          "name": "tokens",
+          "readableName": "Skulltula Tokens"
+        }
+      ],
+      "type": "choice",
+      "default": "medallions"
+    },
+    {
+      "name": "trials",
+      "description": "Set the number of required trials in Ganon's Castle.",
+      "high": 6,
+      "readableName": "Ganon's Castle Trials",
+      "low": 0,
+      "type": "range",
+      "default": 0
+    },
+    {
+      "name": "starting_age",
+      "description": "Set the age Link will start as.",
+      "readableName": "Starting age",
+      "values": [
+        {
+          "name": "child",
+          "readableName": "Child"
+        },
+        {
+          "name": "adult",
+          "readableName": "Adult"
+        }
+      ],
+      "type": "choice",
+      "default": "child"
+    },
+    {
+      "name": "shuffle_interior_entrances",
+      "description": "Shuffles interior entrances. \"Simple\" shuffles houses and Great Fairies; \"Full\" includes Windmill, Link's House, Temple of Time, and Kak potion shop.",
+      "readableName": "Entrance shuffle <?> interiors",
+      "values": [
+        {
+          "name": "off",
+          "readableName": "Off"
+        },
+        {
+          "name": "simple",
+          "readableName": "Simple"
+        },
+        {
+          "name": "all",
+          "readableName": "*all"
+        }
+      ],
+      "type": "choice",
+      "default": "off"
+    },
+    {
+      "name": "shuffle_grotto_entrances",
+      "description": "Shuffles grotto and grave entrances.",
+      "readableName": "Entrance shuffle <?> grotto",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "shuffle_dungeon_entrances",
+      "description": "Shuffles dungeon entrances, excluding Ganon's Castle. Opens Deku, Fire and BotW to both ages.",
+      "readableName": "Entrance shuffle <?> dungeons",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "shuffle_overworld_entrances",
+      "description": "Shuffles overworld loading zones.",
+      "readableName": "Entrance shuffle <?> overworld",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "owl_drops",
+      "description": "Randomizes owl drops from Lake Hylia or Death Mountain Trail as child.",
+      "readableName": "Owl drops",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "warp_songs",
+      "description": "Randomizes warp song destinations.",
+      "readableName": "Entrance shuffle <?> warp songs",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "spawn_positions",
+      "description": "Randomizes the starting position on loading a save. Consistent between savewarps.",
+      "readableName": "Entrance shuffle <?> spawn positions",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "triforce_hunt",
+      "description": "Gather pieces of the Triforce scattered across the world to complete the game.",
+      "readableName": "Triforce Hunt",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "triforce_goal",
+      "description": "The number of Triforce pieces required to complete the goal.",
+      "dependsOn": {
+        "triforce_hunt": [
+          true
+        ]
+      },
+      "high": 80,
+      "readableName": "Triforce Goal",
+      "low": 1,
+      "type": "range",
+      "default": 20
+    },
+    {
+      "name": "extra_triforce_percentage",
+      "description": "The percentage of the Triforce piece goal to add to the multiworld pool as extras. With high numbers, you may need to randomize additional locations to have enough items.",
+      "dependsOn": {
+        "triforce_hunt": [
+          true
+        ]
+      },
+      "high": 100,
+      "readableName": "Triforce available <?> percentage",
+      "low": 0,
+      "type": "range",
+      "default": 50
+    },
+    {
+      "name": "bombchus_in_logic",
+      "description": "Bombchus are properly considered in logic. The first pack has 20 Bombchus, Kokiri Shop and Bazaar sell refills, and getting them opens up bowling minigame.",
+      "readableName": "Bombchus in logic",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "mq_dungeons",
+      "description": "How many dungeons will be replaced by their Master Quest variants. Which dungeons is random.",
+      "high": 12,
+      "readableName": "Master Quest Dungeons",
+      "low": 0,
+      "type": "range",
+      "default": 0
+    },
+    {
+      "name": "bridge_stones",
+      "description": "Set the number of Spiritual Stones required for the Rainbow Bridge.",
+      "dependsOn": {
+        "bridge": [
+          "stones"
+        ]
+      },
+      "high": 3,
+      "readableName": "Bridge Stones",
+      "low": 0,
+      "type": "range",
+      "default": 3
+    },
+    {
+      "name": "bridge_medallions",
+      "description": "Set the number of medallions required for the Rainbow Bridge.",
+      "dependsOn": {
+        "bridge": [
+          "medallions"
+        ]
+      },
+      "high": 6,
+      "readableName": "Bridge Medallions",
+      "low": 0,
+      "type": "range",
+      "default": 6
+    },
+    {
+      "name": "bridge_rewards",
+      "description": "Set the number of dungeon rewards required for the Rainbow Bridge.",
+      "dependsOn": {
+        "bridge": [
+          "dungeons"
+        ]
+      },
+      "high": 9,
+      "readableName": "Bridge Dungeon Rewards",
+      "low": 0,
+      "type": "range",
+      "default": 9
+    },
+    {
+      "name": "bridge_tokens",
+      "description": "Set the number of Gold Skulltula Tokens required for the Rainbow Bridge.",
+      "dependsOn": {
+        "bridge": [
+          "tokens"
+        ]
+      },
+      "high": 100,
+      "readableName": "Bridge Skulltula Tokens",
+      "low": 0,
+      "type": "range",
+      "default": 40
+    },
+    {
+      "name": "shuffle_mapcompass",
+      "description": "Determine where maps and compasses will be located.",
+      "readableName": "Map & Compass Shuffle",
+      "values": [
+        {
+          "name": "remove",
+          "readableName": "Remove"
+        },
+        {
+          "name": "startwith",
+          "readableName": "Start with them"
+        },
+        {
+          "name": "vanilla",
+          "readableName": "Vanilla"
+        },
+        {
+          "name": "dungeon",
+          "readableName": "Within proper dungeon"
+        },
+        {
+          "name": "any_dungeon",
+          "readableName": "Any dungeon"
+        },
+        {
+          "name": "overworld",
+          "readableName": "In the overworld"
+        },
+        {
+          "name": "keysanity",
+          "description": "add them to the multiworld pool",
+          "readableName": "Keysanity"
+        }
+      ],
+      "type": "choice",
+      "default": "startwith"
+    },
+    {
+      "name": "shuffle_smallkeys",
+      "description": "Determine where small keys will be located.",
+      "readableName": "Small Key Shuffle",
+      "values": [
+        {
+          "name": "remove",
+          "readableName": "Remove"
+        },
+        {
+          "name": "vanilla",
+          "readableName": "Vanilla"
+        },
+        {
+          "name": "dungeon",
+          "readableName": "Within proper dungeon"
+        },
+        {
+          "name": "any_dungeon",
+          "readableName": "Any dungeon"
+        },
+        {
+          "name": "overworld",
+          "readableName": "In the overworld"
+        },
+        {
+          "name": "keysanity",
+          "description": "add them to the multiworld pool",
+          "readableName": "Keysanity"
+        }
+      ],
+      "type": "choice",
+      "default": "dungeon"
+    },
+    {
+      "name": "shuffle_fortresskeys",
+      "description": "Determine where Thieves' Hideout keys will be located.",
+      "readableName": "Thieves' Hideout Key Shuffle",
+      "values": [
+        {
+          "name": "vanilla",
+          "readableName": "Vanilla"
+        },
+        {
+          "name": "any_dungeon",
+          "readableName": "Any dungeon"
+        },
+        {
+          "name": "overworld",
+          "readableName": "In the overworld"
+        },
+        {
+          "name": "keysanity",
+          "description": "add them to the multiworld pool",
+          "readableName": "Keysanity"
+        }
+      ],
+      "type": "choice",
+      "default": "vanilla"
+    },
+    {
+      "name": "shuffle_bosskeys",
+      "description": "Deterine where boss keys will be located, excluding Ganon's Castle.",
+      "readableName": "Boss Key Shuffle",
+      "values": [
+        {
+          "name": "remove",
+          "readableName": "Remove"
+        },
+        {
+          "name": "vanilla",
+          "readableName": "Vanilla"
+        },
+        {
+          "name": "dungeon",
+          "readableName": "Within proper dungeon"
+        },
+        {
+          "name": "any_dungeon",
+          "readableName": "Any dungeon"
+        },
+        {
+          "name": "overworld",
+          "readableName": "In the overworld"
+        },
+        {
+          "name": "keysanity",
+          "description": "add them to the multiworld pool",
+          "readableName": "Keysanity"
+        }
+      ],
+      "type": "choice",
+      "default": "dungeon"
+    },
+    {
+      "name": "shuffle_ganon_bosskey",
+      "description": "Determine where the boss key for Ganon's Castle will be located.",
+      "readableName": "Ganon's Boss Key Shuffle",
+      "values": [
+        {
+          "name": "remove",
+          "readableName": "Remove"
+        },
+        {
+          "name": "vanilla",
+          "readableName": "Vanilla"
+        },
+        {
+          "name": "dungeon",
+          "readableName": "Within Ganon's Castle"
+        },
+        {
+          "name": "any_dungeon",
+          "readableName": "Any dungeon"
+        },
+        {
+          "name": "overworld",
+          "readableName": "In the overworld"
+        },
+        {
+          "name": "keysanity",
+          "description": "add it to the multiworld pool",
+          "readableName": "Keysanity"
+        },
+        {
+          "name": "on_lacs",
+          "readableName": "On Light Arrow Cutscene"
+        }
+      ],
+      "type": "choice",
+      "default": "remove"
+    },
+    {
+      "name": "enhance_map_compass",
+      "description": "If enabled, the map will identify whether a dungeon is vanilla or Master Quest, and the compass will reveal the dungeon reward.",
+      "readableName": "Enhanced Map & Compass",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "lacs_condition",
+      "description": "Set the requirement for the Light Arrow Cutscene at the Temple of Time.",
+      "readableName": "Light Arrow Cutscene requirement",
+      "values": [
+        {
+          "name": "vanilla",
+          "readableName": "Vanilla"
+        },
+        {
+          "name": "stones",
+          "readableName": "Spiritual Stones"
+        },
+        {
+          "name": "medallions",
+          "readableName": "Medallions"
+        },
+        {
+          "name": "dungeons",
+          "readableName": "Dungeons"
+        },
+        {
+          "name": "tokens",
+          "readableName": "Skulltula Tokens"
+        }
+      ],
+      "type": "choice",
+      "default": "vanilla"
+    },
+    {
+      "name": "lacs_stones",
+      "description": "Set the number of Spiritual Stones required for the Light Arrow Cutscene.",
+      "dependsOn": {
+        "lacs_condition": [
+          "stones"
+        ]
+      },
+      "high": 3,
+      "readableName": "LACS Stones",
+      "low": 0,
+      "type": "range",
+      "default": 3
+    },
+    {
+      "name": "lacs_medallions",
+      "description": "Set the number of medallions required for the Light Arrow Cutscene.",
+      "dependsOn": {
+        "lacs_condition": [
+          "medallions"
+        ]
+      },
+      "high": 6,
+      "readableName": "LACS Medallions",
+      "low": 0,
+      "type": "range",
+      "default": 6
+    },
+    {
+      "name": "lacs_rewards",
+      "description": "Set the number of dungeon rewards required for the Light Arrow Cutscene.",
+      "dependsOn": {
+        "lacs_condition": [
+          "dungeons"
+        ]
+      },
+      "high": 9,
+      "readableName": "LACS Dungeon Rewards",
+      "low": 0,
+      "type": "range",
+      "default": 9
+    },
+    {
+      "name": "lacs_tokens",
+      "description": "Set the number of Gold Skulltula Tokens required for the Light Arrow Cutscene.",
+      "dependsOn": {
+        "lacs_condition": [
+          "tokens"
+        ]
+      },
+      "high": 100,
+      "readableName": "LACS Skulltula Tokens",
+      "low": 0,
+      "type": "range",
+      "default": 40
+    },
+    {
+      "name": "shuffle_song_items",
+      "description": "Set where songs can appear.",
+      "readableName": "Shuffle Song Items",
+      "values": [
+        {
+          "name": "song",
+          "readableName": "Song"
+        },
+        {
+          "name": "dungeon",
+          "readableName": "Dungeon"
+        },
+        {
+          "name": "any",
+          "readableName": "Any"
+        }
+      ],
+      "type": "choice",
+      "default": "song"
+    },
+    {
+      "name": "shopsanity",
+      "description": "Randomize shop contents.",
+      "readableName": "Shopsanity",
+      "values": [
+        {
+          "name": "off",
+          "readableName": "Off"
+        },
+        {
+          "name": "fixed_number",
+          "readableName": "User-defined number of shuffled items per shop (configure below)"
+        },
+        {
+          "name": "random_number",
+          "readableName": "Random number of shuffled items per shop"
+        }
+      ],
+      "type": "choice",
+      "default": "off"
+    },
+    {
+      "name": "shop_slots",
+      "description": "Number of items per shop to be shuffled into the multiworld pool.",
+      "dependsOn": {
+        "shopsanity": [
+          "fixed_number"
+        ]
+      },
+      "high": 4,
+      "readableName": "Shopsanity slots",
+      "low": 0,
+      "type": "range",
+      "default": 0
+    },
+    {
+      "name": "tokensanity",
+      "description": "Shuffle token rewards from Gold Skulltulas into the multiworld pool.",
+      "readableName": "Tokensanity",
+      "values": [
+        {
+          "name": "off",
+          "readableName": "Off"
+        },
+        {
+          "name": "dungeons",
+          "readableName": "Dungeon locations"
+        },
+        {
+          "name": "overworld",
+          "readableName": "Overworld locations"
+        },
+        {
+          "name": "all",
+          "readableName": "All of them"
+        }
+      ],
+      "type": "choice",
+      "default": "off"
+    },
+    {
+      "name": "shuffle_scrubs",
+      "description": "Shuffle items sold by Business Scrubs, and set the prices.",
+      "readableName": "Scrub Shuffle",
+      "values": [
+        {
+          "name": "off",
+          "readableName": "Off"
+        },
+        {
+          "name": "low",
+          "readableName": "On, low prices"
+        },
+        {
+          "name": "regular",
+          "readableName": "On, regular prices"
+        },
+        {
+          "name": "random_prices",
+          "readableName": "On, random prices"
+        }
+      ],
+      "type": "choice",
+      "default": "off"
+    },
+    {
+      "name": "shuffle_cows",
+      "description": "Cows give items when Epona's Song is played.",
+      "readableName": "Shuffle Cows",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "shuffle_kokiri_sword",
+      "description": "Whether the Kokiri Sword is shuffled into the pool.",
+      "readableName": "Shuffle Kokiri Sword",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "shuffle_ocarinas",
+      "description": "Whether the Fairy Ocarina and Ocarina of Time are shuffled into the pool.",
+      "readableName": "Shuffle Ocarinas",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "shuffle_weird_egg",
+      "description": "Whether Malon's Weird Egg is shuffled into the pool.",
+      "readableName": "Shuffle Weird Egg",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "shuffle_gerudo_card",
+      "description": "Whether the Gerudo Membership Card is shuffled into the pool.",
+      "readableName": "Shuffle Gerudo Card",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "shuffle_beans",
+      "description": "Whether the Bean Salesman's bean pack is shuffled into the pool. The Bean Salesman will sell a random item from the pool for 60rs.",
+      "readableName": "Shuffle Beans",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "shuffle_medigoron_carpet_salesman",
+      "description": "Shuffle the items sold by Medigoron and the Carpet Salesman at Hanted Wasteland.",
+      "readableName": "Shuffle Medigoron & Carpet Salesman",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "skip_child_zelda",
+      "description": "Start with Zelda's Letter and the item at Zelda's Lullaby. Starting Child Zelda events will be skipped.",
+      "readableName": "Skip Child Zelda",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "no_escape_sequence",
+      "description": "Skip the tower collapse sequence between the fights with Ganondorf and Ganon.",
+      "readableName": "Skip escape sequence",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "no_guard_stealth",
+      "description": "The crawlspace into Hyrule Castle skips to Zelda.",
+      "readableName": "Skip stealth sequence",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "no_epona_race",
+      "description": "Epona can always be summoned with Epona's Song.",
+      "readableName": "Skip Epona Race",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "skip_some_minigame_phases",
+      "description": "Dampe Race and Horeseback Archery give both rewards if the second condition is met on the first try.",
+      "readableName": "Skip some minigame phases",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "complete_mask_quest",
+      "description": "All masks are immediately available to borrow from the Happy Mask Shop.",
+      "readableName": "Skip Mask Quest",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "useful_cutscenes",
+      "description": "Reenables the Poe cutscene in Forest Temple, Darunia in Fire Temple, and Twinrova introduction. Mostly useful for glitched.",
+      "readableName": "Unskip useful cutscenes",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "fast_chests",
+      "description": "All chest animations are short. If disabled, big items will have the long animation to them.",
+      "readableName": "Fast chests",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "free_scarecrow",
+      "description": "Pulling out the Ocarina while near a scarecrow spot summons Pierre without playing the song.",
+      "readableName": "Quick Pierre",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "fast_bunny_hood",
+      "description": "Bunny Hood lets you move 1.5<?>faster, like in Majora's Mask.",
+      "readableName": "Fast Bunny Hood",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "chicken_count",
+      "description": "How many Cucco Anju wants for an item in the past.",
+      "high": 7,
+      "readableName": "Anju's Cucco",
+      "low": 0,
+      "type": "range",
+      "default": 7
+    },
+    {
+      "name": "big_poe_count",
+      "description": "Number of Big Poes required for the Poe Collector's item.",
+      "high": 10,
+      "readableName": "Big Poe Count",
+      "low": 1,
+      "type": "range",
+      "default": 1
+    },
+    {
+      "name": "correct_chest_sizes",
+      "description": "Progression items will always be in big chests.",
+      "readableName": "Big items, big chests",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "hints",
+      "description": "Gossip Stones can give hints about item locations.",
+      "readableName": "Hints",
+      "values": [
+        {
+          "name": "none",
+          "readableName": "None"
+        },
+        {
+          "name": "mask",
+          "readableName": "Mask"
+        },
+        {
+          "name": "agony",
+          "readableName": "Agony"
+        },
+        {
+          "name": "always",
+          "readableName": "Always"
+        }
+      ],
+      "type": "choice",
+      "default": "always"
+    },
+    {
+      "name": "misc_hints",
+      "description": "Controls whether the Temple of Time altar gives dungeon prize info and whether Ganondorf hints the Light Arrows.",
+      "readableName": "Miscellaneous hints",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "hint_dist",
+      "description": "Choose the hint distribution to use. Affects the frequency of strong hints, which items are always hinted, etc.",
+      "readableName": "Hint distribution",
+      "values": [
+        {
+          "name": "balanced",
+          "readableName": "Balanced"
+        },
+        {
+          "name": "ddr",
+          "readableName": "DDR"
+        },
+        {
+          "name": "league",
+          "readableName": "League"
+        },
+        {
+          "name": "mw2",
+          "readableName": "MW2"
+        },
+        {
+          "name": "scrubs",
+          "readableName": "Scrubs"
+        },
+        {
+          "name": "strong",
+          "readableName": "Strong"
+        },
+        {
+          "name": "tournament",
+          "readableName": "Tournament"
+        },
+        {
+          "name": "useless",
+          "readableName": "Useless"
+        },
+        {
+          "name": "very_strong",
+          "readableName": "Very strong"
+        },
+        {
+          "name": "async",
+          "readableName": "Async"
+        }
+      ],
+      "type": "choice",
+      "default": "balanced"
+    },
+    {
+      "name": "text_shuffle",
+      "description": "Randomize text in the game for the lulz.",
+      "readableName": "Text shuffle",
+      "values": [
+        {
+          "name": "none",
+          "readableName": "None"
+        },
+        {
+          "name": "except_hints",
+          "readableName": "Don't randomize hints"
+        },
+        {
+          "name": "complete",
+          "readableName": "Everything"
+        }
+      ],
+      "type": "choice",
+      "default": "none"
+    },
+    {
+      "name": "damage_multiplier",
+      "description": "The amount of damage taken by Link.",
+      "readableName": "Damage multiplier",
+      "values": [
+        {
+          "name": "half",
+          "readableName": "Half as much as usual"
+        },
+        {
+          "name": "normal",
+          "readableName": "Normal"
+        },
+        {
+          "name": "double",
+          "readableName": "Twice as much as usual"
+        },
+        {
+          "name": "quadruple",
+          "readableName": "Four times more than usual"
+        },
+        {
+          "name": "ohko",
+          "description": "Link dies from any hit",
+          "readableName": "Daredevil"
+        }
+      ],
+      "type": "choice",
+      "default": "normal"
+    },
+    {
+      "name": "no_collectible_hearts",
+      "description": "Enemies and objects will not drop heart refills.",
+      "readableName": "No heart drops",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "starting_tod",
+      "description": "What time of day the game starts on.",
+      "readableName": "Starting time",
+      "values": [
+        {
+          "name": "default",
+          "readableName": "Default"
+        },
+        {
+          "name": "sunrise",
+          "readableName": "Sunrise"
+        },
+        {
+          "name": "morning",
+          "readableName": "Morning"
+        },
+        {
+          "name": "noon",
+          "readableName": "Noon"
+        },
+        {
+          "name": "afternoon",
+          "readableName": "Afternoon"
+        },
+        {
+          "name": "sunset",
+          "readableName": "Sunset"
+        },
+        {
+          "name": "evening",
+          "readableName": "Evening"
+        },
+        {
+          "name": "midnight",
+          "readableName": "Midnight"
+        },
+        {
+          "name": "witching_hour",
+          "readableName": "Witching hour"
+        }
+      ],
+      "type": "choice",
+      "default": "default"
+    },
+    {
+      "name": "start_with_consumables",
+      "description": "Start with a full complement of Deku Sticks and Nuts.",
+      "readableName": "Sticks & Nuts",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "start_with_rupees",
+      "description": "Start with a full rupee wallet. New wallets will also be full of rupees.",
+      "readableName": "Miserly",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "item_pool_value",
+      "description": "DOC ME",
+      "readableName": "item pool value",
+      "values": [
+        {
+          "name": "plentiful",
+          "readableName": "*plentiful"
+        },
+        {
+          "name": "balanced",
+          "readableName": "*balanced"
+        },
+        {
+          "name": "scarce",
+          "readableName": "*scarce"
+        },
+        {
+          "name": "minimal",
+          "readableName": "*minimal"
+        }
+      ],
+      "type": "choice",
+      "default": "balanced"
+    },
+    {
+      "name": "junk_ice_traps",
+      "description": "Add ice traps to the item pool.",
+      "readableName": "Junk ice traps",
+      "values": [
+        {
+          "name": "off",
+          "readableName": "Off"
+        },
+        {
+          "name": "normal",
+          "readableName": "Normal"
+        },
+        {
+          "name": "on",
+          "readableName": "On"
+        },
+        {
+          "name": "mayhem",
+          "readableName": "Winter Mayhem"
+        },
+        {
+          "name": "onslaught",
+          "readableName": "Sub-Zero's Onslaught!!"
+        }
+      ],
+      "type": "choice",
+      "default": "normal"
+    },
+    {
+      "name": "ice_trap_appearance",
+      "description": "Changes the appearance of ice traps as freestanding items.",
+      "readableName": "Ice trap appearance",
+      "values": [
+        {
+          "name": "major_only",
+          "readableName": "Major only"
+        },
+        {
+          "name": "junk_only",
+          "readableName": "Junk only"
+        },
+        {
+          "name": "anything",
+          "readableName": "Anything"
+        }
+      ],
+      "type": "choice",
+      "default": "major_only"
+    },
+    {
+      "name": "logic_earliest_adult_trade",
+      "description": "Earliest item that can appear in the adult trade sequence.",
+      "readableName": "Earliest adult trade",
+      "values": [
+        {
+          "name": "pocket_egg",
+          "readableName": "Pocket Egg"
+        },
+        {
+          "name": "pocket_cucco",
+          "readableName": "Pocket Cucco"
+        },
+        {
+          "name": "cojiro",
+          "readableName": "Cojiro"
+        },
+        {
+          "name": "odd_mushroom",
+          "readableName": "Odd Mushroom"
+        },
+        {
+          "name": "poachers_saw",
+          "readableName": "Poacher's Saw"
+        },
+        {
+          "name": "broken_sword",
+          "readableName": "Broken Sword"
+        },
+        {
+          "name": "prescription",
+          "readableName": "Prescription"
+        },
+        {
+          "name": "eyeball_frog",
+          "readableName": "Eyeball Frog"
+        },
+        {
+          "name": "eyedrops",
+          "readableName": "Eyedrops"
+        },
+        {
+          "name": "claim_check",
+          "readableName": "Claim Check"
+        }
+      ],
+      "type": "choice",
+      "default": "prescription"
+    },
+    {
+      "name": "logic_latest_adult_trade",
+      "description": "Latest item that can appear in the adult trade sequence.",
+      "readableName": "Latest adult trade",
+      "values": [
+        {
+          "name": "pocket_egg",
+          "readableName": "Pocket Egg"
+        },
+        {
+          "name": "pocket_cucco",
+          "readableName": "Pocket Cucco"
+        },
+        {
+          "name": "cojiro",
+          "readableName": "Cojiro"
+        },
+        {
+          "name": "odd_mushroom",
+          "readableName": "Odd Mushroom"
+        },
+        {
+          "name": "poachers_saw",
+          "readableName": "Poacher's Saw"
+        },
+        {
+          "name": "broken_sword",
+          "readableName": "Broken Sword"
+        },
+        {
+          "name": "prescription",
+          "readableName": "Prescription"
+        },
+        {
+          "name": "eyeball_frog",
+          "readableName": "Eyeball Frog"
+        },
+        {
+          "name": "eyedrops",
+          "readableName": "Eyedrops"
+        },
+        {
+          "name": "claim_check",
+          "readableName": "Claim Check"
+        }
+      ],
+      "type": "choice",
+      "default": "claim_check"
+    },
+    {
+      "name": "default_targeting",
+      "description": "Preselects the default targeting option.",
+      "readableName": "Default targeting",
+      "values": [
+        {
+          "name": "hold",
+          "readableName": "Hold"
+        },
+        {
+          "name": "switch",
+          "readableName": "Switch"
+        }
+      ],
+      "type": "choice",
+      "default": "hold"
+    },
+    {
+      "name": "display_dpad",
+      "description": "Show D-pad icon on HUD for quick actions (Ocarina, Hover Boots, Iron Boots).",
+      "readableName": "Display D-pad",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "correct_model_colors",
+      "description": "Make in-game models match their HUD element colors.",
+      "readableName": "Correct model colors",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "background_music",
+      "description": "Randomize or disable background music. If you are streaming and turning this off to play your own music, please be mindful of licensing.",
+      "readableName": "Music",
+      "values": [
+        {
+          "name": "normal",
+          "readableName": "On"
+        },
+        {
+          "name": "randomized",
+          "readableName": "Randomized"
+        },
+        {
+          "name": "off",
+          "readableName": "Off"
+        }
+      ],
+      "type": "choice",
+      "default": "normal"
+    },
+    {
+      "name": "fanfares",
+      "description": "Randomize or disable item fanfares.",
+      "readableName": "Fanfares",
+      "values": [
+        {
+          "name": "normal",
+          "readableName": "On"
+        },
+        {
+          "name": "randomized",
+          "readableName": "Randomized"
+        },
+        {
+          "name": "off",
+          "readableName": "Off"
+        }
+      ],
+      "type": "choice",
+      "default": "normal"
+    },
+    {
+      "name": "ocarina_fanfares",
+      "description": "Enable Ocarina songs as fanfares. These are longer than usual fanfares.",
+      "dependsOn": {
+        "fanfares": [
+          "randomized"
+        ]
+      },
+      "readableName": "Ocarina fanfares",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "kokiri_color",
+      "description": "Set the color of the Kokiri Tunic.",
+      "readableName": "Kokiri color",
+      "values": [
+        {
+          "name": "random_choice",
+          "readableName": "Random from the list"
+        },
+        {
+          "name": "completely_random",
+          "description": "may be off the list",
+          "readableName": "Completely random"
+        },
+        {
+          "name": "kokiri_green",
+          "readableName": "Kokiri Green"
+        },
+        {
+          "name": "goron_red",
+          "readableName": "Goron Red"
+        },
+        {
+          "name": "zora_blue",
+          "readableName": "Zora Blue"
+        },
+        {
+          "name": "black",
+          "readableName": "Black"
+        },
+        {
+          "name": "white",
+          "readableName": "White"
+        },
+        {
+          "name": "azure_blue",
+          "readableName": "Azure Blue"
+        },
+        {
+          "name": "vivid_cyan",
+          "readableName": "Vivid Cyan"
+        },
+        {
+          "name": "light_red",
+          "readableName": "Light Red"
+        },
+        {
+          "name": "fuchsia",
+          "readableName": "*fuchsia"
+        },
+        {
+          "name": "purple",
+          "readableName": "Purple"
+        },
+        {
+          "name": "majora_purple",
+          "readableName": "Majora Purple"
+        },
+        {
+          "name": "twitch_purple",
+          "readableName": "Twitch Purple"
+        },
+        {
+          "name": "purple_heart",
+          "readableName": "Purple Heart"
+        },
+        {
+          "name": "persian_rose",
+          "readableName": "Persian Rose"
+        },
+        {
+          "name": "dirty_yellow",
+          "readableName": "Dirty Yellow"
+        },
+        {
+          "name": "blush_pink",
+          "readableName": "Blush Pink"
+        },
+        {
+          "name": "hot_pink",
+          "readableName": "Hot Pink"
+        },
+        {
+          "name": "rose_pink",
+          "readableName": "Rose Pink"
+        },
+        {
+          "name": "orange",
+          "readableName": "Orange"
+        },
+        {
+          "name": "gray",
+          "readableName": "Gray"
+        },
+        {
+          "name": "gold",
+          "readableName": "Gold"
+        },
+        {
+          "name": "silver",
+          "readableName": "Silver"
+        },
+        {
+          "name": "beige",
+          "readableName": "Beige"
+        },
+        {
+          "name": "teal",
+          "readableName": "Teal"
+        },
+        {
+          "name": "blood_red",
+          "readableName": "Blood Red"
+        },
+        {
+          "name": "blood_orange",
+          "readableName": "Blood Orange"
+        },
+        {
+          "name": "royal_blue",
+          "readableName": "Royal Blue"
+        },
+        {
+          "name": "sonic_blue",
+          "readableName": "Sonic Blue"
+        },
+        {
+          "name": "nes_green",
+          "readableName": "NES Green"
+        },
+        {
+          "name": "dark_green",
+          "readableName": "Dark Green"
+        },
+        {
+          "name": "lumen",
+          "readableName": "Lumen"
+        }
+      ],
+      "type": "choice",
+      "default": "kokiri_green"
+    },
+    {
+      "name": "goron_color",
+      "description": "Set the color of the Goron Tunic.",
+      "readableName": "Goron color",
+      "values": [
+        {
+          "name": "random_choice",
+          "readableName": "Random from the list"
+        },
+        {
+          "name": "completely_random",
+          "description": "may be off the list",
+          "readableName": "Completely random"
+        },
+        {
+          "name": "kokiri_green",
+          "readableName": "Kokiri Green"
+        },
+        {
+          "name": "goron_red",
+          "readableName": "Goron Red"
+        },
+        {
+          "name": "zora_blue",
+          "readableName": "Zora Blue"
+        },
+        {
+          "name": "black",
+          "readableName": "Black"
+        },
+        {
+          "name": "white",
+          "readableName": "White"
+        },
+        {
+          "name": "azure_blue",
+          "readableName": "Azure Blue"
+        },
+        {
+          "name": "vivid_cyan",
+          "readableName": "Vivid Cyan"
+        },
+        {
+          "name": "light_red",
+          "readableName": "Light Red"
+        },
+        {
+          "name": "fuchsia",
+          "readableName": "*fuchsia"
+        },
+        {
+          "name": "purple",
+          "readableName": "Purple"
+        },
+        {
+          "name": "majora_purple",
+          "readableName": "Majora Purple"
+        },
+        {
+          "name": "twitch_purple",
+          "readableName": "Twitch Purple"
+        },
+        {
+          "name": "purple_heart",
+          "readableName": "Purple Heart"
+        },
+        {
+          "name": "persian_rose",
+          "readableName": "Persian Rose"
+        },
+        {
+          "name": "dirty_yellow",
+          "readableName": "Dirty Yellow"
+        },
+        {
+          "name": "blush_pink",
+          "readableName": "Blush Pink"
+        },
+        {
+          "name": "hot_pink",
+          "readableName": "Hot Pink"
+        },
+        {
+          "name": "rose_pink",
+          "readableName": "Rose Pink"
+        },
+        {
+          "name": "orange",
+          "readableName": "Orange"
+        },
+        {
+          "name": "gray",
+          "readableName": "Gray"
+        },
+        {
+          "name": "gold",
+          "readableName": "Gold"
+        },
+        {
+          "name": "silver",
+          "readableName": "Silver"
+        },
+        {
+          "name": "beige",
+          "readableName": "Beige"
+        },
+        {
+          "name": "teal",
+          "readableName": "Teal"
+        },
+        {
+          "name": "blood_red",
+          "readableName": "Blood Red"
+        },
+        {
+          "name": "blood_orange",
+          "readableName": "Blood Orange"
+        },
+        {
+          "name": "royal_blue",
+          "readableName": "Royal Blue"
+        },
+        {
+          "name": "sonic_blue",
+          "readableName": "Sonic Blue"
+        },
+        {
+          "name": "nes_green",
+          "readableName": "NES Green"
+        },
+        {
+          "name": "dark_green",
+          "readableName": "Dark Green"
+        },
+        {
+          "name": "lumen",
+          "readableName": "Lumen"
+        }
+      ],
+      "type": "choice",
+      "default": "goron_red"
+    },
+    {
+      "name": "zora_color",
+      "description": "Set the color of the Zora Tunic.",
+      "readableName": "Zora color",
+      "values": [
+        {
+          "name": "random_choice",
+          "readableName": "Random from the list"
+        },
+        {
+          "name": "completely_random",
+          "description": "may be off the list",
+          "readableName": "Completely random"
+        },
+        {
+          "name": "kokiri_green",
+          "readableName": "Kokiri Green"
+        },
+        {
+          "name": "goron_red",
+          "readableName": "Goron Red"
+        },
+        {
+          "name": "zora_blue",
+          "readableName": "Zora Blue"
+        },
+        {
+          "name": "black",
+          "readableName": "Black"
+        },
+        {
+          "name": "white",
+          "readableName": "White"
+        },
+        {
+          "name": "azure_blue",
+          "readableName": "Azure Blue"
+        },
+        {
+          "name": "vivid_cyan",
+          "readableName": "Vivid Cyan"
+        },
+        {
+          "name": "light_red",
+          "readableName": "Light Red"
+        },
+        {
+          "name": "fuchsia",
+          "readableName": "*fuchsia"
+        },
+        {
+          "name": "purple",
+          "readableName": "Purple"
+        },
+        {
+          "name": "majora_purple",
+          "readableName": "Majora Purple"
+        },
+        {
+          "name": "twitch_purple",
+          "readableName": "Twitch Purple"
+        },
+        {
+          "name": "purple_heart",
+          "readableName": "Purple Heart"
+        },
+        {
+          "name": "persian_rose",
+          "readableName": "Persian Rose"
+        },
+        {
+          "name": "dirty_yellow",
+          "readableName": "Dirty Yellow"
+        },
+        {
+          "name": "blush_pink",
+          "readableName": "Blush Pink"
+        },
+        {
+          "name": "hot_pink",
+          "readableName": "Hot Pink"
+        },
+        {
+          "name": "rose_pink",
+          "readableName": "Rose Pink"
+        },
+        {
+          "name": "orange",
+          "readableName": "Orange"
+        },
+        {
+          "name": "gray",
+          "readableName": "Gray"
+        },
+        {
+          "name": "gold",
+          "readableName": "Gold"
+        },
+        {
+          "name": "silver",
+          "readableName": "Silver"
+        },
+        {
+          "name": "beige",
+          "readableName": "Beige"
+        },
+        {
+          "name": "teal",
+          "readableName": "Teal"
+        },
+        {
+          "name": "blood_red",
+          "readableName": "Blood Red"
+        },
+        {
+          "name": "blood_orange",
+          "readableName": "Blood Orange"
+        },
+        {
+          "name": "royal_blue",
+          "readableName": "Royal Blue"
+        },
+        {
+          "name": "sonic_blue",
+          "readableName": "Sonic Blue"
+        },
+        {
+          "name": "nes_green",
+          "readableName": "NES Green"
+        },
+        {
+          "name": "dark_green",
+          "readableName": "Dark Green"
+        },
+        {
+          "name": "lumen",
+          "readableName": "Lumen"
+        }
+      ],
+      "type": "choice",
+      "default": "zora_blue"
+    },
+    {
+      "name": "silver_gauntlets_color",
+      "description": "Set the color of the Silver Gauntlets.",
+      "readableName": "Silver Gauntlets color",
+      "values": [
+        {
+          "name": "random_choice",
+          "readableName": "Random from the list"
+        },
+        {
+          "name": "gold",
+          "readableName": "Gold"
+        },
+        {
+          "name": "silver",
+          "readableName": "Silver"
+        },
+        {
+          "name": "bronze",
+          "readableName": "Bronze"
+        },
+        {
+          "name": "black",
+          "readableName": "Black"
+        },
+        {
+          "name": "green",
+          "readableName": "Green"
+        },
+        {
+          "name": "blue",
+          "readableName": "Blue"
+        },
+        {
+          "name": "red",
+          "readableName": "Red"
+        },
+        {
+          "name": "sky_blue",
+          "readableName": "Sky Blue"
+        },
+        {
+          "name": "pink",
+          "readableName": "Pink"
+        },
+        {
+          "name": "magenta",
+          "readableName": "Magenta"
+        },
+        {
+          "name": "orange",
+          "readableName": "Orange"
+        },
+        {
+          "name": "lime",
+          "readableName": "Lime"
+        },
+        {
+          "name": "purple",
+          "readableName": "Purple"
+        },
+        {
+          "name": "completely_random",
+          "description": "may be off the list",
+          "readableName": "Completely random"
+        }
+      ],
+      "type": "choice",
+      "default": "silver"
+    },
+    {
+      "name": "golden_gauntlets_color",
+      "description": "Set the color of the Golden Gauntlets.",
+      "readableName": "Golden Gauntlets color",
+      "values": [
+        {
+          "name": "random_choice",
+          "readableName": "Random from the list"
+        },
+        {
+          "name": "gold",
+          "readableName": "Gold"
+        },
+        {
+          "name": "silver",
+          "readableName": "Silver"
+        },
+        {
+          "name": "bronze",
+          "readableName": "Bronze"
+        },
+        {
+          "name": "black",
+          "readableName": "Black"
+        },
+        {
+          "name": "green",
+          "readableName": "Green"
+        },
+        {
+          "name": "blue",
+          "readableName": "Blue"
+        },
+        {
+          "name": "red",
+          "readableName": "Red"
+        },
+        {
+          "name": "sky_blue",
+          "readableName": "Sky Blue"
+        },
+        {
+          "name": "pink",
+          "readableName": "Pink"
+        },
+        {
+          "name": "magenta",
+          "readableName": "Magenta"
+        },
+        {
+          "name": "orange",
+          "readableName": "Orange"
+        },
+        {
+          "name": "lime",
+          "readableName": "Lime"
+        },
+        {
+          "name": "purple",
+          "readableName": "Purple"
+        },
+        {
+          "name": "completely_random",
+          "description": "may be off the list",
+          "readableName": "Completely random"
+        }
+      ],
+      "type": "choice",
+      "default": "gold"
+    },
+    {
+      "name": "mirror_shield_frame_color",
+      "description": "Set the color of the Mirror Shield.",
+      "readableName": "Mirror Shield color",
+      "values": [
+        {
+          "name": "random_choice",
+          "readableName": "Random from the list"
+        },
+        {
+          "name": "red",
+          "readableName": "Red"
+        },
+        {
+          "name": "green",
+          "readableName": "Green"
+        },
+        {
+          "name": "blue",
+          "readableName": "Blue"
+        },
+        {
+          "name": "yellow",
+          "readableName": "Yellow"
+        },
+        {
+          "name": "cyan",
+          "readableName": "Cyan"
+        },
+        {
+          "name": "magenta",
+          "readableName": "Magenta"
+        },
+        {
+          "name": "orange",
+          "readableName": "Orange"
+        },
+        {
+          "name": "gold",
+          "readableName": "Gold"
+        },
+        {
+          "name": "purple",
+          "readableName": "Purple"
+        },
+        {
+          "name": "pink",
+          "readableName": "Pink"
+        },
+        {
+          "name": "completely_random",
+          "description": "may be off the list",
+          "readableName": "Completely random"
+        }
+      ],
+      "type": "choice",
+      "default": "red"
+    },
+    {
+      "name": "navi_color_default_inner",
+      "description": "Set Navi's inner default color.",
+      "readableName": "Navi's inner default color",
+      "values": [
+        {
+          "name": "random_choice",
+          "readableName": "Random from the list"
+        },
+        {
+          "name": "rainbow",
+          "readableName": "Rainbow"
+        },
+        {
+          "name": "gold",
+          "readableName": "Gold"
+        },
+        {
+          "name": "white",
+          "readableName": "White"
+        },
+        {
+          "name": "green",
+          "readableName": "Green"
+        },
+        {
+          "name": "light_blue",
+          "readableName": "Light Blue"
+        },
+        {
+          "name": "yellow",
+          "readableName": "Yellow"
+        },
+        {
+          "name": "red",
+          "readableName": "Red"
+        },
+        {
+          "name": "magenta",
+          "readableName": "Magenta"
+        },
+        {
+          "name": "black",
+          "readableName": "Black"
+        },
+        {
+          "name": "tatl",
+          "readableName": "Tatl"
+        },
+        {
+          "name": "tael",
+          "readableName": "Tael"
+        },
+        {
+          "name": "fi",
+          "readableName": "Fi"
+        },
+        {
+          "name": "ciela",
+          "readableName": "Ciela"
+        },
+        {
+          "name": "epona",
+          "readableName": "Epona"
+        },
+        {
+          "name": "ezlo",
+          "readableName": "Ezlo"
+        },
+        {
+          "name": "king_of_red_lions",
+          "readableName": "King of Red Lions"
+        },
+        {
+          "name": "linebeck",
+          "readableName": "Linebeck"
+        },
+        {
+          "name": "loftwing",
+          "readableName": "Loftwing"
+        },
+        {
+          "name": "midna",
+          "readableName": "Midna"
+        },
+        {
+          "name": "phantom_zelda",
+          "readableName": "Phantom Zelda"
+        },
+        {
+          "name": "completely_random",
+          "description": "may be off the list",
+          "readableName": "Completely random"
+        }
+      ],
+      "type": "choice",
+      "default": "white"
+    },
+    {
+      "name": "navi_color_default_outer",
+      "description": "Set Navi's outer default color.",
+      "readableName": "Navi's outer default color",
+      "values": [
+        {
+          "name": "match_inner",
+          "readableName": "Same as inner color"
+        },
+        {
+          "name": "random_choice",
+          "readableName": "Random from the list"
+        },
+        {
+          "name": "rainbow",
+          "readableName": "Rainbow"
+        },
+        {
+          "name": "gold",
+          "readableName": "Gold"
+        },
+        {
+          "name": "white",
+          "readableName": "White"
+        },
+        {
+          "name": "green",
+          "readableName": "Green"
+        },
+        {
+          "name": "light_blue",
+          "readableName": "Light Blue"
+        },
+        {
+          "name": "yellow",
+          "readableName": "Yellow"
+        },
+        {
+          "name": "red",
+          "readableName": "Red"
+        },
+        {
+          "name": "magenta",
+          "readableName": "Magenta"
+        },
+        {
+          "name": "black",
+          "readableName": "Black"
+        },
+        {
+          "name": "tatl",
+          "readableName": "Tatl"
+        },
+        {
+          "name": "tael",
+          "readableName": "Tael"
+        },
+        {
+          "name": "fi",
+          "readableName": "Fi"
+        },
+        {
+          "name": "ciela",
+          "readableName": "Ciela"
+        },
+        {
+          "name": "epona",
+          "readableName": "Epona"
+        },
+        {
+          "name": "ezlo",
+          "readableName": "Ezlo"
+        },
+        {
+          "name": "king_of_red_lions",
+          "readableName": "King of Red Lions"
+        },
+        {
+          "name": "linebeck",
+          "readableName": "Linebeck"
+        },
+        {
+          "name": "loftwing",
+          "readableName": "Loftwing"
+        },
+        {
+          "name": "midna",
+          "readableName": "Midna"
+        },
+        {
+          "name": "phantom_zelda",
+          "readableName": "Phantom Zelda"
+        },
+        {
+          "name": "completely_random",
+          "description": "may be off the list",
+          "readableName": "Completely random"
+        }
+      ],
+      "type": "choice",
+      "default": "match_inner"
+    },
+    {
+      "name": "navi_color_enemy_inner",
+      "description": "Set Navi's inner enemy color.",
+      "readableName": "Navi's inner enemy color",
+      "values": [
+        {
+          "name": "random_choice",
+          "readableName": "Random from the list"
+        },
+        {
+          "name": "rainbow",
+          "readableName": "Rainbow"
+        },
+        {
+          "name": "gold",
+          "readableName": "Gold"
+        },
+        {
+          "name": "white",
+          "readableName": "White"
+        },
+        {
+          "name": "green",
+          "readableName": "Green"
+        },
+        {
+          "name": "light_blue",
+          "readableName": "Light Blue"
+        },
+        {
+          "name": "yellow",
+          "readableName": "Yellow"
+        },
+        {
+          "name": "red",
+          "readableName": "Red"
+        },
+        {
+          "name": "magenta",
+          "readableName": "Magenta"
+        },
+        {
+          "name": "black",
+          "readableName": "Black"
+        },
+        {
+          "name": "tatl",
+          "readableName": "Tatl"
+        },
+        {
+          "name": "tael",
+          "readableName": "Tael"
+        },
+        {
+          "name": "fi",
+          "readableName": "Fi"
+        },
+        {
+          "name": "ciela",
+          "readableName": "Ciela"
+        },
+        {
+          "name": "epona",
+          "readableName": "Epona"
+        },
+        {
+          "name": "ezlo",
+          "readableName": "Ezlo"
+        },
+        {
+          "name": "king_of_red_lions",
+          "readableName": "King of Red Lions"
+        },
+        {
+          "name": "linebeck",
+          "readableName": "Linebeck"
+        },
+        {
+          "name": "loftwing",
+          "readableName": "Loftwing"
+        },
+        {
+          "name": "midna",
+          "readableName": "Midna"
+        },
+        {
+          "name": "phantom_zelda",
+          "readableName": "Phantom Zelda"
+        },
+        {
+          "name": "completely_random",
+          "description": "may be off the list",
+          "readableName": "Completely random"
+        }
+      ],
+      "type": "choice",
+      "default": "yellow"
+    },
+    {
+      "name": "navi_color_enemy_outer",
+      "description": "Set Navi's outer enemy color.",
+      "readableName": "Navi's outer enemy color",
+      "values": [
+        {
+          "name": "match_inner",
+          "readableName": "Same as inner color"
+        },
+        {
+          "name": "random_choice",
+          "readableName": "Random from the list"
+        },
+        {
+          "name": "rainbow",
+          "readableName": "Rainbow"
+        },
+        {
+          "name": "gold",
+          "readableName": "Gold"
+        },
+        {
+          "name": "white",
+          "readableName": "White"
+        },
+        {
+          "name": "green",
+          "readableName": "Green"
+        },
+        {
+          "name": "light_blue",
+          "readableName": "Light Blue"
+        },
+        {
+          "name": "yellow",
+          "readableName": "Yellow"
+        },
+        {
+          "name": "red",
+          "readableName": "Red"
+        },
+        {
+          "name": "magenta",
+          "readableName": "Magenta"
+        },
+        {
+          "name": "black",
+          "readableName": "Black"
+        },
+        {
+          "name": "tatl",
+          "readableName": "Tatl"
+        },
+        {
+          "name": "tael",
+          "readableName": "Tael"
+        },
+        {
+          "name": "fi",
+          "readableName": "Fi"
+        },
+        {
+          "name": "ciela",
+          "readableName": "Ciela"
+        },
+        {
+          "name": "epona",
+          "readableName": "Epona"
+        },
+        {
+          "name": "ezlo",
+          "readableName": "Ezlo"
+        },
+        {
+          "name": "king_of_red_lions",
+          "readableName": "King of Red Lions"
+        },
+        {
+          "name": "linebeck",
+          "readableName": "Linebeck"
+        },
+        {
+          "name": "loftwing",
+          "readableName": "Loftwing"
+        },
+        {
+          "name": "midna",
+          "readableName": "Midna"
+        },
+        {
+          "name": "phantom_zelda",
+          "readableName": "Phantom Zelda"
+        },
+        {
+          "name": "completely_random",
+          "description": "may be off the list",
+          "readableName": "Completely random"
+        }
+      ],
+      "type": "choice",
+      "default": "match_inner"
+    },
+    {
+      "name": "navi_color_npc_inner",
+      "description": "Set Navi's inner NPC color.",
+      "readableName": "Navi's inner NPC color",
+      "values": [
+        {
+          "name": "random_choice",
+          "readableName": "Random from the list"
+        },
+        {
+          "name": "rainbow",
+          "readableName": "Rainbow"
+        },
+        {
+          "name": "gold",
+          "readableName": "Gold"
+        },
+        {
+          "name": "white",
+          "readableName": "White"
+        },
+        {
+          "name": "green",
+          "readableName": "Green"
+        },
+        {
+          "name": "light_blue",
+          "readableName": "Light Blue"
+        },
+        {
+          "name": "yellow",
+          "readableName": "Yellow"
+        },
+        {
+          "name": "red",
+          "readableName": "Red"
+        },
+        {
+          "name": "magenta",
+          "readableName": "Magenta"
+        },
+        {
+          "name": "black",
+          "readableName": "Black"
+        },
+        {
+          "name": "tatl",
+          "readableName": "Tatl"
+        },
+        {
+          "name": "tael",
+          "readableName": "Tael"
+        },
+        {
+          "name": "fi",
+          "readableName": "Fi"
+        },
+        {
+          "name": "ciela",
+          "readableName": "Ciela"
+        },
+        {
+          "name": "epona",
+          "readableName": "Epona"
+        },
+        {
+          "name": "ezlo",
+          "readableName": "Ezlo"
+        },
+        {
+          "name": "king_of_red_lions",
+          "readableName": "King of Red Lions"
+        },
+        {
+          "name": "linebeck",
+          "readableName": "Linebeck"
+        },
+        {
+          "name": "loftwing",
+          "readableName": "Loftwing"
+        },
+        {
+          "name": "midna",
+          "readableName": "Midna"
+        },
+        {
+          "name": "phantom_zelda",
+          "readableName": "Phantom Zelda"
+        },
+        {
+          "name": "completely_random",
+          "description": "may be off the list",
+          "readableName": "Completely random"
+        }
+      ],
+      "type": "choice",
+      "default": "light_blue"
+    },
+    {
+      "name": "navi_color_npc_outer",
+      "description": "Set Navi's outer NPC color.",
+      "readableName": "Navi's outer NPC color",
+      "values": [
+        {
+          "name": "match_inner",
+          "readableName": "Same as inner color"
+        },
+        {
+          "name": "random_choice",
+          "readableName": "Random from the list"
+        },
+        {
+          "name": "rainbow",
+          "readableName": "Rainbow"
+        },
+        {
+          "name": "gold",
+          "readableName": "Gold"
+        },
+        {
+          "name": "white",
+          "readableName": "White"
+        },
+        {
+          "name": "green",
+          "readableName": "Green"
+        },
+        {
+          "name": "light_blue",
+          "readableName": "Light Blue"
+        },
+        {
+          "name": "yellow",
+          "readableName": "Yellow"
+        },
+        {
+          "name": "red",
+          "readableName": "Red"
+        },
+        {
+          "name": "magenta",
+          "readableName": "Magenta"
+        },
+        {
+          "name": "black",
+          "readableName": "Black"
+        },
+        {
+          "name": "tatl",
+          "readableName": "Tatl"
+        },
+        {
+          "name": "tael",
+          "readableName": "Tael"
+        },
+        {
+          "name": "fi",
+          "readableName": "Fi"
+        },
+        {
+          "name": "ciela",
+          "readableName": "Ciela"
+        },
+        {
+          "name": "epona",
+          "readableName": "Epona"
+        },
+        {
+          "name": "ezlo",
+          "readableName": "Ezlo"
+        },
+        {
+          "name": "king_of_red_lions",
+          "readableName": "King of Red Lions"
+        },
+        {
+          "name": "linebeck",
+          "readableName": "Linebeck"
+        },
+        {
+          "name": "loftwing",
+          "readableName": "Loftwing"
+        },
+        {
+          "name": "midna",
+          "readableName": "Midna"
+        },
+        {
+          "name": "phantom_zelda",
+          "readableName": "Phantom Zelda"
+        },
+        {
+          "name": "completely_random",
+          "description": "may be off the list",
+          "readableName": "Completely random"
+        }
+      ],
+      "type": "choice",
+      "default": "match_inner"
+    },
+    {
+      "name": "navi_color_prop_inner",
+      "description": "Set Navi's inner prop color.",
+      "readableName": "Navi's inner prop color",
+      "values": [
+        {
+          "name": "random_choice",
+          "readableName": "Random from the list"
+        },
+        {
+          "name": "rainbow",
+          "readableName": "Rainbow"
+        },
+        {
+          "name": "gold",
+          "readableName": "Gold"
+        },
+        {
+          "name": "white",
+          "readableName": "White"
+        },
+        {
+          "name": "green",
+          "readableName": "Green"
+        },
+        {
+          "name": "light_blue",
+          "readableName": "Light Blue"
+        },
+        {
+          "name": "yellow",
+          "readableName": "Yellow"
+        },
+        {
+          "name": "red",
+          "readableName": "Red"
+        },
+        {
+          "name": "magenta",
+          "readableName": "Magenta"
+        },
+        {
+          "name": "black",
+          "readableName": "Black"
+        },
+        {
+          "name": "tatl",
+          "readableName": "Tatl"
+        },
+        {
+          "name": "tael",
+          "readableName": "Tael"
+        },
+        {
+          "name": "fi",
+          "readableName": "Fi"
+        },
+        {
+          "name": "ciela",
+          "readableName": "Ciela"
+        },
+        {
+          "name": "epona",
+          "readableName": "Epona"
+        },
+        {
+          "name": "ezlo",
+          "readableName": "Ezlo"
+        },
+        {
+          "name": "king_of_red_lions",
+          "readableName": "King of Red Lions"
+        },
+        {
+          "name": "linebeck",
+          "readableName": "Linebeck"
+        },
+        {
+          "name": "loftwing",
+          "readableName": "Loftwing"
+        },
+        {
+          "name": "midna",
+          "readableName": "Midna"
+        },
+        {
+          "name": "phantom_zelda",
+          "readableName": "Phantom Zelda"
+        },
+        {
+          "name": "completely_random",
+          "description": "may be off the list",
+          "readableName": "Completely random"
+        }
+      ],
+      "type": "choice",
+      "default": "green"
+    },
+    {
+      "name": "navi_color_prop_outer",
+      "description": "Set Navi's outer prop color.",
+      "readableName": "Navi's outer prop color",
+      "values": [
+        {
+          "name": "match_inner",
+          "readableName": "Same as inner color"
+        },
+        {
+          "name": "random_choice",
+          "readableName": "Random from the list"
+        },
+        {
+          "name": "rainbow",
+          "readableName": "Rainbow"
+        },
+        {
+          "name": "gold",
+          "readableName": "Gold"
+        },
+        {
+          "name": "white",
+          "readableName": "White"
+        },
+        {
+          "name": "green",
+          "readableName": "Green"
+        },
+        {
+          "name": "light_blue",
+          "readableName": "Light Blue"
+        },
+        {
+          "name": "yellow",
+          "readableName": "Yellow"
+        },
+        {
+          "name": "red",
+          "readableName": "Red"
+        },
+        {
+          "name": "magenta",
+          "readableName": "Magenta"
+        },
+        {
+          "name": "black",
+          "readableName": "Black"
+        },
+        {
+          "name": "tatl",
+          "readableName": "Tatl"
+        },
+        {
+          "name": "tael",
+          "readableName": "Tael"
+        },
+        {
+          "name": "fi",
+          "readableName": "Fi"
+        },
+        {
+          "name": "ciela",
+          "readableName": "Ciela"
+        },
+        {
+          "name": "epona",
+          "readableName": "Epona"
+        },
+        {
+          "name": "ezlo",
+          "readableName": "Ezlo"
+        },
+        {
+          "name": "king_of_red_lions",
+          "readableName": "King of Red Lions"
+        },
+        {
+          "name": "linebeck",
+          "readableName": "Linebeck"
+        },
+        {
+          "name": "loftwing",
+          "readableName": "Loftwing"
+        },
+        {
+          "name": "midna",
+          "readableName": "Midna"
+        },
+        {
+          "name": "phantom_zelda",
+          "readableName": "Phantom Zelda"
+        },
+        {
+          "name": "completely_random",
+          "description": "may be off the list",
+          "readableName": "Completely random"
+        }
+      ],
+      "type": "choice",
+      "default": "match_inner"
+    },
+    {
+      "name": "sword_trail_duration",
+      "description": "Set the duration for sword trails.",
+      "high": 20,
+      "readableName": "Sword trail duration",
+      "low": 4,
+      "type": "range",
+      "default": 4
+    },
+    {
+      "name": "sword_trail_color_inner",
+      "description": "Set the inner trail color for the Sword.",
+      "readableName": "Sword's inner trail color",
+      "values": [
+        {
+          "name": "random_choice",
+          "readableName": "Random from the list"
+        },
+        {
+          "name": "completely_random",
+          "description": "may be off the list",
+          "readableName": "Completely random"
+        },
+        {
+          "name": "rainbow",
+          "readableName": "Rainbow"
+        },
+        {
+          "name": "white",
+          "readableName": "White"
+        },
+        {
+          "name": "red",
+          "readableName": "Red"
+        },
+        {
+          "name": "green",
+          "readableName": "Green"
+        },
+        {
+          "name": "blue",
+          "readableName": "Blue"
+        },
+        {
+          "name": "cyan",
+          "readableName": "Cyan"
+        },
+        {
+          "name": "magenta",
+          "readableName": "Magenta"
+        },
+        {
+          "name": "orange",
+          "readableName": "Orange"
+        },
+        {
+          "name": "gold",
+          "readableName": "Gold"
+        },
+        {
+          "name": "purple",
+          "readableName": "Purple"
+        },
+        {
+          "name": "pink",
+          "readableName": "Pink"
+        }
+      ],
+      "type": "choice",
+      "default": "white"
+    },
+    {
+      "name": "sword_trail_color_outer",
+      "description": "Set the outer trail color for the Sword.",
+      "readableName": "Sword's outer trail color",
+      "values": [
+        {
+          "name": "random_choice",
+          "readableName": "Random from the list"
+        },
+        {
+          "name": "completely_random",
+          "description": "may be off the list",
+          "readableName": "Completely random"
+        },
+        {
+          "name": "rainbow",
+          "readableName": "Rainbow"
+        },
+        {
+          "name": "white",
+          "readableName": "White"
+        },
+        {
+          "name": "red",
+          "readableName": "Red"
+        },
+        {
+          "name": "green",
+          "readableName": "Green"
+        },
+        {
+          "name": "blue",
+          "readableName": "Blue"
+        },
+        {
+          "name": "cyan",
+          "readableName": "Cyan"
+        },
+        {
+          "name": "magenta",
+          "readableName": "Magenta"
+        },
+        {
+          "name": "orange",
+          "readableName": "Orange"
+        },
+        {
+          "name": "gold",
+          "readableName": "Gold"
+        },
+        {
+          "name": "purple",
+          "readableName": "Purple"
+        },
+        {
+          "name": "pink",
+          "readableName": "Pink"
+        },
+        {
+          "name": "match_inner",
+          "readableName": "Same as inner color"
+        }
+      ],
+      "type": "choice",
+      "default": "match_inner"
+    },
+    {
+      "name": "bombchu_trail_color_inner",
+      "description": "Set the inner trail color for the Bombchu.",
+      "readableName": "Bombchu's inner trail color",
+      "values": [
+        {
+          "name": "random_choice",
+          "readableName": "Random from the list"
+        },
+        {
+          "name": "completely_random",
+          "description": "may be off the list",
+          "readableName": "Completely random"
+        },
+        {
+          "name": "rainbow",
+          "readableName": "Rainbow"
+        },
+        {
+          "name": "red",
+          "readableName": "Red"
+        },
+        {
+          "name": "green",
+          "readableName": "Green"
+        },
+        {
+          "name": "blue",
+          "readableName": "Blue"
+        },
+        {
+          "name": "cyan",
+          "readableName": "Cyan"
+        },
+        {
+          "name": "magenta",
+          "readableName": "Magenta"
+        },
+        {
+          "name": "orange",
+          "readableName": "Orange"
+        },
+        {
+          "name": "gold",
+          "readableName": "Gold"
+        },
+        {
+          "name": "purple",
+          "readableName": "Purple"
+        },
+        {
+          "name": "pink",
+          "readableName": "Pink"
+        }
+      ],
+      "type": "choice",
+      "default": "red"
+    },
+    {
+      "name": "bombchu_trail_color_outer",
+      "description": "Set the outer trail color for the Bombchu.",
+      "readableName": "Bombchu's outer trail color",
+      "values": [
+        {
+          "name": "random_choice",
+          "readableName": "Random from the list"
+        },
+        {
+          "name": "completely_random",
+          "description": "may be off the list",
+          "readableName": "Completely random"
+        },
+        {
+          "name": "rainbow",
+          "readableName": "Rainbow"
+        },
+        {
+          "name": "red",
+          "readableName": "Red"
+        },
+        {
+          "name": "green",
+          "readableName": "Green"
+        },
+        {
+          "name": "blue",
+          "readableName": "Blue"
+        },
+        {
+          "name": "cyan",
+          "readableName": "Cyan"
+        },
+        {
+          "name": "magenta",
+          "readableName": "Magenta"
+        },
+        {
+          "name": "orange",
+          "readableName": "Orange"
+        },
+        {
+          "name": "gold",
+          "readableName": "Gold"
+        },
+        {
+          "name": "purple",
+          "readableName": "Purple"
+        },
+        {
+          "name": "pink",
+          "readableName": "Pink"
+        },
+        {
+          "name": "match_inner",
+          "readableName": "Same as inner color"
+        }
+      ],
+      "type": "choice",
+      "default": "match_inner"
+    },
+    {
+      "name": "boomerang_trail_color_inner",
+      "description": "Set the inner trail color for the Boomerang.",
+      "readableName": "Boomerang's inner trail color",
+      "values": [
+        {
+          "name": "random_choice",
+          "readableName": "Random from the list"
+        },
+        {
+          "name": "completely_random",
+          "description": "may be off the list",
+          "readableName": "Completely random"
+        },
+        {
+          "name": "rainbow",
+          "readableName": "Rainbow"
+        },
+        {
+          "name": "yellow",
+          "readableName": "Yellow"
+        },
+        {
+          "name": "red",
+          "readableName": "Red"
+        },
+        {
+          "name": "green",
+          "readableName": "Green"
+        },
+        {
+          "name": "blue",
+          "readableName": "Blue"
+        },
+        {
+          "name": "cyan",
+          "readableName": "Cyan"
+        },
+        {
+          "name": "magenta",
+          "readableName": "Magenta"
+        },
+        {
+          "name": "orange",
+          "readableName": "Orange"
+        },
+        {
+          "name": "gold",
+          "readableName": "Gold"
+        },
+        {
+          "name": "purple",
+          "readableName": "Purple"
+        },
+        {
+          "name": "pink",
+          "readableName": "Pink"
+        }
+      ],
+      "type": "choice",
+      "default": "yellow"
+    },
+    {
+      "name": "boomerang_trail_color_outer",
+      "description": "Set the outer trail color for the Boomerang.",
+      "readableName": "Boomerang's outer trail color",
+      "values": [
+        {
+          "name": "random_choice",
+          "readableName": "Random from the list"
+        },
+        {
+          "name": "completely_random",
+          "description": "may be off the list",
+          "readableName": "Completely random"
+        },
+        {
+          "name": "rainbow",
+          "readableName": "Rainbow"
+        },
+        {
+          "name": "yellow",
+          "readableName": "Yellow"
+        },
+        {
+          "name": "red",
+          "readableName": "Red"
+        },
+        {
+          "name": "green",
+          "readableName": "Green"
+        },
+        {
+          "name": "blue",
+          "readableName": "Blue"
+        },
+        {
+          "name": "cyan",
+          "readableName": "Cyan"
+        },
+        {
+          "name": "magenta",
+          "readableName": "Magenta"
+        },
+        {
+          "name": "orange",
+          "readableName": "Orange"
+        },
+        {
+          "name": "gold",
+          "readableName": "Gold"
+        },
+        {
+          "name": "purple",
+          "readableName": "Purple"
+        },
+        {
+          "name": "pink",
+          "readableName": "Pink"
+        },
+        {
+          "name": "match_inner",
+          "readableName": "Same as inner color"
+        }
+      ],
+      "type": "choice",
+      "default": "match_inner"
+    },
+    {
+      "name": "heart_color",
+      "description": "Set the color for hearts.",
+      "readableName": "Heart color",
+      "values": [
+        {
+          "name": "random_choice",
+          "readableName": "Random from the list"
+        },
+        {
+          "name": "red",
+          "readableName": "Red"
+        },
+        {
+          "name": "green",
+          "readableName": "Green"
+        },
+        {
+          "name": "blue",
+          "readableName": "Blue"
+        },
+        {
+          "name": "yellow",
+          "readableName": "Yellow"
+        },
+        {
+          "name": "completely_random",
+          "description": "may be off the list",
+          "readableName": "Completely random"
+        }
+      ],
+      "type": "choice",
+      "default": "red"
+    },
+    {
+      "name": "magic_color",
+      "description": "Set the color for magic.",
+      "readableName": "Magic color",
+      "values": [
+        {
+          "name": "random_choice",
+          "readableName": "Random from the list"
+        },
+        {
+          "name": "completely_random",
+          "description": "may be off the list",
+          "readableName": "Completely random"
+        },
+        {
+          "name": "green",
+          "readableName": "Green"
+        },
+        {
+          "name": "red",
+          "readableName": "Red"
+        },
+        {
+          "name": "blue",
+          "readableName": "Blue"
+        },
+        {
+          "name": "purple",
+          "readableName": "Purple"
+        },
+        {
+          "name": "pink",
+          "readableName": "Pink"
+        },
+        {
+          "name": "yellow",
+          "readableName": "Yellow"
+        },
+        {
+          "name": "white",
+          "readableName": "White"
+        }
+      ],
+      "type": "choice",
+      "default": "green"
+    },
+    {
+      "name": "a_button_color",
+      "description": "Set the color of the A button.",
+      "readableName": "A button color",
+      "values": [
+        {
+          "name": "random_choice",
+          "readableName": "Random from the list"
+        },
+        {
+          "name": "n64_blue",
+          "readableName": "N64 Blue"
+        },
+        {
+          "name": "n64_green",
+          "readableName": "N64 Green"
+        },
+        {
+          "name": "n64_red",
+          "readableName": "N64 Red"
+        },
+        {
+          "name": "gamecube_green",
+          "readableName": "GameCube Green"
+        },
+        {
+          "name": "gamecube_red",
+          "readableName": "GameCube Red"
+        },
+        {
+          "name": "gamecube_grey",
+          "readableName": "GameCube Grey"
+        },
+        {
+          "name": "yellow",
+          "readableName": "Yellow"
+        },
+        {
+          "name": "black",
+          "readableName": "Black"
+        },
+        {
+          "name": "white",
+          "readableName": "White"
+        },
+        {
+          "name": "magenta",
+          "readableName": "Magenta"
+        },
+        {
+          "name": "ruby",
+          "readableName": "Ruby"
+        },
+        {
+          "name": "sapphire",
+          "readableName": "Sapphire"
+        },
+        {
+          "name": "lime",
+          "readableName": "Lime"
+        },
+        {
+          "name": "cyan",
+          "readableName": "Cyan"
+        },
+        {
+          "name": "purple",
+          "readableName": "Purple"
+        },
+        {
+          "name": "orange",
+          "readableName": "Orange"
+        },
+        {
+          "name": "completely_random",
+          "description": "may be off the list",
+          "readableName": "Completely random"
+        }
+      ],
+      "type": "choice",
+      "default": "n64_blue"
+    },
+    {
+      "name": "b_button_color",
+      "description": "Set the color of the B button.",
+      "readableName": "B button color",
+      "values": [
+        {
+          "name": "random_choice",
+          "readableName": "Random from the list"
+        },
+        {
+          "name": "n64_blue",
+          "readableName": "N64 Blue"
+        },
+        {
+          "name": "n64_green",
+          "readableName": "N64 Green"
+        },
+        {
+          "name": "n64_red",
+          "readableName": "N64 Red"
+        },
+        {
+          "name": "gamecube_green",
+          "readableName": "GameCube Green"
+        },
+        {
+          "name": "gamecube_red",
+          "readableName": "GameCube Red"
+        },
+        {
+          "name": "gamecube_grey",
+          "readableName": "GameCube Grey"
+        },
+        {
+          "name": "yellow",
+          "readableName": "Yellow"
+        },
+        {
+          "name": "black",
+          "readableName": "Black"
+        },
+        {
+          "name": "white",
+          "readableName": "White"
+        },
+        {
+          "name": "magenta",
+          "readableName": "Magenta"
+        },
+        {
+          "name": "ruby",
+          "readableName": "Ruby"
+        },
+        {
+          "name": "sapphire",
+          "readableName": "Sapphire"
+        },
+        {
+          "name": "lime",
+          "readableName": "Lime"
+        },
+        {
+          "name": "cyan",
+          "readableName": "Cyan"
+        },
+        {
+          "name": "purple",
+          "readableName": "Purple"
+        },
+        {
+          "name": "orange",
+          "readableName": "Orange"
+        },
+        {
+          "name": "completely_random",
+          "description": "may be off the list",
+          "readableName": "Completely random"
+        }
+      ],
+      "type": "choice",
+      "default": "n64_green"
+    },
+    {
+      "name": "c_button_color",
+      "description": "Set the color of the C button.",
+      "readableName": "C button color",
+      "values": [
+        {
+          "name": "random_choice",
+          "readableName": "Random from the list"
+        },
+        {
+          "name": "n64_blue",
+          "readableName": "N64 Blue"
+        },
+        {
+          "name": "n64_green",
+          "readableName": "N64 Green"
+        },
+        {
+          "name": "n64_red",
+          "readableName": "N64 Red"
+        },
+        {
+          "name": "gamecube_green",
+          "readableName": "GameCube Green"
+        },
+        {
+          "name": "gamecube_red",
+          "readableName": "GameCube Red"
+        },
+        {
+          "name": "gamecube_grey",
+          "readableName": "GameCube Grey"
+        },
+        {
+          "name": "yellow",
+          "readableName": "Yellow"
+        },
+        {
+          "name": "black",
+          "readableName": "Black"
+        },
+        {
+          "name": "white",
+          "readableName": "White"
+        },
+        {
+          "name": "magenta",
+          "readableName": "Magenta"
+        },
+        {
+          "name": "ruby",
+          "readableName": "Ruby"
+        },
+        {
+          "name": "sapphire",
+          "readableName": "Sapphire"
+        },
+        {
+          "name": "lime",
+          "readableName": "Lime"
+        },
+        {
+          "name": "cyan",
+          "readableName": "Cyan"
+        },
+        {
+          "name": "purple",
+          "readableName": "Purple"
+        },
+        {
+          "name": "orange",
+          "readableName": "Orange"
+        },
+        {
+          "name": "completely_random",
+          "description": "may be off the list",
+          "readableName": "Completely random"
+        }
+      ],
+      "type": "choice",
+      "default": "yellow"
+    },
+    {
+      "name": "start_button_color",
+      "description": "Set the color of the Start button.",
+      "readableName": "Start button color",
+      "values": [
+        {
+          "name": "random_choice",
+          "readableName": "Random from the list"
+        },
+        {
+          "name": "n64_blue",
+          "readableName": "N64 Blue"
+        },
+        {
+          "name": "n64_green",
+          "readableName": "N64 Green"
+        },
+        {
+          "name": "n64_red",
+          "readableName": "N64 Red"
+        },
+        {
+          "name": "gamecube_green",
+          "readableName": "GameCube Green"
+        },
+        {
+          "name": "gamecube_red",
+          "readableName": "GameCube Red"
+        },
+        {
+          "name": "gamecube_grey",
+          "readableName": "GameCube Grey"
+        },
+        {
+          "name": "yellow",
+          "readableName": "Yellow"
+        },
+        {
+          "name": "black",
+          "readableName": "Black"
+        },
+        {
+          "name": "white",
+          "readableName": "White"
+        },
+        {
+          "name": "magenta",
+          "readableName": "Magenta"
+        },
+        {
+          "name": "ruby",
+          "readableName": "Ruby"
+        },
+        {
+          "name": "sapphire",
+          "readableName": "Sapphire"
+        },
+        {
+          "name": "lime",
+          "readableName": "Lime"
+        },
+        {
+          "name": "cyan",
+          "readableName": "Cyan"
+        },
+        {
+          "name": "purple",
+          "readableName": "Purple"
+        },
+        {
+          "name": "orange",
+          "readableName": "Orange"
+        },
+        {
+          "name": "completely_random",
+          "description": "may be off the list",
+          "readableName": "Completely random"
+        }
+      ],
+      "type": "choice",
+      "default": "n64_red"
+    },
+    {
+      "name": "sfx_navi_overworld",
+      "description": "Set the SFX for \"Navi overworld\".",
+      "readableName": "Navi overworld SFX",
+      "values": [
+        {
+          "name": "none",
+          "readableName": "None"
+        },
+        {
+          "name": "default",
+          "readableName": "Default"
+        },
+        {
+          "name": "random_choice",
+          "readableName": "Random from the list"
+        },
+        {
+          "name": "random_ear_safe",
+          "readableName": "Random ear-safe sound"
+        },
+        {
+          "name": "bark",
+          "readableName": "Bark"
+        },
+        {
+          "name": "business_scrub",
+          "readableName": "Business Scrub"
+        },
+        {
+          "name": "carrot_refill",
+          "readableName": "Carrot refill"
+        },
+        {
+          "name": "cluck",
+          "readableName": "Cluck"
+        },
+        {
+          "name": "cockadoodledoo",
+          "readableName": "Cucco crowing"
+        },
+        {
+          "name": "dusk_howl",
+          "readableName": "Dusk howl"
+        },
+        {
+          "name": "exploding_crate",
+          "readableName": "Exploding crate"
+        },
+        {
+          "name": "explosion",
+          "readableName": "Explosion"
+        },
+        {
+          "name": "great_fairy",
+          "readableName": "Great Fairy"
+        },
+        {
+          "name": "guay",
+          "readableName": "Guay"
+        },
+        {
+          "name": "low_health",
+          "readableName": "Low health"
+        },
+        {
+          "name": "recover_health",
+          "readableName": "Recover health"
+        },
+        {
+          "name": "horse_neigh",
+          "readableName": "Horse neigh"
+        },
+        {
+          "name": "shattering_ice",
+          "readableName": "Shattering ice"
+        },
+        {
+          "name": "moo",
+          "readableName": "Moo"
+        },
+        {
+          "name": "mweep",
+          "readableName": "Mweep"
+        },
+        {
+          "name": "navi_hello",
+          "readableName": "Navi: \"Hello?\""
+        },
+        {
+          "name": "notification",
+          "readableName": "Notification"
+        },
+        {
+          "name": "poe",
+          "readableName": "Poe"
+        },
+        {
+          "name": "shattering_pot",
+          "readableName": "Shattering pot"
+        },
+        {
+          "name": "redead_scream",
+          "readableName": "ReDead scream"
+        },
+        {
+          "name": "ribbit",
+          "readableName": "Ribbit"
+        },
+        {
+          "name": "ruto_giggle",
+          "readableName": "Ruto giggle"
+        },
+        {
+          "name": "skulltula",
+          "readableName": "Skulltula"
+        },
+        {
+          "name": "soft_beep",
+          "readableName": "Soft beep"
+        },
+        {
+          "name": "tambourine",
+          "readableName": "Tambourine"
+        },
+        {
+          "name": "timer",
+          "readableName": "Timer"
+        },
+        {
+          "name": "adult_zelda_gasp",
+          "readableName": "Adult Zelda gasping"
+        },
+        {
+          "name": "completely_random",
+          "description": "may be off the list",
+          "readableName": "Completely random"
+        }
+      ],
+      "type": "choice",
+      "default": "default"
+    },
+    {
+      "name": "sfx_navi_enemy",
+      "description": "Set the SFX for \"Navi enemy\".",
+      "readableName": "Navi enemy SFX",
+      "values": [
+        {
+          "name": "none",
+          "readableName": "None"
+        },
+        {
+          "name": "default",
+          "readableName": "Default"
+        },
+        {
+          "name": "random_choice",
+          "readableName": "Random from the list"
+        },
+        {
+          "name": "random_ear_safe",
+          "readableName": "Random ear-safe sound"
+        },
+        {
+          "name": "bark",
+          "readableName": "Bark"
+        },
+        {
+          "name": "business_scrub",
+          "readableName": "Business Scrub"
+        },
+        {
+          "name": "carrot_refill",
+          "readableName": "Carrot refill"
+        },
+        {
+          "name": "cluck",
+          "readableName": "Cluck"
+        },
+        {
+          "name": "cockadoodledoo",
+          "readableName": "Cucco crowing"
+        },
+        {
+          "name": "dusk_howl",
+          "readableName": "Dusk howl"
+        },
+        {
+          "name": "exploding_crate",
+          "readableName": "Exploding crate"
+        },
+        {
+          "name": "explosion",
+          "readableName": "Explosion"
+        },
+        {
+          "name": "great_fairy",
+          "readableName": "Great Fairy"
+        },
+        {
+          "name": "guay",
+          "readableName": "Guay"
+        },
+        {
+          "name": "low_health",
+          "readableName": "Low health"
+        },
+        {
+          "name": "recover_health",
+          "readableName": "Recover health"
+        },
+        {
+          "name": "horse_neigh",
+          "readableName": "Horse neigh"
+        },
+        {
+          "name": "shattering_ice",
+          "readableName": "Shattering ice"
+        },
+        {
+          "name": "moo",
+          "readableName": "Moo"
+        },
+        {
+          "name": "mweep",
+          "readableName": "Mweep"
+        },
+        {
+          "name": "navi_hello",
+          "readableName": "Navi: \"Hello?\""
+        },
+        {
+          "name": "notification",
+          "readableName": "Notification"
+        },
+        {
+          "name": "poe",
+          "readableName": "Poe"
+        },
+        {
+          "name": "shattering_pot",
+          "readableName": "Shattering pot"
+        },
+        {
+          "name": "redead_scream",
+          "readableName": "ReDead scream"
+        },
+        {
+          "name": "ribbit",
+          "readableName": "Ribbit"
+        },
+        {
+          "name": "ruto_giggle",
+          "readableName": "Ruto giggle"
+        },
+        {
+          "name": "skulltula",
+          "readableName": "Skulltula"
+        },
+        {
+          "name": "soft_beep",
+          "readableName": "Soft beep"
+        },
+        {
+          "name": "tambourine",
+          "readableName": "Tambourine"
+        },
+        {
+          "name": "timer",
+          "readableName": "Timer"
+        },
+        {
+          "name": "adult_zelda_gasp",
+          "readableName": "Adult Zelda gasping"
+        },
+        {
+          "name": "completely_random",
+          "description": "may be off the list",
+          "readableName": "Completely random"
+        }
+      ],
+      "type": "choice",
+      "default": "default"
+    },
+    {
+      "name": "sfx_low_hp",
+      "description": "Set the SFX for \"Low HP\".",
+      "readableName": "Low HP SFX",
+      "values": [
+        {
+          "name": "default",
+          "readableName": "Default"
+        },
+        {
+          "name": "completely_random",
+          "description": "may be off the list",
+          "readableName": "Completely random"
+        },
+        {
+          "name": "random_ear_safe",
+          "readableName": "Random ear-safe sound"
+        },
+        {
+          "name": "random_choice",
+          "readableName": "Random from the list"
+        },
+        {
+          "name": "none",
+          "readableName": "None"
+        },
+        {
+          "name": "bark",
+          "readableName": "Bark"
+        },
+        {
+          "name": "bomb_bounce",
+          "readableName": "Bomb bounce"
+        },
+        {
+          "name": "bongo_bongo_low",
+          "readableName": "Bongo bongo low"
+        },
+        {
+          "name": "bow_twang",
+          "readableName": "Bow twang"
+        },
+        {
+          "name": "business_scrub",
+          "readableName": "Business Scrub"
+        },
+        {
+          "name": "carrot_refill",
+          "readableName": "Carrot refill"
+        },
+        {
+          "name": "cluck",
+          "readableName": "Cluck"
+        },
+        {
+          "name": "drawbridge_set",
+          "readableName": "Drawbridge set"
+        },
+        {
+          "name": "guay",
+          "readableName": "Guay"
+        },
+        {
+          "name": "recover_health",
+          "readableName": "Recover health"
+        },
+        {
+          "name": "horse_trot",
+          "readableName": "Horse trot"
+        },
+        {
+          "name": "iron_boots",
+          "readableName": "Iron boots"
+        },
+        {
+          "name": "moo",
+          "readableName": "Moo"
+        },
+        {
+          "name": "mweep",
+          "readableName": "Mweep"
+        },
+        {
+          "name": "navi_hey",
+          "readableName": "Navi: \"Hey!\""
+        },
+        {
+          "name": "navi_random",
+          "readableName": "Random Navi"
+        },
+        {
+          "name": "notification",
+          "readableName": "Notification"
+        },
+        {
+          "name": "shattering_pot",
+          "readableName": "Shattering pot"
+        },
+        {
+          "name": "ribbit",
+          "readableName": "Ribbit"
+        },
+        {
+          "name": "silver_rupee",
+          "readableName": "Silver Rupee"
+        },
+        {
+          "name": "soft_beep",
+          "readableName": "Soft beep"
+        },
+        {
+          "name": "switch",
+          "readableName": "*switch"
+        },
+        {
+          "name": "sword_bonk",
+          "readableName": "*sword bonk"
+        },
+        {
+          "name": "tambourine",
+          "readableName": "Tambourine"
+        },
+        {
+          "name": "timer",
+          "readableName": "Timer"
+        },
+        {
+          "name": "adult_zelda_gasp",
+          "readableName": "Adult Zelda gasping"
+        }
+      ],
+      "type": "choice",
+      "default": "default"
+    },
+    {
+      "name": "sfx_menu_cursor",
+      "description": "Set the SFX for \"Menu cursor\".",
+      "readableName": "Menu cursor SFX",
+      "values": [
+        {
+          "name": "default",
+          "readableName": "Default"
+        },
+        {
+          "name": "completely_random",
+          "description": "may be off the list",
+          "readableName": "Completely random"
+        },
+        {
+          "name": "random_ear_safe",
+          "readableName": "Random ear-safe sound"
+        },
+        {
+          "name": "random_choice",
+          "readableName": "Random from the list"
+        },
+        {
+          "name": "none",
+          "readableName": "None"
+        },
+        {
+          "name": "bark",
+          "readableName": "Bark"
+        },
+        {
+          "name": "bomb_bounce",
+          "readableName": "Bomb bounce"
+        },
+        {
+          "name": "bongo_bongo_high",
+          "readableName": "Bongo bongo high"
+        },
+        {
+          "name": "bongo_bongo_low",
+          "readableName": "Bongo bongo low"
+        },
+        {
+          "name": "bottle_cork",
+          "readableName": "Bottle cork"
+        },
+        {
+          "name": "bow_twang",
+          "readableName": "Bow twang"
+        },
+        {
+          "name": "bubble_laugh",
+          "readableName": "Bubble laugh"
+        },
+        {
+          "name": "carrot_refill",
+          "readableName": "Carrot refill"
+        },
+        {
+          "name": "change_item",
+          "readableName": "Change item"
+        },
+        {
+          "name": "child_pant",
+          "readableName": "Child pant"
+        },
+        {
+          "name": "cluck",
+          "readableName": "Cluck"
+        },
+        {
+          "name": "deku_baba",
+          "readableName": "Deku baba"
+        },
+        {
+          "name": "drawbridge_set",
+          "readableName": "Drawbridge set"
+        },
+        {
+          "name": "dusk_howl",
+          "readableName": "Dusk howl"
+        },
+        {
+          "name": "fanfare_light",
+          "readableName": "Fanfare light"
+        },
+        {
+          "name": "fanfare_medium",
+          "readableName": "Fanfare medium"
+        },
+        {
+          "name": "field_shrub",
+          "readableName": "Field shrub"
+        },
+        {
+          "name": "flare_dancer_startled",
+          "readableName": "Flare dancer startled"
+        },
+        {
+          "name": "ganondorf_teh",
+          "readableName": "Ganondorf: \"Teh!\""
+        },
+        {
+          "name": "gohma_larva_croak",
+          "readableName": "Gohma larva croak"
+        },
+        {
+          "name": "gold_skull_token",
+          "readableName": "Gold Skull Token"
+        },
+        {
+          "name": "goron_wake",
+          "readableName": "Goron wake"
+        },
+        {
+          "name": "guay",
+          "readableName": "Guay"
+        },
+        {
+          "name": "gunshot",
+          "readableName": "Gunshot"
+        },
+        {
+          "name": "low_health",
+          "readableName": "Low health"
+        },
+        {
+          "name": "recover_health",
+          "readableName": "Recover health"
+        },
+        {
+          "name": "hammer_bonk",
+          "readableName": "Hammer bonk"
+        },
+        {
+          "name": "horse_trot",
+          "readableName": "Horse trot"
+        },
+        {
+          "name": "iron_boots",
+          "readableName": "Iron boots"
+        },
+        {
+          "name": "iron_knuckle",
+          "readableName": "Iron knuckle"
+        },
+        {
+          "name": "moo",
+          "readableName": "Moo"
+        },
+        {
+          "name": "mweep",
+          "readableName": "Mweep"
+        },
+        {
+          "name": "notification",
+          "readableName": "Notification"
+        },
+        {
+          "name": "phantom_ganon_laugh",
+          "readableName": "Phantom Ganon laugh"
+        },
+        {
+          "name": "plant_explode",
+          "readableName": "Plant explode"
+        },
+        {
+          "name": "shattering_pot",
+          "readableName": "Shattering pot"
+        },
+        {
+          "name": "redead_moan",
+          "readableName": "ReDead moan"
+        },
+        {
+          "name": "ribbit",
+          "readableName": "Ribbit"
+        },
+        {
+          "name": "rupee",
+          "readableName": "Rupee"
+        },
+        {
+          "name": "silver_rupee",
+          "readableName": "Silver Rupee"
+        },
+        {
+          "name": "ruto_crash",
+          "readableName": "Ruto crash"
+        },
+        {
+          "name": "ruto_lift",
+          "readableName": "Ruto lift"
+        },
+        {
+          "name": "ruto_thrown",
+          "readableName": "Ruto thrown"
+        },
+        {
+          "name": "scrub_emerge",
+          "readableName": "Scrub emerge"
+        },
+        {
+          "name": "shabom_bounce",
+          "readableName": "Shabom bounce"
+        },
+        {
+          "name": "shabom_pop",
+          "readableName": "Shabom pop"
+        },
+        {
+          "name": "shellblade",
+          "readableName": "Shellblade"
+        },
+        {
+          "name": "skulltula",
+          "readableName": "Skulltula"
+        },
+        {
+          "name": "soft_beep",
+          "readableName": "Soft beep"
+        },
+        {
+          "name": "spit_nut",
+          "readableName": "Spit nut"
+        },
+        {
+          "name": "switch",
+          "readableName": "*switch"
+        },
+        {
+          "name": "sword_bonk",
+          "readableName": "*sword bonk"
+        },
+        {
+          "name": "talon_hmm",
+          "readableName": "Talon: \"Hmm...\""
+        },
+        {
+          "name": "talon_snore",
+          "readableName": "Talon snore"
+        },
+        {
+          "name": "talon_wtf",
+          "readableName": "Talon: \"!?\""
+        },
+        {
+          "name": "tambourine",
+          "readableName": "Tambourine"
+        },
+        {
+          "name": "target_enemy",
+          "readableName": "Target enemy"
+        },
+        {
+          "name": "target_neutral",
+          "readableName": "Target neutral"
+        },
+        {
+          "name": "thunder",
+          "readableName": "Thunder"
+        },
+        {
+          "name": "timer",
+          "readableName": "Timer"
+        },
+        {
+          "name": "adult_zelda_gasp",
+          "readableName": "Adult Zelda gasping"
+        }
+      ],
+      "type": "choice",
+      "default": "default"
+    },
+    {
+      "name": "sfx_menu_select",
+      "description": "Set the SFX for \"Menu select\".",
+      "readableName": "Menu select SFX",
+      "values": [
+        {
+          "name": "default",
+          "readableName": "Default"
+        },
+        {
+          "name": "completely_random",
+          "description": "may be off the list",
+          "readableName": "Completely random"
+        },
+        {
+          "name": "random_ear_safe",
+          "readableName": "Random ear-safe sound"
+        },
+        {
+          "name": "random_choice",
+          "readableName": "Random from the list"
+        },
+        {
+          "name": "none",
+          "readableName": "None"
+        },
+        {
+          "name": "bark",
+          "readableName": "Bark"
+        },
+        {
+          "name": "bomb_bounce",
+          "readableName": "Bomb bounce"
+        },
+        {
+          "name": "bongo_bongo_high",
+          "readableName": "Bongo bongo high"
+        },
+        {
+          "name": "bongo_bongo_low",
+          "readableName": "Bongo bongo low"
+        },
+        {
+          "name": "bottle_cork",
+          "readableName": "Bottle cork"
+        },
+        {
+          "name": "bow_twang",
+          "readableName": "Bow twang"
+        },
+        {
+          "name": "bubble_laugh",
+          "readableName": "Bubble laugh"
+        },
+        {
+          "name": "carrot_refill",
+          "readableName": "Carrot refill"
+        },
+        {
+          "name": "change_item",
+          "readableName": "Change item"
+        },
+        {
+          "name": "child_cringe",
+          "readableName": "*child cringe"
+        },
+        {
+          "name": "child_pant",
+          "readableName": "Child pant"
+        },
+        {
+          "name": "child_scream",
+          "readableName": "*child scream"
+        },
+        {
+          "name": "cluck",
+          "readableName": "Cluck"
+        },
+        {
+          "name": "deku_baba",
+          "readableName": "Deku baba"
+        },
+        {
+          "name": "drawbridge_set",
+          "readableName": "Drawbridge set"
+        },
+        {
+          "name": "dusk_howl",
+          "readableName": "Dusk howl"
+        },
+        {
+          "name": "fanfare_light",
+          "readableName": "Fanfare light"
+        },
+        {
+          "name": "fanfare_medium",
+          "readableName": "Fanfare medium"
+        },
+        {
+          "name": "field_shrub",
+          "readableName": "Field shrub"
+        },
+        {
+          "name": "flare_dancer_startled",
+          "readableName": "Flare dancer startled"
+        },
+        {
+          "name": "ganondorf_teh",
+          "readableName": "Ganondorf: \"Teh!\""
+        },
+        {
+          "name": "gohma_larva_croak",
+          "readableName": "Gohma larva croak"
+        },
+        {
+          "name": "gold_skull_token",
+          "readableName": "Gold Skull Token"
+        },
+        {
+          "name": "goron_wake",
+          "readableName": "Goron wake"
+        },
+        {
+          "name": "guay",
+          "readableName": "Guay"
+        },
+        {
+          "name": "gunshot",
+          "readableName": "Gunshot"
+        },
+        {
+          "name": "low_health",
+          "readableName": "Low health"
+        },
+        {
+          "name": "recover_health",
+          "readableName": "Recover health"
+        },
+        {
+          "name": "hammer_bonk",
+          "readableName": "Hammer bonk"
+        },
+        {
+          "name": "horse_trot",
+          "readableName": "Horse trot"
+        },
+        {
+          "name": "iron_boots",
+          "readableName": "Iron boots"
+        },
+        {
+          "name": "iron_knuckle",
+          "readableName": "Iron knuckle"
+        },
+        {
+          "name": "moo",
+          "readableName": "Moo"
+        },
+        {
+          "name": "mweep",
+          "readableName": "Mweep"
+        },
+        {
+          "name": "notification",
+          "readableName": "Notification"
+        },
+        {
+          "name": "phantom_ganon_laugh",
+          "readableName": "Phantom Ganon laugh"
+        },
+        {
+          "name": "plant_explode",
+          "readableName": "Plant explode"
+        },
+        {
+          "name": "shattering_pot",
+          "readableName": "Shattering pot"
+        },
+        {
+          "name": "redead_moan",
+          "readableName": "ReDead moan"
+        },
+        {
+          "name": "ribbit",
+          "readableName": "Ribbit"
+        },
+        {
+          "name": "rupee",
+          "readableName": "Rupee"
+        },
+        {
+          "name": "silver_rupee",
+          "readableName": "Silver Rupee"
+        },
+        {
+          "name": "ruto_crash",
+          "readableName": "Ruto crash"
+        },
+        {
+          "name": "ruto_lift",
+          "readableName": "Ruto lift"
+        },
+        {
+          "name": "ruto_thrown",
+          "readableName": "Ruto thrown"
+        },
+        {
+          "name": "scrub_emerge",
+          "readableName": "Scrub emerge"
+        },
+        {
+          "name": "shabom_bounce",
+          "readableName": "Shabom bounce"
+        },
+        {
+          "name": "shabom_pop",
+          "readableName": "Shabom pop"
+        },
+        {
+          "name": "shellblade",
+          "readableName": "Shellblade"
+        },
+        {
+          "name": "skulltula",
+          "readableName": "Skulltula"
+        },
+        {
+          "name": "soft_beep",
+          "readableName": "Soft beep"
+        },
+        {
+          "name": "spit_nut",
+          "readableName": "Spit nut"
+        },
+        {
+          "name": "switch",
+          "readableName": "*switch"
+        },
+        {
+          "name": "sword_bonk",
+          "readableName": "*sword bonk"
+        },
+        {
+          "name": "talon_hmm",
+          "readableName": "Talon: \"Hmm...\""
+        },
+        {
+          "name": "talon_snore",
+          "readableName": "Talon snore"
+        },
+        {
+          "name": "talon_wtf",
+          "readableName": "Talon: \"!?\""
+        },
+        {
+          "name": "tambourine",
+          "readableName": "Tambourine"
+        },
+        {
+          "name": "target_enemy",
+          "readableName": "Target enemy"
+        },
+        {
+          "name": "target_neutral",
+          "readableName": "Target neutral"
+        },
+        {
+          "name": "thunder",
+          "readableName": "Thunder"
+        },
+        {
+          "name": "timer",
+          "readableName": "Timer"
+        },
+        {
+          "name": "adult_zelda_gasp",
+          "readableName": "Adult Zelda gasping"
+        }
+      ],
+      "type": "choice",
+      "default": "default"
+    },
+    {
+      "name": "sfx_nightfall",
+      "description": "Set the SFX for \"Nightfall\".",
+      "readableName": "Nightfall SFX",
+      "values": [
+        {
+          "name": "none",
+          "readableName": "None"
+        },
+        {
+          "name": "default",
+          "readableName": "Default"
+        },
+        {
+          "name": "random_choice",
+          "readableName": "Random from the list"
+        },
+        {
+          "name": "random_ear_safe",
+          "readableName": "Random ear-safe sound"
+        },
+        {
+          "name": "cockadoodledoo",
+          "readableName": "Cucco crowing"
+        },
+        {
+          "name": "gold_skull_token",
+          "readableName": "Gold Skull Token"
+        },
+        {
+          "name": "great_fairy",
+          "readableName": "Great Fairy"
+        },
+        {
+          "name": "moo",
+          "readableName": "Moo"
+        },
+        {
+          "name": "mweep",
+          "readableName": "Mweep"
+        },
+        {
+          "name": "redead_moan",
+          "readableName": "ReDead moan"
+        },
+        {
+          "name": "talon_snore",
+          "readableName": "Talon snore"
+        },
+        {
+          "name": "thunder",
+          "readableName": "Thunder"
+        },
+        {
+          "name": "completely_random",
+          "description": "may be off the list",
+          "readableName": "Completely random"
+        }
+      ],
+      "type": "choice",
+      "default": "default"
+    },
+    {
+      "name": "sfx_horse_neigh",
+      "description": "Set the SFX for \"Horse Neigh\".",
+      "readableName": "Horse Neigh SFX",
+      "values": [
+        {
+          "name": "default",
+          "readableName": "Default"
+        },
+        {
+          "name": "completely_random",
+          "description": "may be off the list",
+          "readableName": "Completely random"
+        },
+        {
+          "name": "random_ear_safe",
+          "readableName": "Random ear-safe sound"
+        },
+        {
+          "name": "random_choice",
+          "readableName": "Random from the list"
+        },
+        {
+          "name": "none",
+          "readableName": "None"
+        },
+        {
+          "name": "armos",
+          "readableName": "Armos"
+        },
+        {
+          "name": "child_scream",
+          "readableName": "Child scream"
+        },
+        {
+          "name": "great_fairy",
+          "readableName": "Great Fairy"
+        },
+        {
+          "name": "moo",
+          "readableName": "Moo"
+        },
+        {
+          "name": "mweep",
+          "readableName": "Mweep"
+        },
+        {
+          "name": "redead_scream",
+          "readableName": "ReDead scream"
+        },
+        {
+          "name": "ruto_wiggle",
+          "readableName": "Ruto wiggle"
+        },
+        {
+          "name": "stalchild_attack",
+          "readableName": "Stalchild attack"
+        }
+      ],
+      "type": "choice",
+      "default": "default"
+    },
+    {
+      "name": "sfx_hover_boots",
+      "description": "Set the SFX for \"Hover Boots\".",
+      "readableName": "Hover Boots SFX",
+      "values": [
+        {
+          "name": "none",
+          "readableName": "None"
+        },
+        {
+          "name": "default",
+          "readableName": "Default"
+        },
+        {
+          "name": "random_choice",
+          "readableName": "Random from the list"
+        },
+        {
+          "name": "random_ear_safe",
+          "readableName": "Random ear-safe sound"
+        },
+        {
+          "name": "bark",
+          "readableName": "Bark"
+        },
+        {
+          "name": "cartoon_fall",
+          "readableName": "Cartoon fall"
+        },
+        {
+          "name": "flare_dancer_laugh",
+          "readableName": "Flare dancer laugh"
+        },
+        {
+          "name": "mweep",
+          "readableName": "Mweep"
+        },
+        {
+          "name": "shabom_pop",
+          "readableName": "Shabom pop"
+        },
+        {
+          "name": "tambourine",
+          "readableName": "Tambourine"
+        },
+        {
+          "name": "completely_random",
+          "description": "may be off the list",
+          "readableName": "Completely random"
+        }
+      ],
+      "type": "choice",
+      "default": "default"
+    },
+    {
+      "name": "sfx_ocarina",
+      "description": "Set the SFX for \"Ocarina\".",
+      "readableName": "Ocarina SFX",
+      "values": [
+        {
+          "name": "ocarina",
+          "readableName": "Ocarina"
+        },
+        {
+          "name": "malon",
+          "readableName": "Malon"
+        },
+        {
+          "name": "whistle",
+          "readableName": "Whistle"
+        },
+        {
+          "name": "harp",
+          "readableName": "Harp"
+        },
+        {
+          "name": "grind_organ",
+          "readableName": "Grind organ"
+        },
+        {
+          "name": "flute",
+          "readableName": "Flute"
+        }
+      ],
+      "type": "choice",
+      "default": "ocarina"
+    },
+    {
+      "name": "death_link",
+      "type": "deathlink"
+    }
+  ],
+  "defver": 2,
+  "items": [
+    {
+      "name": "Bombs (5)"
+    },
+    {
+      "name": "Deku Nuts (5)"
+    },
+    {
+      "name": "Bombchus (10)"
+    },
+    {
+      "name": "Boomerang"
+    },
+    {
+      "name": "Deku Stick (1)"
+    },
+    {
+      "name": "Lens of Truth"
+    },
+    {
+      "name": "Zeldas Letter",
+      "dependsOn": {
+        "skip_child_zelda": [
+          false
+        ]
+      },
+      "readableName": "Zelda's Letter"
+    },
+    {
+      "name": "Megaton Hammer"
+    },
+    {
+      "name": "Cojiro"
+    },
+    {
+      "name": "Bottle"
+    },
+    {
+      "name": "Bottle with Milk"
+    },
+    {
+      "name": "Rutos Letter",
+      "readableName": "Ruto's Letter"
+    },
+    {
+      "name": "Magic Bean"
+    },
+    {
+      "name": "Skull Mask"
+    },
+    {
+      "name": "Spooky Mask"
+    },
+    {
+      "name": "Keaton Mask"
+    },
+    {
+      "name": "Bunny Hood",
+      "max": 0
+    },
+    {
+      "name": "Mask of Truth"
+    },
+    {
+      "name": "Pocket Egg"
+    },
+    {
+      "name": "Pocket Cucco"
+    },
+    {
+      "name": "Odd Mushroom"
+    },
+    {
+      "name": "Odd Potion",
+      "readableName": "Odd Poultice"
+    },
+    {
+      "name": "Poachers Saw",
+      "readableName": "Poacher's Saw"
+    },
+    {
+      "name": "Broken Sword"
+    },
+    {
+      "name": "Prescription"
+    },
+    {
+      "name": "Eyeball Frog"
+    },
+    {
+      "name": "Eyedrops",
+      "readableName": "World's Finest Eye Drops"
+    },
+    {
+      "name": "Claim Check"
+    },
+    {
+      "name": "Kokiri Sword"
+    },
+    {
+      "name": "Giants Knife",
+      "readableName": "Giant's Knife"
+    },
+    {
+      "name": "Deku Shield"
+    },
+    {
+      "name": "Hylian Shield"
+    },
+    {
+      "name": "Mirror Shield"
+    },
+    {
+      "name": "Goron Tunic"
+    },
+    {
+      "name": "Zora Tunic"
+    },
+    {
+      "name": "Iron Boots"
+    },
+    {
+      "name": "Hover Boots"
+    },
+    {
+      "name": "Stone of Agony"
+    },
+    {
+      "name": "Gerudo Membership Card"
+    },
+    {
+      "name": "Heart Container"
+    },
+    {
+      "name": "Piece of Heart",
+      "max": 36
+    },
+    {
+      "name": "Boss Key"
+    },
+    {
+      "name": "Compass"
+    },
+    {
+      "name": "Map"
+    },
+    {
+      "name": "Small Key"
+    },
+    {
+      "name": "Weird Egg"
+    },
+    {
+      "name": "Recovery Heart",
+      "max": 0
+    },
+    {
+      "name": "Arrows (5)"
+    },
+    {
+      "name": "Arrows (10)"
+    },
+    {
+      "name": "Arrows (30)"
+    },
+    {
+      "name": "Rupee (1)",
+      "max": 100
+    },
+    {
+      "name": "Rupees (5)",
+      "max": 100
+    },
+    {
+      "name": "Rupees (20)",
+      "max": 50
+    },
+    {
+      "name": "Heart Container (Boss)",
+      "max": 8,
+      "readableName": "Boss Heart Container"
+    },
+    {
+      "name": "Milk"
+    },
+    {
+      "name": "Goron Mask"
+    },
+    {
+      "name": "Zora Mask"
+    },
+    {
+      "name": "Gerudo Mask"
+    },
+    {
+      "name": "Rupees (50)",
+      "max": 20
+    },
+    {
+      "name": "Rupees (200)",
+      "max": 5
+    },
+    {
+      "name": "Biggoron Sword"
+    },
+    {
+      "name": "Fire Arrows"
+    },
+    {
+      "name": "Ice Arrows"
+    },
+    {
+      "name": "Light Arrows"
+    },
+    {
+      "name": "Gold Skulltula Token",
+      "max": 100
+    },
+    {
+      "name": "Dins Fire",
+      "readableName": "Din's Fire"
+    },
+    {
+      "name": "Farores Wind",
+      "readableName": "Farore's Wind"
+    },
+    {
+      "name": "Nayrus Love",
+      "readableName": "Nayru's Love"
+    },
+    {
+      "name": "Deku Nuts (10)"
+    },
+    {
+      "name": "Bombs (10)"
+    },
+    {
+      "name": "Bombs (20)"
+    },
+    {
+      "name": "Deku Seeds (30)"
+    },
+    {
+      "name": "Bombchus (5)"
+    },
+    {
+      "name": "Bombchus (20)"
+    },
+    {
+      "name": "Rupee (Treasure Chest Game)"
+    },
+    {
+      "name": "Piece of Heart (Treasure Chest Game)"
+    },
+    {
+      "name": "Ice Trap",
+      "max": 0
+    },
+    {
+      "name": "Progressive Hookshot",
+      "max": 2
+    },
+    {
+      "name": "Progressive Strength Upgrade",
+      "max": 3
+    },
+    {
+      "name": "Bomb Bag"
+    },
+    {
+      "name": "Bow"
+    },
+    {
+      "name": "Slingshot"
+    },
+    {
+      "name": "Progressive Wallet",
+      "max": 3
+    },
+    {
+      "name": "Progressive Scale",
+      "max": 2
+    },
+    {
+      "name": "Deku Nut Capacity",
+      "max": 2
+    },
+    {
+      "name": "Deku Stick Capacity",
+      "max": 2
+    },
+    {
+      "name": "Bombchus"
+    },
+    {
+      "name": "Magic Meter"
+    },
+    {
+      "name": "Ocarina"
+    },
+    {
+      "name": "Bottle with Red Potion"
+    },
+    {
+      "name": "Bottle with Green Potion"
+    },
+    {
+      "name": "Bottle with Blue Potion"
+    },
+    {
+      "name": "Bottle with Fairy"
+    },
+    {
+      "name": "Bottle with Fish"
+    },
+    {
+      "name": "Bottle with Blue Fire"
+    },
+    {
+      "name": "Bottle with Bugs"
+    },
+    {
+      "name": "Bottle with Big Poe"
+    },
+    {
+      "name": "Bottle with Poe"
+    },
+    {
+      "name": "Boss Key (Forest Temple)"
+    },
+    {
+      "name": "Boss Key (Fire Temple)"
+    },
+    {
+      "name": "Boss Key (Water Temple)"
+    },
+    {
+      "name": "Boss Key (Spirit Temple)"
+    },
+    {
+      "name": "Boss Key (Shadow Temple)"
+    },
+    {
+      "name": "Boss Key (Ganons Castle)"
+    },
+    {
+      "name": "Compass (Deku Tree)"
+    },
+    {
+      "name": "Compass (Dodongos Cavern)"
+    },
+    {
+      "name": "Compass (Jabu Jabus Belly)"
+    },
+    {
+      "name": "Compass (Forest Temple)"
+    },
+    {
+      "name": "Compass (Fire Temple)"
+    },
+    {
+      "name": "Compass (Water Temple)"
+    },
+    {
+      "name": "Compass (Spirit Temple)"
+    },
+    {
+      "name": "Compass (Shadow Temple)"
+    },
+    {
+      "name": "Compass (Bottom of the Well)"
+    },
+    {
+      "name": "Compass (Ice Cavern)"
+    },
+    {
+      "name": "Map (Deku Tree)"
+    },
+    {
+      "name": "Map (Dodongos Cavern)"
+    },
+    {
+      "name": "Map (Jabu Jabus Belly)"
+    },
+    {
+      "name": "Map (Forest Temple)"
+    },
+    {
+      "name": "Map (Fire Temple)"
+    },
+    {
+      "name": "Map (Water Temple)"
+    },
+    {
+      "name": "Map (Spirit Temple)"
+    },
+    {
+      "name": "Map (Shadow Temple)"
+    },
+    {
+      "name": "Map (Bottom of the Well)"
+    },
+    {
+      "name": "Map (Ice Cavern)"
+    },
+    {
+      "name": "Small Key (Forest Temple)"
+    },
+    {
+      "name": "Small Key (Fire Temple)"
+    },
+    {
+      "name": "Small Key (Water Temple)"
+    },
+    {
+      "name": "Small Key (Spirit Temple)"
+    },
+    {
+      "name": "Small Key (Shadow Temple)"
+    },
+    {
+      "name": "Small Key (Bottom of the Well)"
+    },
+    {
+      "name": "Small Key (Gerudo Training Ground)"
+    },
+    {
+      "name": "Small Key (Thieves Hideout)"
+    },
+    {
+      "name": "Small Key (Ganons Castle)"
+    },
+    {
+      "name": "Double Defense"
+    },
+    {
+      "name": "Minuet of Forest"
+    },
+    {
+      "name": "Bolero of Fire"
+    },
+    {
+      "name": "Serenade of Water"
+    },
+    {
+      "name": "Requiem of Spirit"
+    },
+    {
+      "name": "Nocturne of Shadow"
+    },
+    {
+      "name": "Prelude of Light"
+    },
+    {
+      "name": "Zeldas Lullaby",
+      "readableName": "Zelda's Lullaby"
+    },
+    {
+      "name": "Eponas Song",
+      "readableName": "Epona's Song"
+    },
+    {
+      "name": "Sarias Song",
+      "readableName": "Saria's Song"
+    },
+    {
+      "name": "Suns Song",
+      "readableName": "Sun's Song"
+    },
+    {
+      "name": "Song of Time"
+    },
+    {
+      "name": "Song of Storms"
+    },
+    {
+      "name": "Magic Bean Pack"
+    },
+    {
+      "name": "Triforce Piece",
+      "dependsOn": {
+        "triforce_hunt": [
+          true
+        ]
+      },
+      "max": 0
+    }
+  ],
+  "locations": [
+    {
+      "name": "Song from Impa"
+    },
+    {
+      "name": "Song from Malon"
+    },
+    {
+      "name": "Song from Saria"
+    },
+    {
+      "name": "Song from Royal Familys Tomb"
+    },
+    {
+      "name": "Song from Ocarina of Time"
+    },
+    {
+      "name": "Song from Windmill"
+    },
+    {
+      "name": "Sheik in Forest"
+    },
+    {
+      "name": "Sheik in Crater"
+    },
+    {
+      "name": "Sheik in Ice Cavern"
+    },
+    {
+      "name": "Sheik at Colossus"
+    },
+    {
+      "name": "Sheik in Kakariko"
+    },
+    {
+      "name": "Sheik at Temple"
+    },
+    {
+      "name": "KF Midos Top Left Chest"
+    },
+    {
+      "name": "KF Midos Top Right Chest"
+    },
+    {
+      "name": "KF Midos Bottom Left Chest"
+    },
+    {
+      "name": "KF Midos Bottom Right Chest"
+    },
+    {
+      "name": "KF Kokiri Sword Chest"
+    },
+    {
+      "name": "KF Storms Grotto Chest"
+    },
+    {
+      "name": "KF Links House Cow"
+    },
+    {
+      "name": "KF GS Know It All House"
+    },
+    {
+      "name": "KF GS Bean Patch"
+    },
+    {
+      "name": "KF GS House of Twins"
+    },
+    {
+      "name": "KF Shop Item 1"
+    },
+    {
+      "name": "KF Shop Item 2"
+    },
+    {
+      "name": "KF Shop Item 3"
+    },
+    {
+      "name": "KF Shop Item 4"
+    },
+    {
+      "name": "KF Shop Item 5"
+    },
+    {
+      "name": "KF Shop Item 6"
+    },
+    {
+      "name": "KF Shop Item 7"
+    },
+    {
+      "name": "KF Shop Item 8"
+    },
+    {
+      "name": "LW Gift from Saria"
+    },
+    {
+      "name": "LW Ocarina Memory Game"
+    },
+    {
+      "name": "LW Target in Woods"
+    },
+    {
+      "name": "LW Near Shortcuts Grotto Chest"
+    },
+    {
+      "name": "Deku Theater Skull Mask"
+    },
+    {
+      "name": "Deku Theater Mask of Truth"
+    },
+    {
+      "name": "LW Skull Kid"
+    },
+    {
+      "name": "LW Deku Scrub Near Bridge"
+    },
+    {
+      "name": "LW Deku Scrub Near Deku Theater Left"
+    },
+    {
+      "name": "LW Deku Scrub Near Deku Theater Right"
+    },
+    {
+      "name": "LW Deku Scrub Grotto Front"
+    },
+    {
+      "name": "LW Deku Scrub Grotto Rear"
+    },
+    {
+      "name": "LW GS Bean Patch Near Bridge"
+    },
+    {
+      "name": "LW GS Bean Patch Near Theater"
+    },
+    {
+      "name": "LW GS Above Theater"
+    },
+    {
+      "name": "SFM Wolfos Grotto Chest"
+    },
+    {
+      "name": "SFM Deku Scrub Grotto Front"
+    },
+    {
+      "name": "SFM Deku Scrub Grotto Rear"
+    },
+    {
+      "name": "SFM GS"
+    },
+    {
+      "name": "HF Ocarina of Time Item"
+    },
+    {
+      "name": "HF Near Market Grotto Chest"
+    },
+    {
+      "name": "HF Tektite Grotto Freestanding PoH"
+    },
+    {
+      "name": "HF Southeast Grotto Chest"
+    },
+    {
+      "name": "HF Open Grotto Chest"
+    },
+    {
+      "name": "HF Deku Scrub Grotto"
+    },
+    {
+      "name": "HF Cow Grotto Cow"
+    },
+    {
+      "name": "HF GS Cow Grotto"
+    },
+    {
+      "name": "HF GS Near Kak Grotto"
+    },
+    {
+      "name": "Market Shooting Gallery Reward"
+    },
+    {
+      "name": "Market Bombchu Bowling First Prize"
+    },
+    {
+      "name": "Market Bombchu Bowling Second Prize"
+    },
+    {
+      "name": "Market Lost Dog"
+    },
+    {
+      "name": "Market Treasure Chest Game Reward"
+    },
+    {
+      "name": "Market 10 Big Poes"
+    },
+    {
+      "name": "Market GS Guard House"
+    },
+    {
+      "name": "Market Bazaar Item 1"
+    },
+    {
+      "name": "Market Bazaar Item 2"
+    },
+    {
+      "name": "Market Bazaar Item 3"
+    },
+    {
+      "name": "Market Bazaar Item 4"
+    },
+    {
+      "name": "Market Bazaar Item 5"
+    },
+    {
+      "name": "Market Bazaar Item 6"
+    },
+    {
+      "name": "Market Bazaar Item 7"
+    },
+    {
+      "name": "Market Bazaar Item 8"
+    },
+    {
+      "name": "Market Potion Shop Item 1"
+    },
+    {
+      "name": "Market Potion Shop Item 2"
+    },
+    {
+      "name": "Market Potion Shop Item 3"
+    },
+    {
+      "name": "Market Potion Shop Item 4"
+    },
+    {
+      "name": "Market Potion Shop Item 5"
+    },
+    {
+      "name": "Market Potion Shop Item 6"
+    },
+    {
+      "name": "Market Potion Shop Item 7"
+    },
+    {
+      "name": "Market Potion Shop Item 8"
+    },
+    {
+      "name": "Market Bombchu Shop Item 1"
+    },
+    {
+      "name": "Market Bombchu Shop Item 2"
+    },
+    {
+      "name": "Market Bombchu Shop Item 3"
+    },
+    {
+      "name": "Market Bombchu Shop Item 4"
+    },
+    {
+      "name": "Market Bombchu Shop Item 5"
+    },
+    {
+      "name": "Market Bombchu Shop Item 6"
+    },
+    {
+      "name": "Market Bombchu Shop Item 7"
+    },
+    {
+      "name": "Market Bombchu Shop Item 8"
+    },
+    {
+      "name": "ToT Light Arrows Cutscene"
+    },
+    {
+      "name": "HC Malon Egg"
+    },
+    {
+      "name": "HC Zeldas Letter"
+    },
+    {
+      "name": "HC Great Fairy Reward"
+    },
+    {
+      "name": "HC GS Tree"
+    },
+    {
+      "name": "HC GS Storms Grotto"
+    },
+    {
+      "name": "LLR Talons Chickens"
+    },
+    {
+      "name": "LLR Freestanding PoH"
+    },
+    {
+      "name": "LLR Deku Scrub Grotto Left"
+    },
+    {
+      "name": "LLR Deku Scrub Grotto Center"
+    },
+    {
+      "name": "LLR Deku Scrub Grotto Right"
+    },
+    {
+      "name": "LLR Stables Left Cow"
+    },
+    {
+      "name": "LLR Stables Right Cow"
+    },
+    {
+      "name": "LLR Tower Left Cow"
+    },
+    {
+      "name": "LLR Tower Right Cow"
+    },
+    {
+      "name": "LLR GS House Window"
+    },
+    {
+      "name": "LLR GS Tree"
+    },
+    {
+      "name": "LLR GS Rain Shed"
+    },
+    {
+      "name": "LLR GS Back Wall"
+    },
+    {
+      "name": "Kak Anju as Child"
+    },
+    {
+      "name": "Kak Anju as Adult"
+    },
+    {
+      "name": "Kak Impas House Freestanding PoH"
+    },
+    {
+      "name": "Kak Windmill Freestanding PoH"
+    },
+    {
+      "name": "Kak Man on Roof"
+    },
+    {
+      "name": "Kak Open Grotto Chest"
+    },
+    {
+      "name": "Kak Redead Grotto Chest"
+    },
+    {
+      "name": "Kak Shooting Gallery Reward"
+    },
+    {
+      "name": "Kak 10 Gold Skulltula Reward"
+    },
+    {
+      "name": "Kak 20 Gold Skulltula Reward"
+    },
+    {
+      "name": "Kak 30 Gold Skulltula Reward"
+    },
+    {
+      "name": "Kak 40 Gold Skulltula Reward"
+    },
+    {
+      "name": "Kak 50 Gold Skulltula Reward"
+    },
+    {
+      "name": "Kak Impas House Cow"
+    },
+    {
+      "name": "Kak GS Tree"
+    },
+    {
+      "name": "Kak GS Guards House"
+    },
+    {
+      "name": "Kak GS Watchtower"
+    },
+    {
+      "name": "Kak GS Skulltula House"
+    },
+    {
+      "name": "Kak GS House Under Construction"
+    },
+    {
+      "name": "Kak GS Above Impas House"
+    },
+    {
+      "name": "Kak Bazaar Item 1"
+    },
+    {
+      "name": "Kak Bazaar Item 2"
+    },
+    {
+      "name": "Kak Bazaar Item 3"
+    },
+    {
+      "name": "Kak Bazaar Item 4"
+    },
+    {
+      "name": "Kak Bazaar Item 5"
+    },
+    {
+      "name": "Kak Bazaar Item 6"
+    },
+    {
+      "name": "Kak Bazaar Item 7"
+    },
+    {
+      "name": "Kak Bazaar Item 8"
+    },
+    {
+      "name": "Kak Potion Shop Item 1"
+    },
+    {
+      "name": "Kak Potion Shop Item 2"
+    },
+    {
+      "name": "Kak Potion Shop Item 3"
+    },
+    {
+      "name": "Kak Potion Shop Item 4"
+    },
+    {
+      "name": "Kak Potion Shop Item 5"
+    },
+    {
+      "name": "Kak Potion Shop Item 6"
+    },
+    {
+      "name": "Kak Potion Shop Item 7"
+    },
+    {
+      "name": "Kak Potion Shop Item 8"
+    },
+    {
+      "name": "Graveyard Shield Grave Chest"
+    },
+    {
+      "name": "Graveyard Heart Piece Grave Chest"
+    },
+    {
+      "name": "Graveyard Royal Familys Tomb Chest"
+    },
+    {
+      "name": "Graveyard Freestanding PoH"
+    },
+    {
+      "name": "Graveyard Dampe Gravedigging Tour"
+    },
+    {
+      "name": "Graveyard Hookshot Chest"
+    },
+    {
+      "name": "Graveyard Dampe Race Freestanding PoH"
+    },
+    {
+      "name": "Graveyard GS Bean Patch"
+    },
+    {
+      "name": "Graveyard GS Wall"
+    },
+    {
+      "name": "DMT Freestanding PoH"
+    },
+    {
+      "name": "DMT Chest"
+    },
+    {
+      "name": "DMT Storms Grotto Chest"
+    },
+    {
+      "name": "DMT Great Fairy Reward"
+    },
+    {
+      "name": "DMT Biggoron"
+    },
+    {
+      "name": "DMT Cow Grotto Cow"
+    },
+    {
+      "name": "DMT GS Near Kak"
+    },
+    {
+      "name": "DMT GS Bean Patch"
+    },
+    {
+      "name": "DMT GS Above Dodongos Cavern"
+    },
+    {
+      "name": "DMT GS Falling Rocks Path"
+    },
+    {
+      "name": "GC Darunias Joy"
+    },
+    {
+      "name": "GC Pot Freestanding PoH"
+    },
+    {
+      "name": "GC Rolling Goron as Child"
+    },
+    {
+      "name": "GC Rolling Goron as Adult"
+    },
+    {
+      "name": "GC Medigoron"
+    },
+    {
+      "name": "GC Maze Left Chest"
+    },
+    {
+      "name": "GC Maze Right Chest"
+    },
+    {
+      "name": "GC Maze Center Chest"
+    },
+    {
+      "name": "GC Deku Scrub Grotto Left"
+    },
+    {
+      "name": "GC Deku Scrub Grotto Center"
+    },
+    {
+      "name": "GC Deku Scrub Grotto Right"
+    },
+    {
+      "name": "GC GS Center Platform"
+    },
+    {
+      "name": "GC GS Boulder Maze"
+    },
+    {
+      "name": "GC Shop Item 1"
+    },
+    {
+      "name": "GC Shop Item 2"
+    },
+    {
+      "name": "GC Shop Item 3"
+    },
+    {
+      "name": "GC Shop Item 4"
+    },
+    {
+      "name": "GC Shop Item 5"
+    },
+    {
+      "name": "GC Shop Item 6"
+    },
+    {
+      "name": "GC Shop Item 7"
+    },
+    {
+      "name": "GC Shop Item 8"
+    },
+    {
+      "name": "DMC Volcano Freestanding PoH"
+    },
+    {
+      "name": "DMC Wall Freestanding PoH"
+    },
+    {
+      "name": "DMC Upper Grotto Chest"
+    },
+    {
+      "name": "DMC Great Fairy Reward"
+    },
+    {
+      "name": "DMC Deku Scrub"
+    },
+    {
+      "name": "DMC Deku Scrub Grotto Left"
+    },
+    {
+      "name": "DMC Deku Scrub Grotto Center"
+    },
+    {
+      "name": "DMC Deku Scrub Grotto Right"
+    },
+    {
+      "name": "DMC GS Crate"
+    },
+    {
+      "name": "DMC GS Bean Patch"
+    },
+    {
+      "name": "ZR Magic Bean Salesman"
+    },
+    {
+      "name": "ZR Open Grotto Chest"
+    },
+    {
+      "name": "ZR Frogs in the Rain"
+    },
+    {
+      "name": "ZR Frogs Ocarina Game"
+    },
+    {
+      "name": "ZR Near Open Grotto Freestanding PoH"
+    },
+    {
+      "name": "ZR Near Domain Freestanding PoH"
+    },
+    {
+      "name": "ZR Deku Scrub Grotto Front"
+    },
+    {
+      "name": "ZR Deku Scrub Grotto Rear"
+    },
+    {
+      "name": "ZR GS Tree"
+    },
+    {
+      "name": "ZR GS Ladder"
+    },
+    {
+      "name": "ZR GS Near Raised Grottos"
+    },
+    {
+      "name": "ZR GS Above Bridge"
+    },
+    {
+      "name": "ZD Diving Minigame"
+    },
+    {
+      "name": "ZD Chest"
+    },
+    {
+      "name": "ZD King Zora Thawed"
+    },
+    {
+      "name": "ZD GS Frozen Waterfall"
+    },
+    {
+      "name": "ZD Shop Item 1"
+    },
+    {
+      "name": "ZD Shop Item 2"
+    },
+    {
+      "name": "ZD Shop Item 3"
+    },
+    {
+      "name": "ZD Shop Item 4"
+    },
+    {
+      "name": "ZD Shop Item 5"
+    },
+    {
+      "name": "ZD Shop Item 6"
+    },
+    {
+      "name": "ZD Shop Item 7"
+    },
+    {
+      "name": "ZD Shop Item 8"
+    },
+    {
+      "name": "ZF Great Fairy Reward"
+    },
+    {
+      "name": "ZF Iceberg Freestanding PoH"
+    },
+    {
+      "name": "ZF Bottom Freestanding PoH"
+    },
+    {
+      "name": "ZF GS Above the Log"
+    },
+    {
+      "name": "ZF GS Tree"
+    },
+    {
+      "name": "ZF GS Hidden Cave"
+    },
+    {
+      "name": "LH Underwater Item"
+    },
+    {
+      "name": "LH Child Fishing"
+    },
+    {
+      "name": "LH Adult Fishing"
+    },
+    {
+      "name": "LH Lab Dive"
+    },
+    {
+      "name": "LH Freestanding PoH"
+    },
+    {
+      "name": "LH Sun"
+    },
+    {
+      "name": "LH Deku Scrub Grotto Left"
+    },
+    {
+      "name": "LH Deku Scrub Grotto Center"
+    },
+    {
+      "name": "LH Deku Scrub Grotto Right"
+    },
+    {
+      "name": "LH GS Bean Patch"
+    },
+    {
+      "name": "LH GS Lab Wall"
+    },
+    {
+      "name": "LH GS Small Island"
+    },
+    {
+      "name": "LH GS Lab Crate"
+    },
+    {
+      "name": "LH GS Tree"
+    },
+    {
+      "name": "GV Crate Freestanding PoH"
+    },
+    {
+      "name": "GV Waterfall Freestanding PoH"
+    },
+    {
+      "name": "GV Chest"
+    },
+    {
+      "name": "GV Deku Scrub Grotto Front"
+    },
+    {
+      "name": "GV Deku Scrub Grotto Rear"
+    },
+    {
+      "name": "GV Cow"
+    },
+    {
+      "name": "GV GS Small Bridge"
+    },
+    {
+      "name": "GV GS Bean Patch"
+    },
+    {
+      "name": "GV GS Behind Tent"
+    },
+    {
+      "name": "GV GS Pillar"
+    },
+    {
+      "name": "Hideout Jail Guard (1 Torch)"
+    },
+    {
+      "name": "Hideout Jail Guard (2 Torches)"
+    },
+    {
+      "name": "Hideout Jail Guard (3 Torches)"
+    },
+    {
+      "name": "Hideout Jail Guard (4 Torches)"
+    },
+    {
+      "name": "Hideout Gerudo Membership Card"
+    },
+    {
+      "name": "GF Chest"
+    },
+    {
+      "name": "GF HBA 1000 Points"
+    },
+    {
+      "name": "GF HBA 1500 Points"
+    },
+    {
+      "name": "GF GS Top Floor"
+    },
+    {
+      "name": "GF GS Archery Range"
+    },
+    {
+      "name": "Wasteland Bombchu Salesman"
+    },
+    {
+      "name": "Wasteland Chest"
+    },
+    {
+      "name": "Wasteland GS"
+    },
+    {
+      "name": "Colossus Great Fairy Reward"
+    },
+    {
+      "name": "Colossus Freestanding PoH"
+    },
+    {
+      "name": "Colossus Deku Scrub Grotto Front"
+    },
+    {
+      "name": "Colossus Deku Scrub Grotto Rear"
+    },
+    {
+      "name": "Colossus GS Bean Patch"
+    },
+    {
+      "name": "Colossus GS Tree"
+    },
+    {
+      "name": "Colossus GS Hill"
+    },
+    {
+      "name": "OGC Great Fairy Reward"
+    },
+    {
+      "name": "OGC GS"
+    },
+    {
+      "name": "Deku Tree Map Chest"
+    },
+    {
+      "name": "Deku Tree Slingshot Room Side Chest"
+    },
+    {
+      "name": "Deku Tree Slingshot Chest"
+    },
+    {
+      "name": "Deku Tree Compass Chest"
+    },
+    {
+      "name": "Deku Tree Compass Room Side Chest"
+    },
+    {
+      "name": "Deku Tree Basement Chest"
+    },
+    {
+      "name": "Deku Tree GS Compass Room"
+    },
+    {
+      "name": "Deku Tree GS Basement Vines"
+    },
+    {
+      "name": "Deku Tree GS Basement Gate"
+    },
+    {
+      "name": "Deku Tree GS Basement Back Room"
+    },
+    {
+      "name": "Deku Tree MQ Map Chest"
+    },
+    {
+      "name": "Deku Tree MQ Slingshot Chest"
+    },
+    {
+      "name": "Deku Tree MQ Slingshot Room Back Chest"
+    },
+    {
+      "name": "Deku Tree MQ Compass Chest"
+    },
+    {
+      "name": "Deku Tree MQ Basement Chest"
+    },
+    {
+      "name": "Deku Tree MQ Before Spinning Log Chest"
+    },
+    {
+      "name": "Deku Tree MQ After Spinning Log Chest"
+    },
+    {
+      "name": "Deku Tree MQ Deku Scrub"
+    },
+    {
+      "name": "Deku Tree MQ GS Lobby"
+    },
+    {
+      "name": "Deku Tree MQ GS Compass Room"
+    },
+    {
+      "name": "Deku Tree MQ GS Basement Graves Room"
+    },
+    {
+      "name": "Deku Tree MQ GS Basement Back Room"
+    },
+    {
+      "name": "Deku Tree Queen Gohma Heart"
+    },
+    {
+      "name": "Dodongos Cavern Map Chest"
+    },
+    {
+      "name": "Dodongos Cavern Compass Chest"
+    },
+    {
+      "name": "Dodongos Cavern Bomb Flower Platform Chest"
+    },
+    {
+      "name": "Dodongos Cavern Bomb Bag Chest"
+    },
+    {
+      "name": "Dodongos Cavern End of Bridge Chest"
+    },
+    {
+      "name": "Dodongos Cavern Deku Scrub Side Room Near Dodongos"
+    },
+    {
+      "name": "Dodongos Cavern Deku Scrub Lobby"
+    },
+    {
+      "name": "Dodongos Cavern Deku Scrub Near Bomb Bag Left"
+    },
+    {
+      "name": "Dodongos Cavern Deku Scrub Near Bomb Bag Right"
+    },
+    {
+      "name": "Dodongos Cavern GS Side Room Near Lower Lizalfos"
+    },
+    {
+      "name": "Dodongos Cavern GS Scarecrow"
+    },
+    {
+      "name": "Dodongos Cavern GS Alcove Above Stairs"
+    },
+    {
+      "name": "Dodongos Cavern GS Vines Above Stairs"
+    },
+    {
+      "name": "Dodongos Cavern GS Back Room"
+    },
+    {
+      "name": "Dodongos Cavern MQ Map Chest"
+    },
+    {
+      "name": "Dodongos Cavern MQ Bomb Bag Chest"
+    },
+    {
+      "name": "Dodongos Cavern MQ Torch Puzzle Room Chest"
+    },
+    {
+      "name": "Dodongos Cavern MQ Larvae Room Chest"
+    },
+    {
+      "name": "Dodongos Cavern MQ Compass Chest"
+    },
+    {
+      "name": "Dodongos Cavern MQ Under Grave Chest"
+    },
+    {
+      "name": "Dodongos Cavern MQ Deku Scrub Lobby Front"
+    },
+    {
+      "name": "Dodongos Cavern MQ Deku Scrub Lobby Rear"
+    },
+    {
+      "name": "Dodongos Cavern MQ Deku Scrub Side Room Near Lower Lizalfos"
+    },
+    {
+      "name": "Dodongos Cavern MQ Deku Scrub Staircase"
+    },
+    {
+      "name": "Dodongos Cavern MQ GS Scrub Room"
+    },
+    {
+      "name": "Dodongos Cavern MQ GS Larvae Room"
+    },
+    {
+      "name": "Dodongos Cavern MQ GS Lizalfos Room"
+    },
+    {
+      "name": "Dodongos Cavern MQ GS Song of Time Block Room"
+    },
+    {
+      "name": "Dodongos Cavern MQ GS Back Area"
+    },
+    {
+      "name": "Dodongos Cavern Boss Room Chest"
+    },
+    {
+      "name": "Dodongos Cavern King Dodongo Heart"
+    },
+    {
+      "name": "Jabu Jabus Belly Boomerang Chest"
+    },
+    {
+      "name": "Jabu Jabus Belly Map Chest"
+    },
+    {
+      "name": "Jabu Jabus Belly Compass Chest"
+    },
+    {
+      "name": "Jabu Jabus Belly Deku Scrub"
+    },
+    {
+      "name": "Jabu Jabus Belly GS Water Switch Room"
+    },
+    {
+      "name": "Jabu Jabus Belly GS Lobby Basement Lower"
+    },
+    {
+      "name": "Jabu Jabus Belly GS Lobby Basement Upper"
+    },
+    {
+      "name": "Jabu Jabus Belly GS Near Boss"
+    },
+    {
+      "name": "Jabu Jabus Belly MQ Map Chest"
+    },
+    {
+      "name": "Jabu Jabus Belly MQ First Room Side Chest"
+    },
+    {
+      "name": "Jabu Jabus Belly MQ Second Room Lower Chest"
+    },
+    {
+      "name": "Jabu Jabus Belly MQ Compass Chest"
+    },
+    {
+      "name": "Jabu Jabus Belly MQ Basement Near Switches Chest"
+    },
+    {
+      "name": "Jabu Jabus Belly MQ Basement Near Vines Chest"
+    },
+    {
+      "name": "Jabu Jabus Belly MQ Boomerang Room Small Chest"
+    },
+    {
+      "name": "Jabu Jabus Belly MQ Boomerang Chest"
+    },
+    {
+      "name": "Jabu Jabus Belly MQ Falling Like Like Room Chest"
+    },
+    {
+      "name": "Jabu Jabus Belly MQ Second Room Upper Chest"
+    },
+    {
+      "name": "Jabu Jabus Belly MQ Near Boss Chest"
+    },
+    {
+      "name": "Jabu Jabus Belly MQ Cow"
+    },
+    {
+      "name": "Jabu Jabus Belly MQ GS Boomerang Chest Room"
+    },
+    {
+      "name": "Jabu Jabus Belly MQ GS Tailpasaran Room"
+    },
+    {
+      "name": "Jabu Jabus Belly MQ GS Invisible Enemies Room"
+    },
+    {
+      "name": "Jabu Jabus Belly MQ GS Near Boss"
+    },
+    {
+      "name": "Jabu Jabus Belly Barinade Heart"
+    },
+    {
+      "name": "Bottom of the Well Front Left Fake Wall Chest"
+    },
+    {
+      "name": "Bottom of the Well Front Center Bombable Chest"
+    },
+    {
+      "name": "Bottom of the Well Back Left Bombable Chest"
+    },
+    {
+      "name": "Bottom of the Well Underwater Left Chest"
+    },
+    {
+      "name": "Bottom of the Well Freestanding Key"
+    },
+    {
+      "name": "Bottom of the Well Compass Chest"
+    },
+    {
+      "name": "Bottom of the Well Center Skulltula Chest"
+    },
+    {
+      "name": "Bottom of the Well Right Bottom Fake Wall Chest"
+    },
+    {
+      "name": "Bottom of the Well Fire Keese Chest"
+    },
+    {
+      "name": "Bottom of the Well Like Like Chest"
+    },
+    {
+      "name": "Bottom of the Well Map Chest"
+    },
+    {
+      "name": "Bottom of the Well Underwater Front Chest"
+    },
+    {
+      "name": "Bottom of the Well Invisible Chest"
+    },
+    {
+      "name": "Bottom of the Well Lens of Truth Chest"
+    },
+    {
+      "name": "Bottom of the Well GS West Inner Room"
+    },
+    {
+      "name": "Bottom of the Well GS East Inner Room"
+    },
+    {
+      "name": "Bottom of the Well GS Like Like Cage"
+    },
+    {
+      "name": "Bottom of the Well MQ Map Chest"
+    },
+    {
+      "name": "Bottom of the Well MQ East Inner Room Freestanding Key"
+    },
+    {
+      "name": "Bottom of the Well MQ Compass Chest"
+    },
+    {
+      "name": "Bottom of the Well MQ Dead Hand Freestanding Key"
+    },
+    {
+      "name": "Bottom of the Well MQ Lens of Truth Chest"
+    },
+    {
+      "name": "Bottom of the Well MQ GS Coffin Room"
+    },
+    {
+      "name": "Bottom of the Well MQ GS West Inner Room"
+    },
+    {
+      "name": "Bottom of the Well MQ GS Basement"
+    },
+    {
+      "name": "Forest Temple First Room Chest"
+    },
+    {
+      "name": "Forest Temple First Stalfos Chest"
+    },
+    {
+      "name": "Forest Temple Raised Island Courtyard Chest"
+    },
+    {
+      "name": "Forest Temple Map Chest"
+    },
+    {
+      "name": "Forest Temple Well Chest"
+    },
+    {
+      "name": "Forest Temple Eye Switch Chest"
+    },
+    {
+      "name": "Forest Temple Boss Key Chest"
+    },
+    {
+      "name": "Forest Temple Floormaster Chest"
+    },
+    {
+      "name": "Forest Temple Red Poe Chest"
+    },
+    {
+      "name": "Forest Temple Bow Chest"
+    },
+    {
+      "name": "Forest Temple Blue Poe Chest"
+    },
+    {
+      "name": "Forest Temple Falling Ceiling Room Chest"
+    },
+    {
+      "name": "Forest Temple Basement Chest"
+    },
+    {
+      "name": "Forest Temple GS First Room"
+    },
+    {
+      "name": "Forest Temple GS Lobby"
+    },
+    {
+      "name": "Forest Temple GS Raised Island Courtyard"
+    },
+    {
+      "name": "Forest Temple GS Level Island Courtyard"
+    },
+    {
+      "name": "Forest Temple GS Basement"
+    },
+    {
+      "name": "Forest Temple MQ First Room Chest"
+    },
+    {
+      "name": "Forest Temple MQ Wolfos Chest"
+    },
+    {
+      "name": "Forest Temple MQ Well Chest"
+    },
+    {
+      "name": "Forest Temple MQ Raised Island Courtyard Lower Chest"
+    },
+    {
+      "name": "Forest Temple MQ Raised Island Courtyard Upper Chest"
+    },
+    {
+      "name": "Forest Temple MQ Boss Key Chest"
+    },
+    {
+      "name": "Forest Temple MQ Redead Chest"
+    },
+    {
+      "name": "Forest Temple MQ Map Chest"
+    },
+    {
+      "name": "Forest Temple MQ Bow Chest"
+    },
+    {
+      "name": "Forest Temple MQ Compass Chest"
+    },
+    {
+      "name": "Forest Temple MQ Falling Ceiling Room Chest"
+    },
+    {
+      "name": "Forest Temple MQ Basement Chest"
+    },
+    {
+      "name": "Forest Temple MQ GS First Hallway"
+    },
+    {
+      "name": "Forest Temple MQ GS Raised Island Courtyard"
+    },
+    {
+      "name": "Forest Temple MQ GS Level Island Courtyard"
+    },
+    {
+      "name": "Forest Temple MQ GS Well"
+    },
+    {
+      "name": "Forest Temple MQ GS Block Push Room"
+    },
+    {
+      "name": "Forest Temple Phantom Ganon Heart"
+    },
+    {
+      "name": "Fire Temple Near Boss Chest"
+    },
+    {
+      "name": "Fire Temple Flare Dancer Chest"
+    },
+    {
+      "name": "Fire Temple Boss Key Chest"
+    },
+    {
+      "name": "Fire Temple Big Lava Room Lower Open Door Chest"
+    },
+    {
+      "name": "Fire Temple Big Lava Room Blocked Door Chest"
+    },
+    {
+      "name": "Fire Temple Boulder Maze Lower Chest"
+    },
+    {
+      "name": "Fire Temple Boulder Maze Side Room Chest"
+    },
+    {
+      "name": "Fire Temple Map Chest"
+    },
+    {
+      "name": "Fire Temple Boulder Maze Shortcut Chest"
+    },
+    {
+      "name": "Fire Temple Boulder Maze Upper Chest"
+    },
+    {
+      "name": "Fire Temple Scarecrow Chest"
+    },
+    {
+      "name": "Fire Temple Compass Chest"
+    },
+    {
+      "name": "Fire Temple Megaton Hammer Chest"
+    },
+    {
+      "name": "Fire Temple Highest Goron Chest"
+    },
+    {
+      "name": "Fire Temple GS Boss Key Loop"
+    },
+    {
+      "name": "Fire Temple GS Song of Time Room"
+    },
+    {
+      "name": "Fire Temple GS Boulder Maze"
+    },
+    {
+      "name": "Fire Temple GS Scarecrow Climb"
+    },
+    {
+      "name": "Fire Temple GS Scarecrow Top"
+    },
+    {
+      "name": "Fire Temple MQ Map Room Side Chest"
+    },
+    {
+      "name": "Fire Temple MQ Megaton Hammer Chest"
+    },
+    {
+      "name": "Fire Temple MQ Map Chest"
+    },
+    {
+      "name": "Fire Temple MQ Near Boss Chest"
+    },
+    {
+      "name": "Fire Temple MQ Big Lava Room Blocked Door Chest"
+    },
+    {
+      "name": "Fire Temple MQ Boss Key Chest"
+    },
+    {
+      "name": "Fire Temple MQ Lizalfos Maze Side Room Chest"
+    },
+    {
+      "name": "Fire Temple MQ Compass Chest"
+    },
+    {
+      "name": "Fire Temple MQ Lizalfos Maze Upper Chest"
+    },
+    {
+      "name": "Fire Temple MQ Lizalfos Maze Lower Chest"
+    },
+    {
+      "name": "Fire Temple MQ Freestanding Key"
+    },
+    {
+      "name": "Fire Temple MQ Chest On Fire"
+    },
+    {
+      "name": "Fire Temple MQ GS Big Lava Room Open Door"
+    },
+    {
+      "name": "Fire Temple MQ GS Skull On Fire"
+    },
+    {
+      "name": "Fire Temple MQ GS Fire Wall Maze Center"
+    },
+    {
+      "name": "Fire Temple MQ GS Fire Wall Maze Side Room"
+    },
+    {
+      "name": "Fire Temple MQ GS Above Fire Wall Maze"
+    },
+    {
+      "name": "Fire Temple Volvagia Heart"
+    },
+    {
+      "name": "Water Temple Compass Chest"
+    },
+    {
+      "name": "Water Temple Map Chest"
+    },
+    {
+      "name": "Water Temple Cracked Wall Chest"
+    },
+    {
+      "name": "Water Temple Torches Chest"
+    },
+    {
+      "name": "Water Temple Boss Key Chest"
+    },
+    {
+      "name": "Water Temple Central Pillar Chest"
+    },
+    {
+      "name": "Water Temple Central Bow Target Chest"
+    },
+    {
+      "name": "Water Temple Longshot Chest"
+    },
+    {
+      "name": "Water Temple River Chest"
+    },
+    {
+      "name": "Water Temple Dragon Chest"
+    },
+    {
+      "name": "Water Temple GS Behind Gate"
+    },
+    {
+      "name": "Water Temple GS Near Boss Key Chest"
+    },
+    {
+      "name": "Water Temple GS Central Pillar"
+    },
+    {
+      "name": "Water Temple GS Falling Platform Room"
+    },
+    {
+      "name": "Water Temple GS River"
+    },
+    {
+      "name": "Water Temple MQ Longshot Chest"
+    },
+    {
+      "name": "Water Temple MQ Map Chest"
+    },
+    {
+      "name": "Water Temple MQ Compass Chest"
+    },
+    {
+      "name": "Water Temple MQ Central Pillar Chest"
+    },
+    {
+      "name": "Water Temple MQ Boss Key Chest"
+    },
+    {
+      "name": "Water Temple MQ Freestanding Key"
+    },
+    {
+      "name": "Water Temple MQ GS Lizalfos Hallway"
+    },
+    {
+      "name": "Water Temple MQ GS Before Upper Water Switch"
+    },
+    {
+      "name": "Water Temple MQ GS River"
+    },
+    {
+      "name": "Water Temple MQ GS Freestanding Key Area"
+    },
+    {
+      "name": "Water Temple MQ GS Triple Wall Torch"
+    },
+    {
+      "name": "Water Temple Morpha Heart"
+    },
+    {
+      "name": "Shadow Temple Map Chest"
+    },
+    {
+      "name": "Shadow Temple Hover Boots Chest"
+    },
+    {
+      "name": "Shadow Temple Compass Chest"
+    },
+    {
+      "name": "Shadow Temple Early Silver Rupee Chest"
+    },
+    {
+      "name": "Shadow Temple Invisible Blades Visible Chest"
+    },
+    {
+      "name": "Shadow Temple Invisible Blades Invisible Chest"
+    },
+    {
+      "name": "Shadow Temple Falling Spikes Lower Chest"
+    },
+    {
+      "name": "Shadow Temple Falling Spikes Upper Chest"
+    },
+    {
+      "name": "Shadow Temple Falling Spikes Switch Chest"
+    },
+    {
+      "name": "Shadow Temple Invisible Spikes Chest"
+    },
+    {
+      "name": "Shadow Temple Freestanding Key"
+    },
+    {
+      "name": "Shadow Temple Wind Hint Chest"
+    },
+    {
+      "name": "Shadow Temple After Wind Enemy Chest"
+    },
+    {
+      "name": "Shadow Temple After Wind Hidden Chest"
+    },
+    {
+      "name": "Shadow Temple Spike Walls Left Chest"
+    },
+    {
+      "name": "Shadow Temple Boss Key Chest"
+    },
+    {
+      "name": "Shadow Temple Invisible Floormaster Chest"
+    },
+    {
+      "name": "Shadow Temple GS Like Like Room"
+    },
+    {
+      "name": "Shadow Temple GS Falling Spikes Room"
+    },
+    {
+      "name": "Shadow Temple GS Single Giant Pot"
+    },
+    {
+      "name": "Shadow Temple GS Near Ship"
+    },
+    {
+      "name": "Shadow Temple GS Triple Giant Pot"
+    },
+    {
+      "name": "Shadow Temple MQ Early Gibdos Chest"
+    },
+    {
+      "name": "Shadow Temple MQ Map Chest"
+    },
+    {
+      "name": "Shadow Temple MQ Near Ship Invisible Chest"
+    },
+    {
+      "name": "Shadow Temple MQ Compass Chest"
+    },
+    {
+      "name": "Shadow Temple MQ Hover Boots Chest"
+    },
+    {
+      "name": "Shadow Temple MQ Invisible Blades Invisible Chest"
+    },
+    {
+      "name": "Shadow Temple MQ Invisible Blades Visible Chest"
+    },
+    {
+      "name": "Shadow Temple MQ Beamos Silver Rupees Chest"
+    },
+    {
+      "name": "Shadow Temple MQ Falling Spikes Lower Chest"
+    },
+    {
+      "name": "Shadow Temple MQ Falling Spikes Upper Chest"
+    },
+    {
+      "name": "Shadow Temple MQ Falling Spikes Switch Chest"
+    },
+    {
+      "name": "Shadow Temple MQ Invisible Spikes Chest"
+    },
+    {
+      "name": "Shadow Temple MQ Stalfos Room Chest"
+    },
+    {
+      "name": "Shadow Temple MQ Wind Hint Chest"
+    },
+    {
+      "name": "Shadow Temple MQ After Wind Hidden Chest"
+    },
+    {
+      "name": "Shadow Temple MQ After Wind Enemy Chest"
+    },
+    {
+      "name": "Shadow Temple MQ Boss Key Chest"
+    },
+    {
+      "name": "Shadow Temple MQ Spike Walls Left Chest"
+    },
+    {
+      "name": "Shadow Temple MQ Freestanding Key"
+    },
+    {
+      "name": "Shadow Temple MQ Bomb Flower Chest"
+    },
+    {
+      "name": "Shadow Temple MQ GS Falling Spikes Room"
+    },
+    {
+      "name": "Shadow Temple MQ GS Wind Hint Room"
+    },
+    {
+      "name": "Shadow Temple MQ GS After Wind"
+    },
+    {
+      "name": "Shadow Temple MQ GS After Ship"
+    },
+    {
+      "name": "Shadow Temple MQ GS Near Boss"
+    },
+    {
+      "name": "Shadow Temple Bongo Bongo Heart"
+    },
+    {
+      "name": "Spirit Temple Child Bridge Chest"
+    },
+    {
+      "name": "Spirit Temple Child Early Torches Chest"
+    },
+    {
+      "name": "Spirit Temple Child Climb North Chest"
+    },
+    {
+      "name": "Spirit Temple Child Climb East Chest"
+    },
+    {
+      "name": "Spirit Temple Map Chest"
+    },
+    {
+      "name": "Spirit Temple Sun Block Room Chest"
+    },
+    {
+      "name": "Spirit Temple MQ Entrance Front Left Chest"
+    },
+    {
+      "name": "Spirit Temple MQ Entrance Back Right Chest"
+    },
+    {
+      "name": "Spirit Temple MQ Entrance Front Right Chest"
+    },
+    {
+      "name": "Spirit Temple MQ Entrance Back Left Chest"
+    },
+    {
+      "name": "Spirit Temple MQ Map Chest"
+    },
+    {
+      "name": "Spirit Temple MQ Map Room Enemy Chest"
+    },
+    {
+      "name": "Spirit Temple MQ Child Climb North Chest"
+    },
+    {
+      "name": "Spirit Temple MQ Child Climb South Chest"
+    },
+    {
+      "name": "Spirit Temple MQ Compass Chest"
+    },
+    {
+      "name": "Spirit Temple MQ Silver Block Hallway Chest"
+    },
+    {
+      "name": "Spirit Temple MQ Sun Block Room Chest"
+    },
+    {
+      "name": "Spirit Temple Silver Gauntlets Chest"
+    },
+    {
+      "name": "Spirit Temple Compass Chest"
+    },
+    {
+      "name": "Spirit Temple Early Adult Right Chest"
+    },
+    {
+      "name": "Spirit Temple First Mirror Left Chest"
+    },
+    {
+      "name": "Spirit Temple First Mirror Right Chest"
+    },
+    {
+      "name": "Spirit Temple Statue Room Northeast Chest"
+    },
+    {
+      "name": "Spirit Temple Statue Room Hand Chest"
+    },
+    {
+      "name": "Spirit Temple Near Four Armos Chest"
+    },
+    {
+      "name": "Spirit Temple Hallway Right Invisible Chest"
+    },
+    {
+      "name": "Spirit Temple Hallway Left Invisible Chest"
+    },
+    {
+      "name": "Spirit Temple MQ Child Hammer Switch Chest"
+    },
+    {
+      "name": "Spirit Temple MQ Statue Room Lullaby Chest"
+    },
+    {
+      "name": "Spirit Temple MQ Statue Room Invisible Chest"
+    },
+    {
+      "name": "Spirit Temple MQ Leever Room Chest"
+    },
+    {
+      "name": "Spirit Temple MQ Symphony Room Chest"
+    },
+    {
+      "name": "Spirit Temple MQ Beamos Room Chest"
+    },
+    {
+      "name": "Spirit Temple MQ Chest Switch Chest"
+    },
+    {
+      "name": "Spirit Temple MQ Boss Key Chest"
+    },
+    {
+      "name": "Spirit Temple Mirror Shield Chest"
+    },
+    {
+      "name": "Spirit Temple Boss Key Chest"
+    },
+    {
+      "name": "Spirit Temple Topmost Chest"
+    },
+    {
+      "name": "Spirit Temple MQ Mirror Puzzle Invisible Chest"
+    },
+    {
+      "name": "Spirit Temple GS Metal Fence"
+    },
+    {
+      "name": "Spirit Temple GS Sun on Floor Room"
+    },
+    {
+      "name": "Spirit Temple GS Hall After Sun Block Room"
+    },
+    {
+      "name": "Spirit Temple GS Lobby"
+    },
+    {
+      "name": "Spirit Temple GS Boulder Room"
+    },
+    {
+      "name": "Spirit Temple MQ GS Sun Block Room"
+    },
+    {
+      "name": "Spirit Temple MQ GS Leever Room"
+    },
+    {
+      "name": "Spirit Temple MQ GS Symphony Room"
+    },
+    {
+      "name": "Spirit Temple MQ GS Nine Thrones Room West"
+    },
+    {
+      "name": "Spirit Temple MQ GS Nine Thrones Room North"
+    },
+    {
+      "name": "Spirit Temple Twinrova Heart"
+    },
+    {
+      "name": "Ice Cavern Map Chest"
+    },
+    {
+      "name": "Ice Cavern Compass Chest"
+    },
+    {
+      "name": "Ice Cavern Freestanding PoH"
+    },
+    {
+      "name": "Ice Cavern Iron Boots Chest"
+    },
+    {
+      "name": "Ice Cavern GS Spinning Scythe Room"
+    },
+    {
+      "name": "Ice Cavern GS Heart Piece Room"
+    },
+    {
+      "name": "Ice Cavern GS Push Block Room"
+    },
+    {
+      "name": "Ice Cavern MQ Map Chest"
+    },
+    {
+      "name": "Ice Cavern MQ Compass Chest"
+    },
+    {
+      "name": "Ice Cavern MQ Freestanding PoH"
+    },
+    {
+      "name": "Ice Cavern MQ Iron Boots Chest"
+    },
+    {
+      "name": "Ice Cavern MQ GS Red Ice"
+    },
+    {
+      "name": "Ice Cavern MQ GS Ice Block"
+    },
+    {
+      "name": "Ice Cavern MQ GS Scarecrow"
+    },
+    {
+      "name": "Gerudo Training Ground Lobby Left Chest"
+    },
+    {
+      "name": "Gerudo Training Ground Lobby Right Chest"
+    },
+    {
+      "name": "Gerudo Training Ground Stalfos Chest"
+    },
+    {
+      "name": "Gerudo Training Ground Before Heavy Block Chest"
+    },
+    {
+      "name": "Gerudo Training Ground Heavy Block First Chest"
+    },
+    {
+      "name": "Gerudo Training Ground Heavy Block Second Chest"
+    },
+    {
+      "name": "Gerudo Training Ground Heavy Block Third Chest"
+    },
+    {
+      "name": "Gerudo Training Ground Heavy Block Fourth Chest"
+    },
+    {
+      "name": "Gerudo Training Ground Eye Statue Chest"
+    },
+    {
+      "name": "Gerudo Training Ground Near Scarecrow Chest"
+    },
+    {
+      "name": "Gerudo Training Ground Hammer Room Clear Chest"
+    },
+    {
+      "name": "Gerudo Training Ground Hammer Room Switch Chest"
+    },
+    {
+      "name": "Gerudo Training Ground Freestanding Key"
+    },
+    {
+      "name": "Gerudo Training Ground Maze Right Central Chest"
+    },
+    {
+      "name": "Gerudo Training Ground Maze Right Side Chest"
+    },
+    {
+      "name": "Gerudo Training Ground Underwater Silver Rupee Chest"
+    },
+    {
+      "name": "Gerudo Training Ground Beamos Chest"
+    },
+    {
+      "name": "Gerudo Training Ground Hidden Ceiling Chest"
+    },
+    {
+      "name": "Gerudo Training Ground Maze Path First Chest"
+    },
+    {
+      "name": "Gerudo Training Ground Maze Path Second Chest"
+    },
+    {
+      "name": "Gerudo Training Ground Maze Path Third Chest"
+    },
+    {
+      "name": "Gerudo Training Ground Maze Path Final Chest"
+    },
+    {
+      "name": "Gerudo Training Ground MQ Lobby Left Chest"
+    },
+    {
+      "name": "Gerudo Training Ground MQ Lobby Right Chest"
+    },
+    {
+      "name": "Gerudo Training Ground MQ First Iron Knuckle Chest"
+    },
+    {
+      "name": "Gerudo Training Ground MQ Before Heavy Block Chest"
+    },
+    {
+      "name": "Gerudo Training Ground MQ Heavy Block Chest"
+    },
+    {
+      "name": "Gerudo Training Ground MQ Eye Statue Chest"
+    },
+    {
+      "name": "Gerudo Training Ground MQ Ice Arrows Chest"
+    },
+    {
+      "name": "Gerudo Training Ground MQ Second Iron Knuckle Chest"
+    },
+    {
+      "name": "Gerudo Training Ground MQ Flame Circle Chest"
+    },
+    {
+      "name": "Gerudo Training Ground MQ Maze Right Central Chest"
+    },
+    {
+      "name": "Gerudo Training Ground MQ Maze Right Side Chest"
+    },
+    {
+      "name": "Gerudo Training Ground MQ Underwater Silver Rupee Chest"
+    },
+    {
+      "name": "Gerudo Training Ground MQ Dinolfos Chest"
+    },
+    {
+      "name": "Gerudo Training Ground MQ Hidden Ceiling Chest"
+    },
+    {
+      "name": "Gerudo Training Ground MQ Maze Path First Chest"
+    },
+    {
+      "name": "Gerudo Training Ground MQ Maze Path Third Chest"
+    },
+    {
+      "name": "Gerudo Training Ground MQ Maze Path Second Chest"
+    },
+    {
+      "name": "Ganons Castle Forest Trial Chest"
+    },
+    {
+      "name": "Ganons Castle Water Trial Left Chest"
+    },
+    {
+      "name": "Ganons Castle Water Trial Right Chest"
+    },
+    {
+      "name": "Ganons Castle Shadow Trial Front Chest"
+    },
+    {
+      "name": "Ganons Castle Shadow Trial Golden Gauntlets Chest"
+    },
+    {
+      "name": "Ganons Castle Light Trial First Left Chest"
+    },
+    {
+      "name": "Ganons Castle Light Trial Second Left Chest"
+    },
+    {
+      "name": "Ganons Castle Light Trial Third Left Chest"
+    },
+    {
+      "name": "Ganons Castle Light Trial First Right Chest"
+    },
+    {
+      "name": "Ganons Castle Light Trial Second Right Chest"
+    },
+    {
+      "name": "Ganons Castle Light Trial Third Right Chest"
+    },
+    {
+      "name": "Ganons Castle Light Trial Invisible Enemies Chest"
+    },
+    {
+      "name": "Ganons Castle Light Trial Lullaby Chest"
+    },
+    {
+      "name": "Ganons Castle Spirit Trial Crystal Switch Chest"
+    },
+    {
+      "name": "Ganons Castle Spirit Trial Invisible Chest"
+    },
+    {
+      "name": "Ganons Castle Deku Scrub Left"
+    },
+    {
+      "name": "Ganons Castle Deku Scrub Center-Left"
+    },
+    {
+      "name": "Ganons Castle Deku Scrub Center-Right"
+    },
+    {
+      "name": "Ganons Castle Deku Scrub Right"
+    },
+    {
+      "name": "Ganons Castle MQ Forest Trial Freestanding Key"
+    },
+    {
+      "name": "Ganons Castle MQ Forest Trial Eye Switch Chest"
+    },
+    {
+      "name": "Ganons Castle MQ Forest Trial Frozen Eye Switch Chest"
+    },
+    {
+      "name": "Ganons Castle MQ Water Trial Chest"
+    },
+    {
+      "name": "Ganons Castle MQ Shadow Trial Bomb Flower Chest"
+    },
+    {
+      "name": "Ganons Castle MQ Shadow Trial Eye Switch Chest"
+    },
+    {
+      "name": "Ganons Castle MQ Light Trial Lullaby Chest"
+    },
+    {
+      "name": "Ganons Castle MQ Spirit Trial First Chest"
+    },
+    {
+      "name": "Ganons Castle MQ Spirit Trial Invisible Chest"
+    },
+    {
+      "name": "Ganons Castle MQ Spirit Trial Sun Front Left Chest"
+    },
+    {
+      "name": "Ganons Castle MQ Spirit Trial Sun Back Left Chest"
+    },
+    {
+      "name": "Ganons Castle MQ Spirit Trial Sun Back Right Chest"
+    },
+    {
+      "name": "Ganons Castle MQ Spirit Trial Golden Gauntlets Chest"
+    },
+    {
+      "name": "Ganons Castle MQ Deku Scrub Left"
+    },
+    {
+      "name": "Ganons Castle MQ Deku Scrub Center-Left"
+    },
+    {
+      "name": "Ganons Castle MQ Deku Scrub Center"
+    },
+    {
+      "name": "Ganons Castle MQ Deku Scrub Center-Right"
+    },
+    {
+      "name": "Ganons Castle MQ Deku Scrub Right"
+    },
+    {
+      "name": "Ganons Tower Boss Key Chest"
+    }
+  ],
+  "readableName": "The Legend of Zelda: Ocarina of Time",
+  "status": "Updated"
+}

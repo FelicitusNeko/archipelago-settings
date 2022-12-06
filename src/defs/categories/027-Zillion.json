@@ -1,0 +1,4925 @@
+{
+  "category": "Zillion",
+  "index": 27,
+  "settings": [
+    {
+      "name": "continues",
+      "description": "DOC ME",
+      "high": 21,
+      "readableName": "continues",
+      "low": 0,
+      "type": "range",
+      "default": 3
+    },
+    {
+      "name": "floppy_req",
+      "description": "DOC ME",
+      "high": 8,
+      "readableName": "floppy req",
+      "low": 0,
+      "type": "range",
+      "default": 5
+    },
+    {
+      "name": "gun_levels",
+      "description": "DOC ME",
+      "readableName": "gun levels",
+      "values": [
+        {
+          "name": "vanilla",
+          "readableName": "*vanilla"
+        },
+        {
+          "name": "balanced",
+          "readableName": "*balanced"
+        },
+        {
+          "name": "low",
+          "readableName": "*low"
+        },
+        {
+          "name": "restrictive",
+          "readableName": "*restrictive"
+        }
+      ],
+      "type": "choice",
+      "default": "balanced"
+    },
+    {
+      "name": "jump_levels",
+      "description": "DOC ME",
+      "readableName": "jump levels",
+      "values": [
+        {
+          "name": "vanilla",
+          "readableName": "*vanilla"
+        },
+        {
+          "name": "balanced",
+          "readableName": "*balanced"
+        },
+        {
+          "name": "low",
+          "readableName": "*low"
+        },
+        {
+          "name": "restrictive",
+          "readableName": "*restrictive"
+        }
+      ],
+      "type": "choice",
+      "default": "balanced"
+    },
+    {
+      "name": "randomize_alarms",
+      "description": "DOC ME",
+      "readableName": "randomize alarms",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "max_level",
+      "description": "DOC ME",
+      "high": 8,
+      "readableName": "max level",
+      "low": 3,
+      "type": "range",
+      "default": 8
+    },
+    {
+      "name": "start_char",
+      "description": "DOC ME",
+      "readableName": "start char",
+      "values": [
+        {
+          "name": "jj",
+          "readableName": "*jj"
+        },
+        {
+          "name": "apple",
+          "readableName": "*apple"
+        },
+        {
+          "name": "champ",
+          "readableName": "*champ"
+        },
+        {
+          "name": "random",
+          "readableName": "*random"
+        }
+      ],
+      "type": "choice",
+      "default": "random"
+    },
+    {
+      "name": "opas_per_level",
+      "description": "DOC ME",
+      "high": 5,
+      "readableName": "opas per level",
+      "low": 1,
+      "type": "range",
+      "default": 2
+    },
+    {
+      "name": "id_card_count",
+      "description": "DOC ME",
+      "high": 126,
+      "readableName": "id card count",
+      "low": 0,
+      "type": "range",
+      "default": 42
+    },
+    {
+      "name": "bread_count",
+      "description": "DOC ME",
+      "high": 126,
+      "readableName": "bread count",
+      "low": 0,
+      "type": "range",
+      "default": 50
+    },
+    {
+      "name": "opa_opa_count",
+      "description": "DOC ME",
+      "high": 126,
+      "readableName": "opa opa count",
+      "low": 0,
+      "type": "range",
+      "default": 26
+    },
+    {
+      "name": "zillion_count",
+      "description": "DOC ME",
+      "high": 126,
+      "readableName": "zillion count",
+      "low": 0,
+      "type": "range",
+      "default": 8
+    },
+    {
+      "name": "floppy_disk_count",
+      "description": "DOC ME",
+      "high": 126,
+      "readableName": "floppy disk count",
+      "low": 0,
+      "type": "range",
+      "default": 7
+    },
+    {
+      "name": "scope_count",
+      "description": "DOC ME",
+      "high": 126,
+      "readableName": "scope count",
+      "low": 0,
+      "type": "range",
+      "default": 4
+    },
+    {
+      "name": "red_id_card_count",
+      "description": "DOC ME",
+      "high": 126,
+      "readableName": "red id card count",
+      "low": 0,
+      "type": "range",
+      "default": 2
+    },
+    {
+      "name": "early_scope",
+      "description": "DOC ME",
+      "readableName": "early scope",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "skill",
+      "description": "DOC ME",
+      "high": 5,
+      "readableName": "skill",
+      "low": 0,
+      "type": "range",
+      "default": 2
+    },
+    {
+      "name": "starting_cards",
+      "description": "DOC ME",
+      "high": 10,
+      "readableName": "starting cards",
+      "low": 0,
+      "type": "range",
+      "default": 2
+    },
+    {
+      "name": "room_gen",
+      "description": "DOC ME",
+      "readableName": "room gen",
+      "type": "toggle",
+      "default": false
+    }
+  ],
+  "items": [
+    {
+      "name": "Apple"
+    },
+    {
+      "name": "Champ"
+    },
+    {
+      "name": "JJ"
+    },
+    {
+      "name": "Win"
+    },
+    {
+      "name": "Empty"
+    },
+    {
+      "name": "ID Card"
+    },
+    {
+      "name": "Red ID Card"
+    },
+    {
+      "name": "Floppy Disk"
+    },
+    {
+      "name": "Bread"
+    },
+    {
+      "name": "Opa-Opa"
+    },
+    {
+      "name": "Zillion"
+    },
+    {
+      "name": "Scope"
+    }
+  ],
+  "locations": [
+    {
+      "name": "A-3 top far left"
+    },
+    {
+      "name": "A-3 top left"
+    },
+    {
+      "name": "A-3 top left-center"
+    },
+    {
+      "name": "A-3 top center"
+    },
+    {
+      "name": "A-3 top right-center"
+    },
+    {
+      "name": "A-3 top right"
+    },
+    {
+      "name": "A-3 top far right"
+    },
+    {
+      "name": "A-3 mid far left"
+    },
+    {
+      "name": "A-3 mid left"
+    },
+    {
+      "name": "A-3 mid left-center"
+    },
+    {
+      "name": "A-3 mid center"
+    },
+    {
+      "name": "A-3 mid right-center"
+    },
+    {
+      "name": "A-3 mid right"
+    },
+    {
+      "name": "A-3 mid far right"
+    },
+    {
+      "name": "A-3 bottom far left"
+    },
+    {
+      "name": "A-3 bottom left"
+    },
+    {
+      "name": "A-3 bottom left-center"
+    },
+    {
+      "name": "A-3 bottom center"
+    },
+    {
+      "name": "A-3 bottom right-center"
+    },
+    {
+      "name": "A-3 bottom right"
+    },
+    {
+      "name": "A-3 bottom far right"
+    },
+    {
+      "name": "A-4 top far left"
+    },
+    {
+      "name": "A-4 top left"
+    },
+    {
+      "name": "A-4 top left-center"
+    },
+    {
+      "name": "A-4 top center"
+    },
+    {
+      "name": "A-4 top right-center"
+    },
+    {
+      "name": "A-4 top right"
+    },
+    {
+      "name": "A-4 top far right"
+    },
+    {
+      "name": "A-4 mid far left"
+    },
+    {
+      "name": "A-4 mid left"
+    },
+    {
+      "name": "A-4 mid left-center"
+    },
+    {
+      "name": "A-4 mid center"
+    },
+    {
+      "name": "A-4 mid right-center"
+    },
+    {
+      "name": "A-4 mid right"
+    },
+    {
+      "name": "A-4 mid far right"
+    },
+    {
+      "name": "A-4 bottom far left"
+    },
+    {
+      "name": "A-4 bottom left"
+    },
+    {
+      "name": "A-4 bottom left-center"
+    },
+    {
+      "name": "A-4 bottom center"
+    },
+    {
+      "name": "A-4 bottom right-center"
+    },
+    {
+      "name": "A-4 bottom right"
+    },
+    {
+      "name": "A-4 bottom far right"
+    },
+    {
+      "name": "A-6 top far left"
+    },
+    {
+      "name": "A-6 top left"
+    },
+    {
+      "name": "A-6 top left-center"
+    },
+    {
+      "name": "A-6 top center"
+    },
+    {
+      "name": "A-6 top right-center"
+    },
+    {
+      "name": "A-6 top right"
+    },
+    {
+      "name": "A-6 top far right"
+    },
+    {
+      "name": "A-6 mid far left"
+    },
+    {
+      "name": "A-6 mid left"
+    },
+    {
+      "name": "A-6 mid left-center"
+    },
+    {
+      "name": "A-6 mid center"
+    },
+    {
+      "name": "A-6 mid right-center"
+    },
+    {
+      "name": "A-6 mid right"
+    },
+    {
+      "name": "A-6 mid far right"
+    },
+    {
+      "name": "A-6 bottom far left"
+    },
+    {
+      "name": "A-6 bottom left"
+    },
+    {
+      "name": "A-6 bottom left-center"
+    },
+    {
+      "name": "A-6 bottom center"
+    },
+    {
+      "name": "A-6 bottom right-center"
+    },
+    {
+      "name": "A-6 bottom right"
+    },
+    {
+      "name": "A-6 bottom far right"
+    },
+    {
+      "name": "A-8 top far left"
+    },
+    {
+      "name": "A-8 top left"
+    },
+    {
+      "name": "A-8 top left-center"
+    },
+    {
+      "name": "A-8 top center"
+    },
+    {
+      "name": "A-8 top right-center"
+    },
+    {
+      "name": "A-8 top right"
+    },
+    {
+      "name": "A-8 top far right"
+    },
+    {
+      "name": "A-8 mid far left"
+    },
+    {
+      "name": "A-8 mid left"
+    },
+    {
+      "name": "A-8 mid left-center"
+    },
+    {
+      "name": "A-8 mid center"
+    },
+    {
+      "name": "A-8 mid right-center"
+    },
+    {
+      "name": "A-8 mid right"
+    },
+    {
+      "name": "A-8 mid far right"
+    },
+    {
+      "name": "A-8 bottom far left"
+    },
+    {
+      "name": "A-8 bottom left"
+    },
+    {
+      "name": "A-8 bottom left-center"
+    },
+    {
+      "name": "A-8 bottom center"
+    },
+    {
+      "name": "A-8 bottom right-center"
+    },
+    {
+      "name": "A-8 bottom right"
+    },
+    {
+      "name": "A-8 bottom far right"
+    },
+    {
+      "name": "B-1 top far left"
+    },
+    {
+      "name": "B-1 top left"
+    },
+    {
+      "name": "B-1 top left-center"
+    },
+    {
+      "name": "B-1 top center"
+    },
+    {
+      "name": "B-1 top right-center"
+    },
+    {
+      "name": "B-1 top right"
+    },
+    {
+      "name": "B-1 top far right"
+    },
+    {
+      "name": "B-1 mid far left"
+    },
+    {
+      "name": "B-1 mid left"
+    },
+    {
+      "name": "B-1 mid left-center"
+    },
+    {
+      "name": "B-1 mid center"
+    },
+    {
+      "name": "B-1 mid right-center"
+    },
+    {
+      "name": "B-1 mid right"
+    },
+    {
+      "name": "B-1 mid far right"
+    },
+    {
+      "name": "B-1 bottom far left"
+    },
+    {
+      "name": "B-1 bottom left"
+    },
+    {
+      "name": "B-1 bottom left-center"
+    },
+    {
+      "name": "B-1 bottom center"
+    },
+    {
+      "name": "B-1 bottom right-center"
+    },
+    {
+      "name": "B-1 bottom right"
+    },
+    {
+      "name": "B-1 bottom far right"
+    },
+    {
+      "name": "B-8 top far left"
+    },
+    {
+      "name": "B-8 top left"
+    },
+    {
+      "name": "B-8 top left-center"
+    },
+    {
+      "name": "B-8 top center"
+    },
+    {
+      "name": "B-8 top right-center"
+    },
+    {
+      "name": "B-8 top right"
+    },
+    {
+      "name": "B-8 top far right"
+    },
+    {
+      "name": "B-8 mid far left"
+    },
+    {
+      "name": "B-8 mid left"
+    },
+    {
+      "name": "B-8 mid left-center"
+    },
+    {
+      "name": "B-8 mid center"
+    },
+    {
+      "name": "B-8 mid right-center"
+    },
+    {
+      "name": "B-8 mid right"
+    },
+    {
+      "name": "B-8 mid far right"
+    },
+    {
+      "name": "B-8 bottom far left"
+    },
+    {
+      "name": "B-8 bottom left"
+    },
+    {
+      "name": "B-8 bottom left-center"
+    },
+    {
+      "name": "B-8 bottom center"
+    },
+    {
+      "name": "B-8 bottom right-center"
+    },
+    {
+      "name": "B-8 bottom right"
+    },
+    {
+      "name": "B-8 bottom far right"
+    },
+    {
+      "name": "C-3 top far left"
+    },
+    {
+      "name": "C-3 top left"
+    },
+    {
+      "name": "C-3 top left-center"
+    },
+    {
+      "name": "C-3 top center"
+    },
+    {
+      "name": "C-3 top right-center"
+    },
+    {
+      "name": "C-3 top right"
+    },
+    {
+      "name": "C-3 top far right"
+    },
+    {
+      "name": "C-3 mid far left"
+    },
+    {
+      "name": "C-3 mid left"
+    },
+    {
+      "name": "C-3 mid left-center"
+    },
+    {
+      "name": "C-3 mid center"
+    },
+    {
+      "name": "C-3 mid right-center"
+    },
+    {
+      "name": "C-3 mid right"
+    },
+    {
+      "name": "C-3 mid far right"
+    },
+    {
+      "name": "C-3 bottom far left"
+    },
+    {
+      "name": "C-3 bottom left"
+    },
+    {
+      "name": "C-3 bottom left-center"
+    },
+    {
+      "name": "C-3 bottom center"
+    },
+    {
+      "name": "C-3 bottom right-center"
+    },
+    {
+      "name": "C-3 bottom right"
+    },
+    {
+      "name": "C-3 bottom far right"
+    },
+    {
+      "name": "C-4 top far left"
+    },
+    {
+      "name": "C-4 top left"
+    },
+    {
+      "name": "C-4 top left-center"
+    },
+    {
+      "name": "C-4 top center"
+    },
+    {
+      "name": "C-4 top right-center"
+    },
+    {
+      "name": "C-4 top right"
+    },
+    {
+      "name": "C-4 top far right"
+    },
+    {
+      "name": "C-4 mid far left"
+    },
+    {
+      "name": "C-4 mid left"
+    },
+    {
+      "name": "C-4 mid left-center"
+    },
+    {
+      "name": "C-4 mid center"
+    },
+    {
+      "name": "C-4 mid right-center"
+    },
+    {
+      "name": "C-4 mid right"
+    },
+    {
+      "name": "C-4 mid far right"
+    },
+    {
+      "name": "C-4 bottom far left"
+    },
+    {
+      "name": "C-4 bottom left"
+    },
+    {
+      "name": "C-4 bottom left-center"
+    },
+    {
+      "name": "C-4 bottom center"
+    },
+    {
+      "name": "C-4 bottom right-center"
+    },
+    {
+      "name": "C-4 bottom right"
+    },
+    {
+      "name": "C-4 bottom far right"
+    },
+    {
+      "name": "C-5 top far left"
+    },
+    {
+      "name": "C-5 top left"
+    },
+    {
+      "name": "C-5 top left-center"
+    },
+    {
+      "name": "C-5 top center"
+    },
+    {
+      "name": "C-5 top right-center"
+    },
+    {
+      "name": "C-5 top right"
+    },
+    {
+      "name": "C-5 top far right"
+    },
+    {
+      "name": "C-5 mid far left"
+    },
+    {
+      "name": "C-5 mid left"
+    },
+    {
+      "name": "C-5 mid left-center"
+    },
+    {
+      "name": "C-5 mid center"
+    },
+    {
+      "name": "C-5 mid right-center"
+    },
+    {
+      "name": "C-5 mid right"
+    },
+    {
+      "name": "C-5 mid far right"
+    },
+    {
+      "name": "C-5 bottom far left"
+    },
+    {
+      "name": "C-5 bottom left"
+    },
+    {
+      "name": "C-5 bottom left-center"
+    },
+    {
+      "name": "C-5 bottom center"
+    },
+    {
+      "name": "C-5 bottom right-center"
+    },
+    {
+      "name": "C-5 bottom right"
+    },
+    {
+      "name": "C-5 bottom far right"
+    },
+    {
+      "name": "C-6 top far left"
+    },
+    {
+      "name": "C-6 top left"
+    },
+    {
+      "name": "C-6 top left-center"
+    },
+    {
+      "name": "C-6 top center"
+    },
+    {
+      "name": "C-6 top right-center"
+    },
+    {
+      "name": "C-6 top right"
+    },
+    {
+      "name": "C-6 top far right"
+    },
+    {
+      "name": "C-6 mid far left"
+    },
+    {
+      "name": "C-6 mid left"
+    },
+    {
+      "name": "C-6 mid left-center"
+    },
+    {
+      "name": "C-6 mid center"
+    },
+    {
+      "name": "C-6 mid right-center"
+    },
+    {
+      "name": "C-6 mid right"
+    },
+    {
+      "name": "C-6 mid far right"
+    },
+    {
+      "name": "C-6 bottom far left"
+    },
+    {
+      "name": "C-6 bottom left"
+    },
+    {
+      "name": "C-6 bottom left-center"
+    },
+    {
+      "name": "C-6 bottom center"
+    },
+    {
+      "name": "C-6 bottom right-center"
+    },
+    {
+      "name": "C-6 bottom right"
+    },
+    {
+      "name": "C-6 bottom far right"
+    },
+    {
+      "name": "D-2 top far left"
+    },
+    {
+      "name": "D-2 top left"
+    },
+    {
+      "name": "D-2 top left-center"
+    },
+    {
+      "name": "D-2 top center"
+    },
+    {
+      "name": "D-2 top right-center"
+    },
+    {
+      "name": "D-2 top right"
+    },
+    {
+      "name": "D-2 top far right"
+    },
+    {
+      "name": "D-2 mid far left"
+    },
+    {
+      "name": "D-2 mid left"
+    },
+    {
+      "name": "D-2 mid left-center"
+    },
+    {
+      "name": "D-2 mid center"
+    },
+    {
+      "name": "D-2 mid right-center"
+    },
+    {
+      "name": "D-2 mid right"
+    },
+    {
+      "name": "D-2 mid far right"
+    },
+    {
+      "name": "D-2 bottom far left"
+    },
+    {
+      "name": "D-2 bottom left"
+    },
+    {
+      "name": "D-2 bottom left-center"
+    },
+    {
+      "name": "D-2 bottom center"
+    },
+    {
+      "name": "D-2 bottom right-center"
+    },
+    {
+      "name": "D-2 bottom right"
+    },
+    {
+      "name": "D-2 bottom far right"
+    },
+    {
+      "name": "D-3 top far left"
+    },
+    {
+      "name": "D-3 top left"
+    },
+    {
+      "name": "D-3 top left-center"
+    },
+    {
+      "name": "D-3 top center"
+    },
+    {
+      "name": "D-3 top right-center"
+    },
+    {
+      "name": "D-3 top right"
+    },
+    {
+      "name": "D-3 top far right"
+    },
+    {
+      "name": "D-3 mid far left"
+    },
+    {
+      "name": "D-3 mid left"
+    },
+    {
+      "name": "D-3 mid left-center"
+    },
+    {
+      "name": "D-3 mid center"
+    },
+    {
+      "name": "D-3 mid right-center"
+    },
+    {
+      "name": "D-3 mid right"
+    },
+    {
+      "name": "D-3 mid far right"
+    },
+    {
+      "name": "D-3 bottom far left"
+    },
+    {
+      "name": "D-3 bottom left"
+    },
+    {
+      "name": "D-3 bottom left-center"
+    },
+    {
+      "name": "D-3 bottom center"
+    },
+    {
+      "name": "D-3 bottom right-center"
+    },
+    {
+      "name": "D-3 bottom right"
+    },
+    {
+      "name": "D-3 bottom far right"
+    },
+    {
+      "name": "D-5 top far left"
+    },
+    {
+      "name": "D-5 top left"
+    },
+    {
+      "name": "D-5 top left-center"
+    },
+    {
+      "name": "D-5 top center"
+    },
+    {
+      "name": "D-5 top right-center"
+    },
+    {
+      "name": "D-5 top right"
+    },
+    {
+      "name": "D-5 top far right"
+    },
+    {
+      "name": "D-5 mid far left"
+    },
+    {
+      "name": "D-5 mid left"
+    },
+    {
+      "name": "D-5 mid left-center"
+    },
+    {
+      "name": "D-5 mid center"
+    },
+    {
+      "name": "D-5 mid right-center"
+    },
+    {
+      "name": "D-5 mid right"
+    },
+    {
+      "name": "D-5 mid far right"
+    },
+    {
+      "name": "D-5 bottom far left"
+    },
+    {
+      "name": "D-5 bottom left"
+    },
+    {
+      "name": "D-5 bottom left-center"
+    },
+    {
+      "name": "D-5 bottom center"
+    },
+    {
+      "name": "D-5 bottom right-center"
+    },
+    {
+      "name": "D-5 bottom right"
+    },
+    {
+      "name": "D-5 bottom far right"
+    },
+    {
+      "name": "D-6 top far left"
+    },
+    {
+      "name": "D-6 top left"
+    },
+    {
+      "name": "D-6 top left-center"
+    },
+    {
+      "name": "D-6 top center"
+    },
+    {
+      "name": "D-6 top right-center"
+    },
+    {
+      "name": "D-6 top right"
+    },
+    {
+      "name": "D-6 top far right"
+    },
+    {
+      "name": "D-6 mid far left"
+    },
+    {
+      "name": "D-6 mid left"
+    },
+    {
+      "name": "D-6 mid left-center"
+    },
+    {
+      "name": "D-6 mid center"
+    },
+    {
+      "name": "D-6 mid right-center"
+    },
+    {
+      "name": "D-6 mid right"
+    },
+    {
+      "name": "D-6 mid far right"
+    },
+    {
+      "name": "D-6 bottom far left"
+    },
+    {
+      "name": "D-6 bottom left"
+    },
+    {
+      "name": "D-6 bottom left-center"
+    },
+    {
+      "name": "D-6 bottom center"
+    },
+    {
+      "name": "D-6 bottom right-center"
+    },
+    {
+      "name": "D-6 bottom right"
+    },
+    {
+      "name": "D-6 bottom far right"
+    },
+    {
+      "name": "E-2 top far left"
+    },
+    {
+      "name": "E-2 top left"
+    },
+    {
+      "name": "E-2 top left-center"
+    },
+    {
+      "name": "E-2 top center"
+    },
+    {
+      "name": "E-2 top right-center"
+    },
+    {
+      "name": "E-2 top right"
+    },
+    {
+      "name": "E-2 top far right"
+    },
+    {
+      "name": "E-2 mid far left"
+    },
+    {
+      "name": "E-2 mid left"
+    },
+    {
+      "name": "E-2 mid left-center"
+    },
+    {
+      "name": "E-2 mid center"
+    },
+    {
+      "name": "E-2 mid right-center"
+    },
+    {
+      "name": "E-2 mid right"
+    },
+    {
+      "name": "E-2 mid far right"
+    },
+    {
+      "name": "E-2 bottom far left"
+    },
+    {
+      "name": "E-2 bottom left"
+    },
+    {
+      "name": "E-2 bottom left-center"
+    },
+    {
+      "name": "E-2 bottom center"
+    },
+    {
+      "name": "E-2 bottom right-center"
+    },
+    {
+      "name": "E-2 bottom right"
+    },
+    {
+      "name": "E-2 bottom far right"
+    },
+    {
+      "name": "E-4 top far left"
+    },
+    {
+      "name": "E-4 top left"
+    },
+    {
+      "name": "E-4 top left-center"
+    },
+    {
+      "name": "E-4 top center"
+    },
+    {
+      "name": "E-4 top right-center"
+    },
+    {
+      "name": "E-4 top right"
+    },
+    {
+      "name": "E-4 top far right"
+    },
+    {
+      "name": "E-4 mid far left"
+    },
+    {
+      "name": "E-4 mid left"
+    },
+    {
+      "name": "E-4 mid left-center"
+    },
+    {
+      "name": "E-4 mid center"
+    },
+    {
+      "name": "E-4 mid right-center"
+    },
+    {
+      "name": "E-4 mid right"
+    },
+    {
+      "name": "E-4 mid far right"
+    },
+    {
+      "name": "E-4 bottom far left"
+    },
+    {
+      "name": "E-4 bottom left"
+    },
+    {
+      "name": "E-4 bottom left-center"
+    },
+    {
+      "name": "E-4 bottom center"
+    },
+    {
+      "name": "E-4 bottom right-center"
+    },
+    {
+      "name": "E-4 bottom right"
+    },
+    {
+      "name": "E-4 bottom far right"
+    },
+    {
+      "name": "E-5 top far left"
+    },
+    {
+      "name": "E-5 top left"
+    },
+    {
+      "name": "E-5 top left-center"
+    },
+    {
+      "name": "E-5 top center"
+    },
+    {
+      "name": "E-5 top right-center"
+    },
+    {
+      "name": "E-5 top right"
+    },
+    {
+      "name": "E-5 top far right"
+    },
+    {
+      "name": "E-5 mid far left"
+    },
+    {
+      "name": "E-5 mid left"
+    },
+    {
+      "name": "E-5 mid left-center"
+    },
+    {
+      "name": "E-5 mid center"
+    },
+    {
+      "name": "E-5 mid right-center"
+    },
+    {
+      "name": "E-5 mid right"
+    },
+    {
+      "name": "E-5 mid far right"
+    },
+    {
+      "name": "E-5 bottom far left"
+    },
+    {
+      "name": "E-5 bottom left"
+    },
+    {
+      "name": "E-5 bottom left-center"
+    },
+    {
+      "name": "E-5 bottom center"
+    },
+    {
+      "name": "E-5 bottom right-center"
+    },
+    {
+      "name": "E-5 bottom right"
+    },
+    {
+      "name": "E-5 bottom far right"
+    },
+    {
+      "name": "E-6 top far left"
+    },
+    {
+      "name": "E-6 top left"
+    },
+    {
+      "name": "E-6 top left-center"
+    },
+    {
+      "name": "E-6 top center"
+    },
+    {
+      "name": "E-6 top right-center"
+    },
+    {
+      "name": "E-6 top right"
+    },
+    {
+      "name": "E-6 top far right"
+    },
+    {
+      "name": "E-6 mid far left"
+    },
+    {
+      "name": "E-6 mid left"
+    },
+    {
+      "name": "E-6 mid left-center"
+    },
+    {
+      "name": "E-6 mid center"
+    },
+    {
+      "name": "E-6 mid right-center"
+    },
+    {
+      "name": "E-6 mid right"
+    },
+    {
+      "name": "E-6 mid far right"
+    },
+    {
+      "name": "E-6 bottom far left"
+    },
+    {
+      "name": "E-6 bottom left"
+    },
+    {
+      "name": "E-6 bottom left-center"
+    },
+    {
+      "name": "E-6 bottom center"
+    },
+    {
+      "name": "E-6 bottom right-center"
+    },
+    {
+      "name": "E-6 bottom right"
+    },
+    {
+      "name": "E-6 bottom far right"
+    },
+    {
+      "name": "E-8 top far left"
+    },
+    {
+      "name": "E-8 top left"
+    },
+    {
+      "name": "E-8 top left-center"
+    },
+    {
+      "name": "E-8 top center"
+    },
+    {
+      "name": "E-8 top right-center"
+    },
+    {
+      "name": "E-8 top right"
+    },
+    {
+      "name": "E-8 top far right"
+    },
+    {
+      "name": "E-8 mid far left"
+    },
+    {
+      "name": "E-8 mid left"
+    },
+    {
+      "name": "E-8 mid left-center"
+    },
+    {
+      "name": "E-8 mid center"
+    },
+    {
+      "name": "E-8 mid right-center"
+    },
+    {
+      "name": "E-8 mid right"
+    },
+    {
+      "name": "E-8 mid far right"
+    },
+    {
+      "name": "E-8 bottom far left"
+    },
+    {
+      "name": "E-8 bottom left"
+    },
+    {
+      "name": "E-8 bottom left-center"
+    },
+    {
+      "name": "E-8 bottom center"
+    },
+    {
+      "name": "E-8 bottom right-center"
+    },
+    {
+      "name": "E-8 bottom right"
+    },
+    {
+      "name": "E-8 bottom far right"
+    },
+    {
+      "name": "F-2 top far left"
+    },
+    {
+      "name": "F-2 top left"
+    },
+    {
+      "name": "F-2 top left-center"
+    },
+    {
+      "name": "F-2 top center"
+    },
+    {
+      "name": "F-2 top right-center"
+    },
+    {
+      "name": "F-2 top right"
+    },
+    {
+      "name": "F-2 top far right"
+    },
+    {
+      "name": "F-2 mid far left"
+    },
+    {
+      "name": "F-2 mid left"
+    },
+    {
+      "name": "F-2 mid left-center"
+    },
+    {
+      "name": "F-2 mid center"
+    },
+    {
+      "name": "F-2 mid right-center"
+    },
+    {
+      "name": "F-2 mid right"
+    },
+    {
+      "name": "F-2 mid far right"
+    },
+    {
+      "name": "F-2 bottom far left"
+    },
+    {
+      "name": "F-2 bottom left"
+    },
+    {
+      "name": "F-2 bottom left-center"
+    },
+    {
+      "name": "F-2 bottom center"
+    },
+    {
+      "name": "F-2 bottom right-center"
+    },
+    {
+      "name": "F-2 bottom right"
+    },
+    {
+      "name": "F-2 bottom far right"
+    },
+    {
+      "name": "F-4 top far left"
+    },
+    {
+      "name": "F-4 top left"
+    },
+    {
+      "name": "F-4 top left-center"
+    },
+    {
+      "name": "F-4 top center"
+    },
+    {
+      "name": "F-4 top right-center"
+    },
+    {
+      "name": "F-4 top right"
+    },
+    {
+      "name": "F-4 top far right"
+    },
+    {
+      "name": "F-4 mid far left"
+    },
+    {
+      "name": "F-4 mid left"
+    },
+    {
+      "name": "F-4 mid left-center"
+    },
+    {
+      "name": "F-4 mid center"
+    },
+    {
+      "name": "F-4 mid right-center"
+    },
+    {
+      "name": "F-4 mid right"
+    },
+    {
+      "name": "F-4 mid far right"
+    },
+    {
+      "name": "F-4 bottom far left"
+    },
+    {
+      "name": "F-4 bottom left"
+    },
+    {
+      "name": "F-4 bottom left-center"
+    },
+    {
+      "name": "F-4 bottom center"
+    },
+    {
+      "name": "F-4 bottom right-center"
+    },
+    {
+      "name": "F-4 bottom right"
+    },
+    {
+      "name": "F-4 bottom far right"
+    },
+    {
+      "name": "F-5 top far left"
+    },
+    {
+      "name": "F-5 top left"
+    },
+    {
+      "name": "F-5 top left-center"
+    },
+    {
+      "name": "F-5 top center"
+    },
+    {
+      "name": "F-5 top right-center"
+    },
+    {
+      "name": "F-5 top right"
+    },
+    {
+      "name": "F-5 top far right"
+    },
+    {
+      "name": "F-5 mid far left"
+    },
+    {
+      "name": "F-5 mid left"
+    },
+    {
+      "name": "F-5 mid left-center"
+    },
+    {
+      "name": "F-5 mid center"
+    },
+    {
+      "name": "F-5 mid right-center"
+    },
+    {
+      "name": "F-5 mid right"
+    },
+    {
+      "name": "F-5 mid far right"
+    },
+    {
+      "name": "F-5 bottom far left"
+    },
+    {
+      "name": "F-5 bottom left"
+    },
+    {
+      "name": "F-5 bottom left-center"
+    },
+    {
+      "name": "F-5 bottom center"
+    },
+    {
+      "name": "F-5 bottom right-center"
+    },
+    {
+      "name": "F-5 bottom right"
+    },
+    {
+      "name": "F-5 bottom far right"
+    },
+    {
+      "name": "F-7 top far left"
+    },
+    {
+      "name": "F-7 top left"
+    },
+    {
+      "name": "F-7 top left-center"
+    },
+    {
+      "name": "F-7 top center"
+    },
+    {
+      "name": "F-7 top right-center"
+    },
+    {
+      "name": "F-7 top right"
+    },
+    {
+      "name": "F-7 top far right"
+    },
+    {
+      "name": "F-7 mid far left"
+    },
+    {
+      "name": "F-7 mid left"
+    },
+    {
+      "name": "F-7 mid left-center"
+    },
+    {
+      "name": "F-7 mid center"
+    },
+    {
+      "name": "F-7 mid right-center"
+    },
+    {
+      "name": "F-7 mid right"
+    },
+    {
+      "name": "F-7 mid far right"
+    },
+    {
+      "name": "F-7 bottom far left"
+    },
+    {
+      "name": "F-7 bottom left"
+    },
+    {
+      "name": "F-7 bottom left-center"
+    },
+    {
+      "name": "F-7 bottom center"
+    },
+    {
+      "name": "F-7 bottom right-center"
+    },
+    {
+      "name": "F-7 bottom right"
+    },
+    {
+      "name": "F-7 bottom far right"
+    },
+    {
+      "name": "F-8 top far left"
+    },
+    {
+      "name": "F-8 top left"
+    },
+    {
+      "name": "F-8 top left-center"
+    },
+    {
+      "name": "F-8 top center"
+    },
+    {
+      "name": "F-8 top right-center"
+    },
+    {
+      "name": "F-8 top right"
+    },
+    {
+      "name": "F-8 top far right"
+    },
+    {
+      "name": "F-8 mid far left"
+    },
+    {
+      "name": "F-8 mid left"
+    },
+    {
+      "name": "F-8 mid left-center"
+    },
+    {
+      "name": "F-8 mid center"
+    },
+    {
+      "name": "F-8 mid right-center"
+    },
+    {
+      "name": "F-8 mid right"
+    },
+    {
+      "name": "F-8 mid far right"
+    },
+    {
+      "name": "F-8 bottom far left"
+    },
+    {
+      "name": "F-8 bottom left"
+    },
+    {
+      "name": "F-8 bottom left-center"
+    },
+    {
+      "name": "F-8 bottom center"
+    },
+    {
+      "name": "F-8 bottom right-center"
+    },
+    {
+      "name": "F-8 bottom right"
+    },
+    {
+      "name": "F-8 bottom far right"
+    },
+    {
+      "name": "G-2 top far left"
+    },
+    {
+      "name": "G-2 top left"
+    },
+    {
+      "name": "G-2 top left-center"
+    },
+    {
+      "name": "G-2 top center"
+    },
+    {
+      "name": "G-2 top right-center"
+    },
+    {
+      "name": "G-2 top right"
+    },
+    {
+      "name": "G-2 top far right"
+    },
+    {
+      "name": "G-2 mid far left"
+    },
+    {
+      "name": "G-2 mid left"
+    },
+    {
+      "name": "G-2 mid left-center"
+    },
+    {
+      "name": "G-2 mid center"
+    },
+    {
+      "name": "G-2 mid right-center"
+    },
+    {
+      "name": "G-2 mid right"
+    },
+    {
+      "name": "G-2 mid far right"
+    },
+    {
+      "name": "G-2 bottom far left"
+    },
+    {
+      "name": "G-2 bottom left"
+    },
+    {
+      "name": "G-2 bottom left-center"
+    },
+    {
+      "name": "G-2 bottom center"
+    },
+    {
+      "name": "G-2 bottom right-center"
+    },
+    {
+      "name": "G-2 bottom right"
+    },
+    {
+      "name": "G-2 bottom far right"
+    },
+    {
+      "name": "G-4 top far left"
+    },
+    {
+      "name": "G-4 top left"
+    },
+    {
+      "name": "G-4 top left-center"
+    },
+    {
+      "name": "G-4 top center"
+    },
+    {
+      "name": "G-4 top right-center"
+    },
+    {
+      "name": "G-4 top right"
+    },
+    {
+      "name": "G-4 top far right"
+    },
+    {
+      "name": "G-4 mid far left"
+    },
+    {
+      "name": "G-4 mid left"
+    },
+    {
+      "name": "G-4 mid left-center"
+    },
+    {
+      "name": "G-4 mid center"
+    },
+    {
+      "name": "G-4 mid right-center"
+    },
+    {
+      "name": "G-4 mid right"
+    },
+    {
+      "name": "G-4 mid far right"
+    },
+    {
+      "name": "G-4 bottom far left"
+    },
+    {
+      "name": "G-4 bottom left"
+    },
+    {
+      "name": "G-4 bottom left-center"
+    },
+    {
+      "name": "G-4 bottom center"
+    },
+    {
+      "name": "G-4 bottom right-center"
+    },
+    {
+      "name": "G-4 bottom right"
+    },
+    {
+      "name": "G-4 bottom far right"
+    },
+    {
+      "name": "G-5 top far left"
+    },
+    {
+      "name": "G-5 top left"
+    },
+    {
+      "name": "G-5 top left-center"
+    },
+    {
+      "name": "G-5 top center"
+    },
+    {
+      "name": "G-5 top right-center"
+    },
+    {
+      "name": "G-5 top right"
+    },
+    {
+      "name": "G-5 top far right"
+    },
+    {
+      "name": "G-5 mid far left"
+    },
+    {
+      "name": "G-5 mid left"
+    },
+    {
+      "name": "G-5 mid left-center"
+    },
+    {
+      "name": "G-5 mid center"
+    },
+    {
+      "name": "G-5 mid right-center"
+    },
+    {
+      "name": "G-5 mid right"
+    },
+    {
+      "name": "G-5 mid far right"
+    },
+    {
+      "name": "G-5 bottom far left"
+    },
+    {
+      "name": "G-5 bottom left"
+    },
+    {
+      "name": "G-5 bottom left-center"
+    },
+    {
+      "name": "G-5 bottom center"
+    },
+    {
+      "name": "G-5 bottom right-center"
+    },
+    {
+      "name": "G-5 bottom right"
+    },
+    {
+      "name": "G-5 bottom far right"
+    },
+    {
+      "name": "G-6 top far left"
+    },
+    {
+      "name": "G-6 top left"
+    },
+    {
+      "name": "G-6 top left-center"
+    },
+    {
+      "name": "G-6 top center"
+    },
+    {
+      "name": "G-6 top right-center"
+    },
+    {
+      "name": "G-6 top right"
+    },
+    {
+      "name": "G-6 top far right"
+    },
+    {
+      "name": "G-6 mid far left"
+    },
+    {
+      "name": "G-6 mid left"
+    },
+    {
+      "name": "G-6 mid left-center"
+    },
+    {
+      "name": "G-6 mid center"
+    },
+    {
+      "name": "G-6 mid right-center"
+    },
+    {
+      "name": "G-6 mid right"
+    },
+    {
+      "name": "G-6 mid far right"
+    },
+    {
+      "name": "G-6 bottom far left"
+    },
+    {
+      "name": "G-6 bottom left"
+    },
+    {
+      "name": "G-6 bottom left-center"
+    },
+    {
+      "name": "G-6 bottom center"
+    },
+    {
+      "name": "G-6 bottom right-center"
+    },
+    {
+      "name": "G-6 bottom right"
+    },
+    {
+      "name": "G-6 bottom far right"
+    },
+    {
+      "name": "G-7 top far left"
+    },
+    {
+      "name": "G-7 top left"
+    },
+    {
+      "name": "G-7 top left-center"
+    },
+    {
+      "name": "G-7 top center"
+    },
+    {
+      "name": "G-7 top right-center"
+    },
+    {
+      "name": "G-7 top right"
+    },
+    {
+      "name": "G-7 top far right"
+    },
+    {
+      "name": "G-7 mid far left"
+    },
+    {
+      "name": "G-7 mid left"
+    },
+    {
+      "name": "G-7 mid left-center"
+    },
+    {
+      "name": "G-7 mid center"
+    },
+    {
+      "name": "G-7 mid right-center"
+    },
+    {
+      "name": "G-7 mid right"
+    },
+    {
+      "name": "G-7 mid far right"
+    },
+    {
+      "name": "G-7 bottom far left"
+    },
+    {
+      "name": "G-7 bottom left"
+    },
+    {
+      "name": "G-7 bottom left-center"
+    },
+    {
+      "name": "G-7 bottom center"
+    },
+    {
+      "name": "G-7 bottom right-center"
+    },
+    {
+      "name": "G-7 bottom right"
+    },
+    {
+      "name": "G-7 bottom far right"
+    },
+    {
+      "name": "G-8 top far left"
+    },
+    {
+      "name": "G-8 top left"
+    },
+    {
+      "name": "G-8 top left-center"
+    },
+    {
+      "name": "G-8 top center"
+    },
+    {
+      "name": "G-8 top right-center"
+    },
+    {
+      "name": "G-8 top right"
+    },
+    {
+      "name": "G-8 top far right"
+    },
+    {
+      "name": "G-8 mid far left"
+    },
+    {
+      "name": "G-8 mid left"
+    },
+    {
+      "name": "G-8 mid left-center"
+    },
+    {
+      "name": "G-8 mid center"
+    },
+    {
+      "name": "G-8 mid right-center"
+    },
+    {
+      "name": "G-8 mid right"
+    },
+    {
+      "name": "G-8 mid far right"
+    },
+    {
+      "name": "G-8 bottom far left"
+    },
+    {
+      "name": "G-8 bottom left"
+    },
+    {
+      "name": "G-8 bottom left-center"
+    },
+    {
+      "name": "G-8 bottom center"
+    },
+    {
+      "name": "G-8 bottom right-center"
+    },
+    {
+      "name": "G-8 bottom right"
+    },
+    {
+      "name": "G-8 bottom far right"
+    },
+    {
+      "name": "H-4 top far left"
+    },
+    {
+      "name": "H-4 top left"
+    },
+    {
+      "name": "H-4 top left-center"
+    },
+    {
+      "name": "H-4 top center"
+    },
+    {
+      "name": "H-4 top right-center"
+    },
+    {
+      "name": "H-4 top right"
+    },
+    {
+      "name": "H-4 top far right"
+    },
+    {
+      "name": "H-4 mid far left"
+    },
+    {
+      "name": "H-4 mid left"
+    },
+    {
+      "name": "H-4 mid left-center"
+    },
+    {
+      "name": "H-4 mid center"
+    },
+    {
+      "name": "H-4 mid right-center"
+    },
+    {
+      "name": "H-4 mid right"
+    },
+    {
+      "name": "H-4 mid far right"
+    },
+    {
+      "name": "H-4 bottom far left"
+    },
+    {
+      "name": "H-4 bottom left"
+    },
+    {
+      "name": "H-4 bottom left-center"
+    },
+    {
+      "name": "H-4 bottom center"
+    },
+    {
+      "name": "H-4 bottom right-center"
+    },
+    {
+      "name": "H-4 bottom right"
+    },
+    {
+      "name": "H-4 bottom far right"
+    },
+    {
+      "name": "H-5 top far left"
+    },
+    {
+      "name": "H-5 top left"
+    },
+    {
+      "name": "H-5 top left-center"
+    },
+    {
+      "name": "H-5 top center"
+    },
+    {
+      "name": "H-5 top right-center"
+    },
+    {
+      "name": "H-5 top right"
+    },
+    {
+      "name": "H-5 top far right"
+    },
+    {
+      "name": "H-5 mid far left"
+    },
+    {
+      "name": "H-5 mid left"
+    },
+    {
+      "name": "H-5 mid left-center"
+    },
+    {
+      "name": "H-5 mid center"
+    },
+    {
+      "name": "H-5 mid right-center"
+    },
+    {
+      "name": "H-5 mid right"
+    },
+    {
+      "name": "H-5 mid far right"
+    },
+    {
+      "name": "H-5 bottom far left"
+    },
+    {
+      "name": "H-5 bottom left"
+    },
+    {
+      "name": "H-5 bottom left-center"
+    },
+    {
+      "name": "H-5 bottom center"
+    },
+    {
+      "name": "H-5 bottom right-center"
+    },
+    {
+      "name": "H-5 bottom right"
+    },
+    {
+      "name": "H-5 bottom far right"
+    },
+    {
+      "name": "H-6 top far left"
+    },
+    {
+      "name": "H-6 top left"
+    },
+    {
+      "name": "H-6 top left-center"
+    },
+    {
+      "name": "H-6 top center"
+    },
+    {
+      "name": "H-6 top right-center"
+    },
+    {
+      "name": "H-6 top right"
+    },
+    {
+      "name": "H-6 top far right"
+    },
+    {
+      "name": "H-6 mid far left"
+    },
+    {
+      "name": "H-6 mid left"
+    },
+    {
+      "name": "H-6 mid left-center"
+    },
+    {
+      "name": "H-6 mid center"
+    },
+    {
+      "name": "H-6 mid right-center"
+    },
+    {
+      "name": "H-6 mid right"
+    },
+    {
+      "name": "H-6 mid far right"
+    },
+    {
+      "name": "H-6 bottom far left"
+    },
+    {
+      "name": "H-6 bottom left"
+    },
+    {
+      "name": "H-6 bottom left-center"
+    },
+    {
+      "name": "H-6 bottom center"
+    },
+    {
+      "name": "H-6 bottom right-center"
+    },
+    {
+      "name": "H-6 bottom right"
+    },
+    {
+      "name": "H-6 bottom far right"
+    },
+    {
+      "name": "H-7 top far left"
+    },
+    {
+      "name": "H-7 top left"
+    },
+    {
+      "name": "H-7 top left-center"
+    },
+    {
+      "name": "H-7 top center"
+    },
+    {
+      "name": "H-7 top right-center"
+    },
+    {
+      "name": "H-7 top right"
+    },
+    {
+      "name": "H-7 top far right"
+    },
+    {
+      "name": "H-7 mid far left"
+    },
+    {
+      "name": "H-7 mid left"
+    },
+    {
+      "name": "H-7 mid left-center"
+    },
+    {
+      "name": "H-7 mid center"
+    },
+    {
+      "name": "H-7 mid right-center"
+    },
+    {
+      "name": "H-7 mid right"
+    },
+    {
+      "name": "H-7 mid far right"
+    },
+    {
+      "name": "H-7 bottom far left"
+    },
+    {
+      "name": "H-7 bottom left"
+    },
+    {
+      "name": "H-7 bottom left-center"
+    },
+    {
+      "name": "H-7 bottom center"
+    },
+    {
+      "name": "H-7 bottom right-center"
+    },
+    {
+      "name": "H-7 bottom right"
+    },
+    {
+      "name": "H-7 bottom far right"
+    },
+    {
+      "name": "H-8 top far left"
+    },
+    {
+      "name": "H-8 top left"
+    },
+    {
+      "name": "H-8 top left-center"
+    },
+    {
+      "name": "H-8 top center"
+    },
+    {
+      "name": "H-8 top right-center"
+    },
+    {
+      "name": "H-8 top right"
+    },
+    {
+      "name": "H-8 top far right"
+    },
+    {
+      "name": "H-8 mid far left"
+    },
+    {
+      "name": "H-8 mid left"
+    },
+    {
+      "name": "H-8 mid left-center"
+    },
+    {
+      "name": "H-8 mid center"
+    },
+    {
+      "name": "H-8 mid right-center"
+    },
+    {
+      "name": "H-8 mid right"
+    },
+    {
+      "name": "H-8 mid far right"
+    },
+    {
+      "name": "H-8 bottom far left"
+    },
+    {
+      "name": "H-8 bottom left"
+    },
+    {
+      "name": "H-8 bottom left-center"
+    },
+    {
+      "name": "H-8 bottom center"
+    },
+    {
+      "name": "H-8 bottom right-center"
+    },
+    {
+      "name": "H-8 bottom right"
+    },
+    {
+      "name": "H-8 bottom far right"
+    },
+    {
+      "name": "I-2 top far left"
+    },
+    {
+      "name": "I-2 top left"
+    },
+    {
+      "name": "I-2 top left-center"
+    },
+    {
+      "name": "I-2 top center"
+    },
+    {
+      "name": "I-2 top right-center"
+    },
+    {
+      "name": "I-2 top right"
+    },
+    {
+      "name": "I-2 top far right"
+    },
+    {
+      "name": "I-2 mid far left"
+    },
+    {
+      "name": "I-2 mid left"
+    },
+    {
+      "name": "I-2 mid left-center"
+    },
+    {
+      "name": "I-2 mid center"
+    },
+    {
+      "name": "I-2 mid right-center"
+    },
+    {
+      "name": "I-2 mid right"
+    },
+    {
+      "name": "I-2 mid far right"
+    },
+    {
+      "name": "I-2 bottom far left"
+    },
+    {
+      "name": "I-2 bottom left"
+    },
+    {
+      "name": "I-2 bottom left-center"
+    },
+    {
+      "name": "I-2 bottom center"
+    },
+    {
+      "name": "I-2 bottom right-center"
+    },
+    {
+      "name": "I-2 bottom right"
+    },
+    {
+      "name": "I-2 bottom far right"
+    },
+    {
+      "name": "I-4 top far left"
+    },
+    {
+      "name": "I-4 top left"
+    },
+    {
+      "name": "I-4 top left-center"
+    },
+    {
+      "name": "I-4 top center"
+    },
+    {
+      "name": "I-4 top right-center"
+    },
+    {
+      "name": "I-4 top right"
+    },
+    {
+      "name": "I-4 top far right"
+    },
+    {
+      "name": "I-4 mid far left"
+    },
+    {
+      "name": "I-4 mid left"
+    },
+    {
+      "name": "I-4 mid left-center"
+    },
+    {
+      "name": "I-4 mid center"
+    },
+    {
+      "name": "I-4 mid right-center"
+    },
+    {
+      "name": "I-4 mid right"
+    },
+    {
+      "name": "I-4 mid far right"
+    },
+    {
+      "name": "I-4 bottom far left"
+    },
+    {
+      "name": "I-4 bottom left"
+    },
+    {
+      "name": "I-4 bottom left-center"
+    },
+    {
+      "name": "I-4 bottom center"
+    },
+    {
+      "name": "I-4 bottom right-center"
+    },
+    {
+      "name": "I-4 bottom right"
+    },
+    {
+      "name": "I-4 bottom far right"
+    },
+    {
+      "name": "I-5 top far left"
+    },
+    {
+      "name": "I-5 top left"
+    },
+    {
+      "name": "I-5 top left-center"
+    },
+    {
+      "name": "I-5 top center"
+    },
+    {
+      "name": "I-5 top right-center"
+    },
+    {
+      "name": "I-5 top right"
+    },
+    {
+      "name": "I-5 top far right"
+    },
+    {
+      "name": "I-5 mid far left"
+    },
+    {
+      "name": "I-5 mid left"
+    },
+    {
+      "name": "I-5 mid left-center"
+    },
+    {
+      "name": "I-5 mid center"
+    },
+    {
+      "name": "I-5 mid right-center"
+    },
+    {
+      "name": "I-5 mid right"
+    },
+    {
+      "name": "I-5 mid far right"
+    },
+    {
+      "name": "I-5 bottom far left"
+    },
+    {
+      "name": "I-5 bottom left"
+    },
+    {
+      "name": "I-5 bottom left-center"
+    },
+    {
+      "name": "I-5 bottom center"
+    },
+    {
+      "name": "I-5 bottom right-center"
+    },
+    {
+      "name": "I-5 bottom right"
+    },
+    {
+      "name": "I-5 bottom far right"
+    },
+    {
+      "name": "I-6 top far left"
+    },
+    {
+      "name": "I-6 top left"
+    },
+    {
+      "name": "I-6 top left-center"
+    },
+    {
+      "name": "I-6 top center"
+    },
+    {
+      "name": "I-6 top right-center"
+    },
+    {
+      "name": "I-6 top right"
+    },
+    {
+      "name": "I-6 top far right"
+    },
+    {
+      "name": "I-6 mid far left"
+    },
+    {
+      "name": "I-6 mid left"
+    },
+    {
+      "name": "I-6 mid left-center"
+    },
+    {
+      "name": "I-6 mid center"
+    },
+    {
+      "name": "I-6 mid right-center"
+    },
+    {
+      "name": "I-6 mid right"
+    },
+    {
+      "name": "I-6 mid far right"
+    },
+    {
+      "name": "I-6 bottom far left"
+    },
+    {
+      "name": "I-6 bottom left"
+    },
+    {
+      "name": "I-6 bottom left-center"
+    },
+    {
+      "name": "I-6 bottom center"
+    },
+    {
+      "name": "I-6 bottom right-center"
+    },
+    {
+      "name": "I-6 bottom right"
+    },
+    {
+      "name": "I-6 bottom far right"
+    },
+    {
+      "name": "I-8 top far left"
+    },
+    {
+      "name": "I-8 top left"
+    },
+    {
+      "name": "I-8 top left-center"
+    },
+    {
+      "name": "I-8 top center"
+    },
+    {
+      "name": "I-8 top right-center"
+    },
+    {
+      "name": "I-8 top right"
+    },
+    {
+      "name": "I-8 top far right"
+    },
+    {
+      "name": "I-8 mid far left"
+    },
+    {
+      "name": "I-8 mid left"
+    },
+    {
+      "name": "I-8 mid left-center"
+    },
+    {
+      "name": "I-8 mid center"
+    },
+    {
+      "name": "I-8 mid right-center"
+    },
+    {
+      "name": "I-8 mid right"
+    },
+    {
+      "name": "I-8 mid far right"
+    },
+    {
+      "name": "I-8 bottom far left"
+    },
+    {
+      "name": "I-8 bottom left"
+    },
+    {
+      "name": "I-8 bottom left-center"
+    },
+    {
+      "name": "I-8 bottom center"
+    },
+    {
+      "name": "I-8 bottom right-center"
+    },
+    {
+      "name": "I-8 bottom right"
+    },
+    {
+      "name": "I-8 bottom far right"
+    },
+    {
+      "name": "J-2 top far left"
+    },
+    {
+      "name": "J-2 top left"
+    },
+    {
+      "name": "J-2 top left-center"
+    },
+    {
+      "name": "J-2 top center"
+    },
+    {
+      "name": "J-2 top right-center"
+    },
+    {
+      "name": "J-2 top right"
+    },
+    {
+      "name": "J-2 top far right"
+    },
+    {
+      "name": "J-2 mid far left"
+    },
+    {
+      "name": "J-2 mid left"
+    },
+    {
+      "name": "J-2 mid left-center"
+    },
+    {
+      "name": "J-2 mid center"
+    },
+    {
+      "name": "J-2 mid right-center"
+    },
+    {
+      "name": "J-2 mid right"
+    },
+    {
+      "name": "J-2 mid far right"
+    },
+    {
+      "name": "J-2 bottom far left"
+    },
+    {
+      "name": "J-2 bottom left"
+    },
+    {
+      "name": "J-2 bottom left-center"
+    },
+    {
+      "name": "J-2 bottom center"
+    },
+    {
+      "name": "J-2 bottom right-center"
+    },
+    {
+      "name": "J-2 bottom right"
+    },
+    {
+      "name": "J-2 bottom far right"
+    },
+    {
+      "name": "J-3 top far left"
+    },
+    {
+      "name": "J-3 top left"
+    },
+    {
+      "name": "J-3 top left-center"
+    },
+    {
+      "name": "J-3 top center"
+    },
+    {
+      "name": "J-3 top right-center"
+    },
+    {
+      "name": "J-3 top right"
+    },
+    {
+      "name": "J-3 top far right"
+    },
+    {
+      "name": "J-3 mid far left"
+    },
+    {
+      "name": "J-3 mid left"
+    },
+    {
+      "name": "J-3 mid left-center"
+    },
+    {
+      "name": "J-3 mid center"
+    },
+    {
+      "name": "J-3 mid right-center"
+    },
+    {
+      "name": "J-3 mid right"
+    },
+    {
+      "name": "J-3 mid far right"
+    },
+    {
+      "name": "J-3 bottom far left"
+    },
+    {
+      "name": "J-3 bottom left"
+    },
+    {
+      "name": "J-3 bottom left-center"
+    },
+    {
+      "name": "J-3 bottom center"
+    },
+    {
+      "name": "J-3 bottom right-center"
+    },
+    {
+      "name": "J-3 bottom right"
+    },
+    {
+      "name": "J-3 bottom far right"
+    },
+    {
+      "name": "J-4 top far left"
+    },
+    {
+      "name": "J-4 top left"
+    },
+    {
+      "name": "J-4 top left-center"
+    },
+    {
+      "name": "J-4 top center"
+    },
+    {
+      "name": "J-4 top right-center"
+    },
+    {
+      "name": "J-4 top right"
+    },
+    {
+      "name": "J-4 top far right"
+    },
+    {
+      "name": "J-4 mid far left"
+    },
+    {
+      "name": "J-4 mid left"
+    },
+    {
+      "name": "J-4 mid left-center"
+    },
+    {
+      "name": "J-4 mid center"
+    },
+    {
+      "name": "J-4 mid right-center"
+    },
+    {
+      "name": "J-4 mid right"
+    },
+    {
+      "name": "J-4 mid far right"
+    },
+    {
+      "name": "J-4 bottom far left"
+    },
+    {
+      "name": "J-4 bottom left"
+    },
+    {
+      "name": "J-4 bottom left-center"
+    },
+    {
+      "name": "J-4 bottom center"
+    },
+    {
+      "name": "J-4 bottom right-center"
+    },
+    {
+      "name": "J-4 bottom right"
+    },
+    {
+      "name": "J-4 bottom far right"
+    },
+    {
+      "name": "J-5 top far left"
+    },
+    {
+      "name": "J-5 top left"
+    },
+    {
+      "name": "J-5 top left-center"
+    },
+    {
+      "name": "J-5 top center"
+    },
+    {
+      "name": "J-5 top right-center"
+    },
+    {
+      "name": "J-5 top right"
+    },
+    {
+      "name": "J-5 top far right"
+    },
+    {
+      "name": "J-5 mid far left"
+    },
+    {
+      "name": "J-5 mid left"
+    },
+    {
+      "name": "J-5 mid left-center"
+    },
+    {
+      "name": "J-5 mid center"
+    },
+    {
+      "name": "J-5 mid right-center"
+    },
+    {
+      "name": "J-5 mid right"
+    },
+    {
+      "name": "J-5 mid far right"
+    },
+    {
+      "name": "J-5 bottom far left"
+    },
+    {
+      "name": "J-5 bottom left"
+    },
+    {
+      "name": "J-5 bottom left-center"
+    },
+    {
+      "name": "J-5 bottom center"
+    },
+    {
+      "name": "J-5 bottom right-center"
+    },
+    {
+      "name": "J-5 bottom right"
+    },
+    {
+      "name": "J-5 bottom far right"
+    },
+    {
+      "name": "K-2 top far left"
+    },
+    {
+      "name": "K-2 top left"
+    },
+    {
+      "name": "K-2 top left-center"
+    },
+    {
+      "name": "K-2 top center"
+    },
+    {
+      "name": "K-2 top right-center"
+    },
+    {
+      "name": "K-2 top right"
+    },
+    {
+      "name": "K-2 top far right"
+    },
+    {
+      "name": "K-2 mid far left"
+    },
+    {
+      "name": "K-2 mid left"
+    },
+    {
+      "name": "K-2 mid left-center"
+    },
+    {
+      "name": "K-2 mid center"
+    },
+    {
+      "name": "K-2 mid right-center"
+    },
+    {
+      "name": "K-2 mid right"
+    },
+    {
+      "name": "K-2 mid far right"
+    },
+    {
+      "name": "K-2 bottom far left"
+    },
+    {
+      "name": "K-2 bottom left"
+    },
+    {
+      "name": "K-2 bottom left-center"
+    },
+    {
+      "name": "K-2 bottom center"
+    },
+    {
+      "name": "K-2 bottom right-center"
+    },
+    {
+      "name": "K-2 bottom right"
+    },
+    {
+      "name": "K-2 bottom far right"
+    },
+    {
+      "name": "K-3 top far left"
+    },
+    {
+      "name": "K-3 top left"
+    },
+    {
+      "name": "K-3 top left-center"
+    },
+    {
+      "name": "K-3 top center"
+    },
+    {
+      "name": "K-3 top right-center"
+    },
+    {
+      "name": "K-3 top right"
+    },
+    {
+      "name": "K-3 top far right"
+    },
+    {
+      "name": "K-3 mid far left"
+    },
+    {
+      "name": "K-3 mid left"
+    },
+    {
+      "name": "K-3 mid left-center"
+    },
+    {
+      "name": "K-3 mid center"
+    },
+    {
+      "name": "K-3 mid right-center"
+    },
+    {
+      "name": "K-3 mid right"
+    },
+    {
+      "name": "K-3 mid far right"
+    },
+    {
+      "name": "K-3 bottom far left"
+    },
+    {
+      "name": "K-3 bottom left"
+    },
+    {
+      "name": "K-3 bottom left-center"
+    },
+    {
+      "name": "K-3 bottom center"
+    },
+    {
+      "name": "K-3 bottom right-center"
+    },
+    {
+      "name": "K-3 bottom right"
+    },
+    {
+      "name": "K-3 bottom far right"
+    },
+    {
+      "name": "K-4 top far left"
+    },
+    {
+      "name": "K-4 top left"
+    },
+    {
+      "name": "K-4 top left-center"
+    },
+    {
+      "name": "K-4 top center"
+    },
+    {
+      "name": "K-4 top right-center"
+    },
+    {
+      "name": "K-4 top right"
+    },
+    {
+      "name": "K-4 top far right"
+    },
+    {
+      "name": "K-4 mid far left"
+    },
+    {
+      "name": "K-4 mid left"
+    },
+    {
+      "name": "K-4 mid left-center"
+    },
+    {
+      "name": "K-4 mid center"
+    },
+    {
+      "name": "K-4 mid right-center"
+    },
+    {
+      "name": "K-4 mid right"
+    },
+    {
+      "name": "K-4 mid far right"
+    },
+    {
+      "name": "K-4 bottom far left"
+    },
+    {
+      "name": "K-4 bottom left"
+    },
+    {
+      "name": "K-4 bottom left-center"
+    },
+    {
+      "name": "K-4 bottom center"
+    },
+    {
+      "name": "K-4 bottom right-center"
+    },
+    {
+      "name": "K-4 bottom right"
+    },
+    {
+      "name": "K-4 bottom far right"
+    },
+    {
+      "name": "K-5 top far left"
+    },
+    {
+      "name": "K-5 top left"
+    },
+    {
+      "name": "K-5 top left-center"
+    },
+    {
+      "name": "K-5 top center"
+    },
+    {
+      "name": "K-5 top right-center"
+    },
+    {
+      "name": "K-5 top right"
+    },
+    {
+      "name": "K-5 top far right"
+    },
+    {
+      "name": "K-5 mid far left"
+    },
+    {
+      "name": "K-5 mid left"
+    },
+    {
+      "name": "K-5 mid left-center"
+    },
+    {
+      "name": "K-5 mid center"
+    },
+    {
+      "name": "K-5 mid right-center"
+    },
+    {
+      "name": "K-5 mid right"
+    },
+    {
+      "name": "K-5 mid far right"
+    },
+    {
+      "name": "K-5 bottom far left"
+    },
+    {
+      "name": "K-5 bottom left"
+    },
+    {
+      "name": "K-5 bottom left-center"
+    },
+    {
+      "name": "K-5 bottom center"
+    },
+    {
+      "name": "K-5 bottom right-center"
+    },
+    {
+      "name": "K-5 bottom right"
+    },
+    {
+      "name": "K-5 bottom far right"
+    },
+    {
+      "name": "K-6 top far left"
+    },
+    {
+      "name": "K-6 top left"
+    },
+    {
+      "name": "K-6 top left-center"
+    },
+    {
+      "name": "K-6 top center"
+    },
+    {
+      "name": "K-6 top right-center"
+    },
+    {
+      "name": "K-6 top right"
+    },
+    {
+      "name": "K-6 top far right"
+    },
+    {
+      "name": "K-6 mid far left"
+    },
+    {
+      "name": "K-6 mid left"
+    },
+    {
+      "name": "K-6 mid left-center"
+    },
+    {
+      "name": "K-6 mid center"
+    },
+    {
+      "name": "K-6 mid right-center"
+    },
+    {
+      "name": "K-6 mid right"
+    },
+    {
+      "name": "K-6 mid far right"
+    },
+    {
+      "name": "K-6 bottom far left"
+    },
+    {
+      "name": "K-6 bottom left"
+    },
+    {
+      "name": "K-6 bottom left-center"
+    },
+    {
+      "name": "K-6 bottom center"
+    },
+    {
+      "name": "K-6 bottom right-center"
+    },
+    {
+      "name": "K-6 bottom right"
+    },
+    {
+      "name": "K-6 bottom far right"
+    },
+    {
+      "name": "K-7 top far left"
+    },
+    {
+      "name": "K-7 top left"
+    },
+    {
+      "name": "K-7 top left-center"
+    },
+    {
+      "name": "K-7 top center"
+    },
+    {
+      "name": "K-7 top right-center"
+    },
+    {
+      "name": "K-7 top right"
+    },
+    {
+      "name": "K-7 top far right"
+    },
+    {
+      "name": "K-7 mid far left"
+    },
+    {
+      "name": "K-7 mid left"
+    },
+    {
+      "name": "K-7 mid left-center"
+    },
+    {
+      "name": "K-7 mid center"
+    },
+    {
+      "name": "K-7 mid right-center"
+    },
+    {
+      "name": "K-7 mid right"
+    },
+    {
+      "name": "K-7 mid far right"
+    },
+    {
+      "name": "K-7 bottom far left"
+    },
+    {
+      "name": "K-7 bottom left"
+    },
+    {
+      "name": "K-7 bottom left-center"
+    },
+    {
+      "name": "K-7 bottom center"
+    },
+    {
+      "name": "K-7 bottom right-center"
+    },
+    {
+      "name": "K-7 bottom right"
+    },
+    {
+      "name": "K-7 bottom far right"
+    },
+    {
+      "name": "L-2 top far left"
+    },
+    {
+      "name": "L-2 top left"
+    },
+    {
+      "name": "L-2 top left-center"
+    },
+    {
+      "name": "L-2 top center"
+    },
+    {
+      "name": "L-2 top right-center"
+    },
+    {
+      "name": "L-2 top right"
+    },
+    {
+      "name": "L-2 top far right"
+    },
+    {
+      "name": "L-2 mid far left"
+    },
+    {
+      "name": "L-2 mid left"
+    },
+    {
+      "name": "L-2 mid left-center"
+    },
+    {
+      "name": "L-2 mid center"
+    },
+    {
+      "name": "L-2 mid right-center"
+    },
+    {
+      "name": "L-2 mid right"
+    },
+    {
+      "name": "L-2 mid far right"
+    },
+    {
+      "name": "L-2 bottom far left"
+    },
+    {
+      "name": "L-2 bottom left"
+    },
+    {
+      "name": "L-2 bottom left-center"
+    },
+    {
+      "name": "L-2 bottom center"
+    },
+    {
+      "name": "L-2 bottom right-center"
+    },
+    {
+      "name": "L-2 bottom right"
+    },
+    {
+      "name": "L-2 bottom far right"
+    },
+    {
+      "name": "L-3 top far left"
+    },
+    {
+      "name": "L-3 top left"
+    },
+    {
+      "name": "L-3 top left-center"
+    },
+    {
+      "name": "L-3 top center"
+    },
+    {
+      "name": "L-3 top right-center"
+    },
+    {
+      "name": "L-3 top right"
+    },
+    {
+      "name": "L-3 top far right"
+    },
+    {
+      "name": "L-3 mid far left"
+    },
+    {
+      "name": "L-3 mid left"
+    },
+    {
+      "name": "L-3 mid left-center"
+    },
+    {
+      "name": "L-3 mid center"
+    },
+    {
+      "name": "L-3 mid right-center"
+    },
+    {
+      "name": "L-3 mid right"
+    },
+    {
+      "name": "L-3 mid far right"
+    },
+    {
+      "name": "L-3 bottom far left"
+    },
+    {
+      "name": "L-3 bottom left"
+    },
+    {
+      "name": "L-3 bottom left-center"
+    },
+    {
+      "name": "L-3 bottom center"
+    },
+    {
+      "name": "L-3 bottom right-center"
+    },
+    {
+      "name": "L-3 bottom right"
+    },
+    {
+      "name": "L-3 bottom far right"
+    },
+    {
+      "name": "L-4 top far left"
+    },
+    {
+      "name": "L-4 top left"
+    },
+    {
+      "name": "L-4 top left-center"
+    },
+    {
+      "name": "L-4 top center"
+    },
+    {
+      "name": "L-4 top right-center"
+    },
+    {
+      "name": "L-4 top right"
+    },
+    {
+      "name": "L-4 top far right"
+    },
+    {
+      "name": "L-4 mid far left"
+    },
+    {
+      "name": "L-4 mid left"
+    },
+    {
+      "name": "L-4 mid left-center"
+    },
+    {
+      "name": "L-4 mid center"
+    },
+    {
+      "name": "L-4 mid right-center"
+    },
+    {
+      "name": "L-4 mid right"
+    },
+    {
+      "name": "L-4 mid far right"
+    },
+    {
+      "name": "L-4 bottom far left"
+    },
+    {
+      "name": "L-4 bottom left"
+    },
+    {
+      "name": "L-4 bottom left-center"
+    },
+    {
+      "name": "L-4 bottom center"
+    },
+    {
+      "name": "L-4 bottom right-center"
+    },
+    {
+      "name": "L-4 bottom right"
+    },
+    {
+      "name": "L-4 bottom far right"
+    },
+    {
+      "name": "L-5 top far left"
+    },
+    {
+      "name": "L-5 top left"
+    },
+    {
+      "name": "L-5 top left-center"
+    },
+    {
+      "name": "L-5 top center"
+    },
+    {
+      "name": "L-5 top right-center"
+    },
+    {
+      "name": "L-5 top right"
+    },
+    {
+      "name": "L-5 top far right"
+    },
+    {
+      "name": "L-5 mid far left"
+    },
+    {
+      "name": "L-5 mid left"
+    },
+    {
+      "name": "L-5 mid left-center"
+    },
+    {
+      "name": "L-5 mid center"
+    },
+    {
+      "name": "L-5 mid right-center"
+    },
+    {
+      "name": "L-5 mid right"
+    },
+    {
+      "name": "L-5 mid far right"
+    },
+    {
+      "name": "L-5 bottom far left"
+    },
+    {
+      "name": "L-5 bottom left"
+    },
+    {
+      "name": "L-5 bottom left-center"
+    },
+    {
+      "name": "L-5 bottom center"
+    },
+    {
+      "name": "L-5 bottom right-center"
+    },
+    {
+      "name": "L-5 bottom right"
+    },
+    {
+      "name": "L-5 bottom far right"
+    },
+    {
+      "name": "L-6 top far left"
+    },
+    {
+      "name": "L-6 top left"
+    },
+    {
+      "name": "L-6 top left-center"
+    },
+    {
+      "name": "L-6 top center"
+    },
+    {
+      "name": "L-6 top right-center"
+    },
+    {
+      "name": "L-6 top right"
+    },
+    {
+      "name": "L-6 top far right"
+    },
+    {
+      "name": "L-6 mid far left"
+    },
+    {
+      "name": "L-6 mid left"
+    },
+    {
+      "name": "L-6 mid left-center"
+    },
+    {
+      "name": "L-6 mid center"
+    },
+    {
+      "name": "L-6 mid right-center"
+    },
+    {
+      "name": "L-6 mid right"
+    },
+    {
+      "name": "L-6 mid far right"
+    },
+    {
+      "name": "L-6 bottom far left"
+    },
+    {
+      "name": "L-6 bottom left"
+    },
+    {
+      "name": "L-6 bottom left-center"
+    },
+    {
+      "name": "L-6 bottom center"
+    },
+    {
+      "name": "L-6 bottom right-center"
+    },
+    {
+      "name": "L-6 bottom right"
+    },
+    {
+      "name": "L-6 bottom far right"
+    },
+    {
+      "name": "L-7 top far left"
+    },
+    {
+      "name": "L-7 top left"
+    },
+    {
+      "name": "L-7 top left-center"
+    },
+    {
+      "name": "L-7 top center"
+    },
+    {
+      "name": "L-7 top right-center"
+    },
+    {
+      "name": "L-7 top right"
+    },
+    {
+      "name": "L-7 top far right"
+    },
+    {
+      "name": "L-7 mid far left"
+    },
+    {
+      "name": "L-7 mid left"
+    },
+    {
+      "name": "L-7 mid left-center"
+    },
+    {
+      "name": "L-7 mid center"
+    },
+    {
+      "name": "L-7 mid right-center"
+    },
+    {
+      "name": "L-7 mid right"
+    },
+    {
+      "name": "L-7 mid far right"
+    },
+    {
+      "name": "L-7 bottom far left"
+    },
+    {
+      "name": "L-7 bottom left"
+    },
+    {
+      "name": "L-7 bottom left-center"
+    },
+    {
+      "name": "L-7 bottom center"
+    },
+    {
+      "name": "L-7 bottom right-center"
+    },
+    {
+      "name": "L-7 bottom right"
+    },
+    {
+      "name": "L-7 bottom far right"
+    },
+    {
+      "name": "M-2 top far left"
+    },
+    {
+      "name": "M-2 top left"
+    },
+    {
+      "name": "M-2 top left-center"
+    },
+    {
+      "name": "M-2 top center"
+    },
+    {
+      "name": "M-2 top right-center"
+    },
+    {
+      "name": "M-2 top right"
+    },
+    {
+      "name": "M-2 top far right"
+    },
+    {
+      "name": "M-2 mid far left"
+    },
+    {
+      "name": "M-2 mid left"
+    },
+    {
+      "name": "M-2 mid left-center"
+    },
+    {
+      "name": "M-2 mid center"
+    },
+    {
+      "name": "M-2 mid right-center"
+    },
+    {
+      "name": "M-2 mid right"
+    },
+    {
+      "name": "M-2 mid far right"
+    },
+    {
+      "name": "M-2 bottom far left"
+    },
+    {
+      "name": "M-2 bottom left"
+    },
+    {
+      "name": "M-2 bottom left-center"
+    },
+    {
+      "name": "M-2 bottom center"
+    },
+    {
+      "name": "M-2 bottom right-center"
+    },
+    {
+      "name": "M-2 bottom right"
+    },
+    {
+      "name": "M-2 bottom far right"
+    },
+    {
+      "name": "M-3 top far left"
+    },
+    {
+      "name": "M-3 top left"
+    },
+    {
+      "name": "M-3 top left-center"
+    },
+    {
+      "name": "M-3 top center"
+    },
+    {
+      "name": "M-3 top right-center"
+    },
+    {
+      "name": "M-3 top right"
+    },
+    {
+      "name": "M-3 top far right"
+    },
+    {
+      "name": "M-3 mid far left"
+    },
+    {
+      "name": "M-3 mid left"
+    },
+    {
+      "name": "M-3 mid left-center"
+    },
+    {
+      "name": "M-3 mid center"
+    },
+    {
+      "name": "M-3 mid right-center"
+    },
+    {
+      "name": "M-3 mid right"
+    },
+    {
+      "name": "M-3 mid far right"
+    },
+    {
+      "name": "M-3 bottom far left"
+    },
+    {
+      "name": "M-3 bottom left"
+    },
+    {
+      "name": "M-3 bottom left-center"
+    },
+    {
+      "name": "M-3 bottom center"
+    },
+    {
+      "name": "M-3 bottom right-center"
+    },
+    {
+      "name": "M-3 bottom right"
+    },
+    {
+      "name": "M-3 bottom far right"
+    },
+    {
+      "name": "M-4 top far left"
+    },
+    {
+      "name": "M-4 top left"
+    },
+    {
+      "name": "M-4 top left-center"
+    },
+    {
+      "name": "M-4 top center"
+    },
+    {
+      "name": "M-4 top right-center"
+    },
+    {
+      "name": "M-4 top right"
+    },
+    {
+      "name": "M-4 top far right"
+    },
+    {
+      "name": "M-4 mid far left"
+    },
+    {
+      "name": "M-4 mid left"
+    },
+    {
+      "name": "M-4 mid left-center"
+    },
+    {
+      "name": "M-4 mid center"
+    },
+    {
+      "name": "M-4 mid right-center"
+    },
+    {
+      "name": "M-4 mid right"
+    },
+    {
+      "name": "M-4 mid far right"
+    },
+    {
+      "name": "M-4 bottom far left"
+    },
+    {
+      "name": "M-4 bottom left"
+    },
+    {
+      "name": "M-4 bottom left-center"
+    },
+    {
+      "name": "M-4 bottom center"
+    },
+    {
+      "name": "M-4 bottom right-center"
+    },
+    {
+      "name": "M-4 bottom right"
+    },
+    {
+      "name": "M-4 bottom far right"
+    },
+    {
+      "name": "M-5 top far left"
+    },
+    {
+      "name": "M-5 top left"
+    },
+    {
+      "name": "M-5 top left-center"
+    },
+    {
+      "name": "M-5 top center"
+    },
+    {
+      "name": "M-5 top right-center"
+    },
+    {
+      "name": "M-5 top right"
+    },
+    {
+      "name": "M-5 top far right"
+    },
+    {
+      "name": "M-5 mid far left"
+    },
+    {
+      "name": "M-5 mid left"
+    },
+    {
+      "name": "M-5 mid left-center"
+    },
+    {
+      "name": "M-5 mid center"
+    },
+    {
+      "name": "M-5 mid right-center"
+    },
+    {
+      "name": "M-5 mid right"
+    },
+    {
+      "name": "M-5 mid far right"
+    },
+    {
+      "name": "M-5 bottom far left"
+    },
+    {
+      "name": "M-5 bottom left"
+    },
+    {
+      "name": "M-5 bottom left-center"
+    },
+    {
+      "name": "M-5 bottom center"
+    },
+    {
+      "name": "M-5 bottom right-center"
+    },
+    {
+      "name": "M-5 bottom right"
+    },
+    {
+      "name": "M-5 bottom far right"
+    },
+    {
+      "name": "M-6 top far left"
+    },
+    {
+      "name": "M-6 top left"
+    },
+    {
+      "name": "M-6 top left-center"
+    },
+    {
+      "name": "M-6 top center"
+    },
+    {
+      "name": "M-6 top right-center"
+    },
+    {
+      "name": "M-6 top right"
+    },
+    {
+      "name": "M-6 top far right"
+    },
+    {
+      "name": "M-6 mid far left"
+    },
+    {
+      "name": "M-6 mid left"
+    },
+    {
+      "name": "M-6 mid left-center"
+    },
+    {
+      "name": "M-6 mid center"
+    },
+    {
+      "name": "M-6 mid right-center"
+    },
+    {
+      "name": "M-6 mid right"
+    },
+    {
+      "name": "M-6 mid far right"
+    },
+    {
+      "name": "M-6 bottom far left"
+    },
+    {
+      "name": "M-6 bottom left"
+    },
+    {
+      "name": "M-6 bottom left-center"
+    },
+    {
+      "name": "M-6 bottom center"
+    },
+    {
+      "name": "M-6 bottom right-center"
+    },
+    {
+      "name": "M-6 bottom right"
+    },
+    {
+      "name": "M-6 bottom far right"
+    },
+    {
+      "name": "M-7 top far left"
+    },
+    {
+      "name": "M-7 top left"
+    },
+    {
+      "name": "M-7 top left-center"
+    },
+    {
+      "name": "M-7 top center"
+    },
+    {
+      "name": "M-7 top right-center"
+    },
+    {
+      "name": "M-7 top right"
+    },
+    {
+      "name": "M-7 top far right"
+    },
+    {
+      "name": "M-7 mid far left"
+    },
+    {
+      "name": "M-7 mid left"
+    },
+    {
+      "name": "M-7 mid left-center"
+    },
+    {
+      "name": "M-7 mid center"
+    },
+    {
+      "name": "M-7 mid right-center"
+    },
+    {
+      "name": "M-7 mid right"
+    },
+    {
+      "name": "M-7 mid far right"
+    },
+    {
+      "name": "M-7 bottom far left"
+    },
+    {
+      "name": "M-7 bottom left"
+    },
+    {
+      "name": "M-7 bottom left-center"
+    },
+    {
+      "name": "M-7 bottom center"
+    },
+    {
+      "name": "M-7 bottom right-center"
+    },
+    {
+      "name": "M-7 bottom right"
+    },
+    {
+      "name": "M-7 bottom far right"
+    },
+    {
+      "name": "N-2 top far left"
+    },
+    {
+      "name": "N-2 top left"
+    },
+    {
+      "name": "N-2 top left-center"
+    },
+    {
+      "name": "N-2 top center"
+    },
+    {
+      "name": "N-2 top right-center"
+    },
+    {
+      "name": "N-2 top right"
+    },
+    {
+      "name": "N-2 top far right"
+    },
+    {
+      "name": "N-2 mid far left"
+    },
+    {
+      "name": "N-2 mid left"
+    },
+    {
+      "name": "N-2 mid left-center"
+    },
+    {
+      "name": "N-2 mid center"
+    },
+    {
+      "name": "N-2 mid right-center"
+    },
+    {
+      "name": "N-2 mid right"
+    },
+    {
+      "name": "N-2 mid far right"
+    },
+    {
+      "name": "N-2 bottom far left"
+    },
+    {
+      "name": "N-2 bottom left"
+    },
+    {
+      "name": "N-2 bottom left-center"
+    },
+    {
+      "name": "N-2 bottom center"
+    },
+    {
+      "name": "N-2 bottom right-center"
+    },
+    {
+      "name": "N-2 bottom right"
+    },
+    {
+      "name": "N-2 bottom far right"
+    },
+    {
+      "name": "N-3 top far left"
+    },
+    {
+      "name": "N-3 top left"
+    },
+    {
+      "name": "N-3 top left-center"
+    },
+    {
+      "name": "N-3 top center"
+    },
+    {
+      "name": "N-3 top right-center"
+    },
+    {
+      "name": "N-3 top right"
+    },
+    {
+      "name": "N-3 top far right"
+    },
+    {
+      "name": "N-3 mid far left"
+    },
+    {
+      "name": "N-3 mid left"
+    },
+    {
+      "name": "N-3 mid left-center"
+    },
+    {
+      "name": "N-3 mid center"
+    },
+    {
+      "name": "N-3 mid right-center"
+    },
+    {
+      "name": "N-3 mid right"
+    },
+    {
+      "name": "N-3 mid far right"
+    },
+    {
+      "name": "N-3 bottom far left"
+    },
+    {
+      "name": "N-3 bottom left"
+    },
+    {
+      "name": "N-3 bottom left-center"
+    },
+    {
+      "name": "N-3 bottom center"
+    },
+    {
+      "name": "N-3 bottom right-center"
+    },
+    {
+      "name": "N-3 bottom right"
+    },
+    {
+      "name": "N-3 bottom far right"
+    },
+    {
+      "name": "N-4 top far left"
+    },
+    {
+      "name": "N-4 top left"
+    },
+    {
+      "name": "N-4 top left-center"
+    },
+    {
+      "name": "N-4 top center"
+    },
+    {
+      "name": "N-4 top right-center"
+    },
+    {
+      "name": "N-4 top right"
+    },
+    {
+      "name": "N-4 top far right"
+    },
+    {
+      "name": "N-4 mid far left"
+    },
+    {
+      "name": "N-4 mid left"
+    },
+    {
+      "name": "N-4 mid left-center"
+    },
+    {
+      "name": "N-4 mid center"
+    },
+    {
+      "name": "N-4 mid right-center"
+    },
+    {
+      "name": "N-4 mid right"
+    },
+    {
+      "name": "N-4 mid far right"
+    },
+    {
+      "name": "N-4 bottom far left"
+    },
+    {
+      "name": "N-4 bottom left"
+    },
+    {
+      "name": "N-4 bottom left-center"
+    },
+    {
+      "name": "N-4 bottom center"
+    },
+    {
+      "name": "N-4 bottom right-center"
+    },
+    {
+      "name": "N-4 bottom right"
+    },
+    {
+      "name": "N-4 bottom far right"
+    },
+    {
+      "name": "N-5 top far left"
+    },
+    {
+      "name": "N-5 top left"
+    },
+    {
+      "name": "N-5 top left-center"
+    },
+    {
+      "name": "N-5 top center"
+    },
+    {
+      "name": "N-5 top right-center"
+    },
+    {
+      "name": "N-5 top right"
+    },
+    {
+      "name": "N-5 top far right"
+    },
+    {
+      "name": "N-5 mid far left"
+    },
+    {
+      "name": "N-5 mid left"
+    },
+    {
+      "name": "N-5 mid left-center"
+    },
+    {
+      "name": "N-5 mid center"
+    },
+    {
+      "name": "N-5 mid right-center"
+    },
+    {
+      "name": "N-5 mid right"
+    },
+    {
+      "name": "N-5 mid far right"
+    },
+    {
+      "name": "N-5 bottom far left"
+    },
+    {
+      "name": "N-5 bottom left"
+    },
+    {
+      "name": "N-5 bottom left-center"
+    },
+    {
+      "name": "N-5 bottom center"
+    },
+    {
+      "name": "N-5 bottom right-center"
+    },
+    {
+      "name": "N-5 bottom right"
+    },
+    {
+      "name": "N-5 bottom far right"
+    },
+    {
+      "name": "N-6 top far left"
+    },
+    {
+      "name": "N-6 top left"
+    },
+    {
+      "name": "N-6 top left-center"
+    },
+    {
+      "name": "N-6 top center"
+    },
+    {
+      "name": "N-6 top right-center"
+    },
+    {
+      "name": "N-6 top right"
+    },
+    {
+      "name": "N-6 top far right"
+    },
+    {
+      "name": "N-6 mid far left"
+    },
+    {
+      "name": "N-6 mid left"
+    },
+    {
+      "name": "N-6 mid left-center"
+    },
+    {
+      "name": "N-6 mid center"
+    },
+    {
+      "name": "N-6 mid right-center"
+    },
+    {
+      "name": "N-6 mid right"
+    },
+    {
+      "name": "N-6 mid far right"
+    },
+    {
+      "name": "N-6 bottom far left"
+    },
+    {
+      "name": "N-6 bottom left"
+    },
+    {
+      "name": "N-6 bottom left-center"
+    },
+    {
+      "name": "N-6 bottom center"
+    },
+    {
+      "name": "N-6 bottom right-center"
+    },
+    {
+      "name": "N-6 bottom right"
+    },
+    {
+      "name": "N-6 bottom far right"
+    },
+    {
+      "name": "N-7 top far left"
+    },
+    {
+      "name": "N-7 top left"
+    },
+    {
+      "name": "N-7 top left-center"
+    },
+    {
+      "name": "N-7 top center"
+    },
+    {
+      "name": "N-7 top right-center"
+    },
+    {
+      "name": "N-7 top right"
+    },
+    {
+      "name": "N-7 top far right"
+    },
+    {
+      "name": "N-7 mid far left"
+    },
+    {
+      "name": "N-7 mid left"
+    },
+    {
+      "name": "N-7 mid left-center"
+    },
+    {
+      "name": "N-7 mid center"
+    },
+    {
+      "name": "N-7 mid right-center"
+    },
+    {
+      "name": "N-7 mid right"
+    },
+    {
+      "name": "N-7 mid far right"
+    },
+    {
+      "name": "N-7 bottom far left"
+    },
+    {
+      "name": "N-7 bottom left"
+    },
+    {
+      "name": "N-7 bottom left-center"
+    },
+    {
+      "name": "N-7 bottom center"
+    },
+    {
+      "name": "N-7 bottom right-center"
+    },
+    {
+      "name": "N-7 bottom right"
+    },
+    {
+      "name": "N-7 bottom far right"
+    },
+    {
+      "name": "O-3 top far left"
+    },
+    {
+      "name": "O-3 top left"
+    },
+    {
+      "name": "O-3 top left-center"
+    },
+    {
+      "name": "O-3 top center"
+    },
+    {
+      "name": "O-3 top right-center"
+    },
+    {
+      "name": "O-3 top right"
+    },
+    {
+      "name": "O-3 top far right"
+    },
+    {
+      "name": "O-3 mid far left"
+    },
+    {
+      "name": "O-3 mid left"
+    },
+    {
+      "name": "O-3 mid left-center"
+    },
+    {
+      "name": "O-3 mid center"
+    },
+    {
+      "name": "O-3 mid right-center"
+    },
+    {
+      "name": "O-3 mid right"
+    },
+    {
+      "name": "O-3 mid far right"
+    },
+    {
+      "name": "O-3 bottom far left"
+    },
+    {
+      "name": "O-3 bottom left"
+    },
+    {
+      "name": "O-3 bottom left-center"
+    },
+    {
+      "name": "O-3 bottom center"
+    },
+    {
+      "name": "O-3 bottom right-center"
+    },
+    {
+      "name": "O-3 bottom right"
+    },
+    {
+      "name": "O-3 bottom far right"
+    },
+    {
+      "name": "O-4 top far left"
+    },
+    {
+      "name": "O-4 top left"
+    },
+    {
+      "name": "O-4 top left-center"
+    },
+    {
+      "name": "O-4 top center"
+    },
+    {
+      "name": "O-4 top right-center"
+    },
+    {
+      "name": "O-4 top right"
+    },
+    {
+      "name": "O-4 top far right"
+    },
+    {
+      "name": "O-4 mid far left"
+    },
+    {
+      "name": "O-4 mid left"
+    },
+    {
+      "name": "O-4 mid left-center"
+    },
+    {
+      "name": "O-4 mid center"
+    },
+    {
+      "name": "O-4 mid right-center"
+    },
+    {
+      "name": "O-4 mid right"
+    },
+    {
+      "name": "O-4 mid far right"
+    },
+    {
+      "name": "O-4 bottom far left"
+    },
+    {
+      "name": "O-4 bottom left"
+    },
+    {
+      "name": "O-4 bottom left-center"
+    },
+    {
+      "name": "O-4 bottom center"
+    },
+    {
+      "name": "O-4 bottom right-center"
+    },
+    {
+      "name": "O-4 bottom right"
+    },
+    {
+      "name": "O-4 bottom far right"
+    },
+    {
+      "name": "O-5 top far left"
+    },
+    {
+      "name": "O-5 top left"
+    },
+    {
+      "name": "O-5 top left-center"
+    },
+    {
+      "name": "O-5 top center"
+    },
+    {
+      "name": "O-5 top right-center"
+    },
+    {
+      "name": "O-5 top right"
+    },
+    {
+      "name": "O-5 top far right"
+    },
+    {
+      "name": "O-5 mid far left"
+    },
+    {
+      "name": "O-5 mid left"
+    },
+    {
+      "name": "O-5 mid left-center"
+    },
+    {
+      "name": "O-5 mid center"
+    },
+    {
+      "name": "O-5 mid right-center"
+    },
+    {
+      "name": "O-5 mid right"
+    },
+    {
+      "name": "O-5 mid far right"
+    },
+    {
+      "name": "O-5 bottom far left"
+    },
+    {
+      "name": "O-5 bottom left"
+    },
+    {
+      "name": "O-5 bottom left-center"
+    },
+    {
+      "name": "O-5 bottom center"
+    },
+    {
+      "name": "O-5 bottom right-center"
+    },
+    {
+      "name": "O-5 bottom right"
+    },
+    {
+      "name": "O-5 bottom far right"
+    },
+    {
+      "name": "O-6 top far left"
+    },
+    {
+      "name": "O-6 top left"
+    },
+    {
+      "name": "O-6 top left-center"
+    },
+    {
+      "name": "O-6 top center"
+    },
+    {
+      "name": "O-6 top right-center"
+    },
+    {
+      "name": "O-6 top right"
+    },
+    {
+      "name": "O-6 top far right"
+    },
+    {
+      "name": "O-6 mid far left"
+    },
+    {
+      "name": "O-6 mid left"
+    },
+    {
+      "name": "O-6 mid left-center"
+    },
+    {
+      "name": "O-6 mid center"
+    },
+    {
+      "name": "O-6 mid right-center"
+    },
+    {
+      "name": "O-6 mid right"
+    },
+    {
+      "name": "O-6 mid far right"
+    },
+    {
+      "name": "O-6 bottom far left"
+    },
+    {
+      "name": "O-6 bottom left"
+    },
+    {
+      "name": "O-6 bottom left-center"
+    },
+    {
+      "name": "O-6 bottom center"
+    },
+    {
+      "name": "O-6 bottom right-center"
+    },
+    {
+      "name": "O-6 bottom right"
+    },
+    {
+      "name": "O-6 bottom far right"
+    },
+    {
+      "name": "O-7 top far left"
+    },
+    {
+      "name": "O-7 top left"
+    },
+    {
+      "name": "O-7 top left-center"
+    },
+    {
+      "name": "O-7 top center"
+    },
+    {
+      "name": "O-7 top right-center"
+    },
+    {
+      "name": "O-7 top right"
+    },
+    {
+      "name": "O-7 top far right"
+    },
+    {
+      "name": "O-7 mid far left"
+    },
+    {
+      "name": "O-7 mid left"
+    },
+    {
+      "name": "O-7 mid left-center"
+    },
+    {
+      "name": "O-7 mid center"
+    },
+    {
+      "name": "O-7 mid right-center"
+    },
+    {
+      "name": "O-7 mid right"
+    },
+    {
+      "name": "O-7 mid far right"
+    },
+    {
+      "name": "O-7 bottom far left"
+    },
+    {
+      "name": "O-7 bottom left"
+    },
+    {
+      "name": "O-7 bottom left-center"
+    },
+    {
+      "name": "O-7 bottom center"
+    },
+    {
+      "name": "O-7 bottom right-center"
+    },
+    {
+      "name": "O-7 bottom right"
+    },
+    {
+      "name": "O-7 bottom far right"
+    },
+    {
+      "name": "P-3 top far left"
+    },
+    {
+      "name": "P-3 top left"
+    },
+    {
+      "name": "P-3 top left-center"
+    },
+    {
+      "name": "P-3 top center"
+    },
+    {
+      "name": "P-3 top right-center"
+    },
+    {
+      "name": "P-3 top right"
+    },
+    {
+      "name": "P-3 top far right"
+    },
+    {
+      "name": "P-3 mid far left"
+    },
+    {
+      "name": "P-3 mid left"
+    },
+    {
+      "name": "P-3 mid left-center"
+    },
+    {
+      "name": "P-3 mid center"
+    },
+    {
+      "name": "P-3 mid right-center"
+    },
+    {
+      "name": "P-3 mid right"
+    },
+    {
+      "name": "P-3 mid far right"
+    },
+    {
+      "name": "P-3 bottom far left"
+    },
+    {
+      "name": "P-3 bottom left"
+    },
+    {
+      "name": "P-3 bottom left-center"
+    },
+    {
+      "name": "P-3 bottom center"
+    },
+    {
+      "name": "P-3 bottom right-center"
+    },
+    {
+      "name": "P-3 bottom right"
+    },
+    {
+      "name": "P-3 bottom far right"
+    },
+    {
+      "name": "J-6 bottom far left"
+    }
+  ],
+  "status": "New"
+}

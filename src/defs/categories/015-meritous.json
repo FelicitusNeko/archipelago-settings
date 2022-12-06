@@ -3,47 +3,73 @@
   "index": 15,
   "settings": [
     {
-      "type": "string",
       "name": "goal",
-      "readableName": "Goal",
       "description": "Which goal must be achieved to trigger completion.",
-      "values": {
-        "return_the_cursed_seal": ["Return the Cursed Seal", "Once the Cursed Seal is returned to the entrance, goal will be triggered win-or-lose against the final boss"],
-        "any_ending": ["Any ending", "The final boss must be defeated in order to win"],
-        "true_ending": ["True ending", "The Agate Knife must be found before fighting the final boss"]
-      },
+      "readableName": "Goal",
+      "values": [
+        {
+          "name": "return_the_cursed_seal",
+          "description": "Once the Cursed Seal is returned to the entrance, goal will be triggered win-or-lose against the final boss",
+          "readableName": "Return the Cursed Seal"
+        },
+        {
+          "name": "any_ending",
+          "description": "The final boss must be defeated in order to win",
+          "readableName": "Any ending"
+        },
+        {
+          "name": "true_ending",
+          "description": "The Agate Knife must be found before fighting the final boss",
+          "readableName": "True ending"
+        }
+      ],
+      "type": "choice",
       "default": "return_the_cursed_seal"
     },
     {
-      "type": "boolean",
       "name": "include_psi_keys",
-      "readableName": "Include PSI Keys",
       "description": "Whether PSI Keys should be included in the multiworld pool. If not, they will be in their vanilla locations.",
+      "readableName": "Include PSI Keys",
+      "type": "toggle",
       "default": true
     },
     {
-      "type": "boolean",
       "name": "include_evolution_traps",
-      "readableName": "Include Evolution Traps",
       "description": "Whether evolution traps should be included in the multiworld pool. If not, they will be activated by bosses, as in vanilla.",
+      "readableName": "Include Evolution Traps",
+      "type": "toggle",
       "default": false
     },
     {
-      "type": "string",
       "name": "item_cache_cost",
-      "readableName": "Item cache cost scaling",
       "description": "Determines how the cost for Alpha, Beta, and Gamma caches will scale.",
-      "values": {
-        "vanilla": ["Vanilla", "The total cost of all purchases on Normal difficulty comes out to about 1 Billion PSI Crystals."],
-        "reduced": ["Reduced", "The total cost of all purchases on Normal difficulty comes out to about 750 Million PSI Crystals."],
-        "heavily_reduced": ["Heavily reduced", "The total cost of all purchases on Normal difficulty comes out to about 600 Million PSI Crystals."]
-      },
+      "readableName": "Item cache cost scaling",
+      "values": [
+        {
+          "name": "vanilla",
+          "description": "The total cost of all purchases on Normal difficulty comes out to about 1 Billion PSI Crystals.",
+          "readableName": "Vanilla"
+        },
+        {
+          "name": "reduced",
+          "description": "The total cost of all purchases on Normal difficulty comes out to about 750 Million PSI Crystals.",
+          "readableName": "Reduced"
+        },
+        {
+          "name": "heavily_reduced",
+          "description": "The total cost of all purchases on Normal difficulty comes out to about 600 Million PSI Crystals.",
+          "readableName": "Heavily reduced"
+        }
+      ],
+      "type": "choice",
       "default": "vanilla"
     },
     {
+      "name": "death_link",
       "type": "deathlink"
     }
   ],
+  "defver": 2,
   "items": [
     {
       "name": "Nothing",

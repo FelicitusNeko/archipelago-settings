@@ -1,0 +1,1709 @@
+{
+  "category": "Pokemon Red and Blue",
+  "index": 26,
+  "settings": [
+    {
+      "name": "game_version",
+      "description": "DOC ME",
+      "readableName": "game version",
+      "values": [
+        {
+          "name": "red",
+          "readableName": "*red"
+        },
+        {
+          "name": "blue",
+          "readableName": "*blue"
+        },
+        {
+          "name": "random",
+          "readableName": "*random"
+        }
+      ],
+      "type": "choice",
+      "default": "random"
+    },
+    {
+      "name": "trainer_name",
+      "description": "DOC ME",
+      "readableName": "trainer name",
+      "values": [
+        {
+          "name": "ASH",
+          "readableName": "*ASH"
+        }
+      ],
+      "type": "choice",
+      "default": "ASH"
+    },
+    {
+      "name": "rival_name",
+      "description": "DOC ME",
+      "readableName": "rival name",
+      "values": [
+        {
+          "name": "GARY",
+          "readableName": "*GARY"
+        }
+      ],
+      "type": "choice",
+      "default": "GARY"
+    },
+    {
+      "name": "elite_four_condition",
+      "description": "DOC ME",
+      "high": 8,
+      "readableName": "elite four condition",
+      "low": 0,
+      "type": "range",
+      "default": 8
+    },
+    {
+      "name": "victory_road_condition",
+      "description": "DOC ME",
+      "high": 8,
+      "readableName": "victory road condition",
+      "low": 0,
+      "type": "range",
+      "default": 8
+    },
+    {
+      "name": "viridian_gym_condition",
+      "description": "DOC ME",
+      "high": 7,
+      "readableName": "viridian gym condition",
+      "low": 0,
+      "type": "range",
+      "default": 7
+    },
+    {
+      "name": "cerulean_cave_condition",
+      "description": "DOC ME",
+      "high": 25,
+      "readableName": "cerulean cave condition",
+      "low": 0,
+      "type": "range",
+      "default": 20
+    },
+    {
+      "name": "second_fossil_check_condition",
+      "description": "DOC ME",
+      "high": 3,
+      "readableName": "second fossil check condition",
+      "low": 0,
+      "type": "range",
+      "default": 3
+    },
+    {
+      "name": "badgesanity",
+      "description": "DOC ME",
+      "readableName": "badgesanity",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "old_man",
+      "description": "DOC ME",
+      "readableName": "old man",
+      "values": [
+        {
+          "name": "vanilla",
+          "readableName": "*vanilla"
+        },
+        {
+          "name": "early_parcel",
+          "readableName": "*early parcel"
+        },
+        {
+          "name": "open_viridian_city",
+          "readableName": "*open viridian city"
+        }
+      ],
+      "type": "choice",
+      "default": "early_parcel"
+    },
+    {
+      "name": "tea",
+      "description": "DOC ME",
+      "readableName": "tea",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "extra_key_items",
+      "description": "DOC ME",
+      "readableName": "extra key items",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "extra_strength_boulders",
+      "description": "DOC ME",
+      "readableName": "extra strength boulders",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "require_item_finder",
+      "description": "DOC ME",
+      "readableName": "require item finder",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "randomize_hidden_items",
+      "description": "DOC ME",
+      "readableName": "randomize hidden items",
+      "values": [
+        {
+          "name": "on",
+          "readableName": "*on"
+        },
+        {
+          "name": "off",
+          "readableName": "*off"
+        },
+        {
+          "name": "exclude",
+          "readableName": "*exclude"
+        }
+      ],
+      "type": "choice",
+      "default": "off"
+    },
+    {
+      "name": "badges_needed_for_hm_moves",
+      "description": "DOC ME",
+      "readableName": "badges needed for hm moves",
+      "values": [
+        {
+          "name": "on",
+          "readableName": "*on"
+        },
+        {
+          "name": "off",
+          "readableName": "*off"
+        },
+        {
+          "name": "extra",
+          "readableName": "*extra"
+        },
+        {
+          "name": "extra_plus",
+          "readableName": "*extra plus"
+        }
+      ],
+      "type": "choice",
+      "default": "on"
+    },
+    {
+      "name": "free_fly_location",
+      "description": "DOC ME",
+      "readableName": "free fly location",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "oaks_aide_rt_2",
+      "description": "DOC ME",
+      "high": 80,
+      "readableName": "oaks aide rt 2",
+      "low": 0,
+      "type": "range",
+      "default": 10
+    },
+    {
+      "name": "oaks_aide_rt_11",
+      "description": "DOC ME",
+      "high": 80,
+      "readableName": "oaks aide rt 11",
+      "low": 0,
+      "type": "range",
+      "default": 20
+    },
+    {
+      "name": "oaks_aide_rt_15",
+      "description": "DOC ME",
+      "high": 80,
+      "readableName": "oaks aide rt 15",
+      "low": 0,
+      "type": "range",
+      "default": 30
+    },
+    {
+      "name": "blind_trainers",
+      "description": "DOC ME",
+      "high": 100,
+      "readableName": "blind trainers",
+      "low": 0,
+      "type": "range",
+      "default": 0
+    },
+    {
+      "name": "minimum_steps_between_encounters",
+      "description": "DOC ME",
+      "high": 255,
+      "readableName": "minimum steps between encounters",
+      "low": 0,
+      "type": "range",
+      "default": 3
+    },
+    {
+      "name": "exp_modifier",
+      "description": "DOC ME",
+      "high": 255,
+      "readableName": "exp modifier",
+      "low": 0,
+      "type": "range",
+      "default": null
+    },
+    {
+      "name": "randomize_wild_pokemon",
+      "description": "DOC ME",
+      "readableName": "randomize wild pokemon",
+      "values": [
+        {
+          "name": "vanilla",
+          "readableName": "*vanilla"
+        },
+        {
+          "name": "match_types",
+          "readableName": "*match types"
+        },
+        {
+          "name": "match_base_stats",
+          "readableName": "*match base stats"
+        },
+        {
+          "name": "match_types_and_base_stats",
+          "readableName": "*match types and base stats"
+        },
+        {
+          "name": "completely_random",
+          "readableName": "*completely random"
+        }
+      ],
+      "type": "choice",
+      "default": "vanilla"
+    },
+    {
+      "name": "randomize_starter_pokemon",
+      "description": "DOC ME",
+      "readableName": "randomize starter pokemon",
+      "values": [
+        {
+          "name": "vanilla",
+          "readableName": "*vanilla"
+        },
+        {
+          "name": "match_types",
+          "readableName": "*match types"
+        },
+        {
+          "name": "match_base_stats",
+          "readableName": "*match base stats"
+        },
+        {
+          "name": "match_types_and_base_stats",
+          "readableName": "*match types and base stats"
+        },
+        {
+          "name": "completely_random",
+          "readableName": "*completely random"
+        }
+      ],
+      "type": "choice",
+      "default": "vanilla"
+    },
+    {
+      "name": "randomize_static_pokemon",
+      "description": "DOC ME",
+      "readableName": "randomize static pokemon",
+      "values": [
+        {
+          "name": "vanilla",
+          "readableName": "*vanilla"
+        },
+        {
+          "name": "match_types",
+          "readableName": "*match types"
+        },
+        {
+          "name": "match_base_stats",
+          "readableName": "*match base stats"
+        },
+        {
+          "name": "match_types_and_base_stats",
+          "readableName": "*match types and base stats"
+        },
+        {
+          "name": "completely_random",
+          "readableName": "*completely random"
+        }
+      ],
+      "type": "choice",
+      "default": "vanilla"
+    },
+    {
+      "name": "randomize_legendary_pokemon",
+      "description": "DOC ME",
+      "readableName": "randomize legendary pokemon",
+      "values": [
+        {
+          "name": "vanilla",
+          "readableName": "*vanilla"
+        },
+        {
+          "name": "shuffle",
+          "readableName": "*shuffle"
+        },
+        {
+          "name": "static",
+          "readableName": "*static"
+        },
+        {
+          "name": "any",
+          "readableName": "*any"
+        }
+      ],
+      "type": "choice",
+      "default": "vanilla"
+    },
+    {
+      "name": "catch_em_all",
+      "description": "DOC ME",
+      "readableName": "catch em all",
+      "values": [
+        {
+          "name": "off",
+          "readableName": "*off"
+        },
+        {
+          "name": "first_stage",
+          "readableName": "*first stage"
+        },
+        {
+          "name": "all_pokemon",
+          "readableName": "*all pokemon"
+        }
+      ],
+      "type": "choice",
+      "default": "off"
+    },
+    {
+      "name": "randomize_pokemon_stats",
+      "description": "DOC ME",
+      "readableName": "randomize pokemon stats",
+      "values": [
+        {
+          "name": "vanilla",
+          "readableName": "*vanilla"
+        },
+        {
+          "name": "shuffle",
+          "readableName": "*shuffle"
+        },
+        {
+          "name": "randomize",
+          "readableName": "*randomize"
+        }
+      ],
+      "type": "choice",
+      "default": "vanilla"
+    },
+    {
+      "name": "randomize_pokemon_catch_rates",
+      "description": "DOC ME",
+      "readableName": "randomize pokemon catch rates",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "minimum_catch_rate",
+      "description": "DOC ME",
+      "high": 255,
+      "readableName": "minimum catch rate",
+      "low": 1,
+      "type": "range",
+      "default": 3
+    },
+    {
+      "name": "randomize_trainer_parties",
+      "description": "DOC ME",
+      "readableName": "randomize trainer parties",
+      "values": [
+        {
+          "name": "vanilla",
+          "readableName": "*vanilla"
+        },
+        {
+          "name": "match_types",
+          "readableName": "*match types"
+        },
+        {
+          "name": "match_base_stats",
+          "readableName": "*match base stats"
+        },
+        {
+          "name": "match_types_and_base_stats",
+          "readableName": "*match types and base stats"
+        },
+        {
+          "name": "completely_random",
+          "readableName": "*completely random"
+        }
+      ],
+      "type": "choice",
+      "default": "vanilla"
+    },
+    {
+      "name": "trainer_legendaries",
+      "description": "DOC ME",
+      "readableName": "trainer legendaries",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "randomize_pokemon_movesets",
+      "description": "DOC ME",
+      "readableName": "randomize pokemon movesets",
+      "values": [
+        {
+          "name": "vanilla",
+          "readableName": "*vanilla"
+        },
+        {
+          "name": "prefer_types",
+          "readableName": "*prefer types"
+        },
+        {
+          "name": "completely_random",
+          "readableName": "*completely random"
+        }
+      ],
+      "type": "choice",
+      "default": "vanilla"
+    },
+    {
+      "name": "start_with_four_moves",
+      "description": "DOC ME",
+      "readableName": "start with four moves",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "tm_compatibility",
+      "description": "DOC ME",
+      "readableName": "tm compatibility",
+      "values": [
+        {
+          "name": "vanilla",
+          "readableName": "*vanilla"
+        },
+        {
+          "name": "prefer_types",
+          "readableName": "*prefer types"
+        },
+        {
+          "name": "completely_random",
+          "readableName": "*completely random"
+        },
+        {
+          "name": "full_compatibility",
+          "readableName": "*full compatibility"
+        }
+      ],
+      "type": "choice",
+      "default": "vanilla"
+    },
+    {
+      "name": "hm_compatibility",
+      "description": "DOC ME",
+      "readableName": "hm compatibility",
+      "values": [
+        {
+          "name": "vanilla",
+          "readableName": "*vanilla"
+        },
+        {
+          "name": "prefer_types",
+          "readableName": "*prefer types"
+        },
+        {
+          "name": "completely_random",
+          "readableName": "*completely random"
+        },
+        {
+          "name": "full_compatibility",
+          "readableName": "*full compatibility"
+        }
+      ],
+      "type": "choice",
+      "default": "vanilla"
+    },
+    {
+      "name": "randomize_pokemon_types",
+      "description": "DOC ME",
+      "readableName": "randomize pokemon types",
+      "values": [
+        {
+          "name": "vanilla",
+          "readableName": "*vanilla"
+        },
+        {
+          "name": "follow_evolutions",
+          "readableName": "*follow evolutions"
+        },
+        {
+          "name": "randomize",
+          "readableName": "*randomize"
+        }
+      ],
+      "type": "choice",
+      "default": "vanilla"
+    },
+    {
+      "name": "secondary_type_chance",
+      "description": "DOC ME",
+      "high": 100,
+      "readableName": "secondary type chance",
+      "low": -1,
+      "type": "range",
+      "default": null
+    },
+    {
+      "name": "randomize_type_matchup_types",
+      "description": "DOC ME",
+      "readableName": "randomize type matchup types",
+      "values": [
+        {
+          "name": "vanilla",
+          "readableName": "*vanilla"
+        },
+        {
+          "name": "shuffle",
+          "readableName": "*shuffle"
+        },
+        {
+          "name": "randomize",
+          "readableName": "*randomize"
+        }
+      ],
+      "type": "choice",
+      "default": "vanilla"
+    },
+    {
+      "name": "randomize_type_matchup_type_effectiveness",
+      "description": "DOC ME",
+      "readableName": "randomize type matchup type effectiveness",
+      "values": [
+        {
+          "name": "vanilla",
+          "readableName": "*vanilla"
+        },
+        {
+          "name": "shuffle",
+          "readableName": "*shuffle"
+        },
+        {
+          "name": "randomize",
+          "readableName": "*randomize"
+        },
+        {
+          "name": "chaos",
+          "readableName": "*chaos"
+        }
+      ],
+      "type": "choice",
+      "default": "vanilla"
+    },
+    {
+      "name": "safari_zone_normal_battles",
+      "description": "DOC ME",
+      "readableName": "safari zone normal battles",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "normalize_encounter_chances",
+      "description": "DOC ME",
+      "readableName": "normalize encounter chances",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "reusable_tms",
+      "description": "DOC ME",
+      "readableName": "reusable tms",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "starting_money",
+      "description": "DOC ME",
+      "high": 999999,
+      "readableName": "starting money",
+      "low": 0,
+      "type": "range",
+      "default": 3000
+    }
+  ],
+  "items": [
+    {
+      "name": "Master Ball"
+    },
+    {
+      "name": "Ultra Ball"
+    },
+    {
+      "name": "Great Ball"
+    },
+    {
+      "name": "Poke Ball"
+    },
+    {
+      "name": "Town Map"
+    },
+    {
+      "name": "Bicycle"
+    },
+    {
+      "name": "Moon Stone"
+    },
+    {
+      "name": "Antidote"
+    },
+    {
+      "name": "Burn Heal"
+    },
+    {
+      "name": "Ice Heal"
+    },
+    {
+      "name": "Awakening"
+    },
+    {
+      "name": "Paralyze Heal"
+    },
+    {
+      "name": "Full Restore"
+    },
+    {
+      "name": "Max Potion"
+    },
+    {
+      "name": "Hyper Potion"
+    },
+    {
+      "name": "Super Potion"
+    },
+    {
+      "name": "Potion"
+    },
+    {
+      "name": "Boulder Badge"
+    },
+    {
+      "name": "Cascade Badge"
+    },
+    {
+      "name": "Thunder Badge"
+    },
+    {
+      "name": "Rainbow Badge"
+    },
+    {
+      "name": "Soul Badge"
+    },
+    {
+      "name": "Marsh Badge"
+    },
+    {
+      "name": "Volcano Badge"
+    },
+    {
+      "name": "Earth Badge"
+    },
+    {
+      "name": "Escape Rope"
+    },
+    {
+      "name": "Repel"
+    },
+    {
+      "name": "Old Amber"
+    },
+    {
+      "name": "Fire Stone"
+    },
+    {
+      "name": "Thunder Stone"
+    },
+    {
+      "name": "Water Stone"
+    },
+    {
+      "name": "HP Up"
+    },
+    {
+      "name": "Protein"
+    },
+    {
+      "name": "Iron"
+    },
+    {
+      "name": "Carbos"
+    },
+    {
+      "name": "Calcium"
+    },
+    {
+      "name": "Rare Candy"
+    },
+    {
+      "name": "Dome Fossil"
+    },
+    {
+      "name": "Helix Fossil"
+    },
+    {
+      "name": "Secret Key"
+    },
+    {
+      "name": "Bike Voucher"
+    },
+    {
+      "name": "X Accuracy"
+    },
+    {
+      "name": "Leaf Stone"
+    },
+    {
+      "name": "Card Key"
+    },
+    {
+      "name": "Nugget"
+    },
+    {
+      "name": "Poke Doll"
+    },
+    {
+      "name": "Full Heal"
+    },
+    {
+      "name": "Revive"
+    },
+    {
+      "name": "Max Revive"
+    },
+    {
+      "name": "Guard Spec"
+    },
+    {
+      "name": "Super Repel"
+    },
+    {
+      "name": "Max Repel"
+    },
+    {
+      "name": "Dire Hit"
+    },
+    {
+      "name": "Fresh Water"
+    },
+    {
+      "name": "Soda Pop"
+    },
+    {
+      "name": "Lemonade"
+    },
+    {
+      "name": "S.S. Ticket"
+    },
+    {
+      "name": "Gold Teeth"
+    },
+    {
+      "name": "X Attack"
+    },
+    {
+      "name": "X Defend"
+    },
+    {
+      "name": "X Speed"
+    },
+    {
+      "name": "X Special"
+    },
+    {
+      "name": "Coin Case"
+    },
+    {
+      "name": "Oak's Parcel"
+    },
+    {
+      "name": "Item Finder"
+    },
+    {
+      "name": "Silph Scope"
+    },
+    {
+      "name": "Poke Flute"
+    },
+    {
+      "name": "Lift Key"
+    },
+    {
+      "name": "Exp. All"
+    },
+    {
+      "name": "Old Rod"
+    },
+    {
+      "name": "Good Rod"
+    },
+    {
+      "name": "Super Rod"
+    },
+    {
+      "name": "PP Up"
+    },
+    {
+      "name": "Ether"
+    },
+    {
+      "name": "Max Ether"
+    },
+    {
+      "name": "Elixir"
+    },
+    {
+      "name": "Max Elixir"
+    },
+    {
+      "name": "Tea"
+    },
+    {
+      "name": "Plant Key"
+    },
+    {
+      "name": "Mansion Key"
+    },
+    {
+      "name": "Hideout Key"
+    },
+    {
+      "name": "Safari Pass"
+    },
+    {
+      "name": "HM01 Cut"
+    },
+    {
+      "name": "HM02 Fly"
+    },
+    {
+      "name": "HM03 Surf"
+    },
+    {
+      "name": "HM04 Strength"
+    },
+    {
+      "name": "HM05 Flash"
+    },
+    {
+      "name": "TM01 Mega Punch"
+    },
+    {
+      "name": "TM02 Razor Wind"
+    },
+    {
+      "name": "TM03 Swords Dance"
+    },
+    {
+      "name": "TM04 Whirlwind"
+    },
+    {
+      "name": "TM05 Mega Kick"
+    },
+    {
+      "name": "TM06 Toxic"
+    },
+    {
+      "name": "TM07 Horn Drill"
+    },
+    {
+      "name": "TM08 Body Slam"
+    },
+    {
+      "name": "TM09 Take Down"
+    },
+    {
+      "name": "TM10 Double Edge"
+    },
+    {
+      "name": "TM11 Bubble Beam"
+    },
+    {
+      "name": "TM12 Water Gun"
+    },
+    {
+      "name": "TM13 Ice Beam"
+    },
+    {
+      "name": "TM14 Blizzard"
+    },
+    {
+      "name": "TM15 Hyper Beam"
+    },
+    {
+      "name": "TM16 Pay Day"
+    },
+    {
+      "name": "TM17 Submission"
+    },
+    {
+      "name": "TM18 Counter"
+    },
+    {
+      "name": "TM19 Seismic Toss"
+    },
+    {
+      "name": "TM20 Rage"
+    },
+    {
+      "name": "TM21 Mega Drain"
+    },
+    {
+      "name": "TM22 Solar Beam"
+    },
+    {
+      "name": "TM23 Dragon Rage"
+    },
+    {
+      "name": "TM24 Thunderbolt"
+    },
+    {
+      "name": "TM25 Thunder"
+    },
+    {
+      "name": "TM26 Earthquake"
+    },
+    {
+      "name": "TM27 Fissure"
+    },
+    {
+      "name": "TM28 Dig"
+    },
+    {
+      "name": "TM29 Psychic"
+    },
+    {
+      "name": "TM30 Teleport"
+    },
+    {
+      "name": "TM31 Mimic"
+    },
+    {
+      "name": "TM32 Double Team"
+    },
+    {
+      "name": "TM33 Reflect"
+    },
+    {
+      "name": "TM34 Bide"
+    },
+    {
+      "name": "TM35 Metronome"
+    },
+    {
+      "name": "TM36 Self Destruct"
+    },
+    {
+      "name": "TM37 Egg Bomb"
+    },
+    {
+      "name": "TM38 Fire Blast"
+    },
+    {
+      "name": "TM39 Swift"
+    },
+    {
+      "name": "TM40 Skull Bash"
+    },
+    {
+      "name": "TM41 Soft Boiled"
+    },
+    {
+      "name": "TM42 Dream Eater"
+    },
+    {
+      "name": "TM43 Sky Attack"
+    },
+    {
+      "name": "TM44 Rest"
+    },
+    {
+      "name": "TM45 Thunder Wave"
+    },
+    {
+      "name": "TM46 Psywave"
+    },
+    {
+      "name": "TM47 Explosion"
+    },
+    {
+      "name": "TM48 Rock Slide"
+    },
+    {
+      "name": "TM49 Tri Attack"
+    },
+    {
+      "name": "TM50 Substitute"
+    }
+  ],
+  "locations": [
+    {
+      "name": "Vermilion City - Fishing Guru"
+    },
+    {
+      "name": "Fuchsia City - Fishing Guru's Brother"
+    },
+    {
+      "name": "Route 12 - Fishing Guru's Brother"
+    },
+    {
+      "name": "Pallet Town - Player's PC"
+    },
+    {
+      "name": "Celadon City - Mansion Lady"
+    },
+    {
+      "name": "Pallet Town - Rival's Sister"
+    },
+    {
+      "name": "Pallet Town - Oak's Post-Route-22-Rival Gift"
+    },
+    {
+      "name": "Route 1 - Free Sample Man"
+    },
+    {
+      "name": "Viridian City - Sleepy Guy"
+    },
+    {
+      "name": "Viridian City - Pokemart"
+    },
+    {
+      "name": "Viridian Gym - Giovanni 2"
+    },
+    {
+      "name": "Route 2 - Oak's Aide"
+    },
+    {
+      "name": "Pewter City - Museum"
+    },
+    {
+      "name": "Pewter Gym - Brock 2"
+    },
+    {
+      "name": "Cerulean City - Bicycle Shop"
+    },
+    {
+      "name": "Cerulean Gym - Misty 2"
+    },
+    {
+      "name": "Route 24 - Nugget Bridge"
+    },
+    {
+      "name": "Route 25 - Bill"
+    },
+    {
+      "name": "Lavender Town - Mr. Fuji"
+    },
+    {
+      "name": "Route 12 - Mourning Girl"
+    },
+    {
+      "name": "Vermilion City - Pokemon Fan Club"
+    },
+    {
+      "name": "Vermilion Gym - Lt. Surge 2"
+    },
+    {
+      "name": "S.S. Anne 2F - Captain"
+    },
+    {
+      "name": "Route 11 - Oak's Aide"
+    },
+    {
+      "name": "Celadon City - Stranded Man"
+    },
+    {
+      "name": "Celadon City - Thirsty Girl Gets Water"
+    },
+    {
+      "name": "Celadon City - Thirsty Girl Gets Soda Pop"
+    },
+    {
+      "name": "Celadon City - Thirsty Girl Gets Lemonade"
+    },
+    {
+      "name": "Celadon City - Counter Man"
+    },
+    {
+      "name": "Celadon City - Gambling Addict"
+    },
+    {
+      "name": "Celadon Gym - Erika 2"
+    },
+    {
+      "name": "Silph Co 11F - Silph Co President"
+    },
+    {
+      "name": "Silph Co 2F - Woman"
+    },
+    {
+      "name": "Route 16 - House Woman"
+    },
+    {
+      "name": "Route 15 - Oak's Aide"
+    },
+    {
+      "name": "Fuchsia City - Safari Zone Warden"
+    },
+    {
+      "name": "Fuchsia Gym - Koga 2"
+    },
+    {
+      "name": "Safari Zone West - Secret House"
+    },
+    {
+      "name": "Cinnabar Island - Lab Scientist"
+    },
+    {
+      "name": "Cinnabar Gym - Blaine 2"
+    },
+    {
+      "name": "Copycat's House - Copycat"
+    },
+    {
+      "name": "Saffron City - Mr. Psychic"
+    },
+    {
+      "name": "Saffron Gym - Sabrina 2"
+    },
+    {
+      "name": "Fossil - Choice A"
+    },
+    {
+      "name": "Fossil - Choice B"
+    },
+    {
+      "name": "Cerulean City - Rocket Thief"
+    },
+    {
+      "name": "Route 2 - South Item"
+    },
+    {
+      "name": "Route 2 - North Item"
+    },
+    {
+      "name": "Route 4 - Item"
+    },
+    {
+      "name": "Route 9 - Item"
+    },
+    {
+      "name": "Route 12 - Island Item"
+    },
+    {
+      "name": "Route 12 - Item Behind Cuttable Tree"
+    },
+    {
+      "name": "Route 15 - Item"
+    },
+    {
+      "name": "Route 24 - Item"
+    },
+    {
+      "name": "Route 25 - Item"
+    },
+    {
+      "name": "Viridian Gym - Item"
+    },
+    {
+      "name": "Cerulean Cave 1F - Southwest Item"
+    },
+    {
+      "name": "Cerulean Cave 1F - Northeast Item"
+    },
+    {
+      "name": "Cerulean Cave 1F - Northwest Item"
+    },
+    {
+      "name": "Pokemon Tower 3F - North Item"
+    },
+    {
+      "name": "Pokemon Tower 4F - East Item"
+    },
+    {
+      "name": "Pokemon Tower 4F - West Item"
+    },
+    {
+      "name": "Pokemon Tower 4F - South Item"
+    },
+    {
+      "name": "Pokemon Tower 5F - Southwest Item"
+    },
+    {
+      "name": "Pokemon Tower 6F - West Item"
+    },
+    {
+      "name": "Pokemon Tower 6F - Southeast Item"
+    },
+    {
+      "name": "Fuchsia City - Warden's House Item"
+    },
+    {
+      "name": "Pokemon Mansion 1F - North Item"
+    },
+    {
+      "name": "Pokemon Mansion 1F - South Item"
+    },
+    {
+      "name": "Power Plant - Southwest Item"
+    },
+    {
+      "name": "Power Plant - North Item"
+    },
+    {
+      "name": "Power Plant - Northeast Item"
+    },
+    {
+      "name": "Power Plant - Southeast Item"
+    },
+    {
+      "name": "Power Plant - South Item"
+    },
+    {
+      "name": "Victory Road 2F - Northeast Item"
+    },
+    {
+      "name": "Victory Road 2F - East Item"
+    },
+    {
+      "name": "Victory Road 2F - West Item"
+    },
+    {
+      "name": "Victory Road 2F - North Item Near Moltres"
+    },
+    {
+      "name": "Viridian Forest - East Item"
+    },
+    {
+      "name": "Viridian Forest - Northwest Item"
+    },
+    {
+      "name": "Viridian Forest - Southwest Item"
+    },
+    {
+      "name": "Mt Moon 1F - West Item"
+    },
+    {
+      "name": "Mt Moon 1F - Northwest Item"
+    },
+    {
+      "name": "Mt Moon 1F - Southeast Item"
+    },
+    {
+      "name": "Mt Moon 1F - East Item"
+    },
+    {
+      "name": "Mt Moon 1F - South Item"
+    },
+    {
+      "name": "Mt Moon 1F - Southwest Item"
+    },
+    {
+      "name": "Mt Moon B2F - South Item"
+    },
+    {
+      "name": "Mt Moon B2F - North Item"
+    },
+    {
+      "name": "S.S. Anne 1F - Item"
+    },
+    {
+      "name": "S.S. Anne 2F - Item 1"
+    },
+    {
+      "name": "S.S. Anne 2F - Item 2"
+    },
+    {
+      "name": "S.S. Anne B1F - Item 1"
+    },
+    {
+      "name": "S.S. Anne B1F - Item 2"
+    },
+    {
+      "name": "S.S. Anne B1F - Item 3"
+    },
+    {
+      "name": "Victory Road 3F - Northeast Item"
+    },
+    {
+      "name": "Victory Road 3F - Northwest Item"
+    },
+    {
+      "name": "Rocket Hideout B1F - West Item"
+    },
+    {
+      "name": "Rocket Hideout B1F - Southwest Item"
+    },
+    {
+      "name": "Rocket Hideout B2F - Northwest Left Item"
+    },
+    {
+      "name": "Rocket Hideout B2F - Northeast Item"
+    },
+    {
+      "name": "Rocket Hideout B2F - Northwest Right Item"
+    },
+    {
+      "name": "Rocket Hideout B2F - Southwest Item"
+    },
+    {
+      "name": "Rocket Hideout B3F - East Item"
+    },
+    {
+      "name": "Rocket Hideout B3F - Center Item"
+    },
+    {
+      "name": "Rocket Hideout B4F - West Item"
+    },
+    {
+      "name": "Rocket Hideout B4F - Northwest Item"
+    },
+    {
+      "name": "Rocket Hideout B4F - Southwest Item (Lift Key)"
+    },
+    {
+      "name": "Rocket Hideout B4F - Giovanni Item (Lift Key)"
+    },
+    {
+      "name": "Rocket Hideout B4F - Rocket Grunt Item"
+    },
+    {
+      "name": "Silph Co 3F - Item (Card Key)"
+    },
+    {
+      "name": "Silph Co 4F - Left Item (Card Key)"
+    },
+    {
+      "name": "Silph Co 4F - Middle Item (Card Key)"
+    },
+    {
+      "name": "Silph Co 4F - Right Item (Card Key)"
+    },
+    {
+      "name": "Silph Co 5F - Southwest Item"
+    },
+    {
+      "name": "Silph Co 5F - Northwest Item (Card Key)"
+    },
+    {
+      "name": "Silph Co 5F - Southeast Item"
+    },
+    {
+      "name": "Silph Co 6F - West Item (Card Key)"
+    },
+    {
+      "name": "Silph Co 6F - Southwest Item (Card Key)"
+    },
+    {
+      "name": "Silph Co 7F - West Item"
+    },
+    {
+      "name": "Silph Co 7F - East Item (Card Key)"
+    },
+    {
+      "name": "Silph Co 10F - Left Item"
+    },
+    {
+      "name": "Silph Co 10F - Bottom Item"
+    },
+    {
+      "name": "Silph Co 10F - Right Item"
+    },
+    {
+      "name": "Pokemon Mansion 2F - Northeast Item"
+    },
+    {
+      "name": "Pokemon Mansion 3F - Southwest Item"
+    },
+    {
+      "name": "Pokemon Mansion 3F - Northeast Item"
+    },
+    {
+      "name": "Pokemon Mansion B1F - North Item"
+    },
+    {
+      "name": "Pokemon Mansion B1F - Southwest Item"
+    },
+    {
+      "name": "Pokemon Mansion B1F - South Item"
+    },
+    {
+      "name": "Pokemon Mansion B1F - Northwest Item"
+    },
+    {
+      "name": "Pokemon Mansion B1F - West Item"
+    },
+    {
+      "name": "Safari Zone East - Northeast Item"
+    },
+    {
+      "name": "Safari Zone East - West Item"
+    },
+    {
+      "name": "Safari Zone East - East Item"
+    },
+    {
+      "name": "Safari Zone East - Center Item"
+    },
+    {
+      "name": "Safari Zone North - Northeast Item"
+    },
+    {
+      "name": "Safari Zone North - North Item"
+    },
+    {
+      "name": "Safari Zone West - Southwest Item"
+    },
+    {
+      "name": "Safari Zone West - Northwest Item"
+    },
+    {
+      "name": "Safari Zone West - Southeast Item"
+    },
+    {
+      "name": "Safari Zone West - Northeast Item"
+    },
+    {
+      "name": "Safari Zone Center - Island Item"
+    },
+    {
+      "name": "Cerulean Cave 2F - East Item"
+    },
+    {
+      "name": "Cerulean Cave 2F - Southwest Item"
+    },
+    {
+      "name": "Cerulean Cave 2F - North Item"
+    },
+    {
+      "name": "Cerulean Cave B1F - Center Item"
+    },
+    {
+      "name": "Cerulean Cave B1F - North Item"
+    },
+    {
+      "name": "Victory Road 1F - Top Item"
+    },
+    {
+      "name": "Victory Road 1F - Left Item"
+    },
+    {
+      "name": "Rock Tunnel B1F - Southwest Item"
+    },
+    {
+      "name": "Rock Tunnel B1F - West Item"
+    },
+    {
+      "name": "Rock Tunnel B1F - Northwest Item"
+    },
+    {
+      "name": "Rock Tunnel B1F - North Item"
+    },
+    {
+      "name": "Pewter Gym - Brock 1"
+    },
+    {
+      "name": "Cerulean Gym - Misty 1"
+    },
+    {
+      "name": "Vermilion Gym - Lt. Surge 1"
+    },
+    {
+      "name": "Celadon Gym - Erika 1"
+    },
+    {
+      "name": "Fuchsia Gym - Koga 1"
+    },
+    {
+      "name": "Saffron Gym - Sabrina 1"
+    },
+    {
+      "name": "Cinnabar Gym - Blaine 1"
+    },
+    {
+      "name": "Viridian Gym - Giovanni 1"
+    },
+    {
+      "name": "Viridian Forest - Hidden Item Northwest by Trainer"
+    },
+    {
+      "name": "Viridian Forest - Hidden Item Entrance Tree"
+    },
+    {
+      "name": "Mt Moon B2F - Hidden Item Dead End Before Fossils"
+    },
+    {
+      "name": "Route 25 - Hidden Item Fence Outside Bill's House"
+    },
+    {
+      "name": "Route 9 - Hidden Item Bush By Grass"
+    },
+    {
+      "name": "S.S. Anne 1F - Hidden Item Kitchen Trash"
+    },
+    {
+      "name": "S.S. Anne B1F - Hidden Item Under Pillow"
+    },
+    {
+      "name": "Route 10 - Hidden Item Behind Rock Tunnel Entrance Cuttable Tree"
+    },
+    {
+      "name": "Route 10 - Hidden Item Bush"
+    },
+    {
+      "name": "Rocket Hideout B1F - Hidden Item Pot Plant"
+    },
+    {
+      "name": "Rocket Hideout B3F - Hidden Item Near East Item"
+    },
+    {
+      "name": "Rocket Hideout B4F - Hidden Item Behind Giovanni"
+    },
+    {
+      "name": "Pokemon Tower 5F - Hidden Item Near West Staircase"
+    },
+    {
+      "name": "Route 13 - Hidden Item Dead End Bush"
+    },
+    {
+      "name": "Route 13 - Hidden Item Dead End By Water Corner"
+    },
+    {
+      "name": "Pokemon Mansion B1F - Hidden Item Secret Key Room Corner"
+    },
+    {
+      "name": "Safari Zone West - Hidden Item Secret House Statue"
+    },
+    {
+      "name": "Silph Co 5F - Hidden Item Pot Plant"
+    },
+    {
+      "name": "Silph Co 9F - Hidden Item Nurse Bed (Card Key)"
+    },
+    {
+      "name": "Copycat's House - Hidden Item Desk"
+    },
+    {
+      "name": "Cerulean Cave 1F - Hidden Item Center Rocks"
+    },
+    {
+      "name": "Cerulean Cave B1F - Hidden Item Northeast Rocks"
+    },
+    {
+      "name": "Power Plant - Hidden Item Central Dead End"
+    },
+    {
+      "name": "Power Plant - Hidden Item Before Zapdos"
+    },
+    {
+      "name": "Seafoam Islands B2F - Hidden Item Rock"
+    },
+    {
+      "name": "Seafoam Islands B4F - Hidden Item Corner Island"
+    },
+    {
+      "name": "Pokemon Mansion 1F - Hidden Item Block Near Entrance Carpet"
+    },
+    {
+      "name": "Pokemon Mansion 3F - Hidden Item Behind Burglar"
+    },
+    {
+      "name": "Route 23 - Hidden Item Rocks Before Final Guard"
+    },
+    {
+      "name": "Route 23 - Hidden Item East Bush After Water"
+    },
+    {
+      "name": "Route 23 - Hidden Item On Island"
+    },
+    {
+      "name": "Victory Road 2F - Hidden Item Rock Before Moltres"
+    },
+    {
+      "name": "Victory Road 2F - Hidden Item Rock In Final Room"
+    },
+    {
+      "name": "Viridian City - Hidden Item Cuttable Tree"
+    },
+    {
+      "name": "Route 11 - Hidden Item Isolated Bush Near Gate"
+    },
+    {
+      "name": "Route 12 - Hidden Item Bush Near Gate"
+    },
+    {
+      "name": "Route 17 - Hidden Item In Grass"
+    },
+    {
+      "name": "Route 17 - Hidden Item Near Northernmost Sign"
+    },
+    {
+      "name": "Route 17 - Hidden Item East Center"
+    },
+    {
+      "name": "Route 17 - Hidden Item West Center"
+    },
+    {
+      "name": "Route 17 - Hidden Item Before Final Bridge"
+    },
+    {
+      "name": "Underground Tunnel North-South - Hidden Item Near Northern Stairs"
+    },
+    {
+      "name": "Underground Tunnel North-South - Hidden Item Near Southern Stairs"
+    },
+    {
+      "name": "Underground Tunnel West-East - Hidden Item West"
+    },
+    {
+      "name": "Underground Tunnel West-East - Hidden Item East"
+    },
+    {
+      "name": "Celadon City - Hidden Item Dead End Near Cuttable Tree"
+    },
+    {
+      "name": "Route 25 - Hidden Item Northeast Of Grass"
+    },
+    {
+      "name": "Mt Moon B2F - Hidden Item Lone Rock"
+    },
+    {
+      "name": "Seafoam Islands B3F - Hidden Item Rock"
+    },
+    {
+      "name": "Vermilion City - Hidden Item In Water Near Fan Club"
+    },
+    {
+      "name": "Cerulean City - Hidden Item Gym Badge Guy's Backyard"
+    },
+    {
+      "name": "Route 4 - Hidden Item Plateau East Of Mt Moon"
+    }
+  ],
+  "status": "New"
+}

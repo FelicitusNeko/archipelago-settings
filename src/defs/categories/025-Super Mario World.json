@@ -1,0 +1,842 @@
+{
+  "category": "Super Mario World",
+  "index": 25,
+  "settings": [
+    {
+      "name": "death_link",
+      "description": "DOC ME",
+      "readableName": "death link",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "goal",
+      "description": "DOC ME",
+      "readableName": "goal",
+      "values": [
+        {
+          "name": "bowser",
+          "readableName": "*bowser"
+        },
+        {
+          "name": "yoshi_egg_hunt",
+          "readableName": "*yoshi egg hunt"
+        }
+      ],
+      "type": "choice",
+      "default": "bowser"
+    },
+    {
+      "name": "bosses_required",
+      "description": "DOC ME",
+      "high": 11,
+      "readableName": "bosses required",
+      "low": 0,
+      "type": "range",
+      "default": 7
+    },
+    {
+      "name": "number_of_yoshi_eggs",
+      "description": "DOC ME",
+      "high": 80,
+      "readableName": "number of yoshi eggs",
+      "low": 1,
+      "type": "range",
+      "default": 50
+    },
+    {
+      "name": "percentage_of_yoshi_eggs",
+      "description": "DOC ME",
+      "high": 100,
+      "readableName": "percentage of yoshi eggs",
+      "low": 1,
+      "type": "range",
+      "default": 100
+    },
+    {
+      "name": "dragon_coin_checks",
+      "description": "DOC ME",
+      "readableName": "dragon coin checks",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "bowser_castle_doors",
+      "description": "DOC ME",
+      "readableName": "bowser castle doors",
+      "values": [
+        {
+          "name": "vanilla",
+          "readableName": "*vanilla"
+        },
+        {
+          "name": "fast",
+          "readableName": "*fast"
+        },
+        {
+          "name": "slow",
+          "readableName": "*slow"
+        }
+      ],
+      "type": "choice",
+      "default": "vanilla"
+    },
+    {
+      "name": "level_shuffle",
+      "description": "DOC ME",
+      "readableName": "level shuffle",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "swap_donut_gh_exits",
+      "description": "DOC ME",
+      "readableName": "swap donut gh exits",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "display_received_item_popups",
+      "description": "DOC ME",
+      "readableName": "display received item popups",
+      "values": [
+        {
+          "name": "none",
+          "readableName": "*none"
+        },
+        {
+          "name": "all",
+          "readableName": "*all"
+        },
+        {
+          "name": "progression",
+          "readableName": "*progression"
+        }
+      ],
+      "type": "choice",
+      "default": "progression"
+    },
+    {
+      "name": "trap_fill_percentage",
+      "description": "DOC ME",
+      "high": 100,
+      "readableName": "trap fill percentage",
+      "low": 0,
+      "type": "range",
+      "default": 0
+    },
+    {
+      "name": "ice_trap_weight",
+      "description": "DOC ME",
+      "readableName": "ice trap weight",
+      "values": [
+        {
+          "name": "none",
+          "readableName": "*none"
+        },
+        {
+          "name": "low",
+          "readableName": "*low"
+        },
+        {
+          "name": "medium",
+          "readableName": "*medium"
+        },
+        {
+          "name": "high",
+          "readableName": "*high"
+        }
+      ],
+      "type": "choice",
+      "default": "medium"
+    },
+    {
+      "name": "stun_trap_weight",
+      "description": "DOC ME",
+      "readableName": "stun trap weight",
+      "values": [
+        {
+          "name": "none",
+          "readableName": "*none"
+        },
+        {
+          "name": "low",
+          "readableName": "*low"
+        },
+        {
+          "name": "medium",
+          "readableName": "*medium"
+        },
+        {
+          "name": "high",
+          "readableName": "*high"
+        }
+      ],
+      "type": "choice",
+      "default": "medium"
+    },
+    {
+      "name": "literature_trap_weight",
+      "description": "DOC ME",
+      "readableName": "literature trap weight",
+      "values": [
+        {
+          "name": "none",
+          "readableName": "*none"
+        },
+        {
+          "name": "low",
+          "readableName": "*low"
+        },
+        {
+          "name": "medium",
+          "readableName": "*medium"
+        },
+        {
+          "name": "high",
+          "readableName": "*high"
+        }
+      ],
+      "type": "choice",
+      "default": "medium"
+    },
+    {
+      "name": "autosave",
+      "description": "DOC ME",
+      "readableName": "autosave",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "music_shuffle",
+      "description": "DOC ME",
+      "readableName": "music shuffle",
+      "values": [
+        {
+          "name": "none",
+          "readableName": "*none"
+        },
+        {
+          "name": "consistent",
+          "readableName": "*consistent"
+        },
+        {
+          "name": "full",
+          "readableName": "*full"
+        },
+        {
+          "name": "singularity",
+          "readableName": "*singularity"
+        }
+      ],
+      "type": "choice",
+      "default": "none"
+    },
+    {
+      "name": "mario_palette",
+      "description": "DOC ME",
+      "readableName": "mario palette",
+      "values": [
+        {
+          "name": "mario",
+          "readableName": "*mario"
+        },
+        {
+          "name": "luigi",
+          "readableName": "*luigi"
+        },
+        {
+          "name": "wario",
+          "readableName": "*wario"
+        },
+        {
+          "name": "waluigi",
+          "readableName": "*waluigi"
+        },
+        {
+          "name": "geno",
+          "readableName": "*geno"
+        },
+        {
+          "name": "princess",
+          "readableName": "*princess"
+        },
+        {
+          "name": "dark",
+          "readableName": "*dark"
+        },
+        {
+          "name": "sponge",
+          "readableName": "*sponge"
+        }
+      ],
+      "type": "choice",
+      "default": "mario"
+    },
+    {
+      "name": "foreground_palette_shuffle",
+      "description": "DOC ME",
+      "readableName": "foreground palette shuffle",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "background_palette_shuffle",
+      "description": "DOC ME",
+      "readableName": "background palette shuffle",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "starting_life_count",
+      "description": "DOC ME",
+      "high": 99,
+      "readableName": "starting life count",
+      "low": 1,
+      "type": "range",
+      "default": 5
+    }
+  ],
+  "items": [
+    {
+      "name": "The Princess"
+    },
+    {
+      "name": "1-Up Mushroom"
+    },
+    {
+      "name": "Yoshi Egg"
+    },
+    {
+      "name": "Run"
+    },
+    {
+      "name": "Carry"
+    },
+    {
+      "name": "Swim"
+    },
+    {
+      "name": "Spin Jump"
+    },
+    {
+      "name": "Climb"
+    },
+    {
+      "name": "Yoshi"
+    },
+    {
+      "name": "P-Switch"
+    },
+    {
+      "name": "Progressive Powerup"
+    },
+    {
+      "name": "P-Balloon"
+    },
+    {
+      "name": "Super Star Activate"
+    },
+    {
+      "name": "Yellow Switch Palace"
+    },
+    {
+      "name": "Green Switch Palace"
+    },
+    {
+      "name": "Red Switch Palace"
+    },
+    {
+      "name": "Blue Switch Palace"
+    },
+    {
+      "name": "Boss Token"
+    },
+    {
+      "name": "Ice Trap"
+    },
+    {
+      "name": "Stun Trap"
+    },
+    {
+      "name": "Literature Trap"
+    }
+  ],
+  "locations": [
+    {
+      "name": "Yoshi's Island 1 - Normal Exit"
+    },
+    {
+      "name": "Yoshi's Island 2 - Normal Exit"
+    },
+    {
+      "name": "Yoshi's Island 3 - Normal Exit"
+    },
+    {
+      "name": "Yoshi's Island 4 - Normal Exit"
+    },
+    {
+      "name": "#1 Iggy's Castle - Normal Exit"
+    },
+    {
+      "name": "Yellow Switch Palace"
+    },
+    {
+      "name": "Donut Plains 1 - Normal Exit"
+    },
+    {
+      "name": "Donut Plains 1 - Secret Exit"
+    },
+    {
+      "name": "Donut Plains 2 - Normal Exit"
+    },
+    {
+      "name": "Donut Plains 2 - Secret Exit"
+    },
+    {
+      "name": "Donut Plains 3 - Normal Exit"
+    },
+    {
+      "name": "Donut Plains 4 - Normal Exit"
+    },
+    {
+      "name": "Donut Secret 1 - Normal Exit"
+    },
+    {
+      "name": "Donut Secret 1 - Secret Exit"
+    },
+    {
+      "name": "Donut Ghost House - Normal Exit"
+    },
+    {
+      "name": "Donut Ghost House - Secret Exit"
+    },
+    {
+      "name": "Donut Secret House - Normal Exit"
+    },
+    {
+      "name": "Donut Secret House - Secret Exit"
+    },
+    {
+      "name": "#2 Morton's Castle - Normal Exit"
+    },
+    {
+      "name": "Green Switch Palace"
+    },
+    {
+      "name": "Vanilla Dome 1 - Normal Exit"
+    },
+    {
+      "name": "Vanilla Dome 1 - Secret Exit"
+    },
+    {
+      "name": "Vanilla Dome 2 - Normal Exit"
+    },
+    {
+      "name": "Vanilla Dome 2 - Secret Exit"
+    },
+    {
+      "name": "Vanilla Dome 3 - Normal Exit"
+    },
+    {
+      "name": "Vanilla Dome 4 - Normal Exit"
+    },
+    {
+      "name": "Vanilla Secret 1 - Normal Exit"
+    },
+    {
+      "name": "Vanilla Secret 1 - Secret Exit"
+    },
+    {
+      "name": "Vanilla Secret 2 - Normal Exit"
+    },
+    {
+      "name": "Vanilla Secret 3 - Normal Exit"
+    },
+    {
+      "name": "Vanilla Ghost House - Normal Exit"
+    },
+    {
+      "name": "Vanilla Fortress - Normal Exit"
+    },
+    {
+      "name": "#3 Lemmy's Castle - Normal Exit"
+    },
+    {
+      "name": "Red Switch Palace"
+    },
+    {
+      "name": "Butter Bridge 1 - Normal Exit"
+    },
+    {
+      "name": "Butter Bridge 2 - Normal Exit"
+    },
+    {
+      "name": "Cheese Bridge - Normal Exit"
+    },
+    {
+      "name": "Cheese Bridge - Secret Exit"
+    },
+    {
+      "name": "Cookie Mountain - Normal Exit"
+    },
+    {
+      "name": "Soda Lake - Normal Exit"
+    },
+    {
+      "name": "#4 Ludwig's Castle - Normal Exit"
+    },
+    {
+      "name": "Forest of Illusion 1 - Normal Exit"
+    },
+    {
+      "name": "Forest of Illusion 1 - Secret Exit"
+    },
+    {
+      "name": "Forest of Illusion 2 - Normal Exit"
+    },
+    {
+      "name": "Forest of Illusion 2 - Secret Exit"
+    },
+    {
+      "name": "Forest of Illusion 3 - Normal Exit"
+    },
+    {
+      "name": "Forest of Illusion 3 - Secret Exit"
+    },
+    {
+      "name": "Forest of Illusion 4 - Normal Exit"
+    },
+    {
+      "name": "Forest of Illusion 4 - Secret Exit"
+    },
+    {
+      "name": "Forest Ghost House - Normal Exit"
+    },
+    {
+      "name": "Forest Ghost House - Secret Exit"
+    },
+    {
+      "name": "Forest Secret - Normal Exit"
+    },
+    {
+      "name": "Forest Fortress - Normal Exit"
+    },
+    {
+      "name": "#5 Roy's Castle - Normal Exit"
+    },
+    {
+      "name": "Blue Switch Palace"
+    },
+    {
+      "name": "Chocolate Island 1 - Normal Exit"
+    },
+    {
+      "name": "Chocolate Island 2 - Normal Exit"
+    },
+    {
+      "name": "Chocolate Island 2 - Secret Exit"
+    },
+    {
+      "name": "Chocolate Island 3 - Normal Exit"
+    },
+    {
+      "name": "Chocolate Island 3 - Secret Exit"
+    },
+    {
+      "name": "Chocolate Island 4 - Normal Exit"
+    },
+    {
+      "name": "Chocolate Island 5 - Normal Exit"
+    },
+    {
+      "name": "Choco-Ghost House - Normal Exit"
+    },
+    {
+      "name": "Chocolate Secret - Normal Exit"
+    },
+    {
+      "name": "Chocolate Fortress - Normal Exit"
+    },
+    {
+      "name": "#6 Wendy's Castle - Normal Exit"
+    },
+    {
+      "name": "Sunken Ghost Ship - Normal Exit"
+    },
+    {
+      "name": "Valley of Bowser 1 - Normal Exit"
+    },
+    {
+      "name": "Valley of Bowser 2 - Normal Exit"
+    },
+    {
+      "name": "Valley of Bowser 2 - Secret Exit"
+    },
+    {
+      "name": "Valley of Bowser 3 - Normal Exit"
+    },
+    {
+      "name": "Valley of Bowser 4 - Normal Exit"
+    },
+    {
+      "name": "Valley of Bowser 4 - Secret Exit"
+    },
+    {
+      "name": "Valley Ghost House - Normal Exit"
+    },
+    {
+      "name": "Valley Ghost House - Secret Exit"
+    },
+    {
+      "name": "Valley Fortress - Normal Exit"
+    },
+    {
+      "name": "#7 Larry's Castle - Normal Exit"
+    },
+    {
+      "name": "Star Road 1 - Normal Exit"
+    },
+    {
+      "name": "Star Road 1 - Secret Exit"
+    },
+    {
+      "name": "Star Road 2 - Normal Exit"
+    },
+    {
+      "name": "Star Road 2 - Secret Exit"
+    },
+    {
+      "name": "Star Road 3 - Normal Exit"
+    },
+    {
+      "name": "Star Road 3 - Secret Exit"
+    },
+    {
+      "name": "Star Road 4 - Normal Exit"
+    },
+    {
+      "name": "Star Road 4 - Secret Exit"
+    },
+    {
+      "name": "Star Road 5 - Normal Exit"
+    },
+    {
+      "name": "Star Road 5 - Secret Exit"
+    },
+    {
+      "name": "Gnarly - Normal Exit"
+    },
+    {
+      "name": "Tubular - Normal Exit"
+    },
+    {
+      "name": "Way Cool - Normal Exit"
+    },
+    {
+      "name": "Awesome - Normal Exit"
+    },
+    {
+      "name": "Groovy - Normal Exit"
+    },
+    {
+      "name": "Mondo - Normal Exit"
+    },
+    {
+      "name": "Outrageous - Normal Exit"
+    },
+    {
+      "name": "Funky - Normal Exit"
+    },
+    {
+      "name": "Donut Secret 2 - Normal Exit"
+    },
+    {
+      "name": "#1 Iggy's Castle - Boss"
+    },
+    {
+      "name": "#2 Morton's Castle - Boss"
+    },
+    {
+      "name": "#3 Lemmy's Castle - Boss"
+    },
+    {
+      "name": "#4 Ludwig's Castle - Boss"
+    },
+    {
+      "name": "#5 Roy's Castle - Boss"
+    },
+    {
+      "name": "#6 Wendy's Castle - Boss"
+    },
+    {
+      "name": "#7 Larry's Castle - Boss"
+    },
+    {
+      "name": "Vanilla Fortress - Boss"
+    },
+    {
+      "name": "Forest Fortress - Boss"
+    },
+    {
+      "name": "Chocolate Fortress - Boss"
+    },
+    {
+      "name": "Valley Fortress - Boss"
+    },
+    {
+      "name": "Yoshi's Island 1 - Dragon Coins"
+    },
+    {
+      "name": "Yoshi's Island 2 - Dragon Coins"
+    },
+    {
+      "name": "Yoshi's Island 3 - Dragon Coins"
+    },
+    {
+      "name": "Yoshi's Island 4 - Dragon Coins"
+    },
+    {
+      "name": "Donut Plains 1 - Dragon Coins"
+    },
+    {
+      "name": "Donut Plains 2 - Dragon Coins"
+    },
+    {
+      "name": "Donut Plains 3 - Dragon Coins"
+    },
+    {
+      "name": "Donut Plains 4 - Dragon Coins"
+    },
+    {
+      "name": "Donut Secret 1 - Dragon Coins"
+    },
+    {
+      "name": "Donut Secret 2 - Dragon Coins"
+    },
+    {
+      "name": "Vanilla Dome 1 - Dragon Coins"
+    },
+    {
+      "name": "Vanilla Dome 2 - Dragon Coins"
+    },
+    {
+      "name": "Vanilla Dome 3 - Dragon Coins"
+    },
+    {
+      "name": "Vanilla Dome 4 - Dragon Coins"
+    },
+    {
+      "name": "Vanilla Secret 1 - Dragon Coins"
+    },
+    {
+      "name": "Vanilla Secret 2 - Dragon Coins"
+    },
+    {
+      "name": "Vanilla Secret 3 - Dragon Coins"
+    },
+    {
+      "name": "Vanilla Ghost House - Dragon Coins"
+    },
+    {
+      "name": "Butter Bridge 1 - Dragon Coins"
+    },
+    {
+      "name": "Butter Bridge 2 - Dragon Coins"
+    },
+    {
+      "name": "Cheese Bridge - Dragon Coins"
+    },
+    {
+      "name": "Cookie Mountain - Dragon Coins"
+    },
+    {
+      "name": "Soda Lake - Dragon Coins"
+    },
+    {
+      "name": "Forest of Illusion 2 - Dragon Coins"
+    },
+    {
+      "name": "Forest of Illusion 3 - Dragon Coins"
+    },
+    {
+      "name": "Forest of Illusion 4 - Dragon Coins"
+    },
+    {
+      "name": "Forest Ghost House - Dragon Coins"
+    },
+    {
+      "name": "Forest Secret - Dragon Coins"
+    },
+    {
+      "name": "#5 Roy's Castle - Dragon Coins"
+    },
+    {
+      "name": "Chocolate Island 1 - Dragon Coins"
+    },
+    {
+      "name": "Chocolate Island 2 - Dragon Coins"
+    },
+    {
+      "name": "Chocolate Island 3 - Dragon Coins"
+    },
+    {
+      "name": "Chocolate Island 4 - Dragon Coins"
+    },
+    {
+      "name": "Chocolate Island 5 - Dragon Coins"
+    },
+    {
+      "name": "Sunken Ghost Ship - Dragon Coins"
+    },
+    {
+      "name": "Valley of Bowser 1 - Dragon Coins"
+    },
+    {
+      "name": "Valley of Bowser 2 - Dragon Coins"
+    },
+    {
+      "name": "Valley of Bowser 3 - Dragon Coins"
+    },
+    {
+      "name": "Valley Ghost House - Dragon Coins"
+    },
+    {
+      "name": "#7 Larry's Castle - Dragon Coins"
+    },
+    {
+      "name": "Star Road 1 - Dragon Coins"
+    },
+    {
+      "name": "Gnarly - Dragon Coins"
+    },
+    {
+      "name": "Tubular - Dragon Coins"
+    },
+    {
+      "name": "Way Cool - Dragon Coins"
+    },
+    {
+      "name": "Awesome - Dragon Coins"
+    },
+    {
+      "name": "Groovy - Dragon Coins"
+    },
+    {
+      "name": "Mondo - Dragon Coins"
+    },
+    {
+      "name": "Outrageous - Dragon Coins"
+    },
+    {
+      "name": "Funky - Dragon Coins"
+    },
+    {
+      "name": "Bowser"
+    },
+    {
+      "name": "Yoshi's House"
+    }
+  ],
+  "status": "New"
+}

@@ -3,64 +3,106 @@
   "index": 3,
   "settings": [
     {
-      "type": "string",
       "name": "item_pool",
-      "readableName": "Item pool",
       "description": "Whether to include all items or only valuables to the multiworld item pool.",
-      "values": {
-        "standard": "All treasures",
-        "valuable": [
-          "Valuables only",
-          "Everything else is sent to you immediately, and valuables are duplicated"
-        ]
-      },
+      "readableName": "Item pool",
+      "values": [
+        {
+          "name": "standard",
+          "readableName": "All treasures"
+        },
+        {
+          "name": "valuable",
+          "description": "Everything else is sent to you immediately, and valuables are duplicated",
+          "readableName": "Valuables only"
+        }
+      ],
+      "type": "choice",
       "default": "standard"
     },
     {
-      "type": "string",
       "name": "goal",
-      "readableName": "Goal",
       "description": "Determines your victory condition.",
-      "values": {
-        "launch": "Leave the planet",
-        "free": "Disable the quarantine",
-        "infected": "Reach maximum infection",
-        "drive": "Repair the Aurora's drive core"
-      },
-      "default": "standard"
+      "readableName": "Goal",
+      "values": [
+        {
+          "name": "launch",
+          "readableName": "Leave the planet"
+        },
+        {
+          "name": "free",
+          "readableName": "Disable the quarantine"
+        },
+        {
+          "name": "infected",
+          "readableName": "Reach maximum infection"
+        },
+        {
+          "name": "drive",
+          "readableName": "Repair the Aurora's drive core"
+        }
+      ],
+      "type": "choice",
+      "default": "launch"
     },
     {
-      "type": "numeric",
       "name": "creature_scans",
-      "readableName": "Creature Scans",
       "description": "Randomly places location checks on creature scans. **Warning**: This can include Leviathans.",
-      "low": 0,
       "high": 50,
+      "readableName": "Creature Scans",
+      "low": 0,
+      "type": "range",
       "default": 0
     },
     {
-      "type": "string",
       "name": "creature_scan_logic",
-      "readableName": "Aggressive Creature Scan Logic",
       "description": "Determines what sort of logic should be applied when considering creature scans as checks.\n*Note: This is purely a logic expectation, and does not affect gameplay, only placement.*",
-      "values": {
-        "stasis": ["Stasis (default)", "Aggressive Creature Scans are logically expected only with a Stasis Rifle. Adds unhatchable aggressive species, such as Warper."],
-        "containment": ["Alien Containment", "Removes Stasis Rifle as expected solution and expects Alien Containment instead. Adds Cuddlefish as an option for scans."],
-        "either": ["Either of the above", "Creatures may be expected to be scanned via Stasis Rifle or Containment, whichever is found first. Adds Cuddlefish as an option for scans. Adds unhatchable aggressive species, such as Warper."],
-        "none": ["Neither", "Aggressive Creatures are assumed to not need any tools to scan. Adds Cuddlefish as an option for scans. Adds unhatchable aggressive species, such as Warper."],
-        "removed": ["Removed", "No Creatures needing Stasis or Containment will be in the pool at all."]
-      },
+      "readableName": "Aggressive Creature Scan Logic",
+      "values": [
+        {
+          "name": "stasis",
+          "description": "Aggressive Creature Scans are logically expected only with a Stasis Rifle. Adds unhatchable aggressive species, such as Warper.",
+          "readableName": "Stasis (default)"
+        },
+        {
+          "name": "containment",
+          "description": "Removes Stasis Rifle as expected solution and expects Alien Containment instead. Adds Cuddlefish as an option for scans.",
+          "readableName": "Alien Containment"
+        },
+        {
+          "name": "either",
+          "description": "Creatures may be expected to be scanned via Stasis Rifle or Containment, whichever is found first. Adds Cuddlefish as an option for scans. Adds unhatchable aggressive species, such as Warper.",
+          "readableName": "Either of the above"
+        },
+        {
+          "name": "none",
+          "description": "Aggressive Creatures are assumed to not need any tools to scan. Adds Cuddlefish as an option for scans. Adds unhatchable aggressive species, such as Warper.",
+          "readableName": "Neither"
+        },
+        {
+          "name": "removed",
+          "description": "No Creatures needing Stasis or Containment will be in the pool at all.",
+          "readableName": "Removed"
+        }
+      ],
+      "type": "choice",
       "default": "stasis"
     },
-    { "type": "deathlink" }
+    {
+      "name": "death_link",
+      "type": "deathlink"
+    }
   ],
+  "defver": 2,
   "items": [
     {
       "name": "Compass",
-      "max": 1,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 1
     },
     {
       "name": "Lightweight High Capacity Tank",
@@ -76,73 +118,93 @@
     },
     {
       "name": "Cyclops Sonar Upgrade",
-      "max": 1,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 1
     },
     {
       "name": "Reinforced Dive Suit",
-      "max": 1,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 1
     },
     {
       "name": "Cyclops Thermal Reactor Module",
-      "max": 1,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 1
     },
     {
       "name": "Stillsuit",
-      "max": 1,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 1
     },
     {
       "name": "Alien Containment Fragment",
-      "max": 2,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 2
     },
     {
       "name": "Creature Decoy",
-      "max": 1,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 1
     },
     {
       "name": "Cyclops Fire Suppression System",
-      "max": 1,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 1
     },
     {
       "name": "Swim Charge Fins",
-      "max": 1,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 1
     },
     {
       "name": "Repulsion Cannon",
-      "max": 1,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 1
     },
     {
       "name": "Cyclops Decoy Tube Upgrade",
-      "max": 1,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 1
     },
     {
       "name": "Cyclops Shield Generator",
@@ -154,31 +216,39 @@
     },
     {
       "name": "Cyclops Docking Bay Repair Module",
-      "max": 1,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 1
     },
     {
       "name": "Battery Charger fragment",
-      "max": 2,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 2
     },
     {
       "name": "Beacon Fragment",
-      "max": 2,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 2
     },
     {
       "name": "Bioreactor Fragment",
-      "max": 2,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 2
     },
     {
       "name": "Cyclops Bridge Fragment",
@@ -194,10 +264,12 @@
     },
     {
       "name": "Grav Trap Fragment",
-      "max": 2,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 2
     },
     {
       "name": "Laser Cutter Fragment",
@@ -205,10 +277,12 @@
     },
     {
       "name": "Light Stick Fragment",
-      "max": 1,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 1
     },
     {
       "name": "Mobile Vehicle Bay Fragment",
@@ -224,24 +298,30 @@
     },
     {
       "name": "Nuclear Reactor Fragment",
-      "max": 3,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 3
     },
     {
       "name": "Power Cell Charger Fragment",
-      "max": 2,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 2
     },
     {
       "name": "Power Transmitter Fragment",
-      "max": 1,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 1
     },
     {
       "name": "Prawn Suit Fragment",
@@ -249,38 +329,48 @@
     },
     {
       "name": "Prawn Suit Drill Arm Fragment",
-      "max": 2,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 2
     },
     {
       "name": "Prawn Suit Grappling Arm Fragment",
-      "max": 2,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 2
     },
     {
       "name": "Prawn Suit Propulsion Cannon Fragment",
-      "max": 2,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 2
     },
     {
       "name": "Prawn Suit Torpedo Arm Fragment",
-      "max": 2,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 2
     },
     {
       "name": "Scanner Room Fragment",
-      "max": 3,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 3
     },
     {
       "name": "Seamoth Fragment",
@@ -288,17 +378,21 @@
     },
     {
       "name": "Stasis Rifle Fragment",
-      "max": 2,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 2
     },
     {
       "name": "Thermal Plant Fragment",
-      "max": 2,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 2
     },
     {
       "name": "Seaglide Fragment",
@@ -322,206 +416,264 @@
     },
     {
       "name": "Exterior Growbed Fragment",
-      "max": 2,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 2
     },
     {
       "name": "Picture Frame",
-      "max": 1,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 1
     },
     {
       "name": "Bench",
-      "max": 1,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 1
     },
     {
       "name": "Basic Plant Pot",
-      "max": 1,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 1
     },
     {
       "name": "Interior Growbed",
-      "max": 1,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 1
     },
     {
       "name": "Plant Shelf",
-      "max": 1,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 1
     },
     {
       "name": "Observatory Fragment",
-      "max": 2,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 2
     },
     {
       "name": "Multipurpose Room",
-      "max": 2,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 2
     },
     {
       "name": "Bulkhead Fragment",
-      "max": 2,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 2
     },
     {
       "name": "Spotlight",
-      "max": 1,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 1
     },
     {
       "name": "Desk",
-      "max": 2,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 2
     },
     {
       "name": "Swivel Chair",
-      "max": 1,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 1
     },
     {
       "name": "Office Chair",
-      "max": 1,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 1
     },
     {
       "name": "Command Chair",
-      "max": 1,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 1
     },
     {
       "name": "Counter",
-      "max": 2,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 2
     },
     {
       "name": "Single Bed",
-      "max": 1,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 1
     },
     {
       "name": "Basic Double Bed",
-      "max": 1,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 1
     },
     {
       "name": "Quilted Double Bed",
-      "max": 1,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 1
     },
     {
       "name": "Coffee Vending Machine",
-      "max": 2,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 2
     },
     {
       "name": "Trash Can",
-      "max": 2,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 2
     },
     {
       "name": "Floodlight",
-      "max": 1,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 1
     },
     {
       "name": "Bar Table",
-      "max": 1,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 1
     },
     {
       "name": "Vending Machine",
-      "max": 1,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 1
     },
     {
       "name": "Single Wall Shelf",
-      "max": 1,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 1
     },
     {
       "name": "Wall Shelves",
-      "max": 1,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 1
     },
     {
       "name": "Round Plant Pot",
-      "max": 1,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 1
     },
     {
       "name": "Chic Plant Pot",
-      "max": 1,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 1
     },
     {
       "name": "Nuclear Waste Disposal",
-      "max": 1,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 1
     },
     {
       "name": "Wall Planter",
-      "max": 1,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 1
     },
     {
       "name": "Ion Battery",
@@ -545,10 +697,12 @@
     },
     {
       "name": "Water Filtration Machine",
-      "max": 1,
       "dependsOn": {
-        "item_pool": ["standard"]
-      }
+        "item_pool": [
+          "standard"
+        ]
+      },
+      "max": 1
     },
     {
       "name": "Ultra High Capacity Tank",
@@ -945,6 +1099,160 @@
     },
     {
       "name": "Floating Island - Cave Entrance PDA"
+    },
+    {
+      "name": "Degasi Seabase - Jellyshroom Cave - Outside PDA"
+    },
+    {
+      "name": "Gasopod Scan"
+    },
+    {
+      "name": "Bladderfish Scan"
+    },
+    {
+      "name": "Ancient Floater Scan"
+    },
+    {
+      "name": "Skyray Scan"
+    },
+    {
+      "name": "Garryfish Scan"
+    },
+    {
+      "name": "Peeper Scan"
+    },
+    {
+      "name": "Shuttlebug Scan"
+    },
+    {
+      "name": "Rabbit Ray Scan"
+    },
+    {
+      "name": "Stalker Scan"
+    },
+    {
+      "name": "Floater Scan"
+    },
+    {
+      "name": "Holefish Scan"
+    },
+    {
+      "name": "Cave Crawler Scan"
+    },
+    {
+      "name": "Hoopfish Scan"
+    },
+    {
+      "name": "Crashfish Scan"
+    },
+    {
+      "name": "Hoverfish Scan"
+    },
+    {
+      "name": "Spadefish Scan"
+    },
+    {
+      "name": "Reefback Leviathan Scan"
+    },
+    {
+      "name": "Reaper Leviathan Scan"
+    },
+    {
+      "name": "Warper Scan"
+    },
+    {
+      "name": "Boomerang Scan"
+    },
+    {
+      "name": "Biter Scan"
+    },
+    {
+      "name": "Sand Shark Scan"
+    },
+    {
+      "name": "Bleeder Scan"
+    },
+    {
+      "name": "Crabsnake Scan"
+    },
+    {
+      "name": "Jellyray Scan"
+    },
+    {
+      "name": "Oculus Scan"
+    },
+    {
+      "name": "Mesmer Scan"
+    },
+    {
+      "name": "Eyeye Scan"
+    },
+    {
+      "name": "Reginald Scan"
+    },
+    {
+      "name": "Sea Treader Leviathan Scan"
+    },
+    {
+      "name": "Crabsquid Scan"
+    },
+    {
+      "name": "Ampeel Scan"
+    },
+    {
+      "name": "Boneshark Scan"
+    },
+    {
+      "name": "Rockgrub Scan"
+    },
+    {
+      "name": "Ghost Leviathan Scan"
+    },
+    {
+      "name": "Ghost Leviathan Juvenile Scan"
+    },
+    {
+      "name": "Spinefish Scan"
+    },
+    {
+      "name": "Blighter Scan"
+    },
+    {
+      "name": "Blood Crawler Scan"
+    },
+    {
+      "name": "Ghostray Scan"
+    },
+    {
+      "name": "Amoeboid Scan"
+    },
+    {
+      "name": "River Prowler Scan"
+    },
+    {
+      "name": "Red Eyeye Scan"
+    },
+    {
+      "name": "Magmarang Scan"
+    },
+    {
+      "name": "Crimson Ray Scan"
+    },
+    {
+      "name": "Lava Larva Scan"
+    },
+    {
+      "name": "Lava Lizard Scan"
+    },
+    {
+      "name": "Sea Dragon Leviathan Scan"
+    },
+    {
+      "name": "Cuddlefish Scan"
+    },
+    {
+      "name": "Sea Emperor Juvenile Scan"
     }
-  ]
+  ],
+  "status": "Updated"
 }

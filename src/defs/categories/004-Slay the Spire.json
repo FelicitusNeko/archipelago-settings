@@ -3,36 +3,48 @@
   "index": 4,
   "settings": [
     {
-      "type": "string",
       "name": "character",
-      "readableName": "Character",
       "description": "Which character you will be playing as.",
-      "values": {
-        "ironclad": "Ironclad",
-        "silent": "Silent",
-        "defect": "Defect",
-        "watcher": "Watcher"
-      },
+      "readableName": "Character",
+      "values": [
+        {
+          "name": "ironclad",
+          "readableName": "Ironclad"
+        },
+        {
+          "name": "silent",
+          "readableName": "Silent"
+        },
+        {
+          "name": "defect",
+          "readableName": "Defect"
+        },
+        {
+          "name": "watcher",
+          "readableName": "Watcher"
+        }
+      ],
+      "type": "choice",
       "default": "ironclad"
     },
     {
-      "type": "numeric",
       "name": "ascension",
-      "readableName": "Ascension",
       "description": "Which ascension you'll be playing on.",
-      "low": 0,
       "high": 20,
-      "randomable": true,
+      "readableName": "Ascension",
+      "low": 0,
+      "type": "range",
       "default": 0
     },
     {
-      "type": "boolean",
       "name": "heart_run",
-      "readableName": "Heart run",
       "description": "If enabled, you'll need to collect the three keys and defeat the Heart in order to complete the game.",
+      "readableName": "Heart run",
+      "type": "toggle",
       "default": true
     }
   ],
+  "defver": 2,
   "items": [
     {
       "name": "Card Draw",
@@ -145,5 +157,6 @@
     {
       "name": "Boss Relic 3"
     }
-  ]
+  ],
+  "status": "Updated"
 }
