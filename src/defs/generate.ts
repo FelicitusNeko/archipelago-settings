@@ -19,9 +19,19 @@ import {
   APToggleSetting,
   APToggleSettingJson,
 } from "../objs/settings/APToggleSetting";
-import { APChoiceSetting, APChoiceSettingJson, APChoiceValue } from "../objs/settings/APChoiceSetting";
-import { APRangeSetting, APRangeSettingJson } from "../objs/settings/APRangeSetting";
-import { APNumberSetting, APNumberSettingJson } from "../objs/settings/APNumberSetting";
+import {
+  APChoiceSetting,
+  APChoiceSettingJson,
+  APChoiceValue,
+} from "../objs/settings/APChoiceSetting";
+import {
+  APRangeSetting,
+  APRangeSettingJson,
+} from "../objs/settings/APRangeSetting";
+import {
+  APNumberSetting,
+  APNumberSettingJson,
+} from "../objs/settings/APNumberSetting";
 import { APItemManager } from "../objs/entities/APItemManager";
 import { APLocationManager } from "../objs/entities/APLocationManager";
 import { gunzipSync } from "zlib";
@@ -29,11 +39,17 @@ import { gunzipSync } from "zlib";
 export type APMetaSetting =
   | APStringSetting
   | APNumericSetting
-  | APToggleSetting | APChoiceSetting | APRangeSetting | APNumberSetting;
+  | APToggleSetting
+  | APChoiceSetting
+  | APRangeSetting
+  | APNumberSetting;
 export type APMetaSettingJson =
   | APStringSettingJson
   | APNumericSettingJson
-  | APToggleSettingJson | APChoiceSettingJson | APRangeSettingJson | APNumberSettingJson;
+  | APToggleSettingJson
+  | APChoiceSettingJson
+  | APRangeSettingJson
+  | APNumberSettingJson;
 
 export type APMetaManager = APItemManager | APLocationManager;
 
@@ -161,15 +177,17 @@ const APCategoryList: APCategory[] = APCategoryData.map((i) => {
             gameListUsed = true;
 
             const choiceJson = setting as APChoiceSettingJson;
-            choiceJson.values = gameList.map<APChoiceValue>(i => { return { name: i[0], readableName: i[1] } });
+            choiceJson.values = gameList.map<APChoiceValue>((i) => {
+              return { name: i[0], readableName: i[1] };
+            });
             const lowestIndex = Math.min(
               ...APCategoryData.filter((i) => i.category !== null).map(
                 (i) => i.index
               )
             );
-            choiceJson.default = APCategoryData.find(
-              (i) => i.index === lowestIndex
-            )?.category ?? "A Link to the Past";
+            choiceJson.default =
+              APCategoryData.find((i) => i.index === lowestIndex)?.category ??
+              "A Link to the Past";
             return new APChoiceSetting(
               i.category,
               choiceJson,
@@ -180,7 +198,9 @@ const APCategoryList: APCategory[] = APCategoryData.map((i) => {
             const choiceJson = setting as APChoiceSettingJson;
             switch (i.category) {
               case "A Link to the Past":
-                choiceJson.values = Object.entries(LttPSpriteValue).map(i => { return { name: i[0], readableName: i[1] } });
+                choiceJson.values = Object.entries(LttPSpriteValue).map((i) => {
+                  return { name: i[0], readableName: i[1] };
+                });
                 break;
               default:
                 throw new Error(
@@ -195,6 +215,7 @@ const APCategoryList: APCategory[] = APCategoryData.map((i) => {
             );
           }
           default:
+            console.error(setting);
             throw new Error(`Unknown setting type`);
         }
       }),
