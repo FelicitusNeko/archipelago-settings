@@ -19,10 +19,11 @@ export class APChoiceSettingNode extends APSettingNode<APChoiceSetting> {
     const selectedValues = (
       Array.isArray(value) ? value.map((i) => i.value) : [value]
     ).concat(additionalOptions);
-    const remainingValues = Object.keys(setting.values).filter(
-      (i) => !selectedValues.includes(i)
-    );
-    return remainingValues[0];
+    const remainingValues = setting.values.filter(i => !selectedValues.includes(i.name));
+    // const remainingValues = Object.keys(setting.values).filter(
+    //   (i) => !selectedValues.includes(i)
+    // );
+    return remainingValues[0].name;
   }
 
   /** @override */
