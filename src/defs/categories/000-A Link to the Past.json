@@ -1,0 +1,3090 @@
+{
+  "category": "A Link to the Past",
+  "index": 0,
+  "settings": [
+    {
+      "name": "goals",
+      "description": "Define your end goal for the game.",
+      "readableName": "Goal",
+      "values": [
+        {
+          "name": "ganon",
+          "description": "Find the crystals, defeat Agahnim in Ganon's Tower, then defeat Ganon",
+          "readableName": "Ganon"
+        },
+        {
+          "name": "crystals",
+          "description": "Find the crystals, then defeat Ganon",
+          "readableName": "Fast Ganon"
+        },
+        {
+          "name": "bosses",
+          "description": "Clear every dungeon, then defeat Ganon",
+          "readableName": "Oops! All Dungeons"
+        },
+        {
+          "name": "pedestal",
+          "description": "Get the three Medallions, then pull the Master Sword from its pedestal",
+          "readableName": "Pedestal"
+        },
+        {
+          "name": "ganon_pedestal",
+          "description": "Get the Medallions, check the Master Sword pedestal, then defeat Ganon",
+          "readableName": "Pedestal Ganon"
+        },
+        {
+          "name": "triforce_hunt",
+          "description": "Find the Triforce Pieces, then find Murahdahla",
+          "readableName": "Triforce Hunt"
+        },
+        {
+          "name": "local_triforce_hunt",
+          "description": "Find the Triforce Pieces in your own world, then find Murahdahla",
+          "readableName": "Local Triforce Hunt"
+        },
+        {
+          "name": "ganon_triforce_hunt",
+          "description": "Find the Triforce Pieces, then defeat Ganon",
+          "readableName": "Ganon's Triforce Hunt"
+        },
+        {
+          "name": "local_ganon_triforce_hunt",
+          "description": "Find the Triforce Pieces in your own world, then defeat Ganon",
+          "readableName": "Ganon's Local Triforce Hunt"
+        },
+        {
+          "name": "ice_rod_hunt",
+          "description": "Start with everything but the Ice Rod; find it, defeat Trinexx at Turtle Rock, then find Murahdahla",
+          "readableName": "Ice Rod Hunt"
+        }
+      ],
+      "type": "choice",
+      "default": "ganon"
+    },
+    {
+      "name": "mode",
+      "description": "Define your starting point and base world.",
+      "readableName": "Starting mode",
+      "values": [
+        {
+          "name": "standard",
+          "readableName": "Standard opening"
+        },
+        {
+          "name": "open",
+          "description": "skip the opening",
+          "readableName": "Open world"
+        },
+        {
+          "name": "inverted",
+          "description": "start from Dark World",
+          "readableName": "Inverted mode"
+        }
+      ],
+      "type": "choice",
+      "default": "open"
+    },
+    {
+      "name": "crystals_needed_for_gt",
+      "description": "How many crystals are required to access the Ganon's Tower entrance.",
+      "high": 7,
+      "readableName": "Crystals needed for Ganon's Tower",
+      "low": 0,
+      "type": "range",
+      "default": 7
+    },
+    {
+      "name": "crystals_needed_for_ganon",
+      "description": "How many crystals are required to defeat Ganon, if that is the goal. Irrelevant if it is not.",
+      "dependsOn": {
+        "goals": [
+          "ganon",
+          "crystals"
+        ]
+      },
+      "high": 7,
+      "readableName": "Crystals needed for Ganon",
+      "low": 0,
+      "type": "range",
+      "default": 7
+    },
+    {
+      "name": "triforce_pieces_required",
+      "description": "How many Triforce pieces will be required to complete your goal.",
+      "dependsOn": {
+        "goals": [
+          "triforce_hunt",
+          "local_triforce_hunt",
+          "ganon_triforce_hunt",
+          "local_ganon_triforce_hunt"
+        ]
+      },
+      "high": 90,
+      "readableName": "Triforce pieces required",
+      "low": 1,
+      "type": "range",
+      "default": 20
+    },
+    {
+      "name": "triforce_pieces_mode",
+      "description": "This will determine how many extra Triforce Pieces, if any, there will be during your Triforce Hunt.",
+      "dependsOn": {
+        "goals": [
+          "triforce_hunt",
+          "local_triforce_hunt",
+          "ganon_triforce_hunt",
+          "local_ganon_triforce_hunt"
+        ]
+      },
+      "readableName": "Triforce Hunt mode",
+      "values": [
+        {
+          "name": "extra",
+          "description": "The required number plus an extra amount",
+          "readableName": "Plus extra"
+        },
+        {
+          "name": "percentage",
+          "description": "A certain percentage over the required number",
+          "readableName": "Plus percentage"
+        },
+        {
+          "name": "available",
+          "description": "A set number of Triforce pieces",
+          "readableName": "Set number"
+        }
+      ],
+      "type": "choice",
+      "default": "extra"
+    },
+    {
+      "name": "triforce_pieces_extra",
+      "description": "How many Triforce pieces will be available over the required amount.",
+      "dependsOn": {
+        "goals": [
+          "triforce_hunt",
+          "local_triforce_hunt",
+          "ganon_triforce_hunt",
+          "local_ganon_triforce_hunt"
+        ],
+        "triforce_pieces_mode": [
+          "extra"
+        ]
+      },
+      "high": 89,
+      "readableName": "Extra Triforce pieces",
+      "low": 0,
+      "type": "range",
+      "default": 10
+    },
+    {
+      "name": "triforce_pieces_percentage",
+      "description": "What percentage of Triforce pieces over the required amount will be available. For instance, 20 pieces at 150% would result in 30 pieces in the game.",
+      "dependsOn": {
+        "goals": [
+          "triforce_hunt",
+          "local_triforce_hunt",
+          "ganon_triforce_hunt",
+          "local_ganon_triforce_hunt"
+        ],
+        "triforce_pieces_mode": [
+          "percentage"
+        ]
+      },
+      "high": 400,
+      "readableName": "Triforce pieces – plus percent",
+      "low": 100,
+      "step": 5,
+      "type": "range",
+      "default": 125
+    },
+    {
+      "name": "triforce_pieces_available",
+      "description": "How many Triforce pieces will be available in the game, total. May not be lower than triforce_pieces_required.",
+      "dependsOn": {
+        "goals": [
+          "triforce_hunt",
+          "local_triforce_hunt",
+          "ganon_triforce_hunt",
+          "local_ganon_triforce_hunt"
+        ],
+        "triforce_pieces_mode": [
+          "available"
+        ]
+      },
+      "high": 100,
+      "readableName": "Triforce pieces available",
+      "low": 0,
+      "type": "range",
+      "default": 30
+    },
+    {
+      "name": "triforcehud",
+      "description": "Whether to hide the Triforce HUD display to start with during a Triforce Hunt",
+      "dependsOn": {
+        "goals": [
+          "triforce_hunt",
+          "local_triforce_hunt",
+          "ganon_triforce_hunt",
+          "local_ganon_triforce_hunt"
+        ]
+      },
+      "readableName": "Triforce HUD Visibility",
+      "values": [
+        {
+          "name": "normal",
+          "readableName": "Normal"
+        },
+        {
+          "name": "hide_goal",
+          "description": "Hide the display until you pick up a Triforce piece or talk to Murahdahla",
+          "readableName": "Hide goal"
+        },
+        {
+          "name": "hide_required",
+          "description": "Hide the goal number until you've talked to Murahdahla",
+          "readableName": "Hide required"
+        },
+        {
+          "name": "hide_both",
+          "readableName": "Both of the above"
+        }
+      ],
+      "type": "choice",
+      "default": "normal"
+    },
+    {
+      "name": "timer",
+      "description": "Set the timer option for the game. If set, the compass treasure counter will be disabled. One-hit KO lives here.",
+      "readableName": "Timer",
+      "values": [
+        {
+          "name": "none",
+          "readableName": "No timer"
+        },
+        {
+          "name": "display",
+          "description": "counts up",
+          "readableName": "Chrono"
+        },
+        {
+          "name": "timed",
+          "description": "counts up, collect clocks to bring it down",
+          "readableName": "Race chrono"
+        },
+        {
+          "name": "timed_countdown",
+          "description": "counts down, collect clocks to push it up",
+          "readableName": "Timer"
+        },
+        {
+          "name": "timed_ohko",
+          "description": "counts down; if it hits 0, one-hit KO mode is on",
+          "readableName": "Death clock"
+        },
+        {
+          "name": "ohko",
+          "description": "Screw the timer! Just gimme OHKO mode!",
+          "readableName": "Daredevil"
+        }
+      ],
+      "type": "choice",
+      "default": "none"
+    },
+    {
+      "name": "countdown_start_time",
+      "description": "In countdown timer modes, the time in minutes the clock starts at.",
+      "dependsOn": {
+        "timer": [
+          "timed",
+          "timed_countdown",
+          "timed_ohko"
+        ]
+      },
+      "high": 600,
+      "readableName": "Countdown start time",
+      "low": 5,
+      "step": 5,
+      "type": "range",
+      "default": 10
+    },
+    {
+      "name": "red_clock_time",
+      "description": "The amount of minutes awarded or subtracted by red clocks. Should be the lowest, but not required.",
+      "dependsOn": {
+        "timer": [
+          "timed",
+          "timed_countdown",
+          "timed_ohko"
+        ]
+      },
+      "high": 60,
+      "readableName": "Red clock time",
+      "low": -60,
+      "type": "range",
+      "default": -2
+    },
+    {
+      "name": "blue_clock_time",
+      "description": "The amount of minutes awarded or subtracted by blue clocks. Should be the middle value, but not required.",
+      "dependsOn": {
+        "timer": [
+          "timed",
+          "timed_countdown",
+          "timed_ohko"
+        ]
+      },
+      "high": 60,
+      "readableName": "Blue clock time",
+      "low": -60,
+      "type": "range",
+      "default": 2
+    },
+    {
+      "name": "green_clock_time",
+      "description": "The amount of minutes awarded or subtracted by green clocks. Should be the highest, but not required.",
+      "dependsOn": {
+        "timer": [
+          "timed",
+          "timed_countdown",
+          "timed_ohko"
+        ]
+      },
+      "high": 60,
+      "readableName": "Green clock time",
+      "low": -60,
+      "type": "range",
+      "default": 4
+    },
+    {
+      "name": "entrance_shuffle",
+      "description": "Affects how overworld entrances are arranged. Supercedes door shuffle.",
+      "readableName": "Entrance shuffle",
+      "values": [
+        {
+          "name": "none",
+          "readableName": "Off"
+        },
+        {
+          "name": "dungeonssimple",
+          "readableName": "Easy dungeon shuffle"
+        },
+        {
+          "name": "dungeonsfull",
+          "readableName": "Dungeon shuffle"
+        },
+        {
+          "name": "simple",
+          "description": "A little mixed up",
+          "readableName": "Simple"
+        },
+        {
+          "name": "restricted",
+          "description": "Connectors will stay the same",
+          "readableName": "Restricted"
+        },
+        {
+          "name": "full",
+          "readableName": "Full"
+        },
+        {
+          "name": "crossed",
+          "description": "Connectors can cross over Light/Dark World",
+          "readableName": "Crossed"
+        },
+        {
+          "name": "insanity",
+          "description": "Connector exits are also shuffled (beware!)",
+          "readableName": "Insanity"
+        }
+      ],
+      "type": "choice",
+      "default": "none"
+    },
+    {
+      "name": "door_shuffle",
+      "description": "Shuffles supertiles within dungeons. Superceded by entrance shuffle.",
+      "dependsOn": {
+        "entrance_shuffle": [
+          "off"
+        ]
+      },
+      "readableName": "Door shuffle",
+      "values": [
+        {
+          "name": "vanilla",
+          "readableName": "Off"
+        },
+        {
+          "name": "basic",
+          "description": "dungeons keep to themselves",
+          "readableName": "Basic"
+        },
+        {
+          "name": "crossed",
+          "description": "dungeons get mixed up",
+          "readableName": "Crossed"
+        }
+      ],
+      "type": "choice",
+      "default": "vanilla"
+    },
+    {
+      "name": "intensity",
+      "description": "How much of an effect Door Shuffle will have on the game.",
+      "dependsOn": {
+        "entrance_shuffle": [
+          "off"
+        ],
+        "door_shuffle": [
+          "basic",
+          "crossed"
+        ]
+      },
+      "high": 3,
+      "readableName": "Door shuffle intensity",
+      "low": 1,
+      "type": "range",
+      "default": 1
+    },
+    {
+      "name": "boss_shuffle",
+      "description": "Whether and how bosses will be shuffled.",
+      "readableName": "Boss shuffle",
+      "values": [
+        {
+          "name": "none",
+          "readableName": "Off"
+        },
+        {
+          "name": "basic",
+          "description": "Shuffle all bosses except GT (one each)",
+          "readableName": "Basic"
+        },
+        {
+          "name": "full",
+          "description": "Shuffle all bosses including GT",
+          "readableName": "Full"
+        },
+        {
+          "name": "chaos",
+          "readableName": "Random"
+        },
+        {
+          "name": "singularity",
+          "description": "Spawn one boss as much as possible",
+          "readableName": "Singularity"
+        }
+      ],
+      "type": "choice",
+      "default": "none"
+    },
+    {
+      "name": "misery_mire_medallion",
+      "description": "Which medallion is required to access Misery Mire entrance.",
+      "readableName": "Misery Mire entry medallion",
+      "values": [
+        {
+          "name": "ether",
+          "readableName": "Ether (vanilla)"
+        },
+        {
+          "name": "bombos",
+          "readableName": "Bombos"
+        },
+        {
+          "name": "quake",
+          "readableName": "Quake"
+        },
+        {
+          "name": "random",
+          "readableName": "Random"
+        }
+      ],
+      "type": "choice",
+      "default": "random"
+    },
+    {
+      "name": "turtle_rock_medallion",
+      "description": "Which medallion is required to access Turtle Rock Main entrance.",
+      "readableName": "Turtle Rock entry medallion",
+      "values": [
+        {
+          "name": "ether",
+          "readableName": "Ether"
+        },
+        {
+          "name": "bombos",
+          "readableName": "Bombos"
+        },
+        {
+          "name": "quake",
+          "readableName": "Quake (vanilla)"
+        },
+        {
+          "name": "random",
+          "readableName": "Random"
+        }
+      ],
+      "type": "choice",
+      "default": "random"
+    },
+    {
+      "name": "bigkey_shuffle",
+      "description": "How big keys will be shuffled.",
+      "readableName": "Big key shuffle",
+      "values": [
+        {
+          "name": "start_with",
+          "description": "They will be in your inventory from the start",
+          "readableName": "Start with them"
+        },
+        {
+          "name": "original_dungeon",
+          "description": "Keep them to their own dungeons",
+          "readableName": "In dungeon"
+        },
+        {
+          "name": "own_dungeons",
+          "description": "Put them in any dungeon in your world",
+          "readableName": "Any dungeon"
+        },
+        {
+          "name": "own_world",
+          "description": "Put them anywhere in your world",
+          "readableName": "Local"
+        },
+        {
+          "name": "any_world",
+          "description": "Put them in anyone's world",
+          "readableName": "Anywhere"
+        },
+        {
+          "name": "different_world",
+          "description": "Put them in any world but yours",
+          "readableName": "Non-local"
+        }
+      ],
+      "type": "choice",
+      "default": "original_dungeon"
+    },
+    {
+      "name": "smallkey_shuffle",
+      "description": "How small keys will be shuffled.",
+      "readableName": "Small key shuffle",
+      "values": [
+        {
+          "name": "start_with",
+          "description": "They will be in your inventory from the start",
+          "readableName": "Start with them"
+        },
+        {
+          "name": "original_dungeon",
+          "description": "Keep them to their own dungeons",
+          "readableName": "In dungeon"
+        },
+        {
+          "name": "own_dungeons",
+          "description": "Put them in any dungeon in your world",
+          "readableName": "Any dungeon"
+        },
+        {
+          "name": "own_world",
+          "description": "Put them anywhere in your world",
+          "readableName": "Local"
+        },
+        {
+          "name": "any_world",
+          "description": "Put them in anyone's world",
+          "readableName": "Anywhere"
+        },
+        {
+          "name": "different_world",
+          "description": "Put them in any world but yours",
+          "readableName": "Non-local"
+        },
+        {
+          "name": "universal",
+          "description": "any world, usable in any dungeon",
+          "readableName": "Universal"
+        }
+      ],
+      "type": "choice",
+      "default": "original_dungeon"
+    },
+    {
+      "name": "compass_shuffle",
+      "description": "How compasses will be shuffled.",
+      "readableName": "Compass shuffle",
+      "values": [
+        {
+          "name": "start_with",
+          "description": "They will be in your inventory from the start",
+          "readableName": "Start with them"
+        },
+        {
+          "name": "original_dungeon",
+          "description": "Keep them to their own dungeons",
+          "readableName": "In dungeon"
+        },
+        {
+          "name": "own_dungeons",
+          "description": "Put them in any dungeon in your world",
+          "readableName": "Any dungeon"
+        },
+        {
+          "name": "own_world",
+          "description": "Put them anywhere in your world",
+          "readableName": "Local"
+        },
+        {
+          "name": "any_world",
+          "description": "Put them in anyone's world",
+          "readableName": "Anywhere"
+        },
+        {
+          "name": "different_world",
+          "description": "Put them in any world but yours",
+          "readableName": "Non-local"
+        }
+      ],
+      "type": "choice",
+      "default": "original_dungeon"
+    },
+    {
+      "name": "map_shuffle",
+      "description": "How maps will be shuffled.",
+      "readableName": "Map shuffle",
+      "values": [
+        {
+          "name": "start_with",
+          "description": "They will be in your inventory from the start",
+          "readableName": "Start with them"
+        },
+        {
+          "name": "original_dungeon",
+          "description": "Keep them to their own dungeons",
+          "readableName": "In dungeon"
+        },
+        {
+          "name": "own_dungeons",
+          "description": "Put them in any dungeon in your world",
+          "readableName": "Any dungeon"
+        },
+        {
+          "name": "own_world",
+          "description": "Put them anywhere in your world",
+          "readableName": "Local"
+        },
+        {
+          "name": "any_world",
+          "description": "Put them in anyone's world",
+          "readableName": "Anywhere"
+        },
+        {
+          "name": "different_world",
+          "description": "Put them in any world but yours",
+          "readableName": "Non-local"
+        }
+      ],
+      "type": "choice",
+      "default": "original_dungeon"
+    },
+    {
+      "name": "dungeon_counters",
+      "description": "Determines when to show an on-screen counter for dungeon items.",
+      "readableName": "Dungeon counters",
+      "values": [
+        {
+          "name": "on",
+          "readableName": "Always on"
+        },
+        {
+          "name": "pickup",
+          "readableName": "With compass"
+        },
+        {
+          "name": "default",
+          "readableName": "With compass if shuffled"
+        },
+        {
+          "name": "off",
+          "readableName": "Always off"
+        }
+      ],
+      "type": "choice",
+      "default": "default"
+    },
+    {
+      "name": "item_pool",
+      "description": "Affects what items will be available in the item pool.",
+      "readableName": "Item pool",
+      "values": [
+        {
+          "name": "easy",
+          "description": "Adds extras of progressive items and bottles",
+          "readableName": "Easy"
+        },
+        {
+          "name": "normal",
+          "readableName": "Normal"
+        },
+        {
+          "name": "hard",
+          "description": "14 hearts, L2 mail, L3 sword, L2 shield, no silvers unless swordless",
+          "readableName": "Hard"
+        },
+        {
+          "name": "expert",
+          "description": "8 hearts, L1 mail, L2 sword, L1 shield, no silvers unless swordless",
+          "readableName": "Expert"
+        }
+      ],
+      "type": "choice",
+      "default": "normal"
+    },
+    {
+      "name": "item_functionality",
+      "description": "Affects how useful your items are, and how you're expected to use them.",
+      "readableName": "Item functionality",
+      "values": [
+        {
+          "name": "easy",
+          "description": "Use medallions anywhere, hammer can sub for Master Sword for Ganon and monoliths",
+          "readableName": "Easy"
+        },
+        {
+          "name": "normal",
+          "readableName": "Normal"
+        },
+        {
+          "name": "hard",
+          "description": "Less potion healing, can't catch faeries, 2× Magic Cape mana cost, no Cane of Byrna invul, no Boomerang stun, no silvers except Ganon",
+          "readableName": "Hard"
+        },
+        {
+          "name": "expert",
+          "description": "Hard mode, but even less potion healing and no Hookshot stun either",
+          "readableName": "Expert"
+        }
+      ],
+      "type": "choice",
+      "default": "normal"
+    },
+    {
+      "name": "glitches_required",
+      "description": "Whether progression may be locked behind checks that are out of logic.",
+      "readableName": "Require glitch use",
+      "values": [
+        {
+          "name": "none",
+          "readableName": "Off"
+        },
+        {
+          "name": "minor_glitches",
+          "description": "May require some of the easier glitches",
+          "readableName": "Minor"
+        },
+        {
+          "name": "overworld_glitches",
+          "description": "May require harder overworld glitches",
+          "readableName": "Overworld"
+        },
+        {
+          "name": "hybrid_major_glitches",
+          "description": "Requires some pretty intense glitch use, but nothing extreme",
+          "readableName": "Hybrid major"
+        },
+        {
+          "name": "no_logic",
+          "description": "Screw it, put everything anywhere (beware!)",
+          "readableName": "No logic"
+        }
+      ],
+      "type": "choice",
+      "default": "none"
+    },
+    {
+      "name": "glitch_boots",
+      "description": "If you're in a logic mode where you're expected to have Pegasus boots to glitch around, get those to start with.",
+      "readableName": "Glitch boots",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "dark_room_logic",
+      "description": "Whether a light source should be required to traverse dark rooms.",
+      "readableName": "Dark room logic",
+      "values": [
+        {
+          "name": "lamp",
+          "description": "Expect that you'll have a lamp for those",
+          "readableName": "Lamp required"
+        },
+        {
+          "name": "torches",
+          "description": "A Fire Rod will do to light up braziers",
+          "readableName": "Torches"
+        },
+        {
+          "name": "none",
+          "description": "Eyes like a cat, baby",
+          "readableName": "No logic"
+        }
+      ],
+      "type": "choice",
+      "default": "lamp"
+    },
+    {
+      "name": "progressive",
+      "description": "If progressive items are on, you will always receive the next sword, shield, or mail upgrade. If not, you could get Gold Sword first, for instance.",
+      "readableName": "Progressive items",
+      "values": [
+        {
+          "name": "off",
+          "readableName": "Off"
+        },
+        {
+          "name": "grouped_random",
+          "description": "Some groups may be while others may not",
+          "readableName": "Grouped random"
+        },
+        {
+          "name": "on",
+          "readableName": "On"
+        }
+      ],
+      "type": "choice",
+      "default": "on"
+    },
+    {
+      "name": "swordless",
+      "description": "Whether you're expected to clear the game without using the sword. This changes a lot of things and makes the game A LOT harder, understandably.",
+      "readableName": "Swordless mode",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "retro_bow",
+      "description": "This requires you to buy a quiver and pay rupees to shoot arrows.",
+      "readableName": "Retro Bow",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "retro_caves",
+      "description": "This adds Take Any caves to the game.",
+      "readableName": "Retro Caves",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "hints",
+      "description": "Whether hints about important items or difficult locations show up in the in-game hint system.",
+      "readableName": "In-game hint system",
+      "values": [
+        {
+          "name": "off",
+          "readableName": "Off"
+        },
+        {
+          "name": "on",
+          "readableName": "On"
+        },
+        {
+          "name": "full",
+          "description": "Every hint is good; no trolls",
+          "readableName": "Full-on"
+        }
+      ],
+      "type": "choice",
+      "default": "on"
+    },
+    {
+      "name": "scams",
+      "description": "Whether or not the vendors will tell you what they're selling, or just immediately take your money.",
+      "readableName": "Vendor scams",
+      "values": [
+        {
+          "name": "off",
+          "readableName": "Off"
+        },
+        {
+          "name": "king_zora",
+          "readableName": "King Zora scams"
+        },
+        {
+          "name": "bottle_merchant",
+          "readableName": "Bottle Merchant scams"
+        },
+        {
+          "name": "all",
+          "readableName": "Both vendors scam"
+        }
+      ],
+      "type": "choice",
+      "default": "off"
+    },
+    {
+      "name": "restrict_dungeon_item_on_boss",
+      "description": "If enabled, the boss reward will never be a dungeon item such as a map or compass.",
+      "readableName": "Restrict dungeon items on boss",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "killable_thieves",
+      "description": "Normally, the harmless but annoying thieves can only be knocked away. Turn on if you want to kill the jerks.",
+      "readableName": "Killable thieves",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "death_link",
+      "type": "deathlink"
+    },
+    {
+      "name": "enemy_shuffle",
+      "description": "Shuffle enemy positions. This does not include Hyrule Castle.",
+      "readableName": "Enemizer",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "enemy_damage",
+      "description": "Affects the amount of damage enemies inflict.",
+      "readableName": "Enemy damage",
+      "values": [
+        {
+          "name": "default",
+          "readableName": "Vanilla"
+        },
+        {
+          "name": "shuffled",
+          "description": "General same number of hard hitters",
+          "readableName": "Shuffle"
+        },
+        {
+          "name": "chaos",
+          "readableName": "Full random"
+        }
+      ],
+      "type": "choice",
+      "default": "default"
+    },
+    {
+      "name": "enemy_health",
+      "description": "Affects the amount of health enemies have.",
+      "readableName": "Enemy health",
+      "values": [
+        {
+          "name": "easy",
+          "readableName": "Easy"
+        },
+        {
+          "name": "default",
+          "readableName": "Normal"
+        },
+        {
+          "name": "hard",
+          "readableName": "Hard"
+        },
+        {
+          "name": "expert",
+          "readableName": "Expert"
+        }
+      ],
+      "type": "choice",
+      "default": "default"
+    },
+    {
+      "name": "beemizer_total_chance",
+      "description": "Percentage of garbage treasures, like small rupees, bombs, and arrows, to be replaced with bees or bee traps.",
+      "high": 100,
+      "readableName": "Beemizer",
+      "low": 0,
+      "type": "range",
+      "default": 0
+    },
+    {
+      "name": "beemizer_trap_chance",
+      "description": "Percentage of bee checks which will become bee swarm traps instead of single bees.",
+      "high": 100,
+      "readableName": "Beemizer trap chance",
+      "low": 0,
+      "type": "range",
+      "default": 60
+    },
+    {
+      "name": "key_drop_shuffle",
+      "description": "Whether enemies that usually drop small keys will be shuffled.",
+      "readableName": "Key drop shuffle",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "pot_shuffle",
+      "description": "Whether keys and buttons under pots will be shuffled within their supertiles.",
+      "readableName": "Pot shuffle",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "bush_shuffle",
+      "description": "Whether enemies and traps are hiding under different bushes.",
+      "readableName": "Bush shuffle",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "tile_shuffle",
+      "description": "Whether trap tile rooms will come out in different patterns.",
+      "readableName": "Tile shuffle",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "shuffle_prizes",
+      "description": "Whether certain events will yield different item drops than normal.",
+      "readableName": "Prize shuffle",
+      "values": [
+        {
+          "name": "none",
+          "readableName": "Off"
+        },
+        {
+          "name": "g",
+          "description": "Prizes for killing enemies and the like",
+          "readableName": "General prize shuffle"
+        },
+        {
+          "name": "b",
+          "description": "Prizes for bonking trees, stacks, etc.",
+          "readableName": "Bonk prize shuffle"
+        },
+        {
+          "name": "bg",
+          "readableName": "Both"
+        }
+      ],
+      "type": "choice",
+      "default": "none"
+    },
+    {
+      "name": "shop_shuffle",
+      "description": "Whether certain aspects of the shop will be randomized.",
+      "readableName": "Shop shuffle",
+      "values": [
+        {
+          "name": "none",
+          "readableName": "Off"
+        },
+        {
+          "name": "g",
+          "description": "Shuffles vanilla inventory",
+          "readableName": "Pool shuffle"
+        },
+        {
+          "name": "f",
+          "description": "Whole new inventory",
+          "readableName": "Random shuffle"
+        },
+        {
+          "name": "p",
+          "readableName": "Price shuffle"
+        },
+        {
+          "name": "u",
+          "description": "Adds those to general item pool",
+          "readableName": "Capacity upgrades"
+        },
+        {
+          "name": "gp",
+          "readableName": "Pool and prices"
+        },
+        {
+          "name": "fp",
+          "description": "Random and prices",
+          "readableName": "Full shuffle"
+        },
+        {
+          "name": "ufp",
+          "readableName": "Full shuffle including capacity"
+        },
+        {
+          "name": "wfp",
+          "readableName": "Full shuffle including potion shop"
+        },
+        {
+          "name": "ufpw",
+          "readableName": "Absolutely everything"
+        },
+        {
+          "name": "pP",
+          "description": "Sometimes pay in bombs, arrows, and hearts",
+          "readableName": "Exotic price shuffle"
+        },
+        {
+          "name": "gpP",
+          "readableName": "Pool and exotic prices"
+        },
+        {
+          "name": "fpP",
+          "readableName": "Full exotic shuffle"
+        },
+        {
+          "name": "ufpP",
+          "readableName": "Full exotic shuffle including capacity"
+        },
+        {
+          "name": "wfpP",
+          "readableName": "Full exotic shuffle including potion shop"
+        },
+        {
+          "name": "wufpP",
+          "readableName": "Absolutely everything with exotic"
+        }
+      ],
+      "type": "choice",
+      "default": "none"
+    },
+    {
+      "name": "shop_item_slots",
+      "description": "How many collectible/dungeon items will show up in shops. For each one, a 50rp. collectible is added to the item pool.",
+      "high": 30,
+      "readableName": "Shop item slots (aka Capitalism mode)",
+      "low": 0,
+      "type": "range",
+      "default": 0
+    },
+    {
+      "name": "shop_price_modifier",
+      "description": "Affects the price of collectible items in shops.",
+      "high": 400,
+      "readableName": "Shop price modifier",
+      "low": 0,
+      "step": 10,
+      "type": "range",
+      "default": 100
+    },
+    {
+      "name": "ow_palettes",
+      "description": "How the overworld will look.",
+      "readableName": "Overworld palettes",
+      "values": [
+        {
+          "name": "default",
+          "readableName": "Vanilla"
+        },
+        {
+          "name": "good",
+          "readableName": "Random within reason"
+        },
+        {
+          "name": "classic",
+          "readableName": "Decent color scheme"
+        },
+        {
+          "name": "grayscale",
+          "readableName": "Grayscale"
+        },
+        {
+          "name": "negative",
+          "description": "The exact inverse of vanilla",
+          "readableName": "Negative"
+        },
+        {
+          "name": "blackout",
+          "readableName": "All black (good luck)"
+        },
+        {
+          "name": "dizzy",
+          "description": "Full random but keep saturation and lightness",
+          "readableName": "Dizzy"
+        },
+        {
+          "name": "sick",
+          "description": "Full random but keep lightness",
+          "readableName": "Sick"
+        },
+        {
+          "name": "puke",
+          "description": "Completely random without regard to anything",
+          "readableName": "Puke"
+        }
+      ],
+      "type": "choice",
+      "default": "default"
+    },
+    {
+      "name": "uw_palettes",
+      "description": "How dungeons and caves will look.",
+      "readableName": "Underworld palettes",
+      "values": [
+        {
+          "name": "default",
+          "readableName": "Vanilla"
+        },
+        {
+          "name": "good",
+          "readableName": "Random within reason"
+        },
+        {
+          "name": "classic",
+          "readableName": "Decent color scheme"
+        },
+        {
+          "name": "grayscale",
+          "readableName": "Grayscale"
+        },
+        {
+          "name": "negative",
+          "description": "The exact inverse of vanilla",
+          "readableName": "Negative"
+        },
+        {
+          "name": "blackout",
+          "readableName": "All black (good luck)"
+        },
+        {
+          "name": "dizzy",
+          "description": "Full random but keep saturation and lightness",
+          "readableName": "Dizzy"
+        },
+        {
+          "name": "sick",
+          "description": "Full random but keep lightness",
+          "readableName": "Sick"
+        },
+        {
+          "name": "puke",
+          "description": "Completely random without regard to anything",
+          "readableName": "Puke"
+        }
+      ],
+      "type": "choice",
+      "default": "default"
+    },
+    {
+      "name": "hud_palettes",
+      "description": "How the HUD will look.",
+      "readableName": "HUD palettes",
+      "values": [
+        {
+          "name": "default",
+          "readableName": "Vanilla"
+        },
+        {
+          "name": "good",
+          "readableName": "Random within reason"
+        },
+        {
+          "name": "classic",
+          "readableName": "Decent color scheme"
+        },
+        {
+          "name": "grayscale",
+          "readableName": "Grayscale"
+        },
+        {
+          "name": "negative",
+          "description": "The exact inverse of vanilla",
+          "readableName": "Negative"
+        },
+        {
+          "name": "blackout",
+          "readableName": "All black (good luck)"
+        },
+        {
+          "name": "dizzy",
+          "description": "Full random but keep saturation and lightness",
+          "readableName": "Dizzy"
+        },
+        {
+          "name": "sick",
+          "description": "Full random but keep lightness",
+          "readableName": "Sick"
+        },
+        {
+          "name": "puke",
+          "description": "Completely random without regard to anything",
+          "readableName": "Puke"
+        }
+      ],
+      "type": "choice",
+      "default": "default"
+    },
+    {
+      "name": "sword_palettes",
+      "description": "How your swords will look.",
+      "readableName": "Sword palettes",
+      "values": [
+        {
+          "name": "default",
+          "readableName": "Vanilla"
+        },
+        {
+          "name": "good",
+          "readableName": "Random within reason"
+        },
+        {
+          "name": "classic",
+          "readableName": "Decent color scheme"
+        },
+        {
+          "name": "grayscale",
+          "readableName": "Grayscale"
+        },
+        {
+          "name": "negative",
+          "description": "The exact inverse of vanilla",
+          "readableName": "Negative"
+        },
+        {
+          "name": "blackout",
+          "readableName": "All black (good luck)"
+        },
+        {
+          "name": "dizzy",
+          "description": "Full random but keep saturation and lightness",
+          "readableName": "Dizzy"
+        },
+        {
+          "name": "sick",
+          "description": "Full random but keep lightness",
+          "readableName": "Sick"
+        },
+        {
+          "name": "puke",
+          "description": "Completely random without regard to anything",
+          "readableName": "Puke"
+        }
+      ],
+      "type": "choice",
+      "default": "default"
+    },
+    {
+      "name": "shield_palettes",
+      "description": "How your shields will look.",
+      "readableName": "Shield palettes",
+      "values": [
+        {
+          "name": "default",
+          "readableName": "Vanilla"
+        },
+        {
+          "name": "good",
+          "readableName": "Random within reason"
+        },
+        {
+          "name": "classic",
+          "readableName": "Decent color scheme"
+        },
+        {
+          "name": "grayscale",
+          "readableName": "Grayscale"
+        },
+        {
+          "name": "negative",
+          "description": "The exact inverse of vanilla",
+          "readableName": "Negative"
+        },
+        {
+          "name": "blackout",
+          "readableName": "All black (good luck)"
+        },
+        {
+          "name": "dizzy",
+          "description": "Full random but keep saturation and lightness",
+          "readableName": "Dizzy"
+        },
+        {
+          "name": "sick",
+          "description": "Full random but keep lightness",
+          "readableName": "Sick"
+        },
+        {
+          "name": "puke",
+          "description": "Completely random without regard to anything",
+          "readableName": "Puke"
+        }
+      ],
+      "type": "choice",
+      "default": "default"
+    },
+    {
+      "name": "link_palettes",
+      "description": "How Link will look. May or may not work with alternate sprites.",
+      "readableName": "Link palette",
+      "values": [
+        {
+          "name": "default",
+          "readableName": "Vanilla"
+        },
+        {
+          "name": "good",
+          "readableName": "Random within reason"
+        },
+        {
+          "name": "classic",
+          "readableName": "Decent color scheme"
+        },
+        {
+          "name": "grayscale",
+          "readableName": "Grayscale"
+        },
+        {
+          "name": "negative",
+          "description": "The exact inverse of vanilla",
+          "readableName": "Negative"
+        },
+        {
+          "name": "blackout",
+          "readableName": "All black (good luck)"
+        },
+        {
+          "name": "dizzy",
+          "description": "Full random but keep saturation and lightness",
+          "readableName": "Dizzy"
+        },
+        {
+          "name": "sick",
+          "description": "Full random but keep lightness",
+          "readableName": "Sick"
+        },
+        {
+          "name": "puke",
+          "description": "Completely random without regard to anything",
+          "readableName": "Puke"
+        }
+      ],
+      "type": "choice",
+      "default": "default"
+    },
+    {
+      "name": "heartbeep",
+      "description": "How frequently the game will beep at you for low health.",
+      "readableName": "Low health beep frequency",
+      "values": [
+        {
+          "name": "double",
+          "readableName": "Two times faster than usual"
+        },
+        {
+          "name": "normal",
+          "readableName": "Normal"
+        },
+        {
+          "name": "half",
+          "readableName": "Two times slower than usual"
+        },
+        {
+          "name": "quarter",
+          "readableName": "Four times slower than usual"
+        },
+        {
+          "name": "off",
+          "readableName": "Not at all"
+        },
+        {
+          "name": "random",
+          "readableName": "Random from the above"
+        }
+      ],
+      "type": "choice",
+      "default": "normal"
+    },
+    {
+      "name": "heartcolor",
+      "description": "The color of hearts in the HUD. This is based on palette positions, so colors may change if HUD palettes are shuffled.",
+      "readableName": "Heart color",
+      "values": [
+        {
+          "name": "red",
+          "readableName": "Red"
+        },
+        {
+          "name": "blue",
+          "readableName": "Blue"
+        },
+        {
+          "name": "green",
+          "readableName": "Green"
+        },
+        {
+          "name": "yellow",
+          "readableName": "Yellow"
+        },
+        {
+          "name": "random",
+          "readableName": "Random from the above"
+        }
+      ],
+      "type": "choice",
+      "default": "red"
+    },
+    {
+      "name": "menuspeed",
+      "description": "How quickly the pause menu will slide in and out when you press Start.",
+      "readableName": "Menu speed",
+      "values": [
+        {
+          "name": "half",
+          "readableName": "Two times slower than usual"
+        },
+        {
+          "name": "normal",
+          "readableName": "Normal"
+        },
+        {
+          "name": "double",
+          "readableName": "Two times faster than usual"
+        },
+        {
+          "name": "triple",
+          "readableName": "Three times faster than usual"
+        },
+        {
+          "name": "quadruple",
+          "readableName": "Four times faster than usual"
+        },
+        {
+          "name": "instant",
+          "readableName": "Instantly"
+        },
+        {
+          "name": "random",
+          "readableName": "Random from the above"
+        }
+      ],
+      "type": "choice",
+      "default": "normal"
+    },
+    {
+      "name": "quickswap",
+      "description": "Whether you can use the L and R buttons to cycle through use items.",
+      "readableName": "Quick swap",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "reduceflashing",
+      "description": "Games of this era had a lot of blinking lights that could possibly trigger seizures. This will remove most of them. Essential if you're streaming.",
+      "readableName": "Reduce flashing",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "music",
+      "description": "Whether to play music. If disabled, this also turns off MSU-1 patches. If you're streaming and turning this off to play your own music, please be mindful of licensing.",
+      "readableName": "Music",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "allow_collect",
+      "description": "If this is enabled, chests that have been `!collect`ed will be automatically opened. If you are playing on console, leave this off; this can make the game crash.",
+      "readableName": "Allow auto-collect",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "sprite",
+      "description": "Your hero's sprite. Sorry there are no pictures; this is being done in a very hacky way to begin with. ZSPR files are hard. There's a pretty good reference on the [ALTTPR website](https://alttpr.com/en/sprite_preview).",
+      "readableName": "Sprite",
+      "type": "char"
+    }
+  ],
+  "defver": 2,
+  "items": [
+    {
+      "name": "Tempered Sword",
+      "dependsOn": {
+        "item_pool": [
+          "easy",
+          "normal",
+          "hard"
+        ],
+        "progressive": [
+          "off",
+          "grouped_random"
+        ]
+      }
+    },
+    {
+      "name": "Golden Sword",
+      "dependsOn": {
+        "item_pool": [
+          "easy",
+          "normal"
+        ],
+        "progressive": [
+          "off",
+          "grouped_random"
+        ]
+      }
+    },
+    {
+      "name": "Blue Shield",
+      "dependsOn": {
+        "progressive": [
+          "off",
+          "grouped_random"
+        ]
+      }
+    },
+    {
+      "name": "Red Shield",
+      "dependsOn": {
+        "item_pool": [
+          "easy",
+          "normal",
+          "hard"
+        ],
+        "progressive": [
+          "off",
+          "grouped_random"
+        ]
+      }
+    },
+    {
+      "name": "Mirror Shield",
+      "dependsOn": {
+        "item_pool": [
+          "easy",
+          "normal"
+        ],
+        "progressive": [
+          "off",
+          "grouped_random"
+        ]
+      }
+    },
+    {
+      "name": "Fire Rod"
+    },
+    {
+      "name": "Ice Rod"
+    },
+    {
+      "name": "Hammer"
+    },
+    {
+      "name": "Hookshot"
+    },
+    {
+      "name": "Bow",
+      "dependsOn": {
+        "progressive": [
+          "off",
+          "grouped_random"
+        ]
+      }
+    },
+    {
+      "name": "Blue Boomerang"
+    },
+    {
+      "name": "Magic Powder"
+    },
+    {
+      "name": "Bee",
+      "max": 0
+    },
+    {
+      "name": "Bombos"
+    },
+    {
+      "name": "Ether"
+    },
+    {
+      "name": "Quake"
+    },
+    {
+      "name": "Lamp"
+    },
+    {
+      "name": "Shovel"
+    },
+    {
+      "name": "Flute"
+    },
+    {
+      "name": "Cane of Somaria"
+    },
+    {
+      "name": "Bottle"
+    },
+    {
+      "name": "Piece of Heart",
+      "max": 24
+    },
+    {
+      "name": "Cane of Byrna"
+    },
+    {
+      "name": "Cape"
+    },
+    {
+      "name": "Magic Mirror"
+    },
+    {
+      "name": "Power Glove",
+      "dependsOn": {
+        "progressive": [
+          "off",
+          "grouped_random"
+        ]
+      }
+    },
+    {
+      "name": "Titans Mitts",
+      "dependsOn": {
+        "progressive": [
+          "off",
+          "grouped_random"
+        ]
+      },
+      "readableName": "Titan's Mitts"
+    },
+    {
+      "name": "Book of Mudora"
+    },
+    {
+      "name": "Flippers"
+    },
+    {
+      "name": "Moon Pearl"
+    },
+    {
+      "name": "Bug Catching Net"
+    },
+    {
+      "name": "Blue Mail",
+      "dependsOn": {
+        "progressive": [
+          "off",
+          "grouped_random"
+        ]
+      }
+    },
+    {
+      "name": "Red Mail",
+      "dependsOn": {
+        "progressive": [
+          "off",
+          "grouped_random"
+        ]
+      }
+    },
+    {
+      "name": "Single Bomb",
+      "max": 50
+    },
+    {
+      "name": "Bombs (3)",
+      "max": 50
+    },
+    {
+      "name": "Mushroom"
+    },
+    {
+      "name": "Red Boomerang"
+    },
+    {
+      "name": "Bottle (Red Potion)"
+    },
+    {
+      "name": "Bottle (Green Potion)"
+    },
+    {
+      "name": "Bottle (Blue Potion)"
+    },
+    {
+      "name": "Red Potion"
+    },
+    {
+      "name": "Green Potion"
+    },
+    {
+      "name": "Blue Potion"
+    },
+    {
+      "name": "Bombs (10)",
+      "max": 10
+    },
+    {
+      "name": "Rupee (1)",
+      "max": 99
+    },
+    {
+      "name": "Rupees (5)",
+      "max": 99
+    },
+    {
+      "name": "Rupees (20)",
+      "max": 99
+    },
+    {
+      "name": "Silver Bow",
+      "dependsOn": {
+        "item_pool": [
+          "easy",
+          "normal"
+        ],
+        "progressive": [
+          "off",
+          "grouped_random"
+        ]
+      }
+    },
+    {
+      "name": "Bottle (Bee)"
+    },
+    {
+      "name": "Bottle (Fairy)",
+      "dependsOn": {
+        "item_functionality": [
+          "easy",
+          "normal"
+        ]
+      }
+    },
+    {
+      "name": "Boss Heart Container",
+      "max": 10
+    },
+    {
+      "name": "Sanctuary Heart Container",
+      "dependsOn": {
+        "item_pool": [
+          "easy",
+          "normal"
+        ]
+      }
+    },
+    {
+      "name": "Rupees (100)",
+      "max": 99
+    },
+    {
+      "name": "Rupees (50)",
+      "max": 99
+    },
+    {
+      "name": "Small Heart"
+    },
+    {
+      "name": "Single Arrow",
+      "max": 70
+    },
+    {
+      "name": "Arrows (10)",
+      "max": 10
+    },
+    {
+      "name": "Rupees (300)",
+      "max": 34
+    },
+    {
+      "name": "Bottle (Good Bee)"
+    },
+    {
+      "name": "Fighter Sword",
+      "dependsOn": {
+        "progressive": [
+          "off",
+          "grouped_random"
+        ]
+      }
+    },
+    {
+      "name": "Activated Flute"
+    },
+    {
+      "name": "Pegasus Boots"
+    },
+    {
+      "name": "Magic Upgrade (1/2)",
+      "max": 2
+    },
+    {
+      "name": "Magic Upgrade (1/4)"
+    },
+    {
+      "name": "Master Sword",
+      "dependsOn": {
+        "progressive": [
+          "off",
+          "grouped_random"
+        ]
+      }
+    },
+    {
+      "name": "Bomb Upgrade (+5)",
+      "max": 6
+    },
+    {
+      "name": "Bomb Upgrade (+10)"
+    },
+    {
+      "name": "Arrow Upgrade (+5)",
+      "max": 6
+    },
+    {
+      "name": "Arrow Upgrade (+10)"
+    },
+    {
+      "name": "Silver Arrows",
+      "dependsOn": {
+        "retro_bow": [
+          true
+        ]
+      }
+    },
+    {
+      "name": "Rupoor",
+      "max": 0
+    },
+    {
+      "name": "Nothing",
+      "dependsOn": {
+        "goal": [
+          "ice_rod_hunt"
+        ]
+      },
+      "max": 0
+    },
+    {
+      "name": "Red Clock",
+      "max": 0
+    },
+    {
+      "name": "Blue Clock",
+      "max": 0
+    },
+    {
+      "name": "Green Clock",
+      "max": 0
+    },
+    {
+      "name": "Progressive Sword",
+      "dependsOn": {
+        "progressive": [
+          "on",
+          "grouped_random"
+        ]
+      },
+      "max": 4
+    },
+    {
+      "name": "Progressive Shield",
+      "dependsOn": {
+        "progressive": [
+          "on",
+          "grouped_random"
+        ]
+      },
+      "max": 3
+    },
+    {
+      "name": "Progressive Mail",
+      "dependsOn": {
+        "progressive": [
+          "on",
+          "grouped_random"
+        ]
+      },
+      "max": 2
+    },
+    {
+      "name": "Progressive Glove",
+      "dependsOn": {
+        "progressive": [
+          "on",
+          "grouped_random"
+        ]
+      }
+    },
+    {
+      "name": "Single RNG"
+    },
+    {
+      "name": "Multi RNG"
+    },
+    {
+      "name": "Progressive Bow",
+      "dependsOn": {
+        "progressive": [
+          "on",
+          "grouped_random"
+        ]
+      }
+    },
+    {
+      "name": "Progressive Bow (Alt)",
+      "dependsOn": {
+        "progressive": [
+          "on",
+          "grouped_random"
+        ]
+      }
+    },
+    {
+      "name": "Triforce"
+    },
+    {
+      "name": "Power Star"
+    },
+    {
+      "name": "Triforce Piece",
+      "max": 0
+    },
+    {
+      "name": "Map (Ganons Tower)"
+    },
+    {
+      "name": "Map (Turtle Rock)"
+    },
+    {
+      "name": "Map (Thieves Town)"
+    },
+    {
+      "name": "Map (Tower of Hera)"
+    },
+    {
+      "name": "Map (Ice Palace)"
+    },
+    {
+      "name": "Map (Skull Woods)"
+    },
+    {
+      "name": "Map (Misery Mire)"
+    },
+    {
+      "name": "Map (Palace of Darkness)"
+    },
+    {
+      "name": "Map (Swamp Palace)"
+    },
+    {
+      "name": "Map (Agahnims Tower)"
+    },
+    {
+      "name": "Map (Desert Palace)"
+    },
+    {
+      "name": "Map (Eastern Palace)"
+    },
+    {
+      "name": "Map (Hyrule Castle)"
+    },
+    {
+      "name": "Compass (Ganons Tower)"
+    },
+    {
+      "name": "Compass (Turtle Rock)"
+    },
+    {
+      "name": "Compass (Thieves Town)"
+    },
+    {
+      "name": "Compass (Tower of Hera)"
+    },
+    {
+      "name": "Compass (Ice Palace)"
+    },
+    {
+      "name": "Compass (Skull Woods)"
+    },
+    {
+      "name": "Compass (Misery Mire)"
+    },
+    {
+      "name": "Compass (Palace of Darkness)"
+    },
+    {
+      "name": "Compass (Swamp Palace)"
+    },
+    {
+      "name": "Compass (Agahnims Tower)"
+    },
+    {
+      "name": "Compass (Desert Palace)"
+    },
+    {
+      "name": "Compass (Eastern Palace)"
+    },
+    {
+      "name": "Compass (Hyrule Castle)"
+    },
+    {
+      "name": "Big Key (Ganons Tower)"
+    },
+    {
+      "name": "Big Key (Turtle Rock)"
+    },
+    {
+      "name": "Big Key (Thieves Town)"
+    },
+    {
+      "name": "Big Key (Tower of Hera)"
+    },
+    {
+      "name": "Big Key (Ice Palace)"
+    },
+    {
+      "name": "Big Key (Skull Woods)"
+    },
+    {
+      "name": "Big Key (Misery Mire)"
+    },
+    {
+      "name": "Big Key (Palace of Darkness)"
+    },
+    {
+      "name": "Big Key (Swamp Palace)"
+    },
+    {
+      "name": "Big Key (Agahnims Tower)"
+    },
+    {
+      "name": "Big Key (Desert Palace)"
+    },
+    {
+      "name": "Big Key (Eastern Palace)"
+    },
+    {
+      "name": "Big Key (Hyrule Castle)"
+    },
+    {
+      "name": "Small Key (Hyrule Castle)"
+    },
+    {
+      "name": "Small Key (Eastern Palace)"
+    },
+    {
+      "name": "Small Key (Desert Palace)"
+    },
+    {
+      "name": "Small Key (Agahnims Tower)"
+    },
+    {
+      "name": "Small Key (Swamp Palace)"
+    },
+    {
+      "name": "Small Key (Palace of Darkness)"
+    },
+    {
+      "name": "Small Key (Misery Mire)"
+    },
+    {
+      "name": "Small Key (Skull Woods)"
+    },
+    {
+      "name": "Small Key (Ice Palace)"
+    },
+    {
+      "name": "Small Key (Tower of Hera)"
+    },
+    {
+      "name": "Small Key (Thieves Town)"
+    },
+    {
+      "name": "Small Key (Turtle Rock)"
+    },
+    {
+      "name": "Small Key (Ganons Tower)"
+    },
+    {
+      "name": "Small Key (Universal)",
+      "dependsOn": {
+        "smallkey_shuffle": [
+          "universal"
+        ]
+      },
+      "max": 10
+    },
+    {
+      "name": "Bee Trap",
+      "max": 0
+    },
+    {
+      "name": "Faerie"
+    },
+    {
+      "name": "Good Bee"
+    },
+    {
+      "name": "Magic Jar"
+    },
+    {
+      "name": "Apple"
+    }
+  ],
+  "locations": [
+    {
+      "name": "Sewers - Dark Cross"
+    },
+    {
+      "name": "Secret Passage"
+    },
+    {
+      "name": "Hyrule Castle - Boomerang Chest"
+    },
+    {
+      "name": "Eastern Palace - Compass Chest"
+    },
+    {
+      "name": "King's Tomb"
+    },
+    {
+      "name": "Eastern Palace - Big Chest"
+    },
+    {
+      "name": "Pyramid Fairy - Left"
+    },
+    {
+      "name": "Pyramid Fairy - Right"
+    },
+    {
+      "name": "Swamp Palace - Map Chest"
+    },
+    {
+      "name": "Swamp Palace - Big Chest"
+    },
+    {
+      "name": "Floodgate Chest"
+    },
+    {
+      "name": "Desert Palace - Big Chest"
+    },
+    {
+      "name": "Skull Woods - Compass Chest"
+    },
+    {
+      "name": "Ice Palace - Freezor Chest"
+    },
+    {
+      "name": "Skull Woods - Big Chest"
+    },
+    {
+      "name": "Skull Woods - Map Chest"
+    },
+    {
+      "name": "Skull Woods - Big Key Chest"
+    },
+    {
+      "name": "Skull Woods - Pot Prison"
+    },
+    {
+      "name": "Ice Palace - Big Key Chest"
+    },
+    {
+      "name": "Ice Palace - Big Chest"
+    },
+    {
+      "name": "Tower of Hera - Map Chest"
+    },
+    {
+      "name": "Waterfall Fairy - Left"
+    },
+    {
+      "name": "Eastern Palace - Cannonball Chest"
+    },
+    {
+      "name": "Desert Palace - Map Chest"
+    },
+    {
+      "name": "Eastern Palace - Big Key Chest"
+    },
+    {
+      "name": "Link's House"
+    },
+    {
+      "name": "Spiral Cave"
+    },
+    {
+      "name": "Desert Palace - Big Key Chest"
+    },
+    {
+      "name": "Mimic Cave"
+    },
+    {
+      "name": "Skull Woods - Pinball Room"
+    },
+    {
+      "name": "Desert Palace - Compass Chest"
+    },
+    {
+      "name": "Kakariko Tavern"
+    },
+    {
+      "name": "Waterfall Fairy - Right"
+    },
+    {
+      "name": "Ice Palace - Compass Chest"
+    },
+    {
+      "name": "Misery Mire - Spike Chest"
+    },
+    {
+      "name": "Ice Palace - Map Chest"
+    },
+    {
+      "name": "Ice Palace - Spike Room"
+    },
+    {
+      "name": "Ice Palace - Iced T Room"
+    },
+    {
+      "name": "Tower of Hera - Big Key Chest"
+    },
+    {
+      "name": "Chicken House"
+    },
+    {
+      "name": "Brewery"
+    },
+    {
+      "name": "C-Shaped House"
+    },
+    {
+      "name": "Aginah's Cave"
+    },
+    {
+      "name": "Eastern Palace - Map Chest"
+    },
+    {
+      "name": "Tower of Hera - Big Chest"
+    },
+    {
+      "name": "Tower of Hera - Compass Chest"
+    },
+    {
+      "name": "Skull Woods - Bridge Room"
+    },
+    {
+      "name": "Thieves' Town - Map Chest"
+    },
+    {
+      "name": "Thieves' Town - Big Key Chest"
+    },
+    {
+      "name": "Thieves' Town - Compass Chest"
+    },
+    {
+      "name": "Thieves' Town - Ambush Chest"
+    },
+    {
+      "name": "Thieves' Town - Attic"
+    },
+    {
+      "name": "Thieves' Town - Big Chest"
+    },
+    {
+      "name": "Thieves' Town - Blind's Cell"
+    },
+    {
+      "name": "Turtle Rock - Chain Chomps"
+    },
+    {
+      "name": "Turtle Rock - Big Chest"
+    },
+    {
+      "name": "Turtle Rock - Roller Room - Left"
+    },
+    {
+      "name": "Turtle Rock - Roller Room - Right"
+    },
+    {
+      "name": "Turtle Rock - Compass Chest"
+    },
+    {
+      "name": "Turtle Rock - Big Key Chest"
+    },
+    {
+      "name": "Turtle Rock - Eye Bridge - Top Right"
+    },
+    {
+      "name": "Turtle Rock - Eye Bridge - Top Left"
+    },
+    {
+      "name": "Turtle Rock - Eye Bridge - Bottom Right"
+    },
+    {
+      "name": "Turtle Rock - Eye Bridge - Bottom Left"
+    },
+    {
+      "name": "Turtle Rock - Crystaroller Room"
+    },
+    {
+      "name": "Palace of Darkness - Big Key Chest"
+    },
+    {
+      "name": "Palace of Darkness - The Arena - Ledge"
+    },
+    {
+      "name": "Palace of Darkness - The Arena - Bridge"
+    },
+    {
+      "name": "Palace of Darkness - Big Chest"
+    },
+    {
+      "name": "Palace of Darkness - Compass Chest"
+    },
+    {
+      "name": "Palace of Darkness - Harmless Hellway"
+    },
+    {
+      "name": "Palace of Darkness - Stalfos Basement"
+    },
+    {
+      "name": "Palace of Darkness - Dark Basement - Left"
+    },
+    {
+      "name": "Palace of Darkness - Dark Basement - Right"
+    },
+    {
+      "name": "Palace of Darkness - Map Chest"
+    },
+    {
+      "name": "Palace of Darkness - Dark Maze - Top"
+    },
+    {
+      "name": "Palace of Darkness - Dark Maze - Bottom"
+    },
+    {
+      "name": "Palace of Darkness - Shooter Room"
+    },
+    {
+      "name": "Misery Mire - Main Lobby"
+    },
+    {
+      "name": "Misery Mire - Bridge Chest"
+    },
+    {
+      "name": "Misery Mire - Compass Chest"
+    },
+    {
+      "name": "Misery Mire - Big Chest"
+    },
+    {
+      "name": "Misery Mire - Map Chest"
+    },
+    {
+      "name": "Misery Mire - Big Key Chest"
+    },
+    {
+      "name": "Mire Shed - Left"
+    },
+    {
+      "name": "Mire Shed - Right"
+    },
+    {
+      "name": "Sanctuary"
+    },
+    {
+      "name": "Superbunny Cave - Top"
+    },
+    {
+      "name": "Superbunny Cave - Bottom"
+    },
+    {
+      "name": "Sahasrahla's Hut - Left"
+    },
+    {
+      "name": "Sahasrahla's Hut - Middle"
+    },
+    {
+      "name": "Sahasrahla's Hut - Right"
+    },
+    {
+      "name": "Spike Cave"
+    },
+    {
+      "name": "Kakariko Well - Top"
+    },
+    {
+      "name": "Kakariko Well - Left"
+    },
+    {
+      "name": "Kakariko Well - Middle"
+    },
+    {
+      "name": "Kakariko Well - Right"
+    },
+    {
+      "name": "Kakariko Well - Bottom"
+    },
+    {
+      "name": "Swamp Palace - Entrance"
+    },
+    {
+      "name": "Swamp Palace - Compass Chest"
+    },
+    {
+      "name": "Swamp Palace - West Chest"
+    },
+    {
+      "name": "Swamp Palace - Big Key Chest"
+    },
+    {
+      "name": "Swamp Palace - Flooded Room - Left"
+    },
+    {
+      "name": "Swamp Palace - Flooded Room - Right"
+    },
+    {
+      "name": "Swamp Palace - Waterfall Room"
+    },
+    {
+      "name": "Castle Tower - Dark Maze"
+    },
+    {
+      "name": "Castle Tower - Room 03"
+    },
+    {
+      "name": "Ganons Tower - DMs Room - Top Left"
+    },
+    {
+      "name": "Ganons Tower - DMs Room - Top Right"
+    },
+    {
+      "name": "Ganons Tower - DMs Room - Bottom Left"
+    },
+    {
+      "name": "Ganons Tower - DMs Room - Bottom Right"
+    },
+    {
+      "name": "Ganons Tower - Randomizer Room - Top Left"
+    },
+    {
+      "name": "Ganons Tower - Randomizer Room - Top Right"
+    },
+    {
+      "name": "Ganons Tower - Randomizer Room - Bottom Left"
+    },
+    {
+      "name": "Ganons Tower - Randomizer Room - Bottom Right"
+    },
+    {
+      "name": "Ganons Tower - Firesnake Room"
+    },
+    {
+      "name": "Ganons Tower - Map Chest"
+    },
+    {
+      "name": "Ganons Tower - Big Chest"
+    },
+    {
+      "name": "Ganons Tower - Hope Room - Left"
+    },
+    {
+      "name": "Ganons Tower - Hope Room - Right"
+    },
+    {
+      "name": "Ganons Tower - Bob's Chest"
+    },
+    {
+      "name": "Ganons Tower - Tile Room"
+    },
+    {
+      "name": "Ganons Tower - Compass Room - Top Left"
+    },
+    {
+      "name": "Ganons Tower - Compass Room - Top Right"
+    },
+    {
+      "name": "Ganons Tower - Compass Room - Bottom Left"
+    },
+    {
+      "name": "Ganons Tower - Compass Room - Bottom Right"
+    },
+    {
+      "name": "Ganons Tower - Big Key Chest"
+    },
+    {
+      "name": "Ganons Tower - Big Key Room - Left"
+    },
+    {
+      "name": "Ganons Tower - Big Key Room - Right"
+    },
+    {
+      "name": "Ganons Tower - Mini Helmasaur Room - Left"
+    },
+    {
+      "name": "Ganons Tower - Mini Helmasaur Room - Right"
+    },
+    {
+      "name": "Ganons Tower - Pre-Moldorm Chest"
+    },
+    {
+      "name": "Ganons Tower - Validation Chest"
+    },
+    {
+      "name": "Hyrule Castle - Zelda's Chest"
+    },
+    {
+      "name": "Hyrule Castle - Map Chest"
+    },
+    {
+      "name": "Blind's Hideout - Top"
+    },
+    {
+      "name": "Blind's Hideout - Left"
+    },
+    {
+      "name": "Blind's Hideout - Right"
+    },
+    {
+      "name": "Blind's Hideout - Far Left"
+    },
+    {
+      "name": "Blind's Hideout - Far Right"
+    },
+    {
+      "name": "Hype Cave - Top"
+    },
+    {
+      "name": "Hype Cave - Middle Right"
+    },
+    {
+      "name": "Hype Cave - Middle Left"
+    },
+    {
+      "name": "Hype Cave - Bottom"
+    },
+    {
+      "name": "Paradox Cave Lower - Far Left"
+    },
+    {
+      "name": "Paradox Cave Lower - Left"
+    },
+    {
+      "name": "Paradox Cave Lower - Right"
+    },
+    {
+      "name": "Paradox Cave Lower - Far Right"
+    },
+    {
+      "name": "Paradox Cave Lower - Middle"
+    },
+    {
+      "name": "Paradox Cave Upper - Left"
+    },
+    {
+      "name": "Paradox Cave Upper - Right"
+    },
+    {
+      "name": "Bonk Rock Cave"
+    },
+    {
+      "name": "Mini Moldorm Cave - Far Left"
+    },
+    {
+      "name": "Mini Moldorm Cave - Left"
+    },
+    {
+      "name": "Mini Moldorm Cave - Right"
+    },
+    {
+      "name": "Mini Moldorm Cave - Far Right"
+    },
+    {
+      "name": "Ice Rod Cave"
+    },
+    {
+      "name": "Hookshot Cave - Top Right"
+    },
+    {
+      "name": "Hookshot Cave - Top Left"
+    },
+    {
+      "name": "Hookshot Cave - Bottom Left"
+    },
+    {
+      "name": "Hookshot Cave - Bottom Right"
+    },
+    {
+      "name": "Sewers - Secret Room - Left"
+    },
+    {
+      "name": "Sewers - Secret Room - Middle"
+    },
+    {
+      "name": "Sewers - Secret Room - Right"
+    },
+    {
+      "name": "Chest Game"
+    },
+    {
+      "name": "Master Sword Pedestal"
+    },
+    {
+      "name": "Link's Uncle"
+    },
+    {
+      "name": "Bottle Merchant"
+    },
+    {
+      "name": "Sahasrahla"
+    },
+    {
+      "name": "Stumpy"
+    },
+    {
+      "name": "Sick Kid"
+    },
+    {
+      "name": "Purple Chest"
+    },
+    {
+      "name": "Hobo"
+    },
+    {
+      "name": "Catfish"
+    },
+    {
+      "name": "King Zora"
+    },
+    {
+      "name": "Old Man"
+    },
+    {
+      "name": "Ice Palace - Jelly Key Drop"
+    },
+    {
+      "name": "Turtle Rock - Pokey 2 Key Drop"
+    },
+    {
+      "name": "Swamp Palace - Waterway Pot Key"
+    },
+    {
+      "name": "Hyrule Castle - Key Rat Key Drop"
+    },
+    {
+      "name": "Swamp Palace - Trench 2 Pot Key"
+    },
+    {
+      "name": "Swamp Palace - Hookshot Pot Key"
+    },
+    {
+      "name": "Swamp Palace - Trench 1 Pot Key"
+    },
+    {
+      "name": "Swamp Palace - Pot Row Pot Key"
+    },
+    {
+      "name": "Skull Woods - Spike Corner Key Drop"
+    },
+    {
+      "name": "Ganons Tower - Mini Helmasaur Key Drop"
+    },
+    {
+      "name": "Ice Palace - Conveyor Key Drop"
+    },
+    {
+      "name": "Ice Palace - Hammer Block Key Drop"
+    },
+    {
+      "name": "Desert Palace - Desert Tiles 2 Pot Key"
+    },
+    {
+      "name": "Desert Palace - Beamos Hall Pot Key"
+    },
+    {
+      "name": "Skull Woods - West Lobby Pot Key"
+    },
+    {
+      "name": "Desert Palace - Desert Tiles 1 Pot Key"
+    },
+    {
+      "name": "Hyrule Castle - Boomerang Guard Key Drop"
+    },
+    {
+      "name": "Hyrule Castle - Map Guard Key Drop"
+    },
+    {
+      "name": "Ganons Tower - Conveyor Star Pits Pot Key"
+    },
+    {
+      "name": "Hyrule Castle - Big Key Drop"
+    },
+    {
+      "name": "Ganons Tower - Conveyor Cross Pot Key"
+    },
+    {
+      "name": "Ganons Tower - Double Switch Pot Key"
+    },
+    {
+      "name": "Ice Palace - Many Pots Pot Key"
+    },
+    {
+      "name": "Eastern Palace - Dark Eyegore Key Drop"
+    },
+    {
+      "name": "Misery Mire - Fishbone Pot Key"
+    },
+    {
+      "name": "Thieves' Town - Spike Switch Pot Key"
+    },
+    {
+      "name": "Castle Tower - Circle of Pots Key Drop"
+    },
+    {
+      "name": "Misery Mire - Spikes Pot Key"
+    },
+    {
+      "name": "Turtle Rock - Pokey 1 Key Drop"
+    },
+    {
+      "name": "Eastern Palace - Dark Square Pot Key"
+    },
+    {
+      "name": "Thieves' Town - Hallway Pot Key"
+    },
+    {
+      "name": "Castle Tower - Dark Archer Key Drop"
+    },
+    {
+      "name": "Misery Mire - Conveyor Crystal Key Drop"
+    },
+    {
+      "name": "Lost Woods Hideout"
+    },
+    {
+      "name": "Lumberjack Tree"
+    },
+    {
+      "name": "Spectacle Rock Cave"
+    },
+    {
+      "name": "Cave 45"
+    },
+    {
+      "name": "Graveyard Cave"
+    },
+    {
+      "name": "Checkerboard Cave"
+    },
+    {
+      "name": "Peg Cave"
+    },
+    {
+      "name": "Mini Moldorm Cave - Generous Guy"
+    },
+    {
+      "name": "Hype Cave - Generous Guy"
+    },
+    {
+      "name": "Library"
+    },
+    {
+      "name": "Mushroom"
+    },
+    {
+      "name": "Potion Shop"
+    },
+    {
+      "name": "Magic Bat"
+    },
+    {
+      "name": "Ether Tablet"
+    },
+    {
+      "name": "Bombos Tablet"
+    },
+    {
+      "name": "Blacksmith"
+    },
+    {
+      "name": "Spectacle Rock"
+    },
+    {
+      "name": "Floating Island"
+    },
+    {
+      "name": "Maze Race"
+    },
+    {
+      "name": "Desert Ledge"
+    },
+    {
+      "name": "Lake Hylia Island"
+    },
+    {
+      "name": "Sunken Treasure"
+    },
+    {
+      "name": "Bumper Cave Ledge"
+    },
+    {
+      "name": "Pyramid"
+    },
+    {
+      "name": "Digging Game"
+    },
+    {
+      "name": "Zora's Ledge"
+    },
+    {
+      "name": "Flute Spot"
+    },
+    {
+      "name": "Eastern Palace - Boss"
+    },
+    {
+      "name": "Desert Palace - Boss"
+    },
+    {
+      "name": "Tower of Hera - Boss"
+    },
+    {
+      "name": "Palace of Darkness - Boss"
+    },
+    {
+      "name": "Swamp Palace - Boss"
+    },
+    {
+      "name": "Skull Woods - Boss"
+    },
+    {
+      "name": "Thieves' Town - Boss"
+    },
+    {
+      "name": "Ice Palace - Boss"
+    },
+    {
+      "name": "Misery Mire - Boss"
+    },
+    {
+      "name": "Turtle Rock - Boss"
+    },
+    {
+      "name": "Desert Palace - Torch"
+    },
+    {
+      "name": "Ganons Tower - Bob's Torch"
+    },
+    {
+      "name": "Tower of Hera - Basement Cage"
+    },
+    {
+      "name": "Cave Shop (Dark Death Mountain) Left"
+    },
+    {
+      "name": "Cave Shop (Dark Death Mountain) Center"
+    },
+    {
+      "name": "Cave Shop (Dark Death Mountain) Right"
+    },
+    {
+      "name": "Red Shield Shop Left"
+    },
+    {
+      "name": "Red Shield Shop Center"
+    },
+    {
+      "name": "Red Shield Shop Right"
+    },
+    {
+      "name": "Dark Lake Hylia Shop Left"
+    },
+    {
+      "name": "Dark Lake Hylia Shop Center"
+    },
+    {
+      "name": "Dark Lake Hylia Shop Right"
+    },
+    {
+      "name": "Dark World Lumberjack Shop Left"
+    },
+    {
+      "name": "Dark World Lumberjack Shop Center"
+    },
+    {
+      "name": "Dark World Lumberjack Shop Right"
+    },
+    {
+      "name": "Village of Outcasts Shop Left"
+    },
+    {
+      "name": "Village of Outcasts Shop Center"
+    },
+    {
+      "name": "Village of Outcasts Shop Right"
+    },
+    {
+      "name": "Dark World Potion Shop Left"
+    },
+    {
+      "name": "Dark World Potion Shop Center"
+    },
+    {
+      "name": "Dark World Potion Shop Right"
+    },
+    {
+      "name": "Light World Death Mountain Shop Left"
+    },
+    {
+      "name": "Light World Death Mountain Shop Center"
+    },
+    {
+      "name": "Light World Death Mountain Shop Right"
+    },
+    {
+      "name": "Kakariko Shop Left"
+    },
+    {
+      "name": "Kakariko Shop Center"
+    },
+    {
+      "name": "Kakariko Shop Right"
+    },
+    {
+      "name": "Cave Shop (Lake Hylia) Left"
+    },
+    {
+      "name": "Cave Shop (Lake Hylia) Center"
+    },
+    {
+      "name": "Cave Shop (Lake Hylia) Right"
+    },
+    {
+      "name": "Potion Shop Left"
+    },
+    {
+      "name": "Potion Shop Center"
+    },
+    {
+      "name": "Potion Shop Right"
+    },
+    {
+      "name": "Capacity Upgrade Left"
+    },
+    {
+      "name": "Capacity Upgrade Center"
+    },
+    {
+      "name": "Capacity Upgrade Right"
+    },
+    {
+      "name": "Old Man Sword Cave"
+    },
+    {
+      "name": "Take-Any #1"
+    },
+    {
+      "name": "Take-Any #2"
+    },
+    {
+      "name": "Take-Any #3"
+    },
+    {
+      "name": "Take-Any #4"
+    }
+  ],
+  "readableName": "The Legend of Zelda: A Link to the Past",
+  "status": "Updated"
+}

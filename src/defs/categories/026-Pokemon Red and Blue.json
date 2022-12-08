@@ -1,0 +1,1756 @@
+{
+  "category": "Pokemon Red and Blue",
+  "index": 26,
+  "settings": [
+    {
+      "name": "game_version",
+      "description": "Select Red or Blue version.",
+      "readableName": "game version",
+      "values": [
+        {
+          "name": "red",
+          "readableName": "Red"
+        },
+        {
+          "name": "blue",
+          "readableName": "Blue"
+        },
+        {
+          "name": "random",
+          "readableName": "Random"
+        }
+      ],
+      "type": "choice",
+      "default": "random"
+    },
+    {
+      "name": "trainer_name",
+      "description": "Your trainer's name. Cannot exceed 7 characters. See the [setup guide on archipelago.gg](https://archipelago.gg/tutorial/Pokemon%20Red%20and%20Blue/setup/en) for a list of allowed characters.",
+      "readableName": "Trainer name",
+      "values": [
+        {
+          "name": "ASH",
+          "readableName": "ASH (edit your YAML manually if you want a different name)"
+        }
+      ],
+      "type": "choice",
+      "default": "ASH"
+    },
+    {
+      "name": "rival_name",
+      "description": "Your rival's name. Cannot exceed 7 characters. See the [setup guide on archipelago.gg](https://archipelago.gg/tutorial/Pokemon%20Red%20and%20Blue/setup/en) for a list of allowed characters.",
+      "readableName": "Rival name",
+      "values": [
+        {
+          "name": "GARY",
+          "readableName": "GARY (edit your YAML manually if you want a different name)"
+        }
+      ],
+      "type": "choice",
+      "default": "GARY"
+    },
+    {
+      "name": "elite_four_condition",
+      "description": "Number of badges required to challenge the Elite Four once the Indigo Plateau has been reached. Your rival will reveal the amount needed on the first Route 22 battle (after turning in Oak's Parcel).",
+      "high": 8,
+      "readableName": "Elite Four condition",
+      "low": 0,
+      "type": "range",
+      "default": 8
+    },
+    {
+      "name": "victory_road_condition",
+      "description": "Number of badges required to reach Victory Road.",
+      "high": 8,
+      "readableName": "Victory Road condition",
+      "low": 0,
+      "type": "range",
+      "default": 8
+    },
+    {
+      "name": "viridian_gym_condition",
+      "description": "Number of badges required to enter Viridian Gym.",
+      "high": 7,
+      "readableName": "Viridian Gym condition",
+      "low": 0,
+      "type": "range",
+      "default": 7
+    },
+    {
+      "name": "cerulean_cave_condition",
+      "description": "Number of badges, HMs, and key items (not counting items you can lose) required to access Cerulean Cave.",
+      "high": 25,
+      "readableName": "Cerulean Cave condition",
+      "low": 0,
+      "type": "range",
+      "default": 20
+    },
+    {
+      "name": "second_fossil_check_condition",
+      "description": "After choosing one of the fossil location items, you can obtain the remaining item from the Cinnabar Lab Scientist after reviving this number of fossils.",
+      "high": 3,
+      "readableName": "Second fossil check condition",
+      "low": 0,
+      "type": "range",
+      "default": 3
+    },
+    {
+      "name": "badgesanity",
+      "description": "Shuffle gym badges into the general item pool. If turned off, badges will be shuffled across the 8 gyms.",
+      "readableName": "badgesanity",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "old_man",
+      "description": "With Open Viridian City, the Old Man will let you through without needing to turn in Oak's Parcel.",
+      "readableName": "Old Man",
+      "values": [
+        {
+          "name": "vanilla",
+          "readableName": "Vanilla"
+        },
+        {
+          "name": "early_parcel",
+          "readableName": "Early parcel"
+        },
+        {
+          "name": "open_viridian_city",
+          "readableName": "Open Viridian City"
+        }
+      ],
+      "type": "choice",
+      "default": "early_parcel"
+    },
+    {
+      "name": "tea",
+      "description": "Adds a Tea item to the item pool which the Saffron guards require instead of the vending machine drinks. Adds a location check to the Celadon Mansion 1F, where Tea is acquired in FireRed and LeafGreen.",
+      "readableName": "Tea",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "extra_key_items",
+      "description": "Adds key items that are required to access the Rocket Hideout, Cinnabar Mansion, Safari Zone, and Power Plant. Adds four item pickups to Rock Tunnel B1F.",
+      "readableName": "Extra key items",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "extra_strength_boulders",
+      "description": "Adds Strength Boulders blocking the Route 11 gate, and in Route 13 (can be bypassed with Surf). This potentially increases the usefulness of Strength as well as the Bicycle.",
+      "readableName": "Extra Strength Boulders",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "require_item_finder",
+      "description": "Require Item Finder to pick up hidden items.",
+      "readableName": "Require Item Finder",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "randomize_hidden_items",
+      "description": "Randomize hidden items. If you choose exclude, they will be randomized but will be guaranteed junk items.",
+      "readableName": "Randomize hidden items",
+      "values": [
+        {
+          "name": "on",
+          "readableName": "On"
+        },
+        {
+          "name": "off",
+          "readableName": "Off"
+        },
+        {
+          "name": "exclude",
+          "readableName": "Exclude",
+          "description": "Hidden items will always be junk."
+        }
+      ],
+      "type": "choice",
+      "default": "off"
+    },
+    {
+      "name": "badges_needed_for_hm_moves",
+      "description": "Determines whether badges are required for HM moves.",
+      "readableName": "Badges needed for HM moves",
+      "values": [
+        {
+          "name": "on",
+          "readableName": "On",
+          "description": "Badges are required for HMs as vanilla."
+        },
+        {
+          "name": "off",
+          "readableName": "Off",
+          "description": "Removes the requirement for badges to use HM moves."
+        },
+        {
+          "name": "extra",
+          "readableName": "Extra",
+          "description": "Gives the Marsh, Volcano, and Earth Badges a random HM move to enable."
+        },
+        {
+          "name": "extra_plus",
+          "readableName": "Extra Plus",
+          "description": "Gives the Marsh, Volcano, and Earth Badges a random HM move to enable, AND picks two random badges to enable a second HM move. You will only need one of the required badges to use the HM move."
+        }
+      ],
+      "type": "choice",
+      "default": "on"
+    },
+    {
+      "name": "free_fly_location",
+      "description": "One random fly destination will be unlocked by default.",
+      "readableName": "Free Fly location",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "oaks_aide_rt_2",
+      "description": "Number of Pokémon registered in the Pokedex required to receive the item from Oak's Aide on Route 2. *(Vanilla is 10)*",
+      "high": 80,
+      "readableName": "Oak's Aide Route 2",
+      "low": 0,
+      "type": "range",
+      "default": 10
+    },
+    {
+      "name": "oaks_aide_rt_11",
+      "description": "Number of Pokémon registered in the Pokedex required to receive the item from Oak's Aide on Route 11. *(Vanilla is 30)*",
+      "high": 80,
+      "readableName": "Oak's Aide Route 11",
+      "low": 0,
+      "type": "range",
+      "default": 20
+    },
+    {
+      "name": "oaks_aide_rt_15",
+      "description": "Number of Pokémon registered in the Pokedex required to receive the item from Oak's Aide on Route 15. *(Vanilla is 50)*",
+      "high": 80,
+      "readableName": "Oak's Aide Route 15",
+      "low": 0,
+      "type": "range",
+      "default": 30
+    },
+    {
+      "name": "blind_trainers",
+      "description": "Chance each frame that you are standing on a tile in a trainer's line of sight that they will fail to initiate a battle. If you move into and out of their line of sight without stopping, this chance will only trigger once.",
+      "high": 100,
+      "readableName": "Blind trainers",
+      "low": 0,
+      "type": "range",
+      "default": 0
+    },
+    {
+      "name": "minimum_steps_between_encounters",
+      "description": "Minimum number of steps between wild Pokémon encounters.",
+      "high": 255,
+      "readableName": "minimum steps between encounters",
+      "low": 0,
+      "type": "range",
+      "default": 3
+    },
+    {
+      "name": "exp_modifier",
+      "description": "Modifier for EXP gained. When specifying a number, experience is multiplied by this amount and divided by 16.",
+      "high": 255,
+      "readableName": "EXP modifier",
+      "low": 0,
+      "type": "range",
+      "aliases": {
+        "half": 8,
+        "normal": 16,
+        "double": 32,
+        "triple": 48,
+        "quadruple": 64,
+        "quintuple": 80,
+        "sextuple": 96,
+        "septuple": 112,
+        "octuple": 128
+      },
+      "default": 16
+    },
+    {
+      "name": "randomize_wild_pokemon",
+      "description": "Randomize all wild Pokemon and game corner prize Pokémon.",
+      "readableName": "Randomize wild Pokémon",
+      "values": [
+        {
+          "name": "vanilla",
+          "readableName": "Vanilla"
+        },
+        {
+          "name": "match_types",
+          "readableName": "Match types",
+          "description": "Select a Pokemon with at least one type matching the original type of the original Pokémon."
+        },
+        {
+          "name": "match_base_stats",
+          "readableName": "Match base stats",
+          "description": "Prefer Pokémon with closer base stat totals."
+        },
+        {
+          "name": "match_types_and_base_stats",
+          "readableName": "Match types and base stats",
+          "description": "Matches types and will weight towards similar base stats, but there may not be many to choose from."
+        },
+        {
+          "name": "completely_random",
+          "readableName": "Completely random"
+        }
+      ],
+      "type": "choice",
+      "default": "vanilla"
+    },
+    {
+      "name": "randomize_starter_pokemon",
+      "description": "Randomize the starter Pokemon choices.",
+      "readableName": "Randomize starter Pokémon",
+      "values": [
+        {
+          "name": "vanilla",
+          "readableName": "Vanilla"
+        },
+        {
+          "name": "match_types",
+          "readableName": "Match types",
+          "description": "Select a Pokemon with at least one type matching the original type of the original Pokémon."
+        },
+        {
+          "name": "match_base_stats",
+          "readableName": "Match base stats",
+          "description": "Prefer Pokémon with closer base stat totals."
+        },
+        {
+          "name": "match_types_and_base_stats",
+          "readableName": "Match types and base stats",
+          "description": "Matches types and will weight towards similar base stats, but there may not be many to choose from."
+        },
+        {
+          "name": "completely_random",
+          "readableName": "Completely random"
+        }
+      ],
+      "type": "choice",
+      "default": "vanilla"
+    },
+    {
+      "name": "randomize_static_pokemon",
+      "description": "Randomize one-time gift and encountered Pokémon. These will always be first evolution stage Pokémon.",
+      "readableName": "Randomize static Pokémon",
+      "values": [
+        {
+          "name": "vanilla",
+          "readableName": "Vanilla"
+        },
+        {
+          "name": "match_types",
+          "readableName": "Match types",
+          "description": "Select a Pokemon with at least one type matching the original type of the original Pokémon."
+        },
+        {
+          "name": "match_base_stats",
+          "readableName": "Match base stats",
+          "description": "Prefer Pokémon with closer base stat totals."
+        },
+        {
+          "name": "match_types_and_base_stats",
+          "readableName": "Match types and base stats",
+          "description": "Matches types and will weight towards similar base stats, but there may not be many to choose from."
+        },
+        {
+          "name": "completely_random",
+          "readableName": "Completely random"
+        }
+      ],
+      "type": "choice",
+      "default": "vanilla"
+    },
+    {
+      "name": "randomize_legendary_pokemon",
+      "description": "Randomize Legendaries. Mew has been added as an encounter at the Vermillion dock truck.",
+      "readableName": "Randomize Legendary Pokémon",
+      "values": [
+        {
+          "name": "vanilla",
+          "readableName": "Vanilla"
+        },
+        {
+          "name": "shuffle",
+          "readableName": "Shuffle",
+          "description": "Shuffle the legendaries with each other."
+        },
+        {
+          "name": "static",
+          "readableName": "Static",
+          "description": "Shuffle Legendaries into other static Pokémon locations."
+        },
+        {
+          "name": "any",
+          "readableName": "Any",
+          "description": "Allow legendaries to appear anywhere based on wild and static randomization options, and their locations will be randomized according to static Pokémon randomization options."
+        }
+      ],
+      "type": "choice",
+      "default": "vanilla"
+    },
+    {
+      "name": "catch_em_all",
+      "description": "Guarantee all first evolution stage Pokémon are available, or all Pokémon of all stages. Currently only has an effect if wild Pokémon are randomized.",
+      "readableName": "Catch 'Em All mode",
+      "values": [
+        {
+          "name": "off",
+          "readableName": "Off"
+        },
+        {
+          "name": "first_stage",
+          "readableName": "First stage"
+        },
+        {
+          "name": "all_pokemon",
+          "readableName": "All Pokémon"
+        }
+      ],
+      "type": "choice",
+      "default": "off"
+    },
+    {
+      "name": "randomize_pokemon_stats",
+      "description": "Randomize base stats for each Pokémon.",
+      "readableName": "Randomize Pokémon stats",
+      "values": [
+        {
+          "name": "vanilla",
+          "readableName": "Vanilla"
+        },
+        {
+          "name": "shuffle",
+          "readableName": "Shuffle",
+          "description": "Shuffle the 5 base stat values amongst each other."
+        },
+        {
+          "name": "randomize",
+          "readableName": "Randomize",
+          "description": "Completely randomize each stat, but will still add up to the same base stat total."
+        }
+      ],
+      "type": "choice",
+      "default": "vanilla"
+    },
+    {
+      "name": "randomize_pokemon_catch_rates",
+      "description": "Randomize the catch rate for each Pokémon.",
+      "readableName": "Randomize Pokémon catch rates",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "minimum_catch_rate",
+      "description": "Minimum catch rate for each Pokémon. If \"Randomize catch rates\" is on, this will be the minimum value that can be chosen. Otherwise, it will raise any Pokémon's catch rate up to this value if its normal catch rate is lower.",
+      "high": 255,
+      "readableName": "Minimum catch rate",
+      "low": 1,
+      "type": "range",
+      "default": 3
+    },
+    {
+      "name": "randomize_trainer_parties",
+      "description": "Randomize enemy Pokémon encountered in trainer battles.",
+      "readableName": "Randomize trainer parties",
+      "values": [
+        {
+          "name": "vanilla",
+          "readableName": "Vanilla"
+        },
+        {
+          "name": "match_types",
+          "readableName": "Match types",
+          "description": "Select a Pokemon with at least one type matching the original type of the original Pokémon."
+        },
+        {
+          "name": "match_base_stats",
+          "readableName": "Match base stats",
+          "description": "Prefer Pokémon with closer base stat totals."
+        },
+        {
+          "name": "match_types_and_base_stats",
+          "readableName": "Match types and base stats",
+          "description": "Matches types and will weight towards similar base stats, but there may not be many to choose from."
+        },
+        {
+          "name": "completely_random",
+          "readableName": "Completely random"
+        }
+      ],
+      "type": "choice",
+      "default": "vanilla"
+    },
+    {
+      "name": "trainer_legendaries",
+      "description": "Allow Legendary Pokémon in randomized trainer parties.",
+      "readableName": "Trainer Legendaries",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "randomize_pokemon_movesets",
+      "description": "Randomize the moves learned by Pokemon.",
+      "readableName": "Randomize Pokémon movesets",
+      "values": [
+        {
+          "name": "vanilla",
+          "readableName": "Vanilla"
+        },
+        {
+          "name": "prefer_types",
+          "readableName": "Prefer types",
+          "description": "Prefer moves that match the type of the Pokemon."
+        },
+        {
+          "name": "completely_random",
+          "readableName": "Completely random"
+        }
+      ],
+      "type": "choice",
+      "default": "vanilla"
+    },
+    {
+      "name": "start_with_four_moves",
+      "description": "If movesets are randomized, this will give all Pokémon 4 starting moves.",
+      "readableName": "Start with four moves",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "tm_compatibility",
+      "description": "Randomize which Pokémon can learn each TM.",
+      "readableName": "TM compatibility",
+      "values": [
+        {
+          "name": "vanilla",
+          "readableName": "Vanilla"
+        },
+        {
+          "name": "prefer_types",
+          "readableName": "Prefer types",
+          "description": "90% chance if Pokemon's type matches the move, 50% chance if move is Normal type and the Pokemon is not, and 25% chance otherwise. Pokemon will retain the same TM compatibility when they evolve if the evolved form has the same type(s). Mew will always be able to learn every TM."
+        },
+        {
+          "name": "completely_random",
+          "readableName": "Completely random"
+        },
+        {
+          "name": "full_compatibility",
+          "readableName": "Full compatibility"
+        }
+      ],
+      "type": "choice",
+      "default": "vanilla"
+    },
+    {
+      "name": "hm_compatibility",
+      "description": "Randomize which Pokemon can learn each HM.",
+      "readableName": "HM compatibility",
+      "values": [
+        {
+          "name": "vanilla",
+          "readableName": "Vanilla"
+        },
+        {
+          "name": "prefer_types",
+          "readableName": "Prefer types",
+          "description": "100% chance if Pokemon's type matches the move, 75% chance if move is Normal type and the Pokemon is not, and 25% chance otherwise. Pokemon will retain the same HM compatibility when they evolve if the evolved form has the same type(s). Mew will always be able to learn every HM."
+        },
+        {
+          "name": "completely_random",
+          "readableName": "Completely random"
+        },
+        {
+          "name": "full_compatibility",
+          "readableName": "Full compatibility"
+        }
+      ],
+      "type": "choice",
+      "default": "vanilla"
+    },
+    {
+      "name": "randomize_pokemon_types",
+      "description": "Randomize the types of each Pokémon.",
+      "readableName": "Randomize Pokémon types",
+      "values": [
+        {
+          "name": "vanilla",
+          "readableName": "Vanilla"
+        },
+        {
+          "name": "follow_evolutions",
+          "readableName": "Follow evolutions",
+          "description": "Ensure Pokémon's types remain the same when evolving (except possibly gaining a type)."
+        },
+        {
+          "name": "randomize",
+          "readableName": "Randomize"
+        }
+      ],
+      "type": "choice",
+      "default": "vanilla"
+    },
+    {
+      "name": "secondary_type_chance",
+      "description": "If \"Randomize Pokémon types\" is on, this is the chance each Pokemon will have a secondary type. If \"Follow evolutions\" is selected, it is the chance a second type will be added at each evolution stage. Vanilla (-1) will give secondary types to Pokémon that normally have a secondary type.",
+      "high": 100,
+      "readableName": "Secondary type chance",
+      "low": -1,
+      "type": "range",
+      "aliases": {
+        "vanilla": -1
+      },
+      "default": -1
+    },
+    {
+      "name": "randomize_type_matchup_types",
+      "description": "The game's type chart consists of 3 columns: attacking type, defending type, and type effectiveness. Matchups that have regular type effectiveness are not in the chart.",
+      "readableName": "Randomize type matchup types",
+      "values": [
+        {
+          "name": "vanilla",
+          "readableName": "Vanilla"
+        },
+        {
+          "name": "shuffle",
+          "readableName": "Shuffle",
+          "description": "Shuffle the attacking types across the attacking type column and the defending types across the defending type column (so for example Normal type will still have exactly 2 types that it receives non-regular damage from, and 2 types it deals non-regular damage to)."
+        },
+        {
+          "name": "randomize",
+          "readableName": "Randomize",
+          "description": "Randomize each type in both columns to any random type."
+        }
+      ],
+      "type": "choice",
+      "default": "vanilla"
+    },
+    {
+      "name": "randomize_type_matchup_type_effectiveness",
+      "description": "The game's type chart consists of 3 columns: attacking type, defending type, and type effectiveness. Matchups that have regular type effectiveness are not in the chart.",
+      "readableName": "Randomize type matchup type effectiveness",
+      "values": [
+        {
+          "name": "vanilla",
+          "readableName": "Vanilla"
+        },
+        {
+          "name": "shuffle",
+          "readableName": "Shuffle",
+          "description": "Shuffle the type effectiveness across the type effectiveness column (so for example there will always be 6 type immunities)."
+        },
+        {
+          "name": "randomize",
+          "readableName": "Randomize",
+          "description": "Randomize each entry in the table to no effect, not very effective, or super effective; with no effect occurring at a low chance."
+        },
+        {
+          "name": "chaos",
+          "readableName": "Chaos",
+          "description": "Randomize the values to anywhere between 0% and 200% damage, in 10% increments."
+        }
+      ],
+      "type": "choice",
+      "default": "vanilla"
+    },
+    {
+      "name": "safari_zone_normal_battles",
+      "description": "Change the Safari Zone to have standard wild Pokémon battles.",
+      "readableName": "Safari Zone normal battles",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "normalize_encounter_chances",
+      "description": "Each wild encounter table has 10 slots for Pokémon. Normally the chance for each being chosen ranges from 19.9% to 1.2%. Turn this on to normalize them all to 10% each.",
+      "readableName": "Normalize encounter chances",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "reusable_tms",
+      "description": "Makes TMs reusable, so they will not be consumed upon use.",
+      "readableName": "reusable TMs",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "starting_money",
+      "description": "The amount of money you start with.",
+      "high": 999000,
+      "readableName": "Starting money",
+      "low": 0,
+      "step": 1000,
+      "type": "range",
+      "default": 3000
+    }
+  ],
+  "items": [
+    {
+      "name": "Master Ball"
+    },
+    {
+      "name": "Ultra Ball"
+    },
+    {
+      "name": "Great Ball"
+    },
+    {
+      "name": "Poke Ball",
+      "readableName": "Pokéball"
+    },
+    {
+      "name": "Town Map"
+    },
+    {
+      "name": "Bicycle"
+    },
+    {
+      "name": "Moon Stone"
+    },
+    {
+      "name": "Antidote"
+    },
+    {
+      "name": "Burn Heal"
+    },
+    {
+      "name": "Ice Heal"
+    },
+    {
+      "name": "Awakening"
+    },
+    {
+      "name": "Paralyze Heal"
+    },
+    {
+      "name": "Full Restore"
+    },
+    {
+      "name": "Max Potion"
+    },
+    {
+      "name": "Hyper Potion"
+    },
+    {
+      "name": "Super Potion"
+    },
+    {
+      "name": "Potion"
+    },
+    {
+      "name": "Boulder Badge"
+    },
+    {
+      "name": "Cascade Badge"
+    },
+    {
+      "name": "Thunder Badge"
+    },
+    {
+      "name": "Rainbow Badge"
+    },
+    {
+      "name": "Soul Badge"
+    },
+    {
+      "name": "Marsh Badge"
+    },
+    {
+      "name": "Volcano Badge"
+    },
+    {
+      "name": "Earth Badge"
+    },
+    {
+      "name": "Escape Rope"
+    },
+    {
+      "name": "Repel"
+    },
+    {
+      "name": "Old Amber"
+    },
+    {
+      "name": "Fire Stone"
+    },
+    {
+      "name": "Thunder Stone"
+    },
+    {
+      "name": "Water Stone"
+    },
+    {
+      "name": "HP Up"
+    },
+    {
+      "name": "Protein"
+    },
+    {
+      "name": "Iron"
+    },
+    {
+      "name": "Carbos"
+    },
+    {
+      "name": "Calcium"
+    },
+    {
+      "name": "Rare Candy"
+    },
+    {
+      "name": "Dome Fossil"
+    },
+    {
+      "name": "Helix Fossil"
+    },
+    {
+      "name": "Secret Key"
+    },
+    {
+      "name": "Bike Voucher"
+    },
+    {
+      "name": "X Accuracy"
+    },
+    {
+      "name": "Leaf Stone"
+    },
+    {
+      "name": "Card Key"
+    },
+    {
+      "name": "Nugget"
+    },
+    {
+      "name": "Poke Doll"
+    },
+    {
+      "name": "Full Heal"
+    },
+    {
+      "name": "Revive"
+    },
+    {
+      "name": "Max Revive"
+    },
+    {
+      "name": "Guard Spec"
+    },
+    {
+      "name": "Super Repel"
+    },
+    {
+      "name": "Max Repel"
+    },
+    {
+      "name": "Dire Hit"
+    },
+    {
+      "name": "Fresh Water"
+    },
+    {
+      "name": "Soda Pop"
+    },
+    {
+      "name": "Lemonade"
+    },
+    {
+      "name": "S.S. Ticket"
+    },
+    {
+      "name": "Gold Teeth"
+    },
+    {
+      "name": "X Attack"
+    },
+    {
+      "name": "X Defend"
+    },
+    {
+      "name": "X Speed"
+    },
+    {
+      "name": "X Special"
+    },
+    {
+      "name": "Coin Case"
+    },
+    {
+      "name": "Oak's Parcel"
+    },
+    {
+      "name": "Item Finder"
+    },
+    {
+      "name": "Silph Scope"
+    },
+    {
+      "name": "Poke Flute"
+    },
+    {
+      "name": "Lift Key"
+    },
+    {
+      "name": "Exp. All"
+    },
+    {
+      "name": "Old Rod"
+    },
+    {
+      "name": "Good Rod"
+    },
+    {
+      "name": "Super Rod"
+    },
+    {
+      "name": "PP Up"
+    },
+    {
+      "name": "Ether"
+    },
+    {
+      "name": "Max Ether"
+    },
+    {
+      "name": "Elixir"
+    },
+    {
+      "name": "Max Elixir"
+    },
+    {
+      "name": "Tea"
+    },
+    {
+      "name": "Plant Key"
+    },
+    {
+      "name": "Mansion Key"
+    },
+    {
+      "name": "Hideout Key"
+    },
+    {
+      "name": "Safari Pass"
+    },
+    {
+      "name": "HM01 Cut"
+    },
+    {
+      "name": "HM02 Fly"
+    },
+    {
+      "name": "HM03 Surf"
+    },
+    {
+      "name": "HM04 Strength"
+    },
+    {
+      "name": "HM05 Flash"
+    },
+    {
+      "name": "TM01 Mega Punch"
+    },
+    {
+      "name": "TM02 Razor Wind"
+    },
+    {
+      "name": "TM03 Swords Dance"
+    },
+    {
+      "name": "TM04 Whirlwind"
+    },
+    {
+      "name": "TM05 Mega Kick"
+    },
+    {
+      "name": "TM06 Toxic"
+    },
+    {
+      "name": "TM07 Horn Drill"
+    },
+    {
+      "name": "TM08 Body Slam"
+    },
+    {
+      "name": "TM09 Take Down"
+    },
+    {
+      "name": "TM10 Double Edge"
+    },
+    {
+      "name": "TM11 Bubble Beam"
+    },
+    {
+      "name": "TM12 Water Gun"
+    },
+    {
+      "name": "TM13 Ice Beam"
+    },
+    {
+      "name": "TM14 Blizzard"
+    },
+    {
+      "name": "TM15 Hyper Beam"
+    },
+    {
+      "name": "TM16 Pay Day"
+    },
+    {
+      "name": "TM17 Submission"
+    },
+    {
+      "name": "TM18 Counter"
+    },
+    {
+      "name": "TM19 Seismic Toss"
+    },
+    {
+      "name": "TM20 Rage"
+    },
+    {
+      "name": "TM21 Mega Drain"
+    },
+    {
+      "name": "TM22 Solar Beam"
+    },
+    {
+      "name": "TM23 Dragon Rage"
+    },
+    {
+      "name": "TM24 Thunderbolt"
+    },
+    {
+      "name": "TM25 Thunder"
+    },
+    {
+      "name": "TM26 Earthquake"
+    },
+    {
+      "name": "TM27 Fissure"
+    },
+    {
+      "name": "TM28 Dig"
+    },
+    {
+      "name": "TM29 Psychic"
+    },
+    {
+      "name": "TM30 Teleport"
+    },
+    {
+      "name": "TM31 Mimic"
+    },
+    {
+      "name": "TM32 Double Team"
+    },
+    {
+      "name": "TM33 Reflect"
+    },
+    {
+      "name": "TM34 Bide"
+    },
+    {
+      "name": "TM35 Metronome"
+    },
+    {
+      "name": "TM36 Self Destruct"
+    },
+    {
+      "name": "TM37 Egg Bomb"
+    },
+    {
+      "name": "TM38 Fire Blast"
+    },
+    {
+      "name": "TM39 Swift"
+    },
+    {
+      "name": "TM40 Skull Bash"
+    },
+    {
+      "name": "TM41 Soft Boiled"
+    },
+    {
+      "name": "TM42 Dream Eater"
+    },
+    {
+      "name": "TM43 Sky Attack"
+    },
+    {
+      "name": "TM44 Rest"
+    },
+    {
+      "name": "TM45 Thunder Wave"
+    },
+    {
+      "name": "TM46 Psywave"
+    },
+    {
+      "name": "TM47 Explosion"
+    },
+    {
+      "name": "TM48 Rock Slide"
+    },
+    {
+      "name": "TM49 Tri Attack"
+    },
+    {
+      "name": "TM50 Substitute"
+    }
+  ],
+  "locations": [
+    {
+      "name": "Vermilion City - Fishing Guru"
+    },
+    {
+      "name": "Fuchsia City - Fishing Guru's Brother"
+    },
+    {
+      "name": "Route 12 - Fishing Guru's Brother"
+    },
+    {
+      "name": "Pallet Town - Player's PC"
+    },
+    {
+      "name": "Celadon City - Mansion Lady"
+    },
+    {
+      "name": "Pallet Town - Rival's Sister"
+    },
+    {
+      "name": "Pallet Town - Oak's Post-Route-22-Rival Gift"
+    },
+    {
+      "name": "Route 1 - Free Sample Man"
+    },
+    {
+      "name": "Viridian City - Sleepy Guy"
+    },
+    {
+      "name": "Viridian City - Pokemart"
+    },
+    {
+      "name": "Viridian Gym - Giovanni 2"
+    },
+    {
+      "name": "Route 2 - Oak's Aide"
+    },
+    {
+      "name": "Pewter City - Museum"
+    },
+    {
+      "name": "Pewter Gym - Brock 2"
+    },
+    {
+      "name": "Cerulean City - Bicycle Shop"
+    },
+    {
+      "name": "Cerulean Gym - Misty 2"
+    },
+    {
+      "name": "Route 24 - Nugget Bridge"
+    },
+    {
+      "name": "Route 25 - Bill"
+    },
+    {
+      "name": "Lavender Town - Mr. Fuji"
+    },
+    {
+      "name": "Route 12 - Mourning Girl"
+    },
+    {
+      "name": "Vermilion City - Pokemon Fan Club"
+    },
+    {
+      "name": "Vermilion Gym - Lt. Surge 2"
+    },
+    {
+      "name": "S.S. Anne 2F - Captain"
+    },
+    {
+      "name": "Route 11 - Oak's Aide"
+    },
+    {
+      "name": "Celadon City - Stranded Man"
+    },
+    {
+      "name": "Celadon City - Thirsty Girl Gets Water"
+    },
+    {
+      "name": "Celadon City - Thirsty Girl Gets Soda Pop"
+    },
+    {
+      "name": "Celadon City - Thirsty Girl Gets Lemonade"
+    },
+    {
+      "name": "Celadon City - Counter Man"
+    },
+    {
+      "name": "Celadon City - Gambling Addict"
+    },
+    {
+      "name": "Celadon Gym - Erika 2"
+    },
+    {
+      "name": "Silph Co 11F - Silph Co President"
+    },
+    {
+      "name": "Silph Co 2F - Woman"
+    },
+    {
+      "name": "Route 16 - House Woman"
+    },
+    {
+      "name": "Route 15 - Oak's Aide"
+    },
+    {
+      "name": "Fuchsia City - Safari Zone Warden"
+    },
+    {
+      "name": "Fuchsia Gym - Koga 2"
+    },
+    {
+      "name": "Safari Zone West - Secret House"
+    },
+    {
+      "name": "Cinnabar Island - Lab Scientist"
+    },
+    {
+      "name": "Cinnabar Gym - Blaine 2"
+    },
+    {
+      "name": "Copycat's House - Copycat"
+    },
+    {
+      "name": "Saffron City - Mr. Psychic"
+    },
+    {
+      "name": "Saffron Gym - Sabrina 2"
+    },
+    {
+      "name": "Fossil - Choice A"
+    },
+    {
+      "name": "Fossil - Choice B"
+    },
+    {
+      "name": "Cerulean City - Rocket Thief"
+    },
+    {
+      "name": "Route 2 - South Item"
+    },
+    {
+      "name": "Route 2 - North Item"
+    },
+    {
+      "name": "Route 4 - Item"
+    },
+    {
+      "name": "Route 9 - Item"
+    },
+    {
+      "name": "Route 12 - Island Item"
+    },
+    {
+      "name": "Route 12 - Item Behind Cuttable Tree"
+    },
+    {
+      "name": "Route 15 - Item"
+    },
+    {
+      "name": "Route 24 - Item"
+    },
+    {
+      "name": "Route 25 - Item"
+    },
+    {
+      "name": "Viridian Gym - Item"
+    },
+    {
+      "name": "Cerulean Cave 1F - Southwest Item"
+    },
+    {
+      "name": "Cerulean Cave 1F - Northeast Item"
+    },
+    {
+      "name": "Cerulean Cave 1F - Northwest Item"
+    },
+    {
+      "name": "Pokemon Tower 3F - North Item"
+    },
+    {
+      "name": "Pokemon Tower 4F - East Item"
+    },
+    {
+      "name": "Pokemon Tower 4F - West Item"
+    },
+    {
+      "name": "Pokemon Tower 4F - South Item"
+    },
+    {
+      "name": "Pokemon Tower 5F - Southwest Item"
+    },
+    {
+      "name": "Pokemon Tower 6F - West Item"
+    },
+    {
+      "name": "Pokemon Tower 6F - Southeast Item"
+    },
+    {
+      "name": "Fuchsia City - Warden's House Item"
+    },
+    {
+      "name": "Pokemon Mansion 1F - North Item"
+    },
+    {
+      "name": "Pokemon Mansion 1F - South Item"
+    },
+    {
+      "name": "Power Plant - Southwest Item"
+    },
+    {
+      "name": "Power Plant - North Item"
+    },
+    {
+      "name": "Power Plant - Northeast Item"
+    },
+    {
+      "name": "Power Plant - Southeast Item"
+    },
+    {
+      "name": "Power Plant - South Item"
+    },
+    {
+      "name": "Victory Road 2F - Northeast Item"
+    },
+    {
+      "name": "Victory Road 2F - East Item"
+    },
+    {
+      "name": "Victory Road 2F - West Item"
+    },
+    {
+      "name": "Victory Road 2F - North Item Near Moltres"
+    },
+    {
+      "name": "Viridian Forest - East Item"
+    },
+    {
+      "name": "Viridian Forest - Northwest Item"
+    },
+    {
+      "name": "Viridian Forest - Southwest Item"
+    },
+    {
+      "name": "Mt Moon 1F - West Item"
+    },
+    {
+      "name": "Mt Moon 1F - Northwest Item"
+    },
+    {
+      "name": "Mt Moon 1F - Southeast Item"
+    },
+    {
+      "name": "Mt Moon 1F - East Item"
+    },
+    {
+      "name": "Mt Moon 1F - South Item"
+    },
+    {
+      "name": "Mt Moon 1F - Southwest Item"
+    },
+    {
+      "name": "Mt Moon B2F - South Item"
+    },
+    {
+      "name": "Mt Moon B2F - North Item"
+    },
+    {
+      "name": "S.S. Anne 1F - Item"
+    },
+    {
+      "name": "S.S. Anne 2F - Item 1"
+    },
+    {
+      "name": "S.S. Anne 2F - Item 2"
+    },
+    {
+      "name": "S.S. Anne B1F - Item 1"
+    },
+    {
+      "name": "S.S. Anne B1F - Item 2"
+    },
+    {
+      "name": "S.S. Anne B1F - Item 3"
+    },
+    {
+      "name": "Victory Road 3F - Northeast Item"
+    },
+    {
+      "name": "Victory Road 3F - Northwest Item"
+    },
+    {
+      "name": "Rocket Hideout B1F - West Item"
+    },
+    {
+      "name": "Rocket Hideout B1F - Southwest Item"
+    },
+    {
+      "name": "Rocket Hideout B2F - Northwest Left Item"
+    },
+    {
+      "name": "Rocket Hideout B2F - Northeast Item"
+    },
+    {
+      "name": "Rocket Hideout B2F - Northwest Right Item"
+    },
+    {
+      "name": "Rocket Hideout B2F - Southwest Item"
+    },
+    {
+      "name": "Rocket Hideout B3F - East Item"
+    },
+    {
+      "name": "Rocket Hideout B3F - Center Item"
+    },
+    {
+      "name": "Rocket Hideout B4F - West Item"
+    },
+    {
+      "name": "Rocket Hideout B4F - Northwest Item"
+    },
+    {
+      "name": "Rocket Hideout B4F - Southwest Item (Lift Key)"
+    },
+    {
+      "name": "Rocket Hideout B4F - Giovanni Item (Lift Key)"
+    },
+    {
+      "name": "Rocket Hideout B4F - Rocket Grunt Item"
+    },
+    {
+      "name": "Silph Co 3F - Item (Card Key)"
+    },
+    {
+      "name": "Silph Co 4F - Left Item (Card Key)"
+    },
+    {
+      "name": "Silph Co 4F - Middle Item (Card Key)"
+    },
+    {
+      "name": "Silph Co 4F - Right Item (Card Key)"
+    },
+    {
+      "name": "Silph Co 5F - Southwest Item"
+    },
+    {
+      "name": "Silph Co 5F - Northwest Item (Card Key)"
+    },
+    {
+      "name": "Silph Co 5F - Southeast Item"
+    },
+    {
+      "name": "Silph Co 6F - West Item (Card Key)"
+    },
+    {
+      "name": "Silph Co 6F - Southwest Item (Card Key)"
+    },
+    {
+      "name": "Silph Co 7F - West Item"
+    },
+    {
+      "name": "Silph Co 7F - East Item (Card Key)"
+    },
+    {
+      "name": "Silph Co 10F - Left Item"
+    },
+    {
+      "name": "Silph Co 10F - Bottom Item"
+    },
+    {
+      "name": "Silph Co 10F - Right Item"
+    },
+    {
+      "name": "Pokemon Mansion 2F - Northeast Item"
+    },
+    {
+      "name": "Pokemon Mansion 3F - Southwest Item"
+    },
+    {
+      "name": "Pokemon Mansion 3F - Northeast Item"
+    },
+    {
+      "name": "Pokemon Mansion B1F - North Item"
+    },
+    {
+      "name": "Pokemon Mansion B1F - Southwest Item"
+    },
+    {
+      "name": "Pokemon Mansion B1F - South Item"
+    },
+    {
+      "name": "Pokemon Mansion B1F - Northwest Item"
+    },
+    {
+      "name": "Pokemon Mansion B1F - West Item"
+    },
+    {
+      "name": "Safari Zone East - Northeast Item"
+    },
+    {
+      "name": "Safari Zone East - West Item"
+    },
+    {
+      "name": "Safari Zone East - East Item"
+    },
+    {
+      "name": "Safari Zone East - Center Item"
+    },
+    {
+      "name": "Safari Zone North - Northeast Item"
+    },
+    {
+      "name": "Safari Zone North - North Item"
+    },
+    {
+      "name": "Safari Zone West - Southwest Item"
+    },
+    {
+      "name": "Safari Zone West - Northwest Item"
+    },
+    {
+      "name": "Safari Zone West - Southeast Item"
+    },
+    {
+      "name": "Safari Zone West - Northeast Item"
+    },
+    {
+      "name": "Safari Zone Center - Island Item"
+    },
+    {
+      "name": "Cerulean Cave 2F - East Item"
+    },
+    {
+      "name": "Cerulean Cave 2F - Southwest Item"
+    },
+    {
+      "name": "Cerulean Cave 2F - North Item"
+    },
+    {
+      "name": "Cerulean Cave B1F - Center Item"
+    },
+    {
+      "name": "Cerulean Cave B1F - North Item"
+    },
+    {
+      "name": "Victory Road 1F - Top Item"
+    },
+    {
+      "name": "Victory Road 1F - Left Item"
+    },
+    {
+      "name": "Rock Tunnel B1F - Southwest Item"
+    },
+    {
+      "name": "Rock Tunnel B1F - West Item"
+    },
+    {
+      "name": "Rock Tunnel B1F - Northwest Item"
+    },
+    {
+      "name": "Rock Tunnel B1F - North Item"
+    },
+    {
+      "name": "Pewter Gym - Brock 1"
+    },
+    {
+      "name": "Cerulean Gym - Misty 1"
+    },
+    {
+      "name": "Vermilion Gym - Lt. Surge 1"
+    },
+    {
+      "name": "Celadon Gym - Erika 1"
+    },
+    {
+      "name": "Fuchsia Gym - Koga 1"
+    },
+    {
+      "name": "Saffron Gym - Sabrina 1"
+    },
+    {
+      "name": "Cinnabar Gym - Blaine 1"
+    },
+    {
+      "name": "Viridian Gym - Giovanni 1"
+    },
+    {
+      "name": "Viridian Forest - Hidden Item Northwest by Trainer"
+    },
+    {
+      "name": "Viridian Forest - Hidden Item Entrance Tree"
+    },
+    {
+      "name": "Mt Moon B2F - Hidden Item Dead End Before Fossils"
+    },
+    {
+      "name": "Route 25 - Hidden Item Fence Outside Bill's House"
+    },
+    {
+      "name": "Route 9 - Hidden Item Bush By Grass"
+    },
+    {
+      "name": "S.S. Anne 1F - Hidden Item Kitchen Trash"
+    },
+    {
+      "name": "S.S. Anne B1F - Hidden Item Under Pillow"
+    },
+    {
+      "name": "Route 10 - Hidden Item Behind Rock Tunnel Entrance Cuttable Tree"
+    },
+    {
+      "name": "Route 10 - Hidden Item Bush"
+    },
+    {
+      "name": "Rocket Hideout B1F - Hidden Item Pot Plant"
+    },
+    {
+      "name": "Rocket Hideout B3F - Hidden Item Near East Item"
+    },
+    {
+      "name": "Rocket Hideout B4F - Hidden Item Behind Giovanni"
+    },
+    {
+      "name": "Pokemon Tower 5F - Hidden Item Near West Staircase"
+    },
+    {
+      "name": "Route 13 - Hidden Item Dead End Bush"
+    },
+    {
+      "name": "Route 13 - Hidden Item Dead End By Water Corner"
+    },
+    {
+      "name": "Pokemon Mansion B1F - Hidden Item Secret Key Room Corner"
+    },
+    {
+      "name": "Safari Zone West - Hidden Item Secret House Statue"
+    },
+    {
+      "name": "Silph Co 5F - Hidden Item Pot Plant"
+    },
+    {
+      "name": "Silph Co 9F - Hidden Item Nurse Bed (Card Key)"
+    },
+    {
+      "name": "Copycat's House - Hidden Item Desk"
+    },
+    {
+      "name": "Cerulean Cave 1F - Hidden Item Center Rocks"
+    },
+    {
+      "name": "Cerulean Cave B1F - Hidden Item Northeast Rocks"
+    },
+    {
+      "name": "Power Plant - Hidden Item Central Dead End"
+    },
+    {
+      "name": "Power Plant - Hidden Item Before Zapdos"
+    },
+    {
+      "name": "Seafoam Islands B2F - Hidden Item Rock"
+    },
+    {
+      "name": "Seafoam Islands B4F - Hidden Item Corner Island"
+    },
+    {
+      "name": "Pokemon Mansion 1F - Hidden Item Block Near Entrance Carpet"
+    },
+    {
+      "name": "Pokemon Mansion 3F - Hidden Item Behind Burglar"
+    },
+    {
+      "name": "Route 23 - Hidden Item Rocks Before Final Guard"
+    },
+    {
+      "name": "Route 23 - Hidden Item East Bush After Water"
+    },
+    {
+      "name": "Route 23 - Hidden Item On Island"
+    },
+    {
+      "name": "Victory Road 2F - Hidden Item Rock Before Moltres"
+    },
+    {
+      "name": "Victory Road 2F - Hidden Item Rock In Final Room"
+    },
+    {
+      "name": "Viridian City - Hidden Item Cuttable Tree"
+    },
+    {
+      "name": "Route 11 - Hidden Item Isolated Bush Near Gate"
+    },
+    {
+      "name": "Route 12 - Hidden Item Bush Near Gate"
+    },
+    {
+      "name": "Route 17 - Hidden Item In Grass"
+    },
+    {
+      "name": "Route 17 - Hidden Item Near Northernmost Sign"
+    },
+    {
+      "name": "Route 17 - Hidden Item East Center"
+    },
+    {
+      "name": "Route 17 - Hidden Item West Center"
+    },
+    {
+      "name": "Route 17 - Hidden Item Before Final Bridge"
+    },
+    {
+      "name": "Underground Tunnel North-South - Hidden Item Near Northern Stairs"
+    },
+    {
+      "name": "Underground Tunnel North-South - Hidden Item Near Southern Stairs"
+    },
+    {
+      "name": "Underground Tunnel West-East - Hidden Item West"
+    },
+    {
+      "name": "Underground Tunnel West-East - Hidden Item East"
+    },
+    {
+      "name": "Celadon City - Hidden Item Dead End Near Cuttable Tree"
+    },
+    {
+      "name": "Route 25 - Hidden Item Northeast Of Grass"
+    },
+    {
+      "name": "Mt Moon B2F - Hidden Item Lone Rock"
+    },
+    {
+      "name": "Seafoam Islands B3F - Hidden Item Rock"
+    },
+    {
+      "name": "Vermilion City - Hidden Item In Water Near Fan Club"
+    },
+    {
+      "name": "Cerulean City - Hidden Item Gym Badge Guy's Backyard"
+    },
+    {
+      "name": "Route 4 - Hidden Item Plateau East Of Mt Moon"
+    }
+  ],
+  "status": "New"
+}

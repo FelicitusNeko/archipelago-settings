@@ -61,31 +61,37 @@ APUniversalSettings.settings.forEach((i) => {
 
 const APCategoryData: APCategoryJson[] = [
   require("./_root.json"), // global settings
-  require("./000-lttp.json"), // inaugural
-  require("./001-factorio.json"), // 0.0.2
-  require("./002-minecraft.json"), // 0.1.0
-  require("./003-subnautica.json"), // 0.1.5
-  require("./004-sts.json"), // 0.1.7
-  require("./005-ror2.json"), // 0.1.7
-  require("./006-oot.json"), // 0.1.7
-  require("./007-timespin.json"), // 0.1.9
-  require("./008-sm.json"), // 0.2.0
-  require("./009-soe.json"), // 0.2.1
-  require("./010-ff1.json"), // 0.2.1, no real support (must go to FFR website)
-  require("./011-roguelegacy.json"), // 0.2.3
-  require("./012-sm64.json"), // 0.2.4
-  require("./013-raft.json"), // 0.2.4
-  require("./014-vvvvvv.json"), // 0.2.4
-  require("./015-meritous.json"), // 0.3.0
-  require("./016-smz3.json"), // 0.3.0
-  require("./017-checksfinder.json"), // 0.3.0, no settings
-  require("./018-archipidle.json"), // 0.3.0, no settings, only enabled in April
-  require("./019-hollowknight.json"), // 0.3.1
-  require("./020-witness.json"), // 0.3.2
-  require("./021-sa2b.json"), // 0.3.2
-  require("./022-starcraft2.json"), // 0.3.2
-  require("./023-darksouls3.json"), // 0.3.4
-  require("./024-dkc3.json"), // 0.3.4
+  require("./000-A Link to the Past.json"), // inaugural
+  require("./001-Factorio.json"), // 0.0.2
+  require("./002-Minecraft.json"), // 0.1.0
+  require("./003-Subnautica.json"), // 0.1.5
+  require("./004-Slay the Spire.json"), // 0.1.7
+  require("./005-Risk of Rain 2.json"), // 0.1.7
+  require("./006-Ocarina of Time.json"), // 0.1.7
+  require("./007-Timespinner.json"), // 0.1.9
+  require("./008-Super Metroid.json"), // 0.2.0
+  require("./009-Secret of Evermore.json"), // 0.2.1
+  require("./010-Final Fantasy.json"), // 0.2.1
+  require("./011-Rogue Legacy.json"), // 0.2.3
+  require("./012-Super Mario 64.json"), // 0.2.4
+  require("./013-Raft.json"), // 0.2.4
+  require("./014-VVVVVV.json"), // 0.2.4
+  require("./015-Meritous.json"), // 0.3.0
+  require("./016-SMZ3.json"), // 0.3.0
+  require("./017-ChecksFinder.json"), // 0.3.0
+  require("./018-ArchipIDLE.json"), // 0.3.0
+  require("./019-Hollow Knight.json"), // 0.3.1
+  require("./020-The Witness.json"), // 0.3.2
+  require("./021-Sonic Adventure 2 Battle.json"), // 0.3.2
+  require("./022-Starcraft 2 Wings of Liberty.json"), // 0.3.2
+  require("./023-Dark Souls III.json"), // 0.3.4
+  require("./024-Donkey Kong Country 3.json"), // 0.3.4
+  require("./025-Super Mario World.json"), // 0.3.6
+  require("./026-Pokemon Red and Blue.json"), // 0.3.6
+  require("./027-Zillion.json"), // 0.3.6
+  require("./028-Hylics 2.json"), // 0.3.6
+  require("./029-Overcooked 2.json"), // 0.3.6
+  require("./030-Sudoku.json"), // 0.3.6
 ]
   .map((i: APCategoryJson) => {
     // only bring out ArchipIDLE in April

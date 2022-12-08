@@ -1,160 +1,191 @@
 {
   "category": "Donkey Kong Country 3",
-  "readableName": "Donkey Kong Country 3: Dixie Kong's Double Trouble!",
   "index": 24,
   "settings": [
     {
-      "type": "deathlink",
-      "disabled": true
-    },
-    {
-      "type": "string",
       "name": "goal",
-      "readableName": "Goal",
       "description": "Determines the victory condition for this game.",
-      "values": {
-        "knautilus": ["Battle on the Knautilus", "Defeat Baron K. Roolenstein on the Knautilus in Krematoa"],
-        "banana_bird_hunt": ["Banana Bird Hunt", "Find enough Banana Birds to meet Mama Bird"]
-      },
+      "readableName": "Goal",
+      "values": [
+        {
+          "name": "knautilus",
+          "description": "Defeat Baron K. Roolenstein on the Knautilus in Krematoa",
+          "readableName": "Battle on the Knautilus"
+        },
+        {
+          "name": "banana_bird_hunt",
+          "description": "Find enough Banana Birds to meet Mama Bird",
+          "readableName": "Banana Bird Hunt"
+        }
+      ],
+      "type": "choice",
       "default": "knautilus"
     },
     {
-      "type": "boolean",
-      "name": "include_trade_sequence",
-      "readableName": "Include trade sequence",
-      "description": "Include Brothers Bear trading locations as checks.",
-      "default": false,
-      "disabled": true
-    },
-    {
-      "type": "numeric",
       "name": "dk_coins_for_gyrocopter",
-      "readableName": "Hero Coins for Gyrocopter",
       "description": "Determines how many Hero (DK) Coins are needed to unlock the Gyrocopter.\n*Note: Achieving this number before unlocking the Turbo Ski will cause the game to grant you a one-time upgrade to the next non-unlocked boat, until you return to Funky. Logic does not assume that you will use this.*",
-      "low": 10,
       "high": 41,
-      "randomable": true,
+      "readableName": "Hero Coins for Gyrocopter",
+      "low": 10,
+      "type": "range",
       "default": 30
     },
     {
-      "type": "numeric",
       "name": "krematoa_bonus_coin_cost",
-      "readableName": "Krematoa Bonus Coin cost",
       "description": "Determines how many Bonus Coins are needed to unlock each level in Krematoa.",
-      "low": 1,
       "high": 17,
-      "randomable": true,
+      "readableName": "Krematoa Bonus Coin cost",
+      "low": 1,
+      "type": "range",
       "default": 15
     },
     {
-      "type": "numeric",
       "name": "percentage_of_extra_bonus_coins",
-      "readableName": "Percentage of extra Bonus Coins",
       "description": "Determines how many additional Bonus Coins over how many are needed will be added to the multiworld pool.",
-      "low": 0,
       "high": 100,
-      "randomable": true,
+      "readableName": "Percentage of extra Bonus Coins",
+      "low": 0,
+      "type": "range",
       "default": 100
     },
     {
-      "type": "numeric",
       "name": "number_of_banana_birds",
-      "readableName": "Number of Banana Birds",
       "description": "Determines how many Banana Birds are added to the multiworld pool.",
-      "low": 5,
       "high": 15,
-      "randomable": true,
+      "readableName": "Number of Banana Birds",
+      "low": 5,
+      "type": "range",
       "default": 15
     },
     {
-      "type": "numeric",
       "name": "percentage_of_banana_birds",
-      "readableName": "Percentage of Banana Birds",
       "description": "Determines what percentage of Banana Birds available will be needed to complete Banana Bird Hunt.",
-      "low": 20,
-      "high": 100,
-      "randomable": true,
-      "default": 100,
       "dependsOn": {
-        "goal": ["banana_bird_hunt"]
-      }
-    },
-    {
-      "type": "boolean",
-      "name": "kongsanity",
-      "readableName": "KONGsanity",
-      "description": "Whether collecting all K-O-N-G letters in a stage results in a check.",
-      "default": false
-    },
-    {
-      "type": "boolean",
-      "name": "level_shuffle",
-      "readableName": "Level Shuffle",
-      "description": "Whether levels are shuffled.",
-      "default": false
-    },
-    {
-      "type": "string",
-      "name": "difficulty",
-      "readableName": "Difficulty",
-      "description": "Which difficulty level to use. This can also be selected using the associated cheat codes.",
-      "values": {
-        "norml": ["NORML", "Normal difficulty."],
-        "hardr": ["HARDR", "Many DK barrels are removed."],
-        "tufst": ["TUFST", "Almost all DK barrels and Midway barrels are removed. Start each stage with both Kongs."]
+        "goal": [
+          "banana_bird_hunt"
+        ]
       },
+      "high": 100,
+      "readableName": "Percentage of Banana Birds",
+      "low": 20,
+      "type": "range",
+      "default": 100
+    },
+    {
+      "name": "kongsanity",
+      "description": "Whether collecting all K-O-N-G letters in a stage results in a check.",
+      "readableName": "KONGsanity",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "level_shuffle",
+      "description": "Whether levels are shuffled.",
+      "readableName": "Level Shuffle",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "difficulty",
+      "description": "Which difficulty level to use. This can also be selected using the associated cheat codes.",
+      "readableName": "Difficulty",
+      "values": [
+        {
+          "name": "norml",
+          "description": "Normal difficulty.",
+          "readableName": "NORML"
+        },
+        {
+          "name": "hardr",
+          "description": "Many DK barrels are removed.",
+          "readableName": "HARDR"
+        },
+        {
+          "name": "tufst",
+          "description": "Almost all DK barrels and Midway barrels are removed. Start each stage with both Kongs.",
+          "readableName": "TUFST"
+        }
+      ],
+      "type": "choice",
       "default": "norml"
     },
     {
-      "type": "boolean",
       "name": "autosave",
-      "readableName": "Autosave (ASAVE)",
       "description": "Whether the game should autosave after each stage.",
+      "readableName": "Autosave (ASAVE)",
+      "type": "toggle",
       "default": true
     },
     {
-      "type": "boolean",
       "name": "merry",
-      "readableName": "MERRY",
       "description": "Whether the Bonus areas will be Christmas-themed.",
+      "readableName": "MERRY",
+      "type": "toggle",
       "default": false
     },
     {
-      "type": "boolean",
       "name": "music_shuffle",
-      "readableName": "Music Shuffle",
       "description": "Whether music is shuffled.",
+      "readableName": "Music Shuffle",
+      "type": "toggle",
       "default": false
     },
     {
-      "type": "string",
       "name": "kong_palette_swap",
-      "readableName": "Kong Palette Swap",
       "description": "Determines which color will be used for the Kongs.",
-      "values": {
-        "default": "Default",
-        "purple": "Purple",
-        "spooky": "Spooky",
-        "dark": "Dark",
-        "chocolate": "Chocolate",
-        "shadow": "Shadow",
-        "red_gold": "Red/Gold",
-        "gbc": "Game Boy Color",
-        "halloween": "Halloween"
-      },
+      "readableName": "Kong Palette Swap",
+      "values": [
+        {
+          "name": "default",
+          "readableName": "Default"
+        },
+        {
+          "name": "purple",
+          "readableName": "Purple"
+        },
+        {
+          "name": "spooky",
+          "readableName": "Spooky"
+        },
+        {
+          "name": "dark",
+          "readableName": "Dark"
+        },
+        {
+          "name": "chocolate",
+          "readableName": "Chocolate"
+        },
+        {
+          "name": "shadow",
+          "readableName": "Shadow"
+        },
+        {
+          "name": "red_gold",
+          "readableName": "Red/Gold"
+        },
+        {
+          "name": "gbc",
+          "readableName": "Game Boy Color"
+        },
+        {
+          "name": "halloween",
+          "readableName": "Halloween"
+        }
+      ],
+      "type": "choice",
       "default": "default"
     },
     {
-      "type": "numeric",
       "name": "starting_life_count",
-      "readableName": "Starting Lives",
       "description": "Determines the starting number of lives.",
-      "low": 1,
       "high": 99,
-      "randomable": true,
+      "readableName": "Starting Lives",
+      "low": 1,
+      "type": "range",
       "default": 5
     }
   ],
+  "defver": 2,
   "items": [
     {
       "name": "Donkey Kong",
@@ -879,5 +910,7 @@
     {
       "name": "Swoopy Salvo - KONG"
     }
-  ]
+  ],
+  "readableName": "Donkey Kong Country 3: Dixie Kong's Double Trouble!",
+  "status": "Updated"
 }

@@ -1,0 +1,1058 @@
+{
+  "category": "Risk of Rain 2",
+  "index": 5,
+  "settings": [
+    {
+      "name": "total_locations",
+      "description": "How many location checks will be added to the playthrough.",
+      "high": 250,
+      "readableName": "Total locations",
+      "low": 10,
+      "step": 5,
+      "type": "range",
+      "default": 20
+    },
+    {
+      "name": "total_revivals",
+      "description": "How much percent of the items in your pool will be Dio's Best Friends.",
+      "high": 10,
+      "readableName": "Total DBFs in pool",
+      "low": 0,
+      "type": "range",
+      "default": 4
+    },
+    {
+      "name": "start_with_revive",
+      "description": "Start with Dio's Best Friend, for one extra life.",
+      "readableName": "Dio's Best Friend",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "final_stage_death",
+      "description": "Death on the final boss stage counts as a win.",
+      "readableName": "Final Stage Death is Win",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "item_pickup_step",
+      "description": "How many item pickups are required before the next one triggers an AP check.",
+      "high": 5,
+      "readableName": "Item pickup step",
+      "low": 0,
+      "type": "range",
+      "default": 2
+    },
+    {
+      "name": "enable_lunar",
+      "description": "Adds Lunar items to multiworld pool.",
+      "readableName": "Lunar items",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "item_weights",
+      "description": "The set of weights to be used in this run.",
+      "dependsOn": {
+        "item_pool_presets": [
+          true
+        ]
+      },
+      "readableName": "Item pool preset",
+      "values": [
+        {
+          "name": "default",
+          "readableName": "Default"
+        },
+        {
+          "name": "new",
+          "description": "Proposed preset to replace the current default in the future",
+          "readableName": "New"
+        },
+        {
+          "name": "uncommon",
+          "readableName": "Lots of uncommons"
+        },
+        {
+          "name": "legendary",
+          "readableName": "Lots of legendaries"
+        },
+        {
+          "name": "lunartic",
+          "readableName": "Oops! All Lunar Items"
+        },
+        {
+          "name": "chaos",
+          "description": "Mostly totally random, lower weights for rare stuff",
+          "readableName": "Chaos"
+        },
+        {
+          "name": "no_scraps",
+          "readableName": "No scrap items"
+        },
+        {
+          "name": "even",
+          "readableName": "Even chance for everything"
+        },
+        {
+          "name": "scraps_only",
+          "readableName": "Only scrap items"
+        }
+      ],
+      "type": "choice",
+      "default": "default"
+    },
+    {
+      "name": "item_pool_presets",
+      "description": "Whether to use a preset item pool distribution. If disabled, you'll be able to set item types manually.",
+      "readableName": "Use item pool presets",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "green_scrap",
+      "description": "The weight of Green Scraps in the multiworld pool.",
+      "dependsOn": {
+        "item_pool_presets": [
+          false
+        ]
+      },
+      "high": 100,
+      "readableName": "Green Scraps",
+      "low": 0,
+      "type": "range",
+      "default": 16
+    },
+    {
+      "name": "red_scrap",
+      "description": "The weight of Red Scraps in the multiworld pool.",
+      "dependsOn": {
+        "item_pool_presets": [
+          false
+        ]
+      },
+      "high": 100,
+      "readableName": "Red Scraps",
+      "low": 0,
+      "type": "range",
+      "default": 4
+    },
+    {
+      "name": "yellow_scrap",
+      "description": "The weight of Yellow Scraps in the multiworld pool.",
+      "dependsOn": {
+        "item_pool_presets": [
+          false
+        ]
+      },
+      "high": 100,
+      "readableName": "Yellow Scraps",
+      "low": 0,
+      "type": "range",
+      "default": 1
+    },
+    {
+      "name": "white_scrap",
+      "description": "The weight of White Scraps in the multiworld pool.",
+      "dependsOn": {
+        "item_pool_presets": [
+          false
+        ]
+      },
+      "high": 100,
+      "readableName": "White Scraps",
+      "low": 0,
+      "type": "range",
+      "default": 32
+    },
+    {
+      "name": "common_item",
+      "description": "The weight of Common items in the multiworld pool.",
+      "dependsOn": {
+        "item_pool_presets": [
+          false
+        ]
+      },
+      "high": 100,
+      "readableName": "Common items",
+      "low": 0,
+      "type": "range",
+      "default": 64
+    },
+    {
+      "name": "uncommon_item",
+      "description": "The weight of Uncommon items in the multiworld pool.",
+      "dependsOn": {
+        "item_pool_presets": [
+          false
+        ]
+      },
+      "high": 100,
+      "readableName": "Uncommon items",
+      "low": 0,
+      "type": "range",
+      "default": 32
+    },
+    {
+      "name": "legendary_item",
+      "description": "The weight of Legendary items in the multiworld pool.",
+      "dependsOn": {
+        "item_pool_presets": [
+          false
+        ]
+      },
+      "high": 100,
+      "readableName": "Legendary items",
+      "low": 0,
+      "type": "range",
+      "default": 8
+    },
+    {
+      "name": "boss_item",
+      "description": "The weight of Boss items in the multiworld pool.",
+      "dependsOn": {
+        "item_pool_presets": [
+          false
+        ]
+      },
+      "high": 100,
+      "readableName": "Boss items",
+      "low": 0,
+      "type": "range",
+      "default": 4
+    },
+    {
+      "name": "lunar_item",
+      "description": "The weight of Lunar items in the multiworld pool.",
+      "dependsOn": {
+        "item_pool_presets": [
+          false
+        ]
+      },
+      "high": 100,
+      "readableName": "Lunar items",
+      "low": 0,
+      "type": "range",
+      "default": 16
+    },
+    {
+      "name": "equipment",
+      "description": "The weight of Equipment items in the multiworld pool.",
+      "dependsOn": {
+        "item_pool_presets": [
+          false
+        ]
+      },
+      "high": 100,
+      "readableName": "Equipment items",
+      "low": 0,
+      "type": "range",
+      "default": 32
+    }
+  ],
+  "defver": 2,
+  "items": [
+    {
+      "name": "Dio's Best Friend",
+      "max": 50
+    },
+    {
+      "name": "Common Item",
+      "max": 50
+    },
+    {
+      "name": "Uncommon Item",
+      "max": 50
+    },
+    {
+      "name": "Legendary Item",
+      "max": 50
+    },
+    {
+      "name": "Boss Item",
+      "max": 50
+    },
+    {
+      "name": "Lunar Item",
+      "dependsOn": {
+        "enable_lunar": [
+          true
+        ]
+      },
+      "max": 50
+    },
+    {
+      "name": "Equipment"
+    },
+    {
+      "name": "Item Scrap, White",
+      "max": 50
+    },
+    {
+      "name": "Item Scrap, Green",
+      "max": 50
+    },
+    {
+      "name": "Item Scrap, Red",
+      "max": 50
+    },
+    {
+      "name": "Item Scrap, Yellow",
+      "max": 50
+    }
+  ],
+  "locations": [
+    {
+      "name": "ItemPickup1"
+    },
+    {
+      "name": "ItemPickup2"
+    },
+    {
+      "name": "ItemPickup3"
+    },
+    {
+      "name": "ItemPickup4"
+    },
+    {
+      "name": "ItemPickup5"
+    },
+    {
+      "name": "ItemPickup6"
+    },
+    {
+      "name": "ItemPickup7"
+    },
+    {
+      "name": "ItemPickup8"
+    },
+    {
+      "name": "ItemPickup9"
+    },
+    {
+      "name": "ItemPickup10"
+    },
+    {
+      "name": "ItemPickup11"
+    },
+    {
+      "name": "ItemPickup12"
+    },
+    {
+      "name": "ItemPickup13"
+    },
+    {
+      "name": "ItemPickup14"
+    },
+    {
+      "name": "ItemPickup15"
+    },
+    {
+      "name": "ItemPickup16"
+    },
+    {
+      "name": "ItemPickup17"
+    },
+    {
+      "name": "ItemPickup18"
+    },
+    {
+      "name": "ItemPickup19"
+    },
+    {
+      "name": "ItemPickup20"
+    },
+    {
+      "name": "ItemPickup21"
+    },
+    {
+      "name": "ItemPickup22"
+    },
+    {
+      "name": "ItemPickup23"
+    },
+    {
+      "name": "ItemPickup24"
+    },
+    {
+      "name": "ItemPickup25"
+    },
+    {
+      "name": "ItemPickup26"
+    },
+    {
+      "name": "ItemPickup27"
+    },
+    {
+      "name": "ItemPickup28"
+    },
+    {
+      "name": "ItemPickup29"
+    },
+    {
+      "name": "ItemPickup30"
+    },
+    {
+      "name": "ItemPickup31"
+    },
+    {
+      "name": "ItemPickup32"
+    },
+    {
+      "name": "ItemPickup33"
+    },
+    {
+      "name": "ItemPickup34"
+    },
+    {
+      "name": "ItemPickup35"
+    },
+    {
+      "name": "ItemPickup36"
+    },
+    {
+      "name": "ItemPickup37"
+    },
+    {
+      "name": "ItemPickup38"
+    },
+    {
+      "name": "ItemPickup39"
+    },
+    {
+      "name": "ItemPickup40"
+    },
+    {
+      "name": "ItemPickup41"
+    },
+    {
+      "name": "ItemPickup42"
+    },
+    {
+      "name": "ItemPickup43"
+    },
+    {
+      "name": "ItemPickup44"
+    },
+    {
+      "name": "ItemPickup45"
+    },
+    {
+      "name": "ItemPickup46"
+    },
+    {
+      "name": "ItemPickup47"
+    },
+    {
+      "name": "ItemPickup48"
+    },
+    {
+      "name": "ItemPickup49"
+    },
+    {
+      "name": "ItemPickup50"
+    },
+    {
+      "name": "ItemPickup51"
+    },
+    {
+      "name": "ItemPickup52"
+    },
+    {
+      "name": "ItemPickup53"
+    },
+    {
+      "name": "ItemPickup54"
+    },
+    {
+      "name": "ItemPickup55"
+    },
+    {
+      "name": "ItemPickup56"
+    },
+    {
+      "name": "ItemPickup57"
+    },
+    {
+      "name": "ItemPickup58"
+    },
+    {
+      "name": "ItemPickup59"
+    },
+    {
+      "name": "ItemPickup60"
+    },
+    {
+      "name": "ItemPickup61"
+    },
+    {
+      "name": "ItemPickup62"
+    },
+    {
+      "name": "ItemPickup63"
+    },
+    {
+      "name": "ItemPickup64"
+    },
+    {
+      "name": "ItemPickup65"
+    },
+    {
+      "name": "ItemPickup66"
+    },
+    {
+      "name": "ItemPickup67"
+    },
+    {
+      "name": "ItemPickup68"
+    },
+    {
+      "name": "ItemPickup69"
+    },
+    {
+      "name": "ItemPickup70"
+    },
+    {
+      "name": "ItemPickup71"
+    },
+    {
+      "name": "ItemPickup72"
+    },
+    {
+      "name": "ItemPickup73"
+    },
+    {
+      "name": "ItemPickup74"
+    },
+    {
+      "name": "ItemPickup75"
+    },
+    {
+      "name": "ItemPickup76"
+    },
+    {
+      "name": "ItemPickup77"
+    },
+    {
+      "name": "ItemPickup78"
+    },
+    {
+      "name": "ItemPickup79"
+    },
+    {
+      "name": "ItemPickup80"
+    },
+    {
+      "name": "ItemPickup81"
+    },
+    {
+      "name": "ItemPickup82"
+    },
+    {
+      "name": "ItemPickup83"
+    },
+    {
+      "name": "ItemPickup84"
+    },
+    {
+      "name": "ItemPickup85"
+    },
+    {
+      "name": "ItemPickup86"
+    },
+    {
+      "name": "ItemPickup87"
+    },
+    {
+      "name": "ItemPickup88"
+    },
+    {
+      "name": "ItemPickup89"
+    },
+    {
+      "name": "ItemPickup90"
+    },
+    {
+      "name": "ItemPickup91"
+    },
+    {
+      "name": "ItemPickup92"
+    },
+    {
+      "name": "ItemPickup93"
+    },
+    {
+      "name": "ItemPickup94"
+    },
+    {
+      "name": "ItemPickup95"
+    },
+    {
+      "name": "ItemPickup96"
+    },
+    {
+      "name": "ItemPickup97"
+    },
+    {
+      "name": "ItemPickup98"
+    },
+    {
+      "name": "ItemPickup99"
+    },
+    {
+      "name": "ItemPickup100"
+    },
+    {
+      "name": "ItemPickup101"
+    },
+    {
+      "name": "ItemPickup102"
+    },
+    {
+      "name": "ItemPickup103"
+    },
+    {
+      "name": "ItemPickup104"
+    },
+    {
+      "name": "ItemPickup105"
+    },
+    {
+      "name": "ItemPickup106"
+    },
+    {
+      "name": "ItemPickup107"
+    },
+    {
+      "name": "ItemPickup108"
+    },
+    {
+      "name": "ItemPickup109"
+    },
+    {
+      "name": "ItemPickup110"
+    },
+    {
+      "name": "ItemPickup111"
+    },
+    {
+      "name": "ItemPickup112"
+    },
+    {
+      "name": "ItemPickup113"
+    },
+    {
+      "name": "ItemPickup114"
+    },
+    {
+      "name": "ItemPickup115"
+    },
+    {
+      "name": "ItemPickup116"
+    },
+    {
+      "name": "ItemPickup117"
+    },
+    {
+      "name": "ItemPickup118"
+    },
+    {
+      "name": "ItemPickup119"
+    },
+    {
+      "name": "ItemPickup120"
+    },
+    {
+      "name": "ItemPickup121"
+    },
+    {
+      "name": "ItemPickup122"
+    },
+    {
+      "name": "ItemPickup123"
+    },
+    {
+      "name": "ItemPickup124"
+    },
+    {
+      "name": "ItemPickup125"
+    },
+    {
+      "name": "ItemPickup126"
+    },
+    {
+      "name": "ItemPickup127"
+    },
+    {
+      "name": "ItemPickup128"
+    },
+    {
+      "name": "ItemPickup129"
+    },
+    {
+      "name": "ItemPickup130"
+    },
+    {
+      "name": "ItemPickup131"
+    },
+    {
+      "name": "ItemPickup132"
+    },
+    {
+      "name": "ItemPickup133"
+    },
+    {
+      "name": "ItemPickup134"
+    },
+    {
+      "name": "ItemPickup135"
+    },
+    {
+      "name": "ItemPickup136"
+    },
+    {
+      "name": "ItemPickup137"
+    },
+    {
+      "name": "ItemPickup138"
+    },
+    {
+      "name": "ItemPickup139"
+    },
+    {
+      "name": "ItemPickup140"
+    },
+    {
+      "name": "ItemPickup141"
+    },
+    {
+      "name": "ItemPickup142"
+    },
+    {
+      "name": "ItemPickup143"
+    },
+    {
+      "name": "ItemPickup144"
+    },
+    {
+      "name": "ItemPickup145"
+    },
+    {
+      "name": "ItemPickup146"
+    },
+    {
+      "name": "ItemPickup147"
+    },
+    {
+      "name": "ItemPickup148"
+    },
+    {
+      "name": "ItemPickup149"
+    },
+    {
+      "name": "ItemPickup150"
+    },
+    {
+      "name": "ItemPickup151"
+    },
+    {
+      "name": "ItemPickup152"
+    },
+    {
+      "name": "ItemPickup153"
+    },
+    {
+      "name": "ItemPickup154"
+    },
+    {
+      "name": "ItemPickup155"
+    },
+    {
+      "name": "ItemPickup156"
+    },
+    {
+      "name": "ItemPickup157"
+    },
+    {
+      "name": "ItemPickup158"
+    },
+    {
+      "name": "ItemPickup159"
+    },
+    {
+      "name": "ItemPickup160"
+    },
+    {
+      "name": "ItemPickup161"
+    },
+    {
+      "name": "ItemPickup162"
+    },
+    {
+      "name": "ItemPickup163"
+    },
+    {
+      "name": "ItemPickup164"
+    },
+    {
+      "name": "ItemPickup165"
+    },
+    {
+      "name": "ItemPickup166"
+    },
+    {
+      "name": "ItemPickup167"
+    },
+    {
+      "name": "ItemPickup168"
+    },
+    {
+      "name": "ItemPickup169"
+    },
+    {
+      "name": "ItemPickup170"
+    },
+    {
+      "name": "ItemPickup171"
+    },
+    {
+      "name": "ItemPickup172"
+    },
+    {
+      "name": "ItemPickup173"
+    },
+    {
+      "name": "ItemPickup174"
+    },
+    {
+      "name": "ItemPickup175"
+    },
+    {
+      "name": "ItemPickup176"
+    },
+    {
+      "name": "ItemPickup177"
+    },
+    {
+      "name": "ItemPickup178"
+    },
+    {
+      "name": "ItemPickup179"
+    },
+    {
+      "name": "ItemPickup180"
+    },
+    {
+      "name": "ItemPickup181"
+    },
+    {
+      "name": "ItemPickup182"
+    },
+    {
+      "name": "ItemPickup183"
+    },
+    {
+      "name": "ItemPickup184"
+    },
+    {
+      "name": "ItemPickup185"
+    },
+    {
+      "name": "ItemPickup186"
+    },
+    {
+      "name": "ItemPickup187"
+    },
+    {
+      "name": "ItemPickup188"
+    },
+    {
+      "name": "ItemPickup189"
+    },
+    {
+      "name": "ItemPickup190"
+    },
+    {
+      "name": "ItemPickup191"
+    },
+    {
+      "name": "ItemPickup192"
+    },
+    {
+      "name": "ItemPickup193"
+    },
+    {
+      "name": "ItemPickup194"
+    },
+    {
+      "name": "ItemPickup195"
+    },
+    {
+      "name": "ItemPickup196"
+    },
+    {
+      "name": "ItemPickup197"
+    },
+    {
+      "name": "ItemPickup198"
+    },
+    {
+      "name": "ItemPickup199"
+    },
+    {
+      "name": "ItemPickup200"
+    },
+    {
+      "name": "ItemPickup201"
+    },
+    {
+      "name": "ItemPickup202"
+    },
+    {
+      "name": "ItemPickup203"
+    },
+    {
+      "name": "ItemPickup204"
+    },
+    {
+      "name": "ItemPickup205"
+    },
+    {
+      "name": "ItemPickup206"
+    },
+    {
+      "name": "ItemPickup207"
+    },
+    {
+      "name": "ItemPickup208"
+    },
+    {
+      "name": "ItemPickup209"
+    },
+    {
+      "name": "ItemPickup210"
+    },
+    {
+      "name": "ItemPickup211"
+    },
+    {
+      "name": "ItemPickup212"
+    },
+    {
+      "name": "ItemPickup213"
+    },
+    {
+      "name": "ItemPickup214"
+    },
+    {
+      "name": "ItemPickup215"
+    },
+    {
+      "name": "ItemPickup216"
+    },
+    {
+      "name": "ItemPickup217"
+    },
+    {
+      "name": "ItemPickup218"
+    },
+    {
+      "name": "ItemPickup219"
+    },
+    {
+      "name": "ItemPickup220"
+    },
+    {
+      "name": "ItemPickup221"
+    },
+    {
+      "name": "ItemPickup222"
+    },
+    {
+      "name": "ItemPickup223"
+    },
+    {
+      "name": "ItemPickup224"
+    },
+    {
+      "name": "ItemPickup225"
+    },
+    {
+      "name": "ItemPickup226"
+    },
+    {
+      "name": "ItemPickup227"
+    },
+    {
+      "name": "ItemPickup228"
+    },
+    {
+      "name": "ItemPickup229"
+    },
+    {
+      "name": "ItemPickup230"
+    },
+    {
+      "name": "ItemPickup231"
+    },
+    {
+      "name": "ItemPickup232"
+    },
+    {
+      "name": "ItemPickup233"
+    },
+    {
+      "name": "ItemPickup234"
+    },
+    {
+      "name": "ItemPickup235"
+    },
+    {
+      "name": "ItemPickup236"
+    },
+    {
+      "name": "ItemPickup237"
+    },
+    {
+      "name": "ItemPickup238"
+    },
+    {
+      "name": "ItemPickup239"
+    },
+    {
+      "name": "ItemPickup240"
+    },
+    {
+      "name": "ItemPickup241"
+    },
+    {
+      "name": "ItemPickup242"
+    },
+    {
+      "name": "ItemPickup243"
+    },
+    {
+      "name": "ItemPickup244"
+    },
+    {
+      "name": "ItemPickup245"
+    },
+    {
+      "name": "ItemPickup246"
+    },
+    {
+      "name": "ItemPickup247"
+    },
+    {
+      "name": "ItemPickup248"
+    },
+    {
+      "name": "ItemPickup249"
+    },
+    {
+      "name": "ItemPickup250"
+    }
+  ],
+  "status": "Updated"
+}

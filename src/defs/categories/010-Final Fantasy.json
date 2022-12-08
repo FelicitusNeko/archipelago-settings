@@ -1,0 +1,1359 @@
+{
+  "category": "Final Fantasy",
+  "index": 10,
+  "settings": [],
+  "defver": 2,
+  "items": [
+    {
+      "name": "None"
+    },
+    {
+      "name": "Lute"
+    },
+    {
+      "name": "Crown"
+    },
+    {
+      "name": "Crystal"
+    },
+    {
+      "name": "Herb"
+    },
+    {
+      "name": "Key"
+    },
+    {
+      "name": "Tnt"
+    },
+    {
+      "name": "Adamant"
+    },
+    {
+      "name": "Slab"
+    },
+    {
+      "name": "Ruby"
+    },
+    {
+      "name": "Rod"
+    },
+    {
+      "name": "Floater"
+    },
+    {
+      "name": "Chime"
+    },
+    {
+      "name": "Tail"
+    },
+    {
+      "name": "Cube"
+    },
+    {
+      "name": "Bottle"
+    },
+    {
+      "name": "Oxyale"
+    },
+    {
+      "name": "EarthOrb"
+    },
+    {
+      "name": "FireOrb"
+    },
+    {
+      "name": "WaterOrb"
+    },
+    {
+      "name": "AirOrb"
+    },
+    {
+      "name": "Shard"
+    },
+    {
+      "name": "Tent"
+    },
+    {
+      "name": "Cabin"
+    },
+    {
+      "name": "House"
+    },
+    {
+      "name": "Heal"
+    },
+    {
+      "name": "Pure"
+    },
+    {
+      "name": "Soft"
+    },
+    {
+      "name": "WoodenNunchucks"
+    },
+    {
+      "name": "SmallKnife"
+    },
+    {
+      "name": "WoodenRod"
+    },
+    {
+      "name": "Rapier"
+    },
+    {
+      "name": "IronHammer"
+    },
+    {
+      "name": "ShortSword"
+    },
+    {
+      "name": "HandAxe"
+    },
+    {
+      "name": "Scimitar"
+    },
+    {
+      "name": "IronNunchucks"
+    },
+    {
+      "name": "LargeKnife"
+    },
+    {
+      "name": "IronStaff"
+    },
+    {
+      "name": "Sabre"
+    },
+    {
+      "name": "LongSword"
+    },
+    {
+      "name": "GreatAxe"
+    },
+    {
+      "name": "Falchon"
+    },
+    {
+      "name": "SilverKnife"
+    },
+    {
+      "name": "SilverSword"
+    },
+    {
+      "name": "SilverHammer"
+    },
+    {
+      "name": "SilverAxe"
+    },
+    {
+      "name": "FlameSword"
+    },
+    {
+      "name": "IceSword"
+    },
+    {
+      "name": "DragonSword"
+    },
+    {
+      "name": "GiantSword"
+    },
+    {
+      "name": "SunSword"
+    },
+    {
+      "name": "CoralSword"
+    },
+    {
+      "name": "WereSword"
+    },
+    {
+      "name": "RuneSword"
+    },
+    {
+      "name": "PowerRod"
+    },
+    {
+      "name": "LightAxe"
+    },
+    {
+      "name": "HealRod"
+    },
+    {
+      "name": "MageRod"
+    },
+    {
+      "name": "Defense"
+    },
+    {
+      "name": "WizardRod"
+    },
+    {
+      "name": "Vorpal"
+    },
+    {
+      "name": "CatClaw"
+    },
+    {
+      "name": "ThorHammer"
+    },
+    {
+      "name": "BaneSword"
+    },
+    {
+      "name": "Katana"
+    },
+    {
+      "name": "Xcalber"
+    },
+    {
+      "name": "Masamune"
+    },
+    {
+      "name": "Cloth"
+    },
+    {
+      "name": "WoodenArmor"
+    },
+    {
+      "name": "ChainArmor"
+    },
+    {
+      "name": "IronArmor"
+    },
+    {
+      "name": "SteelArmor"
+    },
+    {
+      "name": "SilverArmor"
+    },
+    {
+      "name": "FlameArmor"
+    },
+    {
+      "name": "IceArmor"
+    },
+    {
+      "name": "OpalArmor"
+    },
+    {
+      "name": "DragonArmor"
+    },
+    {
+      "name": "Copper"
+    },
+    {
+      "name": "Silver"
+    },
+    {
+      "name": "Gold"
+    },
+    {
+      "name": "Opal"
+    },
+    {
+      "name": "WhiteShirt"
+    },
+    {
+      "name": "BlackShirt"
+    },
+    {
+      "name": "WoodenShield"
+    },
+    {
+      "name": "IronShield"
+    },
+    {
+      "name": "SilverShield"
+    },
+    {
+      "name": "FlameShield"
+    },
+    {
+      "name": "IceShield"
+    },
+    {
+      "name": "OpalShield"
+    },
+    {
+      "name": "AegisShield"
+    },
+    {
+      "name": "Buckler"
+    },
+    {
+      "name": "ProCape"
+    },
+    {
+      "name": "Cap"
+    },
+    {
+      "name": "WoodenHelm"
+    },
+    {
+      "name": "IronHelm"
+    },
+    {
+      "name": "SilverHelm"
+    },
+    {
+      "name": "OpalHelm"
+    },
+    {
+      "name": "HealHelm"
+    },
+    {
+      "name": "Ribbon"
+    },
+    {
+      "name": "Gloves"
+    },
+    {
+      "name": "CopperGauntlets"
+    },
+    {
+      "name": "IronGauntlets"
+    },
+    {
+      "name": "SilverGauntlets"
+    },
+    {
+      "name": "ZeusGauntlets"
+    },
+    {
+      "name": "PowerGauntlets"
+    },
+    {
+      "name": "OpalGauntlets"
+    },
+    {
+      "name": "ProRing"
+    },
+    {
+      "name": "Gold10"
+    },
+    {
+      "name": "Gold20"
+    },
+    {
+      "name": "Gold25"
+    },
+    {
+      "name": "Gold30"
+    },
+    {
+      "name": "Gold55"
+    },
+    {
+      "name": "Gold70"
+    },
+    {
+      "name": "Gold85"
+    },
+    {
+      "name": "Gold110"
+    },
+    {
+      "name": "Gold135"
+    },
+    {
+      "name": "Gold155"
+    },
+    {
+      "name": "Gold160"
+    },
+    {
+      "name": "Gold180"
+    },
+    {
+      "name": "Gold240"
+    },
+    {
+      "name": "Gold255"
+    },
+    {
+      "name": "Gold260"
+    },
+    {
+      "name": "Gold295"
+    },
+    {
+      "name": "Gold300"
+    },
+    {
+      "name": "Gold315"
+    },
+    {
+      "name": "Gold330"
+    },
+    {
+      "name": "Gold350"
+    },
+    {
+      "name": "Gold385"
+    },
+    {
+      "name": "Gold400"
+    },
+    {
+      "name": "Gold450"
+    },
+    {
+      "name": "Gold500"
+    },
+    {
+      "name": "Gold530"
+    },
+    {
+      "name": "Gold575"
+    },
+    {
+      "name": "Gold620"
+    },
+    {
+      "name": "Gold680"
+    },
+    {
+      "name": "Gold750"
+    },
+    {
+      "name": "Gold795"
+    },
+    {
+      "name": "Gold880"
+    },
+    {
+      "name": "Gold1020"
+    },
+    {
+      "name": "Gold1250"
+    },
+    {
+      "name": "Gold1455"
+    },
+    {
+      "name": "Gold1520"
+    },
+    {
+      "name": "Gold1760"
+    },
+    {
+      "name": "Gold1975"
+    },
+    {
+      "name": "Gold2000"
+    },
+    {
+      "name": "Gold2750"
+    },
+    {
+      "name": "Gold3400"
+    },
+    {
+      "name": "Gold4150"
+    },
+    {
+      "name": "Gold5000"
+    },
+    {
+      "name": "Gold5450"
+    },
+    {
+      "name": "Gold6400"
+    },
+    {
+      "name": "Gold6720"
+    },
+    {
+      "name": "Gold7340"
+    },
+    {
+      "name": "Gold7690"
+    },
+    {
+      "name": "Gold7900"
+    },
+    {
+      "name": "Gold8135"
+    },
+    {
+      "name": "Gold9000"
+    },
+    {
+      "name": "Gold9300"
+    },
+    {
+      "name": "Gold9500"
+    },
+    {
+      "name": "Gold9900"
+    },
+    {
+      "name": "Gold10000"
+    },
+    {
+      "name": "Gold12350"
+    },
+    {
+      "name": "Gold13000"
+    },
+    {
+      "name": "Gold13450"
+    },
+    {
+      "name": "Gold14050"
+    },
+    {
+      "name": "Gold14720"
+    },
+    {
+      "name": "Gold15000"
+    },
+    {
+      "name": "Gold17490"
+    },
+    {
+      "name": "Gold18010"
+    },
+    {
+      "name": "Gold19990"
+    },
+    {
+      "name": "Gold20000"
+    },
+    {
+      "name": "Gold20010"
+    },
+    {
+      "name": "Gold26000"
+    },
+    {
+      "name": "Gold45000"
+    },
+    {
+      "name": "Gold65000"
+    },
+    {
+      "name": "FullCure"
+    },
+    {
+      "name": "Phoenix"
+    },
+    {
+      "name": "Blast"
+    },
+    {
+      "name": "Smoke"
+    },
+    {
+      "name": "Refresh"
+    },
+    {
+      "name": "Flare"
+    },
+    {
+      "name": "Black"
+    },
+    {
+      "name": "Guard"
+    },
+    {
+      "name": "Quick"
+    },
+    {
+      "name": "HighPotion"
+    },
+    {
+      "name": "Wizard"
+    },
+    {
+      "name": "Cloak"
+    },
+    {
+      "name": "Ship"
+    },
+    {
+      "name": "Bridge"
+    },
+    {
+      "name": "Canal"
+    },
+    {
+      "name": "Canoe"
+    },
+    {
+      "name": "Sigil"
+    },
+    {
+      "name": "Mark"
+    }
+  ],
+  "locations": [
+    {
+      "name": "Coneria1"
+    },
+    {
+      "name": "Coneria2"
+    },
+    {
+      "name": "ConeriaMajor"
+    },
+    {
+      "name": "Coneria4"
+    },
+    {
+      "name": "Coneria5"
+    },
+    {
+      "name": "Coneria6"
+    },
+    {
+      "name": "ToFTopLeft1"
+    },
+    {
+      "name": "ToFTopLeft2"
+    },
+    {
+      "name": "ToFBottomLeft"
+    },
+    {
+      "name": "ToFBottomRight"
+    },
+    {
+      "name": "ToFTopRight1"
+    },
+    {
+      "name": "ToFTopRight2"
+    },
+    {
+      "name": "Elfland1"
+    },
+    {
+      "name": "Elfland2"
+    },
+    {
+      "name": "Elfland3"
+    },
+    {
+      "name": "Elfland4"
+    },
+    {
+      "name": "NorthwestCastle1"
+    },
+    {
+      "name": "NorthwestCastle2"
+    },
+    {
+      "name": "NorthwestCastle3"
+    },
+    {
+      "name": "MarshCave1"
+    },
+    {
+      "name": "MarshCave2"
+    },
+    {
+      "name": "MarshCave3"
+    },
+    {
+      "name": "MarshCave4"
+    },
+    {
+      "name": "MarshCave5"
+    },
+    {
+      "name": "MarshCave6"
+    },
+    {
+      "name": "MarshCave7"
+    },
+    {
+      "name": "MarshCave8"
+    },
+    {
+      "name": "MarshCaveMajor"
+    },
+    {
+      "name": "MarshCave10"
+    },
+    {
+      "name": "MarshCave11"
+    },
+    {
+      "name": "MarshCave12"
+    },
+    {
+      "name": "MarshCave13"
+    },
+    {
+      "name": "DwarfCave1"
+    },
+    {
+      "name": "DwarfCave2"
+    },
+    {
+      "name": "DwarfCave3"
+    },
+    {
+      "name": "DwarfCave4"
+    },
+    {
+      "name": "DwarfCave5"
+    },
+    {
+      "name": "DwarfCave6"
+    },
+    {
+      "name": "DwarfCave7"
+    },
+    {
+      "name": "DwarfCave8"
+    },
+    {
+      "name": "DwarfCave9"
+    },
+    {
+      "name": "DwarfCave10"
+    },
+    {
+      "name": "MatoyasCave1"
+    },
+    {
+      "name": "MatoyasCave2"
+    },
+    {
+      "name": "MatoyasCave3"
+    },
+    {
+      "name": "EarthCave1"
+    },
+    {
+      "name": "EarthCave2"
+    },
+    {
+      "name": "EarthCave3"
+    },
+    {
+      "name": "EarthCave4"
+    },
+    {
+      "name": "EarthCave5"
+    },
+    {
+      "name": "EarthCave6"
+    },
+    {
+      "name": "EarthCave7"
+    },
+    {
+      "name": "EarthCave8"
+    },
+    {
+      "name": "EarthCave9"
+    },
+    {
+      "name": "EarthCave10"
+    },
+    {
+      "name": "EarthCave11"
+    },
+    {
+      "name": "EarthCave12"
+    },
+    {
+      "name": "EarthCave13"
+    },
+    {
+      "name": "EarthCave14"
+    },
+    {
+      "name": "EarthCave15"
+    },
+    {
+      "name": "EarthCaveMajor"
+    },
+    {
+      "name": "EarthCave17"
+    },
+    {
+      "name": "EarthCave18"
+    },
+    {
+      "name": "EarthCave19"
+    },
+    {
+      "name": "EarthCave20"
+    },
+    {
+      "name": "EarthCave21"
+    },
+    {
+      "name": "EarthCave22"
+    },
+    {
+      "name": "EarthCave23"
+    },
+    {
+      "name": "EarthCave24"
+    },
+    {
+      "name": "TitansTunnel1"
+    },
+    {
+      "name": "TitansTunnel2"
+    },
+    {
+      "name": "TitansTunnel3"
+    },
+    {
+      "name": "TitansTunnel4"
+    },
+    {
+      "name": "Volcano1"
+    },
+    {
+      "name": "Volcano2"
+    },
+    {
+      "name": "Volcano3"
+    },
+    {
+      "name": "Volcano4"
+    },
+    {
+      "name": "Volcano5"
+    },
+    {
+      "name": "Volcano6"
+    },
+    {
+      "name": "Volcano7"
+    },
+    {
+      "name": "Volcano8"
+    },
+    {
+      "name": "Volcano9"
+    },
+    {
+      "name": "Volcano10"
+    },
+    {
+      "name": "Volcano11"
+    },
+    {
+      "name": "Volcano12"
+    },
+    {
+      "name": "Volcano13"
+    },
+    {
+      "name": "Volcano14"
+    },
+    {
+      "name": "Volcano15"
+    },
+    {
+      "name": "Volcano16"
+    },
+    {
+      "name": "Volcano17"
+    },
+    {
+      "name": "Volcano18"
+    },
+    {
+      "name": "Volcano19"
+    },
+    {
+      "name": "Volcano20"
+    },
+    {
+      "name": "Volcano21"
+    },
+    {
+      "name": "Volcano22"
+    },
+    {
+      "name": "Volcano23"
+    },
+    {
+      "name": "Volcano24"
+    },
+    {
+      "name": "Volcano25"
+    },
+    {
+      "name": "Volcano26"
+    },
+    {
+      "name": "Volcano27"
+    },
+    {
+      "name": "Volcano28"
+    },
+    {
+      "name": "Volcano29"
+    },
+    {
+      "name": "Volcano30"
+    },
+    {
+      "name": "Volcano31"
+    },
+    {
+      "name": "Volcano32"
+    },
+    {
+      "name": "VolcanoMajor"
+    },
+    {
+      "name": "IceCave1"
+    },
+    {
+      "name": "IceCave2"
+    },
+    {
+      "name": "IceCave3"
+    },
+    {
+      "name": "IceCave4"
+    },
+    {
+      "name": "IceCave5"
+    },
+    {
+      "name": "IceCave6"
+    },
+    {
+      "name": "IceCave7"
+    },
+    {
+      "name": "IceCaveMajor"
+    },
+    {
+      "name": "IceCave9"
+    },
+    {
+      "name": "IceCave10"
+    },
+    {
+      "name": "IceCave11"
+    },
+    {
+      "name": "IceCave12"
+    },
+    {
+      "name": "IceCave13"
+    },
+    {
+      "name": "IceCave14"
+    },
+    {
+      "name": "IceCave15"
+    },
+    {
+      "name": "IceCave16"
+    },
+    {
+      "name": "Ordeals1"
+    },
+    {
+      "name": "Ordeals2"
+    },
+    {
+      "name": "Ordeals3"
+    },
+    {
+      "name": "Ordeals4"
+    },
+    {
+      "name": "Ordeals5"
+    },
+    {
+      "name": "Ordeals6"
+    },
+    {
+      "name": "Ordeals7"
+    },
+    {
+      "name": "Ordeals8"
+    },
+    {
+      "name": "OrdealsMajor"
+    },
+    {
+      "name": "Cardia1"
+    },
+    {
+      "name": "Cardia2"
+    },
+    {
+      "name": "Cardia3"
+    },
+    {
+      "name": "Cardia4"
+    },
+    {
+      "name": "Cardia5"
+    },
+    {
+      "name": "Cardia6"
+    },
+    {
+      "name": "Cardia7"
+    },
+    {
+      "name": "Cardia8"
+    },
+    {
+      "name": "Cardia9"
+    },
+    {
+      "name": "Cardia10"
+    },
+    {
+      "name": "Cardia11"
+    },
+    {
+      "name": "Cardia12"
+    },
+    {
+      "name": "Cardia13"
+    },
+    {
+      "name": "SeaShrine1"
+    },
+    {
+      "name": "SeaShrine2"
+    },
+    {
+      "name": "SeaShrine3"
+    },
+    {
+      "name": "SeaShrine4"
+    },
+    {
+      "name": "SeaShrine5"
+    },
+    {
+      "name": "SeaShrine6"
+    },
+    {
+      "name": "SeaShrine7"
+    },
+    {
+      "name": "SeaShrine8"
+    },
+    {
+      "name": "SeaShrine9"
+    },
+    {
+      "name": "SeaShrine10"
+    },
+    {
+      "name": "SeaShrine11"
+    },
+    {
+      "name": "SeaShrine12"
+    },
+    {
+      "name": "SeaShrine13"
+    },
+    {
+      "name": "SeaShrine14"
+    },
+    {
+      "name": "SeaShrine15"
+    },
+    {
+      "name": "SeaShrine16"
+    },
+    {
+      "name": "SeaShrineLocked"
+    },
+    {
+      "name": "SeaShrine18"
+    },
+    {
+      "name": "SeaShrine19"
+    },
+    {
+      "name": "SeaShrine20"
+    },
+    {
+      "name": "SeaShrine21"
+    },
+    {
+      "name": "SeaShrine22"
+    },
+    {
+      "name": "SeaShrine23"
+    },
+    {
+      "name": "SeaShrine24"
+    },
+    {
+      "name": "SeaShrine25"
+    },
+    {
+      "name": "SeaShrine26"
+    },
+    {
+      "name": "SeaShrine27"
+    },
+    {
+      "name": "SeaShrine28"
+    },
+    {
+      "name": "SeaShrine29"
+    },
+    {
+      "name": "SeaShrine30"
+    },
+    {
+      "name": "SeaShrine31"
+    },
+    {
+      "name": "SeaShrineMajor"
+    },
+    {
+      "name": "Waterfall1"
+    },
+    {
+      "name": "Waterfall2"
+    },
+    {
+      "name": "Waterfall3"
+    },
+    {
+      "name": "Waterfall4"
+    },
+    {
+      "name": "Waterfall5"
+    },
+    {
+      "name": "Waterfall6"
+    },
+    {
+      "name": "MirageTower1"
+    },
+    {
+      "name": "MirageTower2"
+    },
+    {
+      "name": "MirageTower3"
+    },
+    {
+      "name": "MirageTower4"
+    },
+    {
+      "name": "MirageTower5"
+    },
+    {
+      "name": "MirageTower6"
+    },
+    {
+      "name": "MirageTower7"
+    },
+    {
+      "name": "MirageTower8"
+    },
+    {
+      "name": "MirageTower9"
+    },
+    {
+      "name": "MirageTower10"
+    },
+    {
+      "name": "MirageTower11"
+    },
+    {
+      "name": "MirageTower12"
+    },
+    {
+      "name": "MirageTower13"
+    },
+    {
+      "name": "MirageTower14"
+    },
+    {
+      "name": "MirageTower15"
+    },
+    {
+      "name": "MirageTower16"
+    },
+    {
+      "name": "MirageTower17"
+    },
+    {
+      "name": "MirageTower18"
+    },
+    {
+      "name": "SkyPalace1"
+    },
+    {
+      "name": "SkyPalace2"
+    },
+    {
+      "name": "SkyPalace3"
+    },
+    {
+      "name": "SkyPalace4"
+    },
+    {
+      "name": "SkyPalace5"
+    },
+    {
+      "name": "SkyPalace6"
+    },
+    {
+      "name": "SkyPalace7"
+    },
+    {
+      "name": "SkyPalace8"
+    },
+    {
+      "name": "SkyPalace9"
+    },
+    {
+      "name": "SkyPalace10"
+    },
+    {
+      "name": "SkyPalace11"
+    },
+    {
+      "name": "SkyPalace12"
+    },
+    {
+      "name": "SkyPalace13"
+    },
+    {
+      "name": "SkyPalace14"
+    },
+    {
+      "name": "SkyPalace15"
+    },
+    {
+      "name": "SkyPalace16"
+    },
+    {
+      "name": "SkyPalace17"
+    },
+    {
+      "name": "SkyPalace18"
+    },
+    {
+      "name": "SkyPalace19"
+    },
+    {
+      "name": "SkyPalaceMajor"
+    },
+    {
+      "name": "SkyPalace21"
+    },
+    {
+      "name": "SkyPalace22"
+    },
+    {
+      "name": "SkyPalace23"
+    },
+    {
+      "name": "SkyPalace24"
+    },
+    {
+      "name": "SkyPalace25"
+    },
+    {
+      "name": "SkyPalace26"
+    },
+    {
+      "name": "SkyPalace27"
+    },
+    {
+      "name": "SkyPalace28"
+    },
+    {
+      "name": "SkyPalace29"
+    },
+    {
+      "name": "SkyPalace30"
+    },
+    {
+      "name": "SkyPalace31"
+    },
+    {
+      "name": "SkyPalace32"
+    },
+    {
+      "name": "SkyPalace33"
+    },
+    {
+      "name": "SkyPalace34"
+    },
+    {
+      "name": "ToFRMasmune"
+    },
+    {
+      "name": "ToFRevisited2"
+    },
+    {
+      "name": "ToFRevisited3"
+    },
+    {
+      "name": "ToFRevisited4"
+    },
+    {
+      "name": "ToFRevisited5"
+    },
+    {
+      "name": "ToFRevisited6"
+    },
+    {
+      "name": "ToFRevisited7"
+    },
+    {
+      "name": "King"
+    },
+    {
+      "name": "Bikke"
+    },
+    {
+      "name": "ElfPrince"
+    },
+    {
+      "name": "Astos"
+    },
+    {
+      "name": "Nerrick"
+    },
+    {
+      "name": "Smith"
+    },
+    {
+      "name": "Matoya"
+    },
+    {
+      "name": "Sarda"
+    },
+    {
+      "name": "Lefein"
+    },
+    {
+      "name": "CubeBot"
+    },
+    {
+      "name": "Princess2"
+    },
+    {
+      "name": "Fairy"
+    },
+    {
+      "name": "CanoeSage"
+    },
+    {
+      "name": "CaravanShop"
+    }
+  ],
+  "notice": "Currently, Archipelago has no built-in support for settings for Final Fantasy. You'll have to generate your settings file at the [Final Fantasy Randomizer website](https://finalfantasyrandomizer.com/).",
+  "status": "Updated"
+}

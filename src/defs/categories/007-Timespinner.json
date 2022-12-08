@@ -3,240 +3,321 @@
   "index": 7,
   "settings": [
     {
-      "type": "boolean",
       "name": "StartWithJewelryBox",
-      "readableName": "Start with Jewelry Box",
       "description": "Whether you start with the Jewelry Box unlocked.",
+      "readableName": "Start with Jewelry Box",
+      "type": "toggle",
       "default": false
     },
     {
-      "type": "boolean",
       "name": "DownloadableItems",
-      "readableName": "Downloadable items",
       "description": "If enabled, you'll be able to download items at terminals using the Tablet.",
+      "readableName": "Downloadable items",
+      "type": "toggle",
       "default": true
     },
     {
-      "type": "boolean",
       "name": "EyeSpy",
-      "readableName": "Eye Spy",
       "description": "Requires the use of Oculus Ring to find weak spots in walls and floors.",
+      "readableName": "Eye Spy",
+      "type": "toggle",
       "default": false
     },
     {
-      "type": "boolean",
       "name": "StartWithMeyef",
-      "readableName": "Start with Meyef",
       "description": "Start with Meyef without having to take a death. Ideal for multiplayer games.",
+      "readableName": "Start with Meyef",
+      "type": "toggle",
       "default": false
     },
     {
-      "type": "boolean",
       "name": "QuickSeed",
-      "readableName": "Fast mode",
       "description": "Adds the Talaria Attachment to your starting inventory, allowing Lunais to dash.",
+      "readableName": "Fast mode",
+      "type": "toggle",
       "default": false
     },
     {
-      "type": "boolean",
       "name": "SpecificKeycards",
-      "readableName": "Restricted keycards",
       "description": "If enabled, keycards will only unlock their corresponding doors.",
+      "readableName": "Restricted keycards",
+      "type": "toggle",
       "default": false
     },
     {
-      "type": "boolean",
       "name": "Inverted",
-      "readableName": "Inverted mode",
       "description": "Whether the game will start in the past.",
+      "readableName": "Inverted mode",
+      "type": "toggle",
       "default": false
     },
     {
-      "type": "boolean",
       "name": "GyreArchives",
-      "readableName": "Gyre Archives",
       "description": "Gyre Archives locations are in logic. New warps are gated by Merchant Crow and Kobo.",
+      "readableName": "Gyre Archives",
+      "type": "toggle",
       "default": false
     },
     {
-      "type": "boolean",
       "name": "Cantoran",
-      "readableName": "Cantoran",
       "description": "Cantoran's fight and check are available upon revisiting his room.",
+      "readableName": "Cantoran",
+      "type": "toggle",
       "default": false
     },
     {
-      "type": "boolean",
       "name": "LoreChecks",
-      "readableName": "Lore checks",
       "description": "Whether memories and journal entries will provide items.",
+      "readableName": "Lore checks",
+      "type": "toggle",
       "default": false
     },
     {
-      "type": "boolean",
       "name": "BossRando",
-      "readableName": "Boss randomizer",
       "description": "Whether bosses will be shuffled.",
+      "readableName": "Boss randomizer",
+      "type": "toggle",
       "default": false
     },
     {
-      "type": "boolean",
       "name": "BossScaling",
-      "readableName": "Boss randomizer scaling",
       "description": "Scales shuffled bosses' HP, Attack, and Experience awarded based on their new location.",
-      "default": true,
       "dependsOn": {
-        "BossRando": [true]
-      }
+        "BossRando": [
+          true
+        ]
+      },
+      "readableName": "Boss randomizer scaling",
+      "type": "toggle",
+      "default": true
     },
     {
-      "type": "string",
       "name": "DamageRando",
-      "readableName": "Damage rando",
       "description": "Randomly nerfs and buffs some orbs and their associated spells as well as some associated rings.",
-      "values": {
-        "off": "Off",
-        "allnerfs": "All nerfs",
-        "mostlynerfs": "Mostly nerfs",
-        "balanced": "Balanced",
-        "mostlybuffs": "Mostly buffs",
-        "allbuffs": "All buffs"
-      },
+      "readableName": "Damage rando",
+      "values": [
+        {
+          "name": "off",
+          "readableName": "Off"
+        },
+        {
+          "name": "allnerfs",
+          "readableName": "All nerfs"
+        },
+        {
+          "name": "mostlynerfs",
+          "readableName": "Mostly nerfs"
+        },
+        {
+          "name": "balanced",
+          "readableName": "Balanced"
+        },
+        {
+          "name": "mostlybuffs",
+          "readableName": "Mostly buffs"
+        },
+        {
+          "name": "allbuffs",
+          "readableName": "All buffs"
+        },
+        {
+          "name": "manual",
+          "readableName": "Manual (will also need to define manually after exporting)"
+        }
+      ],
+      "type": "choice",
       "default": "off"
     },
     {
-      "type": "numeric",
+      "name": "DamageRandoOverrides",
+      "description": "",
+      "readableName": "DamageRandoOverrides",
+      "type": "ignore",
+      "default": "null"
+    },
+    {
       "name": "HpCap",
-      "readableName": "HP Cap",
       "description": "Determines Lunais' maximum possible HP.",
-      "randomable": true,
-      "low": 1,
       "high": 999,
+      "readableName": "HP Cap",
+      "low": 1,
       "step": 10,
+      "type": "range",
       "default": 999
     },
     {
-      "type": "boolean",
       "name": "BossHealing",
-      "readableName": "Heal after bosses",
       "description": "Whether bosses heal Lunais to full health after defeat.",
-      "default": true,
       "dependsOn": {
-        "BossRando": [true]
-      }
-    },
-    {
-      "type": "string",
-      "name": "ShopFill",
-      "readableName": "Shop shuffle",
-      "description": "Sets the items for sale in the Merchant Crow's shops.",
-      "values": {
-        "default": [
-          "Default",
-          "No sunglasses or Trendy Jacket, but Sand Vials available."
-        ],
-        "randomized": ["Randomized", "Up to four random items in each shop."],
-        "vanilla": "Vanilla",
-        "empty": "Empty"
+        "BossRando": [
+          true
+        ]
       },
-      "default": "default"
-    },
-    {
-      "type": "boolean",
-      "name": "ShopWarpShards",
-      "readableName": "Always sell Warp Shards",
-      "description": "Shops always sell Warp Shards, regardless of shop shuffle setting.",
+      "readableName": "Heal after bosses",
+      "type": "toggle",
       "default": true
     },
     {
-      "type": "numeric",
+      "name": "ShopFill",
+      "description": "Sets the items for sale in the Merchant Crow's shops.",
+      "readableName": "Shop shuffle",
+      "values": [
+        {
+          "name": "default",
+          "description": "No sunglasses or Trendy Jacket, but Sand Vials available.",
+          "readableName": "Default"
+        },
+        {
+          "name": "randomized",
+          "description": "Up to four random items in each shop.",
+          "readableName": "Randomized"
+        },
+        {
+          "name": "vanilla",
+          "readableName": "Vanilla"
+        },
+        {
+          "name": "empty",
+          "readableName": "Empty"
+        }
+      ],
+      "type": "choice",
+      "default": "default"
+    },
+    {
+      "name": "ShopWarpShards",
+      "description": "Shops always sell Warp Shards, regardless of shop shuffle setting.",
+      "readableName": "Always sell Warp Shards",
+      "type": "toggle",
+      "default": true
+    },
+    {
       "name": "ShopMultiplier",
-      "readableName": "Shop price multiplier",
       "description": "Multiplies shop item costs by the given value. Can be set to 0 for free shops.",
-      "low": 0,
       "high": 10,
-      "randomable": true,
+      "readableName": "Shop price multiplier",
+      "low": 0,
+      "type": "range",
       "default": 1
     },
     {
-      "type": "string",
       "name": "LootPool",
-      "readableName": "Loot pool",
       "description": "Sets the items that drop from enemies. This does not apply to boss reward checks.",
-      "values": {
-        "vanilla": "Vanilla",
-        "randomized": [
-          "Randomized",
-          "Each slot of every enemy's drop table is given a random use item or piece of equipment."
-        ],
-        "empty": ["Empty", "Enemies drop nothing."]
-      }
+      "readableName": "Loot pool",
+      "values": [
+        {
+          "name": "vanilla",
+          "readableName": "Vanilla"
+        },
+        {
+          "name": "randomized",
+          "description": "Each slot of every enemy's drop table is given a random use item or piece of equipment.",
+          "readableName": "Randomized"
+        },
+        {
+          "name": "empty",
+          "description": "Enemies drop nothing.",
+          "readableName": "Empty"
+        }
+      ],
+      "type": "choice",
+      "default": "vanilla"
     },
     {
-      "type": "string",
       "name": "DropRateCategory",
-      "readableName": "Drop rate category",
       "description": "Sets the drop rate when 'Loot Pool' is set to 'Random'.",
-      "values": {
-        "tiered": ["Tiered", "Based on item rarity/value"],
-        "vanilla": ["Vanilla", "Based on bestiary slot the item is placed into"],
-        "randomized": [
-          "Randomized",
-          "Assigned a random tier/drop rate"
-        ],
-        "fixed": ["Fixed", "Set by the 'Fixed drop rate' setting"]
+      "dependsOn": {
+        "LootPool": [
+          "randomized"
+        ]
       },
-      "dependsOn": {
-        "LootPool": ["randomized"]
-      }
+      "readableName": "Drop rate category",
+      "values": [
+        {
+          "name": "tiered",
+          "description": "Based on item rarity/value",
+          "readableName": "Tiered"
+        },
+        {
+          "name": "vanilla",
+          "description": "Based on bestiary slot the item is placed into",
+          "readableName": "Vanilla"
+        },
+        {
+          "name": "randomized",
+          "description": "Assigned a random tier/drop rate",
+          "readableName": "Randomized"
+        },
+        {
+          "name": "fixed",
+          "description": "Set by the 'Fixed drop rate' setting",
+          "readableName": "Fixed"
+        }
+      ],
+      "type": "choice",
+      "default": "tiered"
     },
     {
-      "type": "numeric",
       "name": "FixedDropRate",
-      "readableName": "Fixed drop rate",
       "description": "Base drop rate percentage when 'Drop Rate Category' is set to 'Fixed'",
-      "randomable": true,
-      "low": 1,
-      "high": 100,
-      "default": 5,
       "dependsOn": {
-        "LootPool": ["randomized"],
-        "DropRateCategory": ["fixed"]
-      }
-    },
-    {
-      "type": "string",
-      "name": "LootTierDistro",
-      "readableName": "Loot pool",
-      "description": "Sets the items that drop from enemies. This does not apply to boss reward checks.",
-      "values": {
-        "vanilla": "Vanilla",
-        "randomized": [
-          "Randomized",
-          "Each slot of every enemy's drop table is given a random use item or piece of equipment."
+        "DropRateCategory": [
+          "fixed"
         ],
-        "empty": ["Empty", "Enemies drop nothing."]
-      }
+        "LootPool": [
+          "randomized"
+        ]
+      },
+      "high": 100,
+      "readableName": "Fixed drop rate",
+      "low": 0,
+      "type": "range",
+      "default": 5
     },
     {
-      "type": "boolean",
-      "name": "ShowBestiaryEntries",
-      "readableName": "Show bestiary entries",
-      "description": "Determines whether all bestiary entries are accessible from the start of the game.",
+      "name": "LootTierDistro",
+      "description": "Sets the items that drop from enemies. This does not apply to boss reward checks.",
+      "readableName": "Loot pool",
+      "values": [
+        {
+          "name": "default_weight",
+          "readableName": "Default weight",
+          "description": "Rarer items will be assigned to enemy drop slots less frequently than common items."
+        },
+        {
+          "name": "full_random",
+          "readableName": "Full random",
+          "description": "Any item has an equal chance of being placed in an enemy's drop slot."
+        },
+        {
+          "name": "inverted_weight",
+          "readableName": "Inverted weight",
+          "description": "Rarest items show up the most frequently, while common items are the rarest"
+        }
+      ],
+      "type": "choice",
+      "default": "default_weight"
+    },
+    {
+      "name": "ShowBestiary",
+      "description": "All entries in the bestiary are visible, without needing to kill one of a given enemy first.",
+      "readableName": "ShowBestiary",
+      "type": "toggle",
       "default": false
     },
     {
-      "type": "boolean",
-      "name": "ShowBestiaryItemDrops",
-      "readableName": "Show bestiary item drops",
-      "description": "Determines whether all complete bestiary drop tables are readable from the moment the enemy's entry is available.",
+      "name": "ShowDrops",
+      "description": "All item drops in the bestiary are visible, without needing an enemy to drop one of a given item first.",
+      "readableName": "ShowDrops",
+      "type": "toggle",
       "default": false
     },
     {
-      "type": "deathlink",
-      "name": "DeathLink"
+      "name": "DeathLink",
+      "type": "deathlink"
     }
   ],
+  "defver": 2,
   "items": [
     {
       "name": "Eternal Crown"
@@ -388,7 +469,9 @@
     {
       "name": "Meyef",
       "dependsOn": {
-        "StartWithMeyef": [false]
+        "StartWithMeyef": [
+          false
+        ]
       }
     },
     {
@@ -461,6 +544,9 @@
     {
       "name": "Dream Wisp",
       "max": 9
+    },
+    {
+      "name": "PlaceHolderItem1"
     },
     {
       "name": "Lachiemi Sun",
@@ -567,16 +653,14 @@
       "max": 9
     },
     {
-      "name": "Cheveur Breast",
-      "max": 9
+      "name": "Cheveux Breast"
     },
     {
       "name": "Food Synthesizer",
       "max": 9
     },
     {
-      "name": "Cheveur Feather",
-      "max": 9
+      "name": "Cheveux Feather"
     },
     {
       "name": "Siren Ink",
@@ -630,7 +714,9 @@
     {
       "name": "Talaria Attachment",
       "dependsOn": {
-        "QuickSeed": [false]
+        "QuickSeed": [
+          false
+        ]
       }
     },
     {
@@ -666,7 +752,9 @@
     {
       "name": "Jewelry Box",
       "dependsOn": {
-        "StartWithJewelryBox": [false]
+        "StartWithJewelryBox": [
+          false
+        ]
       }
     },
     {
@@ -1472,5 +1560,6 @@
     {
       "name": "Ancient Pyramid: Regret chest"
     }
-  ]
+  ],
+  "status": "Updated"
 }

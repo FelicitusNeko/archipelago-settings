@@ -1,117 +1,138 @@
 {
   "category": "Minecraft",
   "index": 2,
-  "notice": "The current Archipelago-compatible version of Minecraft is Java 1.19.",
   "settings": [
     {
-      "type": "numeric",
       "name": "advancement_goal",
-      "readableName": "Advancement goal",
       "description": "How many advancements are needed for the Ender Dragon to spawn.",
-      "low": 0,
       "high": 95,
-      "randomable": true,
+      "readableName": "Advancement goal",
+      "low": 0,
+      "type": "range",
       "default": 40
     },
     {
-      "type": "numeric",
       "name": "egg_shards_required",
-      "readableName": "Egg Shards required",
       "description": "How many Dragon Egg Shards are needed to spawn the Ender Dragon.",
-      "low": 0,
       "high": 40,
-      "default": 0
-    },
-    {
-      "type": "numeric",
-      "name": "egg_shards_available",
-      "readableName": "Egg Shards available",
-      "description": "How many Dragon Egg Shards are added to the multiworld pool.",
+      "readableName": "Egg Shards required",
       "low": 0,
-      "high": 30,
+      "type": "range",
       "default": 0
     },
     {
-      "type": "string",
+      "name": "egg_shards_available",
+      "description": "How many Dragon Egg Shards are added to the multiworld pool.",
+      "high": 40,
+      "readableName": "Egg Shards available",
+      "low": 0,
+      "type": "range",
+      "default": 0
+    },
+    {
       "name": "required_bosses",
-      "readableName": "Boss goal",
       "description": "Boss or bosses to defeat to complete the goal.",
-      "values": {
-        "none": ["None", "Get your advancements and win"],
-        "ender_dragon": "Ender Dragon",
-        "wither": "Wither",
-        "both": "Both"
-      },
+      "readableName": "Boss goal",
+      "values": [
+        {
+          "name": "none",
+          "description": "Get your advancements and win",
+          "readableName": "None"
+        },
+        {
+          "name": "ender_dragon",
+          "readableName": "Ender Dragon"
+        },
+        {
+          "name": "wither",
+          "readableName": "Wither"
+        },
+        {
+          "name": "both",
+          "readableName": "Both"
+        }
+      ],
+      "type": "choice",
       "default": "ender_dragon"
     },
     {
-      "type": "boolean",
       "name": "shuffle_structures",
-      "readableName": "Shuffle structures",
       "description": "Enable shuffling of villages, outposts, fortresses, bastions, and cities.",
+      "readableName": "Shuffle structures",
+      "type": "toggle",
       "default": false
     },
     {
-      "type": "boolean",
       "name": "structure_compasses",
-      "readableName": "Structure Compasses",
       "description": "Adds Compasses to the multiworld pool that point to the nearest structure.",
+      "readableName": "Structure Compasses",
+      "type": "toggle",
       "default": true
     },
     {
-      "type": "numeric",
       "name": "bee_traps",
-      "readableName": "Beemizer",
       "description": "Replace this percentage of junk items with bee traps. These will spawn angry bees around every player in the Minecraft multiworld.",
-      "low": 0,
       "high": 100,
-      "randomable": true,
+      "readableName": "Beemizer",
+      "low": 0,
+      "type": "range",
       "default": 0
     },
     {
-      "type": "string",
       "name": "combat_difficulty",
-      "readableName": "Combat difficulty",
       "description": "Modifies the level of items logically required to explore dangerous dungeons and fight bosses.",
-      "values": {
-        "easy": "Easy",
-        "normal": "Normal",
-        "hard": "Hard"
-      },
+      "readableName": "Combat difficulty",
+      "values": [
+        {
+          "name": "easy",
+          "readableName": "Easy"
+        },
+        {
+          "name": "normal",
+          "readableName": "Normal"
+        },
+        {
+          "name": "hard",
+          "readableName": "Hard"
+        }
+      ],
+      "type": "choice",
       "default": "normal"
     },
     {
-      "type": "boolean",
       "name": "include_hard_advancements",
-      "readableName": "Include hard advancements",
       "description": "Include certain RNG-reliant or tedious advancements.",
+      "readableName": "Include hard advancements",
+      "type": "toggle",
       "default": false
     },
     {
-      "type": "boolean",
       "name": "include_unreasonable_advancements",
-      "readableName": "Include unreasonable advancements",
       "description": "Include the advancements \"How Did We Get Here?\" and \"Adventuring Time\". Please don't chase these.",
+      "readableName": "Include unreasonable advancements",
+      "type": "toggle",
       "default": false
     },
     {
-      "type": "boolean",
       "name": "include_postgame_advancements",
-      "readableName": "Include postgame advancements",
       "description": "Include advancements only accessible after defeating the Ender Dragon.",
+      "readableName": "Include postgame advancements",
+      "type": "toggle",
       "default": false
     },
     {
-      "type": "boolean",
       "name": "send_defeated_mobs",
-      "readableName": "Super Minecraft 35",
       "description": "Send defeated mobs to other people in the Minecraft multiworld.",
+      "readableName": "Super Minecraft 35",
+      "type": "toggle",
       "default": false
     },
     {
+      "name": "death_link",
       "type": "deathlink"
     }
   ],
+  "defver": 2,
   "items": [
     {
       "name": "Archery"
@@ -186,6 +207,9 @@
       "name": "Looting III Book"
     },
     {
+      "name": "Infinity Book"
+    },
+    {
       "name": "4 Diamond Ore"
     },
     {
@@ -228,6 +252,46 @@
       "name": "Saddle"
     },
     {
+      "name": "Structure Compass (Village)",
+      "dependsOn": {
+        "structure_compasses": [
+          true
+        ]
+      }
+    },
+    {
+      "name": "Structure Compass (Pillager Outpost)",
+      "dependsOn": {
+        "structure_compasses": [
+          true
+        ]
+      }
+    },
+    {
+      "name": "Structure Compass (Nether Fortress)",
+      "dependsOn": {
+        "structure_compasses": [
+          true
+        ]
+      }
+    },
+    {
+      "name": "Structure Compass (Bastion Remnant)",
+      "dependsOn": {
+        "structure_compasses": [
+          true
+        ]
+      }
+    },
+    {
+      "name": "Structure Compass (End City)",
+      "dependsOn": {
+        "structure_compasses": [
+          true
+        ]
+      }
+    },
+    {
       "name": "Shulker Box"
     },
     {
@@ -242,36 +306,6 @@
     {
       "name": "Bee Trap",
       "max": 0
-    },
-    {
-      "name": "Structure Compass (Village)",
-      "dependsOn": {
-        "structure_compasses": [true]
-      }
-    },
-    {
-      "name": "Structure Compass (Pillager Outpost)",
-      "dependsOn": {
-        "structure_compasses": [true]
-      }
-    },
-    {
-      "name": "Structure Compass (Nether Fortress)",
-      "dependsOn": {
-        "structure_compasses": [true]
-      }
-    },
-    {
-      "name": "Structure Compass (Bastion Remnant)",
-      "dependsOn": {
-        "structure_compasses": [true]
-      }
-    },
-    {
-      "name": "Structure Compass (End City)",
-      "dependsOn": {
-        "structure_compasses": [true]
-      }
     }
   ],
   "locations": [
@@ -617,5 +651,7 @@
     {
       "name": "You've Got a Friend in Me"
     }
-  ]
+  ],
+  "notice": "The current Archipelago-compatible version of Minecraft is Java 1.19.",
+  "status": "Updated"
 }

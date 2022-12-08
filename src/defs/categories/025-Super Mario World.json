@@ -1,0 +1,860 @@
+{
+  "category": "Super Mario World",
+  "index": 25,
+  "settings": [
+    {
+      "type": "deathlink"
+    },
+    {
+      "name": "goal",
+      "description": "Determines the goal of the seed.",
+      "readableName": "goal",
+      "values": [
+        {
+          "name": "bowser",
+          "readableName": "Bowser",
+          "description": "Defeat Koopalings, reach Bowser's Castle and defeat Bowser."
+        },
+        {
+          "name": "yoshi_egg_hunt",
+          "readableName": "Yoshi Egg hunt",
+          "description": "Find a certain number of Yoshi Eggs."
+        }
+      ],
+      "type": "choice",
+      "default": "bowser"
+    },
+    {
+      "name": "bosses_required",
+      "description": "How many Bosses (Koopalings or Reznor) must be defeated in order to defeat Bowser.",
+      "high": 11,
+      "readableName": "Bosses required",
+      "low": 0,
+      "type": "range",
+      "default": 7,
+      "dependsOn": {
+        "goal": ["bowser"]
+      }
+    },
+    {
+      "name": "number_of_yoshi_eggs",
+      "description": "How many Yoshi Eggs are in the pool for Yoshi Egg Hunt.",
+      "high": 80,
+      "readableName": "Yoshi Egg Hunt – Item pool",
+      "low": 1,
+      "type": "range",
+      "default": 50,
+      "dependsOn": {
+        "goal": ["yoshi_egg_hunt"]
+      }
+    },
+    {
+      "name": "percentage_of_yoshi_eggs",
+      "description": "What Percentage of Yoshi Eggs are required to finish Yoshi Egg Hunt.",
+      "high": 100,
+      "readableName": "Yoshi Egg Hunt – Percentage required",
+      "low": 1,
+      "type": "range",
+      "default": 100,
+      "dependsOn": {
+        "goal": ["yoshi_egg_hunt"]
+      }
+    },
+    {
+      "name": "dragon_coin_checks",
+      "description": "Whether collecting 5 Dragon Coins in each level will grant a check.",
+      "readableName": "Dragon Coin checks",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "bowser_castle_doors",
+      "description": "How the doors of Bowser's Castle (on the World 8 map) behave. \"Front Door\" requires going through the challenge rooms; \"Back Door\" skips them and goes straight to the hallway out to Bowser.",
+      "readableName": "Bowser's Castle doors",
+      "values": [
+        {
+          "name": "vanilla",
+          "readableName": "Vanilla",
+          "description": "Front and Back Doors behave as vanilla."
+        },
+        {
+          "name": "fast",
+          "readableName": "Fast",
+          "description": "Both doors behave as the Back Door."
+        },
+        {
+          "name": "slow",
+          "readableName": "Slow",
+          "description": "Both doors behave as the Front Door."
+        }
+      ],
+      "type": "choice",
+      "default": "vanilla"
+    },
+    {
+      "name": "level_shuffle",
+      "description": "Whether levels are shuffled.",
+      "readableName": "Level shuffle",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "swap_donut_gh_exits",
+      "description": "If enabled, the normal exit of the Donut Ghost House will lead right while the secret exit leads up, opposite of vanilla.",
+      "readableName": "Swap Donut Ghost House exits",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "display_received_item_popups",
+      "description": "What messages to display in-game for items received.",
+      "readableName": "Display received item popups",
+      "values": [
+        {
+          "name": "none",
+          "readableName": "None"
+        },
+        {
+          "name": "all",
+          "readableName": "All items"
+        },
+        {
+          "name": "progression",
+          "readableName": "Progression only"
+        }
+      ],
+      "type": "choice",
+      "default": "progression"
+    },
+    {
+      "name": "trap_fill_percentage",
+      "description": "Replace a percentage of junk items in the item pool with random traps.",
+      "high": 100,
+      "readableName": "Trap fill percentage",
+      "low": 0,
+      "type": "range",
+      "default": 0
+    },
+    {
+      "name": "ice_trap_weight",
+      "description": "Likelihood of a receiving a trap which causes the level to become slippery.",
+      "readableName": "ice trap weight",
+      "values": [
+        {
+          "name": "none",
+          "readableName": "None"
+        },
+        {
+          "name": "low",
+          "readableName": "Low"
+        },
+        {
+          "name": "medium",
+          "readableName": "Medium"
+        },
+        {
+          "name": "high",
+          "readableName": "High"
+        }
+      ],
+      "type": "choice",
+      "default": "medium"
+    },
+    {
+      "name": "stun_trap_weight",
+      "description": "Likelihood of a receiving a trap which briefly stuns Mario.",
+      "readableName": "stun trap weight",
+      "values": [
+        {
+          "name": "none",
+          "readableName": "None"
+        },
+        {
+          "name": "low",
+          "readableName": "Low"
+        },
+        {
+          "name": "medium",
+          "readableName": "Medium"
+        },
+        {
+          "name": "high",
+          "readableName": "High"
+        }
+      ],
+      "type": "choice",
+      "default": "medium"
+    },
+    {
+      "name": "literature_trap_weight",
+      "description": "Likelihood of a receiving a trap which causes the player to read literature.",
+      "readableName": "literature trap weight",
+      "values": [
+        {
+          "name": "none",
+          "readableName": "None"
+        },
+        {
+          "name": "low",
+          "readableName": "Low"
+        },
+        {
+          "name": "medium",
+          "readableName": "Medium"
+        },
+        {
+          "name": "high",
+          "readableName": "High"
+        }
+      ],
+      "type": "choice",
+      "default": "medium"
+    },
+    {
+      "name": "autosave",
+      "description": "Whether a save prompt will appear after every level.",
+      "readableName": "autosave",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "music_shuffle",
+      "description": "Determines whether and how music will be shuffled.",
+      "readableName": "Music shuffle",
+      "values": [
+        {
+          "name": "none",
+          "readableName": "None"
+        },
+        {
+          "name": "consistent",
+          "readableName": "Consistent",
+          "description": "Each music track is consistently shuffled throughout the game."
+        },
+        {
+          "name": "full",
+          "readableName": "Full",
+          "description": "Each individual level has a random music track."
+        },
+        {
+          "name": "singularity",
+          "readableName": "Singularity",
+          "description": "The entire game uses one song for overworld and one song for levels"
+        }
+      ],
+      "type": "choice",
+      "default": "none"
+    },
+    {
+      "name": "mario_palette",
+      "description": "Determines Mario's color palette.",
+      "readableName": "mario palette",
+      "values": [
+        {
+          "name": "mario",
+          "readableName": "Mario"
+        },
+        {
+          "name": "luigi",
+          "readableName": "Luigi"
+        },
+        {
+          "name": "wario",
+          "readableName": "Wario"
+        },
+        {
+          "name": "waluigi",
+          "readableName": "Waluigi"
+        },
+        {
+          "name": "geno",
+          "readableName": "Geno"
+        },
+        {
+          "name": "princess",
+          "readableName": "Princess Toadstool"
+        },
+        {
+          "name": "dark",
+          "readableName": "Dark"
+        },
+        {
+          "name": "sponge",
+          "readableName": "Sponge"
+        }
+      ],
+      "type": "choice",
+      "default": "mario"
+    },
+    {
+      "name": "foreground_palette_shuffle",
+      "description": "Whether to shuffle level foreground palettes.",
+      "readableName": "Foreground palette shuffle",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "background_palette_shuffle",
+      "description": "Whether to shuffle level background palettes.",
+      "readableName": "background palette shuffle",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "starting_life_count",
+      "description": "How many extra lives to start the game with.",
+      "high": 99,
+      "readableName": "starting life count",
+      "low": 1,
+      "type": "range",
+      "default": 5
+    }
+  ],
+  "items": [
+    {
+      "name": "The Princess",
+      "max": 0
+    },
+    {
+      "name": "1-Up Mushroom"
+    },
+    {
+      "name": "Yoshi Egg",
+      "max": 80
+    },
+    {
+      "name": "Run"
+    },
+    {
+      "name": "Carry"
+    },
+    {
+      "name": "Swim"
+    },
+    {
+      "name": "Spin Jump"
+    },
+    {
+      "name": "Climb"
+    },
+    {
+      "name": "Yoshi"
+    },
+    {
+      "name": "P-Switch"
+    },
+    {
+      "name": "Progressive Powerup"
+    },
+    {
+      "name": "P-Balloon"
+    },
+    {
+      "name": "Super Star Activate"
+    },
+    {
+      "name": "Yellow Switch Palace"
+    },
+    {
+      "name": "Green Switch Palace"
+    },
+    {
+      "name": "Red Switch Palace"
+    },
+    {
+      "name": "Blue Switch Palace"
+    },
+    {
+      "name": "Boss Token"
+    },
+    {
+      "name": "Ice Trap",
+      "max": 0
+    },
+    {
+      "name": "Stun Trap",
+      "max": 0
+    },
+    {
+      "name": "Literature Trap",
+      "max": 0
+    }
+  ],
+  "locations": [
+    {
+      "name": "Yoshi's Island 1 - Normal Exit"
+    },
+    {
+      "name": "Yoshi's Island 2 - Normal Exit"
+    },
+    {
+      "name": "Yoshi's Island 3 - Normal Exit"
+    },
+    {
+      "name": "Yoshi's Island 4 - Normal Exit"
+    },
+    {
+      "name": "#1 Iggy's Castle - Normal Exit"
+    },
+    {
+      "name": "Yellow Switch Palace"
+    },
+    {
+      "name": "Donut Plains 1 - Normal Exit"
+    },
+    {
+      "name": "Donut Plains 1 - Secret Exit"
+    },
+    {
+      "name": "Donut Plains 2 - Normal Exit"
+    },
+    {
+      "name": "Donut Plains 2 - Secret Exit"
+    },
+    {
+      "name": "Donut Plains 3 - Normal Exit"
+    },
+    {
+      "name": "Donut Plains 4 - Normal Exit"
+    },
+    {
+      "name": "Donut Secret 1 - Normal Exit"
+    },
+    {
+      "name": "Donut Secret 1 - Secret Exit"
+    },
+    {
+      "name": "Donut Ghost House - Normal Exit"
+    },
+    {
+      "name": "Donut Ghost House - Secret Exit"
+    },
+    {
+      "name": "Donut Secret House - Normal Exit"
+    },
+    {
+      "name": "Donut Secret House - Secret Exit"
+    },
+    {
+      "name": "#2 Morton's Castle - Normal Exit"
+    },
+    {
+      "name": "Green Switch Palace"
+    },
+    {
+      "name": "Vanilla Dome 1 - Normal Exit"
+    },
+    {
+      "name": "Vanilla Dome 1 - Secret Exit"
+    },
+    {
+      "name": "Vanilla Dome 2 - Normal Exit"
+    },
+    {
+      "name": "Vanilla Dome 2 - Secret Exit"
+    },
+    {
+      "name": "Vanilla Dome 3 - Normal Exit"
+    },
+    {
+      "name": "Vanilla Dome 4 - Normal Exit"
+    },
+    {
+      "name": "Vanilla Secret 1 - Normal Exit"
+    },
+    {
+      "name": "Vanilla Secret 1 - Secret Exit"
+    },
+    {
+      "name": "Vanilla Secret 2 - Normal Exit"
+    },
+    {
+      "name": "Vanilla Secret 3 - Normal Exit"
+    },
+    {
+      "name": "Vanilla Ghost House - Normal Exit"
+    },
+    {
+      "name": "Vanilla Fortress - Normal Exit"
+    },
+    {
+      "name": "#3 Lemmy's Castle - Normal Exit"
+    },
+    {
+      "name": "Red Switch Palace"
+    },
+    {
+      "name": "Butter Bridge 1 - Normal Exit"
+    },
+    {
+      "name": "Butter Bridge 2 - Normal Exit"
+    },
+    {
+      "name": "Cheese Bridge - Normal Exit"
+    },
+    {
+      "name": "Cheese Bridge - Secret Exit"
+    },
+    {
+      "name": "Cookie Mountain - Normal Exit"
+    },
+    {
+      "name": "Soda Lake - Normal Exit"
+    },
+    {
+      "name": "#4 Ludwig's Castle - Normal Exit"
+    },
+    {
+      "name": "Forest of Illusion 1 - Normal Exit"
+    },
+    {
+      "name": "Forest of Illusion 1 - Secret Exit"
+    },
+    {
+      "name": "Forest of Illusion 2 - Normal Exit"
+    },
+    {
+      "name": "Forest of Illusion 2 - Secret Exit"
+    },
+    {
+      "name": "Forest of Illusion 3 - Normal Exit"
+    },
+    {
+      "name": "Forest of Illusion 3 - Secret Exit"
+    },
+    {
+      "name": "Forest of Illusion 4 - Normal Exit"
+    },
+    {
+      "name": "Forest of Illusion 4 - Secret Exit"
+    },
+    {
+      "name": "Forest Ghost House - Normal Exit"
+    },
+    {
+      "name": "Forest Ghost House - Secret Exit"
+    },
+    {
+      "name": "Forest Secret - Normal Exit"
+    },
+    {
+      "name": "Forest Fortress - Normal Exit"
+    },
+    {
+      "name": "#5 Roy's Castle - Normal Exit"
+    },
+    {
+      "name": "Blue Switch Palace"
+    },
+    {
+      "name": "Chocolate Island 1 - Normal Exit"
+    },
+    {
+      "name": "Chocolate Island 2 - Normal Exit"
+    },
+    {
+      "name": "Chocolate Island 2 - Secret Exit"
+    },
+    {
+      "name": "Chocolate Island 3 - Normal Exit"
+    },
+    {
+      "name": "Chocolate Island 3 - Secret Exit"
+    },
+    {
+      "name": "Chocolate Island 4 - Normal Exit"
+    },
+    {
+      "name": "Chocolate Island 5 - Normal Exit"
+    },
+    {
+      "name": "Choco-Ghost House - Normal Exit"
+    },
+    {
+      "name": "Chocolate Secret - Normal Exit"
+    },
+    {
+      "name": "Chocolate Fortress - Normal Exit"
+    },
+    {
+      "name": "#6 Wendy's Castle - Normal Exit"
+    },
+    {
+      "name": "Sunken Ghost Ship - Normal Exit"
+    },
+    {
+      "name": "Valley of Bowser 1 - Normal Exit"
+    },
+    {
+      "name": "Valley of Bowser 2 - Normal Exit"
+    },
+    {
+      "name": "Valley of Bowser 2 - Secret Exit"
+    },
+    {
+      "name": "Valley of Bowser 3 - Normal Exit"
+    },
+    {
+      "name": "Valley of Bowser 4 - Normal Exit"
+    },
+    {
+      "name": "Valley of Bowser 4 - Secret Exit"
+    },
+    {
+      "name": "Valley Ghost House - Normal Exit"
+    },
+    {
+      "name": "Valley Ghost House - Secret Exit"
+    },
+    {
+      "name": "Valley Fortress - Normal Exit"
+    },
+    {
+      "name": "#7 Larry's Castle - Normal Exit"
+    },
+    {
+      "name": "Star Road 1 - Normal Exit"
+    },
+    {
+      "name": "Star Road 1 - Secret Exit"
+    },
+    {
+      "name": "Star Road 2 - Normal Exit"
+    },
+    {
+      "name": "Star Road 2 - Secret Exit"
+    },
+    {
+      "name": "Star Road 3 - Normal Exit"
+    },
+    {
+      "name": "Star Road 3 - Secret Exit"
+    },
+    {
+      "name": "Star Road 4 - Normal Exit"
+    },
+    {
+      "name": "Star Road 4 - Secret Exit"
+    },
+    {
+      "name": "Star Road 5 - Normal Exit"
+    },
+    {
+      "name": "Star Road 5 - Secret Exit"
+    },
+    {
+      "name": "Gnarly - Normal Exit"
+    },
+    {
+      "name": "Tubular - Normal Exit"
+    },
+    {
+      "name": "Way Cool - Normal Exit"
+    },
+    {
+      "name": "Awesome - Normal Exit"
+    },
+    {
+      "name": "Groovy - Normal Exit"
+    },
+    {
+      "name": "Mondo - Normal Exit"
+    },
+    {
+      "name": "Outrageous - Normal Exit"
+    },
+    {
+      "name": "Funky - Normal Exit"
+    },
+    {
+      "name": "Donut Secret 2 - Normal Exit"
+    },
+    {
+      "name": "#1 Iggy's Castle - Boss"
+    },
+    {
+      "name": "#2 Morton's Castle - Boss"
+    },
+    {
+      "name": "#3 Lemmy's Castle - Boss"
+    },
+    {
+      "name": "#4 Ludwig's Castle - Boss"
+    },
+    {
+      "name": "#5 Roy's Castle - Boss"
+    },
+    {
+      "name": "#6 Wendy's Castle - Boss"
+    },
+    {
+      "name": "#7 Larry's Castle - Boss"
+    },
+    {
+      "name": "Vanilla Fortress - Boss"
+    },
+    {
+      "name": "Forest Fortress - Boss"
+    },
+    {
+      "name": "Chocolate Fortress - Boss"
+    },
+    {
+      "name": "Valley Fortress - Boss"
+    },
+    {
+      "name": "Yoshi's Island 1 - Dragon Coins"
+    },
+    {
+      "name": "Yoshi's Island 2 - Dragon Coins"
+    },
+    {
+      "name": "Yoshi's Island 3 - Dragon Coins"
+    },
+    {
+      "name": "Yoshi's Island 4 - Dragon Coins"
+    },
+    {
+      "name": "Donut Plains 1 - Dragon Coins"
+    },
+    {
+      "name": "Donut Plains 2 - Dragon Coins"
+    },
+    {
+      "name": "Donut Plains 3 - Dragon Coins"
+    },
+    {
+      "name": "Donut Plains 4 - Dragon Coins"
+    },
+    {
+      "name": "Donut Secret 1 - Dragon Coins"
+    },
+    {
+      "name": "Donut Secret 2 - Dragon Coins"
+    },
+    {
+      "name": "Vanilla Dome 1 - Dragon Coins"
+    },
+    {
+      "name": "Vanilla Dome 2 - Dragon Coins"
+    },
+    {
+      "name": "Vanilla Dome 3 - Dragon Coins"
+    },
+    {
+      "name": "Vanilla Dome 4 - Dragon Coins"
+    },
+    {
+      "name": "Vanilla Secret 1 - Dragon Coins"
+    },
+    {
+      "name": "Vanilla Secret 2 - Dragon Coins"
+    },
+    {
+      "name": "Vanilla Secret 3 - Dragon Coins"
+    },
+    {
+      "name": "Vanilla Ghost House - Dragon Coins"
+    },
+    {
+      "name": "Butter Bridge 1 - Dragon Coins"
+    },
+    {
+      "name": "Butter Bridge 2 - Dragon Coins"
+    },
+    {
+      "name": "Cheese Bridge - Dragon Coins"
+    },
+    {
+      "name": "Cookie Mountain - Dragon Coins"
+    },
+    {
+      "name": "Soda Lake - Dragon Coins"
+    },
+    {
+      "name": "Forest of Illusion 2 - Dragon Coins"
+    },
+    {
+      "name": "Forest of Illusion 3 - Dragon Coins"
+    },
+    {
+      "name": "Forest of Illusion 4 - Dragon Coins"
+    },
+    {
+      "name": "Forest Ghost House - Dragon Coins"
+    },
+    {
+      "name": "Forest Secret - Dragon Coins"
+    },
+    {
+      "name": "#5 Roy's Castle - Dragon Coins"
+    },
+    {
+      "name": "Chocolate Island 1 - Dragon Coins"
+    },
+    {
+      "name": "Chocolate Island 2 - Dragon Coins"
+    },
+    {
+      "name": "Chocolate Island 3 - Dragon Coins"
+    },
+    {
+      "name": "Chocolate Island 4 - Dragon Coins"
+    },
+    {
+      "name": "Chocolate Island 5 - Dragon Coins"
+    },
+    {
+      "name": "Sunken Ghost Ship - Dragon Coins"
+    },
+    {
+      "name": "Valley of Bowser 1 - Dragon Coins"
+    },
+    {
+      "name": "Valley of Bowser 2 - Dragon Coins"
+    },
+    {
+      "name": "Valley of Bowser 3 - Dragon Coins"
+    },
+    {
+      "name": "Valley Ghost House - Dragon Coins"
+    },
+    {
+      "name": "#7 Larry's Castle - Dragon Coins"
+    },
+    {
+      "name": "Star Road 1 - Dragon Coins"
+    },
+    {
+      "name": "Gnarly - Dragon Coins"
+    },
+    {
+      "name": "Tubular - Dragon Coins"
+    },
+    {
+      "name": "Way Cool - Dragon Coins"
+    },
+    {
+      "name": "Awesome - Dragon Coins"
+    },
+    {
+      "name": "Groovy - Dragon Coins"
+    },
+    {
+      "name": "Mondo - Dragon Coins"
+    },
+    {
+      "name": "Outrageous - Dragon Coins"
+    },
+    {
+      "name": "Funky - Dragon Coins"
+    },
+    {
+      "name": "Bowser"
+    },
+    {
+      "name": "Yoshi's House"
+    }
+  ],
+  "status": "New"
+}

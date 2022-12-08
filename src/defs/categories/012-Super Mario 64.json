@@ -3,137 +3,151 @@
   "index": 12,
   "settings": [
     {
-      "type": "string",
       "name": "AreaRandomizer",
-      "readableName": "Area Randomizer",
       "description": "Randomizes entrances to courses and/or secrets.",
-      "values": {
-        "Off": "Off",
-        "Courses_Only": "Courses only",
-        "Courses_And_Secrets": "Courses and secret areas"
-      },
-      "default": "Off"
+      "readableName": "Area Randomizer",
+      "values": [
+        {
+          "name": "off",
+          "readableName": "Off"
+        },
+        {
+          "name": "courses_only",
+          "readableName": "Courses only"
+        },
+        {
+          "name": "courses_and_secrets_separate",
+          "readableName": "Courses and secrets separate"
+        },
+        {
+          "name": "courses_and_secrets",
+          "readableName": "Courses and secrets"
+        }
+      ],
+      "type": "choice",
+      "default": "off"
     },
     {
-      "type": "boolean",
       "name": "ProgressiveKeys",
-      "readableName": "Progressive Keys",
       "description": "If enabled, keys received will always start with Basement, then Second Floor.",
+      "readableName": "Progressive Keys",
+      "type": "toggle",
       "default": false
     },
     {
-      "type": "boolean",
       "name": "EnableCoinStars",
-      "readableName": "Enable Coin Stars",
       "description": "Whether 100-Coin Stars will count toward checks.",
+      "readableName": "Enable Coin Stars",
+      "type": "toggle",
       "default": true
     },
     {
-      "type": "numeric",
       "name": "AmountOfStars",
-      "readableName": "Amount of stars",
       "description": "How many total Power Stars are added to the multiworld pool.",
-      "low": 35,
       "high": 120,
-      "randomable": true,
+      "readableName": "Amount of stars",
+      "low": 35,
+      "type": "range",
       "default": 120
     },
     {
-      "type": "boolean",
       "name": "StrictCapRequirements",
-      "readableName": "Strict cap requirements",
       "description": "Whether Power Stars that require specific Caps may _not_ be considered in-logic without those Caps.",
+      "readableName": "Strict cap requirements",
+      "type": "toggle",
       "default": true
     },
     {
-      "type": "boolean",
       "name": "StrictCannonRequirements",
-      "readableName": "Strict cannon requirements",
       "description": "Whether Power Stars that require specific cannons unlocked may _not_ be considered in-logic without those cannons unlocked.",
+      "readableName": "Strict cannon requirements",
+      "type": "toggle",
       "default": true
     },
     {
-      "type": "numeric",
       "name": "FirstBowserStarDoorCost",
-      "readableName": "First Bowser Star Door cost",
       "description": "How many Power Stars are required at the Star Door to Bowser in the Dark World.",
+      "high": 50,
+      "readableName": "First Bowser Star Door cost",
       "low": 0,
-      "high": 20,
-      "randomable": true,
+      "type": "range",
       "default": 8
     },
     {
-      "type": "numeric",
       "name": "BasementStarDoorCost",
-      "readableName": "Basement Star Door cost",
       "description": "How many Power Stars are required at the Star Door in the Basement.",
+      "high": 70,
+      "readableName": "Basement Star Door cost",
       "low": 0,
-      "high": 50,
-      "randomable": true,
+      "type": "range",
       "default": 30
     },
     {
-      "type": "numeric",
       "name": "SecondFloorStarDoorCost",
-      "readableName": "Second floor Star Door cost",
       "description": "How many Power Stars are required to access the third floor.",
+      "high": 90,
+      "readableName": "Second floor Star Door cost",
       "low": 0,
-      "high": 50,
-      "randomable": true,
+      "type": "range",
       "default": 50
     },
     {
-      "type": "numeric",
       "name": "MIPS1Cost",
-      "readableName": "Stars for Mips 1",
       "description": "How many Power Stars are required for Mips the Rabbit to appear in their first location.",
-      "low": 0,
       "high": 40,
-      "randomable": true,
+      "readableName": "Stars for Mips 1",
+      "low": 0,
+      "type": "range",
       "default": 15
     },
     {
-      "type": "numeric",
       "name": "MIPS2Cost",
-      "readableName": "Stars for Mips 2",
       "description": "How many Power Stars are required for Mips the Rabbit to appear in their second location. Must be higher than or equal to Mips 1.",
-      "low": 0,
       "high": 80,
-      "randomable": true,
+      "readableName": "Stars for Mips 2",
+      "low": 0,
+      "type": "range",
       "default": 50
     },
     {
-      "type": "numeric",
       "name": "StarsToFinish",
-      "readableName": "Stars to finish",
       "description": "How many Power Stars are needed to dispel the Infinite Staircase to Bowser's final lair.",
-      "low": 0,
       "high": 100,
-      "randomable": true,
+      "readableName": "Stars to finish",
+      "low": 0,
+      "type": "range",
       "default": 70
     },
     {
-      "type": "boolean",
+      "name": "death_link",
+      "type": "deathlink"
+    },
+    {
       "name": "BuddyChecks",
-      "readableName": "Bob-omb Buddy Checks",
       "description": "Whether Bob-omb Buddies and their respective cannon unlocks are included in the multiworld pool.",
+      "readableName": "Bob-omb Buddy Checks",
+      "type": "toggle",
       "default": false
     },
     {
-      "type": "string",
       "name": "ExclamationBoxes",
-      "readableName": "! Boxes",
       "description": "Include ! Boxes which contain 1ups as checks.",
-      "values": {
-        "Off": "Off",
-        "1Ups_Only": "1ups only"
-      },
-      "default": "Off"
-    },
-    {
-      "type": "deathlink"
+      "readableName": "! Boxes",
+      "values": [
+        {
+          "name": "off",
+          "readableName": "Off"
+        },
+        {
+          "name": "1ups_only",
+          "readableName": "1ups only"
+        }
+      ],
+      "type": "choice",
+      "default": "off"
     }
   ],
+  "defver": 2,
   "items": [
     {
       "name": "Power Star",
@@ -142,19 +156,25 @@
     {
       "name": "Basement Key",
       "dependsOn": {
-        "ProgressiveKeys": [false]
+        "ProgressiveKeys": [
+          false
+        ]
       }
     },
     {
       "name": "Second Floor Key",
       "dependsOn": {
-        "ProgressiveKeys": [false]
+        "ProgressiveKeys": [
+          false
+        ]
       }
     },
     {
       "name": "Progressive Key",
       "dependsOn": {
-        "ProgressiveKeys": [true]
+        "ProgressiveKeys": [
+          true
+        ]
       }
     },
     {
@@ -704,5 +724,6 @@
     {
       "name": "Wing Mario Over the Rainbow 1Up Block"
     }
-  ]
+  ],
+  "status": "Updated"
 }

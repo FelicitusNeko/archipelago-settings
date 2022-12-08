@@ -3,41 +3,59 @@
   "index": 23,
   "settings": [
     {
-      "type": "boolean",
       "name": "auto_equip",
-      "readableName": "Auto Equip",
       "description": "Automatically equips any received armor or left/right weapons.",
+      "readableName": "Auto Equip",
+      "type": "toggle",
       "default": false
     },
     {
-      "type": "boolean",
       "name": "lock_equip",
-      "readableName": "Lock Equipement Slots",
       "description": "Lock the equipment slots so you cannot change your armor or your left/right weapons. Works great with the Auto-equip option.",
+      "readableName": "Lock Equipement Slots",
+      "type": "toggle",
       "default": false
     },
     {
-      "type": "boolean",
       "name": "no_weapon_requirements",
-      "readableName": "No Weapon Requirements",
       "description": "Disable the weapon requirements by removing any movement or damage penalties, permitting you to use any weapon early.",
+      "readableName": "No Weapon Requirements",
+      "type": "toggle",
       "default": false
     },
     {
-      "type": "boolean",
       "name": "randomize_weapons_level",
-      "readableName": "Randomize weapons level",
       "description": "Enable this option to upgrade 33% (based on the probability chance) of the pool of weapons to a random value between +1 and +5/+10.",
+      "readableName": "Randomize weapons level",
+      "type": "toggle",
       "default": true
     },
     {
-      "type": "boolean",
       "name": "late_basin_of_vows",
-      "readableName": "Late Basin of Vows",
       "description": "Force the Basin of Vows to be located as a reward of defeating Pontiff Sulyvahn. It permits to ease the progression by preventing having to kill the Dancer of the Boreal Valley as the first boss.",
+      "readableName": "Late Basin of Vows",
+      "type": "toggle",
       "default": true
+    },
+    {
+      "name": "no_spell_requirements",
+      "description": "Disable the spell requirements permitting you to use any spell.",
+      "readableName": "No spell requirements",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "no_equip_load",
+      "description": "Disable the equip load constraint from the game.",
+      "readableName": "no equip load",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "type": "deathlink"
     }
   ],
+  "defver": 2,
   "items": [
     {
       "name": "Irithyll Straight Sword"
@@ -167,6 +185,9 @@
     },
     {
       "name": "Sage's Crystal Staff"
+    },
+    {
+      "name": "Irithyll Rapier"
     },
     {
       "name": "Broken Straight Sword"
@@ -380,6 +401,9 @@
     },
     {
       "name": "Spirit Tree Crest Shield"
+    },
+    {
+      "name": "Blessed Red and White Shield"
     },
     {
       "name": "Fire Keeper Robe"
@@ -637,6 +661,18 @@
       "name": "Shadow Leggings"
     },
     {
+      "name": "Outrider Knight Helm"
+    },
+    {
+      "name": "Outrider Knight Armor"
+    },
+    {
+      "name": "Outrider Knight Gauntlets"
+    },
+    {
+      "name": "Outrider Knight Leggings"
+    },
+    {
       "name": "Estus Ring"
     },
     {
@@ -769,6 +805,9 @@
       "name": "Knight Slayer's Ring"
     },
     {
+      "name": "Magic Stoneplate Ring"
+    },
+    {
       "name": "Seek Guidance"
     },
     {
@@ -821,6 +860,9 @@
     },
     {
       "name": "Great Magic Shield"
+    },
+    {
+      "name": "Crystal Scroll"
     },
     {
       "name": "Tower Key"
@@ -952,6 +994,18 @@
       "name": "Braille Divine Tome of Lothric"
     },
     {
+      "name": "Irina's Ashes"
+    },
+    {
+      "name": "Karla's Ashes"
+    },
+    {
+      "name": "Cornyx's Ashes"
+    },
+    {
+      "name": "Orbeck's Ashes"
+    },
+    {
       "name": "Soul of an Intrepid Hero"
     },
     {
@@ -998,6 +1052,210 @@
     },
     {
       "name": "Soul of a Demon"
+    },
+    {
+      "name": "Titanite Shard #1"
+    },
+    {
+      "name": "Titanite Shard #2"
+    },
+    {
+      "name": "Titanite Shard #3"
+    },
+    {
+      "name": "Titanite Shard #4"
+    },
+    {
+      "name": "Titanite Shard #5"
+    },
+    {
+      "name": "Titanite Shard #6"
+    },
+    {
+      "name": "Titanite Shard #7"
+    },
+    {
+      "name": "Titanite Shard #8"
+    },
+    {
+      "name": "Titanite Shard #9"
+    },
+    {
+      "name": "Titanite Shard #10"
+    },
+    {
+      "name": "Large Titanite Shard #1"
+    },
+    {
+      "name": "Large Titanite Shard #2"
+    },
+    {
+      "name": "Large Titanite Shard #3"
+    },
+    {
+      "name": "Large Titanite Shard #4"
+    },
+    {
+      "name": "Large Titanite Shard #5"
+    },
+    {
+      "name": "Large Titanite Shard #6"
+    },
+    {
+      "name": "Large Titanite Shard #7"
+    },
+    {
+      "name": "Large Titanite Shard #8"
+    },
+    {
+      "name": "Large Titanite Shard #9"
+    },
+    {
+      "name": "Large Titanite Shard #10"
+    },
+    {
+      "name": "Titanite Chunk #1"
+    },
+    {
+      "name": "Titanite Chunk #2"
+    },
+    {
+      "name": "Titanite Chunk #3"
+    },
+    {
+      "name": "Titanite Chunk #4"
+    },
+    {
+      "name": "Titanite Chunk #5"
+    },
+    {
+      "name": "Titanite Slab #1"
+    },
+    {
+      "name": "Titanite Slab #2"
+    },
+    {
+      "name": "Titanite Slab #3"
+    },
+    {
+      "name": "Estus Shard #1"
+    },
+    {
+      "name": "Estus Shard #2"
+    },
+    {
+      "name": "Estus Shard #3"
+    },
+    {
+      "name": "Estus Shard #4"
+    },
+    {
+      "name": "Estus Shard #5"
+    },
+    {
+      "name": "Estus Shard #6"
+    },
+    {
+      "name": "Estus Shard #7"
+    },
+    {
+      "name": "Estus Shard #8"
+    },
+    {
+      "name": "Estus Shard #9"
+    },
+    {
+      "name": "Estus Shard #10"
+    },
+    {
+      "name": "Estus Shard #11"
+    },
+    {
+      "name": "Estus Shard #12"
+    },
+    {
+      "name": "Estus Shard #13"
+    },
+    {
+      "name": "Estus Shard #14"
+    },
+    {
+      "name": "Estus Shard #15"
+    },
+    {
+      "name": "Undead Bone Shard #1"
+    },
+    {
+      "name": "Undead Bone Shard #2"
+    },
+    {
+      "name": "Undead Bone Shard #3"
+    },
+    {
+      "name": "Undead Bone Shard #4"
+    },
+    {
+      "name": "Undead Bone Shard #5"
+    },
+    {
+      "name": "Soul of a Great Champion #1"
+    },
+    {
+      "name": "Soul of a Great Champion #2"
+    },
+    {
+      "name": "Soul of a Champion #1"
+    },
+    {
+      "name": "Soul of a Champion #2"
+    },
+    {
+      "name": "Soul of a Champion #3"
+    },
+    {
+      "name": "Soul of a Champion #4"
+    },
+    {
+      "name": "Soul of a Venerable Old Hand #1"
+    },
+    {
+      "name": "Soul of a Venerable Old Hand #2"
+    },
+    {
+      "name": "Soul of a Venerable Old Hand #3"
+    },
+    {
+      "name": "Soul of a Venerable Old Hand #4"
+    },
+    {
+      "name": "Soul of a Crestfallen Knight #1"
+    },
+    {
+      "name": "Soul of a Crestfallen Knight #2"
+    },
+    {
+      "name": "Soul of a Crestfallen Knight #3"
+    },
+    {
+      "name": "Soul of a Crestfallen Knight #4"
+    },
+    {
+      "name": "Soul of a Crestfallen Knight #5"
+    },
+    {
+      "name": "Soul of a Crestfallen Knight #6"
+    },
+    {
+      "name": "Soul of a Crestfallen Knight #7"
+    },
+    {
+      "name": "Soul of a Crestfallen Knight #8"
+    },
+    {
+      "name": "Soul of a Crestfallen Knight #9"
+    },
+    {
+      "name": "Soul of a Crestfallen Knight #10"
     }
   ],
   "locations": [
@@ -1200,6 +1458,15 @@
       "name": "US: Warrior of Sunlight Covenant"
     },
     {
+      "name": "US: Blessed Red and White Shield"
+    },
+    {
+      "name": "US: Irina's Ashes"
+    },
+    {
+      "name": "US: Cornyx's Ashes"
+    },
+    {
       "name": "RS: Brigand Twindaggers"
     },
     {
@@ -1321,6 +1588,9 @@
     },
     {
       "name": "RS: Great Swamp Ring"
+    },
+    {
+      "name": "RS: Orbeck's Ashes"
     },
     {
       "name": "CD: Paladin's Ashes"
@@ -1722,6 +1992,9 @@
       "name": "ID: Dark Clutch Ring"
     },
     {
+      "name": "ID: Karla's Ashes"
+    },
+    {
       "name": "PC: Cursebite Ring"
     },
     {
@@ -1821,6 +2094,9 @@
       "name": "LC: Knight's Ring"
     },
     {
+      "name": "LC: Irithyll Rapier"
+    },
+    {
       "name": "LC: Sunlight Straight Sword"
     },
     {
@@ -1852,6 +2128,9 @@
     },
     {
       "name": "CKG: Soul of Consumed Oceiros"
+    },
+    {
+      "name": "CKG: Magic Stoneplate Ring"
     },
     {
       "name": "GA: Avelyn"
@@ -1894,6 +2173,21 @@
     },
     {
       "name": "GA: Sage's Crystal Staff"
+    },
+    {
+      "name": "GA: Outrider Knight Helm"
+    },
+    {
+      "name": "GA: Outrider Knight Armor"
+    },
+    {
+      "name": "GA: Outrider Knight Gauntlets"
+    },
+    {
+      "name": "GA: Outrider Knight Leggings"
+    },
+    {
+      "name": "GA: Crystal Scroll"
     },
     {
       "name": "UG: Ashen Estus Ring"
@@ -1972,6 +2266,229 @@
     },
     {
       "name": "AP: Havel's Greatshield"
+    },
+    {
+      "name": "Titanite Shard #1"
+    },
+    {
+      "name": "Titanite Shard #2"
+    },
+    {
+      "name": "Titanite Shard #3"
+    },
+    {
+      "name": "Titanite Shard #4"
+    },
+    {
+      "name": "Titanite Shard #5"
+    },
+    {
+      "name": "Titanite Shard #6"
+    },
+    {
+      "name": "Titanite Shard #7"
+    },
+    {
+      "name": "Titanite Shard #8"
+    },
+    {
+      "name": "Titanite Shard #9"
+    },
+    {
+      "name": "Titanite Shard #10"
+    },
+    {
+      "name": "Large Titanite Shard #1"
+    },
+    {
+      "name": "Large Titanite Shard #2"
+    },
+    {
+      "name": "Large Titanite Shard #3"
+    },
+    {
+      "name": "Large Titanite Shard #4"
+    },
+    {
+      "name": "Large Titanite Shard #5"
+    },
+    {
+      "name": "Large Titanite Shard #6"
+    },
+    {
+      "name": "Large Titanite Shard #7"
+    },
+    {
+      "name": "Large Titanite Shard #8"
+    },
+    {
+      "name": "Large Titanite Shard #9"
+    },
+    {
+      "name": "Large Titanite Shard #10"
+    },
+    {
+      "name": "Titanite Chunk #1"
+    },
+    {
+      "name": "Titanite Chunk #2"
+    },
+    {
+      "name": "Titanite Chunk #3"
+    },
+    {
+      "name": "Titanite Chunk #4"
+    },
+    {
+      "name": "Titanite Chunk #5"
+    },
+    {
+      "name": "Titanite Slab #1"
+    },
+    {
+      "name": "Titanite Slab #2"
+    },
+    {
+      "name": "Titanite Slab #3"
+    },
+    {
+      "name": "Estus Shard #1"
+    },
+    {
+      "name": "Estus Shard #2"
+    },
+    {
+      "name": "Estus Shard #3"
+    },
+    {
+      "name": "Estus Shard #4"
+    },
+    {
+      "name": "Estus Shard #5"
+    },
+    {
+      "name": "Estus Shard #6"
+    },
+    {
+      "name": "Estus Shard #7"
+    },
+    {
+      "name": "Estus Shard #8"
+    },
+    {
+      "name": "Estus Shard #9"
+    },
+    {
+      "name": "Estus Shard #10"
+    },
+    {
+      "name": "Estus Shard #11"
+    },
+    {
+      "name": "Estus Shard #12"
+    },
+    {
+      "name": "Estus Shard #13"
+    },
+    {
+      "name": "Estus Shard #14"
+    },
+    {
+      "name": "Estus Shard #15"
+    },
+    {
+      "name": "Undead Bone Shard #1"
+    },
+    {
+      "name": "Undead Bone Shard #2"
+    },
+    {
+      "name": "Undead Bone Shard #3"
+    },
+    {
+      "name": "Undead Bone Shard #4"
+    },
+    {
+      "name": "Undead Bone Shard #5"
+    },
+    {
+      "name": "Firebomb #1"
+    },
+    {
+      "name": "Firebomb #2"
+    },
+    {
+      "name": "Firebomb #3"
+    },
+    {
+      "name": "Firebomb #4"
+    },
+    {
+      "name": "Throwing Knife #1"
+    },
+    {
+      "name": "Throwing Knife #2"
+    },
+    {
+      "name": "Soul of a Deserted Corpse #1"
+    },
+    {
+      "name": "Soul of a Deserted Corpse #2"
+    },
+    {
+      "name": "Soul of a Deserted Corpse #3"
+    },
+    {
+      "name": "Soul of a Deserted Corpse #4"
+    },
+    {
+      "name": "Soul of a Deserted Corpse #5"
+    },
+    {
+      "name": "Large Soul of a Deserted Corpse #1"
+    },
+    {
+      "name": "Large Soul of a Deserted Corpse #2"
+    },
+    {
+      "name": "Large Soul of a Deserted Corpse #3"
+    },
+    {
+      "name": "Large Soul of a Deserted Corpse #4"
+    },
+    {
+      "name": "Large Soul of a Deserted Corpse #5"
+    },
+    {
+      "name": "Soul of an Unknown Traveler #1"
+    },
+    {
+      "name": "Soul of an Unknown Traveler #2"
+    },
+    {
+      "name": "Soul of an Unknown Traveler #3"
+    },
+    {
+      "name": "Soul of an Unknown Traveler #4"
+    },
+    {
+      "name": "Soul of an Unknown Traveler #5"
+    },
+    {
+      "name": "Large Soul of an Unknown Traveler #1"
+    },
+    {
+      "name": "Large Soul of an Unknown Traveler #2"
+    },
+    {
+      "name": "Large Soul of an Unknown Traveler #3"
+    },
+    {
+      "name": "Large Soul of an Unknown Traveler #4"
+    },
+    {
+      "name": "Large Soul of an Unknown Traveler #5"
     }
-  ]
+  ],
+  "status": "Updated"
 }

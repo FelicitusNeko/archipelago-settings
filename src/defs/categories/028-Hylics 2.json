@@ -1,0 +1,762 @@
+{
+  "category": "Hylics 2",
+  "index": 28,
+  "settings": [
+    {
+      "name": "party_shuffle",
+      "description": "Shuffles party members into the pool. Note that enabling this can potentially increase both the difficulty and length of a run.",
+      "readableName": "Party shuffle",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "gesture_shuffle",
+      "description": "Choose where gestures will appear in the item pool.",
+      "readableName": "gesture shuffle",
+      "values": [
+        {
+          "name": "anywhere",
+          "readableName": "Anywhere"
+        },
+        {
+          "name": "tvs_only",
+          "readableName": "TVs only"
+        },
+        {
+          "name": "default_locations",
+          "readableName": "Default locations"
+        }
+      ],
+      "type": "choice",
+      "default": "anywhere"
+    },
+    {
+      "name": "medallion_shuffle",
+      "description": "Shuffles Red Medallions into the pool.",
+      "readableName": "Medallion shuffle",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "random_start",
+      "description": "Start the randomizer in 1 of 4 positions. (Waynehouse, Viewax's Edifice, TV Island, Shield Facility)",
+      "readableName": "Random start",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "extra_items_in_logic",
+      "description": "Include some extra items in logic (CHARGE UP, 1x PAPER CUP) to prevent the game from becoming too difficult.",
+      "readableName": "Extra items in logic",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "type": "deathlink"
+    }
+  ],
+  "items": [
+    {
+      "name": "DUBIOUS BERRY"
+    },
+    {
+      "name": "BURRITO"
+    },
+    {
+      "name": "COFFEE"
+    },
+    {
+      "name": "SOUL SPONGE"
+    },
+    {
+      "name": "MUSCLE APPLIQUE"
+    },
+    {
+      "name": "POOLWINE"
+    },
+    {
+      "name": "CUPCAKE"
+    },
+    {
+      "name": "COOKIE"
+    },
+    {
+      "name": "HOUSE KEY"
+    },
+    {
+      "name": "MEAT"
+    },
+    {
+      "name": "PNEUMATOPHORE"
+    },
+    {
+      "name": "CAVE KEY"
+    },
+    {
+      "name": "JUICE"
+    },
+    {
+      "name": "DOCK KEY"
+    },
+    {
+      "name": "BANANA"
+    },
+    {
+      "name": "PAPER CUP"
+    },
+    {
+      "name": "JAIL KEY"
+    },
+    {
+      "name": "PADDLE"
+    },
+    {
+      "name": "WORM ROOM KEY"
+    },
+    {
+      "name": "BRIDGE KEY"
+    },
+    {
+      "name": "STEM CELL"
+    },
+    {
+      "name": "UPPER CHAMBER KEY"
+    },
+    {
+      "name": "VESSEL ROOM KEY"
+    },
+    {
+      "name": "CLOUD GERM"
+    },
+    {
+      "name": "SKULL BOMB"
+    },
+    {
+      "name": "TOWER KEY"
+    },
+    {
+      "name": "DEEP KEY"
+    },
+    {
+      "name": "MULTI-COFFEE"
+    },
+    {
+      "name": "MULTI-JUICE"
+    },
+    {
+      "name": "MULTI STEM CELL"
+    },
+    {
+      "name": "MULTI SOUL SPONGE"
+    },
+    {
+      "name": "UPPER HOUSE KEY"
+    },
+    {
+      "name": "BOTTOMLESS JUICE"
+    },
+    {
+      "name": "SAGE TOKEN"
+    },
+    {
+      "name": "CLICKER"
+    },
+    {
+      "name": "CURSED GLOVES"
+    },
+    {
+      "name": "LONG GLOVES"
+    },
+    {
+      "name": "BRAIN DIGITS"
+    },
+    {
+      "name": "MATERIEL MITTS"
+    },
+    {
+      "name": "PLEATHER GAGE"
+    },
+    {
+      "name": "PEPTIDE BODKINS"
+    },
+    {
+      "name": "TELESCOPIC SLEEVE"
+    },
+    {
+      "name": "TENDRIL HAND"
+    },
+    {
+      "name": "PSYCHIC KNUCKLE"
+    },
+    {
+      "name": "SINGLE GLOVE"
+    },
+    {
+      "name": "FADED PONCHO"
+    },
+    {
+      "name": "JUMPSUIT"
+    },
+    {
+      "name": "BOOTS"
+    },
+    {
+      "name": "CONVERTER WORM"
+    },
+    {
+      "name": "COFFEE CHIP"
+    },
+    {
+      "name": "RANCHER PONCHO"
+    },
+    {
+      "name": "ORGAN FORT"
+    },
+    {
+      "name": "LOOPED DOME"
+    },
+    {
+      "name": "DUCTILE HABIT"
+    },
+    {
+      "name": "TARP"
+    },
+    {
+      "name": "POROMER BLEB"
+    },
+    {
+      "name": "SOUL CRISPER"
+    },
+    {
+      "name": "TIME SIGIL"
+    },
+    {
+      "name": "CHARGE UP"
+    },
+    {
+      "name": "FATE SANDBOX"
+    },
+    {
+      "name": "TELEDENUDATE"
+    },
+    {
+      "name": "LINK MOLLUSC"
+    },
+    {
+      "name": "BOMBO - GENESIS"
+    },
+    {
+      "name": "100 Bones"
+    },
+    {
+      "name": "50 Bones"
+    },
+    {
+      "name": "NEMATODE INTERFACE"
+    },
+    {
+      "name": "Pongorma"
+    },
+    {
+      "name": "Dedusmuln"
+    },
+    {
+      "name": "Somsnosa"
+    },
+    {
+      "name": "10 Bones"
+    }
+  ],
+  "locations": [
+    {
+      "name": "Waynehouse: Toilet"
+    },
+    {
+      "name": "Waynehouse: Basement Pot 1"
+    },
+    {
+      "name": "Waynehouse: Basement Pot 2"
+    },
+    {
+      "name": "Waynehouse: Basement Pot 3"
+    },
+    {
+      "name": "Waynehouse: Sarcophagus"
+    },
+    {
+      "name": "Waynehouse: TV"
+    },
+    {
+      "name": "Afterlife: Mangled Wayne"
+    },
+    {
+      "name": "Afterlife: Jar near Mangled Wayne"
+    },
+    {
+      "name": "Afterlife: Jar under Pool"
+    },
+    {
+      "name": "Afterlife: TV"
+    },
+    {
+      "name": "New Muldul: Shop Ceiling Pot 1"
+    },
+    {
+      "name": "New Muldul: Shop Ceiling Pot 2"
+    },
+    {
+      "name": "New Muldul: Flag Banana"
+    },
+    {
+      "name": "New Muldul: Pot near Vault"
+    },
+    {
+      "name": "New Muldul: Underground Pot"
+    },
+    {
+      "name": "New Muldul: Underground Chest"
+    },
+    {
+      "name": "New Muldul: Juice Trade"
+    },
+    {
+      "name": "New Muldul: Basement Suitcase"
+    },
+    {
+      "name": "New Muldul: Upper House Chest 1"
+    },
+    {
+      "name": "New Muldul: Upper House Chest 2"
+    },
+    {
+      "name": "New Muldul: TV"
+    },
+    {
+      "name": "New Muldul: Talk to Pongorma"
+    },
+    {
+      "name": "New Muldul: Pongorma Joins"
+    },
+    {
+      "name": "New Muldul: Rescued Blerol 1"
+    },
+    {
+      "name": "New Muldul: Rescued Blerol 2"
+    },
+    {
+      "name": "New Muldul: Vault Left Chest"
+    },
+    {
+      "name": "New Muldul: Vault Right Chest"
+    },
+    {
+      "name": "New Muldul: Vault Bomb"
+    },
+    {
+      "name": "Viewax's Edifice: Fountain Banana"
+    },
+    {
+      "name": "Viewax's Edifice: Dedusmuln's Suitcase"
+    },
+    {
+      "name": "Viewax's Edifice: Dedusmuln's Campfire"
+    },
+    {
+      "name": "Viewax's Edifice: Talk to Dedusmuln"
+    },
+    {
+      "name": "Viewax's Edifice: Dedusmuln Joins"
+    },
+    {
+      "name": "Viewax's Edifice: Canopic Jar"
+    },
+    {
+      "name": "Viewax's Edifice: Cave Sarcophagus"
+    },
+    {
+      "name": "Viewax's Edifice: Shielded Key"
+    },
+    {
+      "name": "Viewax's Edifice: Tower Pot"
+    },
+    {
+      "name": "Viewax's Edifice: Tower Jar"
+    },
+    {
+      "name": "Viewax's Edifice: Tower Chest"
+    },
+    {
+      "name": "Viewax's Edifice: Sage Fridge"
+    },
+    {
+      "name": "Viewax's Edifice: Sage Item 1"
+    },
+    {
+      "name": "Viewax's Edifice: Sage Item 2"
+    },
+    {
+      "name": "Viewax's Edifice: Viewax Pot"
+    },
+    {
+      "name": "Viewax's Edifice: Defeat Viewax"
+    },
+    {
+      "name": "Viewax's Edifice: TV"
+    },
+    {
+      "name": "Arcade 1: Key"
+    },
+    {
+      "name": "Arcade 1: Coin Dash"
+    },
+    {
+      "name": "Arcade 1: Burrito Alcove 1"
+    },
+    {
+      "name": "Arcade 1: Burrito Alcove 2"
+    },
+    {
+      "name": "Arcade 1: Behind Spikes Banana"
+    },
+    {
+      "name": "Arcade 1: Pyramid Banana"
+    },
+    {
+      "name": "Arcade 1: Moving Platforms Muscle Applique"
+    },
+    {
+      "name": "Arcade 1: Bed Banana"
+    },
+    {
+      "name": "Airship: Talk to Somsnosa"
+    },
+    {
+      "name": "Arcade Island: Shielded Key"
+    },
+    {
+      "name": "Arcade 2: Flying Machine Banana"
+    },
+    {
+      "name": "Arcade 2: Paper Cup Detour"
+    },
+    {
+      "name": "Arcade 2: Peak Muscle Applique"
+    },
+    {
+      "name": "Arcade 2: Double Banana 1"
+    },
+    {
+      "name": "Arcade 2: Double Banana 2"
+    },
+    {
+      "name": "Arcade 2: Cave Burrito"
+    },
+    {
+      "name": "TV Island: TV"
+    },
+    {
+      "name": "Juice Ranch: Juice 1"
+    },
+    {
+      "name": "Juice Ranch: Juice 2"
+    },
+    {
+      "name": "Juice Ranch: Juice 3"
+    },
+    {
+      "name": "Juice Ranch: Ledge Rancher"
+    },
+    {
+      "name": "Juice Ranch: Battle with Somsnosa"
+    },
+    {
+      "name": "Juice Ranch: Somsnosa Joins"
+    },
+    {
+      "name": "Juice Ranch: Fridge"
+    },
+    {
+      "name": "Juice Ranch: TV"
+    },
+    {
+      "name": "Worm Pod: Key"
+    },
+    {
+      "name": "Foglast: West Sarcophagus"
+    },
+    {
+      "name": "Foglast: Underground Sarcophagus"
+    },
+    {
+      "name": "Foglast: Shielded Key"
+    },
+    {
+      "name": "Foglast: Buy Clicker"
+    },
+    {
+      "name": "Foglast: TV"
+    },
+    {
+      "name": "Foglast: Shielded Chest"
+    },
+    {
+      "name": "Foglast: Cave Fridge"
+    },
+    {
+      "name": "Foglast: Roof Sarcophagus"
+    },
+    {
+      "name": "Foglast: Under Lair Sarcophagus 1"
+    },
+    {
+      "name": "Foglast: Under Lair Sarcophagus 2"
+    },
+    {
+      "name": "Foglast: Under Lair Sarcophagus 3"
+    },
+    {
+      "name": "Foglast: Sage Sarcophagus"
+    },
+    {
+      "name": "Foglast: Sage Item 1"
+    },
+    {
+      "name": "Foglast: Sage Item 2"
+    },
+    {
+      "name": "Drill Castle: Ledge Banana"
+    },
+    {
+      "name": "Drill Castle: Island Banana"
+    },
+    {
+      "name": "Drill Castle: Island Pot"
+    },
+    {
+      "name": "Drill Castle: Cave Sarcophagus"
+    },
+    {
+      "name": "Drill Castle: Roof Banana"
+    },
+    {
+      "name": "Drill Castle: TV"
+    },
+    {
+      "name": "Sage Labyrinth: 1F Chest Near Fountain"
+    },
+    {
+      "name": "Sage Labyrinth: 1F Hidden Sarcophagus"
+    },
+    {
+      "name": "Sage Labyrinth: 1F Four Statues Chest 1"
+    },
+    {
+      "name": "Sage Labyrinth: 1F Four Statues Chest 2"
+    },
+    {
+      "name": "Sage Labyrinth: B1 Double Chest 1"
+    },
+    {
+      "name": "Sage Labyrinth: B1 Double Chest 2"
+    },
+    {
+      "name": "Sage Labyrinth: B1 Single Chest"
+    },
+    {
+      "name": "Sage Labyrinth: B1 Enemy Chest"
+    },
+    {
+      "name": "Sage Labyrinth: B1 Hidden Sarcophagus"
+    },
+    {
+      "name": "Sage Labyrinth: B1 Hole Chest"
+    },
+    {
+      "name": "Sage Labyrinth: B2 Hidden Sarcophagus 1"
+    },
+    {
+      "name": "Sage Labyrinth: B2 Hidden Sarcophagus 2"
+    },
+    {
+      "name": "Sage Labyrinth: Motor Hunter Sarcophagus"
+    },
+    {
+      "name": "Sage Labyrinth: Sage Item 1"
+    },
+    {
+      "name": "Sage Labyrinth: Sage Item 2"
+    },
+    {
+      "name": "Sage Labyrinth: Sage Left Arm"
+    },
+    {
+      "name": "Sage Labyrinth: Sage Right Arm"
+    },
+    {
+      "name": "Sage Labyrinth: Sage Left Leg"
+    },
+    {
+      "name": "Sage Labyrinth: Sage Right Leg"
+    },
+    {
+      "name": "Sage Airship: Bottom Level Pot"
+    },
+    {
+      "name": "Sage Airship: Flesh Pot"
+    },
+    {
+      "name": "Sage Airship: Top Jar"
+    },
+    {
+      "name": "Sage Airship: TV"
+    },
+    {
+      "name": "Hylemxylem: Jar"
+    },
+    {
+      "name": "Hylemxylem: Lower Reservoir Key"
+    },
+    {
+      "name": "Hylemxylem: Fountain Banana"
+    },
+    {
+      "name": "Hylemxylem: East Island Banana"
+    },
+    {
+      "name": "Hylemxylem: East Island Chest"
+    },
+    {
+      "name": "Hylemxylem: Upper Chamber Banana"
+    },
+    {
+      "name": "Hylemxylem: Across Upper Reservoir Chest"
+    },
+    {
+      "name": "Hylemxylem: Drained Lower Reservoir Chest"
+    },
+    {
+      "name": "Hylemxylem: Drained Lower Reservoir Burrito 1"
+    },
+    {
+      "name": "Hylemxylem: Drained Lower Reservoir Burrito 2"
+    },
+    {
+      "name": "Hylemxylem: Lower Reservoir Hole Pot 1"
+    },
+    {
+      "name": "Hylemxylem: Lower Reservoir Hole Pot 2"
+    },
+    {
+      "name": "Hylemxylem: Lower Reservoir Hole Pot 3"
+    },
+    {
+      "name": "Hylemxylem: Lower Reservoir Hole Sarcophagus"
+    },
+    {
+      "name": "Hylemxylem: Drained Upper Reservoir Burrito 1"
+    },
+    {
+      "name": "Hylemxylem: Drained Upper Reservoir Burrito 2"
+    },
+    {
+      "name": "Hylemxylem: Drained Upper Reservoir Burrito 3"
+    },
+    {
+      "name": "Hylemxylem: Upper Reservoir Hole Key"
+    },
+    {
+      "name": "Sage Labyrinth: 2F Sarcophagus"
+    },
+    {
+      "name": "New Muldul: Upper House Medallion"
+    },
+    {
+      "name": "New Muldul: Vault Rear Left Medallion"
+    },
+    {
+      "name": "New Muldul: Vault Rear Right Medallion"
+    },
+    {
+      "name": "New Muldul: Vault Center Medallion"
+    },
+    {
+      "name": "New Muldul: Vault Front Left Medallion"
+    },
+    {
+      "name": "New Muldul: Vault Front Right Medallion"
+    },
+    {
+      "name": "Viewax's Edifice: Fort Wall Medallion"
+    },
+    {
+      "name": "Viewax's Edifice: Jar Medallion"
+    },
+    {
+      "name": "Viewax's Edifice: Sage Chair Medallion"
+    },
+    {
+      "name": "Arcade 1: Lonely Medallion"
+    },
+    {
+      "name": "Arcade 1: Alcove Medallion"
+    },
+    {
+      "name": "Arcade 1: Lava Medallion"
+    },
+    {
+      "name": "Arcade 2: Flying Machine Medallion"
+    },
+    {
+      "name": "Arcade 2: Guarded Medallion"
+    },
+    {
+      "name": "Arcade 2: Spinning Medallion"
+    },
+    {
+      "name": "Arcade 2: Hook Medallion"
+    },
+    {
+      "name": "Arcade 2: Flag Medallion"
+    },
+    {
+      "name": "Foglast: Under Lair Medallion"
+    },
+    {
+      "name": "Foglast: Mid-Air Medallion"
+    },
+    {
+      "name": "Foglast: Top of Tower Medallion"
+    },
+    {
+      "name": "Sage Airship: Walkway Medallion"
+    },
+    {
+      "name": "Sage Airship: Flesh Medallion"
+    },
+    {
+      "name": "Sage Airship: Top of Ship Medallion"
+    },
+    {
+      "name": "Sage Airship: Hidden Medallion 1"
+    },
+    {
+      "name": "Sage Airship: Hidden Medallion 2"
+    },
+    {
+      "name": "Sage Airship: Hidden Medallion 3"
+    },
+    {
+      "name": "Hylemxylem: Lower Reservoir Medallion"
+    },
+    {
+      "name": "Hylemxylem: Lower Reservoir Hole Medallion"
+    },
+    {
+      "name": "Hylemxylem: Drain Switch Medallion"
+    },
+    {
+      "name": "Hylemxylem: Warpo Medallion"
+    }
+  ],
+  "status": "New"
+}

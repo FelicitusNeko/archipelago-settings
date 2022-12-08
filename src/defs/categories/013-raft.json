@@ -3,106 +3,161 @@
   "index": 13,
   "settings": [
     {
-      "type": "numeric",
       "name": "minimum_resource_pack_amount",
-      "readableName": "Minimum resource pack amount",
       "description": "The minimum amount of resources available in a resource pack.",
-      "low": 1,
       "high": 15,
-      "randomable": true,
+      "readableName": "Minimum resource pack amount",
+      "low": 1,
+      "type": "range",
       "default": 1
     },
     {
-      "type": "numeric",
       "name": "maximum_resource_pack_amount",
-      "readableName": "Maximum resource pack amount",
       "description": "The maximum amount of resources available in a resource pack.",
-      "low": 1,
       "high": 15,
-      "randomable": true,
+      "readableName": "Maximum resource pack amount",
+      "low": 1,
+      "type": "range",
       "default": 5
     },
     {
-      "type": "string",
       "name": "duplicate_items",
-      "readableName": "Duplicate items",
       "description": "Adds duplicates of items to the item pool. These will be selected alongside Resource Packs (if configured). Note that there are not many progression items, and selecting Progression may produce many of the same duplicate item.",
-      "values": {
-        "disabled": "Disabled",
-        "progression": "Progression only",
-        "non_progression": "Non-progression only",
-        "any": "Any"
-      },
-      "default": "disabled"
+      "readableName": "Duplicate items",
+      "values": [
+        {
+          "name": "progression",
+          "readableName": "Progression only"
+        },
+        {
+          "name": "non_progression",
+          "readableName": "Non-progression only"
+        },
+        {
+          "name": "any",
+          "readableName": "Any"
+        }
+      ],
+      "type": "choice",
+      "default": "any"
     },
     {
-      "type": "string",
       "name": "filler_item_types",
-      "readableName": "Filler item types",
       "description": "Determines whether to use Resource Packs, Duplicate Items (as configured), or both.",
-      "values": {
-        "resource_packs": "Resource Packs",
-        "duplicates": "Duplicate items",
-        "both": "both"
-      },
+      "readableName": "Filler item types",
+      "values": [
+        {
+          "name": "resource_packs",
+          "readableName": "Resource Packs"
+        },
+        {
+          "name": "duplicates",
+          "readableName": "Duplicate items"
+        },
+        {
+          "name": "both",
+          "readableName": "both"
+        }
+      ],
+      "type": "choice",
       "default": "resource_packs"
     },
     {
-      "type": "string",
       "name": "island_frequency_locations",
-      "readableName": "Island frequency locations",
       "description": "Sets where frequencies for story islands are located.",
-      "values": {
-        "vanilla": "Vanilla",
-        "random_on_island": "Random on island",
-        "progressive": "Progressive",
-        "anywhere": "Anywhere"
-      },
-      "default": "random_on_island"
-    },    {
-      "type": "string",
+      "readableName": "Island frequency locations",
+      "values": [
+        {
+          "name": "vanilla",
+          "readableName": "Vanilla"
+        },
+        {
+          "name": "random_on_island",
+          "readableName": "Random on island"
+        },
+        {
+          "name": "random_island_order",
+          "readableName": "Random island order"
+        },
+        {
+          "name": "random_on_island_random_order",
+          "readableName": "Random on island random order"
+        },
+        {
+          "name": "progressive",
+          "readableName": "Progressive"
+        },
+        {
+          "name": "anywhere",
+          "readableName": "Anywhere"
+        }
+      ],
+      "type": "choice",
+      "default": "random_island_order"
+    },
+    {
       "name": "island_generation_distance",
-      "readableName": "Island distance",
       "description": "Sets how far away islands spawn from you when you input their coordinates into the Receiver.",
-      "values": {
-        "quarter": "Four times shorter than vanilla",
-        "half": "Two times shorter than vanilla",
-        "vanilla": "Vanilla",
-        "double": "Two times longer than vanilla",
-        "quadrouple": "Four times longer than vanilla"
-      },
+      "readableName": "Island distance",
+      "values": [
+        {
+          "name": "quarter",
+          "readableName": "Four times shorter than vanilla"
+        },
+        {
+          "name": "half",
+          "readableName": "Two times shorter than vanilla"
+        },
+        {
+          "name": "vanilla",
+          "readableName": "Vanilla"
+        },
+        {
+          "name": "double",
+          "readableName": "Two times longer than vanilla"
+        },
+        {
+          "name": "quadrouple",
+          "readableName": "Four times longer than vanilla"
+        }
+      ],
+      "type": "choice",
       "default": "vanilla"
     },
     {
-      "type": "boolean",
       "name": "expensive_research",
-      "readableName": "Expensive research",
       "description": "Makes unlocking items in the Crafting Table consume the researched items.",
+      "readableName": "Expensive research",
+      "type": "toggle",
       "default": false
     },
     {
-      "type": "boolean",
       "name": "progressive_items",
-      "readableName": "Progressive items",
       "description": "Makes some items, like the Bow and Arrow, progressive rather than raw unlocks.",
+      "readableName": "Progressive items",
+      "type": "toggle",
       "default": true
     },
     {
-      "type": "boolean",
       "name": "big_island_early_crafting",
-      "readableName": "Big island early crafting",
       "description": "Allows recipes that require items from big islands (e.g. leather) to lock earlygame items like the Receiver, Bolt, or Smelter.",
+      "readableName": "Big island early crafting",
+      "type": "toggle",
       "default": false
     },
     {
-      "type": "boolean",
       "name": "paddleboard_mode",
-      "readableName": "Paddleboard mode",
       "description": "Sets later story islands to in logic without an Engine or Steering Wheel. May require lots of paddling. **Not recommended.**",
+      "readableName": "Paddleboard mode",
+      "type": "toggle",
       "default": true
     },
-    {"type": "deathlink"}
+    {
+      "name": "death_link",
+      "type": "deathlink"
+    }
   ],
+  "defver": 2,
   "items": [
     {
       "name": "Backpack"
@@ -1543,5 +1598,6 @@
     {
       "name": "Relay Station quest"
     }
-  ]
+  ],
+  "status": "Updated"
 }
