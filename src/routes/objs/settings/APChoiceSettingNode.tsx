@@ -114,11 +114,7 @@ export class APChoiceSettingNode extends APSettingNode<APChoiceSetting> {
       let valueDef = setting.values.find(i => i.name === wValue.value);
       if (!valueDef) valueDef = { name: "!!!UNKNOWN" };
 
-      const displayName = valueDef
-        ? Array.isArray(valueDef)
-          ? valueDef[0]
-          : valueDef
-        : wValue.value;
+      const displayName = valueDef.readableName ?? valueDef.name;
 
       weightSliders.push(
         this.outputWeightedValue(
