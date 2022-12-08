@@ -23,7 +23,7 @@ export class APChoiceSettingNode extends APSettingNode<APChoiceSetting> {
     // const remainingValues = Object.keys(setting.values).filter(
     //   (i) => !selectedValues.includes(i)
     // );
-    return remainingValues[0].name;
+    return remainingValues.length > 0 ? remainingValues[0].name : undefined;
   }
 
   /** @override */
