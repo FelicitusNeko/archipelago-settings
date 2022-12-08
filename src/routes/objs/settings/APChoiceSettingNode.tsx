@@ -20,9 +20,7 @@ export class APChoiceSettingNode extends APSettingNode<APChoiceSetting> {
       Array.isArray(value) ? value.map((i) => i.value) : [value]
     ).concat(additionalOptions);
     const remainingValues = setting.values.filter(i => !selectedValues.includes(i.name));
-    // const remainingValues = Object.keys(setting.values).filter(
-    //   (i) => !selectedValues.includes(i)
-    // );
+
     return remainingValues.length > 0 ? remainingValues[0].name : undefined;
   }
 
@@ -151,9 +149,6 @@ export class APChoiceSettingNode extends APSettingNode<APChoiceSetting> {
     };
 
     /** The list of unselected values. */
-    // const remainingValues = Object.entries(setting.values).filter(
-    //   (i) => !value.map((i) => i.value).includes(i[0])
-    // );
     const remainingValues = setting.values.filter(i => !value.map(i => i.value).includes(i.name));
 
     return (
