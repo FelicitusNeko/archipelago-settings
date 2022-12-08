@@ -9,7 +9,8 @@
         "As a result, there should no longer be any inconsistencies between official specifications and the Settings Tool (with maybe the exception of A Link to the Past)",
         "Hopefully, an update in the near future will also guarantee that your saved settings are all valid, and correct them if they're not"
       ]
-    ]
+    ],
+    "*Revision 1*: Fixed issues related to turning on Weighted mode for Choice-type settings"
   ],
   "1.0.9": [
     "Update spec to **0.3.5**",
