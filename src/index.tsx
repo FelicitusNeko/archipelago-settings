@@ -1,15 +1,16 @@
 import React from "react";
-import { createRoot } from "react-dom/client";
+import ReactDOM from "react-dom";
 
 import * as serviceWorker from "./serviceWorker";
 import "./index.css";
 import SettingsTool from "./routes/SettingsTool";
 
-createRoot(document.body).render(
+const root = document.querySelector("div#root");
+if (root) ReactDOM.render((
   <React.StrictMode>
     <SettingsTool />
   </React.StrictMode>
-);
+), root);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
