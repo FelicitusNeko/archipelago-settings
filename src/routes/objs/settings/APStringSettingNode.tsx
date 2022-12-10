@@ -3,6 +3,7 @@ import { APWeightedValue } from "../../../objs/settings/APSetting";
 import { APStringSetting } from "../../../objs/settings/APStringSetting";
 import { APSettingNode } from "./APSettingNode";
 
+/** @deprecated use `APChoiceSettingNode` instead */
 export class APStringSettingNode extends APSettingNode<APStringSetting> {
   componentDidMount() {
     const { selector } = this.state;

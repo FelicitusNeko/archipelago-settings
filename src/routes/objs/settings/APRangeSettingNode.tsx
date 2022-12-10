@@ -9,6 +9,7 @@ import { SelectRail } from "../../../defs/core";
 const randomOrder = ["random", "random-low", "random-middle", "random-high"];
 
 type APRangeType = number | string;
+/** @since 1.1.0 */
 export class APRangeSettingNode extends APSettingNode<APRangeSetting> {
   componentDidMount() {
     const { selector } = this.state;
@@ -62,6 +63,7 @@ export class APRangeSettingNode extends APSettingNode<APRangeSetting> {
 
     return (
       // Output the value slider for this numeric value.
+      // TODO: add dropdown for aliases and random values.
       <>
         <Slider
           key={`${category}-${name}-val`}

@@ -7,6 +7,10 @@ export interface APToggleSettingJson extends APSettingJson<boolean> {
   type: SettingType.Boolean | SettingType.Toggle | SettingType.DeathLink;
 }
 
+/** 
+ * This replaces `APBooleanSetting` and acts as a complete drop-in replacement.
+ * @since 1.1.0
+ */
 export class APToggleSetting extends APSetting<boolean> {
   /** @override */
   get yamlValue() {
