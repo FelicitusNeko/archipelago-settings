@@ -174,7 +174,7 @@ export abstract class APSetting<T> {
     return this._value;
   }
   set value(value) {
-    this._value = value;
+    this._value = this.validateData(value);
   }
 
   /** The JSON-encoded representation for this setting. */
@@ -182,12 +182,22 @@ export abstract class APSetting<T> {
     return JSON.stringify(this._value);
   }
   set storageValue(jsonStr: string) {
-    this._value = JSON.parse(jsonStr);
+    this._value = this.validateData(JSON.parse(jsonStr));
   }
 
   /** The representation for this setting to be stored in YAML. */
   abstract get yamlValue(): T | Record<string, number>;
   abstract set yamlValue(value);
+
+  /**
+   * Validates data coming into the setting value.
+   * @param value The data to validate.
+   * @returns A sanitised version of the data which contains only valid values.
+   * @since 1.1.1
+   */
+  validateData(value:APWeightableValue<T>) {
+    return value;
+  }
 
   /**
    * Checks whether this setting's value is or contains any of the values in a given list.
