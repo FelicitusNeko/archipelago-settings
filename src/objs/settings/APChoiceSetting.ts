@@ -43,6 +43,8 @@ export class APChoiceSetting extends APSetting<string> {
     super(category, settingData, initialValue);
 
     this._values = settingData.values;
+    // eslint-disable-next-line no-self-assign
+    this.value = this.value;
   }
 
   /** The list of valid values and their descriptions. */
@@ -76,6 +78,7 @@ export class APChoiceSetting extends APSetting<string> {
 
   /** @override */
   validateData(value:APWeightableValue<string>) {
+    if (!this.values) return value;
     const valid = this.values.map(i => i.name);
     if (Array.isArray(value)) {
       const filtered = value.filter(i => valid.includes(i.value));

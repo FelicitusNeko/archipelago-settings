@@ -52,6 +52,8 @@ export class APRangeSetting extends APSetting<number | string> {
     this._high = settingData.high;
     this._step = settingData.step;
     this._aliases = settingData.aliases;
+    // eslint-disable-next-line no-self-assign
+    this.value = this.value;
   }
 
   /** The lowest valid value for this setting. */
@@ -116,8 +118,10 @@ export class APRangeSetting extends APSetting<number | string> {
 
   /** @override */
   validateData(value: APWeightableValue<number | string>) {
-    const validAliases = this._aliases ? [...this._aliases.keys()] : [];
+    if (this.low === this.high) return value;
+    const validAliases = this._aliases ? [...Object.keys(this._aliases)] : [];
     const isValid = (vvalue: number | string) => {
+      if (vvalue === null) return false;
       if (typeof vvalue === "number") return vvalue >= this.low && vvalue <= this.high;
       // this line is a broad assumption, but probably correct most of the time
       // TODO: check to make sure any range values here are still valid
