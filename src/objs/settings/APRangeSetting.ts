@@ -2,14 +2,15 @@ import { SettingType } from "../../defs/core";
 import {
   APSetting,
   APSettingJson,
+  APWeightableValue,
   APWeightedValue,
 } from "./APSetting";
 
 const randomOrder = ["random", "random-low", "random-middle", "random-high"];
 
 /**
- * The interface for Archipelago numeric settings as stored in JSON.
- * @since 1.0.0
+ * The interface for Archipelago range-bound numeric settings as stored in JSON.
+ * @since 1.1.0
  */
 export interface APRangeSettingJson extends APSettingJson<number | string> {
   /**
@@ -26,18 +27,19 @@ export interface APRangeSettingJson extends APSettingJson<number | string> {
    * @optional
    */
   step?: number;
-  /** @override */
-  default: number;
+  /** If specified, any aliases which can be translated to a numeric value. */
+  aliases?: Map<string, number>;
 }
 
 /**
- * The renderable representation of an Archipelago numeric setting.
- * @since 1.0.0
+ * The renderable representation of an Archipelago numeric setting bound to a range.
+ * @since 1.1.0
  */
 export class APRangeSetting extends APSetting<number | string> {
   private readonly _low: number;
   private readonly _high: number;
   private readonly _step?: number;
+  private readonly _aliases?: Map<string, number>;
 
   constructor(
     category: string | null,
@@ -49,6 +51,7 @@ export class APRangeSetting extends APSetting<number | string> {
     this._low = settingData.low;
     this._high = settingData.high;
     this._step = settingData.step;
+    this._aliases = settingData.aliases;
   }
 
   /** The lowest valid value for this setting. */
@@ -109,5 +112,21 @@ export class APRangeSetting extends APSetting<number | string> {
         } else return typeof a.value === "number" ? -1 : 1;
       });
     } else this.value = value;
+  }
+
+  /** @override */
+  validateData(value: APWeightableValue<number | string>) {
+    const validAliases = this._aliases ? [...this._aliases.keys()] : [];
+    const isValid = (vvalue: number | string) => {
+      if (typeof vvalue === "number") return vvalue >= this.low && vvalue <= this.high;
+      // this line is a broad assumption, but probably correct most of the time
+      // TODO: check to make sure any range values here are still valid
+      else if (vvalue.startsWith("random")) return true;
+      else return validAliases.includes(vvalue);
+    }
+    if (Array.isArray(value)) {
+      const filtered = value.filter(i => isValid(i.value));
+      return filtered.length ? filtered : this.default;
+    } else return isValid(value) ? value : this.default;
   }
 }

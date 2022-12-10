@@ -1,4 +1,10 @@
 {
+  "1.1.1": [
+    "Choice and Range settings should now auto-validate their values on load and import",
+    [
+      "This should both prevent invalid values from sneaking in on import, as well as clear out invalid values on page load after an AP update"
+    ]
+  ],
   "1.1.0": [
     "Big internal rework which will allow for updating of Settings Tool via update utility",
     "Update spec to **0.3.6**",

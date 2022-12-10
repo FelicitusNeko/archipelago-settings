@@ -1,11 +1,10 @@
 import React, { ChangeEvent } from "react";
-import Slider from "rc-slider";
 
 import { APNumberSetting } from "../../../objs/settings/APNumberSetting";
 import { APWeightedValue } from "../../../objs/settings/APSetting";
 import { APSettingNode } from "./APSettingNode";
-import { SelectRail } from "../../../defs/core";
 
+/** @since 1.1.0 */
 export class APNumberSettingNode extends APSettingNode<APNumberSetting> {
   componentDidMount() {
     const { selector } = this.state;
@@ -44,27 +43,24 @@ export class APNumberSettingNode extends APSettingNode<APNumberSetting> {
     if (Array.isArray(value)) return null;
 
     /** An event handler which fires when the value for this setting is changed. */
-    const onSettingChange = (newVal: number | number[]) => {
-      if (!Array.isArray(newVal))
+    const onSettingChange = ({ currentTarget }: ChangeEvent<HTMLInputElement>) => {
+      if (!Array.isArray(currentTarget.value))
         this.setState({
-          value: newVal,
+          value: Number.parseInt(currentTarget.value),
         });
     };
 
-    // TODO: this should now be a numeric text entry field
     return (
-      // Output the value slider for this numeric value.
+      // Output the numeric selector for this numeric value.
       <>
-        <Slider
+        <input
           key={`${category}-${name}-val`}
-          className="archslider"
+          type="number"
           min={low}
           max={high}
           value={(value as number) ?? vDefault}
           onChange={onSettingChange}
-          trackStyle={SelectRail}
-        />{" "}
-        <b>{value}</b>
+        />
       </>
     );
   };
@@ -95,10 +91,10 @@ export class APNumberSettingNode extends APSettingNode<APNumberSetting> {
       );
 
     /** An event handler that fires when the value selector's value changes. */
-    const onSettingChange = (newVal: number | number[]) => {
-      if (!Array.isArray(newVal))
+    const onSettingChange = ({ currentTarget }: ChangeEvent<HTMLInputElement>) => {
+      if (!Array.isArray(currentTarget.value))
         this.setState({
-          selector: newVal,
+          selector: Number.parseInt(currentTarget.value),
         });
     };
 
@@ -117,25 +113,23 @@ export class APNumberSettingNode extends APSettingNode<APNumberSetting> {
         ])
         .sort((a, b) => {
           if (typeof a.value === typeof b.value)
-              return a.value - (b.value as number);
+            return a.value - (b.value as number);
           else return typeof a.value === "number" ? -1 : 1;
         });
       this.setState({ value: newValue });
     };
 
-    // TODO: change value selector to numeric text entry field
     return (
       <>
         {weightSliders}
-        <Slider
-          className="archslider"
+        <input
+          key={`${category}-${name}-val`}
+          type="number"
           min={low}
           max={high}
-          value={(selector ?? vDefault) as number}
+          value={selector ?? vDefault}
           onChange={onSettingChange}
-          trackStyle={SelectRail}
-        />{" "}
-        <b>{selector as number}</b>
+        />
         <button
           key={`${category}-${name}-wgtadd`}
           className="emojibutton"

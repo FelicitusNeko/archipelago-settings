@@ -3,6 +3,10 @@ import React, { ChangeEvent } from "react";
 import { APToggleSetting } from "../../../objs/settings/APToggleSetting";
 import { APSettingNode } from "./APSettingNode";
 
+/**
+ * This replaces `APBooleanSettingNode` and acts as a complete drop-in replacement.
+ * @since 1.1.0
+ */
 export class APToggleSettingNode extends APSettingNode<APToggleSetting> {
   protected onWeightedCheck = ({
     currentTarget,

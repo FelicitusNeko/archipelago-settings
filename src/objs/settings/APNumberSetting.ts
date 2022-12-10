@@ -6,8 +6,8 @@ import {
 } from "./APSetting";
 
 /**
- * The interface for Archipelago numeric settings as stored in JSON.
- * @since 1.0.0
+ * The interface for Archipelago open-ended numeric settings as stored in JSON.
+ * @since 1.1.0
  */
 export interface APNumberSettingJson extends APSettingJson<number> {
   /**
@@ -19,13 +19,11 @@ export interface APNumberSettingJson extends APSettingJson<number> {
   low?: number;
   /** The highest valid value for this setting, if any. */
   high?: number;
-  /** @override */
-  default: number;
 }
 
 /**
- * The renderable representation of an Archipelago numeric setting.
- * @since 1.0.0
+ * The renderable representation of an Archipelago open-ended number setting.
+ * @since 1.1.0
  */
 export class APNumberSetting extends APSetting<number> {
   private readonly _low?: number;

@@ -2,6 +2,7 @@ import { SettingType } from "../../defs/core";
 import {
   APSetting,
   APSettingJson,
+  APWeightableValue,
   APWeightedValue,
 } from "./APSetting";
 
@@ -71,5 +72,14 @@ export class APChoiceSetting extends APSetting<string> {
         });
       this.value = wValues;
     } else this.value = value;
+  }
+
+  /** @override */
+  validateData(value:APWeightableValue<string>) {
+    const valid = this.values.map(i => i.name);
+    if (Array.isArray(value)) {
+      const filtered = value.filter(i => valid.includes(i.value));
+      return filtered.length ? filtered : this.default;
+    } else return valid.includes(value) ? value : this.default;
   }
 }

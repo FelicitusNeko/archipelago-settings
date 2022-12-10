@@ -9,6 +9,7 @@ import { SelectRail } from "../../../defs/core";
 const randomOrder = ["random", "random-low", "random-middle", "random-high"];
 
 type APNumericType = number | string;
+/** @deprecated use `APNumberSettingNode` or `APRangeSettingNode` instead */
 export class APNumericSettingNode extends APSettingNode<APNumericSetting> {
   componentDidMount() {
     const { selector } = this.state;
