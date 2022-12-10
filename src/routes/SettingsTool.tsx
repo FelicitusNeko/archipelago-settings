@@ -220,7 +220,7 @@ const SettingsTool: React.FC = (): ReactElement<unknown> | null => {
    * @param {string|null} singleCat Optional. Import only a single category.
    */
   const importYamlV2 = (yamlIn: any, singleCat?: string | null) => {
-    // TODO: option to import only one category
+    // TODO: option to import only one category (implemented but no interface for it)
 
     for (const {
       category,
@@ -230,6 +230,7 @@ const SettingsTool: React.FC = (): ReactElement<unknown> | null => {
     } of APCategoryList) {
       // If there's a category and it doesn't exist in the imported data, skip it; otherwise, prepare it
       if (category && !yamlIn[category]) continue;
+      if (singleCat && singleCat !== category) continue;
 
       /** The category from the data set being imported. */
       const curImport = category ? yamlIn[category] : yamlIn;
