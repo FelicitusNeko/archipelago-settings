@@ -149,6 +149,10 @@
         {
           "name": "tokens",
           "readableName": "Skulltula Tokens"
+        },
+        {
+          "name": "hearts",
+          "readableName": "Heart Containers"
         }
       ],
       "type": "choice",
@@ -204,21 +208,37 @@
     {
       "name": "shuffle_grotto_entrances",
       "description": "Shuffles grotto and grave entrances.",
-      "readableName": "Entrance shuffle –  grotto",
+      "readableName": "Entrance shuffle – grotto",
       "type": "toggle",
       "default": false
     },
     {
       "name": "shuffle_dungeon_entrances",
-      "description": "Shuffles dungeon entrances, excluding Ganon's Castle. Opens Deku, Fire and BotW to both ages.",
-      "readableName": "Entrance shuffle –  dungeons",
-      "type": "toggle",
-      "default": false
+      "description": "Shuffles dungeon entrances. Opens Deku, Fire and BotW to both ages. \"All\" includes Ganon's Castle.",
+      "readableName": "Entrance shuffle – dungeons",
+      "values": [
+        {
+          "name": "off",
+          "readableName": "Off"
+        },
+        {
+          "name": "simple",
+          "readableName": "Simple",
+          "description": "Excludes Ganon's Castle."
+        },
+        {
+          "name": "all",
+          "readableName": "All",
+          "description": "Includes Ganon's Castle."
+        }
+      ],
+      "type": "choice",
+      "default": "off"
     },
     {
       "name": "shuffle_overworld_entrances",
       "description": "Shuffles overworld loading zones.",
-      "readableName": "Entrance shuffle –  overworld",
+      "readableName": "Entrance shuffle – overworld",
       "type": "toggle",
       "default": false
     },
@@ -239,9 +259,49 @@
     {
       "name": "spawn_positions",
       "description": "Randomizes the starting position on loading a save. Consistent between savewarps.",
-      "readableName": "Entrance shuffle –  spawn positions",
-      "type": "toggle",
-      "default": false
+      "readableName": "Random spawn positions",
+      "values": [
+        {
+          "name": "off",
+          "readableName": "Off"
+        },
+        {
+          "name": "child",
+          "readableName": "Child locations"
+        },
+        {
+          "name": "adult",
+          "readableName": "Adult locations"
+        },
+        {
+          "name": "both",
+          "readableName": "Locations for both ages"
+        }
+      ],
+      "type": "choice",
+      "default": "off"
+    },
+    {
+      "name": "shuffle_bosses",
+      "description": "Shuffles boss entrances.",
+      "readableName": "Entrance shuffle – bosses",
+      "values": [
+        {
+          "name": "off",
+          "readableName": "Off"
+        },
+        {
+          "name": "limited",
+          "readableName": "Limited",
+          "description": "Prevents age-mixing of bosses."
+        },
+        {
+          "name": "full",
+          "readableName": "Full"
+        }
+      ],
+      "type": "choice",
+      "default": "off"
     },
     {
       "name": "triforce_hunt",
@@ -286,13 +346,68 @@
       "default": false
     },
     {
-      "name": "mq_dungeons",
-      "description": "How many dungeons will be replaced by their Master Quest variants. Which dungeons is random.",
+      "name": "dungeon_shortcuts",
+      "description": "Shortcuts to dungeon bosses are available without any requirements.",
+      "readableName": "Dungeon shortcuts",
+      "values": [
+        {
+          "name": "off",
+          "readableName": "Off"
+        },
+        {
+          "name": "choice",
+          "readableName": "Manual choice",
+          "description": "Must define dungeon_shortcuts_list manually in YAML."
+        },
+        {
+          "name": "all",
+          "readableName": "All"
+        },
+        {
+          "name": "random_dungeons",
+          "readableName": "Random dungeons"
+        }
+      ],
+      "type": "choice",
+      "default": "off"
+    },
+    {
+      "name": "mq_dungeons_mode",
+      "description": "Choose between vanilla and Master Quest dungeon layouts.",
+      "readableName": "Master Quest dungeons mode",
+      "values": [
+        {
+          "name": "vanilla",
+          "readableName": "All vanilla"
+        },
+        {
+          "name": "mq",
+          "readableName": "All Master Quest"
+        },
+        {
+          "name": "specific",
+          "readableName": "Specify dungeons",
+          "description": "Must define mq_dungeons_list manually in YAML."
+        },
+        {
+          "name": "count",
+          "readableName": "Specify number"
+        }
+      ],
+      "type": "choice",
+      "default": "vanilla"
+    },
+    {
+      "name": "mq_dungeons_count",
+      "description": "Number of MQ dungeons, chosen randomly.",
       "high": 12,
-      "readableName": "Master Quest Dungeons",
+      "readableName": "Master Quest dungeons count",
       "low": 0,
       "type": "range",
-      "default": 0
+      "default": 0,
+      "dependsOn": {
+        "mq_dungeons_mode": ["count"]
+      }
     },
     {
       "name": "bridge_stones",
@@ -351,6 +466,20 @@
       "default": 40
     },
     {
+      "name": "bridge_hearts",
+      "description": "Set the number of hearts required for the rainbow bridge.",
+      "dependsOn": {
+        "bridge": [
+          "hearts"
+        ]
+      },
+      "high": 20,
+      "readableName": "Bridge Heart Containers",
+      "low": 4,
+      "type": "range",
+      "default": 20
+    },
+    {
       "name": "shuffle_mapcompass",
       "description": "Determine where maps and compasses will be located.",
       "readableName": "Map & Compass Shuffle",
@@ -372,17 +501,21 @@
           "readableName": "Within proper dungeon"
         },
         {
-          "name": "any_dungeon",
-          "readableName": "Any dungeon"
-        },
-        {
           "name": "overworld",
           "readableName": "In the overworld"
+        },
+        {
+          "name": "any_dungeon",
+          "readableName": "Any dungeon"
         },
         {
           "name": "keysanity",
           "description": "add them to the multiworld pool",
           "readableName": "Keysanity"
+        },
+        {
+          "name": "regional",
+          "readableName": "Regional"
         }
       ],
       "type": "choice",
@@ -406,43 +539,51 @@
           "readableName": "Within proper dungeon"
         },
         {
-          "name": "any_dungeon",
-          "readableName": "Any dungeon"
-        },
-        {
           "name": "overworld",
           "readableName": "In the overworld"
+        },
+        {
+          "name": "any_dungeon",
+          "readableName": "Any dungeon"
         },
         {
           "name": "keysanity",
           "description": "add them to the multiworld pool",
           "readableName": "Keysanity"
+        },
+        {
+          "name": "regional",
+          "readableName": "Regional"
         }
       ],
       "type": "choice",
       "default": "dungeon"
     },
     {
-      "name": "shuffle_fortresskeys",
-      "description": "Determine where Thieves' Hideout keys will be located.",
-      "readableName": "Thieves' Hideout Key Shuffle",
+      "name": "shuffle_hideoutkeys",
+      "description": "Control where to shuffle the Thieves' Hideout small keys.",
+      "readableName": "Shuffle Hideout Keys",
       "values": [
         {
           "name": "vanilla",
           "readableName": "Vanilla"
         },
         {
-          "name": "any_dungeon",
-          "readableName": "Any dungeon"
-        },
-        {
           "name": "overworld",
           "readableName": "In the overworld"
+        },
+        {
+          "name": "any_dungeon",
+          "readableName": "Any dungeon"
         },
         {
           "name": "keysanity",
           "description": "add them to the multiworld pool",
           "readableName": "Keysanity"
+        },
+        {
+          "name": "regional",
+          "readableName": "Regional"
         }
       ],
       "type": "choice",
@@ -466,21 +607,32 @@
           "readableName": "Within proper dungeon"
         },
         {
-          "name": "any_dungeon",
-          "readableName": "Any dungeon"
-        },
-        {
           "name": "overworld",
           "readableName": "In the overworld"
+        },
+        {
+          "name": "any_dungeon",
+          "readableName": "Any dungeon"
         },
         {
           "name": "keysanity",
           "description": "add them to the multiworld pool",
           "readableName": "Keysanity"
+        },
+        {
+          "name": "regional",
+          "readableName": "Regional"
         }
       ],
       "type": "choice",
       "default": "dungeon"
+    },
+    {
+      "name": "enhance_map_compass",
+      "description": "If enabled, the map will identify whether a dungeon is vanilla or Master Quest, and the compass will reveal the dungeon reward.",
+      "readableName": "Enhanced Map & Compass",
+      "type": "toggle",
+      "default": false
     },
     {
       "name": "shuffle_ganon_bosskey",
@@ -500,12 +652,12 @@
           "readableName": "Within Ganon's Castle"
         },
         {
-          "name": "any_dungeon",
-          "readableName": "Any dungeon"
-        },
-        {
           "name": "overworld",
           "readableName": "In the overworld"
+        },
+        {
+          "name": "any_dungeon",
+          "readableName": "Any dungeon"
         },
         {
           "name": "keysanity",
@@ -515,102 +667,120 @@
         {
           "name": "on_lacs",
           "readableName": "On Light Arrow Cutscene"
+        },
+        {
+          "name": "regional",
+          "readableName": "Regional"
+        },
+        {
+          "name": "stones",
+          "readableName": "Require Stones"
+        },
+        {
+          "name": "medallions",
+          "readableName": "Require Medallions"
+        },
+        {
+          "name": "dungeons",
+          "readableName": "Require Dungeons Cleared"
+        },
+        {
+          "name": "tokens",
+          "readableName": "Require Tokens"
+        },
+        {
+          "name": "hearts",
+          "readableName": "Require Heart Containers"
         }
       ],
       "type": "choice",
       "default": "remove"
     },
     {
-      "name": "enhance_map_compass",
-      "description": "If enabled, the map will identify whether a dungeon is vanilla or Master Quest, and the compass will reveal the dungeon reward.",
-      "readableName": "Enhanced Map & Compass",
-      "type": "toggle",
-      "default": false
+      "name": "ganon_bosskey_medallions",
+      "description": "Set how many medallions are required to receive Ganon Boss Key.",
+      "high": 6,
+      "readableName": "Ganon Boss Key medallions",
+      "low": 1,
+      "type": "range",
+      "default": 6,
+      "dependsOn": {
+        "shuffle_ganon_bosskey": ["medallions"]
+      }
     },
     {
-      "name": "lacs_condition",
-      "description": "Set the requirement for the Light Arrow Cutscene at the Temple of Time.",
-      "readableName": "Light Arrow Cutscene requirement",
+      "name": "ganon_bosskey_stones",
+      "description": "Set how many stones are required to receive Ganon Boss Key.",
+      "high": 3,
+      "readableName": "Ganon Boss Key stones",
+      "low": 1,
+      "type": "range",
+      "default": 3,
+      "dependsOn": {
+        "shuffle_ganon_bosskey": ["stones"]
+      }
+    },
+    {
+      "name": "ganon_bosskey_rewards",
+      "description": "Set how many rewards are required to receive Ganon Boss Key.",
+      "high": 9,
+      "readableName": "Ganon Boss Key rewards",
+      "low": 1,
+      "type": "range",
+      "default": 9,
+      "dependsOn": {
+        "shuffle_ganon_bosskey": ["rewards"]
+      }
+    },
+    {
+      "name": "ganon_bosskey_tokens",
+      "description": "Set how many tokens are required to receive Ganon Boss Key.",
+      "high": 100,
+      "readableName": "Ganon Boss Key tokens",
+      "low": 1,
+      "type": "range",
+      "default": 40,
+      "dependsOn": {
+        "shuffle_ganon_bosskey": ["tokens"]
+      }
+    },
+    {
+      "name": "ganon_bosskey_hearts",
+      "description": "Set how many hearts are required to receive Ganon Boss Key.",
+      "high": 20,
+      "readableName": "Ganon Boss Key hearts",
+      "low": 4,
+      "type": "range",
+      "default": 20,
+      "dependsOn": {
+        "shuffle_ganon_bosskey": ["hearts"]
+      }
+    },
+    {
+      "name": "key_rings",
+      "description": "Dungeons have all small keys found at once, rather than individually.",
+      "readableName": "Key rings",
       "values": [
         {
-          "name": "vanilla",
-          "readableName": "Vanilla"
+          "name": "off",
+          "readableName": "Off"
         },
         {
-          "name": "stones",
-          "readableName": "Spiritual Stones"
+          "name": "choose",
+          "readableName": "Choose",
+          "description": "Must define key_rings_list manually in YAML."
         },
         {
-          "name": "medallions",
-          "readableName": "Medallions"
+          "name": "all",
+          "readableName": "All"
         },
         {
-          "name": "dungeons",
-          "readableName": "Dungeons"
-        },
-        {
-          "name": "tokens",
-          "readableName": "Skulltula Tokens"
+          "name": "random_dungeons",
+          "readableName": "Random dungeons"
         }
       ],
       "type": "choice",
-      "default": "vanilla"
-    },
-    {
-      "name": "lacs_stones",
-      "description": "Set the number of Spiritual Stones required for the Light Arrow Cutscene.",
-      "dependsOn": {
-        "lacs_condition": [
-          "stones"
-        ]
-      },
-      "high": 3,
-      "readableName": "LACS Stones",
-      "low": 0,
-      "type": "range",
-      "default": 3
-    },
-    {
-      "name": "lacs_medallions",
-      "description": "Set the number of medallions required for the Light Arrow Cutscene.",
-      "dependsOn": {
-        "lacs_condition": [
-          "medallions"
-        ]
-      },
-      "high": 6,
-      "readableName": "LACS Medallions",
-      "low": 0,
-      "type": "range",
-      "default": 6
-    },
-    {
-      "name": "lacs_rewards",
-      "description": "Set the number of dungeon rewards required for the Light Arrow Cutscene.",
-      "dependsOn": {
-        "lacs_condition": [
-          "dungeons"
-        ]
-      },
-      "high": 9,
-      "readableName": "LACS Dungeon Rewards",
-      "low": 0,
-      "type": "range",
-      "default": 9
-    },
-    {
-      "name": "lacs_tokens",
-      "description": "Set the number of Gold Skulltula Tokens required for the Light Arrow Cutscene.",
-      "dependsOn": {
-        "lacs_condition": [
-          "tokens"
-        ]
-      },
-      "high": 100,
-      "readableName": "LACS Skulltula Tokens",
-      "low": 0,
-      "type": "range",
-      "default": 40
+      "default": "off"
     },
     {
       "name": "shuffle_song_items",
@@ -669,6 +839,45 @@
       "default": 0
     },
     {
+      "name": "shopsanity_prices",
+      "description": "Controls prices of shop items.",
+      "readableName": "Shopsanity prices",
+      "values": [
+        {
+          "name": "normal",
+          "readableName": "Normal",
+          "description": "Between 0 and 300 rupees"
+        },
+        {
+          "name": "affordable",
+          "readableName": "Affordable",
+          "description": "Always 10 rupees"
+        },
+        {
+          "name": "starting_wallet",
+          "readableName": "Starting Wallet",
+          "description": "Must max out this wallet to purchase."
+        },
+        {
+          "name": "adults_wallet",
+          "readableName": "Adult's Wallet",
+          "description": "Must max out this wallet to purchase."
+        },
+        {
+          "name": "giants_wallet",
+          "readableName": "Giant's Wallet",
+          "description": "Must max out this wallet to purchase."
+        },
+        {
+          "name": "tycoons_wallet",
+          "readableName": "Tycoon's Wallet",
+          "description": "Must max out this wallet to purchase."
+        }
+      ],
+      "type": "choice",
+      "default": "normal"
+    },
+    {
       "name": "tokensanity",
       "description": "Shuffle token rewards from Gold Skulltulas into the multiworld pool.",
       "readableName": "Tokensanity",
@@ -719,9 +928,112 @@
       "default": "off"
     },
     {
+      "name": "shuffle_child_trade",
+      "description": "Controls the behavior of the start of the child trade quest.",
+      "readableName": "Shuffle child trading sequence",
+      "values": [
+        {
+          "name": "vanilla",
+          "readableName": "Vanilla"
+        },
+        {
+          "name": "shuffle",
+          "readableName": "Shuffle"
+        },
+        {
+          "name": "skip_child_zelda",
+          "readableName": "Skip Child Zelda"
+        }
+      ],
+      "type": "choice",
+      "default": "vanilla"
+    },
+    {
+      "name": "shuffle_freestanding_items",
+      "description": "Shuffles freestanding rupees, recovery hearts, Shadow Temple Spinning Pots, and Goron Pot.",
+      "readableName": "Shuffle freestanding items",
+      "values": [
+        {
+          "name": "off",
+          "readableName": "Off"
+        },
+        {
+          "name": "all",
+          "readableName": "Everywhere"
+        },
+        {
+          "name": "overworld",
+          "readableName": "Overworld only"
+        },
+        {
+          "name": "dungeons",
+          "readableName": "Dungeons only"
+        }
+      ],
+      "type": "choice",
+      "default": "off"
+    },
+    {
+      "name": "shuffle_pots",
+      "description": "Shuffles pots and flying pots which normally contain an item.",
+      "readableName": "Shuffle pots",
+      "values": [
+        {
+          "name": "off",
+          "readableName": "Off"
+        },
+        {
+          "name": "all",
+          "readableName": "Everywhere"
+        },
+        {
+          "name": "overworld",
+          "readableName": "Overworld only"
+        },
+        {
+          "name": "dungeons",
+          "readableName": "Dungeons only"
+        }
+      ],
+      "type": "choice",
+      "default": "off"
+    },
+    {
+      "name": "shuffle_crates",
+      "description": "Shuffles large and small crates containing an item.",
+      "readableName": "Shuffle crates",
+      "values": [
+        {
+          "name": "off",
+          "readableName": "Off"
+        },
+        {
+          "name": "all",
+          "readableName": "Everywhere"
+        },
+        {
+          "name": "overworld",
+          "readableName": "Overworld only"
+        },
+        {
+          "name": "dungeons",
+          "readableName": "Dungeons only"
+        }
+      ],
+      "type": "choice",
+      "default": "off"
+    },
+    {
       "name": "shuffle_cows",
       "description": "Cows give items when Epona's Song is played.",
       "readableName": "Shuffle Cows",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "shuffle_beehives",
+      "description": "Beehives drop an item when destroyed by an explosion, the Hookshot, or the Boomerang.",
+      "readableName": "Shuffle beehives",
       "type": "toggle",
       "default": false
     },
@@ -736,13 +1048,6 @@
       "name": "shuffle_ocarinas",
       "description": "Whether the Fairy Ocarina and Ocarina of Time are shuffled into the pool.",
       "readableName": "Shuffle Ocarinas",
-      "type": "toggle",
-      "default": false
-    },
-    {
-      "name": "shuffle_weird_egg",
-      "description": "Whether Malon's Weird Egg is shuffled into the pool.",
-      "readableName": "Shuffle Weird Egg",
       "type": "toggle",
       "default": false
     },
@@ -768,9 +1073,9 @@
       "default": false
     },
     {
-      "name": "skip_child_zelda",
-      "description": "Start with Zelda's Letter and the item at Zelda's Lullaby. Starting Child Zelda events will be skipped.",
-      "readableName": "Skip Child Zelda",
+      "name": "shuffle_frog_song_rupees",
+      "description": "Shuffles the purple rupees received from the Zora's River frogs.",
+      "readableName": "Shuffle Frog Song rupees",
       "type": "toggle",
       "default": false
     },
@@ -838,6 +1143,13 @@
       "default": false
     },
     {
+      "name": "plant_beans",
+      "description": "Pre-plants all 10 Magic Beans in the soft soil spots.",
+      "readableName": "Plant Beans",
+      "type": "toggle",
+      "default": false
+    },
+    {
       "name": "chicken_count",
       "description": "How many Cucco Anju wants for an item in the past.",
       "high": 7,
@@ -856,11 +1168,76 @@
       "default": 1
     },
     {
-      "name": "correct_chest_sizes",
-      "description": "Progression items will always be in big chests.",
-      "readableName": "Big items, big chests",
+      "name": "fae_torch_count",
+      "description": "Number of lit torches required to open Shadow Temple.",
+      "high": 24,
+      "readableName": "Fae torch count",
+      "low": 1,
+      "type": "range",
+      "default": 24
+    },
+    {
+      "name": "correct_chest_appearances",
+      "description": "Changes chest textures and/or sizes to match their contents.",
+      "readableName": "Correct chest appearances",
+      "values": [
+        {
+          "name": "off",
+          "readableName": "Off"
+        },
+        {
+          "name": "textures",
+          "readableName": "Textures"
+        },
+        {
+          "name": "both",
+          "readableName": "Both"
+        },
+        {
+          "name": "classic",
+          "readableName": "Classic (CSMC)",
+          "default": "This is the old behavior of CSMC."
+        }
+      ],
+      "type": "choice",
+      "default": "off"
+    },
+    {
+      "name": "minor_items_as_major_chest",
+      "description": "Hylian Shield, Deku Shield, and Bombchus appear in big/gold chests.",
+      "readableName": "Minor items as major chest",
       "type": "toggle",
       "default": false
+    },
+    {
+      "name": "invisible_chests",
+      "description": "Chests visible only with Lens of Truth. Logic is not changed.",
+      "readableName": "Invisible chests",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "correct_potcrate_appearances",
+      "description": "Unchecked pots and crates have a different texture; unchecked beehives will wiggle.",
+      "readableName": "Correct pot/crate appearances",
+      "values": [
+        {
+          "name": "off",
+          "readableName": "Off"
+        },
+        {
+          "name": "textures_content",
+          "readableName": "Textures based on content",
+          "description": "Pots and crates have an appearance based on their contents."
+        },
+        {
+          "name": "textures_unchecked",
+          "readableName": "Textures unchecked",
+          "description": "All unchecked pots/crates have the same appearance."
+        }
+      ],
+      "type": "choice",
+      "default": "off"
     },
     {
       "name": "hints",
@@ -908,24 +1285,12 @@
           "readableName": "DDR"
         },
         {
-          "name": "league",
-          "readableName": "League"
-        },
-        {
-          "name": "mw2",
-          "readableName": "MW2"
-        },
-        {
           "name": "scrubs",
           "readableName": "Scrubs"
         },
         {
           "name": "strong",
           "readableName": "Strong"
-        },
-        {
-          "name": "tournament",
-          "readableName": "Tournament"
         },
         {
           "name": "useless",
@@ -995,6 +1360,39 @@
       "default": "normal"
     },
     {
+      "name": "deadly_bonks",
+      "description": "Bonking on a wall or object will hurt Link.",
+      "readableName": "Deadly bonks",
+      "values": [
+        {
+          "name": "none",
+          "readableName": "None"
+        },
+        {
+          "name": "half",
+          "readableName": "¼ heart"
+        },
+        {
+          "name": "normal",
+          "readableName": "½ heart"
+        },
+        {
+          "name": "double",
+          "readableName": "Full heart"
+        },
+        {
+          "name": "quadruple",
+          "readableName": "Two hearts"
+        },
+        {
+          "name": "ohko",
+          "readableName": "Truly Deadly (OHKO)"
+        }
+      ],
+      "type": "choice",
+      "default": "none"
+    },
+    {
       "name": "no_collectible_hearts",
       "description": "Enemies and objects will not drop heart refills.",
       "readableName": "No heart drops",
@@ -1047,6 +1445,20 @@
       "default": "default"
     },
     {
+      "name": "blue_fire_arrows",
+      "description": "Ice arrows can melt red ice and break the mud walls in Dodongo's Cavern.",
+      "readableName": "Blue Fire Arrows",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "fix_broken_drops",
+      "description": "Fixes two broken vanilla drops: Deku Shield in child Spirit Temple, and Magic Drop on GTG Eye Statue.",
+      "readableName": "Fix broken drops",
+      "type": "toggle",
+      "default": false
+    },
+    {
       "name": "start_with_consumables",
       "description": "Start with a full complement of Deku Sticks and Nuts.",
       "readableName": "Sticks & Nuts",
@@ -1063,7 +1475,7 @@
     {
       "name": "item_pool_value",
       "description": "Changes the number of items available in the game.",
-      "readableName": "item pool value",
+      "readableName": "Item pool value",
       "values": [
         {
           "name": "plentiful",
@@ -1136,104 +1548,6 @@
       "default": "major_only"
     },
     {
-      "name": "logic_earliest_adult_trade",
-      "description": "Earliest item that can appear in the adult trade sequence.",
-      "readableName": "Earliest adult trade",
-      "values": [
-        {
-          "name": "pocket_egg",
-          "readableName": "Pocket Egg"
-        },
-        {
-          "name": "pocket_cucco",
-          "readableName": "Pocket Cucco"
-        },
-        {
-          "name": "cojiro",
-          "readableName": "Cojiro"
-        },
-        {
-          "name": "odd_mushroom",
-          "readableName": "Odd Mushroom"
-        },
-        {
-          "name": "poachers_saw",
-          "readableName": "Poacher's Saw"
-        },
-        {
-          "name": "broken_sword",
-          "readableName": "Broken Sword"
-        },
-        {
-          "name": "prescription",
-          "readableName": "Prescription"
-        },
-        {
-          "name": "eyeball_frog",
-          "readableName": "Eyeball Frog"
-        },
-        {
-          "name": "eyedrops",
-          "readableName": "Eyedrops"
-        },
-        {
-          "name": "claim_check",
-          "readableName": "Claim Check"
-        }
-      ],
-      "type": "choice",
-      "default": "prescription"
-    },
-    {
-      "name": "logic_latest_adult_trade",
-      "description": "Latest item that can appear in the adult trade sequence.",
-      "readableName": "Latest adult trade",
-      "values": [
-        {
-          "name": "pocket_egg",
-          "readableName": "Pocket Egg"
-        },
-        {
-          "name": "pocket_cucco",
-          "readableName": "Pocket Cucco"
-        },
-        {
-          "name": "cojiro",
-          "readableName": "Cojiro"
-        },
-        {
-          "name": "odd_mushroom",
-          "readableName": "Odd Mushroom"
-        },
-        {
-          "name": "poachers_saw",
-          "readableName": "Poacher's Saw"
-        },
-        {
-          "name": "broken_sword",
-          "readableName": "Broken Sword"
-        },
-        {
-          "name": "prescription",
-          "readableName": "Prescription"
-        },
-        {
-          "name": "eyeball_frog",
-          "readableName": "Eyeball Frog"
-        },
-        {
-          "name": "eyedrops",
-          "readableName": "Eyedrops"
-        },
-        {
-          "name": "claim_check",
-          "readableName": "Claim Check"
-        }
-      ],
-      "type": "choice",
-      "default": "claim_check"
-    },
-    {
       "name": "default_targeting",
       "description": "Preselects the default targeting option.",
       "readableName": "Default targeting",
@@ -1254,6 +1568,13 @@
       "name": "display_dpad",
       "description": "Show D-pad icon on HUD for quick actions (Ocarina, Hover Boots, Iron Boots).",
       "readableName": "Display D-pad",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "dpad_dungeon_menu",
+      "description": "Show separated menus on the pause screen for dungeon keys, rewards, and Vanilla/MQ info.",
+      "readableName": "D-Pad dungeon menu",
       "type": "toggle",
       "default": true
     },
@@ -4748,8 +5069,8 @@
     {
       "name": "Zeldas Letter",
       "dependsOn": {
-        "skip_child_zelda": [
-          false
+        "shuffle_child_trade": [
+          "vanilla", "shuffle"
         ]
       },
       "readableName": "Zelda's Letter"
@@ -4772,22 +5093,6 @@
     },
     {
       "name": "Magic Bean"
-    },
-    {
-      "name": "Skull Mask"
-    },
-    {
-      "name": "Spooky Mask"
-    },
-    {
-      "name": "Keaton Mask"
-    },
-    {
-      "name": "Bunny Hood",
-      "max": 0
-    },
-    {
-      "name": "Mask of Truth"
     },
     {
       "name": "Pocket Egg"
@@ -4864,18 +5169,6 @@
       "max": 36
     },
     {
-      "name": "Boss Key"
-    },
-    {
-      "name": "Compass"
-    },
-    {
-      "name": "Map"
-    },
-    {
-      "name": "Small Key"
-    },
-    {
       "name": "Weird Egg"
     },
     {
@@ -4902,23 +5195,6 @@
     {
       "name": "Rupees (20)",
       "max": 50
-    },
-    {
-      "name": "Heart Container (Boss)",
-      "max": 8,
-      "readableName": "Boss Heart Container"
-    },
-    {
-      "name": "Milk"
-    },
-    {
-      "name": "Goron Mask"
-    },
-    {
-      "name": "Zora Mask"
-    },
-    {
-      "name": "Gerudo Mask"
     },
     {
       "name": "Rupees (50)",
@@ -5212,6 +5488,33 @@
         ]
       },
       "max": 0
+    },
+    {
+      "name": "Small Key Ring (Forest Temple)"
+    },
+    {
+      "name": "Small Key Ring (Fire Temple)"
+    },
+    {
+      "name": "Small Key Ring (Water Temple)"
+    },
+    {
+      "name": "Small Key Ring (Spirit Temple)"
+    },
+    {
+      "name": "Small Key Ring (Shadow Temple)"
+    },
+    {
+      "name": "Small Key Ring (Bottom of the Well)"
+    },
+    {
+      "name": "Small Key Ring (Gerudo Training Ground)"
+    },
+    {
+      "name": "Small Key Ring (Thieves Hideout)"
+    },
+    {
+      "name": "Small Key Ring (Ganons Castle)"
     }
   ],
   "locations": [
@@ -5585,7 +5888,7 @@
       "name": "Kak GS Tree"
     },
     {
-      "name": "Kak GS Guards House"
+      "name": "Kak GS Near Gate Guard"
     },
     {
       "name": "Kak GS Watchtower"
@@ -5663,7 +5966,7 @@
       "name": "Graveyard Dampe Gravedigging Tour"
     },
     {
-      "name": "Graveyard Hookshot Chest"
+      "name": "Graveyard Dampe Race Hookshot Chest"
     },
     {
       "name": "Graveyard Dampe Race Freestanding PoH"
@@ -5960,21 +6263,6 @@
       "name": "GV GS Pillar"
     },
     {
-      "name": "Hideout Jail Guard (1 Torch)"
-    },
-    {
-      "name": "Hideout Jail Guard (2 Torches)"
-    },
-    {
-      "name": "Hideout Jail Guard (3 Torches)"
-    },
-    {
-      "name": "Hideout Jail Guard (4 Torches)"
-    },
-    {
-      "name": "Hideout Gerudo Membership Card"
-    },
-    {
       "name": "GF Chest"
     },
     {
@@ -5988,6 +6276,21 @@
     },
     {
       "name": "GF GS Archery Range"
+    },
+    {
+      "name": "Hideout 1 Torch Jail Gerudo Key"
+    },
+    {
+      "name": "Hideout 2 Torches Jail Gerudo Key"
+    },
+    {
+      "name": "Hideout 3 Torches Jail Gerudo Key"
+    },
+    {
+      "name": "Hideout 4 Torches Jail Gerudo Key"
+    },
+    {
+      "name": "Hideout Gerudo Membership Card"
     },
     {
       "name": "Wasteland Bombchu Salesman"
@@ -6545,13 +6848,13 @@
       "name": "Fire Temple MQ GS Skull On Fire"
     },
     {
-      "name": "Fire Temple MQ GS Fire Wall Maze Center"
+      "name": "Fire Temple MQ GS Flame Maze Center"
     },
     {
-      "name": "Fire Temple MQ GS Fire Wall Maze Side Room"
+      "name": "Fire Temple MQ GS Flame Maze Side Room"
     },
     {
-      "name": "Fire Temple MQ GS Above Fire Wall Maze"
+      "name": "Fire Temple MQ GS Above Flame Maze"
     },
     {
       "name": "Fire Temple Volvagia Heart"
@@ -6689,7 +6992,7 @@
       "name": "Shadow Temple Invisible Floormaster Chest"
     },
     {
-      "name": "Shadow Temple GS Like Like Room"
+      "name": "Shadow Temple GS Invisible Blades Room"
     },
     {
       "name": "Shadow Temple GS Falling Spikes Room"
@@ -6938,9 +7241,6 @@
       "name": "Ice Cavern Compass Chest"
     },
     {
-      "name": "Ice Cavern Freestanding PoH"
-    },
-    {
       "name": "Ice Cavern Iron Boots Chest"
     },
     {
@@ -6951,6 +7251,9 @@
     },
     {
       "name": "Ice Cavern GS Push Block Room"
+    },
+    {
+      "name": "Ice Cavern Freestanding PoH"
     },
     {
       "name": "Ice Cavern MQ Map Chest"
@@ -7203,6 +7506,2886 @@
     },
     {
       "name": "Ganons Tower Boss Key Chest"
+    },
+    {
+      "name": "Gift from Sages"
+    },
+    {
+      "name": "ZR Frogs Zeldas Lullaby"
+    },
+    {
+      "name": "ZR Frogs Eponas Song"
+    },
+    {
+      "name": "ZR Frogs Sarias Song"
+    },
+    {
+      "name": "ZR Frogs Suns Song"
+    },
+    {
+      "name": "ZR Frogs Song of Time"
+    },
+    {
+      "name": "KF Behind Midos Blue Rupee"
+    },
+    {
+      "name": "KF Boulder Maze Blue Rupee 1"
+    },
+    {
+      "name": "KF Boulder Maze Blue Rupee 2"
+    },
+    {
+      "name": "KF End of Bridge Blue Rupee"
+    },
+    {
+      "name": "KF Top of Sarias Recovery Heart 1"
+    },
+    {
+      "name": "KF Top of Sarias Recovery Heart 2"
+    },
+    {
+      "name": "KF Top of Sarias Recovery Heart 3"
+    },
+    {
+      "name": "KF Bean Platform Green Rupee 1"
+    },
+    {
+      "name": "KF Bean Platform Green Rupee 2"
+    },
+    {
+      "name": "KF Bean Platform Green Rupee 3"
+    },
+    {
+      "name": "KF Bean Platform Green Rupee 4"
+    },
+    {
+      "name": "KF Bean Platform Green Rupee 5"
+    },
+    {
+      "name": "KF Bean Platform Green Rupee 6"
+    },
+    {
+      "name": "KF Bean Platform Red Rupee"
+    },
+    {
+      "name": "KF Grass Near Ramp Green Rupee 1"
+    },
+    {
+      "name": "KF Grass Near Ramp Green Rupee 2"
+    },
+    {
+      "name": "KF Grass Near Midos Green Rupee 1"
+    },
+    {
+      "name": "KF Grass Near Midos Green Rupee 2"
+    },
+    {
+      "name": "KF Sarias House Recovery Heart 1"
+    },
+    {
+      "name": "KF Sarias House Recovery Heart 2"
+    },
+    {
+      "name": "KF Sarias House Recovery Heart 3"
+    },
+    {
+      "name": "KF Sarias House Recovery Heart 4"
+    },
+    {
+      "name": "KF Shop Blue Rupee"
+    },
+    {
+      "name": "KF Links House Pot"
+    },
+    {
+      "name": "KF Know it All House Pot 1"
+    },
+    {
+      "name": "KF Know it All House Pot 2"
+    },
+    {
+      "name": "KF House of Twins Pot 1"
+    },
+    {
+      "name": "KF House of Twins Pot 2"
+    },
+    {
+      "name": "KF Storms Grotto Beehive 1"
+    },
+    {
+      "name": "KF Storms Grotto Beehive 2"
+    },
+    {
+      "name": "LW Under Boulder Blue Rupee"
+    },
+    {
+      "name": "LW Underwater Green Rupee 1"
+    },
+    {
+      "name": "LW Underwater Green Rupee 2"
+    },
+    {
+      "name": "LW Underwater Shortcut Green Rupee"
+    },
+    {
+      "name": "LW Underwater Green Rupee 3"
+    },
+    {
+      "name": "LW Underwater Green Rupee 4"
+    },
+    {
+      "name": "LW Underwater Green Rupee 5"
+    },
+    {
+      "name": "LW Underwater Green Rupee 6"
+    },
+    {
+      "name": "LW Underwater Green Rupee 7"
+    },
+    {
+      "name": "LW Near Shortcuts Grotto Beehive 1"
+    },
+    {
+      "name": "LW Near Shortcuts Grotto Beehive 2"
+    },
+    {
+      "name": "LW Scrubs Grotto Beehive"
+    },
+    {
+      "name": "SFM Storms Grotto Beehive"
+    },
+    {
+      "name": "HF Cow Grotto Pot 1"
+    },
+    {
+      "name": "HF Cow Grotto Pot 2"
+    },
+    {
+      "name": "HF Near Market Grotto Beehive 1"
+    },
+    {
+      "name": "HF Near Market Grotto Beehive 2"
+    },
+    {
+      "name": "HF Open Grotto Beehive 1"
+    },
+    {
+      "name": "HF Open Grotto Beehive 2"
+    },
+    {
+      "name": "HF Southeast Grotto Beehive 1"
+    },
+    {
+      "name": "HF Southeast Grotto Beehive 2"
+    },
+    {
+      "name": "HF Inside Fence Grotto Beehive"
+    },
+    {
+      "name": "Market Night Red Rupee Crate"
+    },
+    {
+      "name": "Market Night Green Rupee Crate 1"
+    },
+    {
+      "name": "Market Night Green Rupee Crate 2"
+    },
+    {
+      "name": "Market Night Green Rupee Crate 3"
+    },
+    {
+      "name": "Market Dog Lady House Crate"
+    },
+    {
+      "name": "Market Guard House Child Crate"
+    },
+    {
+      "name": "Market Guard House Child Pot 1"
+    },
+    {
+      "name": "Market Guard House Child Pot 2"
+    },
+    {
+      "name": "Market Guard House Child Pot 3"
+    },
+    {
+      "name": "Market Guard House Child Pot 4"
+    },
+    {
+      "name": "Market Guard House Child Pot 5"
+    },
+    {
+      "name": "Market Guard House Child Pot 6"
+    },
+    {
+      "name": "Market Guard House Child Pot 7"
+    },
+    {
+      "name": "Market Guard House Child Pot 8"
+    },
+    {
+      "name": "Market Guard House Child Pot 9"
+    },
+    {
+      "name": "Market Guard House Child Pot 10"
+    },
+    {
+      "name": "Market Guard House Child Pot 11"
+    },
+    {
+      "name": "Market Guard House Child Pot 12"
+    },
+    {
+      "name": "Market Guard House Child Pot 13"
+    },
+    {
+      "name": "Market Guard House Child Pot 14"
+    },
+    {
+      "name": "Market Guard House Child Pot 15"
+    },
+    {
+      "name": "Market Guard House Child Pot 16"
+    },
+    {
+      "name": "Market Guard House Child Pot 17"
+    },
+    {
+      "name": "Market Guard House Child Pot 18"
+    },
+    {
+      "name": "Market Guard House Child Pot 19"
+    },
+    {
+      "name": "Market Guard House Child Pot 20"
+    },
+    {
+      "name": "Market Guard House Child Pot 21"
+    },
+    {
+      "name": "Market Guard House Child Pot 22"
+    },
+    {
+      "name": "Market Guard House Child Pot 23"
+    },
+    {
+      "name": "Market Guard House Child Pot 24"
+    },
+    {
+      "name": "Market Guard House Child Pot 25"
+    },
+    {
+      "name": "Market Guard House Child Pot 26"
+    },
+    {
+      "name": "Market Guard House Child Pot 27"
+    },
+    {
+      "name": "Market Guard House Child Pot 28"
+    },
+    {
+      "name": "Market Guard House Child Pot 29"
+    },
+    {
+      "name": "Market Guard House Child Pot 30"
+    },
+    {
+      "name": "Market Guard House Child Pot 31"
+    },
+    {
+      "name": "Market Guard House Child Pot 32"
+    },
+    {
+      "name": "Market Guard House Child Pot 33"
+    },
+    {
+      "name": "Market Guard House Child Pot 34"
+    },
+    {
+      "name": "Market Guard House Child Pot 35"
+    },
+    {
+      "name": "Market Guard House Child Pot 36"
+    },
+    {
+      "name": "Market Guard House Child Pot 37"
+    },
+    {
+      "name": "Market Guard House Child Pot 38"
+    },
+    {
+      "name": "Market Guard House Child Pot 39"
+    },
+    {
+      "name": "Market Guard House Child Pot 40"
+    },
+    {
+      "name": "Market Guard House Child Pot 41"
+    },
+    {
+      "name": "Market Guard House Child Pot 42"
+    },
+    {
+      "name": "Market Guard House Child Pot 43"
+    },
+    {
+      "name": "Market Guard House Child Pot 44"
+    },
+    {
+      "name": "Market Guard House Adult Pot 1"
+    },
+    {
+      "name": "Market Guard House Adult Pot 2"
+    },
+    {
+      "name": "Market Guard House Adult Pot 3"
+    },
+    {
+      "name": "Market Guard House Adult Pot 4"
+    },
+    {
+      "name": "Market Guard House Adult Pot 5"
+    },
+    {
+      "name": "Market Guard House Adult Pot 6"
+    },
+    {
+      "name": "Market Guard House Adult Pot 7"
+    },
+    {
+      "name": "Market Man in Green House Pot 1"
+    },
+    {
+      "name": "Market Man in Green House Pot 2"
+    },
+    {
+      "name": "Market Man in Green House Pot 3"
+    },
+    {
+      "name": "HC Storms Grotto Pot 1"
+    },
+    {
+      "name": "HC Storms Grotto Pot 2"
+    },
+    {
+      "name": "HC Storms Grotto Pot 3"
+    },
+    {
+      "name": "HC Storms Grotto Pot 4"
+    },
+    {
+      "name": "LLR Front Pot 1"
+    },
+    {
+      "name": "LLR Front Pot 2"
+    },
+    {
+      "name": "LLR Front Pot 3"
+    },
+    {
+      "name": "LLR Front Pot 4"
+    },
+    {
+      "name": "LLR Rain Shed Pot 1"
+    },
+    {
+      "name": "LLR Rain Shed Pot 2"
+    },
+    {
+      "name": "LLR Rain Shed Pot 3"
+    },
+    {
+      "name": "LLR Talons House Pot 1"
+    },
+    {
+      "name": "LLR Talons House Pot 2"
+    },
+    {
+      "name": "LLR Talons House Pot 3"
+    },
+    {
+      "name": "LLR Child Crate"
+    },
+    {
+      "name": "LLR Grotto Beehive"
+    },
+    {
+      "name": "Kak Near Potion Shop Pot 1"
+    },
+    {
+      "name": "Kak Near Potion Shop Pot 2"
+    },
+    {
+      "name": "Kak Near Potion Shop Pot 3"
+    },
+    {
+      "name": "Kak Near Impas House Pot 1"
+    },
+    {
+      "name": "Kak Near Impas House Pot 2"
+    },
+    {
+      "name": "Kak Near Impas House Pot 3"
+    },
+    {
+      "name": "Kak Near Guards House Pot 1"
+    },
+    {
+      "name": "Kak Near Guards House Pot 2"
+    },
+    {
+      "name": "Kak Near Guards House Pot 3"
+    },
+    {
+      "name": "Kak Near Odd Medicine Building Pot 1"
+    },
+    {
+      "name": "Kak Near Odd Medicine Building Pot 2"
+    },
+    {
+      "name": "Kak Adult Red Rupee Crate"
+    },
+    {
+      "name": "Kak Adult Arrows Crate"
+    },
+    {
+      "name": "Kak Open Grotto Beehive 1"
+    },
+    {
+      "name": "Kak Open Grotto Beehive 2"
+    },
+    {
+      "name": "Graveyard Dampe Race Rupee 1"
+    },
+    {
+      "name": "Graveyard Dampe Race Rupee 2"
+    },
+    {
+      "name": "Graveyard Dampe Race Rupee 3"
+    },
+    {
+      "name": "Graveyard Dampe Race Rupee 4"
+    },
+    {
+      "name": "Graveyard Dampe Race Rupee 5"
+    },
+    {
+      "name": "Graveyard Dampe Race Rupee 6"
+    },
+    {
+      "name": "Graveyard Dampe Race Rupee 7"
+    },
+    {
+      "name": "Graveyard Dampe Race Rupee 8"
+    },
+    {
+      "name": "Graveyard Dampe Pot 1"
+    },
+    {
+      "name": "Graveyard Dampe Pot 2"
+    },
+    {
+      "name": "Graveyard Dampe Pot 3"
+    },
+    {
+      "name": "Graveyard Dampe Pot 4"
+    },
+    {
+      "name": "Graveyard Dampe Pot 5"
+    },
+    {
+      "name": "Graveyard Dampe Pot 6"
+    },
+    {
+      "name": "DMT Rock Red Rupee"
+    },
+    {
+      "name": "DMT Rock Blue Rupee"
+    },
+    {
+      "name": "DMT Cow Grotto Green Rupee 1"
+    },
+    {
+      "name": "DMT Cow Grotto Green Rupee 2"
+    },
+    {
+      "name": "DMT Cow Grotto Green Rupee 3"
+    },
+    {
+      "name": "DMT Cow Grotto Green Rupee 4"
+    },
+    {
+      "name": "DMT Cow Grotto Green Rupee 5"
+    },
+    {
+      "name": "DMT Cow Grotto Green Rupee 6"
+    },
+    {
+      "name": "DMT Cow Grotto Red Rupee"
+    },
+    {
+      "name": "DMT Cow Grotto Recovery Heart 1"
+    },
+    {
+      "name": "DMT Cow Grotto Recovery Heart 2"
+    },
+    {
+      "name": "DMT Cow Grotto Recovery Heart 3"
+    },
+    {
+      "name": "DMT Cow Grotto Recovery Heart 4"
+    },
+    {
+      "name": "DMT Cow Grotto Beehive"
+    },
+    {
+      "name": "DMT Storms Grotto Beehive 1"
+    },
+    {
+      "name": "DMT Storms Grotto Beehive 2"
+    },
+    {
+      "name": "GC Spinning Pot Bomb Drop 1"
+    },
+    {
+      "name": "GC Spinning Pot Bomb Drop 2"
+    },
+    {
+      "name": "GC Spinning Pot Bomb Drop 3"
+    },
+    {
+      "name": "GC Spinning Pot Rupee Drop 1"
+    },
+    {
+      "name": "GC Spinning Pot Rupee Drop 2"
+    },
+    {
+      "name": "GC Spinning Pot Rupee Drop 3"
+    },
+    {
+      "name": "GC Spinning Pot PoH Drop Rupee 1"
+    },
+    {
+      "name": "GC Spinning Pot PoH Drop Rupee 2"
+    },
+    {
+      "name": "GC Darunia Pot 1"
+    },
+    {
+      "name": "GC Darunia Pot 2"
+    },
+    {
+      "name": "GC Darunia Pot 3"
+    },
+    {
+      "name": "GC Medigoron Pot"
+    },
+    {
+      "name": "GC Lower Staircase Pot 1"
+    },
+    {
+      "name": "GC Lower Staircase Pot 2"
+    },
+    {
+      "name": "GC Upper Staircase Pot 1"
+    },
+    {
+      "name": "GC Upper Staircase Pot 2"
+    },
+    {
+      "name": "GC Upper Staircase Pot 3"
+    },
+    {
+      "name": "GC Boulder Maze Crate"
+    },
+    {
+      "name": "GC Grotto Beehive"
+    },
+    {
+      "name": "DMC Adult Green Rupee 1"
+    },
+    {
+      "name": "DMC Adult Green Rupee 2"
+    },
+    {
+      "name": "DMC Adult Green Rupee 3"
+    },
+    {
+      "name": "DMC Adult Green Rupee 4"
+    },
+    {
+      "name": "DMC Adult Green Rupee 5"
+    },
+    {
+      "name": "DMC Adult Green Rupee 6"
+    },
+    {
+      "name": "DMC Adult Red Rupee"
+    },
+    {
+      "name": "DMC Child Red Rupee 1"
+    },
+    {
+      "name": "DMC Child Red Rupee 2"
+    },
+    {
+      "name": "DMC Child Blue Rupee 1"
+    },
+    {
+      "name": "DMC Child Blue Rupee 2"
+    },
+    {
+      "name": "DMC Child Blue Rupee 3"
+    },
+    {
+      "name": "DMC Child Blue Rupee 4"
+    },
+    {
+      "name": "DMC Child Blue Rupee 5"
+    },
+    {
+      "name": "DMC Child Blue Rupee 6"
+    },
+    {
+      "name": "DMC Near GC Pot 1"
+    },
+    {
+      "name": "DMC Near GC Pot 2"
+    },
+    {
+      "name": "DMC Near GC Pot 3"
+    },
+    {
+      "name": "DMC Near GC Pot 4"
+    },
+    {
+      "name": "DMC Upper Grotto Beehive 1"
+    },
+    {
+      "name": "DMC Upper Grotto Beehive 2"
+    },
+    {
+      "name": "DMC Hammer Grotto Beehive"
+    },
+    {
+      "name": "ZR Waterfall Red Rupee 1"
+    },
+    {
+      "name": "ZR Waterfall Red Rupee 2"
+    },
+    {
+      "name": "ZR Waterfall Red Rupee 3"
+    },
+    {
+      "name": "ZR Waterfall Red Rupee 4"
+    },
+    {
+      "name": "ZR Open Grotto Beehive 1"
+    },
+    {
+      "name": "ZR Open Grotto Beehive 2"
+    },
+    {
+      "name": "ZR Storms Grotto Beehive"
+    },
+    {
+      "name": "ZD Pot 1"
+    },
+    {
+      "name": "ZD Pot 2"
+    },
+    {
+      "name": "ZD Pot 3"
+    },
+    {
+      "name": "ZD Pot 4"
+    },
+    {
+      "name": "ZD Pot 5"
+    },
+    {
+      "name": "ZD In Front of King Zora Beehive 1"
+    },
+    {
+      "name": "ZD In Front of King Zora Beehive 2"
+    },
+    {
+      "name": "ZD Behind King Zora Beehive"
+    },
+    {
+      "name": "ZF Bottom Green Rupee 1"
+    },
+    {
+      "name": "ZF Bottom Green Rupee 2"
+    },
+    {
+      "name": "ZF Bottom Green Rupee 3"
+    },
+    {
+      "name": "ZF Bottom Green Rupee 4"
+    },
+    {
+      "name": "ZF Bottom Green Rupee 5"
+    },
+    {
+      "name": "ZF Bottom Green Rupee 6"
+    },
+    {
+      "name": "ZF Bottom Green Rupee 7"
+    },
+    {
+      "name": "ZF Bottom Green Rupee 8"
+    },
+    {
+      "name": "ZF Bottom Green Rupee 9"
+    },
+    {
+      "name": "ZF Bottom Green Rupee 10"
+    },
+    {
+      "name": "ZF Bottom Green Rupee 11"
+    },
+    {
+      "name": "ZF Bottom Green Rupee 12"
+    },
+    {
+      "name": "ZF Bottom Green Rupee 13"
+    },
+    {
+      "name": "ZF Bottom Green Rupee 14"
+    },
+    {
+      "name": "ZF Bottom Green Rupee 15"
+    },
+    {
+      "name": "ZF Bottom Green Rupee 16"
+    },
+    {
+      "name": "ZF Bottom Green Rupee 17"
+    },
+    {
+      "name": "ZF Bottom Green Rupee 18"
+    },
+    {
+      "name": "ZF Hidden Cave Pot 1"
+    },
+    {
+      "name": "ZF Hidden Cave Pot 2"
+    },
+    {
+      "name": "ZF Hidden Cave Pot 3"
+    },
+    {
+      "name": "ZF Near Jabu Pot 1"
+    },
+    {
+      "name": "ZF Near Jabu Pot 2"
+    },
+    {
+      "name": "ZF Near Jabu Pot 3"
+    },
+    {
+      "name": "ZF Near Jabu Pot 4"
+    },
+    {
+      "name": "LH Underwater Near Shore Green Rupee"
+    },
+    {
+      "name": "LH Underwater Green Rupee 1"
+    },
+    {
+      "name": "LH Underwater Green Rupee 2"
+    },
+    {
+      "name": "LH Lab Dive Red Rupee 1"
+    },
+    {
+      "name": "LH Lab Dive Red Rupee 2"
+    },
+    {
+      "name": "LH Lab Dive Red Rupee 3"
+    },
+    {
+      "name": "LH Grotto Beehive"
+    },
+    {
+      "name": "GV Octorok Grotto Red Rupee"
+    },
+    {
+      "name": "GV Octorok Grotto Blue Rupee 1"
+    },
+    {
+      "name": "GV Octorok Grotto Blue Rupee 2"
+    },
+    {
+      "name": "GV Octorok Grotto Blue Rupee 3"
+    },
+    {
+      "name": "GV Octorok Grotto Green Rupee 1"
+    },
+    {
+      "name": "GV Octorok Grotto Green Rupee 2"
+    },
+    {
+      "name": "GV Octorok Grotto Green Rupee 3"
+    },
+    {
+      "name": "GV Octorok Grotto Green Rupee 4"
+    },
+    {
+      "name": "GV Crate Near Cow"
+    },
+    {
+      "name": "GV Freestanding PoH Crate"
+    },
+    {
+      "name": "GV Storms Grotto Beehive"
+    },
+    {
+      "name": "GF Above Jail Crate"
+    },
+    {
+      "name": "Hideout Break Room Pot 1"
+    },
+    {
+      "name": "Hideout Break Room Pot 2"
+    },
+    {
+      "name": "Hideout 1 Torch Jail Pot 1"
+    },
+    {
+      "name": "Hideout 1 Torch Jail Pot 2"
+    },
+    {
+      "name": "Hideout 1 Torch Jail Pot 3"
+    },
+    {
+      "name": "Hideout Kitchen Pot 1"
+    },
+    {
+      "name": "Hideout Kitchen Pot 2"
+    },
+    {
+      "name": "Hideout 4 Torch Jail Pot 1"
+    },
+    {
+      "name": "Hideout 4 Torch Jail Pot 2"
+    },
+    {
+      "name": "Hideout 2 Torch Jail Pot 1"
+    },
+    {
+      "name": "Hideout 2 Torch Jail Pot 2"
+    },
+    {
+      "name": "Hideout 2 Torch Jail Pot 3"
+    },
+    {
+      "name": "Hideout 2 Torch Jail In Cell Pot 1"
+    },
+    {
+      "name": "Hideout 2 Torch Jail In Cell Pot 2"
+    },
+    {
+      "name": "Hideout 2 Torch Jail In Cell Pot 3"
+    },
+    {
+      "name": "Hideout 2 Torch Jail In Cell Pot 4"
+    },
+    {
+      "name": "Hideout Break Room Crate 1"
+    },
+    {
+      "name": "Hideout Break Room Crate 2"
+    },
+    {
+      "name": "Hideout Break Room Hallway Crate 1"
+    },
+    {
+      "name": "Hideout Break Room Hallway Crate 2"
+    },
+    {
+      "name": "Hideout 3 Torch Jail Crate"
+    },
+    {
+      "name": "Hideout 1 Torch Jail Crate"
+    },
+    {
+      "name": "Hideout Near Kitchen Crate 1"
+    },
+    {
+      "name": "Hideout Near Kitchen Crate 2"
+    },
+    {
+      "name": "Hideout Near Kitchen Crate 3"
+    },
+    {
+      "name": "Hideout Near Kitchen Crate 4"
+    },
+    {
+      "name": "Hideout Near Kitchen Crate 5"
+    },
+    {
+      "name": "Hideout 2 Torch Jail Crate 1"
+    },
+    {
+      "name": "Hideout 2 Torch Jail Crate 2"
+    },
+    {
+      "name": "Wasteland Near GS Pot 1"
+    },
+    {
+      "name": "Wasteland Near GS Pot 2"
+    },
+    {
+      "name": "Wasteland Near GS Pot 3"
+    },
+    {
+      "name": "Wasteland Crate Before Quicksand"
+    },
+    {
+      "name": "Wasteland Crate After Quicksand 1"
+    },
+    {
+      "name": "Wasteland Crate After Quicksand 2"
+    },
+    {
+      "name": "Wasteland Crate After Quicksand 3"
+    },
+    {
+      "name": "Wasteland Crate Near Colossus"
+    },
+    {
+      "name": "Colossus Grotto Beehive"
+    },
+    {
+      "name": "Deku Tree Lower Lobby Recovery Heart"
+    },
+    {
+      "name": "Deku Tree Upper Lobby Recovery Heart"
+    },
+    {
+      "name": "Deku Tree Basement Recovery Heart 1"
+    },
+    {
+      "name": "Deku Tree Basement Recovery Heart 2"
+    },
+    {
+      "name": "Deku Tree Basement Recovery Heart 3"
+    },
+    {
+      "name": "Deku Tree MQ Lower Lobby Recovery Heart"
+    },
+    {
+      "name": "Deku Tree MQ Near Compass Room Recovery Heart"
+    },
+    {
+      "name": "Deku Tree MQ Compass Room Recovery Heart"
+    },
+    {
+      "name": "Deku Tree MQ Basement Recovery Heart 1"
+    },
+    {
+      "name": "Deku Tree MQ Basement Recovery Heart 2"
+    },
+    {
+      "name": "Deku Tree MQ Basement Recovery Heart 3"
+    },
+    {
+      "name": "Deku Tree MQ Slingshot Room Recovery Heart"
+    },
+    {
+      "name": "Deku Tree MQ Lobby Crate"
+    },
+    {
+      "name": "Deku Tree MQ Slingshot Room Crate 1"
+    },
+    {
+      "name": "Deku Tree MQ Slingshot Room Crate 2"
+    },
+    {
+      "name": "Dodongos Cavern Lizalfos Upper Recovery Heart 1"
+    },
+    {
+      "name": "Dodongos Cavern Lizalfos Upper Recovery Heart 2"
+    },
+    {
+      "name": "Dodongos Cavern Blade Room Behind Block Recovery Heart"
+    },
+    {
+      "name": "Dodongos Cavern Right Side Pot 1"
+    },
+    {
+      "name": "Dodongos Cavern Right Side Pot 2"
+    },
+    {
+      "name": "Dodongos Cavern Right Side Pot 3"
+    },
+    {
+      "name": "Dodongos Cavern Right Side Pot 4"
+    },
+    {
+      "name": "Dodongos Cavern Right Side Pot 5"
+    },
+    {
+      "name": "Dodongos Cavern Right Side Pot 6"
+    },
+    {
+      "name": "Dodongos Cavern Lower Lizalfos Pot 1"
+    },
+    {
+      "name": "Dodongos Cavern Lower Lizalfos Pot 2"
+    },
+    {
+      "name": "Dodongos Cavern Lower Lizalfos Pot 3"
+    },
+    {
+      "name": "Dodongos Cavern Lower Lizalfos Pot 4"
+    },
+    {
+      "name": "Dodongos Cavern Torch Room Pot 1"
+    },
+    {
+      "name": "Dodongos Cavern Torch Room Pot 2"
+    },
+    {
+      "name": "Dodongos Cavern Torch Room Pot 3"
+    },
+    {
+      "name": "Dodongos Cavern Torch Room Pot 4"
+    },
+    {
+      "name": "Dodongos Cavern Staircase Pot 1"
+    },
+    {
+      "name": "Dodongos Cavern Staircase Pot 2"
+    },
+    {
+      "name": "Dodongos Cavern Staircase Pot 3"
+    },
+    {
+      "name": "Dodongos Cavern Staircase Pot 4"
+    },
+    {
+      "name": "Dodongos Cavern Last Block Pot 1"
+    },
+    {
+      "name": "Dodongos Cavern Last Block Pot 2"
+    },
+    {
+      "name": "Dodongos Cavern Last Block Pot 3"
+    },
+    {
+      "name": "Dodongos Cavern Blade Room Pot 1"
+    },
+    {
+      "name": "Dodongos Cavern Blade Room Pot 2"
+    },
+    {
+      "name": "Dodongos Cavern Single Eye Switch Room Pot 1"
+    },
+    {
+      "name": "Dodongos Cavern Single Eye Switch Room Pot 2"
+    },
+    {
+      "name": "Dodongos Cavern Double Eye Switch Room Pot 1"
+    },
+    {
+      "name": "Dodongos Cavern Double Eye Switch Room Pot 2"
+    },
+    {
+      "name": "Dodongos Cavern MQ Torch Puzzle Room Recovery Heart"
+    },
+    {
+      "name": "Dodongos Cavern MQ Right Side Pot 1"
+    },
+    {
+      "name": "Dodongos Cavern MQ Right Side Pot 2"
+    },
+    {
+      "name": "Dodongos Cavern MQ Right Side Pot 3"
+    },
+    {
+      "name": "Dodongos Cavern MQ Right Side Pot 4"
+    },
+    {
+      "name": "Dodongos Cavern MQ Staircase Pot 1"
+    },
+    {
+      "name": "Dodongos Cavern MQ Staircase Pot 2"
+    },
+    {
+      "name": "Dodongos Cavern MQ Staircase Pot 3"
+    },
+    {
+      "name": "Dodongos Cavern MQ Staircase Pot 4"
+    },
+    {
+      "name": "Dodongos Cavern MQ Upper Lizalfos Pot 1"
+    },
+    {
+      "name": "Dodongos Cavern MQ Upper Lizalfos Pot 2"
+    },
+    {
+      "name": "Dodongos Cavern MQ Upper Lizalfos Pot 3"
+    },
+    {
+      "name": "Dodongos Cavern MQ Upper Lizalfos Pot 4"
+    },
+    {
+      "name": "Dodongos Cavern MQ Poes Room Pot 1"
+    },
+    {
+      "name": "Dodongos Cavern MQ Poes Room Pot 2"
+    },
+    {
+      "name": "Dodongos Cavern MQ Poes Room Pot 3"
+    },
+    {
+      "name": "Dodongos Cavern MQ Poes Room Pot 4"
+    },
+    {
+      "name": "Dodongos Cavern MQ Room Before Boss Pot 1"
+    },
+    {
+      "name": "Dodongos Cavern MQ Room Before Boss Pot 2"
+    },
+    {
+      "name": "Dodongos Cavern MQ Armos Army Room Upper Pot"
+    },
+    {
+      "name": "Dodongos Cavern MQ Armos Army Room Pot 1"
+    },
+    {
+      "name": "Dodongos Cavern MQ Armos Army Room Pot 2"
+    },
+    {
+      "name": "Dodongos Cavern MQ Torch Puzzle Room Pot Pillar"
+    },
+    {
+      "name": "Dodongos Cavern MQ Torch Puzzle Room Pot Corner"
+    },
+    {
+      "name": "Dodongos Cavern MQ Before Upper Lizalfos Pot 1"
+    },
+    {
+      "name": "Dodongos Cavern MQ Before Upper Lizalfos Pot 2"
+    },
+    {
+      "name": "Dodongos Cavern MQ After Upper Lizalfos Pot 1"
+    },
+    {
+      "name": "Dodongos Cavern MQ After Upper Lizalfos Pot 2"
+    },
+    {
+      "name": "Dodongos Cavern MQ Back Poe Room Pot 1"
+    },
+    {
+      "name": "Dodongos Cavern MQ Back Poe Room Pot 2"
+    },
+    {
+      "name": "Dodongos Cavern MQ Staircase Crate Bottom Left"
+    },
+    {
+      "name": "Dodongos Cavern MQ Staircase Crate Bottom Right"
+    },
+    {
+      "name": "Dodongos Cavern MQ Staircase Crate Mid Left"
+    },
+    {
+      "name": "Dodongos Cavern MQ Staircase Crate Top Left"
+    },
+    {
+      "name": "Dodongos Cavern MQ Staircase Crate Mid Right"
+    },
+    {
+      "name": "Dodongos Cavern MQ Staircase Crate Top Right"
+    },
+    {
+      "name": "Dodongos Cavern MQ Poes Room Crate 5"
+    },
+    {
+      "name": "Dodongos Cavern MQ Poes Room Crate 6"
+    },
+    {
+      "name": "Dodongos Cavern MQ Poes Room Crate 1"
+    },
+    {
+      "name": "Dodongos Cavern MQ Poes Room Crate 2"
+    },
+    {
+      "name": "Dodongos Cavern MQ Poes Room Crate 3"
+    },
+    {
+      "name": "Dodongos Cavern MQ Poes Room Crate 4"
+    },
+    {
+      "name": "Dodongos Cavern MQ Poes Room Crate Near Bomb Flower"
+    },
+    {
+      "name": "Dodongos Cavern MQ Poes Room Crate 7"
+    },
+    {
+      "name": "Dodongos Cavern MQ Larvae Room Crate 1"
+    },
+    {
+      "name": "Dodongos Cavern MQ Larvae Room Crate 2"
+    },
+    {
+      "name": "Dodongos Cavern MQ Larvae Room Crate 3"
+    },
+    {
+      "name": "Dodongos Cavern MQ Larvae Room Crate 4"
+    },
+    {
+      "name": "Dodongos Cavern MQ Larvae Room Crate 5"
+    },
+    {
+      "name": "Dodongos Cavern MQ Larvae Room Crate 6"
+    },
+    {
+      "name": "Dodongos Cavern MQ After Upper Lizalfos Crate 1"
+    },
+    {
+      "name": "Dodongos Cavern MQ After Upper Lizalfos Crate 2"
+    },
+    {
+      "name": "Dodongos Cavern Lower Lizalfos Hidden Recovery Heart"
+    },
+    {
+      "name": "Jabu Jabus Belly Above Big Octo Pot 1"
+    },
+    {
+      "name": "Jabu Jabus Belly Above Big Octo Pot 2"
+    },
+    {
+      "name": "Jabu Jabus Belly Basement 2 Octoroks Pot 1"
+    },
+    {
+      "name": "Jabu Jabus Belly Basement 2 Octoroks Pot 2"
+    },
+    {
+      "name": "Jabu Jabus Belly Basement 2 Octoroks Pot 3"
+    },
+    {
+      "name": "Jabu Jabus Belly Basement 2 Octoroks Pot 4"
+    },
+    {
+      "name": "Jabu Jabus Belly Basement Switch Room Pot 1"
+    },
+    {
+      "name": "Jabu Jabus Belly Basement Switch Room Pot 2"
+    },
+    {
+      "name": "Jabu Jabus Belly Small Wooden Crate"
+    },
+    {
+      "name": "Jabu Jabus Belly MQ Underwater Green Rupee 1"
+    },
+    {
+      "name": "Jabu Jabus Belly MQ Underwater Green Rupee 2"
+    },
+    {
+      "name": "Jabu Jabus Belly MQ Underwater Green Rupee 3"
+    },
+    {
+      "name": "Jabu Jabus Belly MQ Recovery Heart 1"
+    },
+    {
+      "name": "Jabu Jabus Belly MQ Recovery Heart 2"
+    },
+    {
+      "name": "Jabu Jabus Belly MQ First Room Pot 1"
+    },
+    {
+      "name": "Jabu Jabus Belly MQ First Room Pot 2"
+    },
+    {
+      "name": "Jabu Jabus Belly MQ Elevator Room Pot 1"
+    },
+    {
+      "name": "Jabu Jabus Belly MQ Elevator Room Pot 2"
+    },
+    {
+      "name": "Jabu Jabus Belly MQ Falling Like Like Room Pot 1"
+    },
+    {
+      "name": "Jabu Jabus Belly MQ Falling Like Like Room Pot 2"
+    },
+    {
+      "name": "Jabu Jabus Belly MQ Boomerang Room Pot 1"
+    },
+    {
+      "name": "Jabu Jabus Belly MQ Boomerang Room Pot 2"
+    },
+    {
+      "name": "Jabu Jabus Belly Barinade Pot 1"
+    },
+    {
+      "name": "Jabu Jabus Belly Barinade Pot 2"
+    },
+    {
+      "name": "Jabu Jabus Belly Barinade Pot 3"
+    },
+    {
+      "name": "Jabu Jabus Belly Barinade Pot 4"
+    },
+    {
+      "name": "Jabu Jabus Belly Barinade Pot 5"
+    },
+    {
+      "name": "Jabu Jabus Belly Barinade Pot 6"
+    },
+    {
+      "name": "Bottom of the Well Center Room Pit Fall Blue Rupee 1"
+    },
+    {
+      "name": "Bottom of the Well Center Room Pit Fall Blue Rupee 2"
+    },
+    {
+      "name": "Bottom of the Well Center Room Pit Fall Blue Rupee 3"
+    },
+    {
+      "name": "Bottom of the Well Center Room Pit Fall Blue Rupee 4"
+    },
+    {
+      "name": "Bottom of the Well Center Room Pit Fall Blue Rupee 5"
+    },
+    {
+      "name": "Bottom of the Well Coffin Recovery Heart 1"
+    },
+    {
+      "name": "Bottom of the Well Coffin Recovery Heart 2"
+    },
+    {
+      "name": "Bottom of the Well Left Side Pot 1"
+    },
+    {
+      "name": "Bottom of the Well Left Side Pot 2"
+    },
+    {
+      "name": "Bottom of the Well Left Side Pot 3"
+    },
+    {
+      "name": "Bottom of the Well Near Entrance Pot 1"
+    },
+    {
+      "name": "Bottom of the Well Near Entrance Pot 2"
+    },
+    {
+      "name": "Bottom of the Well Underwater Pot"
+    },
+    {
+      "name": "Bottom of the Well Basement Pot 1"
+    },
+    {
+      "name": "Bottom of the Well Basement Pot 2"
+    },
+    {
+      "name": "Bottom of the Well Basement Pot 3"
+    },
+    {
+      "name": "Bottom of the Well Basement Pot 4"
+    },
+    {
+      "name": "Bottom of the Well Basement Pot 5"
+    },
+    {
+      "name": "Bottom of the Well Basement Pot 6"
+    },
+    {
+      "name": "Bottom of the Well Basement Pot 7"
+    },
+    {
+      "name": "Bottom of the Well Basement Pot 8"
+    },
+    {
+      "name": "Bottom of the Well Basement Pot 9"
+    },
+    {
+      "name": "Bottom of the Well Basement Pot 10"
+    },
+    {
+      "name": "Bottom of the Well Basement Pot 11"
+    },
+    {
+      "name": "Bottom of the Well Basement Pot 12"
+    },
+    {
+      "name": "Bottom of the Well Fire Keese Pot"
+    },
+    {
+      "name": "Bottom of the Well West Inner Room Flying Pot 1"
+    },
+    {
+      "name": "Bottom of the Well West Inner Room Flying Pot 2"
+    },
+    {
+      "name": "Bottom of the Well West Inner Room Flying Pot 3"
+    },
+    {
+      "name": "Bottom of the Well MQ Bombable Recovery Heart 1"
+    },
+    {
+      "name": "Bottom of the Well MQ Bombable Recovery Heart 2"
+    },
+    {
+      "name": "Bottom of the Well MQ Basement Recovery Heart 1"
+    },
+    {
+      "name": "Bottom of the Well MQ Basement Recovery Heart 2"
+    },
+    {
+      "name": "Bottom of the Well MQ Basement Recovery Heart 3"
+    },
+    {
+      "name": "Bottom of the Well MQ Coffin Recovery Heart 1"
+    },
+    {
+      "name": "Bottom of the Well MQ Coffin Recovery Heart 2"
+    },
+    {
+      "name": "Bottom of the Well MQ Center Room Right Pot 1"
+    },
+    {
+      "name": "Bottom of the Well MQ Center Room Right Pot 2"
+    },
+    {
+      "name": "Bottom of the Well MQ Center Room Right Pot 3"
+    },
+    {
+      "name": "Bottom of the Well MQ East Inner Room Pot 1"
+    },
+    {
+      "name": "Bottom of the Well MQ East Inner Room Pot 2"
+    },
+    {
+      "name": "Bottom of the Well MQ East Inner Room Pot 3"
+    },
+    {
+      "name": "Forest Temple Courtyard Recovery Heart 1"
+    },
+    {
+      "name": "Forest Temple Courtyard Recovery Heart 2"
+    },
+    {
+      "name": "Forest Temple Well Recovery Heart 1"
+    },
+    {
+      "name": "Forest Temple Well Recovery Heart 2"
+    },
+    {
+      "name": "Forest Temple Center Room Right Pot 1"
+    },
+    {
+      "name": "Forest Temple Center Room Right Pot 2"
+    },
+    {
+      "name": "Forest Temple Center Room Right Pot 3"
+    },
+    {
+      "name": "Forest Temple Center Room Left Pot 1"
+    },
+    {
+      "name": "Forest Temple Center Room Left Pot 2"
+    },
+    {
+      "name": "Forest Temple Center Room Left Pot 3"
+    },
+    {
+      "name": "Forest Temple Lower Stalfos Pot"
+    },
+    {
+      "name": "Forest Temple Upper Stalfos Pot 1"
+    },
+    {
+      "name": "Forest Temple Upper Stalfos Pot 2"
+    },
+    {
+      "name": "Forest Temple Upper Stalfos Pot 3"
+    },
+    {
+      "name": "Forest Temple Upper Stalfos Pot 4"
+    },
+    {
+      "name": "Forest Temple Blue Poe Room Pot 1"
+    },
+    {
+      "name": "Forest Temple Blue Poe Room Pot 2"
+    },
+    {
+      "name": "Forest Temple Blue Poe Room Pot 3"
+    },
+    {
+      "name": "Forest Temple Frozen Eye Switch Room Pot 1"
+    },
+    {
+      "name": "Forest Temple Frozen Eye Switch Room Pot 2"
+    },
+    {
+      "name": "Forest Temple Green Poe Room Pot 1"
+    },
+    {
+      "name": "Forest Temple Green Poe Room Pot 2"
+    },
+    {
+      "name": "Forest Temple MQ Courtyard Recovery Heart 1"
+    },
+    {
+      "name": "Forest Temple MQ Courtyard Recovery Heart 2"
+    },
+    {
+      "name": "Forest Temple MQ Courtyard Recovery Heart 3"
+    },
+    {
+      "name": "Forest Temple MQ Well Recovery Heart 1"
+    },
+    {
+      "name": "Forest Temple MQ Well Recovery Heart 2"
+    },
+    {
+      "name": "Forest Temple MQ Well Recovery Heart 3"
+    },
+    {
+      "name": "Forest Temple MQ Center Room Right Pot 1"
+    },
+    {
+      "name": "Forest Temple MQ Center Room Right Pot 2"
+    },
+    {
+      "name": "Forest Temple MQ Center Room Right Pot 3"
+    },
+    {
+      "name": "Forest Temple MQ Center Room Left Pot 1"
+    },
+    {
+      "name": "Forest Temple MQ Center Room Left Pot 2"
+    },
+    {
+      "name": "Forest Temple MQ Center Room Left Pot 3"
+    },
+    {
+      "name": "Forest Temple MQ Wolfos Room Pot"
+    },
+    {
+      "name": "Forest Temple MQ Upper Stalfos Pot 1"
+    },
+    {
+      "name": "Forest Temple MQ Upper Stalfos Pot 2"
+    },
+    {
+      "name": "Forest Temple MQ Upper Stalfos Pot 3"
+    },
+    {
+      "name": "Forest Temple MQ Upper Stalfos Pot 4"
+    },
+    {
+      "name": "Forest Temple MQ Blue Poe Room Pot 1"
+    },
+    {
+      "name": "Forest Temple MQ Blue Poe Room Pot 2"
+    },
+    {
+      "name": "Forest Temple MQ Blue Poe Room Pot 3"
+    },
+    {
+      "name": "Forest Temple MQ Green Poe Room Pot 1"
+    },
+    {
+      "name": "Forest Temple MQ Green Poe Room Pot 2"
+    },
+    {
+      "name": "Forest Temple MQ Basement Pot 1"
+    },
+    {
+      "name": "Forest Temple MQ Basement Pot 2"
+    },
+    {
+      "name": "Forest Temple MQ Basement Pot 3"
+    },
+    {
+      "name": "Forest Temple MQ Basement Pot 4"
+    },
+    {
+      "name": "Forest Temple MQ Frozen Eye Switch Room Small Wooden Crate 1"
+    },
+    {
+      "name": "Forest Temple MQ Frozen Eye Switch Room Small Wooden Crate 2"
+    },
+    {
+      "name": "Forest Temple MQ Frozen Eye Switch Room Small Wooden Crate 3"
+    },
+    {
+      "name": "Fire Temple Elevator Room Recovery Heart 1"
+    },
+    {
+      "name": "Fire Temple Elevator Room Recovery Heart 2"
+    },
+    {
+      "name": "Fire Temple Elevator Room Recovery Heart 3"
+    },
+    {
+      "name": "Fire Temple Narrow Path Room Recovery Heart 1"
+    },
+    {
+      "name": "Fire Temple Narrow Path Room Recovery Heart 2"
+    },
+    {
+      "name": "Fire Temple Narrow Path Room Recovery Heart 3"
+    },
+    {
+      "name": "Fire Temple Moving Fire Room Recovery Heart 1"
+    },
+    {
+      "name": "Fire Temple Moving Fire Room Recovery Heart 2"
+    },
+    {
+      "name": "Fire Temple Moving Fire Room Recovery Heart 3"
+    },
+    {
+      "name": "Fire Temple Big Lava Room Pot 1"
+    },
+    {
+      "name": "Fire Temple Big Lava Room Pot 2"
+    },
+    {
+      "name": "Fire Temple Big Lava Room Pot 3"
+    },
+    {
+      "name": "Fire Temple Near Boss Pot 1"
+    },
+    {
+      "name": "Fire Temple Near Boss Pot 2"
+    },
+    {
+      "name": "Fire Temple Flame Maze Right Side Pot 1"
+    },
+    {
+      "name": "Fire Temple Flame Maze Right Side Pot 2"
+    },
+    {
+      "name": "Fire Temple Flame Maze Right Side Pot 3"
+    },
+    {
+      "name": "Fire Temple Flame Maze Right Side Pot 4"
+    },
+    {
+      "name": "Fire Temple Flame Maze Left Side Pot 1"
+    },
+    {
+      "name": "Fire Temple Flame Maze Left Side Pot 2"
+    },
+    {
+      "name": "Fire Temple Flame Maze Left Side Pot 3"
+    },
+    {
+      "name": "Fire Temple Flame Maze Left Side Pot 4"
+    },
+    {
+      "name": "Fire Temple MQ Elevator Room Recovery Heart 1"
+    },
+    {
+      "name": "Fire Temple MQ Elevator Room Recovery Heart 2"
+    },
+    {
+      "name": "Fire Temple MQ Elevator Room Recovery Heart 3"
+    },
+    {
+      "name": "Fire Temple MQ First Room Pot 1"
+    },
+    {
+      "name": "Fire Temple MQ First Room Pot 2"
+    },
+    {
+      "name": "Fire Temple MQ Big Lava Room Left Pot"
+    },
+    {
+      "name": "Fire Temple MQ Big Lava Room Right Pot"
+    },
+    {
+      "name": "Fire Temple MQ Big Lava Room Alcove Pot"
+    },
+    {
+      "name": "Fire Temple MQ Near Boss Pot 1"
+    },
+    {
+      "name": "Fire Temple MQ Near Boss Pot 2"
+    },
+    {
+      "name": "Fire Temple MQ Narrow Path Room Pot 1"
+    },
+    {
+      "name": "Fire Temple MQ Narrow Path Room Pot 2"
+    },
+    {
+      "name": "Fire Temple MQ Flame Maze Right Upper Pot 1"
+    },
+    {
+      "name": "Fire Temple MQ Flame Maze Right Upper Pot 2"
+    },
+    {
+      "name": "Fire Temple MQ Flame Maze Right Pot 1"
+    },
+    {
+      "name": "Fire Temple MQ Flame Maze Right Pot 2"
+    },
+    {
+      "name": "Fire Temple MQ Flame Maze Left Pot 1"
+    },
+    {
+      "name": "Fire Temple MQ Shoot Torch On Wall Room Pot 1"
+    },
+    {
+      "name": "Fire Temple MQ Shoot Torch On Wall Room Pot 2"
+    },
+    {
+      "name": "Fire Temple MQ Iron Knuckle Room Pot 1"
+    },
+    {
+      "name": "Fire Temple MQ Iron Knuckle Room Pot 2"
+    },
+    {
+      "name": "Fire Temple MQ Iron Knuckle Room Pot 3"
+    },
+    {
+      "name": "Fire Temple MQ Iron Knuckle Room Pot 4"
+    },
+    {
+      "name": "Fire Temple MQ Boss Key Chest Room Pot"
+    },
+    {
+      "name": "Fire Temple MQ Near Boss Left Crate 1"
+    },
+    {
+      "name": "Fire Temple MQ Near Boss Left Crate 2"
+    },
+    {
+      "name": "Fire Temple MQ Near Boss Right Lower Crate 1"
+    },
+    {
+      "name": "Fire Temple MQ Near Boss Right Lower Crate 2"
+    },
+    {
+      "name": "Fire Temple MQ Near Boss Right Mid Crate"
+    },
+    {
+      "name": "Fire Temple MQ Near Boss Right Upper Crate"
+    },
+    {
+      "name": "Fire Temple MQ Shortcut Crate 1"
+    },
+    {
+      "name": "Fire Temple MQ Shortcut Crate 2"
+    },
+    {
+      "name": "Fire Temple MQ Shortcut Crate 3"
+    },
+    {
+      "name": "Fire Temple MQ Shortcut Crate 4"
+    },
+    {
+      "name": "Fire Temple MQ Shortcut Crate 5"
+    },
+    {
+      "name": "Fire Temple MQ Shortcut Crate 6"
+    },
+    {
+      "name": "Fire Temple MQ Lower Lizalfos Maze Crate 1"
+    },
+    {
+      "name": "Fire Temple MQ Lower Lizalfos Maze Crate 2"
+    },
+    {
+      "name": "Fire Temple MQ Lower Lizalfos Maze Crate 3"
+    },
+    {
+      "name": "Fire Temple MQ Upper Lizalfos Maze Crate 1"
+    },
+    {
+      "name": "Fire Temple MQ Upper Lizalfos Maze Crate 2"
+    },
+    {
+      "name": "Fire Temple MQ Upper Lizalfos Maze Crate 3"
+    },
+    {
+      "name": "Fire Temple MQ Shoot Torch On Wall Room Right Crate 1"
+    },
+    {
+      "name": "Fire Temple MQ Shoot Torch On Wall Room Right Crate 2"
+    },
+    {
+      "name": "Fire Temple MQ Shoot Torch On Wall Room Center Crate"
+    },
+    {
+      "name": "Fire Temple MQ Shoot Torch On Wall Room Left Crate 1"
+    },
+    {
+      "name": "Fire Temple MQ Shoot Torch On Wall Room Left Crate 2"
+    },
+    {
+      "name": "Water Temple River Recovery Heart 1"
+    },
+    {
+      "name": "Water Temple River Recovery Heart 2"
+    },
+    {
+      "name": "Water Temple River Recovery Heart 3"
+    },
+    {
+      "name": "Water Temple River Recovery Heart 4"
+    },
+    {
+      "name": "Water Temple Main Room L2 Pot 1"
+    },
+    {
+      "name": "Water Temple Main Room L2 Pot 2"
+    },
+    {
+      "name": "Water Temple Behind Gate Pot 1"
+    },
+    {
+      "name": "Water Temple Behind Gate Pot 2"
+    },
+    {
+      "name": "Water Temple Behind Gate Pot 3"
+    },
+    {
+      "name": "Water Temple Behind Gate Pot 4"
+    },
+    {
+      "name": "Water Temple Near Compass Pot 1"
+    },
+    {
+      "name": "Water Temple Near Compass Pot 2"
+    },
+    {
+      "name": "Water Temple Near Compass Pot 3"
+    },
+    {
+      "name": "Water Temple Like Like Pot 1"
+    },
+    {
+      "name": "Water Temple Like Like Pot 2"
+    },
+    {
+      "name": "Water Temple North Basement Block Puzzle Pot 1"
+    },
+    {
+      "name": "Water Temple North Basement Block Puzzle Pot 2"
+    },
+    {
+      "name": "Water Temple L1 Torch Pot 1"
+    },
+    {
+      "name": "Water Temple L1 Torch Pot 2"
+    },
+    {
+      "name": "Water Temple River Pot 1"
+    },
+    {
+      "name": "Water Temple Central Bow Target Pot 1"
+    },
+    {
+      "name": "Water Temple Central Bow Target Pot 2"
+    },
+    {
+      "name": "Water Temple MQ Triple Wall Torch Pot 1"
+    },
+    {
+      "name": "Water Temple MQ Triple Wall Torch Pot 2"
+    },
+    {
+      "name": "Water Temple MQ Triple Wall Torch Pot 3"
+    },
+    {
+      "name": "Water Temple MQ Triple Wall Torch Pot 4"
+    },
+    {
+      "name": "Water Temple MQ Storage Room Pot 1"
+    },
+    {
+      "name": "Water Temple MQ Storage Room Pot 2"
+    },
+    {
+      "name": "Water Temple MQ Storage Room Pot 3"
+    },
+    {
+      "name": "Water Temple MQ Before Dark Link Top Pot 1"
+    },
+    {
+      "name": "Water Temple MQ Before Dark Link Top Pot 2"
+    },
+    {
+      "name": "Water Temple MQ Before Dark Link Lower Pot"
+    },
+    {
+      "name": "Water Temple MQ Room After Dark Link Pot"
+    },
+    {
+      "name": "Water Temple MQ Boss Key Chest Room Pot"
+    },
+    {
+      "name": "Water Temple MQ Before Upper Water Switch Pot 1"
+    },
+    {
+      "name": "Water Temple MQ Before Upper Water Switch Pot 2"
+    },
+    {
+      "name": "Water Temple MQ Before Upper Water Switch Pot 3"
+    },
+    {
+      "name": "Water Temple MQ Dodongo Room Pot 1"
+    },
+    {
+      "name": "Water Temple MQ Dodongo Room Pot 2"
+    },
+    {
+      "name": "Water Temple MQ Freestanding Key Room Pot"
+    },
+    {
+      "name": "Water Temple MQ L1 Torch Pot 1"
+    },
+    {
+      "name": "Water Temple MQ L1 Torch Pot 2"
+    },
+    {
+      "name": "Water Temple MQ Lizalfos Hallway Pot 1"
+    },
+    {
+      "name": "Water Temple MQ Lizalfos Hallway Pot 2"
+    },
+    {
+      "name": "Water Temple MQ Lizalfos Hallway Pot 3"
+    },
+    {
+      "name": "Water Temple MQ Lizalfos Hallway Gate Pot 1"
+    },
+    {
+      "name": "Water Temple MQ Lizalfos Hallway Gate Pot 2"
+    },
+    {
+      "name": "Water Temple MQ River Pot"
+    },
+    {
+      "name": "Water Temple MQ Central Pillar Upper Crate 1"
+    },
+    {
+      "name": "Water Temple MQ Central Pillar Upper Crate 2"
+    },
+    {
+      "name": "Water Temple MQ Central Pillar Lower Crate 1"
+    },
+    {
+      "name": "Water Temple MQ Central Pillar Lower Crate 2"
+    },
+    {
+      "name": "Water Temple MQ Central Pillar Lower Crate 3"
+    },
+    {
+      "name": "Water Temple MQ Central Pillar Lower Crate 4"
+    },
+    {
+      "name": "Water Temple MQ Central Pillar Lower Crate 5"
+    },
+    {
+      "name": "Water Temple MQ Central Pillar Lower Crate 6"
+    },
+    {
+      "name": "Water Temple MQ Central Pillar Lower Crate 7"
+    },
+    {
+      "name": "Water Temple MQ Central Pillar Lower Crate 8"
+    },
+    {
+      "name": "Water Temple MQ Central Pillar Lower Crate 9"
+    },
+    {
+      "name": "Water Temple MQ Central Pillar Lower Crate 10"
+    },
+    {
+      "name": "Water Temple MQ Central Pillar Lower Crate 11"
+    },
+    {
+      "name": "Water Temple MQ Central Pillar Lower Crate 12"
+    },
+    {
+      "name": "Water Temple MQ Central Pillar Lower Crate 13"
+    },
+    {
+      "name": "Water Temple MQ Central Pillar Lower Crate 14"
+    },
+    {
+      "name": "Water Temple MQ Triple Wall Torch Submerged Crate 1"
+    },
+    {
+      "name": "Water Temple MQ Triple Wall Torch Submerged Crate 2"
+    },
+    {
+      "name": "Water Temple MQ Triple Wall Torch Submerged Crate 3"
+    },
+    {
+      "name": "Water Temple MQ Triple Wall Torch Submerged Crate 4"
+    },
+    {
+      "name": "Water Temple MQ Triple Wall Torch Submerged Crate 5"
+    },
+    {
+      "name": "Water Temple MQ Triple Wall Torch Submerged Crate 6"
+    },
+    {
+      "name": "Water Temple MQ Triple Wall Torch Behind Gate Crate 1"
+    },
+    {
+      "name": "Water Temple MQ Triple Wall Torch Behind Gate Crate 2"
+    },
+    {
+      "name": "Water Temple MQ Triple Wall Torch Behind Gate Crate 3"
+    },
+    {
+      "name": "Water Temple MQ Storage Room Crate 1"
+    },
+    {
+      "name": "Water Temple MQ Storage Room Crate 2"
+    },
+    {
+      "name": "Water Temple MQ Storage Room Crate 3"
+    },
+    {
+      "name": "Water Temple MQ Storage Room Crate 4"
+    },
+    {
+      "name": "Water Temple MQ Storage Room Crate 5"
+    },
+    {
+      "name": "Water Temple MQ Storage Room Crate 6"
+    },
+    {
+      "name": "Water Temple MQ Storage Room Crate 7"
+    },
+    {
+      "name": "Water Temple MQ Dragon Statue By Torches Crate 1"
+    },
+    {
+      "name": "Water Temple MQ Dragon Statue By Torches Crate 2"
+    },
+    {
+      "name": "Water Temple MQ Dragon Statue Submerged Crate 1"
+    },
+    {
+      "name": "Water Temple MQ Dragon Statue Submerged Crate 2"
+    },
+    {
+      "name": "Water Temple MQ Dragon Statue Submerged Crate 3"
+    },
+    {
+      "name": "Water Temple MQ Dragon Statue Submerged Crate 4"
+    },
+    {
+      "name": "Water Temple MQ Dragon Statue Near Door Crate 1"
+    },
+    {
+      "name": "Water Temple MQ Dragon Statue Near Door Crate 2"
+    },
+    {
+      "name": "Water Temple MQ Boss Key Chest Room Upper Crate"
+    },
+    {
+      "name": "Water Temple MQ Boss Key Chest Room Lower Crate 1"
+    },
+    {
+      "name": "Water Temple MQ Boss Key Chest Room Lower Crate 2"
+    },
+    {
+      "name": "Water Temple MQ Boss Key Chest Room Lower Crate 3"
+    },
+    {
+      "name": "Water Temple MQ Boss Key Chest Room Lower Crate 4"
+    },
+    {
+      "name": "Water Temple MQ Before Upper Water Switch Lower Crate 1"
+    },
+    {
+      "name": "Water Temple MQ Before Upper Water Switch Lower Crate 2"
+    },
+    {
+      "name": "Water Temple MQ Before Upper Water Switch Lower Crate 3"
+    },
+    {
+      "name": "Water Temple MQ Before Upper Water Switch Lower Crate 4"
+    },
+    {
+      "name": "Water Temple MQ Before Upper Water Switch Lower Crate 5"
+    },
+    {
+      "name": "Water Temple MQ Before Upper Water Switch Lower Crate 6"
+    },
+    {
+      "name": "Water Temple MQ Before Upper Water Switch Upper Crate 1"
+    },
+    {
+      "name": "Water Temple MQ Before Upper Water Switch Upper Crate 2"
+    },
+    {
+      "name": "Water Temple MQ Freestanding Key Area Behind Gate Crate 1"
+    },
+    {
+      "name": "Water Temple MQ Freestanding Key Area Behind Gate Crate 2"
+    },
+    {
+      "name": "Water Temple MQ Freestanding Key Area Behind Gate Crate 3"
+    },
+    {
+      "name": "Water Temple MQ Freestanding Key Area Behind Gate Crate 4"
+    },
+    {
+      "name": "Water Temple MQ Freestanding Key Area Front Crate 1"
+    },
+    {
+      "name": "Water Temple MQ Freestanding Key Area Front Crate 2"
+    },
+    {
+      "name": "Water Temple MQ Freestanding Key Area Submerged Crate 1"
+    },
+    {
+      "name": "Water Temple MQ Freestanding Key Area Submerged Crate 2"
+    },
+    {
+      "name": "Water Temple MQ Freestanding Key Area Submerged Crate 3"
+    },
+    {
+      "name": "Water Temple MQ Freestanding Key Area Submerged Crate 4"
+    },
+    {
+      "name": "Water Temple MQ Freestanding Key Area Submerged Crate 5"
+    },
+    {
+      "name": "Water Temple MQ Freestanding Key Area Submerged Crate 6"
+    },
+    {
+      "name": "Water Temple MQ Dodongo Room Lower Crate 1"
+    },
+    {
+      "name": "Water Temple MQ Dodongo Room Lower Crate 2"
+    },
+    {
+      "name": "Water Temple MQ Dodongo Room Lower Crate 3"
+    },
+    {
+      "name": "Water Temple MQ Dodongo Room Upper Crate"
+    },
+    {
+      "name": "Water Temple MQ Dodongo Room Hall Crate"
+    },
+    {
+      "name": "Water Temple MQ Freestanding Key Room Crate 1"
+    },
+    {
+      "name": "Water Temple MQ Freestanding Key Room Crate 2"
+    },
+    {
+      "name": "Water Temple MQ Freestanding Key Room Crate 3"
+    },
+    {
+      "name": "Water Temple MQ Freestanding Key Room Crate 4"
+    },
+    {
+      "name": "Water Temple MQ Freestanding Key Room Crate 5"
+    },
+    {
+      "name": "Water Temple MQ Lizalfos Hallway Gate Crate 1"
+    },
+    {
+      "name": "Water Temple MQ Lizalfos Hallway Gate Crate 2"
+    },
+    {
+      "name": "Water Temple MQ Lizalfos Hallway Room Crate 1"
+    },
+    {
+      "name": "Water Temple MQ Lizalfos Hallway Room Crate 2"
+    },
+    {
+      "name": "Water Temple MQ Lizalfos Hallway Room Crate 3"
+    },
+    {
+      "name": "Water Temple MQ Lizalfos Hallway Room Crate 4"
+    },
+    {
+      "name": "Water Temple MQ Lizalfos Hallway Room Crate 5"
+    },
+    {
+      "name": "Water Temple MQ Lizalfos Hallway Hall Crate 1"
+    },
+    {
+      "name": "Water Temple MQ Lizalfos Hallway Hall Crate 2"
+    },
+    {
+      "name": "Water Temple MQ Lizalfos Hallway Hall Crate 3"
+    },
+    {
+      "name": "Shadow Temple Invisible Blades Recovery Heart 1"
+    },
+    {
+      "name": "Shadow Temple Invisible Blades Recovery Heart 2"
+    },
+    {
+      "name": "Shadow Temple Before Boat Recovery Heart 1"
+    },
+    {
+      "name": "Shadow Temple Before Boat Recovery Heart 2"
+    },
+    {
+      "name": "Shadow Temple After Boat Upper Recovery Heart 1"
+    },
+    {
+      "name": "Shadow Temple After Boat Upper Recovery Heart 2"
+    },
+    {
+      "name": "Shadow Temple After Boat Lower Recovery Heart"
+    },
+    {
+      "name": "Shadow Temple 3 Spinning Pots Rupee 1"
+    },
+    {
+      "name": "Shadow Temple 3 Spinning Pots Rupee 2"
+    },
+    {
+      "name": "Shadow Temple 3 Spinning Pots Rupee 3"
+    },
+    {
+      "name": "Shadow Temple 3 Spinning Pots Rupee 4"
+    },
+    {
+      "name": "Shadow Temple 3 Spinning Pots Rupee 5"
+    },
+    {
+      "name": "Shadow Temple 3 Spinning Pots Rupee 6"
+    },
+    {
+      "name": "Shadow Temple 3 Spinning Pots Rupee 7"
+    },
+    {
+      "name": "Shadow Temple 3 Spinning Pots Rupee 8"
+    },
+    {
+      "name": "Shadow Temple 3 Spinning Pots Rupee 9"
+    },
+    {
+      "name": "Shadow Temple Whispering Walls Near Dead Hand Pot"
+    },
+    {
+      "name": "Shadow Temple Whispering Walls Left Pot 1"
+    },
+    {
+      "name": "Shadow Temple Whispering Walls Left Pot 2"
+    },
+    {
+      "name": "Shadow Temple Whispering Walls Left Pot 3"
+    },
+    {
+      "name": "Shadow Temple Whispering Walls Front Pot 1"
+    },
+    {
+      "name": "Shadow Temple Whispering Walls Front Pot 2"
+    },
+    {
+      "name": "Shadow Temple Whispering Walls Flying Pot"
+    },
+    {
+      "name": "Shadow Temple Map Chest Room Pot 1"
+    },
+    {
+      "name": "Shadow Temple Map Chest Room Pot 2"
+    },
+    {
+      "name": "Shadow Temple Falling Spikes Lower Pot 2"
+    },
+    {
+      "name": "Shadow Temple Falling Spikes Lower Pot 1"
+    },
+    {
+      "name": "Shadow Temple Falling Spikes Upper Pot 1"
+    },
+    {
+      "name": "Shadow Temple Falling Spikes Upper Pot 2"
+    },
+    {
+      "name": "Shadow Temple Spike Walls Pot"
+    },
+    {
+      "name": "Shadow Temple Invisible Floormaster Pot 1"
+    },
+    {
+      "name": "Shadow Temple Invisible Floormaster Pot 2"
+    },
+    {
+      "name": "Shadow Temple After Wind Pot 1"
+    },
+    {
+      "name": "Shadow Temple After Wind Pot 2"
+    },
+    {
+      "name": "Shadow Temple After Wind Flying Pot 1"
+    },
+    {
+      "name": "Shadow Temple After Wind Flying Pot 2"
+    },
+    {
+      "name": "Shadow Temple After Boat Pot"
+    },
+    {
+      "name": "Shadow Temple Near Boss Pot 1"
+    },
+    {
+      "name": "Shadow Temple Near Boss Pot 2"
+    },
+    {
+      "name": "Shadow Temple MQ Invisible Blades Recovery Heart 1"
+    },
+    {
+      "name": "Shadow Temple MQ Invisible Blades Recovery Heart 2"
+    },
+    {
+      "name": "Shadow Temple MQ Before Boat Recovery Heart 1"
+    },
+    {
+      "name": "Shadow Temple MQ Before Boat Recovery Heart 2"
+    },
+    {
+      "name": "Shadow Temple MQ After Boat Upper Recovery Heart 1"
+    },
+    {
+      "name": "Shadow Temple MQ After Boat Upper Recovery Heart 2"
+    },
+    {
+      "name": "Shadow Temple MQ After Boat Lower Recovery Heart"
+    },
+    {
+      "name": "Shadow Temple MQ 3 Spinning Pots Rupee 1"
+    },
+    {
+      "name": "Shadow Temple MQ 3 Spinning Pots Rupee 2"
+    },
+    {
+      "name": "Shadow Temple MQ 3 Spinning Pots Rupee 3"
+    },
+    {
+      "name": "Shadow Temple MQ 3 Spinning Pots Rupee 4"
+    },
+    {
+      "name": "Shadow Temple MQ 3 Spinning Pots Rupee 5"
+    },
+    {
+      "name": "Shadow Temple MQ 3 Spinning Pots Rupee 6"
+    },
+    {
+      "name": "Shadow Temple MQ 3 Spinning Pots Rupee 7"
+    },
+    {
+      "name": "Shadow Temple MQ 3 Spinning Pots Rupee 8"
+    },
+    {
+      "name": "Shadow Temple MQ 3 Spinning Pots Rupee 9"
+    },
+    {
+      "name": "Shadow Temple MQ Whispering Walls Pot 1"
+    },
+    {
+      "name": "Shadow Temple MQ Whispering Walls Pot 2"
+    },
+    {
+      "name": "Shadow Temple MQ Whispering Walls After Time Block Flying Pot 1"
+    },
+    {
+      "name": "Shadow Temple MQ Whispering Walls After Time Block Flying Pot 2"
+    },
+    {
+      "name": "Shadow Temple MQ Whispering Walls Before Time Block Flying Pot 1"
+    },
+    {
+      "name": "Shadow Temple MQ Whispering Walls Before Time Block Flying Pot 2"
+    },
+    {
+      "name": "Shadow Temple MQ Compass Room Pot 1"
+    },
+    {
+      "name": "Shadow Temple MQ Compass Room Pot 2"
+    },
+    {
+      "name": "Shadow Temple MQ Falling Spikes Lower Pot 1"
+    },
+    {
+      "name": "Shadow Temple MQ Falling Spikes Lower Pot 2"
+    },
+    {
+      "name": "Shadow Temple MQ Falling Spikes Upper Pot 1"
+    },
+    {
+      "name": "Shadow Temple MQ Falling Spikes Upper Pot 2"
+    },
+    {
+      "name": "Shadow Temple MQ After Wind Pot 1"
+    },
+    {
+      "name": "Shadow Temple MQ After Wind Pot 2"
+    },
+    {
+      "name": "Shadow Temple MQ After Wind Flying Pot 1"
+    },
+    {
+      "name": "Shadow Temple MQ After Wind Flying Pot 2"
+    },
+    {
+      "name": "Shadow Temple MQ After Boat Pot 1"
+    },
+    {
+      "name": "Shadow Temple MQ After Boat Pot 2"
+    },
+    {
+      "name": "Shadow Temple MQ Near Boss Pot 1"
+    },
+    {
+      "name": "Shadow Temple MQ Near Boss Pot 2"
+    },
+    {
+      "name": "Shadow Temple MQ Bomb Flower Room Pot 1"
+    },
+    {
+      "name": "Shadow Temple MQ Bomb Flower Room Pot 2"
+    },
+    {
+      "name": "Shadow Temple MQ Spike Walls Pot"
+    },
+    {
+      "name": "Shadow Temple MQ Truth Spinner Small Wooden Crate 1"
+    },
+    {
+      "name": "Shadow Temple MQ Truth Spinner Small Wooden Crate 2"
+    },
+    {
+      "name": "Shadow Temple MQ Truth Spinner Small Wooden Crate 3"
+    },
+    {
+      "name": "Shadow Temple MQ Truth Spinner Small Wooden Crate 4"
+    },
+    {
+      "name": "Spirit Temple Shifting Wall Recovery Heart 1"
+    },
+    {
+      "name": "Spirit Temple Shifting Wall Recovery Heart 2"
+    },
+    {
+      "name": "Spirit Temple MQ Child Recovery Heart 1"
+    },
+    {
+      "name": "Spirit Temple MQ Child Recovery Heart 2"
+    },
+    {
+      "name": "Spirit Temple Lobby Pot 1"
+    },
+    {
+      "name": "Spirit Temple Lobby Pot 2"
+    },
+    {
+      "name": "Spirit Temple Lobby Flying Pot 1"
+    },
+    {
+      "name": "Spirit Temple Lobby Flying Pot 2"
+    },
+    {
+      "name": "Spirit Temple Child Climb Pot"
+    },
+    {
+      "name": "Spirit Temple Hall After Sun Block Room Pot 1"
+    },
+    {
+      "name": "Spirit Temple Hall After Sun Block Room Pot 2"
+    },
+    {
+      "name": "Spirit Temple Beamos Hall Pot"
+    },
+    {
+      "name": "Spirit Temple Child Anubis Pot"
+    },
+    {
+      "name": "Spirit Temple Child Bridge Flying Pot"
+    },
+    {
+      "name": "Spirit Temple Before Child Climb Small Wooden Crate 1"
+    },
+    {
+      "name": "Spirit Temple Before Child Climb Small Wooden Crate 2"
+    },
+    {
+      "name": "Spirit Temple Central Chamber Flying Pot 1"
+    },
+    {
+      "name": "Spirit Temple Central Chamber Flying Pot 2"
+    },
+    {
+      "name": "Spirit Temple Adult Climb Flying Pot 1"
+    },
+    {
+      "name": "Spirit Temple Adult Climb Flying Pot 2"
+    },
+    {
+      "name": "Spirit Temple Big Mirror Flying Pot 1"
+    },
+    {
+      "name": "Spirit Temple Big Mirror Flying Pot 2"
+    },
+    {
+      "name": "Spirit Temple Big Mirror Flying Pot 3"
+    },
+    {
+      "name": "Spirit Temple Big Mirror Flying Pot 4"
+    },
+    {
+      "name": "Spirit Temple Big Mirror Flying Pot 5"
+    },
+    {
+      "name": "Spirit Temple Big Mirror Flying Pot 6"
+    },
+    {
+      "name": "Spirit Temple MQ Lobby Pot 1"
+    },
+    {
+      "name": "Spirit Temple MQ Lobby Pot 2"
+    },
+    {
+      "name": "Spirit Temple MQ Lobby Pot 3"
+    },
+    {
+      "name": "Spirit Temple MQ Lobby Pot 4"
+    },
+    {
+      "name": "Spirit Temple MQ Child Torch Slugs Room Pot"
+    },
+    {
+      "name": "Spirit Temple MQ Child 3 Gibdo Room Pot 1"
+    },
+    {
+      "name": "Spirit Temple MQ Child 3 Gibdo Room Pot 2"
+    },
+    {
+      "name": "Spirit Temple MQ Child Stalfos Fight Pot 1"
+    },
+    {
+      "name": "Spirit Temple MQ Child Stalfos Fight Pot 2"
+    },
+    {
+      "name": "Spirit Temple MQ Child Stalfos Fight Pot 3"
+    },
+    {
+      "name": "Spirit Temple MQ Child Climb Pot"
+    },
+    {
+      "name": "Spirit Temple MQ Central Chamber Floor Pot 1"
+    },
+    {
+      "name": "Spirit Temple MQ Central Chamber Floor Pot 2"
+    },
+    {
+      "name": "Spirit Temple MQ Central Chamber Floor Pot 3"
+    },
+    {
+      "name": "Spirit Temple MQ Central Chamber Top Left Pot (Left)"
+    },
+    {
+      "name": "Spirit Temple MQ Central Chamber Top Left Pot (Right)"
+    },
+    {
+      "name": "Spirit Temple MQ Sun Block Room Pot 1"
+    },
+    {
+      "name": "Spirit Temple MQ Sun Block Room Pot 2"
+    },
+    {
+      "name": "Spirit Temple MQ Below 4 Wallmasters Pot 1"
+    },
+    {
+      "name": "Spirit Temple MQ Below 4 Wallmasters Pot 2"
+    },
+    {
+      "name": "Spirit Temple MQ Shifting Wall Pot 1"
+    },
+    {
+      "name": "Spirit Temple MQ Shifting Wall Pot 2"
+    },
+    {
+      "name": "Spirit Temple MQ After Shifting Wall Room Pot 1"
+    },
+    {
+      "name": "Spirit Temple MQ After Shifting Wall Room Pot 2"
+    },
+    {
+      "name": "Spirit Temple MQ Big Mirror Pot 1"
+    },
+    {
+      "name": "Spirit Temple MQ Big Mirror Pot 2"
+    },
+    {
+      "name": "Spirit Temple MQ Big Mirror Pot 3"
+    },
+    {
+      "name": "Spirit Temple MQ Big Mirror Pot 4"
+    },
+    {
+      "name": "Spirit Temple MQ Central Chamber Crate 1"
+    },
+    {
+      "name": "Spirit Temple MQ Central Chamber Crate 2"
+    },
+    {
+      "name": "Spirit Temple MQ Big Mirror Crate 1"
+    },
+    {
+      "name": "Spirit Temple MQ Big Mirror Crate 2"
+    },
+    {
+      "name": "Spirit Temple MQ Big Mirror Crate 3"
+    },
+    {
+      "name": "Spirit Temple MQ Big Mirror Crate 4"
+    },
+    {
+      "name": "Ice Cavern Frozen Blue Rupee"
+    },
+    {
+      "name": "Ice Cavern Map Room Recovery Heart 1"
+    },
+    {
+      "name": "Ice Cavern Map Room Recovery Heart 2"
+    },
+    {
+      "name": "Ice Cavern Map Room Recovery Heart 3"
+    },
+    {
+      "name": "Ice Cavern Block Room Red Rupee 1"
+    },
+    {
+      "name": "Ice Cavern Block Room Red Rupee 2"
+    },
+    {
+      "name": "Ice Cavern Block Room Red Rupee 3"
+    },
+    {
+      "name": "Ice Cavern Hall Pot 1"
+    },
+    {
+      "name": "Ice Cavern Hall Pot 2"
+    },
+    {
+      "name": "Ice Cavern Spinning Blade Pot 1"
+    },
+    {
+      "name": "Ice Cavern Spinning Blade Pot 2"
+    },
+    {
+      "name": "Ice Cavern Spinning Blade Pot 3"
+    },
+    {
+      "name": "Ice Cavern Spinning Blade Flying Pot"
+    },
+    {
+      "name": "Ice Cavern Near End Pot 1"
+    },
+    {
+      "name": "Ice Cavern Near End Pot 2"
+    },
+    {
+      "name": "Ice Cavern Frozen Pot"
+    },
+    {
+      "name": "Ice Cavern MQ First Hall Pot"
+    },
+    {
+      "name": "Ice Cavern MQ Tektite Room Pot 1"
+    },
+    {
+      "name": "Ice Cavern MQ Tektite Room Pot 2"
+    },
+    {
+      "name": "Ice Cavern MQ Center Room Pot 1"
+    },
+    {
+      "name": "Ice Cavern MQ Center Room Pot 2"
+    },
+    {
+      "name": "Ice Cavern MQ Near End Pot"
+    },
+    {
+      "name": "Ice Cavern MQ Compass Room Pot 1"
+    },
+    {
+      "name": "Ice Cavern MQ Compass Room Pot 2"
+    },
+    {
+      "name": "Gerudo Training Ground Beamos Recovery Heart 1"
+    },
+    {
+      "name": "Gerudo Training Ground Beamos Recovery Heart 2"
+    },
+    {
+      "name": "Gerudo Training Ground MQ Lobby Left Pot 1"
+    },
+    {
+      "name": "Gerudo Training Ground MQ Lobby Left Pot 2"
+    },
+    {
+      "name": "Gerudo Training Ground MQ Lobby Right Pot 1"
+    },
+    {
+      "name": "Gerudo Training Ground MQ Lobby Right Pot 2"
+    },
+    {
+      "name": "Gerudo Training Ground MQ Maze Crate"
+    },
+    {
+      "name": "Ganons Castle Shadow Trial Recovery Heart 1"
+    },
+    {
+      "name": "Ganons Castle Shadow Trial Recovery Heart 2"
+    },
+    {
+      "name": "Ganons Castle Shadow Trial Recovery Heart 3"
+    },
+    {
+      "name": "Ganons Castle Fire Trial Recovery Heart"
+    },
+    {
+      "name": "Ganons Castle Spirit Trial Recovery Heart"
+    },
+    {
+      "name": "Ganons Castle Water Trial Pot 1"
+    },
+    {
+      "name": "Ganons Castle Water Trial Pot 2"
+    },
+    {
+      "name": "Ganons Castle Forest Trial Pot 1"
+    },
+    {
+      "name": "Ganons Castle Forest Trial Pot 2"
+    },
+    {
+      "name": "Ganons Castle Light Trial Boulder Pot"
+    },
+    {
+      "name": "Ganons Castle Light Trial Pot 1"
+    },
+    {
+      "name": "Ganons Castle Light Trial Pot 2"
+    },
+    {
+      "name": "Ganons Castle Shadow Trial Like Like Pot 1"
+    },
+    {
+      "name": "Ganons Castle Shadow Trial Like Like Pot 2"
+    },
+    {
+      "name": "Ganons Castle Shadow Trial Pot 1"
+    },
+    {
+      "name": "Ganons Castle Shadow Trial Pot 2"
+    },
+    {
+      "name": "Ganons Castle Fire Trial Pot 1"
+    },
+    {
+      "name": "Ganons Castle Fire Trial Pot 2"
+    },
+    {
+      "name": "Ganons Castle Spirit Trial Pot 1"
+    },
+    {
+      "name": "Ganons Castle Spirit Trial Pot 2"
+    },
+    {
+      "name": "Ganons Castle MQ Water Trial Recovery Heart"
+    },
+    {
+      "name": "Ganons Castle MQ Light Trial Recovery Heart 1"
+    },
+    {
+      "name": "Ganons Castle MQ Light Trial Recovery Heart 2"
+    },
+    {
+      "name": "Ganons Castle MQ Water Trial Pot 1"
+    },
+    {
+      "name": "Ganons Castle MQ Water Trial Pot 2"
+    },
+    {
+      "name": "Ganons Castle MQ Forest Trial Pot 1"
+    },
+    {
+      "name": "Ganons Castle MQ Forest Trial Pot 2"
+    },
+    {
+      "name": "Ganons Castle MQ Light Trial Pot 1"
+    },
+    {
+      "name": "Ganons Castle MQ Light Trial Pot 2"
+    },
+    {
+      "name": "Ganons Castle MQ Shadow Trial Pot 1"
+    },
+    {
+      "name": "Ganons Castle MQ Shadow Trial Pot 2"
+    },
+    {
+      "name": "Ganons Castle MQ Fire Trial Pot 1"
+    },
+    {
+      "name": "Ganons Castle MQ Fire Trial Pot 2"
+    },
+    {
+      "name": "Ganons Castle MQ Spirit Trial Pot 1"
+    },
+    {
+      "name": "Ganons Castle MQ Spirit Trial Pot 2"
+    },
+    {
+      "name": "Ganons Tower Pot 1"
+    },
+    {
+      "name": "Ganons Tower Pot 2"
+    },
+    {
+      "name": "Ganons Tower Pot 3"
+    },
+    {
+      "name": "Ganons Tower Pot 4"
+    },
+    {
+      "name": "Ganons Tower Pot 5"
+    },
+    {
+      "name": "Ganons Tower Pot 6"
+    },
+    {
+      "name": "Ganons Tower Pot 7"
+    },
+    {
+      "name": "Ganons Tower Pot 8"
+    },
+    {
+      "name": "Ganons Tower Pot 9"
+    },
+    {
+      "name": "Ganons Tower Pot 10"
+    },
+    {
+      "name": "Ganons Tower Pot 11"
+    },
+    {
+      "name": "Ganons Tower Pot 12"
+    },
+    {
+      "name": "Ganons Tower Pot 13"
+    },
+    {
+      "name": "Ganons Tower Pot 14"
     }
   ],
   "readableName": "The Legend of Zelda: Ocarina of Time",

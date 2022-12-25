@@ -217,7 +217,7 @@
     {
       "name": "room_gen",
       "description": "Whether to generate rooms with random terrain.",
-      "readableName": "room gen",
+      "readableName": "Room generation",
       "type": "toggle",
       "default": false
     }

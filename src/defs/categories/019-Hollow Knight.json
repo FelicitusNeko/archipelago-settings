@@ -498,7 +498,11 @@
       "readableName": "Random Charm Costs",
       "low": -2,
       "type": "range",
-      "default": null
+      "default": -1,
+      "aliases": {
+        "vanilla": -1,
+        "shuffle": -2
+      }
     },
     {
       "name": "PlandoCharmCosts",

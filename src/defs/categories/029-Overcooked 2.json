@@ -1,7 +1,6 @@
 {
   "category": "Overcooked! 2",
   "index": 29,
-  "defver": 2,
   "settings": [
     {
       "name": "shuffle_level_order",
@@ -24,18 +23,18 @@
       "values": [
         {
           "name": "original",
-          "readableName": "Original",
-          "description": "Prep Levels may appear."
+          "description": "Prep Levels may appear.",
+          "readableName": "Original"
         },
         {
           "name": "excluded",
-          "readableName": "Excluded",
-          "description": "Prep Levels are excluded from the pool during level shuffling."
+          "description": "Prep Levels are excluded from the pool during level shuffling.",
+          "readableName": "Excluded"
         },
         {
           "name": "all_you_can_eat",
-          "readableName": "All You Can Eat",
-          "description": "Prep Levels may appear, but the timer automatically starts. The star score requirements are also adjusted to use the All You Can Eat World Record (if it exists)."
+          "description": "Prep Levels may appear, but the timer automatically starts. The star score requirements are also adjusted to use the All You Can Eat World Record (if it exists).",
+          "readableName": "All You Can Eat"
         }
       ],
       "type": "choice",
@@ -63,8 +62,15 @@
       "default": true
     },
     {
+      "name": "short_horde_levels",
+      "description": "Modifies horde levels to contain roughly ⅓ fewer waves than in the original game.",
+      "readableName": "Short Horde levels",
+      "type": "toggle",
+      "default": true
+    },
+    {
       "name": "always_preserve_cooking_progress",
-      "description": "Modifies the game to behave more like AYCE, where adding an item to an in-progress container doesn't reset the entire progress bar.",
+      "description": "Modifies the game to behave more like All You Can Eat, where adding an item to an in-progress container doesn't reset the entire progress bar.",
       "readableName": "Always preserve cooking progress",
       "type": "toggle",
       "default": true
@@ -102,6 +108,7 @@
       "default": 45
     }
   ],
+  "defver": 2,
   "items": [
     {
       "name": "Wood"

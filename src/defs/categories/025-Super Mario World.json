@@ -9,7 +9,7 @@
     {
       "name": "goal",
       "description": "Determines the goal of the seed.",
-      "readableName": "goal",
+      "readableName": "Goal",
       "values": [
         {
           "name": "bowser",
@@ -145,7 +145,7 @@
     {
       "name": "ice_trap_weight",
       "description": "Likelihood of a receiving a trap which causes the level to become slippery.",
-      "readableName": "ice trap weight",
+      "readableName": "Ice trap weight",
       "values": [
         {
           "name": "none",
@@ -170,7 +170,7 @@
     {
       "name": "stun_trap_weight",
       "description": "Likelihood of a receiving a trap which briefly stuns Mario.",
-      "readableName": "stun trap weight",
+      "readableName": "Stun trap weight",
       "values": [
         {
           "name": "none",
@@ -195,7 +195,7 @@
     {
       "name": "literature_trap_weight",
       "description": "Likelihood of a receiving a trap which causes the player to read literature.",
-      "readableName": "literature trap weight",
+      "readableName": "Literature trap weight",
       "values": [
         {
           "name": "none",
@@ -220,7 +220,7 @@
     {
       "name": "autosave",
       "description": "Whether a save prompt will appear after every level.",
-      "readableName": "autosave",
+      "readableName": "Autosave",
       "type": "toggle",
       "default": true
     },
@@ -255,7 +255,7 @@
     {
       "name": "mario_palette",
       "description": "Determines Mario's color palette.",
-      "readableName": "mario palette",
+      "readableName": "Mario palette",
       "values": [
         {
           "name": "mario",
@@ -303,7 +303,7 @@
     {
       "name": "background_palette_shuffle",
       "description": "Whether to shuffle level background palettes.",
-      "readableName": "background palette shuffle",
+      "readableName": "Background palette shuffle",
       "type": "toggle",
       "default": false
     },
@@ -311,7 +311,7 @@
       "name": "starting_life_count",
       "description": "How many extra lives to start the game with.",
       "high": 99,
-      "readableName": "starting life count",
+      "readableName": "Starting life count",
       "low": 1,
       "type": "range",
       "default": 5

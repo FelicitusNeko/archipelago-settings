@@ -56,7 +56,7 @@
         },
         {
           "name": "both",
-          "readableName": "both"
+          "readableName": "Both"
         }
       ],
       "type": "choice",

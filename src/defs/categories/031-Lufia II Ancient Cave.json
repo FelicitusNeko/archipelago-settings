@@ -1,0 +1,1924 @@
+{
+  "category": "Lufia II Ancient Cave",
+  "index": 31,
+  "settings": [
+    {
+      "name": "blue_chest_chance",
+      "description": "The chance of a chest being a blue chest.\n\nIt is given in units of 1/256, i.e., a value of 25 corresponds to 25/256 ~ 9.77%. If you increase the blue chest chance, then the chance of finding consumables is decreased in return. The chance of finding red chest equipment or spells is unaffected. *Vanilla is 5.*",
+      "high": 75,
+      "readableName": "Blue chest chance",
+      "low": 5,
+      "type": "range",
+      "default": 25
+    },
+    {
+      "name": "blue_chest_count",
+      "description": "The number of blue chest items that will be in your item pool.\n\nThe number of blue chests in your world that count as multiworld location checks will be equal this amount plus one more for each party member or capsule monster if you have shuffle_party_members/shuffle_capsule_monsters enabled. (You will still encounter blue chests in your world after all the multiworld location checks have been exhausted, but these chests will then generate items for yourself only.)",
+      "high": 75,
+      "readableName": "Blue chest count",
+      "low": 10,
+      "type": "range",
+      "default": 25
+    },
+    {
+      "name": "boss",
+      "description": "Determines which boss to fight on the final floor.",
+      "readableName": "Final Floor Boss",
+      "values": [
+        {
+          "name": "lizard_man",
+          "readableName": "Lizard Man"
+        },
+        {
+          "name": "big_catfish",
+          "readableName": "Big Catfish"
+        },
+        {
+          "name": "regal_goblin",
+          "readableName": "Regal Goblin"
+        },
+        {
+          "name": "follower_x2",
+          "readableName": "Follower ×2"
+        },
+        {
+          "name": "camu",
+          "readableName": "Camu"
+        },
+        {
+          "name": "tarantula",
+          "readableName": "Tarantula"
+        },
+        {
+          "name": "pierre",
+          "readableName": "Pierre"
+        },
+        {
+          "name": "daniele",
+          "readableName": "Daniele"
+        },
+        {
+          "name": "gades_a",
+          "readableName": "Gades A"
+        },
+        {
+          "name": "mummy_x4",
+          "readableName": "Mummy ×4"
+        },
+        {
+          "name": "troll_x3",
+          "readableName": "Troll ×3"
+        },
+        {
+          "name": "gades_b",
+          "readableName": "Gades B"
+        },
+        {
+          "name": "idura_a",
+          "readableName": "Idura A"
+        },
+        {
+          "name": "lion_x2",
+          "readableName": "Lion ×2"
+        },
+        {
+          "name": "idura_b",
+          "readableName": "Idura B"
+        },
+        {
+          "name": "idura_c",
+          "readableName": "Idura C"
+        },
+        {
+          "name": "rogue_flower",
+          "readableName": "Rogue Flower"
+        },
+        {
+          "name": "soldier_x4",
+          "readableName": "Soldier ×4"
+        },
+        {
+          "name": "gargoyle_x4",
+          "readableName": "Gargoyle ×4"
+        },
+        {
+          "name": "venge_ghost",
+          "readableName": "Venge Ghost"
+        },
+        {
+          "name": "white_dragon_x3",
+          "readableName": "White Dragon ×3"
+        },
+        {
+          "name": "fire_dragon",
+          "readableName": "Fire Dragon"
+        },
+        {
+          "name": "ghost_ship",
+          "readableName": "Ghost Ship"
+        },
+        {
+          "name": "tank",
+          "readableName": "Tank"
+        },
+        {
+          "name": "gades_c",
+          "readableName": "Gades C"
+        },
+        {
+          "name": "amon",
+          "readableName": "Amon"
+        },
+        {
+          "name": "erim",
+          "readableName": "Erim"
+        },
+        {
+          "name": "daos",
+          "readableName": "Daos"
+        },
+        {
+          "name": "egg_dragon",
+          "readableName": "Egg Dragon"
+        },
+        {
+          "name": "master",
+          "readableName": "Master (vanilla)"
+        },
+        {
+          "name": "random-middle",
+          "readableName": "Random middling",
+          "description": "Select a random regular boss, from Idura A to Gargoyle ×4"
+        },
+        {
+          "name": "random-high",
+          "readableName": "Random high-end",
+          "description": "Select a random regular boss, from Venge Ghost to Tank"
+        },
+        {
+          "name": "random-sinistral",
+          "readableName": "Random Sinistral"
+        },
+        {
+          "name": "random-low",
+          "readableName": "Random low-end",
+          "description": "Select a random regular boss, from Lizard Man to Troll ×3"
+        }
+      ],
+      "type": "choice",
+      "default": "master"
+    },
+    {
+      "name": "capsule_cravings_jp_style",
+      "description": "Make capsule monster cravings behave as in the Japanese version.\n\nIn the US version, the data that determines which items a capsule monster can request is a mess. It allows only for a very limited selection of items to be requested, and the quality of the selected item is almost always either too low or too high (compared to the capsule monsters current quality preference). This means that, if fed, the requested item will either be rejected by the capsule monster or lead to an unreasonable increase of the quality preference, making further feeding more difficult. This setting provides a fix for the bug described above.\n If enabled, the capsule monster feeding behavior will be changed to behave analogous to the JP (and EU) version. This means that requests become more varied, while the requested item will be guaranteed to be of the same quality as the capsule monsters current preference. Thus, it can no longer happen that the capsule monster dislikes eating the very item it just requested.",
+      "readableName": "Capsule cravings from Japanese version",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "capsule_starting_form",
+      "description": "The starting form of your capsule monsters.",
+      "high": 5,
+      "readableName": "Capsule starting form",
+      "low": 1,
+      "type": "range",
+      "default": 1,
+      "aliases": {
+        "default": 1,
+        "m": 5
+      }
+    },
+    {
+      "name": "capsule_starting_level",
+      "description": "The starting level of your capsule monsters. *0 means same as party starting level.*",
+      "high": 99,
+      "readableName": "Capsule starting level",
+      "low": 0,
+      "type": "range",
+      "default": 1,
+      "aliases": {
+        "default": 1,
+        "party_starting_level": 0
+      }
+    },
+    {
+      "name": "crowded_floor_chance",
+      "description": "The chance of a floor being a crowded floor.\n\nIt is given in units of 1/256, i.e., a value of 16 corresponds to 16/256 = 6.25%. A crowded floor is a floor where most of the chests are grouped in one room together with many enemies.",
+      "high": 255,
+      "readableName": "Crowded Floor chance",
+      "low": 0,
+      "type": "range",
+      "default": 16
+    },
+    {
+      "type": "deathlink"
+    },
+    {
+      "name": "default_capsule",
+      "description": "Preselect the active capsule monster.",
+      "readableName": "Default capsule",
+      "values": [
+        {
+          "name": "jelze",
+          "readableName": "Jelze"
+        },
+        {
+          "name": "flash",
+          "readableName": "Flash"
+        },
+        {
+          "name": "gusto",
+          "readableName": "Gusto"
+        },
+        {
+          "name": "zeppy",
+          "readableName": "Zeppy"
+        },
+        {
+          "name": "darbi",
+          "readableName": "Darbi"
+        },
+        {
+          "name": "sully",
+          "readableName": "Sully"
+        },
+        {
+          "name": "blaze",
+          "readableName": "Blaze"
+        }
+      ],
+      "type": "choice",
+      "default": "jelze",
+      "dependsOn": {
+        "shuffle_capsule_monsters": [false]
+      }
+    },
+    {
+      "name": "default_party",
+      "description": "Preselect the party lineup. Can be set to any valid combination of up to 4 party member initials (which can be done manually in your YAML).",
+      "readableName": "Default party",
+      "values": [
+        {
+          "name": "random-2p",
+          "readableName": "Two random characters"
+        },
+        {
+          "name": "random-3p",
+          "readableName": "Three random characters"
+        },
+        {
+          "name": "random-4p",
+          "readableName": "Four random characters"
+        },
+        {
+          "name": "m",
+          "readableName": "Only Maxim"
+        },
+        {
+          "name": "dgma",
+          "readableName": "Dekar, Guy, Maxim, and Arty"
+        },
+        {
+          "name": "mstl",
+          "readableName": "Maxim, Selan, Tia, and Lexis"
+        }
+      ],
+      "type": "choice",
+      "default": "m",
+      "dependsOn": {
+        "shuffle_party_members": [false]
+      }
+    },
+    {
+      "name": "final_floor",
+      "description": "The final floor, where the boss resides.",
+      "high": 99,
+      "readableName": "Final floor",
+      "low": 2,
+      "type": "range",
+      "default": 99
+    },
+    {
+      "name": "gear_variety_after_b9",
+      "description": "Fixes a bug that prevents various gear from appearing after B9.\n\nDue to an overflow bug in the game, the distribution of red chest gear is impaired after B9. Starting with B10, the number of items available from red chests is severely limited, meaning that red chests will no longer contain any shields, headgear, rings, or jewels (and the selection of body armor is reduced as well). This setting provides a fix for the bug described above.\nIf enabled, red chests beyond B9 will continue to produce shields, headgear, rings, and jewels as intended, while the odds of finding body armor in red chests are decreased as a result. The distributions of red chest weapons, spells, and consumables as well as blue chests are unaffected.",
+      "readableName": "Gear variety after B9F",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "goal",
+      "description": "The objective you have to fulfill in order to complete the game.",
+      "readableName": "Goal",
+      "values": [
+        {
+          "name": "boss",
+          "readableName": "Boss",
+          "description": "Defeat the boss on the final floor."
+        },
+        {
+          "name": "iris_treasure_hunt",
+          "readableName": "Iris treasure hunt",
+          "description": "Gather the required number of Iris treasures and leave the cave."
+        },
+        {
+          "name": "boss_iris_treasure_hunt",
+          "readableName": "Boss Iris treasure hunt",
+          "description": "Gather the required number of Iris treasures and beat the final floor boss, then leave."
+        },
+        {
+          "name": "final_floor",
+          "readableName": "Final floor",
+          "description": "Merely reach the final floor."
+        }
+      ],
+      "type": "choice",
+      "default": "boss"
+    },
+    {
+      "name": "healing_floor_chance",
+      "description": "The chance of a floor having a healing tile hidden under a bush. It is given in units of 1/256, i.e., a value of 16 corresponds to 16/256 = 6.25%.",
+      "high": 255,
+      "readableName": "Healing floor chance",
+      "low": 0,
+      "type": "range",
+      "default": 16
+    },
+    {
+      "name": "initial_floor",
+      "description": "The initial floor, where you begin your journey. Maximum is final floor - 1.",
+      "high": 98,
+      "readableName": "Initial floor",
+      "low": 1,
+      "type": "range",
+      "default": 1
+    },
+    {
+      "name": "iris_floor_chance",
+      "description": "The chance of a floor being able to generate an Iris treasure.\n\nIt is given in units of 1/256, i.e., a value of 5 corresponds to 5/256 ~ 1.95%. The true chance of a floor holding an Iris treasure you need is usually lower than the chance specified here, e.g., if you have already found 8 of 9 Iris items then the chance of generating the last one is only ⅑ of this value.",
+      "high": 255,
+      "readableName": "Iris floor chance",
+      "low": 5,
+      "type": "range",
+      "default": 5
+    },
+    {
+      "name": "iris_treasures_required",
+      "description": "The number of Iris treasures required to complete the goal.",
+      "high": 9,
+      "readableName": "Iris treasures required",
+      "low": 1,
+      "type": "range",
+      "default": 9,
+      "dependsOn": {
+        "goal": ["iris_treasure_hunt", "boss_iris_treasure_hunt"]
+      }
+    },
+    {
+      "name": "master_hp",
+      "description": "The number of hit points of the Master. A setting of 0 will scale the HP based on the location of the final floor.",
+      "high": 9980,
+      "readableName": "Master HP",
+      "low": 0,
+      "step": 10,
+      "type": "range",
+      "default": 9980,
+      "aliases": {
+        "default": 9980,
+        "scale": 0
+      }
+    },
+    {
+      "name": "party_starting_level",
+      "description": "The starting level of your party members.",
+      "high": 99,
+      "readableName": "Party starting level",
+      "low": 1,
+      "type": "range",
+      "default": 1
+    },
+    {
+      "name": "run_speed",
+      "description": "Modifies the game to allow you to move faster than normal when pressing the Y button.",
+      "readableName": "Run speed",
+      "values": [
+        {
+          "name": "disabled",
+          "readableName": "Disabled"
+        },
+        {
+          "name": "double",
+          "readableName": "Double"
+        },
+        {
+          "name": "triple",
+          "readableName": "Triple"
+        },
+        {
+          "name": "quadruple",
+          "readableName": "Quadruple"
+        }
+      ],
+      "type": "choice",
+      "default": "disabled"
+    },
+    {
+      "name": "shuffle_capsule_monsters",
+      "description": "Shuffle the capsule monsters into the multiworld.",
+      "readableName": "Shuffle capsule monsters",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "shuffle_party_members",
+      "description": "Shuffle the party members into the multiworld.",
+      "readableName": "Shuffle party members",
+      "type": "toggle",
+      "default": false
+    }
+  ],
+  "defver": 2,
+  "items": [
+    {
+      "name": "Charred newt"
+    },
+    {
+      "name": "Potion"
+    },
+    {
+      "name": "Hi-Potion"
+    },
+    {
+      "name": "Ex-Potion"
+    },
+    {
+      "name": "Magic jar"
+    },
+    {
+      "name": "Hi-Magic"
+    },
+    {
+      "name": "Ex-Magic"
+    },
+    {
+      "name": "Regain"
+    },
+    {
+      "name": "Miracle"
+    },
+    {
+      "name": "Antidote"
+    },
+    {
+      "name": "Awake"
+    },
+    {
+      "name": "Shriek"
+    },
+    {
+      "name": "Mystery pin"
+    },
+    {
+      "name": "Power gourd"
+    },
+    {
+      "name": "Mind gourd"
+    },
+    {
+      "name": "Magic guard"
+    },
+    {
+      "name": "Life potion"
+    },
+    {
+      "name": "Spell potion"
+    },
+    {
+      "name": "Power potion"
+    },
+    {
+      "name": "Speed potion"
+    },
+    {
+      "name": "Mind potion"
+    },
+    {
+      "name": "Brave"
+    },
+    {
+      "name": "Sour cider"
+    },
+    {
+      "name": "Sleep ball"
+    },
+    {
+      "name": "Confuse ball"
+    },
+    {
+      "name": "Freeze ball"
+    },
+    {
+      "name": "Smoke ball"
+    },
+    {
+      "name": "Ice ball"
+    },
+    {
+      "name": "Fire ball"
+    },
+    {
+      "name": "Terror ball"
+    },
+    {
+      "name": "Boomerang"
+    },
+    {
+      "name": "Big boomer"
+    },
+    {
+      "name": "Ex-boomer"
+    },
+    {
+      "name": "Curselifter"
+    },
+    {
+      "name": "Secret fruit"
+    },
+    {
+      "name": "Holy fruit"
+    },
+    {
+      "name": "Breeze fruit"
+    },
+    {
+      "name": "Charm fruit"
+    },
+    {
+      "name": "Dark fruit"
+    },
+    {
+      "name": "Earth fruit"
+    },
+    {
+      "name": "Flame fruit"
+    },
+    {
+      "name": "Magic fruit"
+    },
+    {
+      "name": "Frypan"
+    },
+    {
+      "name": "Knife"
+    },
+    {
+      "name": "Small knife"
+    },
+    {
+      "name": "Rapier"
+    },
+    {
+      "name": "Battle knife"
+    },
+    {
+      "name": "Dagger"
+    },
+    {
+      "name": "Insect crush"
+    },
+    {
+      "name": "Long knife"
+    },
+    {
+      "name": "Short sword"
+    },
+    {
+      "name": "Light knife"
+    },
+    {
+      "name": "Kukri"
+    },
+    {
+      "name": "Gladius"
+    },
+    {
+      "name": "Cold rapier"
+    },
+    {
+      "name": "Scimitar"
+    },
+    {
+      "name": "Deadly sword"
+    },
+    {
+      "name": "SuhrCustom11"
+    },
+    {
+      "name": "Bronze sword"
+    },
+    {
+      "name": "Fire dagger"
+    },
+    {
+      "name": "War rapier"
+    },
+    {
+      "name": "Long sword"
+    },
+    {
+      "name": "Beserk blade"
+    },
+    {
+      "name": "Multi sword"
+    },
+    {
+      "name": "Rockbreaker"
+    },
+    {
+      "name": "Broadsword"
+    },
+    {
+      "name": "Estok"
+    },
+    {
+      "name": "Silvo rapier"
+    },
+    {
+      "name": "Burn sword"
+    },
+    {
+      "name": "Dekar blade"
+    },
+    {
+      "name": "Crazy blade"
+    },
+    {
+      "name": "Deadly sword (fake)"
+    },
+    {
+      "name": "Luck rapier"
+    },
+    {
+      "name": "Aqua sword"
+    },
+    {
+      "name": "Red saber"
+    },
+    {
+      "name": "Lucky blade"
+    },
+    {
+      "name": "Mist rapier"
+    },
+    {
+      "name": "Boom sword"
+    },
+    {
+      "name": "Freeze sword"
+    },
+    {
+      "name": "Silver sword"
+    },
+    {
+      "name": "Flying blow"
+    },
+    {
+      "name": "Super sword"
+    },
+    {
+      "name": "Buster sword"
+    },
+    {
+      "name": "Rune rapier"
+    },
+    {
+      "name": "Old sword"
+    },
+    {
+      "name": "Lizard blow"
+    },
+    {
+      "name": "Zirco sword"
+    },
+    {
+      "name": "Myth blade"
+    },
+    {
+      "name": "Franshiska"
+    },
+    {
+      "name": "Thunder ax"
+    },
+    {
+      "name": "Hand ax"
+    },
+    {
+      "name": "Bronze ax"
+    },
+    {
+      "name": "Rainy ax"
+    },
+    {
+      "name": "Great ax"
+    },
+    {
+      "name": "Zirco ax"
+    },
+    {
+      "name": "Mace"
+    },
+    {
+      "name": "Rod"
+    },
+    {
+      "name": "Staff"
+    },
+    {
+      "name": "Deadly rod"
+    },
+    {
+      "name": "Sleep rod"
+    },
+    {
+      "name": "Long staff"
+    },
+    {
+      "name": "Holy staff"
+    },
+    {
+      "name": "Morning star"
+    },
+    {
+      "name": "Pounder rod"
+    },
+    {
+      "name": "Crystal wand"
+    },
+    {
+      "name": "Silver rod"
+    },
+    {
+      "name": "Zirco rod"
+    },
+    {
+      "name": "Zirco flail"
+    },
+    {
+      "name": "Whip"
+    },
+    {
+      "name": "Wire"
+    },
+    {
+      "name": "Chain"
+    },
+    {
+      "name": "Aqua whip"
+    },
+    {
+      "name": "Cutter whip"
+    },
+    {
+      "name": "Royal whip"
+    },
+    {
+      "name": "Holy whip"
+    },
+    {
+      "name": "Zirco whip"
+    },
+    {
+      "name": "Fatal pick"
+    },
+    {
+      "name": "Spear"
+    },
+    {
+      "name": "Trident"
+    },
+    {
+      "name": "Halberd"
+    },
+    {
+      "name": "Heavy lance"
+    },
+    {
+      "name": "Vice pliers"
+    },
+    {
+      "name": "Coma hit"
+    },
+    {
+      "name": "Figgoru"
+    },
+    {
+      "name": "Superdriver"
+    },
+    {
+      "name": "Stun gun"
+    },
+    {
+      "name": "Battledriver"
+    },
+    {
+      "name": "Launcher"
+    },
+    {
+      "name": "Freeze bow"
+    },
+    {
+      "name": "Cursed bow"
+    },
+    {
+      "name": "Apron"
+    },
+    {
+      "name": "Dress"
+    },
+    {
+      "name": "Cloth"
+    },
+    {
+      "name": "Lab-coat"
+    },
+    {
+      "name": "Hide armor"
+    },
+    {
+      "name": "Frock"
+    },
+    {
+      "name": "Robe"
+    },
+    {
+      "name": "Cloth armor"
+    },
+    {
+      "name": "Coat"
+    },
+    {
+      "name": "Tough hide"
+    },
+    {
+      "name": "Light dress"
+    },
+    {
+      "name": "Light armor"
+    },
+    {
+      "name": "Camu armor"
+    },
+    {
+      "name": "Baggy"
+    },
+    {
+      "name": "Tight dress"
+    },
+    {
+      "name": "Chainmail"
+    },
+    {
+      "name": "Holy wings"
+    },
+    {
+      "name": "Ironmail"
+    },
+    {
+      "name": "Toga"
+    },
+    {
+      "name": "Chain armor"
+    },
+    {
+      "name": "Thick cloth"
+    },
+    {
+      "name": "Stone plate"
+    },
+    {
+      "name": "Long robe"
+    },
+    {
+      "name": "Plated cloth"
+    },
+    {
+      "name": "Iron plate"
+    },
+    {
+      "name": "Metal mail"
+    },
+    {
+      "name": "Silk toga"
+    },
+    {
+      "name": "Silver armor"
+    },
+    {
+      "name": "Light jacket"
+    },
+    {
+      "name": "Metal coat"
+    },
+    {
+      "name": "Silver mail"
+    },
+    {
+      "name": "Power jacket"
+    },
+    {
+      "name": "Quilted silk"
+    },
+    {
+      "name": "Metal armor"
+    },
+    {
+      "name": "Power cape"
+    },
+    {
+      "name": "Magic bikini"
+    },
+    {
+      "name": "Silver robe"
+    },
+    {
+      "name": "Evening gown"
+    },
+    {
+      "name": "Plate armor"
+    },
+    {
+      "name": "Plati plate"
+    },
+    {
+      "name": "Silk robe"
+    },
+    {
+      "name": "Revive armor"
+    },
+    {
+      "name": "Crystal mail"
+    },
+    {
+      "name": "Crystal robe"
+    },
+    {
+      "name": "Heal armor"
+    },
+    {
+      "name": "Metal jacket"
+    },
+    {
+      "name": "Deadly armor"
+    },
+    {
+      "name": "Eron dress"
+    },
+    {
+      "name": "Bright armor"
+    },
+    {
+      "name": "Bright cloth"
+    },
+    {
+      "name": "Power robe"
+    },
+    {
+      "name": "Magic scale"
+    },
+    {
+      "name": "Ghostclothes"
+    },
+    {
+      "name": "Royal dress"
+    },
+    {
+      "name": "Full mail"
+    },
+    {
+      "name": "Old armor"
+    },
+    {
+      "name": "Zircon plate"
+    },
+    {
+      "name": "Zircon armor"
+    },
+    {
+      "name": "Chop board"
+    },
+    {
+      "name": "Small shield"
+    },
+    {
+      "name": "Hide shield"
+    },
+    {
+      "name": "Buckler"
+    },
+    {
+      "name": "Mini shield"
+    },
+    {
+      "name": "Wood shield"
+    },
+    {
+      "name": "Bracelet"
+    },
+    {
+      "name": "Power brace"
+    },
+    {
+      "name": "Kite shield"
+    },
+    {
+      "name": "Tough gloves"
+    },
+    {
+      "name": "Brone shield"
+    },
+    {
+      "name": "Anger brace"
+    },
+    {
+      "name": "Block shield"
+    },
+    {
+      "name": "Tecto gloves"
+    },
+    {
+      "name": "Round shield"
+    },
+    {
+      "name": "Pearl brace"
+    },
+    {
+      "name": "Fayza shield"
+    },
+    {
+      "name": "Big shield"
+    },
+    {
+      "name": "Tall shield"
+    },
+    {
+      "name": "Silvo shield"
+    },
+    {
+      "name": "Spike shield"
+    },
+    {
+      "name": "eval.object.Object[:Bee Our Guest,:Cover Me With Diamonds,:It Spreads,:Adventuring Time,:Eye Spy,:Overpowered,:Arbalistic,:Beaconator,:Hired Help,:Is It a Plane?,:Bukkit Bukkit,:Husbandry,:Minecraft,:Bake Bread,:Is It a Balloon?,:Cover Me in Debris,:A Seedy Place,:Light as a Rabbit,:Feels like home,:Free the End,:Hot Stuff,:Ol' Betsy,:Enchanter,:Isn't It Iron Pick,:A Terrible Fortress,:A Throwaway Joke,:Great View From Up Here,:A Balanced Diet,:Ice Bucket Challenge,:Overkill,:Getting Wood,:How Did We Get Here?,:Birthday Song,:A Complete Catalogue,:Nether,:Hero of the Village,:Diamonds!,:Bring Home the Beacon,:Fishy Business,:Into Fire,:Hot Tourist Destinations,:Hot Topic,:Hidden in the Depths,:Is It a Bird?,:Caves & Cliffs,:Best Friends Forever,:Country Lode, Take Me Home,:Glow and Behold!,:Not Today, Thank You,:Monster Hunter,:Not Quite \"Nine\" Lives,:Postmortal,:Oh Shiny,:Bullseye,:Adventure,:Acquire Hardware,:A Furious Cocktail,:Local Brewery,:Getting an Upgrade,:Monsters Hunted,:Cow Tipper,:On a Rail,:Librarian]"
+    },
+    {
+      "name": "Mage shield"
+    },
+    {
+      "name": "Tuff buckler"
+    },
+    {
+      "name": "Tect buckler"
+    },
+    {
+      "name": "Gold gloves"
+    },
+    {
+      "name": "Gold shield"
+    },
+    {
+      "name": "Plati gloves"
+    },
+    {
+      "name": "Plati shield"
+    },
+    {
+      "name": "Gauntlet"
+    },
+    {
+      "name": "Rune gloves"
+    },
+    {
+      "name": "Holy shield"
+    },
+    {
+      "name": "Zirco gloves"
+    },
+    {
+      "name": "Zirco shield"
+    },
+    {
+      "name": "Old shield"
+    },
+    {
+      "name": "Pot"
+    },
+    {
+      "name": "Beret"
+    },
+    {
+      "name": "Cap"
+    },
+    {
+      "name": "Cloth helmet"
+    },
+    {
+      "name": "Hairband"
+    },
+    {
+      "name": "Headband"
+    },
+    {
+      "name": "Hide helmet"
+    },
+    {
+      "name": "Jet helm"
+    },
+    {
+      "name": "Red beret"
+    },
+    {
+      "name": "Glass cap"
+    },
+    {
+      "name": "Wood helmet"
+    },
+    {
+      "name": "Blue beret"
+    },
+    {
+      "name": "Brone helmet"
+    },
+    {
+      "name": "Stone helmet"
+    },
+    {
+      "name": "Cloche"
+    },
+    {
+      "name": "Fury helmet"
+    },
+    {
+      "name": "Iron helmet"
+    },
+    {
+      "name": "Tight helmet"
+    },
+    {
+      "name": "Turban"
+    },
+    {
+      "name": "Plate cap"
+    },
+    {
+      "name": "Roomy helmet"
+    },
+    {
+      "name": "Tight turban"
+    },
+    {
+      "name": "Glass cloche"
+    },
+    {
+      "name": "Plate helmet"
+    },
+    {
+      "name": "Rock helmet"
+    },
+    {
+      "name": "Jute helmet"
+    },
+    {
+      "name": "Shade hat"
+    },
+    {
+      "name": "Metal cloche"
+    },
+    {
+      "name": "SilverHelmet"
+    },
+    {
+      "name": "Fury ribbon"
+    },
+    {
+      "name": "Silver hat"
+    },
+    {
+      "name": "Eron hat"
+    },
+    {
+      "name": "Circlet"
+    },
+    {
+      "name": "Golden helm"
+    },
+    {
+      "name": "Gold band"
+    },
+    {
+      "name": "Plati band"
+    },
+    {
+      "name": "Plati helm"
+    },
+    {
+      "name": "Crysto beret"
+    },
+    {
+      "name": "Crysto helm"
+    },
+    {
+      "name": "Holy cap"
+    },
+    {
+      "name": "Safety hat"
+    },
+    {
+      "name": "Zirco band"
+    },
+    {
+      "name": "Zirco helmet"
+    },
+    {
+      "name": "Old helmet"
+    },
+    {
+      "name": "Brill helm"
+    },
+    {
+      "name": "Ear jewel"
+    },
+    {
+      "name": "Glass brace"
+    },
+    {
+      "name": "Glass ring"
+    },
+    {
+      "name": "Speedy ring"
+    },
+    {
+      "name": "Power ring"
+    },
+    {
+      "name": "Muscle ring"
+    },
+    {
+      "name": "Protect ring"
+    },
+    {
+      "name": "Mind ring"
+    },
+    {
+      "name": "Witch ring"
+    },
+    {
+      "name": "Fire ring"
+    },
+    {
+      "name": "Water ring"
+    },
+    {
+      "name": "Ice ring"
+    },
+    {
+      "name": "Thunder ring"
+    },
+    {
+      "name": "Fury ring"
+    },
+    {
+      "name": "Mystery ring"
+    },
+    {
+      "name": "Sonic ring"
+    },
+    {
+      "name": "Hipower ring"
+    },
+    {
+      "name": "Trick ring"
+    },
+    {
+      "name": "Fake ring"
+    },
+    {
+      "name": "S-power ring"
+    },
+    {
+      "name": "S-mind ring"
+    },
+    {
+      "name": "S-pro ring"
+    },
+    {
+      "name": "S-witch ring"
+    },
+    {
+      "name": "Undead ring"
+    },
+    {
+      "name": "Rocket ring"
+    },
+    {
+      "name": "Ghost ring"
+    },
+    {
+      "name": "Angry ring"
+    },
+    {
+      "name": "S-myst ring"
+    },
+    {
+      "name": "Dragon ring"
+    },
+    {
+      "name": "Horse rock"
+    },
+    {
+      "name": "Eagle rock"
+    },
+    {
+      "name": "Lion fang"
+    },
+    {
+      "name": "Bee rock"
+    },
+    {
+      "name": "Snake rock"
+    },
+    {
+      "name": "Cancer rock"
+    },
+    {
+      "name": "Pumkin jewel"
+    },
+    {
+      "name": "Uni jewel"
+    },
+    {
+      "name": "Mysto jewel"
+    },
+    {
+      "name": "Samu jewel"
+    },
+    {
+      "name": "Bat rock"
+    },
+    {
+      "name": "Hidora rock"
+    },
+    {
+      "name": "Flame jewel"
+    },
+    {
+      "name": "Magma rock"
+    },
+    {
+      "name": "Evil jewel"
+    },
+    {
+      "name": "Gorgon rock"
+    },
+    {
+      "name": "Song rock"
+    },
+    {
+      "name": "Kraken rock"
+    },
+    {
+      "name": "Light jewel"
+    },
+    {
+      "name": "Selan"
+    },
+    {
+      "name": "Guy"
+    },
+    {
+      "name": "Arty"
+    },
+    {
+      "name": "Dekar"
+    },
+    {
+      "name": "Tia"
+    },
+    {
+      "name": "Lexis"
+    },
+    {
+      "name": "JELZE"
+    },
+    {
+      "name": "FLASH"
+    },
+    {
+      "name": "GUSTO"
+    },
+    {
+      "name": "ZEPPY"
+    },
+    {
+      "name": "DARBI"
+    },
+    {
+      "name": "SULLY"
+    },
+    {
+      "name": "BLAZE"
+    },
+    {
+      "name": "Sizzle sword"
+    },
+    {
+      "name": "Blaze sword"
+    },
+    {
+      "name": "Gades blade"
+    },
+    {
+      "name": "Sky sword"
+    },
+    {
+      "name": "Snow sword"
+    },
+    {
+      "name": "Fry sword"
+    },
+    {
+      "name": "Mega ax"
+    },
+    {
+      "name": "Spark staff"
+    },
+    {
+      "name": "Air whip"
+    },
+    {
+      "name": "Water spear"
+    },
+    {
+      "name": "Dragon spear"
+    },
+    {
+      "name": "Mirak plate"
+    },
+    {
+      "name": "Ruse armor"
+    },
+    {
+      "name": "Flame shield"
+    },
+    {
+      "name": "Water gaunt"
+    },
+    {
+      "name": "Bolt shield"
+    },
+    {
+      "name": "Cryst shield"
+    },
+    {
+      "name": "Dark mirror"
+    },
+    {
+      "name": "Apron shield"
+    },
+    {
+      "name": "Agony helm"
+    },
+    {
+      "name": "Boom turban"
+    },
+    {
+      "name": "Aqua helm"
+    },
+    {
+      "name": "Ice hairband"
+    },
+    {
+      "name": "Hairpin"
+    },
+    {
+      "name": "Earring"
+    },
+    {
+      "name": "Dia ring"
+    },
+    {
+      "name": "Sea ring"
+    },
+    {
+      "name": "Engage ring"
+    },
+    {
+      "name": "Water jewel"
+    },
+    {
+      "name": "Thundo jewel"
+    },
+    {
+      "name": "Earth jewel"
+    },
+    {
+      "name": "Twist jewel"
+    },
+    {
+      "name": "Gloom jewel"
+    },
+    {
+      "name": "Tidal jewel"
+    },
+    {
+      "name": "Catfish jwl."
+    },
+    {
+      "name": "Camu jewel"
+    },
+    {
+      "name": "Spido jewel"
+    },
+    {
+      "name": "Gorgan rock"
+    },
+    {
+      "name": "Black eye"
+    },
+    {
+      "name": "Silver eye"
+    },
+    {
+      "name": "Gold eye"
+    },
+    {
+      "name": "Flash"
+    },
+    {
+      "name": "Bolt"
+    },
+    {
+      "name": "Thunder"
+    },
+    {
+      "name": "Spark"
+    },
+    {
+      "name": "Fireball"
+    },
+    {
+      "name": "Firebird"
+    },
+    {
+      "name": "Droplet"
+    },
+    {
+      "name": "Vortex"
+    },
+    {
+      "name": "Dragon"
+    },
+    {
+      "name": "Gale"
+    },
+    {
+      "name": "Blizzard"
+    },
+    {
+      "name": "Ice Valk"
+    },
+    {
+      "name": "Perish"
+    },
+    {
+      "name": "Destroy"
+    },
+    {
+      "name": "Drowsy"
+    },
+    {
+      "name": "Coma"
+    },
+    {
+      "name": "Dread"
+    },
+    {
+      "name": "Deflect"
+    },
+    {
+      "name": "Absorb"
+    },
+    {
+      "name": "Fake"
+    },
+    {
+      "name": "Trick"
+    },
+    {
+      "name": "Confuse"
+    },
+    {
+      "name": "Bravery"
+    },
+    {
+      "name": "Courage"
+    },
+    {
+      "name": "Mirror"
+    },
+    {
+      "name": "Strong"
+    },
+    {
+      "name": "Stronger"
+    },
+    {
+      "name": "Champion"
+    },
+    {
+      "name": "Poison"
+    },
+    {
+      "name": "Rally"
+    },
+    {
+      "name": "Valor"
+    },
+    {
+      "name": "Fry"
+    },
+    {
+      "name": "Zap"
+    },
+    {
+      "name": "Shield"
+    },
+    {
+      "name": "Waken"
+    }
+  ],
+  "locations": [
+    {
+      "name": "Blue chest 1"
+    },
+    {
+      "name": "Blue chest 2"
+    },
+    {
+      "name": "Blue chest 3"
+    },
+    {
+      "name": "Blue chest 4"
+    },
+    {
+      "name": "Blue chest 5"
+    },
+    {
+      "name": "Blue chest 6"
+    },
+    {
+      "name": "Blue chest 7"
+    },
+    {
+      "name": "Blue chest 8"
+    },
+    {
+      "name": "Blue chest 9"
+    },
+    {
+      "name": "Blue chest 10"
+    },
+    {
+      "name": "Blue chest 11"
+    },
+    {
+      "name": "Blue chest 12"
+    },
+    {
+      "name": "Blue chest 13"
+    },
+    {
+      "name": "Blue chest 14"
+    },
+    {
+      "name": "Blue chest 15"
+    },
+    {
+      "name": "Blue chest 16"
+    },
+    {
+      "name": "Blue chest 17"
+    },
+    {
+      "name": "Blue chest 18"
+    },
+    {
+      "name": "Blue chest 19"
+    },
+    {
+      "name": "Blue chest 20"
+    },
+    {
+      "name": "Blue chest 21"
+    },
+    {
+      "name": "Blue chest 22"
+    },
+    {
+      "name": "Blue chest 23"
+    },
+    {
+      "name": "Blue chest 24"
+    },
+    {
+      "name": "Blue chest 25"
+    },
+    {
+      "name": "Blue chest 26"
+    },
+    {
+      "name": "Blue chest 27"
+    },
+    {
+      "name": "Blue chest 28"
+    },
+    {
+      "name": "Blue chest 29"
+    },
+    {
+      "name": "Blue chest 30"
+    },
+    {
+      "name": "Blue chest 31"
+    },
+    {
+      "name": "Blue chest 32"
+    },
+    {
+      "name": "Blue chest 33"
+    },
+    {
+      "name": "Blue chest 34"
+    },
+    {
+      "name": "Blue chest 35"
+    },
+    {
+      "name": "Blue chest 36"
+    },
+    {
+      "name": "Blue chest 37"
+    },
+    {
+      "name": "Blue chest 38"
+    },
+    {
+      "name": "Blue chest 39"
+    },
+    {
+      "name": "Blue chest 40"
+    },
+    {
+      "name": "Blue chest 41"
+    },
+    {
+      "name": "Blue chest 42"
+    },
+    {
+      "name": "Blue chest 43"
+    },
+    {
+      "name": "Blue chest 44"
+    },
+    {
+      "name": "Blue chest 45"
+    },
+    {
+      "name": "Blue chest 46"
+    },
+    {
+      "name": "Blue chest 47"
+    },
+    {
+      "name": "Blue chest 48"
+    },
+    {
+      "name": "Blue chest 49"
+    },
+    {
+      "name": "Blue chest 50"
+    },
+    {
+      "name": "Blue chest 51"
+    },
+    {
+      "name": "Blue chest 52"
+    },
+    {
+      "name": "Blue chest 53"
+    },
+    {
+      "name": "Blue chest 54"
+    },
+    {
+      "name": "Blue chest 55"
+    },
+    {
+      "name": "Blue chest 56"
+    },
+    {
+      "name": "Blue chest 57"
+    },
+    {
+      "name": "Blue chest 58"
+    },
+    {
+      "name": "Blue chest 59"
+    },
+    {
+      "name": "Blue chest 60"
+    },
+    {
+      "name": "Blue chest 61"
+    },
+    {
+      "name": "Blue chest 62"
+    },
+    {
+      "name": "Blue chest 63"
+    },
+    {
+      "name": "Blue chest 64"
+    },
+    {
+      "name": "Blue chest 65"
+    },
+    {
+      "name": "Blue chest 66"
+    },
+    {
+      "name": "Blue chest 67"
+    },
+    {
+      "name": "Blue chest 68"
+    },
+    {
+      "name": "Blue chest 69"
+    },
+    {
+      "name": "Blue chest 70"
+    },
+    {
+      "name": "Blue chest 71"
+    },
+    {
+      "name": "Blue chest 72"
+    },
+    {
+      "name": "Blue chest 73"
+    },
+    {
+      "name": "Blue chest 74"
+    },
+    {
+      "name": "Blue chest 75"
+    },
+    {
+      "name": "Blue chest 76"
+    },
+    {
+      "name": "Blue chest 77"
+    },
+    {
+      "name": "Blue chest 78"
+    },
+    {
+      "name": "Blue chest 79"
+    },
+    {
+      "name": "Blue chest 80"
+    },
+    {
+      "name": "Blue chest 81"
+    },
+    {
+      "name": "Blue chest 82"
+    },
+    {
+      "name": "Blue chest 83"
+    },
+    {
+      "name": "Blue chest 84"
+    },
+    {
+      "name": "Blue chest 85"
+    },
+    {
+      "name": "Blue chest 86"
+    },
+    {
+      "name": "Blue chest 87"
+    },
+    {
+      "name": "Blue chest 88"
+    }
+  ],
+  "status": "New"
+}

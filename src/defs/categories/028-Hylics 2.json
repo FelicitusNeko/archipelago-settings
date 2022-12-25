@@ -12,7 +12,7 @@
     {
       "name": "gesture_shuffle",
       "description": "Choose where gestures will appear in the item pool.",
-      "readableName": "gesture shuffle",
+      "readableName": "Gesture shuffle",
       "values": [
         {
           "name": "anywhere",

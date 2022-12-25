@@ -30,7 +30,7 @@
       "type": "range",
       "name": "progression_balancing",
       "readableName": "Progression balancing",
-      "description": "The higher this number is, the less likely you are to end up in BK mode for too long.",
+      "description": "A system that can move progression earlier, to try and prevent the player from getting stuck and bored early. A lower setting means more getting stuck. A higher setting means less getting stuck.",
       "low": 0,
       "high": 99,
       "default": 50,

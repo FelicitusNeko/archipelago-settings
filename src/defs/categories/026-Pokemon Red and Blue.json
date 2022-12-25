@@ -1,12 +1,11 @@
 {
   "category": "Pokemon Red and Blue",
   "index": 26,
-  "defver": 2,
   "settings": [
     {
       "name": "game_version",
       "description": "Select Red or Blue version.",
-      "readableName": "game version",
+      "readableName": "Game version",
       "values": [
         {
           "name": "red",
@@ -30,12 +29,12 @@
       "readableName": "Trainer name",
       "values": [
         {
-          "name": "ASH",
-          "readableName": "ASH (edit your YAML manually if you want a different name)"
+          "name": "choose_in_game",
+          "readableName": "Choose in-game (you can modify the YAML manually to specify custom names)"
         }
       ],
       "type": "choice",
-      "default": "ASH"
+      "default": "choose_in_game"
     },
     {
       "name": "rival_name",
@@ -43,12 +42,12 @@
       "readableName": "Rival name",
       "values": [
         {
-          "name": "GARY",
-          "readableName": "GARY (edit your YAML manually if you want a different name)"
+          "name": "choose_in_game",
+          "readableName": "Choose in-game (you can modify the YAML manually to specify custom names)"
         }
       ],
       "type": "choice",
-      "default": "GARY"
+      "default": "choose_in_game"
     },
     {
       "name": "elite_four_condition",
@@ -98,7 +97,7 @@
     {
       "name": "badgesanity",
       "description": "Shuffle gym badges into the general item pool. If turned off, badges will be shuffled across the 8 gyms.",
-      "readableName": "badgesanity",
+      "readableName": "Badgesanity",
       "type": "toggle",
       "default": false
     },
@@ -122,6 +121,27 @@
       ],
       "type": "choice",
       "default": "early_parcel"
+    },
+    {
+      "name": "randomize_pokedex",
+      "description": "Randomize the location of the Pokédex, or start with it. It is required to receive items from Oak's Aides.",
+      "readableName": "Randomize Pokédex",
+      "values": [
+        {
+          "name": "vanilla",
+          "readableName": "Vanilla"
+        },
+        {
+          "name": "randomize",
+          "readableName": "Randomize"
+        },
+        {
+          "name": "start_with",
+          "readableName": "Start with it"
+        }
+      ],
+      "type": "choice",
+      "default": "vanilla"
     },
     {
       "name": "tea",
@@ -166,12 +186,19 @@
         },
         {
           "name": "exclude",
-          "readableName": "Exclude",
-          "description": "Hidden items will always be junk."
+          "description": "Hidden items will always be junk.",
+          "readableName": "Exclude"
         }
       ],
       "type": "choice",
       "default": "off"
+    },
+    {
+      "name": "trainersanity",
+      "description": "Add a location check to every trainer in the game, which can be obtained by talking to a trainer after defeating them. Does not affect gym leaders and some scripted event battles (including all Rival, Giovanni, and Cinnabar Gym battles).",
+      "readableName": "Trainersanity",
+      "type": "toggle",
+      "default": false
     },
     {
       "name": "badges_needed_for_hm_moves",
@@ -180,23 +207,23 @@
       "values": [
         {
           "name": "on",
-          "readableName": "On",
-          "description": "Badges are required for HMs as vanilla."
+          "description": "Badges are required for HMs as vanilla.",
+          "readableName": "On"
         },
         {
           "name": "off",
-          "readableName": "Off",
-          "description": "Removes the requirement for badges to use HM moves."
+          "description": "Removes the requirement for badges to use HM moves.",
+          "readableName": "Off"
         },
         {
           "name": "extra",
-          "readableName": "Extra",
-          "description": "Gives the Marsh, Volcano, and Earth Badges a random HM move to enable."
+          "description": "Gives the Marsh, Volcano, and Earth Badges a random HM move to enable.",
+          "readableName": "Extra"
         },
         {
           "name": "extra_plus",
-          "readableName": "Extra Plus",
-          "description": "Gives the Marsh, Volcano, and Earth Badges a random HM move to enable, AND picks two random badges to enable a second HM move. You will only need one of the required badges to use the HM move."
+          "description": "Gives the Marsh, Volcano, and Earth Badges a random HM move to enable, AND picks two random badges to enable a second HM move. You will only need one of the required badges to use the HM move.",
+          "readableName": "Extra Plus"
         }
       ],
       "type": "choice",
@@ -249,7 +276,7 @@
       "name": "minimum_steps_between_encounters",
       "description": "Minimum number of steps between wild Pokémon encounters.",
       "high": 255,
-      "readableName": "minimum steps between encounters",
+      "readableName": "Minimum steps between encounters",
       "low": 0,
       "type": "range",
       "default": 3
@@ -261,6 +288,7 @@
       "readableName": "EXP modifier",
       "low": 0,
       "type": "range",
+      "default": 16,
       "aliases": {
         "half": 8,
         "normal": 16,
@@ -271,8 +299,7 @@
         "sextuple": 96,
         "septuple": 112,
         "octuple": 128
-      },
-      "default": 16
+      }
     },
     {
       "name": "randomize_wild_pokemon",
@@ -285,18 +312,18 @@
         },
         {
           "name": "match_types",
-          "readableName": "Match types",
-          "description": "Select a Pokemon with at least one type matching the original type of the original Pokémon."
+          "description": "Select a Pokemon with at least one type matching the original type of the original Pokémon.",
+          "readableName": "Match types"
         },
         {
           "name": "match_base_stats",
-          "readableName": "Match base stats",
-          "description": "Prefer Pokémon with closer base stat totals."
+          "description": "Prefer Pokémon with closer base stat totals.",
+          "readableName": "Match base stats"
         },
         {
           "name": "match_types_and_base_stats",
-          "readableName": "Match types and base stats",
-          "description": "Matches types and will weight towards similar base stats, but there may not be many to choose from."
+          "description": "Matches types and will weight towards similar base stats, but there may not be many to choose from.",
+          "readableName": "Match types and base stats"
         },
         {
           "name": "completely_random",
@@ -317,18 +344,18 @@
         },
         {
           "name": "match_types",
-          "readableName": "Match types",
-          "description": "Select a Pokemon with at least one type matching the original type of the original Pokémon."
+          "description": "Select a Pokemon with at least one type matching the original type of the original Pokémon.",
+          "readableName": "Match types"
         },
         {
           "name": "match_base_stats",
-          "readableName": "Match base stats",
-          "description": "Prefer Pokémon with closer base stat totals."
+          "description": "Prefer Pokémon with closer base stat totals.",
+          "readableName": "Match base stats"
         },
         {
           "name": "match_types_and_base_stats",
-          "readableName": "Match types and base stats",
-          "description": "Matches types and will weight towards similar base stats, but there may not be many to choose from."
+          "description": "Matches types and will weight towards similar base stats, but there may not be many to choose from.",
+          "readableName": "Match types and base stats"
         },
         {
           "name": "completely_random",
@@ -349,18 +376,18 @@
         },
         {
           "name": "match_types",
-          "readableName": "Match types",
-          "description": "Select a Pokemon with at least one type matching the original type of the original Pokémon."
+          "description": "Select a Pokemon with at least one type matching the original type of the original Pokémon.",
+          "readableName": "Match types"
         },
         {
           "name": "match_base_stats",
-          "readableName": "Match base stats",
-          "description": "Prefer Pokémon with closer base stat totals."
+          "description": "Prefer Pokémon with closer base stat totals.",
+          "readableName": "Match base stats"
         },
         {
           "name": "match_types_and_base_stats",
-          "readableName": "Match types and base stats",
-          "description": "Matches types and will weight towards similar base stats, but there may not be many to choose from."
+          "description": "Matches types and will weight towards similar base stats, but there may not be many to choose from.",
+          "readableName": "Match types and base stats"
         },
         {
           "name": "completely_random",
@@ -381,18 +408,18 @@
         },
         {
           "name": "shuffle",
-          "readableName": "Shuffle",
-          "description": "Shuffle the legendaries with each other."
+          "description": "Shuffle the legendaries with each other.",
+          "readableName": "Shuffle"
         },
         {
           "name": "static",
-          "readableName": "Static",
-          "description": "Shuffle Legendaries into other static Pokémon locations."
+          "description": "Shuffle Legendaries into other static Pokémon locations.",
+          "readableName": "Static"
         },
         {
           "name": "any",
-          "readableName": "Any",
-          "description": "Allow legendaries to appear anywhere based on wild and static randomization options, and their locations will be randomized according to static Pokémon randomization options."
+          "description": "Allow legendaries to appear anywhere based on wild and static randomization options, and their locations will be randomized according to static Pokémon randomization options.",
+          "readableName": "Any"
         }
       ],
       "type": "choice",
@@ -430,13 +457,13 @@
         },
         {
           "name": "shuffle",
-          "readableName": "Shuffle",
-          "description": "Shuffle the 5 base stat values amongst each other."
+          "description": "Shuffle the 5 base stat values amongst each other.",
+          "readableName": "Shuffle"
         },
         {
           "name": "randomize",
-          "readableName": "Randomize",
-          "description": "Completely randomize each stat, but will still add up to the same base stat total."
+          "description": "Completely randomize each stat, but will still add up to the same base stat total.",
+          "readableName": "Randomize"
         }
       ],
       "type": "choice",
@@ -469,18 +496,18 @@
         },
         {
           "name": "match_types",
-          "readableName": "Match types",
-          "description": "Select a Pokemon with at least one type matching the original type of the original Pokémon."
+          "description": "Select a Pokemon with at least one type matching the original type of the original Pokémon.",
+          "readableName": "Match types"
         },
         {
           "name": "match_base_stats",
-          "readableName": "Match base stats",
-          "description": "Prefer Pokémon with closer base stat totals."
+          "description": "Prefer Pokémon with closer base stat totals.",
+          "readableName": "Match base stats"
         },
         {
           "name": "match_types_and_base_stats",
-          "readableName": "Match types and base stats",
-          "description": "Matches types and will weight towards similar base stats, but there may not be many to choose from."
+          "description": "Matches types and will weight towards similar base stats, but there may not be many to choose from.",
+          "readableName": "Match types and base stats"
         },
         {
           "name": "completely_random",
@@ -508,8 +535,8 @@
         },
         {
           "name": "prefer_types",
-          "readableName": "Prefer types",
-          "description": "Prefer moves that match the type of the Pokemon."
+          "description": "Prefer moves that match the type of the Pokemon.",
+          "readableName": "Prefer types"
         },
         {
           "name": "completely_random",
@@ -527,6 +554,13 @@
       "default": false
     },
     {
+      "name": "same_type_attack_bonus",
+      "description": "Here you can disable Same Type Attack Bonus, so that a move matching a Pokemon's type has no benefit. If disabled, all moves will gain 25% extra damage, instead of same type moves gaining 50% extra damage.",
+      "readableName": "Same type attack bonus",
+      "type": "toggle",
+      "default": true
+    },
+    {
       "name": "tm_compatibility",
       "description": "Randomize which Pokémon can learn each TM.",
       "readableName": "TM compatibility",
@@ -537,8 +571,8 @@
         },
         {
           "name": "prefer_types",
-          "readableName": "Prefer types",
-          "description": "90% chance if Pokemon's type matches the move, 50% chance if move is Normal type and the Pokemon is not, and 25% chance otherwise. Pokemon will retain the same TM compatibility when they evolve if the evolved form has the same type(s). Mew will always be able to learn every TM."
+          "description": "90% chance if Pokemon's type matches the move, 50% chance if move is Normal type and the Pokemon is not, and 25% chance otherwise. Pokemon will retain the same TM compatibility when they evolve if the evolved form has the same type(s). Mew will always be able to learn every TM.",
+          "readableName": "Prefer types"
         },
         {
           "name": "completely_random",
@@ -563,8 +597,8 @@
         },
         {
           "name": "prefer_types",
-          "readableName": "Prefer types",
-          "description": "100% chance if Pokemon's type matches the move, 75% chance if move is Normal type and the Pokemon is not, and 25% chance otherwise. Pokemon will retain the same HM compatibility when they evolve if the evolved form has the same type(s). Mew will always be able to learn every HM."
+          "description": "100% chance if Pokemon's type matches the move, 75% chance if move is Normal type and the Pokemon is not, and 25% chance otherwise. Pokemon will retain the same HM compatibility when they evolve if the evolved form has the same type(s). Mew will always be able to learn every HM.",
+          "readableName": "Prefer types"
         },
         {
           "name": "completely_random",
@@ -589,8 +623,8 @@
         },
         {
           "name": "follow_evolutions",
-          "readableName": "Follow evolutions",
-          "description": "Ensure Pokémon's types remain the same when evolving (except possibly gaining a type)."
+          "description": "Ensure Pokémon's types remain the same when evolving (except possibly gaining a type).",
+          "readableName": "Follow evolutions"
         },
         {
           "name": "randomize",
@@ -607,61 +641,81 @@
       "readableName": "Secondary type chance",
       "low": -1,
       "type": "range",
+      "default": -1,
       "aliases": {
         "vanilla": -1
-      },
-      "default": -1
+      }
     },
     {
-      "name": "randomize_type_matchup_types",
-      "description": "The game's type chart consists of 3 columns: attacking type, defending type, and type effectiveness. Matchups that have regular type effectiveness are not in the chart.",
-      "readableName": "Randomize type matchup types",
+      "name": "randomize_type_chart",
+      "description": "Randomize the type chart.",
+      "readableName": "Randomize type chart",
       "values": [
         {
           "name": "vanilla",
           "readableName": "Vanilla"
         },
         {
-          "name": "shuffle",
-          "readableName": "Shuffle",
-          "description": "Shuffle the attacking types across the attacking type column and the defending types across the defending type column (so for example Normal type will still have exactly 2 types that it receives non-regular damage from, and 2 types it deals non-regular damage to)."
-        },
-        {
           "name": "randomize",
           "readableName": "Randomize",
-          "description": "Randomize each type in both columns to any random type."
-        }
-      ],
-      "type": "choice",
-      "default": "vanilla"
-    },
-    {
-      "name": "randomize_type_matchup_type_effectiveness",
-      "description": "The game's type chart consists of 3 columns: attacking type, defending type, and type effectiveness. Matchups that have regular type effectiveness are not in the chart.",
-      "readableName": "Randomize type matchup type effectiveness",
-      "values": [
-        {
-          "name": "vanilla",
-          "readableName": "Vanilla"
-        },
-        {
-          "name": "shuffle",
-          "readableName": "Shuffle",
-          "description": "Shuffle the type effectiveness across the type effectiveness column (so for example there will always be 6 type immunities)."
-        },
-        {
-          "name": "randomize",
-          "readableName": "Randomize",
-          "description": "Randomize each entry in the table to no effect, not very effective, or super effective; with no effect occurring at a low chance."
+          "description": "The matchup weight options will determine the weights. If the numbers chosen across the 4 settings add up to exactly 225, they will be the exact numbers of those matchups. Otherwise, the normal super effective, and not very effective matchup settings will be used as weights. The immunities option will always be the exact amount of immunity matchups."
         },
         {
           "name": "chaos",
           "readableName": "Chaos",
-          "description": "Randomize the values to anywhere between 0% and 200% damage, in 10% increments."
+          "description": "The matchup settings will be ignored and every type matchup will be given a random damage modifier anywhere between 0 to 200% damage, in 10% increments."
         }
       ],
       "type": "choice",
       "default": "vanilla"
+    },
+    {
+      "name": "normal_matchups",
+      "description": "If 'randomize' is chosen for `randomize_type_chart`, this will be the weight for neutral matchups.",
+      "high": 225,
+      "readableName": "Normal matchups",
+      "low": 0,
+      "type": "range",
+      "default": 143,
+      "dependsOn": {
+        "randomize_type_chart": ["randomize"]
+      }
+    },
+    {
+      "name": "super_effective_matchups",
+      "description": "If 'randomize' is chosen for `randomize_type_chart`, this will be the weight for super effective matchups.",
+      "high": 225,
+      "readableName": "Super Effective matchups",
+      "low": 0,
+      "type": "range",
+      "default": 38,
+      "dependsOn": {
+        "randomize_type_chart": ["randomize"]
+      }
+    },
+    {
+      "name": "not_very_effective_matchups",
+      "description": "If 'randomize' is chosen for `randomize_type_chart`, this will be the weight for not very effective matchups.",
+      "high": 225,
+      "readableName": "Not Very Effective matchups",
+      "low": 0,
+      "type": "range",
+      "default": 38,
+      "dependsOn": {
+        "randomize_type_chart": ["randomize"]
+      }
+    },
+    {
+      "name": "immunity_matchups",
+      "description": "If 'randomize' is chosen for `randomize_type_chart`, this will be the exact number of immunities.",
+      "high": 100,
+      "readableName": "Immunity matchups",
+      "low": 0,
+      "type": "range",
+      "default": 6,
+      "dependsOn": {
+        "randomize_type_chart": ["randomize"]
+      }
     },
     {
       "name": "safari_zone_normal_battles",
@@ -680,21 +734,159 @@
     {
       "name": "reusable_tms",
       "description": "Makes TMs reusable, so they will not be consumed upon use.",
-      "readableName": "reusable TMs",
+      "readableName": "Reusable TMs",
       "type": "toggle",
       "default": false
     },
     {
+      "name": "better_shops",
+      "description": "Change every town's Pokémart to contain all normal Pokémart items. Additionally, you can add the Master Ball to these shops.",
+      "readableName": "Better shops",
+      "values": [
+        {
+          "name": "off",
+          "readableName": "Off"
+        },
+        {
+          "name": "on",
+          "readableName": "On"
+        },
+        {
+          "name": "add_master_ball",
+          "readableName": "Add Master Ball"
+        }
+      ],
+      "type": "choice",
+      "default": "off"
+    },
+    {
+      "name": "master_ball_price",
+      "description": "Price for Master Balls. Can only be bought if `better_shops` is set to `add_master_ball`, but this will affect the sell price regardless. Vanilla is 0",
+      "high": 999999,
+      "readableName": "Master Ball price",
+      "low": 0,
+      "type": "range",
+      "default": 5000
+    },
+    {
       "name": "starting_money",
       "description": "The amount of money you start with.",
-      "high": 999000,
+      "high": 999999,
       "readableName": "Starting money",
       "low": 0,
       "step": 1000,
       "type": "range",
       "default": 3000
+    },
+    {
+      "name": "lose_money_on_blackout",
+      "description": "Lose half your money when blacking out, as in vanilla.",
+      "readableName": "Lose money on blackout",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "trap_percentage",
+      "description": "Chance for each filler item to be replaced with trap items. Keep in mind that trainersanity vastly increases the number of filler items. The trap weight options will determine which traps can be chosen from and at what likelihood.",
+      "high": 100,
+      "readableName": "Trap percentage",
+      "low": 0,
+      "type": "range",
+      "default": 0
+    },
+    {
+      "name": "poison_trap_weight",
+      "description": "Weights for Poison Traps. These apply the Poison status to all your party members.",
+      "readableName": "Poison trap weight",
+      "values": [
+        {
+          "name": "low",
+          "readableName": "Low"
+        },
+        {
+          "name": "medium",
+          "readableName": "Medium"
+        },
+        {
+          "name": "high",
+          "readableName": "High"
+        }
+      ],
+      "type": "choice",
+      "default": "medium"
+    },
+    {
+      "name": "fire_trap_weight",
+      "description": "Weights for Fire Traps. These apply the Burn status to all your party members.",
+      "readableName": "Fire trap weight",
+      "values": [
+        {
+          "name": "low",
+          "readableName": "Low"
+        },
+        {
+          "name": "medium",
+          "readableName": "Medium"
+        },
+        {
+          "name": "high",
+          "readableName": "High"
+        }
+      ],
+      "type": "choice",
+      "default": "medium"
+    },
+    {
+      "name": "paralyze_trap_weight",
+      "description": "Weights for Paralyze Traps. These apply the Paralyze status to all your party members.",
+      "readableName": "Paralyze trap weight",
+      "values": [
+        {
+          "name": "low",
+          "readableName": "Low"
+        },
+        {
+          "name": "medium",
+          "readableName": "Medium"
+        },
+        {
+          "name": "high",
+          "readableName": "High"
+        }
+      ],
+      "type": "choice",
+      "default": "medium"
+    },
+    {
+      "name": "ice_trap_weight",
+      "description": "Weights for Ice Traps. These apply the Ice status to all your party members. Don't forget to buy Ice Heals!",
+      "readableName": "Ice trap weight",
+      "values": [
+        {
+          "name": "low",
+          "readableName": "Low"
+        },
+        {
+          "name": "medium",
+          "readableName": "Medium"
+        },
+        {
+          "name": "high",
+          "readableName": "High"
+        },
+        {
+          "name": "disabled",
+          "readableName": "Disabled"
+        }
+      ],
+      "type": "choice",
+      "default": "disabled"
+    },
+    {
+      "type": "deathlink"
     }
   ],
+  "defver": 2,
   "items": [
     {
       "name": "Master Ball"
@@ -714,6 +906,9 @@
     },
     {
       "name": "Bicycle"
+    },
+    {
+      "name": "Pokedex"
     },
     {
       "name": "Moon Stone"
@@ -944,6 +1139,18 @@
       "name": "Safari Pass"
     },
     {
+      "name": "Poison Trap"
+    },
+    {
+      "name": "Paralyze Trap"
+    },
+    {
+      "name": "Ice Trap"
+    },
+    {
+      "name": "Fire Trap"
+    },
+    {
       "name": "HM01 Cut"
     },
     {
@@ -1064,7 +1271,7 @@
       "name": "TM35 Metronome"
     },
     {
-      "name": "TM36 Self Destruct"
+      "name": "TM36 Self-Destruct"
     },
     {
       "name": "TM37 Egg Bomb"
@@ -1079,7 +1286,7 @@
       "name": "TM40 Skull Bash"
     },
     {
-      "name": "TM41 Soft Boiled"
+      "name": "TM41 Soft-Boiled"
     },
     {
       "name": "TM42 Dream Eater"
@@ -1751,7 +1958,940 @@
     },
     {
       "name": "Route 4 - Hidden Item Plateau East Of Mt Moon"
+    },
+    {
+      "name": "Pallet Town - Oak's Parcel Reward"
+    },
+    {
+      "name": "Pokemon Mansion 1F - Scientist"
+    },
+    {
+      "name": "Pokemon Mansion 2F - Burglar"
+    },
+    {
+      "name": "Pokemon Mansion 3F - Scientist"
+    },
+    {
+      "name": "Pokemon Mansion 3F - Burglar"
+    },
+    {
+      "name": "Pokemon Mansion B1F - Scientist"
+    },
+    {
+      "name": "Pokemon Mansion B1F - Burglar"
+    },
+    {
+      "name": "Silph Co 11F - Rocket 1"
+    },
+    {
+      "name": "Silph Co 11F - Rocket 2 (Card Key)"
+    },
+    {
+      "name": "Silph Co 10F - Scientist"
+    },
+    {
+      "name": "Silph Co 10F - Rocket"
+    },
+    {
+      "name": "Silph Co 9F - Rocket 1"
+    },
+    {
+      "name": "Silph Co 9F - Scientist"
+    },
+    {
+      "name": "Silph Co 9F - Rocket 2 (Card Key)"
+    },
+    {
+      "name": "Silph Co 8F - Rocket 1"
+    },
+    {
+      "name": "Silph Co 8F - Rocket 2"
+    },
+    {
+      "name": "Silph Co 8F - Scientist"
+    },
+    {
+      "name": "Silph Co 7F - Rocket 1"
+    },
+    {
+      "name": "Silph Co 7F - Rocket 2"
+    },
+    {
+      "name": "Silph Co 7F - Scientist"
+    },
+    {
+      "name": "Silph Co 7F - Rocket 3"
+    },
+    {
+      "name": "Silph Co 6F - Rocket 1"
+    },
+    {
+      "name": "Silph Co 6F - Scientist"
+    },
+    {
+      "name": "Silph Co 6F - Rocket 2"
+    },
+    {
+      "name": "Silph Co 5F - Rocket 1"
+    },
+    {
+      "name": "Silph Co 5F - Juggler"
+    },
+    {
+      "name": "Silph Co 5F - Scientist"
+    },
+    {
+      "name": "Silph Co 5F - Rocket 2"
+    },
+    {
+      "name": "Silph Co 4F - Rocket 1"
+    },
+    {
+      "name": "Silph Co 4F - Rocket 2"
+    },
+    {
+      "name": "Silph Co 4F - Scientist"
+    },
+    {
+      "name": "Silph Co 3F - Scientist (Card Key)"
+    },
+    {
+      "name": "Silph Co 3F - Rocket"
+    },
+    {
+      "name": "Silph Co 2F - Rocket 1"
+    },
+    {
+      "name": "Silph Co 2F - Rocket 2"
+    },
+    {
+      "name": "Silph Co 2F - Scientist 1"
+    },
+    {
+      "name": "Silph Co 2F - Scientist 2"
+    },
+    {
+      "name": "Rocket Hideout B1F - Rocket 1"
+    },
+    {
+      "name": "Rocket Hideout B1F - Rocket 2"
+    },
+    {
+      "name": "Rocket Hideout B1F - Rocket 3"
+    },
+    {
+      "name": "Rocket Hideout B1F - Rocket 4"
+    },
+    {
+      "name": "Rocket Hideout B1F - Rocket 5 (Lift Key)"
+    },
+    {
+      "name": "Rocket Hideout B2F - Rocket"
+    },
+    {
+      "name": "Rocket Hideout B3F - Rocket 1"
+    },
+    {
+      "name": "Rocket Hideout B3F - Rocket 2"
+    },
+    {
+      "name": "Rocket Hideout B4F - Rocket 1"
+    },
+    {
+      "name": "Rocket Hideout B4F - Rocket 2 (Lift Key)"
+    },
+    {
+      "name": "Rocket Hideout B4F - Rocket 3 (Lift Key)"
+    },
+    {
+      "name": "S.S. Anne 1F - Gentleman 1"
+    },
+    {
+      "name": "S.S. Anne 1F - Gentleman 2"
+    },
+    {
+      "name": "S.S. Anne 1F - Lass"
+    },
+    {
+      "name": "S.S. Anne 1F - Youngster"
+    },
+    {
+      "name": "S.S. Anne 2F - Fisherman"
+    },
+    {
+      "name": "S.S. Anne 2F - Gentleman 1"
+    },
+    {
+      "name": "S.S. Anne 2F - Gentleman 2"
+    },
+    {
+      "name": "S.S. Anne 2F - Lass"
+    },
+    {
+      "name": "S.S. Anne 3F - Sailor 1"
+    },
+    {
+      "name": "S.S. Anne 3F - Sailor 2"
+    },
+    {
+      "name": "S.S. Anne B1F - Sailor 1"
+    },
+    {
+      "name": "S.S. Anne B1F - Sailor 2"
+    },
+    {
+      "name": "S.S. Anne B1F - Sailor 3"
+    },
+    {
+      "name": "S.S. Anne B1F - Sailor 4"
+    },
+    {
+      "name": "S.S. Anne B1F - Fisherman"
+    },
+    {
+      "name": "S.S. Anne B1F - Sailor 5"
+    },
+    {
+      "name": "Mt Moon 1F - Bug Catcher 1"
+    },
+    {
+      "name": "Mt Moon 1F - Lass 1"
+    },
+    {
+      "name": "Mt Moon 1F - Super Nerd"
+    },
+    {
+      "name": "Mt Moon 1F - Bug Catcher 2"
+    },
+    {
+      "name": "Mt Moon 1F - Lass 2"
+    },
+    {
+      "name": "Mt Moon 1F - Youngster"
+    },
+    {
+      "name": "Mt Moon 1F - Hiker"
+    },
+    {
+      "name": "Mt Moon B2F - Rocket 1"
+    },
+    {
+      "name": "Mt Moon B2F - Rocket 2"
+    },
+    {
+      "name": "Mt Moon B2F - Rocket 3"
+    },
+    {
+      "name": "Mt Moon B2F - Rocket 4"
+    },
+    {
+      "name": "Viridian Forest - Bug Catcher 1"
+    },
+    {
+      "name": "Viridian Forest - Bug Catcher 2"
+    },
+    {
+      "name": "Viridian Forest - Bug Catcher 3"
+    },
+    {
+      "name": "Route 25 - Hiker 1"
+    },
+    {
+      "name": "Route 25 - Youngster 1"
+    },
+    {
+      "name": "Route 25 - Hiker 2"
+    },
+    {
+      "name": "Route 25 - Youngster 2"
+    },
+    {
+      "name": "Route 25 - Lass 1"
+    },
+    {
+      "name": "Route 25 - Hiker 3"
+    },
+    {
+      "name": "Route 25 - Jr. Trainer M"
+    },
+    {
+      "name": "Route 25 - Youngster 3"
+    },
+    {
+      "name": "Route 25 - Lass 2"
+    },
+    {
+      "name": "Route 24 - Bug Catcher"
+    },
+    {
+      "name": "Route 24 - Lass 1"
+    },
+    {
+      "name": "Route 24 - Youngster"
+    },
+    {
+      "name": "Route 24 - Lass 2"
+    },
+    {
+      "name": "Route 24 - Jr. Trainer M 1"
+    },
+    {
+      "name": "Route 24 - Jr. Trainer M 2"
+    },
+    {
+      "name": "Route 21 - Fisherman 1"
+    },
+    {
+      "name": "Route 21 - Fisherman 2"
+    },
+    {
+      "name": "Route 21 - Cue Ball"
+    },
+    {
+      "name": "Route 21 - Swimmer 1"
+    },
+    {
+      "name": "Route 21 - Fisherman 3"
+    },
+    {
+      "name": "Route 21 - Fisherman 4"
+    },
+    {
+      "name": "Route 21 - Swimmer 2"
+    },
+    {
+      "name": "Route 21 - Swimmer 3"
+    },
+    {
+      "name": "Route 21 - Swimmer 4"
+    },
+    {
+      "name": "Route 20 - Beauty 1"
+    },
+    {
+      "name": "Route 20 - Jr. Trainer F 1"
+    },
+    {
+      "name": "Route 20 - Beauty 2"
+    },
+    {
+      "name": "Route 20 - Cooltrainer M"
+    },
+    {
+      "name": "Route 20 - Swimmer 1"
+    },
+    {
+      "name": "Route 20 - Jr. Trainer F 2"
+    },
+    {
+      "name": "Route 20 - Beauty 3"
+    },
+    {
+      "name": "Route 20 - Beauty 4"
+    },
+    {
+      "name": "Route 20 - Swimmer 2"
+    },
+    {
+      "name": "Route 20 - Swimmer 3"
+    },
+    {
+      "name": "Route 19 - Swimmer 1"
+    },
+    {
+      "name": "Route 19 - Swimmer 2"
+    },
+    {
+      "name": "Route 19 - Swimmer 3"
+    },
+    {
+      "name": "Route 19 - Swimmer 4"
+    },
+    {
+      "name": "Route 19 - Swimmer 5"
+    },
+    {
+      "name": "Route 19 - Swimmer 6"
+    },
+    {
+      "name": "Route 19 - Swimmer 7"
+    },
+    {
+      "name": "Route 19 - Beauty 1"
+    },
+    {
+      "name": "Route 19 - Beauty 2"
+    },
+    {
+      "name": "Route 19 - Beauty 3"
+    },
+    {
+      "name": "Route 18 - Bird Keeper 1"
+    },
+    {
+      "name": "Route 18 - Bird Keeper 2"
+    },
+    {
+      "name": "Route 18 - Bird Keeper 3"
+    },
+    {
+      "name": "Route 17 - Cue Ball 1"
+    },
+    {
+      "name": "Route 17 - Biker 1"
+    },
+    {
+      "name": "Route 17 - Cue Ball 2"
+    },
+    {
+      "name": "Route 17 - Biker 2"
+    },
+    {
+      "name": "Route 17 - Biker 3"
+    },
+    {
+      "name": "Route 17 - Cue Ball 3"
+    },
+    {
+      "name": "Route 17 - Cue Ball 4"
+    },
+    {
+      "name": "Route 17 - Biker 4"
+    },
+    {
+      "name": "Route 17 - Cue Ball 5"
+    },
+    {
+      "name": "Route 17 - Biker 5"
+    },
+    {
+      "name": "Route 16 - Biker"
+    },
+    {
+      "name": "Route 16 - Cue Ball 1"
+    },
+    {
+      "name": "Route 16 - Cue Ball 2"
+    },
+    {
+      "name": "Route 16 - Biker 2"
+    },
+    {
+      "name": "Route 16 - Cue Ball 3"
+    },
+    {
+      "name": "Route 16 - Biker 3"
+    },
+    {
+      "name": "Route 15 - Jr. Trainer F 1"
+    },
+    {
+      "name": "Route 15 - Beauty 1"
+    },
+    {
+      "name": "Route 15 - Jr. Trainer F 2"
+    },
+    {
+      "name": "Route 15 - Biker 1"
+    },
+    {
+      "name": "Route 15 - Biker 2"
+    },
+    {
+      "name": "Route 15 - Jr. Trainer F 3"
+    },
+    {
+      "name": "Route 15 - Beauty 2"
+    },
+    {
+      "name": "Route 15 - Bird Keeper 1"
+    },
+    {
+      "name": "Route 15 - Bird Keeper 2"
+    },
+    {
+      "name": "Route 15 - Jr. Trainer F 4"
+    },
+    {
+      "name": "Route 14 - Bird Keeper 1"
+    },
+    {
+      "name": "Route 14 - Bird Keeper 2"
+    },
+    {
+      "name": "Route 14 - Bird Keeper 3"
+    },
+    {
+      "name": "Route 14 - Bird Keeper 4"
+    },
+    {
+      "name": "Route 14 - Biker 1"
+    },
+    {
+      "name": "Route 14 - Bird Keeper 5"
+    },
+    {
+      "name": "Route 14 - Biker 2"
+    },
+    {
+      "name": "Route 14 - Biker 3"
+    },
+    {
+      "name": "Route 14 - Biker 4"
+    },
+    {
+      "name": "Route 14 - Bird Keeper 6"
+    },
+    {
+      "name": "Route 13 - Jr. Trainer F 1"
+    },
+    {
+      "name": "Route 13 - Bird Keeper 1"
+    },
+    {
+      "name": "Route 13 - Jr. Trainer F 2"
+    },
+    {
+      "name": "Route 13 - Beauty 1"
+    },
+    {
+      "name": "Route 13 - Beauty 2"
+    },
+    {
+      "name": "Route 13 - Jr. Trainer F 3"
+    },
+    {
+      "name": "Route 13 - Jr. Trainer F 4"
+    },
+    {
+      "name": "Route 13 - Bird Keeper 2"
+    },
+    {
+      "name": "Route 13 - Bird Keeper 3"
+    },
+    {
+      "name": "Route 13 - Biker"
+    },
+    {
+      "name": "Route 12 - Fisherman 1"
+    },
+    {
+      "name": "Route 12 - Fisherman 2"
+    },
+    {
+      "name": "Route 12 - Fisherman 3"
+    },
+    {
+      "name": "Route 12 - Fisherman 4"
+    },
+    {
+      "name": "Route 12 - Rocker"
+    },
+    {
+      "name": "Route 12 - Jr. Trainer M"
+    },
+    {
+      "name": "Route 12 - Fisherman 5"
+    },
+    {
+      "name": "Route 11 - Youngster 1"
+    },
+    {
+      "name": "Route 11 - Gambler 1"
+    },
+    {
+      "name": "Route 11 - Youngster 2"
+    },
+    {
+      "name": "Route 11 - Youngster 3"
+    },
+    {
+      "name": "Route 11 - Gambler 2"
+    },
+    {
+      "name": "Route 11 - Gambler 3"
+    },
+    {
+      "name": "Route 11 - Engineer 1"
+    },
+    {
+      "name": "Route 11 - Engineer 2"
+    },
+    {
+      "name": "Route 11 - Youngster 4"
+    },
+    {
+      "name": "Route 11 - Gambler 4"
+    },
+    {
+      "name": "Rock Tunnel 1F - PokeManiac"
+    },
+    {
+      "name": "Rock Tunnel 1F - Hiker 1"
+    },
+    {
+      "name": "Rock Tunnel 1F - Hiker 2"
+    },
+    {
+      "name": "Rock Tunnel 1F - Hiker 3"
+    },
+    {
+      "name": "Rock Tunnel 1F - Jr. Trainer F 1"
+    },
+    {
+      "name": "Rock Tunnel 1F - Jr. Trainer F 2"
+    },
+    {
+      "name": "Rock Tunnel 1F - Jr. Trainer F 3"
+    },
+    {
+      "name": "Rock Tunnel B1F - PokeManiac 1"
+    },
+    {
+      "name": "Rock Tunnel B1F - Jr. Trainer F 1"
+    },
+    {
+      "name": "Rock Tunnel B1F - PokeManiac 2"
+    },
+    {
+      "name": "Rock Tunnel B1F - Hiker 1"
+    },
+    {
+      "name": "Rock Tunnel B1F - Hiker 2"
+    },
+    {
+      "name": "Rock Tunnel B1F - Jr. Trainer F 2"
+    },
+    {
+      "name": "Rock Tunnel B1F - Hiker 3"
+    },
+    {
+      "name": "Rock Tunnel B1F - PokeManiac 3"
+    },
+    {
+      "name": "Route 10 - Jr. Trainer F 1"
+    },
+    {
+      "name": "Route 10 - PokeManiac"
+    },
+    {
+      "name": "Route 10 - J.r Trainer F 2"
+    },
+    {
+      "name": "Route 10 - Hiker 1"
+    },
+    {
+      "name": "Route 10 - Hiker 2"
+    },
+    {
+      "name": "Route 10 - Super Nerd"
+    },
+    {
+      "name": "Route 9 - Jr. Trainer F 1"
+    },
+    {
+      "name": "Route 9 - Hiker 1"
+    },
+    {
+      "name": "Route 9 - Jr. Trainer M 1"
+    },
+    {
+      "name": "Route 9 - Bug Catcher 1"
+    },
+    {
+      "name": "Route 9 - Hiker 2"
+    },
+    {
+      "name": "Route 9 - Bug Catcher 2"
+    },
+    {
+      "name": "Route 9 - Jr. Trainer M 2"
+    },
+    {
+      "name": "Route 9 - Hiker 3"
+    },
+    {
+      "name": "Route 9 - Jr. Trainer F 2"
+    },
+    {
+      "name": "Route 8 - Lass 1"
+    },
+    {
+      "name": "Route 8 - Gambler 1"
+    },
+    {
+      "name": "Route 8 - Super Nerd 1"
+    },
+    {
+      "name": "Route 8 - Lass 2"
+    },
+    {
+      "name": "Route 8 - Super Nerd 2"
+    },
+    {
+      "name": "Route 8 - Lass 3"
+    },
+    {
+      "name": "Route 8 - Lass 4"
+    },
+    {
+      "name": "Route 8 - Gambler 2"
+    },
+    {
+      "name": "Route 8 - Super Nerd 3"
+    },
+    {
+      "name": "Route 6 - Bug Catcher 1"
+    },
+    {
+      "name": "Route 6 - Jr. Trainer M 1"
+    },
+    {
+      "name": "Route 6 - Jr. Trainer F 1"
+    },
+    {
+      "name": "Route 6 - Bug Catcher 2"
+    },
+    {
+      "name": "Route 6 - Jr. Trainer F 2"
+    },
+    {
+      "name": "Route 6 - Jr. Trainer M 2"
+    },
+    {
+      "name": "Route 4 - Cooltrainer F"
+    },
+    {
+      "name": "Route 3 - Lass 1"
+    },
+    {
+      "name": "Route 3 - Bug Catcher 1"
+    },
+    {
+      "name": "Route 3 - Youngster 1"
+    },
+    {
+      "name": "Route 3 - Bug Catcher 2"
+    },
+    {
+      "name": "Route 3 - Lass 2"
+    },
+    {
+      "name": "Route 3 - Youngster 2"
+    },
+    {
+      "name": "Route 3 - Bug Catcher 3"
+    },
+    {
+      "name": "Route 3 - Lass 3"
+    },
+    {
+      "name": "Saffron Gym - Psychic 1"
+    },
+    {
+      "name": "Saffron Gym - Psychic 2"
+    },
+    {
+      "name": "Saffron Gym - Psychic 3"
+    },
+    {
+      "name": "Saffron Gym - Channeler 1"
+    },
+    {
+      "name": "Saffron Gym - Psychic 4"
+    },
+    {
+      "name": "Saffron Gym - Channeler 2"
+    },
+    {
+      "name": "Saffron Gym - Channeler 3"
+    },
+    {
+      "name": "Fighting Dojo - Blackbelt 1"
+    },
+    {
+      "name": "Fighting Dojo - Blackbelt 2"
+    },
+    {
+      "name": "Fighting Dojo - Blackbelt 3"
+    },
+    {
+      "name": "Fighting Dojo - Blackbelt 4"
+    },
+    {
+      "name": "Fuchsia Gym - Juggler 1"
+    },
+    {
+      "name": "Fuchsia Gym - Juggler 2"
+    },
+    {
+      "name": "Fuchsia Gym - Juggler 3"
+    },
+    {
+      "name": "Fuchsia Gym - Tamer 1"
+    },
+    {
+      "name": "Fuchsia Gym - Tamer 2"
+    },
+    {
+      "name": "Fuchsia Gym - Juggler 4"
+    },
+    {
+      "name": "Celadon Gym - Lass 1"
+    },
+    {
+      "name": "Celadon Gym - Beauty 1"
+    },
+    {
+      "name": "Celadon Gym - Beauty 2"
+    },
+    {
+      "name": "Celadon Gym - Jr. Trainer F"
+    },
+    {
+      "name": "Celadon Gym - Lass 2"
+    },
+    {
+      "name": "Celadon Gym - Cool Trainer F"
+    },
+    {
+      "name": "Celadon Gym - Beauty 3"
+    },
+    {
+      "name": "Vermilion Gym - Sailor"
+    },
+    {
+      "name": "Vermilion Gym - Rocker"
+    },
+    {
+      "name": "Vermilion Gym - Gentleman"
+    },
+    {
+      "name": "Pokemon Tower 3F - Channeler 1"
+    },
+    {
+      "name": "Pokemon Tower 3F - Channeler 2"
+    },
+    {
+      "name": "Pokemon Tower 3F - Channeler 3"
+    },
+    {
+      "name": "Pokemon Tower 4F - Channeler 1"
+    },
+    {
+      "name": "Pokemon Tower 4F - Channeler 2"
+    },
+    {
+      "name": "Pokemon Tower 4F - Channeler 3"
+    },
+    {
+      "name": "Pokemon Tower 5F - Channeler 1"
+    },
+    {
+      "name": "Pokemon Tower 5F - Channeler 2"
+    },
+    {
+      "name": "Pokemon Tower 5F - Channeler 3"
+    },
+    {
+      "name": "Pokemon Tower 5F - Channeler 4"
+    },
+    {
+      "name": "Pokemon Tower 6F - Channeler 1"
+    },
+    {
+      "name": "Pokemon Tower 6F - Channeler 2"
+    },
+    {
+      "name": "Pokemon Tower 6F - Channeler 3"
+    },
+    {
+      "name": "Pokemon Tower 7F - Rocket 1"
+    },
+    {
+      "name": "Pokemon Tower 7F - Rocket 2"
+    },
+    {
+      "name": "Pokemon Tower 7F - Rocket 3"
+    },
+    {
+      "name": "Cerulean Gym - Swimmer"
+    },
+    {
+      "name": "Cerulean Gym - Jr. Trainer F"
+    },
+    {
+      "name": "Pewter Gym - Jr. Trainer M"
+    },
+    {
+      "name": "Viridian Gym - Tamer 1"
+    },
+    {
+      "name": "Viridian Gym - Blackbelt 1"
+    },
+    {
+      "name": "Viridian Gym - Cooltrainer M 1"
+    },
+    {
+      "name": "Viridian Gym - Cooltrainer M 2"
+    },
+    {
+      "name": "Viridian Gym - Blackbelt 2"
+    },
+    {
+      "name": "Viridian Gym - Tamer 2"
+    },
+    {
+      "name": "Viridian Gym - Cooltrainer M 3"
+    },
+    {
+      "name": "Viridian Gym - Blackbelt 3"
+    },
+    {
+      "name": "Victory Road 1F - Cooltrainer F"
+    },
+    {
+      "name": "Victory Road 1F - Cooltrainer M"
+    },
+    {
+      "name": "Victory Road 2F - Blackbelt"
+    },
+    {
+      "name": "Victory Road 2F - Juggler 1"
+    },
+    {
+      "name": "Victory Road 2F - Tamer"
+    },
+    {
+      "name": "Victory Road 2F - Juggler 2"
+    },
+    {
+      "name": "Victory Road 2F - PokeManiac"
+    },
+    {
+      "name": "Victory Road 3F - Cooltrainer M 1"
+    },
+    {
+      "name": "Victory Road 3F - Cooltrainer F 1"
+    },
+    {
+      "name": "Victory Road 3F - Cooltrainer M 2"
+    },
+    {
+      "name": "Victory Road 3F - Cooltrainer F 2"
+    },
+    {
+      "name": "Indigo Plateau - Lorelei"
+    },
+    {
+      "name": "Indigo Plateau - Bruno"
+    },
+    {
+      "name": "Indigo Plateau - Agatha"
+    },
+    {
+      "name": "Indigo Plateau - Lance"
     }
   ],
-  "status": "New"
+  "status": "Updated"
 }

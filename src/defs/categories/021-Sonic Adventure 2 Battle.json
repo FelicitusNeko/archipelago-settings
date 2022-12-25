@@ -3,13 +3,74 @@
   "index": 21,
   "settings": [
     {
-      "name": "include_missions",
-      "description": "How many missions per level to include. In order, they are: Base mission, 100 Rings, Lost Chao, Time Attack, Hard Mode",
-      "high": 5,
-      "readableName": "Include missions",
-      "low": 1,
-      "type": "range",
-      "default": 2
+      "name": "goal",
+      "description": "Determines the goal of the seed.",
+      "readableName": "Goal",
+      "values": [
+        {
+          "name": "biolizard",
+          "readableName": "Biolizard",
+          "description": "Finish Cannon's Core and defeat the Biolizard and Finalhazard."
+        },
+        {
+          "name": "chaos_emerald_hunt",
+          "readableName": "Chaos Emerald hunt",
+          "description": "Find the Seven Chaos Emeralds and reach Green Hill Zone."
+        },
+        {
+          "name": "finalhazard_chaos_emerald_hunt",
+          "readableName": "Finalhazard & Chaos Emerald hunt",
+          "description": "Find the Seven Chaos Emeralds and reach Green Hill Zone, then defeat Finalhazard."
+        }
+      ],
+      "type": "choice",
+      "default": "biolizard"
+    },
+    {
+      "name": "mission_shuffle",
+      "description": "Determines whether missions order will be shuffled per level.",
+      "readableName": "Mission shuffle",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "keysanity",
+      "description": "Determines whether picking up Chao Keys grants checks.",
+      "readableName": "Keysanity",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "whistlesanity",
+      "description": "Determines whether whistling at various spots grants checks.",
+      "readableName": "Whistlesanity",
+      "values": [
+        {
+          "name": "none",
+          "readableName": "None"
+        },
+        {
+          "name": "pipes",
+          "readableName": "Pipes"
+        },
+        {
+          "name": "hidden",
+          "readableName": "Hidden Whistle Spots"
+        },
+        {
+          "name": "both",
+          "readableName": "Both Pipes and Whistle Spots"
+        }
+      ],
+      "type": "choice",
+      "default": "none"
+    },
+    {
+      "name": "beetlesanity",
+      "description": "Determines whether destroying Gold Beetles grants checks.",
+      "readableName": "Beetlesanity",
+      "type": "toggle",
+      "default": false
     },
     {
       "name": "required_rank",
@@ -48,6 +109,26 @@
       "low": 0,
       "type": "range",
       "default": 50
+    },
+    {
+      "name": "required_cannons_core_missions",
+      "description": "Determines how many Cannon's Core missions must be completed to unlock the Biolizard (for the \"Biolizard\" goal).",
+      "readableName": "Required Cannon's Core missions",
+      "values": [
+        {
+          "name": "first",
+          "readableName": "First"
+        },
+        {
+          "name": "all_active",
+          "readableName": "All active"
+        }
+      ],
+      "type": "choice",
+      "default": "first",
+      "dependsOn": {
+        "goal": ["biolizard"]
+      }
     },
     {
       "name": "number_of_level_gates",
@@ -94,7 +175,7 @@
     {
       "name": "level_gate_costs",
       "description": "Determines how many Emblems are required to unlock level gates.",
-      "readableName": "level gate costs",
+      "readableName": "Level gate costs",
       "values": [
         {
           "name": "low",
@@ -293,6 +374,77 @@
       "default": "medium"
     },
     {
+      "name": "gravity_trap_weight",
+      "description": "Likelihood of a receiving a trap which increases gravity.",
+      "readableName": "Gravity trap weight",
+      "values": [
+        {
+          "name": "none",
+          "readableName": "None"
+        },
+        {
+          "name": "low",
+          "readableName": "Low"
+        },
+        {
+          "name": "medium",
+          "readableName": "Medium"
+        },
+        {
+          "name": "high",
+          "readableName": "High"
+        }
+      ],
+      "type": "choice",
+      "default": "medium"
+    },
+    {
+      "name": "exposition_trap_weight",
+      "description": "Likelihood of a receiving a trap which tells you the story.",
+      "readableName": "Exposition trap weight",
+      "values": [
+        {
+          "name": "none",
+          "readableName": "None"
+        },
+        {
+          "name": "low",
+          "readableName": "Low"
+        },
+        {
+          "name": "medium",
+          "readableName": "Medium"
+        },
+        {
+          "name": "high",
+          "readableName": "High"
+        }
+      ],
+      "type": "choice",
+      "default": "medium"
+    },
+    {
+      "name": "sadx_music",
+      "description": "Whether the randomizer will include Sonic Adventure DX Music in the music pool",
+      "readableName": "Include Sonic Adventure DX music",
+      "values": [
+        {
+          "name": "sa2b",
+          "readableName": "Only music from Sonic Adventure 2 Battle"
+        },
+        {
+          "name": "sadx",
+          "readableName": "Only music from Sonic Adventure DX"
+        },
+        {
+          "name": "both",
+          "readableName": "Include both"
+        }
+      ],
+      "type": "choice",
+      "default": "sa2b"
+    },
+    {
       "name": "music_shuffle",
       "description": "Determines whether music will be shuffled.",
       "readableName": "Music shuffle",
@@ -310,13 +462,274 @@
           "name": "full",
           "description": "Level, Menu, and Additional music is shuffled.",
           "readableName": "Full"
+        },
+        {
+          "name": "singularity",
+          "readableName": "Singularity",
+          "description": "Level, Menu, and Additional music is all replaced with a single random song."
         }
       ],
       "type": "choice",
       "default": "none"
     },
     {
-      "name": "death_link",
+      "name": "narrator",
+      "description": "Determines which menu narrator is used.",
+      "readableName": "Narrator",
+      "values": [
+        {
+          "name": "default",
+          "readableName": "Default"
+        },
+        {
+          "name": "shadow",
+          "readableName": "Shadow"
+        },
+        {
+          "name": "rouge",
+          "readableName": "Rouge"
+        },
+        {
+          "name": "eggman",
+          "readableName": "Eggman"
+        },
+        {
+          "name": "maria",
+          "readableName": "Maria"
+        },
+        {
+          "name": "secretary",
+          "readableName": "Secretary"
+        },
+        {
+          "name": "omochao",
+          "readableName": "Omochao"
+        },
+        {
+          "name": "amy",
+          "readableName": "Amy Rose"
+        },
+        {
+          "name": "tails",
+          "readableName": "Tails"
+        },
+        {
+          "name": "knuckles",
+          "readableName": "Knuckles"
+        },
+        {
+          "name": "sonic",
+          "readableName": "Sonic"
+        }
+      ],
+      "type": "choice",
+      "default": "default"
+    },
+    {
+      "name": "logic_difficulty",
+      "description": "Determines what set of Upgrade Requirement logic to use.",
+      "readableName": "Logic difficulty",
+      "values": [
+        {
+          "name": "standard",
+          "readableName": "Standard",
+          "description": "The logic assumes the \"intended\" usage of Upgrades to progress through levels."
+        },
+        {
+          "name": "hard",
+          "readableName": "Hard",
+          "description": "Some simple skips or sequence breaks may be required."
+        }
+      ],
+      "type": "choice",
+      "default": "standard"
+    },
+    {
+      "name": "speed_mission_count",
+      "description": "Determines the number of active missions to include for Sonic and Shadow stages.",
+      "high": 5,
+      "readableName": "Speed Mission count",
+      "low": 1,
+      "type": "range",
+      "default": 2
+    },
+    {
+      "name": "speed_mission_2",
+      "description": "Determines if the Sonic and Shadow 100 rings missions should be included.",
+      "readableName": "Speed Mission 2 (100 Rings)",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "speed_mission_3",
+      "description": "Determines if the Sonic and Shadow lost Chao missions should be included.",
+      "readableName": "Speed Mission 3 (Lost Chao)",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "speed_mission_4",
+      "description": "Determines if the Sonic and Shadow time trial missions should be included.",
+      "readableName": "Speed Mission 4 (Time Trial)",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "speed_mission_5",
+      "description": "Determines if the Sonic and Shadow hard missions should be included.",
+      "readableName": "Speed Mission 5 (Hard mode)",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "mech_mission_count",
+      "description": "Determines the number of active missions to include for Tails and Eggman stages",
+      "high": 5,
+      "readableName": "Mech Mission count",
+      "low": 1,
+      "type": "range",
+      "default": 2
+    },
+    {
+      "name": "mech_mission_2",
+      "description": "Determines if the Tails and Eggman 100 rings missions should be included.",
+      "readableName": "Mech Mission 2 (100 Rings)",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "mech_mission_3",
+      "description": "Determines if the Tails and Eggman lost Chao missions should be included",
+      "readableName": "Mech Mission 3 (Lost Chao)",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "mech_mission_4",
+      "description": "Determines if the Tails and Eggman time trial missions should be included.",
+      "readableName": "Mech Mission 4 (Time Trial)",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "mech_mission_5",
+      "description": "Determines if the Tails and Eggman hard missions should be included.",
+      "readableName": "Mech Mission 5 (Hard mode)",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "hunt_mission_count",
+      "description": "Determines the number of active missions to include for Knuckles and Rouge stages.",
+      "high": 5,
+      "readableName": "Hunt Mission count",
+      "low": 1,
+      "type": "range",
+      "default": 2
+    },
+    {
+      "name": "hunt_mission_2",
+      "description": "Determines if the Knuckles and Rouge 100 rings missions should be included.",
+      "readableName": "Hunt Mission 2 (100 Rings)",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "hunt_mission_3",
+      "description": "Determines if the Knuckles and Rouge lost Chao missions should be included.",
+      "readableName": "Hunt Mission 3 (Lost Chao)",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "hunt_mission_4",
+      "description": "Determines if the Knuckles and Rouge time trial missions should be included.",
+      "readableName": "Hunt Mission 4 (Time Trial)",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "hunt_mission_5",
+      "description": "Determines if the Knuckles and Rouge hard missions should be included.",
+      "readableName": "Hunt Mission 5 (Hard mode)",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "kart_mission_count",
+      "description": "Determines he number of active missions to include for Route 101 and 280.",
+      "high": 5,
+      "readableName": "Kart Mission count",
+      "low": 1,
+      "type": "range",
+      "default": 2
+    },
+    {
+      "name": "kart_mission_2",
+      "description": "Determines if Route 101 and 280's 100 rings missions should be included.",
+      "readableName": "Kart Mission 2 (100 Rings)",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "kart_mission_3",
+      "description": "Determines if the Route 101 and 280 Avoid Cars missions should be included",
+      "readableName": "Kart Mission 3 (Avoid Cars)",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "kart_mission_4",
+      "description": "Determines if the Route 101 and 280 Avoid Walls missions should be included",
+      "readableName": "Kart Mission 4 (Avoid Walls)",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "kart_mission_5",
+      "description": "Determines if the Route 101 and 280 hard missions should be included.",
+      "readableName": "Kart Mission 5 (Hard mode)",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "cannons_core_mission_count",
+      "description": "Determines the number of active missions to include for Cannon's Core.",
+      "high": 5,
+      "readableName": "Cannon's Core Mission count",
+      "low": 1,
+      "type": "range",
+      "default": 2
+    },
+    {
+      "name": "cannons_core_mission_2",
+      "description": "Determines if the Cannon's Core 100 rings mission should be included.",
+      "readableName": "Cannon's Core Mission 2 (100 Rings)",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "cannons_core_mission_3",
+      "description": "Determines if the Cannon's Core lost Chao mission should be included",
+      "readableName": "Cannon's Core Mission 3 (Lost Chao)",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "cannons_core_mission_4",
+      "description": "Determines if the Cannon's Core time trial mission should be included.",
+      "readableName": "Cannon's Core Mission 4 (Time Trial)",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "cannons_core_mission_5",
+      "description": "Determines if the Cannon's Core hard mission should be included.",
+      "readableName": "Cannon's Core Mission 5 (Hard mode)",
+      "type": "toggle",
+      "default": true
+    },
+    {
       "type": "deathlink"
     }
   ],
@@ -449,6 +862,33 @@
     {
       "name": "Tiny Trap",
       "max": 0
+    },
+    {
+      "name": "Gravity Trap"
+    },
+    {
+      "name": "Exposition Trap"
+    },
+    {
+      "name": "White Chaos Emerald"
+    },
+    {
+      "name": "Red Chaos Emerald"
+    },
+    {
+      "name": "Cyan Chaos Emerald"
+    },
+    {
+      "name": "Purple Chaos Emerald"
+    },
+    {
+      "name": "Green Chaos Emerald"
+    },
+    {
+      "name": "Yellow Chaos Emerald"
+    },
+    {
+      "name": "Blue Chaos Emerald"
     }
   ],
   "locations": [
@@ -546,6 +986,9 @@
       "name": "Cannon Core - 1"
     },
     {
+      "name": "Green Hill"
+    },
+    {
       "name": "City Escape - 2"
     },
     {
@@ -639,9 +1082,6 @@
       "name": "Cannon Core - 2"
     },
     {
-      "name": "Biolizard"
-    },
-    {
       "name": "City Escape - 3"
     },
     {
@@ -733,6 +1173,9 @@
     },
     {
       "name": "Cannon Core - 3"
+    },
+    {
+      "name": "Finalhazard"
     },
     {
       "name": "City Escape - 4"
@@ -1216,6 +1659,735 @@
     },
     {
       "name": "Chao Karate - Super"
+    },
+    {
+      "name": "City Escape - Chao Key 1"
+    },
+    {
+      "name": "Wild Canyon - Chao Key 1"
+    },
+    {
+      "name": "Prison Lane - Chao Key 1"
+    },
+    {
+      "name": "Metal Harbor - Chao Key 1"
+    },
+    {
+      "name": "Green Forest - Chao Key 1"
+    },
+    {
+      "name": "Pumpkin Hill - Chao Key 1"
+    },
+    {
+      "name": "Mission Street - Chao Key 1"
+    },
+    {
+      "name": "Aquatic Mine - Chao Key 1"
+    },
+    {
+      "name": "Hidden Base - Chao Key 1"
+    },
+    {
+      "name": "Pyramid Cave - Chao Key 1"
+    },
+    {
+      "name": "Death Chamber - Chao Key 1"
+    },
+    {
+      "name": "Eternal Engine - Chao Key 1"
+    },
+    {
+      "name": "Meteor Herd - Chao Key 1"
+    },
+    {
+      "name": "Crazy Gadget - Chao Key 1"
+    },
+    {
+      "name": "Final Rush - Chao Key 1"
+    },
+    {
+      "name": "Iron Gate - Chao Key 1"
+    },
+    {
+      "name": "Dry Lagoon - Chao Key 1"
+    },
+    {
+      "name": "Sand Ocean - Chao Key 1"
+    },
+    {
+      "name": "Radical Highway - Chao Key 1"
+    },
+    {
+      "name": "Egg Quarters - Chao Key 1"
+    },
+    {
+      "name": "Lost Colony - Chao Key 1"
+    },
+    {
+      "name": "Weapons Bed - Chao Key 1"
+    },
+    {
+      "name": "Security Hall - Chao Key 1"
+    },
+    {
+      "name": "White Jungle - Chao Key 1"
+    },
+    {
+      "name": "Sky Rail - Chao Key 1"
+    },
+    {
+      "name": "Mad Space - Chao Key 1"
+    },
+    {
+      "name": "Cosmic Wall - Chao Key 1"
+    },
+    {
+      "name": "Final Chase - Chao Key 1"
+    },
+    {
+      "name": "Cannon Core - Chao Key 1"
+    },
+    {
+      "name": "Green Hill - Chao Key 1"
+    },
+    {
+      "name": "City Escape - Chao Key 2"
+    },
+    {
+      "name": "Wild Canyon - Chao Key 2"
+    },
+    {
+      "name": "Prison Lane - Chao Key 2"
+    },
+    {
+      "name": "Metal Harbor - Chao Key 2"
+    },
+    {
+      "name": "Green Forest - Chao Key 2"
+    },
+    {
+      "name": "Pumpkin Hill - Chao Key 2"
+    },
+    {
+      "name": "Mission Street - Chao Key 2"
+    },
+    {
+      "name": "Aquatic Mine - Chao Key 2"
+    },
+    {
+      "name": "Hidden Base - Chao Key 2"
+    },
+    {
+      "name": "Pyramid Cave - Chao Key 2"
+    },
+    {
+      "name": "Death Chamber - Chao Key 2"
+    },
+    {
+      "name": "Eternal Engine - Chao Key 2"
+    },
+    {
+      "name": "Meteor Herd - Chao Key 2"
+    },
+    {
+      "name": "Crazy Gadget - Chao Key 2"
+    },
+    {
+      "name": "Final Rush - Chao Key 2"
+    },
+    {
+      "name": "Iron Gate - Chao Key 2"
+    },
+    {
+      "name": "Dry Lagoon - Chao Key 2"
+    },
+    {
+      "name": "Sand Ocean - Chao Key 2"
+    },
+    {
+      "name": "Radical Highway - Chao Key 2"
+    },
+    {
+      "name": "Egg Quarters - Chao Key 2"
+    },
+    {
+      "name": "Lost Colony - Chao Key 2"
+    },
+    {
+      "name": "Weapons Bed - Chao Key 2"
+    },
+    {
+      "name": "Security Hall - Chao Key 2"
+    },
+    {
+      "name": "White Jungle - Chao Key 2"
+    },
+    {
+      "name": "Sky Rail - Chao Key 2"
+    },
+    {
+      "name": "Mad Space - Chao Key 2"
+    },
+    {
+      "name": "Cosmic Wall - Chao Key 2"
+    },
+    {
+      "name": "Final Chase - Chao Key 2"
+    },
+    {
+      "name": "Cannon Core - Chao Key 2"
+    },
+    {
+      "name": "City Escape - Chao Key 3"
+    },
+    {
+      "name": "Wild Canyon - Chao Key 3"
+    },
+    {
+      "name": "Prison Lane - Chao Key 3"
+    },
+    {
+      "name": "Metal Harbor - Chao Key 3"
+    },
+    {
+      "name": "Green Forest - Chao Key 3"
+    },
+    {
+      "name": "Pumpkin Hill - Chao Key 3"
+    },
+    {
+      "name": "Mission Street - Chao Key 3"
+    },
+    {
+      "name": "Aquatic Mine - Chao Key 3"
+    },
+    {
+      "name": "Pyramid Cave - Chao Key 3"
+    },
+    {
+      "name": "Death Chamber - Chao Key 3"
+    },
+    {
+      "name": "Eternal Engine - Chao Key 3"
+    },
+    {
+      "name": "Meteor Herd - Chao Key 3"
+    },
+    {
+      "name": "Crazy Gadget - Chao Key 3"
+    },
+    {
+      "name": "Final Rush - Chao Key 3"
+    },
+    {
+      "name": "Iron Gate - Chao Key 3"
+    },
+    {
+      "name": "Dry Lagoon - Chao Key 3"
+    },
+    {
+      "name": "Sand Ocean - Chao Key 3"
+    },
+    {
+      "name": "Radical Highway - Chao Key 3"
+    },
+    {
+      "name": "Egg Quarters - Chao Key 3"
+    },
+    {
+      "name": "Lost Colony - Chao Key 3"
+    },
+    {
+      "name": "Weapons Bed - Chao Key 3"
+    },
+    {
+      "name": "Security Hall - Chao Key 3"
+    },
+    {
+      "name": "White Jungle - Chao Key 3"
+    },
+    {
+      "name": "Sky Rail - Chao Key 3"
+    },
+    {
+      "name": "Mad Space - Chao Key 3"
+    },
+    {
+      "name": "Cosmic Wall - Chao Key 3"
+    },
+    {
+      "name": "Final Chase - Chao Key 3"
+    },
+    {
+      "name": "Cannon Core - Chao Key 3"
+    },
+    {
+      "name": "City Escape - Pipe 1"
+    },
+    {
+      "name": "Wild Canyon - Pipe 1"
+    },
+    {
+      "name": "Prison Lane - Pipe 1"
+    },
+    {
+      "name": "Metal Harbor - Pipe 1"
+    },
+    {
+      "name": "Green Forest - Pipe 1"
+    },
+    {
+      "name": "Pumpkin Hill - Pipe 1"
+    },
+    {
+      "name": "Mission Street - Pipe 1"
+    },
+    {
+      "name": "Aquatic Mine - Pipe 1"
+    },
+    {
+      "name": "Hidden Base - Pipe 1"
+    },
+    {
+      "name": "Pyramid Cave - Pipe 1"
+    },
+    {
+      "name": "Death Chamber - Pipe 1"
+    },
+    {
+      "name": "Eternal Engine - Pipe 1"
+    },
+    {
+      "name": "Meteor Herd - Pipe 1"
+    },
+    {
+      "name": "Crazy Gadget - Pipe 1"
+    },
+    {
+      "name": "Final Rush - Pipe 1"
+    },
+    {
+      "name": "Iron Gate - Pipe 1"
+    },
+    {
+      "name": "Dry Lagoon - Pipe 1"
+    },
+    {
+      "name": "Sand Ocean - Pipe 1"
+    },
+    {
+      "name": "Radical Highway - Pipe 1"
+    },
+    {
+      "name": "Egg Quarters - Pipe 1"
+    },
+    {
+      "name": "Lost Colony - Pipe 1"
+    },
+    {
+      "name": "Weapons Bed - Pipe 1"
+    },
+    {
+      "name": "Security Hall - Pipe 1"
+    },
+    {
+      "name": "White Jungle - Pipe 1"
+    },
+    {
+      "name": "Sky Rail - Pipe 1"
+    },
+    {
+      "name": "Mad Space - Pipe 1"
+    },
+    {
+      "name": "Cosmic Wall - Pipe 1"
+    },
+    {
+      "name": "Final Chase - Pipe 1"
+    },
+    {
+      "name": "Cannon Core - Pipe 1"
+    },
+    {
+      "name": "City Escape - Pipe 2"
+    },
+    {
+      "name": "Wild Canyon - Pipe 2"
+    },
+    {
+      "name": "Prison Lane - Pipe 2"
+    },
+    {
+      "name": "Green Forest - Pipe 2"
+    },
+    {
+      "name": "Mission Street - Pipe 2"
+    },
+    {
+      "name": "Aquatic Mine - Pipe 2"
+    },
+    {
+      "name": "Hidden Base - Pipe 2"
+    },
+    {
+      "name": "Pyramid Cave - Pipe 2"
+    },
+    {
+      "name": "Death Chamber - Pipe 2"
+    },
+    {
+      "name": "Eternal Engine - Pipe 2"
+    },
+    {
+      "name": "Meteor Herd - Pipe 2"
+    },
+    {
+      "name": "Crazy Gadget - Pipe 2"
+    },
+    {
+      "name": "Final Rush - Pipe 2"
+    },
+    {
+      "name": "Iron Gate - Pipe 2"
+    },
+    {
+      "name": "Sand Ocean - Pipe 2"
+    },
+    {
+      "name": "Radical Highway - Pipe 2"
+    },
+    {
+      "name": "Egg Quarters - Pipe 2"
+    },
+    {
+      "name": "Lost Colony - Pipe 2"
+    },
+    {
+      "name": "Weapons Bed - Pipe 2"
+    },
+    {
+      "name": "White Jungle - Pipe 2"
+    },
+    {
+      "name": "Sky Rail - Pipe 2"
+    },
+    {
+      "name": "Mad Space - Pipe 2"
+    },
+    {
+      "name": "Cosmic Wall - Pipe 2"
+    },
+    {
+      "name": "Final Chase - Pipe 2"
+    },
+    {
+      "name": "Cannon Core - Pipe 2"
+    },
+    {
+      "name": "City Escape - Pipe 3"
+    },
+    {
+      "name": "Wild Canyon - Pipe 3"
+    },
+    {
+      "name": "Prison Lane - Pipe 3"
+    },
+    {
+      "name": "Mission Street - Pipe 3"
+    },
+    {
+      "name": "Aquatic Mine - Pipe 3"
+    },
+    {
+      "name": "Hidden Base - Pipe 3"
+    },
+    {
+      "name": "Pyramid Cave - Pipe 3"
+    },
+    {
+      "name": "Death Chamber - Pipe 3"
+    },
+    {
+      "name": "Eternal Engine - Pipe 3"
+    },
+    {
+      "name": "Meteor Herd - Pipe 3"
+    },
+    {
+      "name": "Crazy Gadget - Pipe 3"
+    },
+    {
+      "name": "Iron Gate - Pipe 3"
+    },
+    {
+      "name": "Sand Ocean - Pipe 3"
+    },
+    {
+      "name": "Radical Highway - Pipe 3"
+    },
+    {
+      "name": "Weapons Bed - Pipe 3"
+    },
+    {
+      "name": "White Jungle - Pipe 3"
+    },
+    {
+      "name": "Sky Rail - Pipe 3"
+    },
+    {
+      "name": "Mad Space - Pipe 3"
+    },
+    {
+      "name": "Cosmic Wall - Pipe 3"
+    },
+    {
+      "name": "Final Chase - Pipe 3"
+    },
+    {
+      "name": "Cannon Core - Pipe 3"
+    },
+    {
+      "name": "City Escape - Pipe 4"
+    },
+    {
+      "name": "Hidden Base - Pipe 4"
+    },
+    {
+      "name": "Pyramid Cave - Pipe 4"
+    },
+    {
+      "name": "Eternal Engine - Pipe 4"
+    },
+    {
+      "name": "Crazy Gadget - Pipe 4"
+    },
+    {
+      "name": "Iron Gate - Pipe 4"
+    },
+    {
+      "name": "Sand Ocean - Pipe 4"
+    },
+    {
+      "name": "Weapons Bed - Pipe 4"
+    },
+    {
+      "name": "White Jungle - Pipe 4"
+    },
+    {
+      "name": "Sky Rail - Pipe 4"
+    },
+    {
+      "name": "Mad Space - Pipe 4"
+    },
+    {
+      "name": "Cosmic Wall - Pipe 4"
+    },
+    {
+      "name": "Cannon Core - Pipe 4"
+    },
+    {
+      "name": "Hidden Base - Pipe 5"
+    },
+    {
+      "name": "Eternal Engine - Pipe 5"
+    },
+    {
+      "name": "Iron Gate - Pipe 5"
+    },
+    {
+      "name": "Sand Ocean - Pipe 5"
+    },
+    {
+      "name": "Weapons Bed - Pipe 5"
+    },
+    {
+      "name": "Sky Rail - Pipe 5"
+    },
+    {
+      "name": "Cosmic Wall - Pipe 5"
+    },
+    {
+      "name": "Cannon Core - Pipe 5"
+    },
+    {
+      "name": "Sky Rail - Pipe 6"
+    },
+    {
+      "name": "City Escape - Gold Beetle"
+    },
+    {
+      "name": "Wild Canyon - Gold Beetle"
+    },
+    {
+      "name": "Prison Lane - Gold Beetle"
+    },
+    {
+      "name": "Metal Harbor - Gold Beetle"
+    },
+    {
+      "name": "Green Forest - Gold Beetle"
+    },
+    {
+      "name": "Mission Street - Gold Beetle"
+    },
+    {
+      "name": "Aquatic Mine - Gold Beetle"
+    },
+    {
+      "name": "Hidden Base - Gold Beetle"
+    },
+    {
+      "name": "Pyramid Cave - Gold Beetle"
+    },
+    {
+      "name": "Death Chamber - Gold Beetle"
+    },
+    {
+      "name": "Eternal Engine - Gold Beetle"
+    },
+    {
+      "name": "Meteor Herd - Gold Beetle"
+    },
+    {
+      "name": "Crazy Gadget - Gold Beetle"
+    },
+    {
+      "name": "Final Rush - Gold Beetle"
+    },
+    {
+      "name": "Iron Gate - Gold Beetle"
+    },
+    {
+      "name": "Dry Lagoon - Gold Beetle"
+    },
+    {
+      "name": "Sand Ocean - Gold Beetle"
+    },
+    {
+      "name": "Radical Highway - Gold Beetle"
+    },
+    {
+      "name": "Egg Quarters - Gold Beetle"
+    },
+    {
+      "name": "Lost Colony - Gold Beetle"
+    },
+    {
+      "name": "Security Hall - Gold Beetle"
+    },
+    {
+      "name": "White Jungle - Gold Beetle"
+    },
+    {
+      "name": "Sky Rail - Gold Beetle"
+    },
+    {
+      "name": "Mad Space - Gold Beetle"
+    },
+    {
+      "name": "Cosmic Wall - Gold Beetle"
+    },
+    {
+      "name": "Final Chase - Gold Beetle"
+    },
+    {
+      "name": "Cannon Core - Gold Beetle"
+    },
+    {
+      "name": "City Escape - Hidden 1"
+    },
+    {
+      "name": "Prison Lane - Hidden 1"
+    },
+    {
+      "name": "Green Forest - Hidden 1"
+    },
+    {
+      "name": "Pumpkin Hill - Hidden 1"
+    },
+    {
+      "name": "Mission Street - Hidden 1"
+    },
+    {
+      "name": "Death Chamber - Hidden 1"
+    },
+    {
+      "name": "Crazy Gadget - Hidden 1"
+    },
+    {
+      "name": "Dry Lagoon - Hidden 1"
+    },
+    {
+      "name": "Radical Highway - Hidden 1"
+    },
+    {
+      "name": "Egg Quarters - Hidden 1"
+    },
+    {
+      "name": "Lost Colony - Hidden 1"
+    },
+    {
+      "name": "Security Hall - Hidden 1"
+    },
+    {
+      "name": "White Jungle - Hidden 1"
+    },
+    {
+      "name": "Cannon Core - Hidden 1"
+    },
+    {
+      "name": "City Escape - Hidden 2"
+    },
+    {
+      "name": "Prison Lane - Hidden 2"
+    },
+    {
+      "name": "Green Forest - Hidden 2"
+    },
+    {
+      "name": "Mission Street - Hidden 2"
+    },
+    {
+      "name": "Death Chamber - Hidden 2"
+    },
+    {
+      "name": "Radical Highway - Hidden 2"
+    },
+    {
+      "name": "Egg Quarters - Hidden 2"
+    },
+    {
+      "name": "White Jungle - Hidden 2"
+    },
+    {
+      "name": "City Escape - Hidden 3"
+    },
+    {
+      "name": "Prison Lane - Hidden 3"
+    },
+    {
+      "name": "Green Forest - Hidden 3"
+    },
+    {
+      "name": "Mission Street - Hidden 3"
+    },
+    {
+      "name": "Radical Highway - Hidden 3"
+    },
+    {
+      "name": "White Jungle - Hidden 3"
+    },
+    {
+      "name": "City Escape - Hidden 4"
+    },
+    {
+      "name": "Green Forest - Hidden 4"
+    },
+    {
+      "name": "Mission Street - Hidden 4"
+    },
+    {
+      "name": "City Escape - Hidden 5"
     }
   ],
   "status": "Updated"

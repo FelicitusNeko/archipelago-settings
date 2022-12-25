@@ -1,4 +1,16 @@
 {
+  "1.1.2": [
+    "Update spec to **0.3.7**",
+    [
+      "**Lufia II Ancient Cave** added",
+      "**Ocarina of Time**: Major update, lots of new options",
+      "**Timespinner**: Enter Sandman mode option",
+      "**Sonic Adventure 2 Battle**: New goals, much more granular mission control, lots of new checks, a couple of traps",
+      "**Pokémon Red and Blue**: Trainersanity, traps, DeathLink, and more",
+      "**Overcooked! 2**: Option for short Horde levels"
+    ],
+    "Fixed some defaults that got bungled by my new update utility"
+  ],
   "1.1.1": [
     "Choice and Range settings should now auto-validate their values on load and import",
     [

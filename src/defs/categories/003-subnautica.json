@@ -3,6 +3,52 @@
   "index": 3,
   "settings": [
     {
+      "name": "swim_rule",
+      "description": "What logic considers ok swimming distances.",
+      "readableName": "Swim rule",
+      "values": [
+        {
+          "name": "easy",
+          "readableName": "Easy",
+          "description": "+200 depth from any max vehicle depth."
+        },
+        {
+          "name": "normal",
+          "readableName": "Normal",
+          "description": "+400 depth from any max vehicle depth. Warning: Normal can expect you to death run to a location (No viable return trip)."
+        },
+        {
+          "name": "hard",
+          "readableName": "Hard",
+          "description": "+600 depth from any max vehicle depth. Warning: Hard may require bases, deaths, glitches, multi-tank inventory or other depth extending means."
+        },
+        {
+          "name": "items_easy",
+          "readableName": "Items easy",
+          "description": "+200 depth from any max vehicle depth. Expected depth is extended by items like seaglide, ultra glide fins and capacity tanks."
+        },
+        {
+          "name": "items_normal",
+          "readableName": "Items normal",
+          "description": "+400 depth from any max vehicle depth. Expected depth is extended by items like seaglide, ultra glide fins and capacity tanks. Warning: Normal can expect you to death run to a location (No viable return trip)."
+        },
+        {
+          "name": "items_hard",
+          "readableName": "Items hard",
+          "description": "+600 depth from any max vehicle depth. Expected depth is extended by items like seaglide, ultra glide fins and capacity tanks. Warning: Hard may require bases, deaths, glitches, multi-tank inventory or other depth extending means."
+        }
+      ],
+      "type": "choice",
+      "default": "easy"
+    },
+    {
+      "name": "early_seaglide",
+      "description": "Puts the Seaglide early in logic.",
+      "readableName": "Early Seaglide",
+      "type": "toggle",
+      "default": true
+    },
+    {
       "name": "item_pool",
       "description": "Whether to include all items or only valuables to the multiworld item pool.",
       "readableName": "Item pool",
@@ -89,7 +135,6 @@
       "default": "stasis"
     },
     {
-      "name": "death_link",
       "type": "deathlink"
     }
   ],
@@ -153,13 +198,7 @@
       "max": 1
     },
     {
-      "name": "Alien Containment Fragment",
-      "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
-      },
-      "max": 2
+      "name": "Alien Containment"
     },
     {
       "name": "Creature Decoy",
@@ -415,13 +454,7 @@
       "max": 1
     },
     {
-      "name": "Exterior Growbed Fragment",
-      "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
-      },
-      "max": 2
+      "name": "Exterior Growbed"
     },
     {
       "name": "Picture Frame",
@@ -469,13 +502,7 @@
       "max": 1
     },
     {
-      "name": "Observatory Fragment",
-      "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
-      },
-      "max": 2
+      "name": "Observatory"
     },
     {
       "name": "Multipurpose Room",
@@ -487,13 +514,7 @@
       "max": 2
     },
     {
-      "name": "Bulkhead Fragment",
-      "dependsOn": {
-        "item_pool": [
-          "standard"
-        ]
-      },
-      "max": 2
+      "name": "Bulkhead"
     },
     {
       "name": "Spotlight",
@@ -707,6 +728,21 @@
     {
       "name": "Ultra High Capacity Tank",
       "max": 1
+    },
+    {
+      "name": "Large Room"
+    },
+    {
+      "name": "Large Room Glass Dome"
+    },
+    {
+      "name": "Multipurpose Room Glass Dome"
+    },
+    {
+      "name": "Partition"
+    },
+    {
+      "name": "Partition Door"
     }
   ],
   "locations": [

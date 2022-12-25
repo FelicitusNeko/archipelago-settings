@@ -47,7 +47,7 @@
     {
       "name": "no_equip_load",
       "description": "Disable the equip load constraint from the game.",
-      "readableName": "no equip load",
+      "readableName": "No equip load",
       "type": "toggle",
       "default": false
     },
