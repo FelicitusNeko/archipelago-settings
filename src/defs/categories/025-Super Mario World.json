@@ -1,6 +1,7 @@
 {
   "category": "Super Mario World",
   "index": 25,
+  "defver": 2,
   "settings": [
     {
       "type": "deathlink"

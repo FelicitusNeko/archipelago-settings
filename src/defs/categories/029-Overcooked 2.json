@@ -1,6 +1,7 @@
 {
   "category": "Overcooked! 2",
   "index": 29,
+  "defver": 2,
   "settings": [
     {
       "name": "shuffle_level_order",

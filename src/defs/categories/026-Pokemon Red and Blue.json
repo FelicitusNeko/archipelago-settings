@@ -1,6 +1,7 @@
 {
   "category": "Pokemon Red and Blue",
   "index": 26,
+  "defver": 2,
   "settings": [
     {
       "name": "game_version",

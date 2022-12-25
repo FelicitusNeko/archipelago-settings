@@ -1,6 +1,7 @@
 {
   "category": "Hylics 2",
   "index": 28,
+  "defver": 2,
   "settings": [
     {
       "name": "party_shuffle",
