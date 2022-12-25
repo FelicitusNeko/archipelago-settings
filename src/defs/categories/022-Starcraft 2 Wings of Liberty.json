@@ -99,28 +99,28 @@
         },
         {
           "name": "mini_campaign",
-          "readableName": "Mini campaign",
-          "description": "Shorter version of the campaign with randomized missions and optional branches. 15 missions."
+          "description": "Shorter version of the campaign with randomized missions and optional branches. 15 missions.",
+          "readableName": "Mini campaign"
         },
         {
           "name": "grid",
-          "readableName": "Grid", 
-          "description": "A 4×4 grid of random missions. Start at the top-left and forge a path towards All-In. 16 missions."
+          "description": "A 4×4 grid of random missions. Start at the top-left and forge a path towards All-In. 16 missions.",
+          "readableName": "Grid"
         },
         {
           "name": "mini_grid",
-          "readableName": "Mini grid",
-          "description": "A 3×3 version of Grid. Complete the bottom-right mission to win. 9 missions."
+          "description": "A 3×3 version of Grid. Complete the bottom-right mission to win. 9 missions.",
+          "readableName": "Mini grid"
         },
         {
           "name": "blitz",
-          "readableName": "Blitz", 
-          "description": "12 random missions that open up very quickly. Complete the bottom-right mission to win. 12 missions."
+          "description": "12 random missions that open up very quickly. Complete the bottom-right mission to win. 12 missions.",
+          "readableName": "Blitz"
         },
         {
           "name": "gauntlet",
-          "readableName": "Gauntlet",
-          "description": "Linear series of 7 random missions to complete the campaign."
+          "description": "Linear series of 7 random missions to complete the campaign.",
+          "readableName": "Gauntlet"
         }
       ],
       "type": "choice",
@@ -159,18 +159,18 @@
       "values": [
         {
           "name": "standard",
-          "readableName": "Standard",
-          "description": "All missions can be completed with good micro and macro."
+          "description": "All missions can be completed with good micro and macro.",
+          "readableName": "Standard"
         },
         {
           "name": "advanced",
-          "readableName": "Advanced",
-          "description": "Completing missions may require relying on starting units and micro-heavy units."
+          "description": "Completing missions may require relying on starting units and micro-heavy units.",
+          "readableName": "Advanced"
         },
         {
           "name": "no_logic",
-          "readableName": "No logic",
-          "description": "Units and upgrades may be placed anywhere.  LIKELY TO RENDER THE RUN IMPOSSIBLE ON HARDER DIFFICULTIES!"
+          "description": "Units and upgrades may be placed anywhere.  LIKELY TO RENDER THE RUN IMPOSSIBLE ON HARDER DIFFICULTIES!",
+          "readableName": "No logic"
         }
       ],
       "type": "choice",

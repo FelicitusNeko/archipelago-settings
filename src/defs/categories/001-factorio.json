@@ -228,8 +228,7 @@
       "name": "starting_items",
       "description": "",
       "readableName": "starting items",
-      "type": "ignore",
-      "default": "burner-mining-drill"
+      "type": "ignore"
     },
     {
       "name": "recipe_time",
@@ -305,10 +304,9 @@
     },
     {
       "name": "world_gen",
-      "readableName": "World gen",
       "description": "",
-      "type": "ignore",
-      "default": ""
+      "readableName": "World gen",
+      "type": "ignore"
     },
     {
       "name": "progressive",

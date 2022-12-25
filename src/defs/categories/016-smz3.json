@@ -68,18 +68,18 @@
       "values": [
         {
           "name": "defeatboth",
-          "readableName": "Defeat Ganon & Mother Brain",
-          "description": "Find the required crystals and boss tokens kill both bosses."
+          "description": "Find the required crystals and boss tokens kill both bosses.",
+          "readableName": "Defeat Ganon & Mother Brain"
         },
         {
           "name": "fastganondefeatmotherbrain",
-          "readableName": "Fast Ganon & Mother Brain",
-          "description": "The hole to ganon is open without having to defeat Agahnim in Ganon's Tower and Ganon can be defeat as soon you have the required crystals to make Ganon vulnerable. For keysanity, this mode also removes the Crateria Boss Key requirement from Tourian to allow faster access."
+          "description": "The hole to ganon is open without having to defeat Agahnim in Ganon's Tower and Ganon can be defeat as soon you have the required crystals to make Ganon vulnerable. For keysanity, this mode also removes the Crateria Boss Key requirement from Tourian to allow faster access.",
+          "readableName": "Fast Ganon & Mother Brain"
         },
         {
           "name": "alldungeonsdefeatmotherbrain",
-          "readableName": "All Dungeons & Mother Brain",
-          "description": "Similar to \"Defeat Ganon & Mother Brain\", but also requires all dungeons to be beaten including Castle Tower and Agahnim."
+          "description": "Similar to \"Defeat Ganon & Mother Brain\", but also requires all dungeons to be beaten including Castle Tower and Agahnim.",
+          "readableName": "All Dungeons & Mother Brain"
         }
       ],
       "type": "choice",

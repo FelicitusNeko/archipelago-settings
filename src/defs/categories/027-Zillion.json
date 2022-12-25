@@ -1,7 +1,6 @@
 {
   "category": "Zillion",
   "index": 27,
-  "defver": 2,
   "settings": [
     {
       "name": "continues",
@@ -44,8 +43,8 @@
         },
         {
           "name": "restrictive",
-          "readableName": "Restrictive",
-          "description": "Champ is the only one that can get Zillion gun power level 3."
+          "description": "Champ is the only one that can get Zillion gun power level 3.",
+          "readableName": "Restrictive"
         }
       ],
       "type": "choice",
@@ -70,8 +69,8 @@
         },
         {
           "name": "restrictive",
-          "readableName": "Restrictive",
-          "description": "Apple is the only one that can get jump level 3."
+          "description": "Apple is the only one that can get jump level 3.",
+          "readableName": "Restrictive"
         }
       ],
       "type": "choice",
@@ -223,6 +222,7 @@
       "default": false
     }
   ],
+  "defver": 2,
   "items": [
     {
       "name": "Apple"
@@ -4930,5 +4930,5 @@
       "name": "J-6 bottom far left"
     }
   ],
-  "status": "New"
+  "status": "Updated"
 }

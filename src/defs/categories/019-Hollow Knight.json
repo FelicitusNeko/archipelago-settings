@@ -504,8 +504,7 @@
       "name": "PlandoCharmCosts",
       "description": "",
       "readableName": "PlandoCharmCosts",
-      "type": "ignore",
-      "default": "null"
+      "type": "ignore"
     },
     {
       "name": "MinimumEggPrice",

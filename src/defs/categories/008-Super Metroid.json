@@ -493,16 +493,13 @@
       "name": "custom_preset",
       "description": "",
       "readableName": "custom preset",
-      "type": "ignore",
-      "default": "null"
+      "type": "ignore"
     },
     {
       "name": "varia_custom_preset",
       "description": "",
       "readableName": "varia custom preset",
-      "values": [],
-      "type": "ignore",
-      "default": "null"
+      "type": "ignore"
     }
   ],
   "defver": 2,

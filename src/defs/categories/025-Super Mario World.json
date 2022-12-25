@@ -1,9 +1,9 @@
 {
   "category": "Super Mario World",
   "index": 25,
-  "defver": 2,
   "settings": [
     {
+      "name": "death_link",
       "type": "deathlink"
     },
     {
@@ -13,13 +13,13 @@
       "values": [
         {
           "name": "bowser",
-          "readableName": "Bowser",
-          "description": "Defeat Koopalings, reach Bowser's Castle and defeat Bowser."
+          "description": "Defeat Koopalings, reach Bowser's Castle and defeat Bowser.",
+          "readableName": "Bowser"
         },
         {
           "name": "yoshi_egg_hunt",
-          "readableName": "Yoshi Egg hunt",
-          "description": "Find a certain number of Yoshi Eggs."
+          "description": "Find a certain number of Yoshi Eggs.",
+          "readableName": "Yoshi Egg hunt"
         }
       ],
       "type": "choice",
@@ -28,38 +28,44 @@
     {
       "name": "bosses_required",
       "description": "How many Bosses (Koopalings or Reznor) must be defeated in order to defeat Bowser.",
+      "dependsOn": {
+        "goal": [
+          "bowser"
+        ]
+      },
       "high": 11,
       "readableName": "Bosses required",
       "low": 0,
       "type": "range",
-      "default": 7,
-      "dependsOn": {
-        "goal": ["bowser"]
-      }
+      "default": 7
     },
     {
       "name": "number_of_yoshi_eggs",
       "description": "How many Yoshi Eggs are in the pool for Yoshi Egg Hunt.",
+      "dependsOn": {
+        "goal": [
+          "yoshi_egg_hunt"
+        ]
+      },
       "high": 80,
       "readableName": "Yoshi Egg Hunt – Item pool",
       "low": 1,
       "type": "range",
-      "default": 50,
-      "dependsOn": {
-        "goal": ["yoshi_egg_hunt"]
-      }
+      "default": 50
     },
     {
       "name": "percentage_of_yoshi_eggs",
       "description": "What Percentage of Yoshi Eggs are required to finish Yoshi Egg Hunt.",
+      "dependsOn": {
+        "goal": [
+          "yoshi_egg_hunt"
+        ]
+      },
       "high": 100,
       "readableName": "Yoshi Egg Hunt – Percentage required",
       "low": 1,
       "type": "range",
-      "default": 100,
-      "dependsOn": {
-        "goal": ["yoshi_egg_hunt"]
-      }
+      "default": 100
     },
     {
       "name": "dragon_coin_checks",
@@ -75,18 +81,18 @@
       "values": [
         {
           "name": "vanilla",
-          "readableName": "Vanilla",
-          "description": "Front and Back Doors behave as vanilla."
+          "description": "Front and Back Doors behave as vanilla.",
+          "readableName": "Vanilla"
         },
         {
           "name": "fast",
-          "readableName": "Fast",
-          "description": "Both doors behave as the Back Door."
+          "description": "Both doors behave as the Back Door.",
+          "readableName": "Fast"
         },
         {
           "name": "slow",
-          "readableName": "Slow",
-          "description": "Both doors behave as the Front Door."
+          "description": "Both doors behave as the Front Door.",
+          "readableName": "Slow"
         }
       ],
       "type": "choice",
@@ -229,18 +235,18 @@
         },
         {
           "name": "consistent",
-          "readableName": "Consistent",
-          "description": "Each music track is consistently shuffled throughout the game."
+          "description": "Each music track is consistently shuffled throughout the game.",
+          "readableName": "Consistent"
         },
         {
           "name": "full",
-          "readableName": "Full",
-          "description": "Each individual level has a random music track."
+          "description": "Each individual level has a random music track.",
+          "readableName": "Full"
         },
         {
           "name": "singularity",
-          "readableName": "Singularity",
-          "description": "The entire game uses one song for overworld and one song for levels"
+          "description": "The entire game uses one song for overworld and one song for levels",
+          "readableName": "Singularity"
         }
       ],
       "type": "choice",
@@ -311,6 +317,7 @@
       "default": 5
     }
   ],
+  "defver": 2,
   "items": [
     {
       "name": "The Princess",
