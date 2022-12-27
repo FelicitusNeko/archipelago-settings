@@ -729,7 +729,7 @@
       "type": "range",
       "default": 9,
       "dependsOn": {
-        "shuffle_ganon_bosskey": ["rewards"]
+        "shuffle_ganon_bosskey": ["dungeons"]
       }
     },
     {
