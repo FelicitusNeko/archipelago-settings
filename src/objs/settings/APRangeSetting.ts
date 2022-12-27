@@ -121,11 +121,12 @@ export class APRangeSetting extends APSetting<number | string> {
     if (this.low === this.high) return value;
     const validAliases = this._aliases ? [...Object.keys(this._aliases)] : [];
     const isValid = (vvalue: number | string) => {
+      console.debug(vvalue, typeof vvalue);
       if (vvalue === null) return false;
       if (typeof vvalue === "number") return vvalue >= this.low && vvalue <= this.high;
       // this line is a broad assumption, but probably correct most of the time
       // TODO: check to make sure any range values here are still valid
-      else if (vvalue.startsWith("random")) return true;
+      else if (typeof vvalue === "string" && vvalue.startsWith("random")) return true;
       else return validAliases.includes(vvalue);
     }
     if (Array.isArray(value)) {
