@@ -9,7 +9,12 @@
       "**Pokémon Red and Blue**: Trainersanity, traps, DeathLink, and more",
       "**Overcooked! 2**: Option for short Horde levels"
     ],
-    "Fixed some defaults that got bungled by my new update utility"
+    "Fixed some defaults that got bungled by my new update utility",
+    "*Revision 1*:",
+    [
+      "**Ocarina of Time**: Fixed dependency for Ganon boss key dungeon reward setting",
+      "Fixed validation issue on importing Range values where the value used to be Toggle and thus is neither string nor number"
+    ]
   ],
   "1.1.1": [
     "Choice and Range settings should now auto-validate their values on load and import",
