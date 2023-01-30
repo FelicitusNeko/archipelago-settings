@@ -96,7 +96,7 @@
       "readableName": "Stars to win",
       "low": 0,
       "type": "range",
-      "default": 66
+      "default": 60
     },
     {
       "name": "star_threshold_scale",
@@ -105,7 +105,7 @@
       "readableName": "Star threshold scale",
       "low": 1,
       "type": "range",
-      "default": 45
+      "default": 35
     }
   ],
   "defver": 2,
@@ -353,5 +353,5 @@
       "name": "Kevin-8 Completed"
     }
   ],
-  "status": "New"
+  "status": "Updated"
 }

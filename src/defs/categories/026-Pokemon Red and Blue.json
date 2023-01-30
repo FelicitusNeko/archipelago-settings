@@ -657,13 +657,13 @@
         },
         {
           "name": "randomize",
-          "readableName": "Randomize",
-          "description": "The matchup weight options will determine the weights. If the numbers chosen across the 4 settings add up to exactly 225, they will be the exact numbers of those matchups. Otherwise, the normal super effective, and not very effective matchup settings will be used as weights. The immunities option will always be the exact amount of immunity matchups."
+          "description": "The matchup weight options will determine the weights. If the numbers chosen across the 4 settings add up to exactly 225, they will be the exact numbers of those matchups. Otherwise, the normal super effective, and not very effective matchup settings will be used as weights. The immunities option will always be the exact amount of immunity matchups.",
+          "readableName": "Randomize"
         },
         {
           "name": "chaos",
-          "readableName": "Chaos",
-          "description": "The matchup settings will be ignored and every type matchup will be given a random damage modifier anywhere between 0 to 200% damage, in 10% increments."
+          "description": "The matchup settings will be ignored and every type matchup will be given a random damage modifier anywhere between 0 to 200% damage, in 10% increments.",
+          "readableName": "Chaos"
         }
       ],
       "type": "choice",
@@ -672,50 +672,58 @@
     {
       "name": "normal_matchups",
       "description": "If 'randomize' is chosen for `randomize_type_chart`, this will be the weight for neutral matchups.",
+      "dependsOn": {
+        "randomize_type_chart": [
+          "randomize"
+        ]
+      },
       "high": 225,
       "readableName": "Normal matchups",
       "low": 0,
       "type": "range",
-      "default": 143,
-      "dependsOn": {
-        "randomize_type_chart": ["randomize"]
-      }
+      "default": 143
     },
     {
       "name": "super_effective_matchups",
       "description": "If 'randomize' is chosen for `randomize_type_chart`, this will be the weight for super effective matchups.",
+      "dependsOn": {
+        "randomize_type_chart": [
+          "randomize"
+        ]
+      },
       "high": 225,
       "readableName": "Super Effective matchups",
       "low": 0,
       "type": "range",
-      "default": 38,
-      "dependsOn": {
-        "randomize_type_chart": ["randomize"]
-      }
+      "default": 38
     },
     {
       "name": "not_very_effective_matchups",
       "description": "If 'randomize' is chosen for `randomize_type_chart`, this will be the weight for not very effective matchups.",
+      "dependsOn": {
+        "randomize_type_chart": [
+          "randomize"
+        ]
+      },
       "high": 225,
       "readableName": "Not Very Effective matchups",
       "low": 0,
       "type": "range",
-      "default": 38,
-      "dependsOn": {
-        "randomize_type_chart": ["randomize"]
-      }
+      "default": 38
     },
     {
       "name": "immunity_matchups",
       "description": "If 'randomize' is chosen for `randomize_type_chart`, this will be the exact number of immunities.",
+      "dependsOn": {
+        "randomize_type_chart": [
+          "randomize"
+        ]
+      },
       "high": 100,
       "readableName": "Immunity matchups",
       "low": 0,
       "type": "range",
-      "default": 6,
-      "dependsOn": {
-        "randomize_type_chart": ["randomize"]
-      }
+      "default": 6
     },
     {
       "name": "safari_zone_normal_battles",
@@ -810,6 +818,10 @@
         {
           "name": "high",
           "readableName": "High"
+        },
+        {
+          "name": "disabled",
+          "readableName": "*disabled"
         }
       ],
       "type": "choice",
@@ -831,6 +843,10 @@
         {
           "name": "high",
           "readableName": "High"
+        },
+        {
+          "name": "disabled",
+          "readableName": "*disabled"
         }
       ],
       "type": "choice",
@@ -852,6 +868,10 @@
         {
           "name": "high",
           "readableName": "High"
+        },
+        {
+          "name": "disabled",
+          "readableName": "*disabled"
         }
       ],
       "type": "choice",
@@ -1837,7 +1857,7 @@
       "name": "Rocket Hideout B3F - Hidden Item Near East Item"
     },
     {
-      "name": "Rocket Hideout B4F - Hidden Item Behind Giovanni"
+      "name": "Rocket Hideout B4F - Hidden Item Behind Giovanni (Lift Key)"
     },
     {
       "name": "Pokemon Tower 5F - Hidden Item Near West Staircase"
@@ -2275,7 +2295,7 @@
       "name": "Route 20 - Beauty 2"
     },
     {
-      "name": "Route 20 - Cooltrainer M"
+      "name": "Route 20 - Bird Keeper"
     },
     {
       "name": "Route 20 - Swimmer 1"

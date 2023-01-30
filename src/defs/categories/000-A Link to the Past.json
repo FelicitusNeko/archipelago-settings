@@ -85,6 +85,35 @@
       "default": "open"
     },
     {
+      "name": "open_pyramid",
+      "description": "Determines at which point the pyramid in the Dark World will be open.",
+      "readableName": "Open Pyramid",
+      "values": [
+        {
+          "name": "goal",
+          "description": "Opens the pyramid if the goal requires you to kill Ganon, unless the goal is Slow Ganon or All Dungeons",
+          "readableName": "Goal"
+        },
+        {
+          "name": "auto",
+          "description": "Same as Goal, but also is closed if holes are shuffled and Ganon is part of the shuffle pool",
+          "readableName": "Auto"
+        },
+        {
+          "name": "open",
+          "description": "Pyramid hole is always open. Ganon's vulnerable condition is still required before he can he hurt",
+          "readableName": "Open"
+        },
+        {
+          "name": "closed",
+          "description": "Pyramid hole is always closed until you defeat Agahnim atop Ganon's Tower",
+          "readableName": "Closed"
+        }
+      ],
+      "type": "choice",
+      "default": "goal"
+    },
+    {
       "name": "crystals_needed_for_gt",
       "description": "How many crystals are required to access the Ganon's Tower entrance.",
       "high": 7,
@@ -155,7 +184,7 @@
         }
       ],
       "type": "choice",
-      "default": "extra"
+      "default": "available"
     },
     {
       "name": "triforce_pieces_extra",
@@ -196,7 +225,7 @@
       "low": 100,
       "step": 5,
       "type": "range",
-      "default": 125
+      "default": 150
     },
     {
       "name": "triforce_pieces_available",
@@ -367,20 +396,27 @@
         },
         {
           "name": "dungeonssimple",
+          "description": "Shuffle just dungeons amongst each other, swapping dungeons entirely, so Hyrule Castle is always 1 dungeon",
           "readableName": "Easy dungeon shuffle"
         },
         {
           "name": "dungeonsfull",
+          "description": "Shuffle any dungeon entrance with any dungeon interior, so Hyrule Castle can be 4 different dungeons, but keep dungeons to a specific world",
           "readableName": "Dungeon shuffle"
         },
         {
+          "name": "dungeonscrossed",
+          "description": "like dungeonsfull, but allow cross-world traversal through a dungeon. Warning: May force repeated dungeon traversal",
+          "readableName": "Dungeons crossed"
+        },
+        {
           "name": "simple",
-          "description": "A little mixed up",
+          "description": "Entrances are grouped together before being randomized. Simple uses the most strict grouping rules",
           "readableName": "Simple"
         },
         {
           "name": "restricted",
-          "description": "Connectors will stay the same",
+          "description": "Less strict than simple",
           "readableName": "Restricted"
         },
         {
@@ -713,7 +749,7 @@
         }
       ],
       "type": "choice",
-      "default": "default"
+      "default": "pickup"
     },
     {
       "name": "item_pool",
@@ -930,7 +966,7 @@
       "description": "If enabled, the boss reward will never be a dungeon item such as a map or compass.",
       "readableName": "Restrict dungeon items on boss",
       "type": "toggle",
-      "default": true
+      "default": false
     },
     {
       "name": "killable_thieves",
@@ -961,11 +997,12 @@
         },
         {
           "name": "shuffled",
-          "description": "General same number of hard hitters",
+          "description": "0-4 hearts of damage, armor reduces damage",
           "readableName": "Shuffle"
         },
         {
           "name": "chaos",
+          "description": "0-8 hearts of damage, armor reshuffles damage (so it could get worse!)",
           "readableName": "Full random"
         }
       ],
@@ -1413,55 +1450,6 @@
       "default": "default"
     },
     {
-      "name": "link_palettes",
-      "description": "How Link will look. May or may not work with alternate sprites.",
-      "readableName": "Link palette",
-      "values": [
-        {
-          "name": "default",
-          "readableName": "Vanilla"
-        },
-        {
-          "name": "good",
-          "readableName": "Random within reason"
-        },
-        {
-          "name": "classic",
-          "readableName": "Decent color scheme"
-        },
-        {
-          "name": "grayscale",
-          "readableName": "Grayscale"
-        },
-        {
-          "name": "negative",
-          "description": "The exact inverse of vanilla",
-          "readableName": "Negative"
-        },
-        {
-          "name": "blackout",
-          "readableName": "All black (good luck)"
-        },
-        {
-          "name": "dizzy",
-          "description": "Full random but keep saturation and lightness",
-          "readableName": "Dizzy"
-        },
-        {
-          "name": "sick",
-          "description": "Full random but keep lightness",
-          "readableName": "Sick"
-        },
-        {
-          "name": "puke",
-          "description": "Completely random without regard to anything",
-          "readableName": "Puke"
-        }
-      ],
-      "type": "choice",
-      "default": "default"
-    },
-    {
       "name": "heartbeep",
       "description": "How frequently the game will beep at you for low health.",
       "readableName": "Low health beep frequency",
@@ -1593,6 +1581,10 @@
       "description": "Your hero's sprite. Sorry there are no pictures; this is being done in a very hacky way to begin with. ZSPR files are hard. There's a pretty good reference on the [ALTTPR website](https://alttpr.com/en/sprite_preview).",
       "readableName": "Sprite",
       "type": "char"
+    },
+    {
+      "name": "random_sprite_on_event",
+      "type": "ignore"
     }
   ],
   "defver": 2,

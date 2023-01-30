@@ -1,4 +1,13 @@
 {
+  "1.1.3": [
+    "Update spec to **0.3.8**",
+    [
+      "**A Link to the Past**: Should be more in line with current YAML (this one still has to be done manually)",
+      "**Factorio**: Tech cost distribution option",
+      "**Pokémon Red and Blue**: Option to disable specific traps, a couple of location name tweaks",
+      "**Overcooked! 2**: Adjusts maximums for stars to win and threshold scale"
+    ]
+  ],
   "1.1.2": [
     "Update spec to **0.3.7**",
     [

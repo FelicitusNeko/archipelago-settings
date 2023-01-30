@@ -9,33 +9,33 @@
       "values": [
         {
           "name": "easy",
-          "readableName": "Easy",
-          "description": "+200 depth from any max vehicle depth."
+          "description": "+200 depth from any max vehicle depth.",
+          "readableName": "Easy"
         },
         {
           "name": "normal",
-          "readableName": "Normal",
-          "description": "+400 depth from any max vehicle depth. Warning: Normal can expect you to death run to a location (No viable return trip)."
+          "description": "+400 depth from any max vehicle depth. Warning: Normal can expect you to death run to a location (No viable return trip).",
+          "readableName": "Normal"
         },
         {
           "name": "hard",
-          "readableName": "Hard",
-          "description": "+600 depth from any max vehicle depth. Warning: Hard may require bases, deaths, glitches, multi-tank inventory or other depth extending means."
+          "description": "+600 depth from any max vehicle depth. Warning: Hard may require bases, deaths, glitches, multi-tank inventory or other depth extending means.",
+          "readableName": "Hard"
         },
         {
           "name": "items_easy",
-          "readableName": "Items easy",
-          "description": "+200 depth from any max vehicle depth. Expected depth is extended by items like seaglide, ultra glide fins and capacity tanks."
+          "description": "+200 depth from any max vehicle depth. Expected depth is extended by items like seaglide, ultra glide fins and capacity tanks.",
+          "readableName": "Items easy"
         },
         {
           "name": "items_normal",
-          "readableName": "Items normal",
-          "description": "+400 depth from any max vehicle depth. Expected depth is extended by items like seaglide, ultra glide fins and capacity tanks. Warning: Normal can expect you to death run to a location (No viable return trip)."
+          "description": "+400 depth from any max vehicle depth. Expected depth is extended by items like seaglide, ultra glide fins and capacity tanks. Warning: Normal can expect you to death run to a location (No viable return trip).",
+          "readableName": "Items normal"
         },
         {
           "name": "items_hard",
-          "readableName": "Items hard",
-          "description": "+600 depth from any max vehicle depth. Expected depth is extended by items like seaglide, ultra glide fins and capacity tanks. Warning: Hard may require bases, deaths, glitches, multi-tank inventory or other depth extending means."
+          "description": "+600 depth from any max vehicle depth. Expected depth is extended by items like seaglide, ultra glide fins and capacity tanks. Warning: Hard may require bases, deaths, glitches, multi-tank inventory or other depth extending means.",
+          "readableName": "Items hard"
         }
       ],
       "type": "choice",

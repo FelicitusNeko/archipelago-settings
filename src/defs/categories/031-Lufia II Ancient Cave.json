@@ -147,13 +147,13 @@
         },
         {
           "name": "random-middle",
-          "readableName": "Random middling",
-          "description": "Select a random regular boss, from Idura A to Gargoyle ×4"
+          "description": "Select a random regular boss, from Idura A to Gargoyle ×4",
+          "readableName": "Random middling"
         },
         {
           "name": "random-high",
-          "readableName": "Random high-end",
-          "description": "Select a random regular boss, from Venge Ghost to Tank"
+          "description": "Select a random regular boss, from Venge Ghost to Tank",
+          "readableName": "Random high-end"
         },
         {
           "name": "random-sinistral",
@@ -161,8 +161,8 @@
         },
         {
           "name": "random-low",
-          "readableName": "Random low-end",
-          "description": "Select a random regular boss, from Lizard Man to Troll ×3"
+          "description": "Select a random regular boss, from Lizard Man to Troll ×3",
+          "readableName": "Random low-end"
         }
       ],
       "type": "choice",
@@ -216,6 +216,11 @@
     {
       "name": "default_capsule",
       "description": "Preselect the active capsule monster.",
+      "dependsOn": {
+        "shuffle_capsule_monsters": [
+          false
+        ]
+      },
       "readableName": "Default capsule",
       "values": [
         {
@@ -248,14 +253,16 @@
         }
       ],
       "type": "choice",
-      "default": "jelze",
-      "dependsOn": {
-        "shuffle_capsule_monsters": [false]
-      }
+      "default": "jelze"
     },
     {
       "name": "default_party",
-      "description": "Preselect the party lineup. Can be set to any valid combination of up to 4 party member initials (which can be done manually in your YAML).",
+      "description": "Preselect the party lineup. Can be set to any valid combination of up to 4 party member initials (which can be done manually in your YAML). *Party compositions listed are examples, not suggestions/recommendations.*",
+      "dependsOn": {
+        "shuffle_party_members": [
+          false
+        ]
+      },
       "readableName": "Default party",
       "values": [
         {
@@ -284,10 +291,7 @@
         }
       ],
       "type": "choice",
-      "default": "m",
-      "dependsOn": {
-        "shuffle_party_members": [false]
-      }
+      "default": "m"
     },
     {
       "name": "final_floor",
@@ -312,23 +316,23 @@
       "values": [
         {
           "name": "boss",
-          "readableName": "Boss",
-          "description": "Defeat the boss on the final floor."
+          "description": "Defeat the boss on the final floor.",
+          "readableName": "Boss"
         },
         {
           "name": "iris_treasure_hunt",
-          "readableName": "Iris treasure hunt",
-          "description": "Gather the required number of Iris treasures and leave the cave."
+          "description": "Gather the required number of Iris treasures and leave the cave.",
+          "readableName": "Iris treasure hunt"
         },
         {
           "name": "boss_iris_treasure_hunt",
-          "readableName": "Boss Iris treasure hunt",
-          "description": "Gather the required number of Iris treasures and beat the final floor boss, then leave."
+          "description": "Gather the required number of Iris treasures and beat the final floor boss, then leave.",
+          "readableName": "Boss Iris treasure hunt"
         },
         {
           "name": "final_floor",
-          "readableName": "Final floor",
-          "description": "Merely reach the final floor."
+          "description": "Merely reach the final floor.",
+          "readableName": "Final floor"
         }
       ],
       "type": "choice",
@@ -364,14 +368,17 @@
     {
       "name": "iris_treasures_required",
       "description": "The number of Iris treasures required to complete the goal.",
+      "dependsOn": {
+        "goal": [
+          "iris_treasure_hunt",
+          "boss_iris_treasure_hunt"
+        ]
+      },
       "high": 9,
       "readableName": "Iris treasures required",
       "low": 1,
       "type": "range",
-      "default": 9,
-      "dependsOn": {
-        "goal": ["iris_treasure_hunt", "boss_iris_treasure_hunt"]
-      }
+      "default": 9
     },
     {
       "name": "master_hp",
@@ -1920,5 +1927,5 @@
       "name": "Blue chest 88"
     }
   ],
-  "status": "New"
+  "status": "Updated"
 }

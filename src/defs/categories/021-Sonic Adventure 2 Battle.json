@@ -9,18 +9,18 @@
       "values": [
         {
           "name": "biolizard",
-          "readableName": "Biolizard",
-          "description": "Finish Cannon's Core and defeat the Biolizard and Finalhazard."
+          "description": "Finish Cannon's Core and defeat the Biolizard and Finalhazard.",
+          "readableName": "Biolizard"
         },
         {
           "name": "chaos_emerald_hunt",
-          "readableName": "Chaos Emerald hunt",
-          "description": "Find the Seven Chaos Emeralds and reach Green Hill Zone."
+          "description": "Find the Seven Chaos Emeralds and reach Green Hill Zone.",
+          "readableName": "Chaos Emerald hunt"
         },
         {
           "name": "finalhazard_chaos_emerald_hunt",
-          "readableName": "Finalhazard & Chaos Emerald hunt",
-          "description": "Find the Seven Chaos Emeralds and reach Green Hill Zone, then defeat Finalhazard."
+          "description": "Find the Seven Chaos Emeralds and reach Green Hill Zone, then defeat Finalhazard.",
+          "readableName": "Finalhazard & Chaos Emerald hunt"
         }
       ],
       "type": "choice",
@@ -113,6 +113,11 @@
     {
       "name": "required_cannons_core_missions",
       "description": "Determines how many Cannon's Core missions must be completed to unlock the Biolizard (for the \"Biolizard\" goal).",
+      "dependsOn": {
+        "goal": [
+          "biolizard"
+        ]
+      },
       "readableName": "Required Cannon's Core missions",
       "values": [
         {
@@ -125,10 +130,7 @@
         }
       ],
       "type": "choice",
-      "default": "first",
-      "dependsOn": {
-        "goal": ["biolizard"]
-      }
+      "default": "first"
     },
     {
       "name": "number_of_level_gates",
@@ -465,8 +467,8 @@
         },
         {
           "name": "singularity",
-          "readableName": "Singularity",
-          "description": "Level, Menu, and Additional music is all replaced with a single random song."
+          "description": "Level, Menu, and Additional music is all replaced with a single random song.",
+          "readableName": "Singularity"
         }
       ],
       "type": "choice",
@@ -532,13 +534,13 @@
       "values": [
         {
           "name": "standard",
-          "readableName": "Standard",
-          "description": "The logic assumes the \"intended\" usage of Upgrades to progress through levels."
+          "description": "The logic assumes the \"intended\" usage of Upgrades to progress through levels.",
+          "readableName": "Standard"
         },
         {
           "name": "hard",
-          "readableName": "Hard",
-          "description": "Some simple skips or sequence breaks may be required."
+          "description": "Some simple skips or sequence breaks may be required.",
+          "readableName": "Hard"
         }
       ],
       "type": "choice",

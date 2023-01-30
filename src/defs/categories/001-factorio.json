@@ -132,6 +132,35 @@
       "default": 500
     },
     {
+      "name": "tech_cost_distribution",
+      "description": "Random distribution of costs of the Science Packs.",
+      "readableName": "Tech cost distribution",
+      "values": [
+        {
+          "name": "even",
+          "description": "Any number between min and max is equally likely.",
+          "readableName": "Even"
+        },
+        {
+          "name": "low",
+          "description": "Low costs, near the minimum, are more likely.",
+          "readableName": "Low"
+        },
+        {
+          "name": "middle",
+          "description": "Medium costs, near the average, are more likely.",
+          "readableName": "Middle"
+        },
+        {
+          "name": "high",
+          "description": "High costs, near the maximum, are more likely.",
+          "readableName": "High"
+        }
+      ],
+      "type": "choice",
+      "default": "even"
+    },
+    {
       "name": "tech_cost_mix",
       "description": "Percent chance that a preceding Science Pack is also required. Chance is rolled per preceding pack.",
       "high": 100,
@@ -139,6 +168,13 @@
       "low": 0,
       "type": "range",
       "default": 70
+    },
+    {
+      "name": "ramping_tech_costs",
+      "description": "DOC ME",
+      "readableName": "ramping tech costs",
+      "type": "toggle",
+      "default": false
     },
     {
       "name": "silo",

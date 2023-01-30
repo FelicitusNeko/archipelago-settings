@@ -223,13 +223,13 @@
         },
         {
           "name": "simple",
-          "readableName": "Simple",
-          "description": "Excludes Ganon's Castle."
+          "description": "Excludes Ganon's Castle.",
+          "readableName": "Simple"
         },
         {
           "name": "all",
-          "readableName": "All",
-          "description": "Includes Ganon's Castle."
+          "description": "Includes Ganon's Castle.",
+          "readableName": "All"
         }
       ],
       "type": "choice",
@@ -292,8 +292,8 @@
         },
         {
           "name": "limited",
-          "readableName": "Limited",
-          "description": "Prevents age-mixing of bosses."
+          "description": "Prevents age-mixing of bosses.",
+          "readableName": "Limited"
         },
         {
           "name": "full",
@@ -356,8 +356,8 @@
         },
         {
           "name": "choice",
-          "readableName": "Manual choice",
-          "description": "Must define dungeon_shortcuts_list manually in YAML."
+          "description": "Must define dungeon_shortcuts_list manually in YAML.",
+          "readableName": "Manual choice"
         },
         {
           "name": "all",
@@ -386,8 +386,8 @@
         },
         {
           "name": "specific",
-          "readableName": "Specify dungeons",
-          "description": "Must define mq_dungeons_list manually in YAML."
+          "description": "Must define mq_dungeons_list manually in YAML.",
+          "readableName": "Specify dungeons"
         },
         {
           "name": "count",
@@ -400,14 +400,16 @@
     {
       "name": "mq_dungeons_count",
       "description": "Number of MQ dungeons, chosen randomly.",
+      "dependsOn": {
+        "mq_dungeons_mode": [
+          "count"
+        ]
+      },
       "high": 12,
       "readableName": "Master Quest dungeons count",
       "low": 0,
       "type": "range",
-      "default": 0,
-      "dependsOn": {
-        "mq_dungeons_mode": ["count"]
-      }
+      "default": 0
     },
     {
       "name": "bridge_stones",
@@ -699,62 +701,72 @@
     {
       "name": "ganon_bosskey_medallions",
       "description": "Set how many medallions are required to receive Ganon Boss Key.",
+      "dependsOn": {
+        "shuffle_ganon_bosskey": [
+          "medallions"
+        ]
+      },
       "high": 6,
       "readableName": "Ganon Boss Key medallions",
       "low": 1,
       "type": "range",
-      "default": 6,
-      "dependsOn": {
-        "shuffle_ganon_bosskey": ["medallions"]
-      }
+      "default": 6
     },
     {
       "name": "ganon_bosskey_stones",
       "description": "Set how many stones are required to receive Ganon Boss Key.",
+      "dependsOn": {
+        "shuffle_ganon_bosskey": [
+          "stones"
+        ]
+      },
       "high": 3,
       "readableName": "Ganon Boss Key stones",
       "low": 1,
       "type": "range",
-      "default": 3,
-      "dependsOn": {
-        "shuffle_ganon_bosskey": ["stones"]
-      }
+      "default": 3
     },
     {
       "name": "ganon_bosskey_rewards",
       "description": "Set how many rewards are required to receive Ganon Boss Key.",
+      "dependsOn": {
+        "shuffle_ganon_bosskey": [
+          "dungeons"
+        ]
+      },
       "high": 9,
       "readableName": "Ganon Boss Key rewards",
       "low": 1,
       "type": "range",
-      "default": 9,
-      "dependsOn": {
-        "shuffle_ganon_bosskey": ["dungeons"]
-      }
+      "default": 9
     },
     {
       "name": "ganon_bosskey_tokens",
       "description": "Set how many tokens are required to receive Ganon Boss Key.",
+      "dependsOn": {
+        "shuffle_ganon_bosskey": [
+          "tokens"
+        ]
+      },
       "high": 100,
       "readableName": "Ganon Boss Key tokens",
       "low": 1,
       "type": "range",
-      "default": 40,
-      "dependsOn": {
-        "shuffle_ganon_bosskey": ["tokens"]
-      }
+      "default": 40
     },
     {
       "name": "ganon_bosskey_hearts",
       "description": "Set how many hearts are required to receive Ganon Boss Key.",
+      "dependsOn": {
+        "shuffle_ganon_bosskey": [
+          "hearts"
+        ]
+      },
       "high": 20,
       "readableName": "Ganon Boss Key hearts",
       "low": 4,
       "type": "range",
-      "default": 20,
-      "dependsOn": {
-        "shuffle_ganon_bosskey": ["hearts"]
-      }
+      "default": 20
     },
     {
       "name": "key_rings",
@@ -767,8 +779,8 @@
         },
         {
           "name": "choose",
-          "readableName": "Choose",
-          "description": "Must define key_rings_list manually in YAML."
+          "description": "Must define key_rings_list manually in YAML.",
+          "readableName": "Choose"
         },
         {
           "name": "all",
@@ -845,33 +857,33 @@
       "values": [
         {
           "name": "normal",
-          "readableName": "Normal",
-          "description": "Between 0 and 300 rupees"
+          "description": "Between 0 and 300 rupees",
+          "readableName": "Normal"
         },
         {
           "name": "affordable",
-          "readableName": "Affordable",
-          "description": "Always 10 rupees"
+          "description": "Always 10 rupees",
+          "readableName": "Affordable"
         },
         {
           "name": "starting_wallet",
-          "readableName": "Starting Wallet",
-          "description": "Must max out this wallet to purchase."
+          "description": "Must max out this wallet to purchase.",
+          "readableName": "Starting Wallet"
         },
         {
           "name": "adults_wallet",
-          "readableName": "Adult's Wallet",
-          "description": "Must max out this wallet to purchase."
+          "description": "Must max out this wallet to purchase.",
+          "readableName": "Adult's Wallet"
         },
         {
           "name": "giants_wallet",
-          "readableName": "Giant's Wallet",
-          "description": "Must max out this wallet to purchase."
+          "description": "Must max out this wallet to purchase.",
+          "readableName": "Giant's Wallet"
         },
         {
           "name": "tycoons_wallet",
-          "readableName": "Tycoon's Wallet",
-          "description": "Must max out this wallet to purchase."
+          "description": "Must max out this wallet to purchase.",
+          "readableName": "Tycoon's Wallet"
         }
       ],
       "type": "choice",
@@ -1227,13 +1239,13 @@
         },
         {
           "name": "textures_content",
-          "readableName": "Textures based on content",
-          "description": "Pots and crates have an appearance based on their contents."
+          "description": "Pots and crates have an appearance based on their contents.",
+          "readableName": "Textures based on content"
         },
         {
           "name": "textures_unchecked",
-          "readableName": "Textures unchecked",
-          "description": "All unchecked pots/crates have the same appearance."
+          "description": "All unchecked pots/crates have the same appearance.",
+          "readableName": "Textures unchecked"
         }
       ],
       "type": "choice",
@@ -5070,7 +5082,8 @@
       "name": "Zeldas Letter",
       "dependsOn": {
         "shuffle_child_trade": [
-          "vanilla", "shuffle"
+          "vanilla",
+          "shuffle"
         ]
       },
       "readableName": "Zelda's Letter"
