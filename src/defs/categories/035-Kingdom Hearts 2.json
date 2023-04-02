@@ -1,0 +1,3363 @@
+{
+  "category": "Kingdom Hearts 2",
+  "index": 35,
+  "settings": [
+    {
+      "name": "Sora_Level_EXP",
+      "description": "Sora Level Exp Multiplier",
+      "high": 10,
+      "readableName": "Sora Level EXP",
+      "low": 1,
+      "type": "range",
+      "default": 5
+    },
+    {
+      "name": "Final_Form_EXP",
+      "description": "Final Form Exp Multiplier",
+      "high": 10,
+      "readableName": "Final Form EXP",
+      "low": 1,
+      "type": "range",
+      "default": 3
+    },
+    {
+      "name": "Master_Form_EXP",
+      "description": "Master Form Exp Multiplier",
+      "high": 10,
+      "readableName": "Master Form EXP",
+      "low": 1,
+      "type": "range",
+      "default": 3
+    },
+    {
+      "name": "Limit_Form_EXP",
+      "description": "Limit Form Exp Multiplier",
+      "high": 10,
+      "readableName": "Limit Form EXP",
+      "low": 1,
+      "type": "range",
+      "default": 3
+    },
+    {
+      "name": "Wisdom_Form_EXP",
+      "description": "Wisdom Form Exp Multiplier",
+      "high": 10,
+      "readableName": "Wisdom Form EXP",
+      "low": 1,
+      "type": "range",
+      "default": 3
+    },
+    {
+      "name": "Valor_Form_EXP",
+      "description": "Valor Form Exp Multiplier",
+      "high": 10,
+      "readableName": "Valor Form EXP",
+      "low": 1,
+      "type": "range",
+      "default": 3
+    },
+    {
+      "name": "Summon_EXP",
+      "description": "Summon Exp Multiplier",
+      "high": 10,
+      "readableName": "Summon EXP",
+      "low": 1,
+      "type": "range",
+      "default": 5
+    },
+    {
+      "name": "Schmovement",
+      "description": "Level of Progressive Movement You Start With",
+      "readableName": "Schmovement",
+      "values": [
+        {
+          "name": "level_0",
+          "readableName": "Level 0"
+        },
+        {
+          "name": "level_1",
+          "readableName": "Level 1"
+        },
+        {
+          "name": "level_2",
+          "readableName": "Level 2"
+        },
+        {
+          "name": "level_3",
+          "readableName": "Level 3"
+        },
+        {
+          "name": "level_4",
+          "readableName": "Level 4"
+        }
+      ],
+      "type": "choice",
+      "default": "level_1"
+    },
+    {
+      "name": "Keyblade_Minimum",
+      "description": "Minimum Stats for the Keyblade",
+      "high": 20,
+      "readableName": "Keyblade Minimum",
+      "low": 0,
+      "type": "range",
+      "default": 3
+    },
+    {
+      "name": "Keyblade_Maximum",
+      "description": "Maximum Stats for the Keyblade",
+      "high": 20,
+      "readableName": "Keyblade Maximum",
+      "low": 0,
+      "type": "range",
+      "default": 7
+    },
+    {
+      "name": "Visitlocking",
+      "description": "Determines the level of visit locking",
+      "readableName": "Visit Locking",
+      "values": [
+        {
+          "name": "no_visit_locking",
+          "readableName": "No Visit Locking"
+        },
+        {
+          "name": "second_visit_locking",
+          "readableName": "Second Visit Locking",
+          "description": "Start with 13 visit locking items for every first visit."
+        },
+        {
+          "name": "first_and_second_visit_locking",
+          "readableName": "First and second Visit Locking",
+          "description": "One item for First Visit, Two For Second Visit."
+        }
+      ],
+      "type": "choice",
+      "default": "first_and_second_visit_locking"
+    },
+    {
+      "name": "RandomVisitLockingItem",
+      "description": "Start with random amount of visit locking items.",
+      "high": 25,
+      "readableName": "RandomVisitLockingItem",
+      "low": 0,
+      "type": "range",
+      "default": 3
+    },
+    {
+      "name": "SuperBosses",
+      "description": "Terra, Sephiroth and Data Fights Toggle.",
+      "readableName": "SuperBosses",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "LevelDepth",
+      "description": "Determines How many locations you want on levels",
+      "readableName": "Level Depth",
+      "values": [
+        {
+          "name": "level_50",
+          "readableName": "Level 50"
+        },
+        {
+          "name": "level_99",
+          "readableName": "Level 99"
+        },
+        {
+          "name": "level_50_sanity",
+          "readableName": "Level 50 sanity"
+        },
+        {
+          "name": "level_99_sanity",
+          "readableName": "Level 99 sanity"
+        },
+        {
+          "name": "level_1",
+          "readableName": "Level 1"
+        }
+      ],
+      "type": "choice",
+      "default": "level_50"
+    },
+    {
+      "name": "Promise_Charm",
+      "description": "Add Promise Charm to the Pool",
+      "readableName": "Promise Charm",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "KeybladeAbilities",
+      "description": "Determines Keyblade abilities.",
+      "readableName": "Keyblade Abilities",
+      "values": [
+        {
+          "name": "support",
+          "readableName": "Support abilities"
+        },
+        {
+          "name": "action",
+          "readableName": "Action abilities"
+        },
+        {
+          "name": "both",
+          "readableName": "Both Support and Action"
+        }
+      ],
+      "type": "choice",
+      "default": "both"
+    },
+    {
+      "name": "RandomGrowth",
+      "description": "Amount of Random Growth Abilities You Start With",
+      "high": 20,
+      "readableName": "Random Growth",
+      "low": 0,
+      "type": "range",
+      "default": 0
+    },
+    {
+      "name": "Goal",
+      "description": "Win Condition",
+      "readableName": "Goal",
+      "values": [
+        {
+          "name": "three_proofs",
+          "readableName": "Three Proofs",
+          "description": "Obtain the Three Proofs and Have a Gold Crown on Sora's Head."
+        },
+        {
+          "name": "lucky_emblem_hunt",
+          "readableName": "Lucky Emblem hunt",
+          "description": "Acquire The Amount of Lucky Emblems you have set."
+        },
+        {
+          "name": "hitlist",
+          "readableName": "Hitlist",
+          "description": "Kill the Superbosses on the \"Hitlist\" then Synth Ultima Weapon."
+        }
+      ],
+      "type": "choice",
+      "default": "three_proofs"
+    },
+    {
+      "name": "FinalXemnas",
+      "description": "Kill Final Xemnas to Beat the Game, in addition to your goal.",
+      "readableName": "Final Xemnas",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "LuckyEmblemsAmount",
+      "description": "Number of Lucky Emblems that are in the pool.",
+      "high": 60,
+      "readableName": "Lucky Emblems Amount",
+      "low": 1,
+      "type": "range",
+      "default": 40,
+      "dependsOn": {
+        "goal": ["lucky_emblem_hunt"]
+      }
+    },
+    {
+      "name": "LuckyEmblemsRequired",
+      "description": "Number of Lucky Emblems to collect to Open The Final Door bosses.",
+      "high": 60,
+      "readableName": "Lucky Emblems Required",
+      "low": 1,
+      "type": "range",
+      "default": 25,
+      "dependsOn": {
+        "goal": ["lucky_emblem_hunt"]
+      }
+    },
+    {
+      "name": "BountyAmount",
+      "description": "Number of Bounties that are in the pool.",
+      "high": 24,
+      "readableName": "Bounty Amount",
+      "low": 1,
+      "type": "range",
+      "default": 13,
+      "dependsOn": {
+        "goal": ["hitlist"]
+      }
+    },
+    {
+      "name": "BountyRequired",
+      "description": "Number of Bounties that are Required.",
+      "high": 24,
+      "readableName": "Bounty Required",
+      "low": 1,
+      "type": "range",
+      "default": 7,
+      "dependsOn": {
+        "goal": ["hitlist"]
+      }
+    },
+    {
+      "name": "Cups",
+      "description": "Olympus Cups Toggles",
+      "readableName": "Cups",
+      "values": [
+        {
+          "name": "no_cups",
+          "readableName": "No Cups"
+        },
+        {
+          "name": "cups",
+          "readableName": "All but Hades Paradox"
+        },
+        {
+          "name": "cups_and_hades_paradox",
+          "readableName": "All including Hades Paradox"
+        }
+      ],
+      "type": "choice",
+      "default": "cups"
+    }
+  ],
+  "defver": 2,
+  "items": [
+    {
+      "name": "Secret Ansem's Report 1"
+    },
+    {
+      "name": "Secret Ansem's Report 2"
+    },
+    {
+      "name": "Secret Ansem's Report 3"
+    },
+    {
+      "name": "Secret Ansem's Report 4"
+    },
+    {
+      "name": "Secret Ansem's Report 5"
+    },
+    {
+      "name": "Secret Ansem's Report 6"
+    },
+    {
+      "name": "Secret Ansem's Report 7"
+    },
+    {
+      "name": "Secret Ansem's Report 8"
+    },
+    {
+      "name": "Secret Ansem's Report 9"
+    },
+    {
+      "name": "Secret Ansem's Report 10"
+    },
+    {
+      "name": "Secret Ansem's Report 11"
+    },
+    {
+      "name": "Secret Ansem's Report 12"
+    },
+    {
+      "name": "Secret Ansem's Report 13"
+    },
+    {
+      "name": "Proof of Connection"
+    },
+    {
+      "name": "Proof of Nonexistence"
+    },
+    {
+      "name": "Proof of Peace"
+    },
+    {
+      "name": "Promise Charm"
+    },
+    {
+      "name": "Namine Sketches"
+    },
+    {
+      "name": "Disney Castle Key"
+    },
+    {
+      "name": "Battlefields of War"
+    },
+    {
+      "name": "Sword of the Ancestor"
+    },
+    {
+      "name": "Beast's Claw"
+    },
+    {
+      "name": "Bone Fist"
+    },
+    {
+      "name": "Proud Fang"
+    },
+    {
+      "name": "Skill and Crossbones"
+    },
+    {
+      "name": "Scimitar"
+    },
+    {
+      "name": "Membership Card"
+    },
+    {
+      "name": "Ice Cream"
+    },
+    {
+      "name": "Way to the Dawn"
+    },
+    {
+      "name": "Identity Disk"
+    },
+    {
+      "name": "Torn Page"
+    },
+    {
+      "name": "Valor Form"
+    },
+    {
+      "name": "Wisdom Form"
+    },
+    {
+      "name": "Limit Form"
+    },
+    {
+      "name": "Master Form"
+    },
+    {
+      "name": "Final Form"
+    },
+    {
+      "name": "Fire Element"
+    },
+    {
+      "name": "Blizzard Element"
+    },
+    {
+      "name": "Thunder Element"
+    },
+    {
+      "name": "Cure Element"
+    },
+    {
+      "name": "Magnet Element"
+    },
+    {
+      "name": "Reflect Element"
+    },
+    {
+      "name": "Genie"
+    },
+    {
+      "name": "Peter Pan"
+    },
+    {
+      "name": "Stitch"
+    },
+    {
+      "name": "Chicken Little"
+    },
+    {
+      "name": "High Jump"
+    },
+    {
+      "name": "Quick Run"
+    },
+    {
+      "name": "Dodge Roll"
+    },
+    {
+      "name": "Aerial Dodge"
+    },
+    {
+      "name": "Glide"
+    },
+    {
+      "name": "Oathkeeper"
+    },
+    {
+      "name": "Oblivion"
+    },
+    {
+      "name": "Star Seeker"
+    },
+    {
+      "name": "Hidden Dragon"
+    },
+    {
+      "name": "Hero's Crest"
+    },
+    {
+      "name": "Monochrome"
+    },
+    {
+      "name": "Follow the Wind"
+    },
+    {
+      "name": "Circle of Life"
+    },
+    {
+      "name": "Photon Debugger"
+    },
+    {
+      "name": "Gull Wing"
+    },
+    {
+      "name": "Rumbling Rose"
+    },
+    {
+      "name": "Guardian Soul"
+    },
+    {
+      "name": "Wishing Lamp"
+    },
+    {
+      "name": "Decisive Pumpkin"
+    },
+    {
+      "name": "Sleeping Lion"
+    },
+    {
+      "name": "Sweet Memories"
+    },
+    {
+      "name": "Mysterious Abyss"
+    },
+    {
+      "name": "Two Become One"
+    },
+    {
+      "name": "Fatal Crest"
+    },
+    {
+      "name": "Bond of Flame"
+    },
+    {
+      "name": "Fenrir"
+    },
+    {
+      "name": "Ultima Weapon"
+    },
+    {
+      "name": "Winner's Proof"
+    },
+    {
+      "name": "Pureblood"
+    },
+    {
+      "name": "Centurion+"
+    },
+    {
+      "name": "Meteor Staff"
+    },
+    {
+      "name": "Nobody Lance"
+    },
+    {
+      "name": "Precious Mushroom"
+    },
+    {
+      "name": "Precious Mushroom+"
+    },
+    {
+      "name": "Premium Mushroom"
+    },
+    {
+      "name": "Rising Dragon"
+    },
+    {
+      "name": "Save The Queen+"
+    },
+    {
+      "name": "Shaman's Relic"
+    },
+    {
+      "name": "Akashic Record"
+    },
+    {
+      "name": "Frozen Pride+"
+    },
+    {
+      "name": "Genji Shield"
+    },
+    {
+      "name": "Majestic Mushroom"
+    },
+    {
+      "name": "Majestic Mushroom+"
+    },
+    {
+      "name": "Nobody Guard"
+    },
+    {
+      "name": "Ogre Shield"
+    },
+    {
+      "name": "Save The King+"
+    },
+    {
+      "name": "Ultimate Mushroom"
+    },
+    {
+      "name": "Ability Ring"
+    },
+    {
+      "name": "Engineer's Ring"
+    },
+    {
+      "name": "Technician's Ring"
+    },
+    {
+      "name": "Skill Ring"
+    },
+    {
+      "name": "Skillful Ring"
+    },
+    {
+      "name": "Expert's Ring"
+    },
+    {
+      "name": "Master's Ring"
+    },
+    {
+      "name": "Cosmic Ring"
+    },
+    {
+      "name": "Executive's Ring"
+    },
+    {
+      "name": "Sardonyx Ring"
+    },
+    {
+      "name": "Tourmaline Ring"
+    },
+    {
+      "name": "Aquamarine Ring"
+    },
+    {
+      "name": "Garnet Ring"
+    },
+    {
+      "name": "Diamond Ring"
+    },
+    {
+      "name": "Silver Ring"
+    },
+    {
+      "name": "Gold Ring"
+    },
+    {
+      "name": "Platinum Ring"
+    },
+    {
+      "name": "Mythril Ring"
+    },
+    {
+      "name": "Orichalcum Ring"
+    },
+    {
+      "name": "Soldier Earring"
+    },
+    {
+      "name": "Fencer Earring"
+    },
+    {
+      "name": "Mage Earring"
+    },
+    {
+      "name": "Slayer Earring"
+    },
+    {
+      "name": "Medal"
+    },
+    {
+      "name": "Moon Amulet"
+    },
+    {
+      "name": "Star Charm"
+    },
+    {
+      "name": "Cosmic Arts"
+    },
+    {
+      "name": "Shadow Archive"
+    },
+    {
+      "name": "Shadow Archive+"
+    },
+    {
+      "name": "Full Bloom"
+    },
+    {
+      "name": "Full Bloom+"
+    },
+    {
+      "name": "Draw Ring"
+    },
+    {
+      "name": "Lucky Ring"
+    },
+    {
+      "name": "Elven Bandana"
+    },
+    {
+      "name": "Divine Bandana"
+    },
+    {
+      "name": "Protect Belt"
+    },
+    {
+      "name": "Gaia Belt"
+    },
+    {
+      "name": "Power Band"
+    },
+    {
+      "name": "Buster Band"
+    },
+    {
+      "name": "Cosmic Belt"
+    },
+    {
+      "name": "Fire Bangle"
+    },
+    {
+      "name": "Fira Bangle"
+    },
+    {
+      "name": "Firaga Bangle"
+    },
+    {
+      "name": "Firagun Bangle"
+    },
+    {
+      "name": "Blizzard Armlet"
+    },
+    {
+      "name": "Blizzara Armlet"
+    },
+    {
+      "name": "Blizzaga Armlet"
+    },
+    {
+      "name": "Blizzagun Armlet"
+    },
+    {
+      "name": "Thunder Trinket"
+    },
+    {
+      "name": "Thundara Trinket"
+    },
+    {
+      "name": "Thundaga Trinket"
+    },
+    {
+      "name": "Thundagun Trinket"
+    },
+    {
+      "name": "Shock Charm"
+    },
+    {
+      "name": "Shock Charm+"
+    },
+    {
+      "name": "Shadow Anklet"
+    },
+    {
+      "name": "Dark Anklet"
+    },
+    {
+      "name": "Midnight Anklet"
+    },
+    {
+      "name": "Chaos Anklet"
+    },
+    {
+      "name": "Champion Belt"
+    },
+    {
+      "name": "Abas Chain"
+    },
+    {
+      "name": "Aegis Chain"
+    },
+    {
+      "name": "Acrisius"
+    },
+    {
+      "name": "Acrisius+"
+    },
+    {
+      "name": "Cosmic Chain"
+    },
+    {
+      "name": "Petite Ribbon"
+    },
+    {
+      "name": "Ribbon"
+    },
+    {
+      "name": "Grand Ribbon"
+    },
+    {
+      "name": "Mickey Munny Pouch"
+    },
+    {
+      "name": "Olette Munny Pouch"
+    },
+    {
+      "name": "Hades Cup Trophy"
+    },
+    {
+      "name": "Unknown Disk"
+    },
+    {
+      "name": "Olympus Stone"
+    },
+    {
+      "name": "Max HP Up"
+    },
+    {
+      "name": "Max MP Up"
+    },
+    {
+      "name": "Drive Gauge Up"
+    },
+    {
+      "name": "Armor Slot Up"
+    },
+    {
+      "name": "Accessory Slot Up"
+    },
+    {
+      "name": "Item Slot Up"
+    },
+    {
+      "name": "Scan"
+    },
+    {
+      "name": "Aerial Recovery"
+    },
+    {
+      "name": "Combo Master"
+    },
+    {
+      "name": "Combo Plus"
+    },
+    {
+      "name": "Air Combo Plus"
+    },
+    {
+      "name": "Combo Boost"
+    },
+    {
+      "name": "Air Combo Boost"
+    },
+    {
+      "name": "Reaction Boost"
+    },
+    {
+      "name": "Finishing Plus"
+    },
+    {
+      "name": "Negative Combo"
+    },
+    {
+      "name": "Berserk Charge"
+    },
+    {
+      "name": "Damage Drive"
+    },
+    {
+      "name": "Drive Boost"
+    },
+    {
+      "name": "Form Boost"
+    },
+    {
+      "name": "Summon Boost"
+    },
+    {
+      "name": "Experience Boost"
+    },
+    {
+      "name": "Draw"
+    },
+    {
+      "name": "Jackpot"
+    },
+    {
+      "name": "Lucky Lucky"
+    },
+    {
+      "name": "Drive Converter"
+    },
+    {
+      "name": "Fire Boost"
+    },
+    {
+      "name": "Blizzard Boost"
+    },
+    {
+      "name": "Thunder Boost"
+    },
+    {
+      "name": "Item Boost"
+    },
+    {
+      "name": "MP Rage"
+    },
+    {
+      "name": "MP Haste"
+    },
+    {
+      "name": "MP Hastera"
+    },
+    {
+      "name": "MP Hastega"
+    },
+    {
+      "name": "Defender"
+    },
+    {
+      "name": "Damage Control"
+    },
+    {
+      "name": "No Experience"
+    },
+    {
+      "name": "Light & Darkness"
+    },
+    {
+      "name": "Magic Lock-On"
+    },
+    {
+      "name": "Leaf Bracer"
+    },
+    {
+      "name": "Combination Boost"
+    },
+    {
+      "name": "Once More"
+    },
+    {
+      "name": "Second Chance"
+    },
+    {
+      "name": "Guard"
+    },
+    {
+      "name": "Upper Slash"
+    },
+    {
+      "name": "Horizontal Slash"
+    },
+    {
+      "name": "Finishing Leap"
+    },
+    {
+      "name": "Retaliating Slash"
+    },
+    {
+      "name": "Slapshot"
+    },
+    {
+      "name": "Dodge Slash"
+    },
+    {
+      "name": "Flash Step"
+    },
+    {
+      "name": "Slide Dash"
+    },
+    {
+      "name": "Vicinity Break"
+    },
+    {
+      "name": "Guard Break"
+    },
+    {
+      "name": "Explosion"
+    },
+    {
+      "name": "Aerial Sweep"
+    },
+    {
+      "name": "Aerial Dive"
+    },
+    {
+      "name": "Aerial Spiral"
+    },
+    {
+      "name": "Aerial Finish"
+    },
+    {
+      "name": "Magnet Burst"
+    },
+    {
+      "name": "Counterguard"
+    },
+    {
+      "name": "Auto Valor"
+    },
+    {
+      "name": "Auto Wisdom"
+    },
+    {
+      "name": "Auto Limit"
+    },
+    {
+      "name": "Auto Master"
+    },
+    {
+      "name": "Auto Final"
+    },
+    {
+      "name": "Auto Summon"
+    },
+    {
+      "name": "Trinity Limit"
+    },
+    {
+      "name": "Power Boost"
+    },
+    {
+      "name": "Magic Boost"
+    },
+    {
+      "name": "Defense Boost"
+    },
+    {
+      "name": "AP Boost"
+    },
+    {
+      "name": "Donald Fire"
+    },
+    {
+      "name": "Donald Blizzard"
+    },
+    {
+      "name": "Donald Thunder"
+    },
+    {
+      "name": "Donald Cure"
+    },
+    {
+      "name": "Donald Fantasia"
+    },
+    {
+      "name": "Donald Flare Force"
+    },
+    {
+      "name": "Donald MP Rage"
+    },
+    {
+      "name": "Donald Jackpot"
+    },
+    {
+      "name": "Donald Lucky Lucky"
+    },
+    {
+      "name": "Donald Fire Boost"
+    },
+    {
+      "name": "Donald Blizzard Boost"
+    },
+    {
+      "name": "Donald Thunder Boost"
+    },
+    {
+      "name": "Donald MP Haste"
+    },
+    {
+      "name": "Donald MP Hastera"
+    },
+    {
+      "name": "Donald MP Hastega"
+    },
+    {
+      "name": "Donald Auto Limit"
+    },
+    {
+      "name": "Donald Hyper Healing"
+    },
+    {
+      "name": "Donald Auto Healing"
+    },
+    {
+      "name": "Donald Item Boost"
+    },
+    {
+      "name": "Donald Damage Control"
+    },
+    {
+      "name": "Donald Draw"
+    },
+    {
+      "name": "Goofy Tornado"
+    },
+    {
+      "name": "Goofy Turbo"
+    },
+    {
+      "name": "Goofy Bash"
+    },
+    {
+      "name": "Tornado Fusion"
+    },
+    {
+      "name": "Teamwork"
+    },
+    {
+      "name": "Goofy Draw"
+    },
+    {
+      "name": "Goofy Jackpot"
+    },
+    {
+      "name": "Goofy Lucky Lucky"
+    },
+    {
+      "name": "Goofy Item Boost"
+    },
+    {
+      "name": "Goofy MP Rage"
+    },
+    {
+      "name": "Goofy Defender"
+    },
+    {
+      "name": "Goofy Damage Control"
+    },
+    {
+      "name": "Goofy Auto Limit"
+    },
+    {
+      "name": "Goofy Second Chance"
+    },
+    {
+      "name": "Goofy Once More"
+    },
+    {
+      "name": "Goofy Auto Change"
+    },
+    {
+      "name": "Goofy Hyper Healing"
+    },
+    {
+      "name": "Goofy Auto Healing"
+    },
+    {
+      "name": "Goofy MP Haste"
+    },
+    {
+      "name": "Goofy MP Hastera"
+    },
+    {
+      "name": "Goofy MP Hastega"
+    },
+    {
+      "name": "Goofy Protect"
+    },
+    {
+      "name": "Goofy Protera"
+    },
+    {
+      "name": "Goofy Protega"
+    },
+    {
+      "name": "Lucky Emblem"
+    },
+    {
+      "name": "Victory"
+    },
+    {
+      "name": "Bounty"
+    }
+  ],
+  "locations": [
+    {
+      "name": "(LoD) Bamboo Grove Dark Shard"
+    },
+    {
+      "name": "(LoD) Bamboo Grove Ether"
+    },
+    {
+      "name": "(LoD) Bamboo Grove Mythril Shard"
+    },
+    {
+      "name": "(LoD) Bamboo Grove Encampment Area Map"
+    },
+    {
+      "name": "(LoD) Mission 3"
+    },
+    {
+      "name": "(LoD) Checkpoint Hi-Potion"
+    },
+    {
+      "name": "(LoD) Checkpoint Mythril Shard"
+    },
+    {
+      "name": "(LoD) Mountain Trail Lightning Shard"
+    },
+    {
+      "name": "(LoD) Mountain Trail Recovery Recipe"
+    },
+    {
+      "name": "(LoD) Mountain Trail Ether"
+    },
+    {
+      "name": "(LoD) Mountain Trail Mythril Shard"
+    },
+    {
+      "name": "(LoD) Village Cave Area Map"
+    },
+    {
+      "name": "(LoD) Village Cave Dark Shard"
+    },
+    {
+      "name": "(LoD) Village Cave AP Boost"
+    },
+    {
+      "name": "(LoD) Village Cave Bonus: Sora Slot 1"
+    },
+    {
+      "name": "(LoD) Ridge Frost Shard"
+    },
+    {
+      "name": "(LoD) Ridge AP Boost"
+    },
+    {
+      "name": "(LoD) Shan-Yu Bonus: Sora Slot 1"
+    },
+    {
+      "name": "(LoD) Shan-Yu Bonus: Sora Slot 2"
+    },
+    {
+      "name": "(LoD) Hidden Dragon"
+    },
+    {
+      "name": "(LoD2) Throne Room Torn Pages"
+    },
+    {
+      "name": "(LoD2) Throne Room Palace Map"
+    },
+    {
+      "name": "(LoD2) Throne Room AP Boost"
+    },
+    {
+      "name": "(LoD2) Throne Room Queen Recipe"
+    },
+    {
+      "name": "(LoD2) Throne Room AP Boost 2"
+    },
+    {
+      "name": "(LoD2) Throne Room Ogre Shield"
+    },
+    {
+      "name": "(LoD2) Throne Room Mythril Crystal"
+    },
+    {
+      "name": "(LoD2) Throne Room Orichalcum"
+    },
+    {
+      "name": "(LoD2) Storm Rider Bonus: Sora Slot 1"
+    },
+    {
+      "name": "Data Xigbar"
+    },
+    {
+      "name": "(AG) Agrabah Map"
+    },
+    {
+      "name": "(AG) Agrabah Dark Shard"
+    },
+    {
+      "name": "(AG) Agrabah Mythril Shard"
+    },
+    {
+      "name": "(AG) Agrabah Hi-Potion"
+    },
+    {
+      "name": "(AG) Agrabah AP Boost"
+    },
+    {
+      "name": "(AG) Agrabah Mythril Stone"
+    },
+    {
+      "name": "(AG) Agrabah Mythril Shard 2"
+    },
+    {
+      "name": "(AG) Agrabah Serenity Shard"
+    },
+    {
+      "name": "(AG) Bazaar Mythril Gem"
+    },
+    {
+      "name": "(AG) Bazaar Power Shard"
+    },
+    {
+      "name": "(AG) Bazaar Hi-Potion"
+    },
+    {
+      "name": "(AG) Bazaar AP Boost"
+    },
+    {
+      "name": "(AG) Bazaar Mythril Shard"
+    },
+    {
+      "name": "(AG) Palace Walls Skill Ring"
+    },
+    {
+      "name": "(AG) Palace Walls Mythril Stone"
+    },
+    {
+      "name": "(AG) Cave Entrance Power Stone"
+    },
+    {
+      "name": "(AG) Cave Entrance Mythril Shard"
+    },
+    {
+      "name": "(AG) Valley of Stone Mythril Stone"
+    },
+    {
+      "name": "(AG) Valley of Stone AP Boost"
+    },
+    {
+      "name": "(AG) Valley of Stone Mythril Shard"
+    },
+    {
+      "name": "(AG) Valley of Stone Hi-Potion"
+    },
+    {
+      "name": "(AG) Abu Escort Bonus: Sora Slot 1"
+    },
+    {
+      "name": "(AG) Chasm of Challenges Cave of Wonders Map"
+    },
+    {
+      "name": "(AG) Chasm of Challenges AP Boost"
+    },
+    {
+      "name": "(AG) Treasure Room"
+    },
+    {
+      "name": "(AG) Treasure Room AP Boost"
+    },
+    {
+      "name": "(AG) Treasure Room Serenity Gem"
+    },
+    {
+      "name": "(AG) Elemental Lords Bonus: Sora Slot 1"
+    },
+    {
+      "name": "(AG) Lamp Charm"
+    },
+    {
+      "name": "(AG2) Ruined Chamber Torn Pages"
+    },
+    {
+      "name": "(AG2) Ruined Chamber Ruins Map"
+    },
+    {
+      "name": "(AG2) Genie Jafar"
+    },
+    {
+      "name": "(AG2) Wishing Lamp"
+    },
+    {
+      "name": "Lexaeus Bonus: Sora Slot 1"
+    },
+    {
+      "name": "AS Lexaeus"
+    },
+    {
+      "name": "Data Lexaeus"
+    },
+    {
+      "name": "(DC) Courtyard Mythril Shard"
+    },
+    {
+      "name": "(DC) Courtyard Star Recipe"
+    },
+    {
+      "name": "(DC) Courtyard AP Boost"
+    },
+    {
+      "name": "(DC) Courtyard Mythril Stone"
+    },
+    {
+      "name": "(DC) Courtyard Blazing Stone"
+    },
+    {
+      "name": "(DC) Courtyard Blazing Shard"
+    },
+    {
+      "name": "(DC) Courtyard Mythril Shard 2"
+    },
+    {
+      "name": "(DC) Library Torn Pages"
+    },
+    {
+      "name": "(DC) Disney Castle Map"
+    },
+    {
+      "name": "(DC) Minnie Escort Bonus: Sora Slot 1"
+    },
+    {
+      "name": "(DC) Minnie Escort Bonus: Sora Slot 2"
+    },
+    {
+      "name": "(TR) Cornerstone Hill Map"
+    },
+    {
+      "name": "(TR) Cornerstone Hill Frost Shard"
+    },
+    {
+      "name": "(TR) Pier Mythril Shard"
+    },
+    {
+      "name": "(TR) Pier Hi-Potion"
+    },
+    {
+      "name": "(TR) Waterway Mythril Stone"
+    },
+    {
+      "name": "(TR) Waterway AP Boost"
+    },
+    {
+      "name": "(TR) Waterway Frost Stone"
+    },
+    {
+      "name": "(TR) Window of Time Map"
+    },
+    {
+      "name": "(TR) Boat Pete Bonus: Sora Slot 1"
+    },
+    {
+      "name": "(TR) Future Pete Bonus: Sora Slot 1"
+    },
+    {
+      "name": "(TR) Future Pete Bonus: Sora Slot 2"
+    },
+    {
+      "name": "(TR) Monochrome"
+    },
+    {
+      "name": "(TR) Wisdom Form"
+    },
+    {
+      "name": "Marluxia Bonus: Sora Slot 1"
+    },
+    {
+      "name": "AS Marluxia"
+    },
+    {
+      "name": "Data Marluxia"
+    },
+    {
+      "name": "Lingering Will Bonus: Sora Slot 1"
+    },
+    {
+      "name": "Lingering Will Proof of Connection"
+    },
+    {
+      "name": "Lingering Will Manifest Illusion"
+    },
+    {
+      "name": "(100Acre) Pooh's House 100 Acre Wood Map"
+    },
+    {
+      "name": "(100Acre) Pooh's House AP Boost"
+    },
+    {
+      "name": "(100Acre) Pooh's House Mythril Stone"
+    },
+    {
+      "name": "(100Acre) Piglet's House Defense Boost"
+    },
+    {
+      "name": "(100Acre) Piglet's House AP Boost"
+    },
+    {
+      "name": "(100Acre) Piglet's House Mythril Gem"
+    },
+    {
+      "name": "(100Acre) Rabbit's House Draw Ring"
+    },
+    {
+      "name": "(100Acre) Rabbit's House Mythril Crystal"
+    },
+    {
+      "name": "(100Acre) Rabbit's House AP Boost"
+    },
+    {
+      "name": "(100Acre) Kanga's House Magic Boost"
+    },
+    {
+      "name": "(100Acre) Kanga's House AP Boost"
+    },
+    {
+      "name": "(100Acre) Kanga's House Orichalcum"
+    },
+    {
+      "name": "(100Acre) Spooky Cave Mythril Gem"
+    },
+    {
+      "name": "(100Acre) Spooky Cave AP Boost"
+    },
+    {
+      "name": "(100Acre) Spooky Cave Orichalcum"
+    },
+    {
+      "name": "(100Acre) Spooky Cave Guard Recipe"
+    },
+    {
+      "name": "(100Acre) Spooky Cave Mythril Crystal"
+    },
+    {
+      "name": "(100Acre) Spooky Cave AP Boost 2"
+    },
+    {
+      "name": "(100Acre) Sweet Memories"
+    },
+    {
+      "name": "(100Acre) Spooky Cave Map"
+    },
+    {
+      "name": "(100Acre) Starry Hill Cosmic Ring"
+    },
+    {
+      "name": "(100Acre) Starry Hill Style Recipe"
+    },
+    {
+      "name": "(100Acre) Starry Hill Cure Element"
+    },
+    {
+      "name": "(100Acre) Starry Hill Orichalcum+"
+    },
+    {
+      "name": "(OC) Passage Mythril Shard"
+    },
+    {
+      "name": "(OC) Passage Mythril Stone"
+    },
+    {
+      "name": "(OC) Passage Ether"
+    },
+    {
+      "name": "(OC) Passage AP Boost"
+    },
+    {
+      "name": "(OC) Passage Hi-Potion"
+    },
+    {
+      "name": "(OC) Inner Chamber Underworld Map"
+    },
+    {
+      "name": "(OC) Inner Chamber Mythril Shard"
+    },
+    {
+      "name": "(OC) Cerberus Bonus: Sora Slot 1"
+    },
+    {
+      "name": "(OC) Coliseum Map"
+    },
+    {
+      "name": "(OC) Urns Bonus: Sora Slot 1"
+    },
+    {
+      "name": "(OC) Underworld Entrance Power Boost"
+    },
+    {
+      "name": "(OC) Caverns Entrance Lucid Shard"
+    },
+    {
+      "name": "(OC) Caverns Entrance AP Boost"
+    },
+    {
+      "name": "(OC) Caverns Entrance Mythril Shard"
+    },
+    {
+      "name": "(OC) The Lost Road Bright Shard"
+    },
+    {
+      "name": "(OC) The Lost Road Ether"
+    },
+    {
+      "name": "(OC) The Lost Road Mythril Shard"
+    },
+    {
+      "name": "(OC) The Lost Road Mythril Stone"
+    },
+    {
+      "name": "(OC) Atrium Lucid Stone"
+    },
+    {
+      "name": "(OC) Atrium AP Boost"
+    },
+    {
+      "name": "(OC) Demyx Bonus: Sora Slot 1"
+    },
+    {
+      "name": "(OC) Secret Ansem Report 5 (Demyx)"
+    },
+    {
+      "name": "(OC) Olympus Stone"
+    },
+    {
+      "name": "(OC) The Lock Caverns Map"
+    },
+    {
+      "name": "(OC) The Lock Mythril Shard"
+    },
+    {
+      "name": "(OC) The Lock AP Boost"
+    },
+    {
+      "name": "(OC) Pete OC Bonus: Sora Slot 1"
+    },
+    {
+      "name": "(OC) Hydra Bonus: Sora Slot 1"
+    },
+    {
+      "name": "(OC) Hydra Bonus: Sora Slot 2"
+    },
+    {
+      "name": "(OC) Hero's Crest"
+    },
+    {
+      "name": "(OC2) Auron's Statue"
+    },
+    {
+      "name": "(OC2) Hades Bonus: Sora Slot 1"
+    },
+    {
+      "name": "(OC2) Hades Bonus: Sora Slot 2"
+    },
+    {
+      "name": "(OC2) Guardian Soul"
+    },
+    {
+      "name": "Zexion Bonus: Sora Slot 1"
+    },
+    {
+      "name": "AS Zexion"
+    },
+    {
+      "name": "Data Zexion"
+    },
+    {
+      "name": "Protect Belt Pain and Panic Cup"
+    },
+    {
+      "name": "Serenity Gem Pain and Panic Cup"
+    },
+    {
+      "name": "Rising Dragon Cerberus Cup"
+    },
+    {
+      "name": "Serenity Crystal Cerberus Cup"
+    },
+    {
+      "name": "Genji Shield Titan Cup"
+    },
+    {
+      "name": "Skillful Ring Titan Cup"
+    },
+    {
+      "name": "Fatal Crest Goddess of Fate Cup"
+    },
+    {
+      "name": "Orichalcum+ Goddess of Fate Cup"
+    },
+    {
+      "name": "Hades Cup Trophy Paradox Cups"
+    },
+    {
+      "name": "(BC) Courtyard AP Boost"
+    },
+    {
+      "name": "(BC) Courtyard Hi-Potion"
+    },
+    {
+      "name": "(BC) Courtyard Mythril Shard"
+    },
+    {
+      "name": "(BC) Belle's Room Castle Map"
+    },
+    {
+      "name": "(BC) Belle's Room Mega-Recipe"
+    },
+    {
+      "name": "(BC) The East Wing Mythril Shard"
+    },
+    {
+      "name": "(BC) The East Wing Tent"
+    },
+    {
+      "name": "(BC) The West Hall Hi-Potion"
+    },
+    {
+      "name": "(BC) The West Hall Power Shard"
+    },
+    {
+      "name": "(BC) The West Hall AP Boost Post Dungeon"
+    },
+    {
+      "name": "(BC) The West Hall Bright Stone"
+    },
+    {
+      "name": "(BC) The West Hall Mythril Shard"
+    },
+    {
+      "name": "(BC) Thresholder Bonus: Sora Slot 1"
+    },
+    {
+      "name": "(BC) Dungeon Basement Map"
+    },
+    {
+      "name": "(BC) Dungeon AP Boost"
+    },
+    {
+      "name": "(BC) Secret Passage Mythril Shard"
+    },
+    {
+      "name": "(BC) Secret Passage Hi-Potion"
+    },
+    {
+      "name": "(BC) Secret Passage Lucid Shard"
+    },
+    {
+      "name": "(BC) The West Hall Mythril Shard 2"
+    },
+    {
+      "name": "(BC) The West Wing Mythril Shard"
+    },
+    {
+      "name": "(BC) The West Wing Tent"
+    },
+    {
+      "name": "(BC) Beast Bonus: Sora Slot 1"
+    },
+    {
+      "name": "(BC) The Beast's Room Blazing Shard"
+    },
+    {
+      "name": "(BC) Dark Thorn Bonus: Sora Slot 1"
+    },
+    {
+      "name": "(BC) Dark Thorn Bonus: Sora Slot 2"
+    },
+    {
+      "name": "(BC) Dark Thorn Cure Element"
+    },
+    {
+      "name": "(BC2) Rumbling Rose"
+    },
+    {
+      "name": "(BC2) Castle Walls Map"
+    },
+    {
+      "name": "(BC2) Xaldin Bonus: Sora Slot 1"
+    },
+    {
+      "name": "(BC2) Xaldin Bonus: Sora Slot 2"
+    },
+    {
+      "name": "(BC2) Secret Ansem Report 4 (Xaldin)"
+    },
+    {
+      "name": "Data Xaldin"
+    },
+    {
+      "name": "(SP) Pit Cell Area Map"
+    },
+    {
+      "name": "(SP) Pit Cell Mythril Crystal"
+    },
+    {
+      "name": "(SP) Canyon Dark Crystal"
+    },
+    {
+      "name": "(SP) Canyon Mythril Stone"
+    },
+    {
+      "name": "(SP) Canyon Mythril Gem"
+    },
+    {
+      "name": "(SP) Canyon Frost Crystal"
+    },
+    {
+      "name": "(SP) Screens Bonus: Sora Slot 1"
+    },
+    {
+      "name": "(SP) Hallway Power Crystal"
+    },
+    {
+      "name": "(SP) Hallway AP Boost"
+    },
+    {
+      "name": "(SP) Communications Room I/O Tower Map"
+    },
+    {
+      "name": "(SP) Communications Room Gaia Belt"
+    },
+    {
+      "name": "(SP) Hostile Program Bonus: Sora Slot 1"
+    },
+    {
+      "name": "(SP) Hostile Program Bonus: Sora Slot 2"
+    },
+    {
+      "name": "(SP) Photon Debugger"
+    },
+    {
+      "name": "(SP2) Solar Sailer"
+    },
+    {
+      "name": "(SP2) Central Computer Core AP Boost"
+    },
+    {
+      "name": "(SP2) Central Computer Core Orichalcum+"
+    },
+    {
+      "name": "(SP2) Central Computer Core Cosmic Arts"
+    },
+    {
+      "name": "(SP2) Central Computer Core Map"
+    },
+    {
+      "name": "(SP2) MCP Bonus: Sora Slot 1"
+    },
+    {
+      "name": "(SP2) MCP Bonus: Sora Slot 2"
+    },
+    {
+      "name": "Larxene Bonus: Sora Slot 1"
+    },
+    {
+      "name": "AS Larxene"
+    },
+    {
+      "name": "Data Larxene"
+    },
+    {
+      "name": "(HT) Graveyard Mythril Shard"
+    },
+    {
+      "name": "(HT) Graveyard Serenity Gem"
+    },
+    {
+      "name": "(HT) Finklestein's Lab Halloween Town Map"
+    },
+    {
+      "name": "(HT) Town Square Mythril Stone"
+    },
+    {
+      "name": "(HT) Town Square Energy Shard"
+    },
+    {
+      "name": "(HT) Hinterlands Lightning Shard"
+    },
+    {
+      "name": "(HT) Hinterlands Mythril Stone"
+    },
+    {
+      "name": "(HT) Hinterlands AP Boost"
+    },
+    {
+      "name": "(HT) Candy Cane Lane Mega-Potion"
+    },
+    {
+      "name": "(HT) Candy Cane Lane Mythril Gem"
+    },
+    {
+      "name": "(HT) Candy Cane Lane Lightning Stone"
+    },
+    {
+      "name": "(HT) Candy Cane Lane Mythril Stone"
+    },
+    {
+      "name": "(HT) Santa's House Christmas Town Map"
+    },
+    {
+      "name": "(HT) Santa's House AP Boost"
+    },
+    {
+      "name": "(HT) Prison Keeper Bonus: Sora Slot 1"
+    },
+    {
+      "name": "(HT) Oogie Boogie Bonus: Sora Slot 1"
+    },
+    {
+      "name": "(HT) Oogie Boogie Magnet Element"
+    },
+    {
+      "name": "(HT2) Lock, Shock and Barrel Bonus: Sora Slot 1"
+    },
+    {
+      "name": "(HT2) Present"
+    },
+    {
+      "name": "(HT2) Decoy Presents"
+    },
+    {
+      "name": "(HT2) Experiment Bonus: Sora Slot 1"
+    },
+    {
+      "name": "(HT2) Decisive Pumpkin"
+    },
+    {
+      "name": "Vexen Bonus: Sora Slot 1"
+    },
+    {
+      "name": "AS Vexen"
+    },
+    {
+      "name": "Data Vexen"
+    },
+    {
+      "name": "(PR) Rampart Naval Map"
+    },
+    {
+      "name": "(PR) Rampart Mythril Stone"
+    },
+    {
+      "name": "(PR) Rampart Dark Shard"
+    },
+    {
+      "name": "(PR) Town Dark Stone"
+    },
+    {
+      "name": "(PR) Town AP Boost"
+    },
+    {
+      "name": "(PR) Town Mythril Shard"
+    },
+    {
+      "name": "(PR) Town Mythril Gem"
+    },
+    {
+      "name": "(PR) Cave Mouth Bright Shard"
+    },
+    {
+      "name": "(PR) Cave Mouth Mythril Shard"
+    },
+    {
+      "name": "(PR) Isla de Muerta Map"
+    },
+    {
+      "name": "(PR) Boat Fight Bonus: Sora Slot 1"
+    },
+    {
+      "name": "(PR) Interceptor Barrels Bonus: Sora Slot 1"
+    },
+    {
+      "name": "(PR) Powder Store AP Boost 1"
+    },
+    {
+      "name": "(PR) Powder Store AP Boost 2"
+    },
+    {
+      "name": "(PR) Moonlight Nook Mythril Shard"
+    },
+    {
+      "name": "(PR) Moonlight Nook Serenity Gem"
+    },
+    {
+      "name": "(PR) Moonlight Nook Power Stone"
+    },
+    {
+      "name": "(PR) Barbossa Bonus: Sora Slot 1"
+    },
+    {
+      "name": "(PR) Barbossa Bonus: Sora Slot 2"
+    },
+    {
+      "name": "(PR) Follow the Wind"
+    },
+    {
+      "name": "(PR2) Grim Reaper 1 Bonus: Sora Slot 1"
+    },
+    {
+      "name": "(PR2) Interceptor's Hold Feather Charm"
+    },
+    {
+      "name": "(PR2) Seadrift Keep AP Boost"
+    },
+    {
+      "name": "(PR2) Seadrift Keep Orichalcum"
+    },
+    {
+      "name": "(PR2) Seadrift Keep Meteor Staff"
+    },
+    {
+      "name": "(PR2) Seadrift Row Serenity Gem"
+    },
+    {
+      "name": "(PR2) Seadrift Row King Recipe"
+    },
+    {
+      "name": "(PR2) Seadrift Row Mythril Crystal"
+    },
+    {
+      "name": "(PR2) Seadrift Row Cursed Medallion"
+    },
+    {
+      "name": "(PR2) Seadrift Row Ship Graveyard Map"
+    },
+    {
+      "name": "(PR2) Grim Reaper 2 Bonus: Sora Slot 1"
+    },
+    {
+      "name": "(PR2) Secret Ansem Report 6 (Grim Reaper 2)"
+    },
+    {
+      "name": "Data Luxord"
+    },
+    {
+      "name": "(HB) Marketplace Map"
+    },
+    {
+      "name": "(HB) Borough Drive Recovery"
+    },
+    {
+      "name": "(HB) Borough AP Boost"
+    },
+    {
+      "name": "(HB) Borough Hi-Potion"
+    },
+    {
+      "name": "(HB) Borough Mythril Shard"
+    },
+    {
+      "name": "(HB) Borough Dark Shard"
+    },
+    {
+      "name": "(HB) Merlin's House Membership Card"
+    },
+    {
+      "name": "(HB) Merlin's House Blizzard Element"
+    },
+    {
+      "name": "(HB) Bailey Bonus: Sora Slot 1"
+    },
+    {
+      "name": "(HB) Bailey Secret Ansem Report 7"
+    },
+    {
+      "name": "(HB) Baseball Charm"
+    },
+    {
+      "name": "(HB2) Postern Castle Perimeter Map"
+    },
+    {
+      "name": "(HB2) Postern Mythril Gem"
+    },
+    {
+      "name": "(HB2) Postern AP Boost"
+    },
+    {
+      "name": "(HB2) Corridors Mythril Stone"
+    },
+    {
+      "name": "(HB2) Corridors Mythril Crystal"
+    },
+    {
+      "name": "(HB2) Corridors Dark Crystal"
+    },
+    {
+      "name": "(HB2) Corridors AP Boost"
+    },
+    {
+      "name": "(HB2) Ansem's Study Master Form"
+    },
+    {
+      "name": "(HB2) Ansem's Study Sleeping Lion"
+    },
+    {
+      "name": "(HB2) Ansem's Study Skill Recipe"
+    },
+    {
+      "name": "(HB2) Ansem's Study Ukulele Charm"
+    },
+    {
+      "name": "(HB2) Restoration Site Moon Recipe"
+    },
+    {
+      "name": "(HB2) Restoration Site AP Boost"
+    },
+    {
+      "name": "(HB2) Demyx Bonus: Sora Slot 1"
+    },
+    {
+      "name": "(HB2) Demyx Bonus: Sora Slot 2"
+    },
+    {
+      "name": "(HB2) FF Fights Cure Element"
+    },
+    {
+      "name": "(HB2) Crystal Fissure Torn Pages"
+    },
+    {
+      "name": "(HB2) Crystal Fissure The Great Maw Map"
+    },
+    {
+      "name": "(HB2) Crystal Fissure Energy Crystal"
+    },
+    {
+      "name": "(HB2) Crystal Fissure AP Boost"
+    },
+    {
+      "name": "(HB2) 1000 Heartless"
+    },
+    {
+      "name": "(HB2) 1000 Heartless Secret Ansem Report 1"
+    },
+    {
+      "name": "(HB2) 1000 Heartless Ice Cream"
+    },
+    {
+      "name": "(HB2) 1000 Heartless Picture"
+    },
+    {
+      "name": "(HB2) Postern Gull Wing"
+    },
+    {
+      "name": "(HB2) Heartless Manufactory Cosmic Chain"
+    },
+    {
+      "name": "Sephiroth Bonus: Sora Slot 1"
+    },
+    {
+      "name": "Sephiroth Fenrir"
+    },
+    {
+      "name": "(HB2) Winner's Proof"
+    },
+    {
+      "name": "(HB2) Proof of Peace"
+    },
+    {
+      "name": "Data Demyx"
+    },
+    {
+      "name": "(CoR) Depths AP Boost"
+    },
+    {
+      "name": "(CoR) Depths Power Crystal"
+    },
+    {
+      "name": "(CoR) Depths Frost Crystal"
+    },
+    {
+      "name": "(CoR) Depths Manifest Illusion"
+    },
+    {
+      "name": "(CoR) Depths AP Boost 2"
+    },
+    {
+      "name": "(CoR) Mineshaft Lower Level Depths of Remembrance Map"
+    },
+    {
+      "name": "(CoR) Mineshaft Lower Level AP Boost"
+    },
+    {
+      "name": "(CoR) Depths Upper Level Remembrance Gem"
+    },
+    {
+      "name": "(CoR) Mining Area Serenity Gem"
+    },
+    {
+      "name": "(CoR) Mining Area AP Boost"
+    },
+    {
+      "name": "(CoR) Mining Area Serenity Crystal"
+    },
+    {
+      "name": "(CoR) Mining Area Manifest Illusion"
+    },
+    {
+      "name": "(CoR) Mining Area Serenity Gem 2"
+    },
+    {
+      "name": "(CoR) Mining Area Dark Remembrance Map"
+    },
+    {
+      "name": "(CoR) Mineshaft Mid Level Power Boost"
+    },
+    {
+      "name": "(CoR) Engine Chamber Serenity Crystal"
+    },
+    {
+      "name": "(CoR) Engine Chamber Remembrance Crystal"
+    },
+    {
+      "name": "(CoR) Engine Chamber AP Boost"
+    },
+    {
+      "name": "(CoR) Engine Chamber Manifest Illusion"
+    },
+    {
+      "name": "(CoR) Mineshaft Upper Level Magic Boost"
+    },
+    {
+      "name": "(CoR) Mineshaft Upper Level AP Boost"
+    },
+    {
+      "name": "Transport to Remembrance"
+    },
+    {
+      "name": "(PL) Gorge Savannah Map"
+    },
+    {
+      "name": "(PL) Gorge Dark Gem"
+    },
+    {
+      "name": "(PL) Gorge Mythril Stone"
+    },
+    {
+      "name": "(PL) Elephant Graveyard Frost Gem"
+    },
+    {
+      "name": "(PL) Elephant Graveyard Mythril Stone"
+    },
+    {
+      "name": "(PL) Elephant Graveyard Bright Stone"
+    },
+    {
+      "name": "(PL) Elephant Graveyard AP Boost"
+    },
+    {
+      "name": "(PL) Elephant Graveyard Mythril Shard"
+    },
+    {
+      "name": "(PL) Pride Rock Map"
+    },
+    {
+      "name": "(PL) Pride Rock Mythril Stone"
+    },
+    {
+      "name": "(PL) Pride Rock Serenity Crystal"
+    },
+    {
+      "name": "(PL) Wildebeest Valley Energy Stone"
+    },
+    {
+      "name": "(PL) Wildebeest Valley AP Boost"
+    },
+    {
+      "name": "(PL) Wildebeest Valley Mythril Gem"
+    },
+    {
+      "name": "(PL) Wildebeest Valley Mythril Stone"
+    },
+    {
+      "name": "(PL) Wildebeest Valley Lucid Gem"
+    },
+    {
+      "name": "(PL) Wastelands Mythril Shard"
+    },
+    {
+      "name": "(PL) Wastelands Serenity Gem"
+    },
+    {
+      "name": "(PL) Wastelands Mythril Stone"
+    },
+    {
+      "name": "(PL) Jungle Serenity Gem"
+    },
+    {
+      "name": "(PL) Jungle Mythril Stone"
+    },
+    {
+      "name": "(PL) Jungle Serenity Crystal"
+    },
+    {
+      "name": "(PL) Oasis Map"
+    },
+    {
+      "name": "(PL) Oasis Torn Pages"
+    },
+    {
+      "name": "(PL) Oasis AP Boost"
+    },
+    {
+      "name": "(PL) Circle of Life"
+    },
+    {
+      "name": "(PL) Hyenas 1 Bonus: Sora Slot 1"
+    },
+    {
+      "name": "(PL) Scar Bonus: Sora Slot 1"
+    },
+    {
+      "name": "(PL) Scar Fire Element"
+    },
+    {
+      "name": "(PL2) Hyenas 2 Bonus: Sora Slot 1"
+    },
+    {
+      "name": "(PL2) Groundshaker Bonus: Sora Slot 1"
+    },
+    {
+      "name": "(PL2) Groundshaker Bonus: Sora Slot 2"
+    },
+    {
+      "name": "Data Saix"
+    },
+    {
+      "name": "(STT) Twilight Town Map"
+    },
+    {
+      "name": "(STT) Munny Pouch Olette"
+    },
+    {
+      "name": "(STT) Station Dusks"
+    },
+    {
+      "name": "(STT) Station of Serenity Potion"
+    },
+    {
+      "name": "(STT) Station of Calling Potion"
+    },
+    {
+      "name": "(STT) Twilight Thorn"
+    },
+    {
+      "name": "(STT) Axel 1"
+    },
+    {
+      "name": "(STT) Junk Champion Belt"
+    },
+    {
+      "name": "(STT) Junk Medal"
+    },
+    {
+      "name": "(STT) The Struggle Trophy"
+    },
+    {
+      "name": "(STT) Central Station Potion 1"
+    },
+    {
+      "name": "(STT) Central Station Hi-Potion"
+    },
+    {
+      "name": "(STT) Central Station Potion 2"
+    },
+    {
+      "name": "(STT) Sunset Terrace Ability Ring"
+    },
+    {
+      "name": "(STT) Sunset Terrace Hi-Potion"
+    },
+    {
+      "name": "(STT) Sunset Terrace Potion 1"
+    },
+    {
+      "name": "(STT) Sunset Terrace Potion 2"
+    },
+    {
+      "name": "(STT) Mansion Foyer Hi-Potion"
+    },
+    {
+      "name": "(STT) Mansion Foyer Potion 1"
+    },
+    {
+      "name": "(STT) Mansion Foyer Potion 2"
+    },
+    {
+      "name": "(STT) Mansion Dining Room Elven Bandanna"
+    },
+    {
+      "name": "(STT) Mansion Dining Room Potion"
+    },
+    {
+      "name": "(STT) Namine's Sketches"
+    },
+    {
+      "name": "(STT) Mansion Map"
+    },
+    {
+      "name": "(STT) Mansion Library Hi-Potion"
+    },
+    {
+      "name": "(STT) Axel 2"
+    },
+    {
+      "name": "(STT) Mansion Basement Corridor Hi-Potion"
+    },
+    {
+      "name": "Data Roxas"
+    },
+    {
+      "name": "(TT) Old Mansion Potion"
+    },
+    {
+      "name": "(TT) Old Mansion Mythril Shard"
+    },
+    {
+      "name": "(TT) The Woods Potion"
+    },
+    {
+      "name": "(TT) The Woods Mythril Shard"
+    },
+    {
+      "name": "(TT) The Woods Hi-Potion"
+    },
+    {
+      "name": "(TT) Tram Common Hi-Potion"
+    },
+    {
+      "name": "(TT) Tram Common AP Boost"
+    },
+    {
+      "name": "(TT) Tram Common Tent"
+    },
+    {
+      "name": "(TT) Tram Common Mythril Shard 1"
+    },
+    {
+      "name": "(TT) Tram Common Potion 1"
+    },
+    {
+      "name": "(TT) Tram Common Mythril Shard 2"
+    },
+    {
+      "name": "(TT) Tram Common Potion 2"
+    },
+    {
+      "name": "(TT) Station Plaza Secret Ansem Report 2"
+    },
+    {
+      "name": "(TT) Munny Pouch Mickey"
+    },
+    {
+      "name": "(TT) Crystal Orb"
+    },
+    {
+      "name": "(TT) Central Station Tent"
+    },
+    {
+      "name": "(TT) Central Station Hi-Potion"
+    },
+    {
+      "name": "(TT) Central Station Mythril Shard"
+    },
+    {
+      "name": "(TT) The Tower Potion"
+    },
+    {
+      "name": "(TT) The Tower Hi-Potion"
+    },
+    {
+      "name": "(TT) The Tower Ether"
+    },
+    {
+      "name": "(TT) Tower Entryway Ether"
+    },
+    {
+      "name": "(TT) Tower Entryway Mythril Shard"
+    },
+    {
+      "name": "(TT) Sorcerer's Loft Tower Map"
+    },
+    {
+      "name": "(TT) Tower Wardrobe Mythril Stone"
+    },
+    {
+      "name": "(TT) Star Seeker"
+    },
+    {
+      "name": "(TT) Valor Form"
+    },
+    {
+      "name": "(TT2) Seifer's Trophy"
+    },
+    {
+      "name": "(TT2) Oathkeeper"
+    },
+    {
+      "name": "(TT2) Limit Form"
+    },
+    {
+      "name": "(TT3) Underground Concourse Mythril Gem"
+    },
+    {
+      "name": "(TT3) Underground Concourse AP Boost"
+    },
+    {
+      "name": "(TT3) Underground Concourse Orichalcum"
+    },
+    {
+      "name": "(TT3) Underground Concourse Mythril Crystal"
+    },
+    {
+      "name": "(TT3) Tunnelway Orichalcum"
+    },
+    {
+      "name": "(TT3) Tunnelway Mythril Crystal"
+    },
+    {
+      "name": "(TT3) Sunset Terrace Orichalcum+"
+    },
+    {
+      "name": "(TT3) Sunset Terrace Mythril Shard"
+    },
+    {
+      "name": "(TT3) Sunset Terrace Mythril Crystal"
+    },
+    {
+      "name": "(TT3) Sunset Terrace AP Boost"
+    },
+    {
+      "name": "(TT3) Mansion Nobodies Bonus: Sora Slot 1"
+    },
+    {
+      "name": "(TT3) Mansion Foyer Mythril Crystal"
+    },
+    {
+      "name": "(TT3) Mansion Foyer Mythril Stone"
+    },
+    {
+      "name": "(TT3) Mansion Foyer Serenity Crystal"
+    },
+    {
+      "name": "(TT3) Mansion Dining Room Mythril Crystal"
+    },
+    {
+      "name": "(TT3) Mansion Dining Room Mythril Stone"
+    },
+    {
+      "name": "(TT3) Mansion Library Orichalcum"
+    },
+    {
+      "name": "(TT3) Beam Secret Ansem Report 10"
+    },
+    {
+      "name": "(TT3) Mansion Basement Corridor Ultimate Recipe"
+    },
+    {
+      "name": "(TT3) Betwixt and Between"
+    },
+    {
+      "name": "(TT3) Betwixt and Between Bond of Flame"
+    },
+    {
+      "name": "Data Axel"
+    },
+    {
+      "name": "(TWTNW) Fragment Crossing Mythril Stone"
+    },
+    {
+      "name": "(TWTNW) Fragment Crossing Mythril Crystal"
+    },
+    {
+      "name": "(TWTNW) Fragment Crossing AP Boost"
+    },
+    {
+      "name": "(TWTNW) Fragment Crossing Orichalcum"
+    },
+    {
+      "name": "(TWTNW) Roxas Bonus: Sora Slot 1"
+    },
+    {
+      "name": "(TWTNW) Roxas Bonus: Sora Slot 2"
+    },
+    {
+      "name": "(TWTNW) Roxas Secret Ansem Report 8"
+    },
+    {
+      "name": "(TWTNW) Two Become One"
+    },
+    {
+      "name": "(TWTNW) Memory's Skyscaper Mythril Crystal"
+    },
+    {
+      "name": "(TWTNW) Memory's Skyscaper AP Boost"
+    },
+    {
+      "name": "(TWTNW) Memory's Skyscaper Mythril Stone"
+    },
+    {
+      "name": "(TWTNW) The Brink of Despair Dark City Map"
+    },
+    {
+      "name": "(TWTNW) The Brink of Despair Orichalcum+"
+    },
+    {
+      "name": "(TWTNW) Nothing's Call Mythril Gem"
+    },
+    {
+      "name": "(TWTNW) Nothing's Call Orichalcum"
+    },
+    {
+      "name": "(TWTNW) Twilight's View Cosmic Belt"
+    },
+    {
+      "name": "(TWTNW) Xigbar Bonus: Sora Slot 1"
+    },
+    {
+      "name": "(TWTNW) Xigbar Secret Ansem Report 3"
+    },
+    {
+      "name": "(TWTNW) Naught's Skyway Mythril Gem"
+    },
+    {
+      "name": "(TWTNW) Naught's Skyway Orichalcum"
+    },
+    {
+      "name": "(TWTNW) Naught's Skyway Mythril Crystal"
+    },
+    {
+      "name": "(TWTNW) Oblivion"
+    },
+    {
+      "name": "(TWTNW) Castle That Never Was Map"
+    },
+    {
+      "name": "(TWTNW) Luxord"
+    },
+    {
+      "name": "(TWTNW) Luxord Bonus: Sora Slot 1"
+    },
+    {
+      "name": "(TWTNW) Luxord Secret Ansem Report 9"
+    },
+    {
+      "name": "(TWTNW) Saix Bonus: Sora Slot 1"
+    },
+    {
+      "name": "(TWTNW) Saix Secret Ansem Report 12"
+    },
+    {
+      "name": "(TWTNW) Secret Ansem Report 11 (Pre-Xemnas 1)"
+    },
+    {
+      "name": "(TWTNW) Ruin and Creation's Passage Mythril Stone"
+    },
+    {
+      "name": "(TWTNW) Ruin and Creation's Passage AP Boost"
+    },
+    {
+      "name": "(TWTNW) Ruin and Creation's Passage Mythril Crystal"
+    },
+    {
+      "name": "(TWTNW) Ruin and Creation's Passage Orichalcum"
+    },
+    {
+      "name": "(TWTNW) Xemnas 1 Bonus: Sora Slot 1"
+    },
+    {
+      "name": "(TWTNW) Xemnas 1 Bonus: Sora Slot 2"
+    },
+    {
+      "name": "(TWTNW) Xemnas 1 Secret Ansem Report 13"
+    },
+    {
+      "name": "Final Xemnas"
+    },
+    {
+      "name": "Data Xemnas"
+    },
+    {
+      "name": "Level 01"
+    },
+    {
+      "name": "Level 02"
+    },
+    {
+      "name": "Level 03"
+    },
+    {
+      "name": "Level 04"
+    },
+    {
+      "name": "Level 05"
+    },
+    {
+      "name": "Level 06"
+    },
+    {
+      "name": "Level 07"
+    },
+    {
+      "name": "Level 08"
+    },
+    {
+      "name": "Level 09"
+    },
+    {
+      "name": "Level 10"
+    },
+    {
+      "name": "Level 11"
+    },
+    {
+      "name": "Level 12"
+    },
+    {
+      "name": "Level 13"
+    },
+    {
+      "name": "Level 14"
+    },
+    {
+      "name": "Level 15"
+    },
+    {
+      "name": "Level 16"
+    },
+    {
+      "name": "Level 17"
+    },
+    {
+      "name": "Level 18"
+    },
+    {
+      "name": "Level 19"
+    },
+    {
+      "name": "Level 20"
+    },
+    {
+      "name": "Level 21"
+    },
+    {
+      "name": "Level 22"
+    },
+    {
+      "name": "Level 23"
+    },
+    {
+      "name": "Level 24"
+    },
+    {
+      "name": "Level 25"
+    },
+    {
+      "name": "Level 26"
+    },
+    {
+      "name": "Level 27"
+    },
+    {
+      "name": "Level 28"
+    },
+    {
+      "name": "Level 29"
+    },
+    {
+      "name": "Level 30"
+    },
+    {
+      "name": "Level 31"
+    },
+    {
+      "name": "Level 32"
+    },
+    {
+      "name": "Level 33"
+    },
+    {
+      "name": "Level 34"
+    },
+    {
+      "name": "Level 35"
+    },
+    {
+      "name": "Level 36"
+    },
+    {
+      "name": "Level 37"
+    },
+    {
+      "name": "Level 38"
+    },
+    {
+      "name": "Level 39"
+    },
+    {
+      "name": "Level 40"
+    },
+    {
+      "name": "Level 41"
+    },
+    {
+      "name": "Level 42"
+    },
+    {
+      "name": "Level 43"
+    },
+    {
+      "name": "Level 44"
+    },
+    {
+      "name": "Level 45"
+    },
+    {
+      "name": "Level 46"
+    },
+    {
+      "name": "Level 47"
+    },
+    {
+      "name": "Level 48"
+    },
+    {
+      "name": "Level 49"
+    },
+    {
+      "name": "Level 50"
+    },
+    {
+      "name": "Level 51"
+    },
+    {
+      "name": "Level 52"
+    },
+    {
+      "name": "Level 53"
+    },
+    {
+      "name": "Level 54"
+    },
+    {
+      "name": "Level 55"
+    },
+    {
+      "name": "Level 56"
+    },
+    {
+      "name": "Level 57"
+    },
+    {
+      "name": "Level 58"
+    },
+    {
+      "name": "Level 59"
+    },
+    {
+      "name": "Level 60"
+    },
+    {
+      "name": "Level 61"
+    },
+    {
+      "name": "Level 62"
+    },
+    {
+      "name": "Level 63"
+    },
+    {
+      "name": "Level 64"
+    },
+    {
+      "name": "Level 65"
+    },
+    {
+      "name": "Level 66"
+    },
+    {
+      "name": "Level 67"
+    },
+    {
+      "name": "Level 68"
+    },
+    {
+      "name": "Level 69"
+    },
+    {
+      "name": "Level 70"
+    },
+    {
+      "name": "Level 71"
+    },
+    {
+      "name": "Level 72"
+    },
+    {
+      "name": "Level 73"
+    },
+    {
+      "name": "Level 74"
+    },
+    {
+      "name": "Level 75"
+    },
+    {
+      "name": "Level 76"
+    },
+    {
+      "name": "Level 77"
+    },
+    {
+      "name": "Level 78"
+    },
+    {
+      "name": "Level 79"
+    },
+    {
+      "name": "Level 80"
+    },
+    {
+      "name": "Level 81"
+    },
+    {
+      "name": "Level 82"
+    },
+    {
+      "name": "Level 83"
+    },
+    {
+      "name": "Level 84"
+    },
+    {
+      "name": "Level 85"
+    },
+    {
+      "name": "Level 86"
+    },
+    {
+      "name": "Level 87"
+    },
+    {
+      "name": "Level 88"
+    },
+    {
+      "name": "Level 89"
+    },
+    {
+      "name": "Level 90"
+    },
+    {
+      "name": "Level 91"
+    },
+    {
+      "name": "Level 92"
+    },
+    {
+      "name": "Level 93"
+    },
+    {
+      "name": "Level 94"
+    },
+    {
+      "name": "Level 95"
+    },
+    {
+      "name": "Level 96"
+    },
+    {
+      "name": "Level 97"
+    },
+    {
+      "name": "Level 98"
+    },
+    {
+      "name": "Level 99"
+    },
+    {
+      "name": "Valor level 2"
+    },
+    {
+      "name": "Valor level 3"
+    },
+    {
+      "name": "Valor level 4"
+    },
+    {
+      "name": "Valor level 5"
+    },
+    {
+      "name": "Valor level 6"
+    },
+    {
+      "name": "Valor level 7"
+    },
+    {
+      "name": "Wisdom level 2"
+    },
+    {
+      "name": "Wisdom level 3"
+    },
+    {
+      "name": "Wisdom level 4"
+    },
+    {
+      "name": "Wisdom level 5"
+    },
+    {
+      "name": "Wisdom level 6"
+    },
+    {
+      "name": "Wisdom level 7"
+    },
+    {
+      "name": "Limit level 2"
+    },
+    {
+      "name": "Limit level 3"
+    },
+    {
+      "name": "Limit level 4"
+    },
+    {
+      "name": "Limit level 5"
+    },
+    {
+      "name": "Limit level 6"
+    },
+    {
+      "name": "Limit level 7"
+    },
+    {
+      "name": "Master level 2"
+    },
+    {
+      "name": "Master level 3"
+    },
+    {
+      "name": "Master level 4"
+    },
+    {
+      "name": "Master level 5"
+    },
+    {
+      "name": "Master level 6"
+    },
+    {
+      "name": "Master level 7"
+    },
+    {
+      "name": "Final level 2"
+    },
+    {
+      "name": "Final level 3"
+    },
+    {
+      "name": "Final level 4"
+    },
+    {
+      "name": "Final level 5"
+    },
+    {
+      "name": "Final level 6"
+    },
+    {
+      "name": "Final level 7"
+    },
+    {
+      "name": "Garden of Assemblage Map"
+    },
+    {
+      "name": "GoA Lost Illusion"
+    },
+    {
+      "name": "Proof of Nonexistence Location"
+    },
+    {
+      "name": "FAKE Slot"
+    },
+    {
+      "name": "Detection Saber Slot"
+    },
+    {
+      "name": "Edge of Ultima Slot"
+    },
+    {
+      "name": "Kingdom Key Slot"
+    },
+    {
+      "name": "Oathkeeper Slot"
+    },
+    {
+      "name": "Oblivion Slot"
+    },
+    {
+      "name": "Star Seeker Slot"
+    },
+    {
+      "name": "Hidden Dragon Slot"
+    },
+    {
+      "name": "Hero's Crest Slot"
+    },
+    {
+      "name": "Monochrome Slot"
+    },
+    {
+      "name": "Follow the Wind Slot"
+    },
+    {
+      "name": "Circle of Life Slot"
+    },
+    {
+      "name": "Photon Debugger Slot"
+    },
+    {
+      "name": "Gull Wing Slot"
+    },
+    {
+      "name": "Rumbling Rose Slot"
+    },
+    {
+      "name": "Guardian Soul Slot"
+    },
+    {
+      "name": "Wishing Lamp Slot"
+    },
+    {
+      "name": "Decisive Pumpkin Slot"
+    },
+    {
+      "name": "Sweet Memories Slot"
+    },
+    {
+      "name": "Mysterious Abyss Slot"
+    },
+    {
+      "name": "Sleeping Lion Slot"
+    },
+    {
+      "name": "Bond of Flame Slot"
+    },
+    {
+      "name": "Two Become One Slot"
+    },
+    {
+      "name": "Fatal Crest Slot"
+    },
+    {
+      "name": "Fenrir Slot"
+    },
+    {
+      "name": "Ultima Weapon Slot"
+    },
+    {
+      "name": "Winner's Proof Slot"
+    },
+    {
+      "name": "Critical Starting Ability 1"
+    },
+    {
+      "name": "Critical Starting Ability 2"
+    },
+    {
+      "name": "Critical Starting Ability 3"
+    },
+    {
+      "name": "Critical Starting Ability 4"
+    },
+    {
+      "name": "Critical Starting Ability 5"
+    },
+    {
+      "name": "Critical Starting Ability 6"
+    },
+    {
+      "name": "Critical Starting Ability 7"
+    },
+    {
+      "name": "(SP) Screens Bonus: Donald Slot 1"
+    },
+    {
+      "name": "(HB) Demyx Bonus: Donald Slot 1"
+    },
+    {
+      "name": "(OC) Demyx Bonus: Donald Slot 1"
+    },
+    {
+      "name": "(TR) Boat Pete Bonus: Donald Slot 1"
+    },
+    {
+      "name": "(TR) Boat Pete Bonus: Donald Slot 2"
+    },
+    {
+      "name": "(HT) Prison Keeper Bonus: Donald Slot 1"
+    },
+    {
+      "name": "(PL) Scar Bonus: Donald Slot 1"
+    },
+    {
+      "name": "(SP2) Solar Sailer Bonus: Donald Slot 1"
+    },
+    {
+      "name": "(HT2) Experiment Bonus: Donald Slot 1"
+    },
+    {
+      "name": "(PR) Boat Fight Bonus: Donald Slot 1"
+    },
+    {
+      "name": "(TT3) Mansion Nobodies Bonus: Donald Slot 1"
+    },
+    {
+      "name": "(BC) Thresholder Bonus: Donald Slot 1"
+    },
+    {
+      "name": "(BC2) Xaldin Bonus: Donald Slot 1"
+    },
+    {
+      "name": "(PR2) Grim Reaper 2 Bonus: Donald Slot 1"
+    },
+    {
+      "name": "Comet Staff Slot"
+    },
+    {
+      "name": "Hammer Staff Slot"
+    },
+    {
+      "name": "Lord's Broom Slot"
+    },
+    {
+      "name": "Mages Staff Slot"
+    },
+    {
+      "name": "Meteor Staff Slot"
+    },
+    {
+      "name": "Nobody Lance Slot"
+    },
+    {
+      "name": "Precious Mushroom Slot"
+    },
+    {
+      "name": "Precious Mushroom+ Slot"
+    },
+    {
+      "name": "Premium Mushroom Slot"
+    },
+    {
+      "name": "Rising Dragon Slot"
+    },
+    {
+      "name": "Save The Queen+ Slot"
+    },
+    {
+      "name": "Shaman's Relic Slot"
+    },
+    {
+      "name": "Victory Bell Slot"
+    },
+    {
+      "name": "Wisdom Wand Slot"
+    },
+    {
+      "name": "Centurion+ Slot"
+    },
+    {
+      "name": "(AG) Abu Escort Bonus: Donald Slot 1"
+    },
+    {
+      "name": "Donald Starting Item 1"
+    },
+    {
+      "name": "Donald Starting Item 2"
+    },
+    {
+      "name": "(PR) Barbossa Bonus: Goofy Slot 1"
+    },
+    {
+      "name": "(PR) Barbossa Bonus: Goofy Slot 2"
+    },
+    {
+      "name": "(PR2) Grim Reaper 1 Bonus: Goofy Slot 1"
+    },
+    {
+      "name": "(SP) Hostile Program Bonus: Goofy Slot 1"
+    },
+    {
+      "name": "(PL) Hyenas 1 Bonus: Goofy Slot 1"
+    },
+    {
+      "name": "(PL2) Hyenas 2 Bonus: Goofy Slot 1"
+    },
+    {
+      "name": "(HT2) Lock, Shock and Barrel Bonus: Goofy Slot 1"
+    },
+    {
+      "name": "(HT) Oogie Boogie Bonus: Goofy Slot 1"
+    },
+    {
+      "name": "(OC) Pete Bonus: Goofy Slot 1"
+    },
+    {
+      "name": "(TR) Future Pete Bonus: Goofy Slot 1"
+    },
+    {
+      "name": "(LoD) Shan-Yu Bonus: Goofy Slot 1"
+    },
+    {
+      "name": "(LoD2) Storm Rider Bonus: Goofy Slot 1"
+    },
+    {
+      "name": "(BC) Beast Bonus: Goofy Slot 1"
+    },
+    {
+      "name": "(PR) Interceptor Barrels Bonus: Goofy Slot 1"
+    },
+    {
+      "name": "(AG) Treasure Room Heartless Bonus: Goofy Slot 1"
+    },
+    {
+      "name": "Zexion Bonus: Goofy Slot 1"
+    },
+    {
+      "name": "Adamant Shield Slot"
+    },
+    {
+      "name": "Akashic Record Slot"
+    },
+    {
+      "name": "Chain Gear Slot"
+    },
+    {
+      "name": "Dream Cloud Slot"
+    },
+    {
+      "name": "Falling Star Slot"
+    },
+    {
+      "name": "Frozen Pride+ Slot"
+    },
+    {
+      "name": "Genji Shield Slot"
+    },
+    {
+      "name": "Knight Defender Slot"
+    },
+    {
+      "name": "Knight's Shield Slot"
+    },
+    {
+      "name": "Majestic Mushroom Slot"
+    },
+    {
+      "name": "Majestic Mushroom+ Slot"
+    },
+    {
+      "name": "Nobody Guard Slot"
+    },
+    {
+      "name": "Ogre Shield Slot"
+    },
+    {
+      "name": "Save The King+ Slot"
+    },
+    {
+      "name": "Ultimate Mushroom Slot"
+    },
+    {
+      "name": "Goofy Starting Item 1"
+    },
+    {
+      "name": "Goofy Starting Item 2"
+    },
+    {
+      "name": "Pureblood Slot"
+    }
+  ],
+  "status": "New"
+}

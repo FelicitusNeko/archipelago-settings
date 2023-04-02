@@ -145,6 +145,24 @@
       "default": 999
     },
     {
+      "name": "LevelCap",
+      "description": "Sets the max level Lunais can achieve.",
+      "high": 99,
+      "readableName": "Level Cap",
+      "low": 1,
+      "type": "range",
+      "default": 99
+    },
+    {
+      "name": "ExtraEarringsXP",
+      "description": "Adds additional XP granted by Galaxy Earrings.",
+      "high": 24,
+      "readableName": "Extra Earrings XP",
+      "low": 0,
+      "type": "range",
+      "default": 0
+    },
+    {
       "name": "BossHealing",
       "description": "Whether bosses heal Lunais to full health after defeat.",
       "dependsOn": {
@@ -317,6 +335,40 @@
       "readableName": "Enter Sandman",
       "type": "toggle",
       "default": false
+    },
+    {
+      "name": "DadPercent",
+      "description": "If enabled, the win condition is beating the boss of Emperor's Tower.",
+      "readableName": "Dad%",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "RisingTides",
+      "description": "Random areas are flooded or drained. For more granular configuration, modify the YAML manually and add RisingTidesOverrides.",
+      "readableName": "Rising Tides",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "RisingTidesOverrides",
+      "type": "ignore"
+    },
+    {
+      "name": "UnchainedKeys",
+      "description": "Start with Twin Pyramid Key, which does not give free warp; warp items for Past, Present, (and ??? with Enter Sandman) can be found.",
+      "readableName": "UnchainedKeys",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "TrapChance",
+      "description": "Chance of traps in the item pool. Traps will only replace filler items such as potions, vials and antidotes.",
+      "high": 100,
+      "readableName": "Trap Chance",
+      "low": 0,
+      "type": "range",
+      "default": 10
     },
     {
       "name": "DeathLink",
@@ -926,6 +978,30 @@
       "name": "Max Aura"
     },
     {
+      "name": "Timeworn Warp Beacon"
+    },
+    {
+      "name": "Modern Warp Beacon"
+    },
+    {
+      "name": "Mysterious Warp Beacon"
+    },
+    {
+      "name": "Meteor Sparrow Trap"
+    },
+    {
+      "name": "Poison Trap"
+    },
+    {
+      "name": "Chaos Trap"
+    },
+    {
+      "name": "Neurotoxin Trap"
+    },
+    {
+      "name": "Bee Trap"
+    },
+    {
       "name": "Max Sand"
     }
   ],
@@ -1330,22 +1406,22 @@
       "name": "Castle Ramparts: Pedestal"
     },
     {
-      "name": "Castle Keep: Basement secret pedestal"
+      "name": "Castle Basement: Secret pedestal"
     },
     {
-      "name": "Castle Keep: Clean the castle basement"
+      "name": "Castle Basement: Clean the castle basement"
     },
     {
       "name": "Castle Keep: Yas queen room"
     },
     {
-      "name": "Castle Keep: Giantess guarded chest"
+      "name": "Castle Basement: Giantess guarded chest"
     },
     {
-      "name": "Castle Keep: Omelette chest"
+      "name": "Castle Basement: Omelette chest"
     },
     {
-      "name": "Castle Keep: Just an egg"
+      "name": "Castle Basement: Just an egg"
     },
     {
       "name": "Castle Keep: Under the twins"
@@ -1498,7 +1574,7 @@
       "name": "Forest: Journal - Bat Jump Ledge (Peace Treaty)"
     },
     {
-      "name": "Castle Ramparts: Journal - Floating in Moat (Prime Edicts)"
+      "name": "Forest: Journal - Floating in Moat (Prime Edicts)"
     },
     {
       "name": "Castle Ramparts: Journal - Archer + Knight (Declaration of Independence)"
@@ -1507,7 +1583,7 @@
       "name": "Castle Keep: Journal - Under the Twins (Letter of Reference)"
     },
     {
-      "name": "Castle Keep: Journal - Castle Loop Giantess (Political Advice)"
+      "name": "Castle Basement: Journal - Castle Loop Giantess (Political Advice)"
     },
     {
       "name": "Royal Towers: Journal - Aelana's Room (Diplomatic Missive)"

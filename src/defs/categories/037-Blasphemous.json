@@ -1,0 +1,1857 @@
+{
+  "category": "Blasphemous",
+  "index": 37,
+  "settings": [
+    {
+      "name": "prie_dieu_warp",
+      "description": "Automatically unlocks the ability to warp between Prie Dieu shrines.",
+      "readableName": "Prie Dieu warp",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "skip_cutscenes",
+      "description": "Automatically skips most cutscenes.",
+      "readableName": "Skip cutscenes",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "corpse_hints",
+      "description": "Changes the 34 corpses in game to give various hints about item locations.",
+      "readableName": "Corpse hints",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "difficulty",
+      "description": "Adjusts the logic required to defeat bosses.",
+      "readableName": "Difficulty",
+      "values": [
+        {
+          "name": "easy",
+          "readableName": "Easy"
+        },
+        {
+          "name": "normal",
+          "readableName": "Normal"
+        },
+        {
+          "name": "hard",
+          "readableName": "Hard"
+        },
+        {
+          "name": "impossible",
+          "readableName": "Impossible",
+          "description": "Removes all logic requirements for bosses. Good luck."
+        }
+      ],
+      "type": "choice",
+      "default": "normal"
+    },
+    {
+      "name": "penitence",
+      "description": "Allows one of the three Penitences to be chosen at the beginning of the game.",
+      "readableName": "Penitence",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "expert_logic",
+      "description": "Expands the logic used by the randomizer to allow for some difficult and/or lesser known tricks.",
+      "readableName": "expert logic",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "ending",
+      "description": "Choose which ending is required to complete the game.",
+      "readableName": "ending",
+      "values": [
+        {
+          "name": "any_ending",
+          "readableName": "Any ending"
+        },
+        {
+          "name": "ending_a",
+          "readableName": "Ending A",
+          "description": "Collect all thorn upgrades."
+        },
+        {
+          "name": "ending_c",
+          "readableName": "Ending C",
+          "description": "Collect all thorn upgrades and the Holy Wound of Abnegation."
+        }
+      ],
+      "type": "choice",
+      "default": "any_ending"
+    },
+    {
+      "name": "thorn_shuffle",
+      "description": "Shuffles the Thorn given by Deogracias and all Thorn upgrades into the item pool.",
+      "readableName": "Thorn shuffle",
+      "values": [
+        {
+          "name": "anywhere",
+          "readableName": "Anywhere"
+        },
+        {
+          "name": "local_only",
+          "readableName": "Local only"
+        },
+        {
+          "name": "vanilla",
+          "readableName": "Vanilla"
+        }
+      ],
+      "type": "choice",
+      "default": "anywhere"
+    },
+    {
+      "name": "reliquary_shuffle",
+      "description": "Adds the True Torment exclusive Reliquary rosary beads into the item pool.",
+      "readableName": "Reliquary shuffle",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "cherub_shuffle",
+      "description": "Shuffles Children of Moonlight into the item pool.",
+      "readableName": "Cherub shuffle",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "life_shuffle",
+      "description": "Shuffles life upgrades from the Lady of the Six Sorrows into the item pool.",
+      "readableName": "Life shuffle",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "fervour_shuffle",
+      "description": "Shuffles fervour upgrades from the Oil of the Pilgrims into the item pool.",
+      "readableName": "Fervour shuffle",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "sword_shuffle",
+      "description": "Shuffles Mea Culpa upgrades from the Mea Culpa Altars into the item pool.",
+      "readableName": "Sword shuffle",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "blessing_shuffle",
+      "description": "Shuffles blessings from the Lake of Silent Pilgrims into the item pool.",
+      "readableName": "Blessing shuffle",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "dungeon_shuffle",
+      "description": "Shuffles rewards from completing Confessor Dungeons into the item pool.",
+      "readableName": "Dungeon reward shuffle",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "tirso_shuffle",
+      "description": "Shuffles rewards from delivering herbs to Tirso into the item pool.",
+      "readableName": "Tirso shuffle",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "miriam_shuffle",
+      "description": "Shuffles the prayer given by Miriam into the item pool.",
+      "readableName": "Miriam shuffle",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "redento_shuffle",
+      "description": "Shuffles rewards from assisting Redento into the item pool.",
+      "readableName": "Redento shuffle",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "jocinero_shuffle",
+      "description": "Shuffles rewards from rescuing 20 and 38 Children of Moonlight into the item pool.",
+      "readableName": "Jocinero shuffle",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "altasgracias_shuffle",
+      "description": "Shuffles the reward given by Altasgracias and the item left behind by them into the item pool.",
+      "readableName": "Altasgracias shuffle",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "tentudia_shuffle",
+      "description": "Shuffles the rewards from delivering Tentudia's remains to Lvdovico into the item pool.",
+      "readableName": "Tentudia shuffle",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "gemino_shuffle",
+      "description": "Shuffles the rewards from Gemino's quest and the hidden tomb into the item pool.",
+      "readableName": "Gemino shuffle",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "guilt_shuffle",
+      "description": "Shuffles the Weight of True Guilt into the item pool.",
+      "readableName": "Guilt shuffle",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "ossuary_shuffle",
+      "description": "Shuffles the rewards from delivering bones to the Ossuary into the item pool.",
+      "readableName": "Ossuary shuffle",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "boss_shuffle",
+      "description": "Shuffles the Tears of Atonement from defeating bosses into the item pool.",
+      "readableName": "Boss item shuffle",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "wound_shuffle",
+      "description": "Shuffles the Holy Wounds required to pass the Bridge of the Three Cavalries into the item pool.",
+      "readableName": "Wound shuffle",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "mask_shuffle",
+      "description": "Shuffles the masks required to use the elevator in Archcathedral Rooftops into the item pool.",
+      "readableName": "Mask shuffle",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "eye_shuffle",
+      "description": "Shuffles the Eyes of the Traitor from defeating Isidora and Sierpes into the item pool.",
+      "readableName": "Eye shuffle",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "herb_shuffle",
+      "description": "Shuffles the herbs required for Tirso's quest into the item pool.",
+      "readableName": "Herb shuffle",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "church_shuffle",
+      "description": "Shuffles the rewards from donating 5,000 and 50,000 Tears of Atonement to the Church in Albero into the item pool.",
+      "readableName": "Church shuffle",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "shop_shuffle",
+      "description": "Shuffles the items sold in Candelaria's shops into the item pool.",
+      "readableName": "Shop shuffle",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "candle_shuffle",
+      "description": "Shuffles the Beads of Wax and their upgrades into the item pool.",
+      "readableName": "Candle shuffle",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "start_wheel",
+      "description": "Changes the beginning gift to The Young Mason's Wheel.",
+      "readableName": "Start with Young Mason's Wheel",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "skill_randomizer",
+      "description": "Randomizes the abilities from the skill tree into the item pool.",
+      "readableName": "Skill randomizer",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "enemy_randomizer",
+      "description": "Randomizes the enemies that appear in each room.",
+      "readableName": "Enemy randomizer",
+      "values": [
+        {
+          "name": "disabled",
+          "readableName": "Disabled"
+        },
+        {
+          "name": "shuffled",
+          "readableName": "Shuffled",
+          "description": "Enemies will be shuffled amongst each other, but can only appear as many times as they do in a standard game."
+        },
+        {
+          "name": "randomized",
+          "readableName": "Randomized",
+          "description": "Every enemy is completely random, and can appear any number of times. Some enemies will never be randomized."
+        }
+      ],
+      "type": "choice",
+      "default": "disabled"
+    },
+    {
+      "name": "enemy_groups",
+      "description": "Randomized enemies will chosen from sets of specific groups.  (Weak, normal, large, flying)",
+      "readableName": "Enemy groups",
+      "type": "toggle",
+      "default": true,
+      "dependsOn": {
+        "enemy_randomizer": ["shuffled", "randomized"]
+      }
+    },
+    {
+      "name": "enemy_scaling",
+      "description": "DOC ME",
+      "readableName": "enemy scaling",
+      "type": "toggle",
+      "default": true,
+      "dependsOn": {
+        "enemy_randomizer": ["shuffled", "randomized"]
+      }
+    },
+    {
+      "type": "deathlink"
+    }
+  ],
+  "defver": 2,
+  "items": [
+    {
+      "name": "Dove Skull"
+    },
+    {
+      "name": "Ember of the Holy Cremation"
+    },
+    {
+      "name": "Silver Grape"
+    },
+    {
+      "name": "Uvula of Proclamation"
+    },
+    {
+      "name": "Hollow Pearl"
+    },
+    {
+      "name": "Knot of Hair"
+    },
+    {
+      "name": "Painted Wood Bead"
+    },
+    {
+      "name": "Piece of a Golden Mask"
+    },
+    {
+      "name": "Moss Preserved in Glass"
+    },
+    {
+      "name": "Frozen Olive"
+    },
+    {
+      "name": "Quirce's Scorched Bead"
+    },
+    {
+      "name": "Wicker Knot"
+    },
+    {
+      "name": "Perpetva's Protection"
+    },
+    {
+      "name": "Thorned Symbol"
+    },
+    {
+      "name": "Piece of a Tombstone"
+    },
+    {
+      "name": "Sphere of the Sacred Smoke"
+    },
+    {
+      "name": "Bead of Red Wax"
+    },
+    {
+      "name": "Little Toe made of Limestone"
+    },
+    {
+      "name": "Big Toe made of Limestone"
+    },
+    {
+      "name": "Fourth Toe made of Limestone"
+    },
+    {
+      "name": "Bead of Blue Wax"
+    },
+    {
+      "name": "Pelican Effigy"
+    },
+    {
+      "name": "Drop of Coagulated Ink"
+    },
+    {
+      "name": "Amber Eye"
+    },
+    {
+      "name": "Muted Bell"
+    },
+    {
+      "name": "Consecrated Amethyst"
+    },
+    {
+      "name": "Embers of a Broken Star"
+    },
+    {
+      "name": "Scaly Coin"
+    },
+    {
+      "name": "Seashell of the Inverted Spiral"
+    },
+    {
+      "name": "Calcified Eye of Erudition"
+    },
+    {
+      "name": "Weight of True Guilt"
+    },
+    {
+      "name": "Reliquary of the Fervent Heart"
+    },
+    {
+      "name": "Reliquary of the Suffering Heart"
+    },
+    {
+      "name": "Reliquary of the Sorrowful Heart"
+    },
+    {
+      "name": "Token of Appreciation"
+    },
+    {
+      "name": "Cloistered Ruby"
+    },
+    {
+      "name": "Bead of Gold Thread"
+    },
+    {
+      "name": "Cloistered Sapphire"
+    },
+    {
+      "name": "Fire Enclosed in Enamel"
+    },
+    {
+      "name": "Light of the Lady of the Lamp"
+    },
+    {
+      "name": "Scale of Burnished Alabaster"
+    },
+    {
+      "name": "The Young Mason's Wheel"
+    },
+    {
+      "name": "Crown of Gnawed Iron"
+    },
+    {
+      "name": "Crimson Heart of a Miura"
+    },
+    {
+      "name": "Seguiriya to your Eyes like Stars"
+    },
+    {
+      "name": "Debla of the Lights"
+    },
+    {
+      "name": "Saeta Dolorosa"
+    },
+    {
+      "name": "Campanillero to the Sons of the Aurora"
+    },
+    {
+      "name": "Lorquiana"
+    },
+    {
+      "name": "Zarabanda of the Safe Haven"
+    },
+    {
+      "name": "Taranto to my Sister"
+    },
+    {
+      "name": "Solea of Excommunication"
+    },
+    {
+      "name": "Tiento to your Thorned Hairs"
+    },
+    {
+      "name": "Cante Jondo of the Three Sisters"
+    },
+    {
+      "name": "Verdiales of the Forsaken Hamlet"
+    },
+    {
+      "name": "Romance to the Crimson Mist"
+    },
+    {
+      "name": "Zambra to the Resplendent Crown"
+    },
+    {
+      "name": "Aubade of the Nameless Guardian"
+    },
+    {
+      "name": "Cantina of the Blue Rose"
+    },
+    {
+      "name": "Mirabras of the Return to Port"
+    },
+    {
+      "name": "Tirana of the Celestial Bastion"
+    },
+    {
+      "name": "Blood Perpetuated in Sand"
+    },
+    {
+      "name": "Incorrupt Hand of the Fraternal Master"
+    },
+    {
+      "name": "Nail Uprooted from Dirt"
+    },
+    {
+      "name": "Shroud of Dreamt Sins"
+    },
+    {
+      "name": "Linen of Golden Thread"
+    },
+    {
+      "name": "Silvered Lung of Dolphos"
+    },
+    {
+      "name": "Three Gnarled Tongues"
+    },
+    {
+      "name": "Smoking Heart of Incense"
+    },
+    {
+      "name": "Heart of the Virtuous Pain"
+    },
+    {
+      "name": "Heart of Saltpeter Blood"
+    },
+    {
+      "name": "Heart of Oils"
+    },
+    {
+      "name": "Heart of Cerulean Incense"
+    },
+    {
+      "name": "Heart of the Holy Purge"
+    },
+    {
+      "name": "Molten Heart of Boiling Blood"
+    },
+    {
+      "name": "Heart of the Single Tone"
+    },
+    {
+      "name": "Heart of the Unnamed Minstrel"
+    },
+    {
+      "name": "Brilliant Heart of Dawn"
+    },
+    {
+      "name": "Apodictic Heart of Mea Culpa"
+    },
+    {
+      "name": "Cord of the True Burying"
+    },
+    {
+      "name": "Mark of the First Refuge"
+    },
+    {
+      "name": "Mark of the Second Refuge"
+    },
+    {
+      "name": "Mark of the Third Refuge"
+    },
+    {
+      "name": "Tentudia's Carnal Remains"
+    },
+    {
+      "name": "Remains of Tentudia's Hair"
+    },
+    {
+      "name": "Tentudia's Skeletal Remains"
+    },
+    {
+      "name": "Melted Golden Coins"
+    },
+    {
+      "name": "Torn Bridal Ribbon"
+    },
+    {
+      "name": "Black Grieving Veil"
+    },
+    {
+      "name": "Egg of Deformity"
+    },
+    {
+      "name": "Hatched Egg of Deformity"
+    },
+    {
+      "name": "Bouquet of Rosemary"
+    },
+    {
+      "name": "Incense Garlic"
+    },
+    {
+      "name": "Thorn Upgrade"
+    },
+    {
+      "name": "Olive Seeds"
+    },
+    {
+      "name": "Holy Wound of Attrition"
+    },
+    {
+      "name": "Holy Wound of Contrition"
+    },
+    {
+      "name": "Holy Wound of Compunction"
+    },
+    {
+      "name": "Empty Bile Vessel"
+    },
+    {
+      "name": "Knot of Rosary Rope"
+    },
+    {
+      "name": "Golden Thimble Filled with Burning Oil"
+    },
+    {
+      "name": "Key to the Chamber of the Eldest Brother"
+    },
+    {
+      "name": "Empty Golden Thimble"
+    },
+    {
+      "name": "Deformed Mask of Orestes"
+    },
+    {
+      "name": "Mirrored Mask of Dolphos"
+    },
+    {
+      "name": "Embossed Mask of Crescente"
+    },
+    {
+      "name": "Dried Clove"
+    },
+    {
+      "name": "Sooty Garlic"
+    },
+    {
+      "name": "Bouquet of Thyme"
+    },
+    {
+      "name": "Linen Cloth"
+    },
+    {
+      "name": "Severed Hand"
+    },
+    {
+      "name": "Dried Flowers bathed in Tears"
+    },
+    {
+      "name": "Key of the Secular"
+    },
+    {
+      "name": "Key of the Scribe"
+    },
+    {
+      "name": "Key of the Inquisitor"
+    },
+    {
+      "name": "Key of the High Peaks"
+    },
+    {
+      "name": "Chalice of Inverted Verses"
+    },
+    {
+      "name": "Quicksilver"
+    },
+    {
+      "name": "Petrified Bell"
+    },
+    {
+      "name": "Verses Spun from Gold"
+    },
+    {
+      "name": "Severed Right Eye of the Traitor"
+    },
+    {
+      "name": "Broken Left Eye of the Traitor"
+    },
+    {
+      "name": "Incomplete Scapular"
+    },
+    {
+      "name": "Key Grown from Twisted Wood"
+    },
+    {
+      "name": "Holy Wound of Abnegation"
+    },
+    {
+      "name": "Combo Skill"
+    },
+    {
+      "name": "Charged Skill"
+    },
+    {
+      "name": "Ranged Skill"
+    },
+    {
+      "name": "Dive Skill"
+    },
+    {
+      "name": "Lunge Skill"
+    },
+    {
+      "name": "Parietal bone of Lasser, the Inquisitor"
+    },
+    {
+      "name": "Jaw of Ashgan, the Inquisitor"
+    },
+    {
+      "name": "Cervical vertebra of Zicher, the Brewmaster"
+    },
+    {
+      "name": "Clavicle of Dalhuisen, the Schoolchild"
+    },
+    {
+      "name": "Sternum of Vitas, the Performer"
+    },
+    {
+      "name": "Ribs of Sabnock, the Guardian"
+    },
+    {
+      "name": "Vertebra of John, the Gambler"
+    },
+    {
+      "name": "Scapula of Carlos, the Executioner"
+    },
+    {
+      "name": "Humerus of McMittens, the Nurse"
+    },
+    {
+      "name": "Ulna of Koke, the Troubadour"
+    },
+    {
+      "name": "Radius of Helzer, the Poet"
+    },
+    {
+      "name": "Frontal of Martinus, the Ropemaker"
+    },
+    {
+      "name": "Metacarpus of Hodges, the Blacksmith"
+    },
+    {
+      "name": "Phalanx of Arthur, the Sailor"
+    },
+    {
+      "name": "Phalanx of Miriam, the Counsellor"
+    },
+    {
+      "name": "Phalanx of Brannon, the Gravedigger"
+    },
+    {
+      "name": "Coxal of June, the Prostitute"
+    },
+    {
+      "name": "Sacrum of the Dark Warlock"
+    },
+    {
+      "name": "Coccyx of Daniel, the Possessed"
+    },
+    {
+      "name": "Femur of Karpow, the Bounty Hunter"
+    },
+    {
+      "name": "Kneecap of Sebastien, the Puppeteer"
+    },
+    {
+      "name": "Tibia of Alsahli, the Mystic"
+    },
+    {
+      "name": "Fibula of Rysp, the Ranger"
+    },
+    {
+      "name": "Temporal of Joel, the Thief"
+    },
+    {
+      "name": "Metatarsus of Rikusyo, the Traveller"
+    },
+    {
+      "name": "Phalanx of Zeth, the Prisoner"
+    },
+    {
+      "name": "Phalanx of William, the Sceptic"
+    },
+    {
+      "name": "Phalanx of Aralcarim, the Archivist"
+    },
+    {
+      "name": "Occipital of Tequila, the Metalsmith"
+    },
+    {
+      "name": "Maxilla of Tarradax, the Cleric"
+    },
+    {
+      "name": "Nasal bone of Charles, the Artist"
+    },
+    {
+      "name": "Hyoid bone of Senex, the Beggar"
+    },
+    {
+      "name": "Vertebra of Lindquist, the Forger"
+    },
+    {
+      "name": "Trapezium of Jeremiah, the Hangman"
+    },
+    {
+      "name": "Trapezoid of Yeager, the Jeweller"
+    },
+    {
+      "name": "Capitate of Barock, the Herald"
+    },
+    {
+      "name": "Hamate of Vukelich, the Copyist"
+    },
+    {
+      "name": "Pisiform of Hernandez, the Explorer"
+    },
+    {
+      "name": "Triquetral of Luca, the Tailor"
+    },
+    {
+      "name": "Lunate of Keiya, the Butcher"
+    },
+    {
+      "name": "Scaphoid of Fierce, the Leper"
+    },
+    {
+      "name": "Anklebone of Weston, the Pilgrim"
+    },
+    {
+      "name": "Calcaneum of Persian, the Bandit"
+    },
+    {
+      "name": "Navicular of Kahnnyhoo, the Murderer"
+    },
+    {
+      "name": "Child of Moonlight"
+    },
+    {
+      "name": "Life Upgrade"
+    },
+    {
+      "name": "Fervour Upgrade"
+    },
+    {
+      "name": "Mea Culpa Upgrade"
+    },
+    {
+      "name": "Tears of Atonement (250)"
+    },
+    {
+      "name": "Tears of Atonement (300)"
+    },
+    {
+      "name": "Tears of Atonement (500)"
+    },
+    {
+      "name": "Tears of Atonement (625)"
+    },
+    {
+      "name": "Tears of Atonement (750)"
+    },
+    {
+      "name": "Tears of Atonement (1000)"
+    },
+    {
+      "name": "Tears of Atonement (1250)"
+    },
+    {
+      "name": "Tears of Atonement (1500)"
+    },
+    {
+      "name": "Tears of Atonement (1750)"
+    },
+    {
+      "name": "Tears of Atonement (2000)"
+    },
+    {
+      "name": "Tears of Atonement (2100)"
+    },
+    {
+      "name": "Tears of Atonement (2500)"
+    },
+    {
+      "name": "Tears of Atonement (2600)"
+    },
+    {
+      "name": "Tears of Atonement (3000)"
+    },
+    {
+      "name": "Tears of Atonement (4300)"
+    },
+    {
+      "name": "Tears of Atonement (5000)"
+    },
+    {
+      "name": "Tears of Atonement (5500)"
+    },
+    {
+      "name": "Tears of Atonement (9000)"
+    },
+    {
+      "name": "Tears of Atonement (10000)"
+    },
+    {
+      "name": "Tears of Atonement (11250)"
+    },
+    {
+      "name": "Tears of Atonement (18000)"
+    },
+    {
+      "name": "Tears of Atonement (30000)"
+    }
+  ],
+  "locations": [
+    {
+      "name": "Albero: Tirso's house, top floor"
+    },
+    {
+      "name": "Albero: Outside Ossuary"
+    },
+    {
+      "name": "Albero: Graveyard"
+    },
+    {
+      "name": "Albero: Gate of Travel room"
+    },
+    {
+      "name": "Albero: Child of Moonlight"
+    },
+    {
+      "name": "Albero: Bless Linen Cloth"
+    },
+    {
+      "name": "Albero: Bless Hatched Egg"
+    },
+    {
+      "name": "Albero: Bless Severed Hand"
+    },
+    {
+      "name": "Albero: First gift for Cleofas"
+    },
+    {
+      "name": "Albero: Final gift for Cleofas"
+    },
+    {
+      "name": "Albero: Tirso's 1st reward"
+    },
+    {
+      "name": "Albero: Tirso's 2nd reward"
+    },
+    {
+      "name": "Albero: Tirso's 3rd reward"
+    },
+    {
+      "name": "Albero: Tirso's 4th reward"
+    },
+    {
+      "name": "Albero: Tirso's 5th reward"
+    },
+    {
+      "name": "Albero: Tirso's 6th reward"
+    },
+    {
+      "name": "Albero: Tirso's final reward"
+    },
+    {
+      "name": "Albero: Lvdovico's 1st reward"
+    },
+    {
+      "name": "Albero: Lvdovico's 2nd reward"
+    },
+    {
+      "name": "Albero: Lvdovico's 3rd reward"
+    },
+    {
+      "name": "Ossuary: Isidora, Voice of the Dead"
+    },
+    {
+      "name": "Albero: Mea Culpa altar"
+    },
+    {
+      "name": "Albero: Donate 5000 Tears"
+    },
+    {
+      "name": "Albero: Donate 50000 Tears"
+    },
+    {
+      "name": "Ossuary: 1st reward"
+    },
+    {
+      "name": "Ossuary: 2nd reward"
+    },
+    {
+      "name": "Ossuary: 3rd reward"
+    },
+    {
+      "name": "Ossuary: 4th reward"
+    },
+    {
+      "name": "Ossuary: 5th reward"
+    },
+    {
+      "name": "Ossuary: 6th reward"
+    },
+    {
+      "name": "Ossuary: 7th reward"
+    },
+    {
+      "name": "Ossuary: 8th reward"
+    },
+    {
+      "name": "Ossuary: 9th reward"
+    },
+    {
+      "name": "Ossuary: 10th reward"
+    },
+    {
+      "name": "Ossuary: 11th reward"
+    },
+    {
+      "name": "AtTotS: Miriam's gift"
+    },
+    {
+      "name": "AR: First soldier fight"
+    },
+    {
+      "name": "AR: Second soldier fight"
+    },
+    {
+      "name": "AR: Third soldier fight"
+    },
+    {
+      "name": "AR: Upper west shaft ledge"
+    },
+    {
+      "name": "AR: Upper west shaft Child of Moonlight"
+    },
+    {
+      "name": "AR: Upper west shaft chest"
+    },
+    {
+      "name": "AR: Statue near MoM"
+    },
+    {
+      "name": "AR: Lady of the Six Sorrows"
+    },
+    {
+      "name": "AR: Upper east shaft ledge"
+    },
+    {
+      "name": "AR: Mea Culpa altar"
+    },
+    {
+      "name": "AR: Crisanta of the Wrapped Agony"
+    },
+    {
+      "name": "BotTC: Esdras, of the Anointed Legion"
+    },
+    {
+      "name": "BotTC: Esdras' gift"
+    },
+    {
+      "name": "BotTC: Inside giant statue"
+    },
+    {
+      "name": "BotSS: Beginning gift"
+    },
+    {
+      "name": "BotSS: Starting room Child of Moonlight"
+    },
+    {
+      "name": "BotSS: Starting room ledge"
+    },
+    {
+      "name": "BotSS: Chamber of the Eldest Brother"
+    },
+    {
+      "name": "BotSS: Mea Culpa altar"
+    },
+    {
+      "name": "BotSS: Platforming gauntlet"
+    },
+    {
+      "name": "BotSS: Blue candle"
+    },
+    {
+      "name": "BotSS: Outside church"
+    },
+    {
+      "name": "BotSS: Esdras' final gift"
+    },
+    {
+      "name": "BotSS: Crisanta's gift"
+    },
+    {
+      "name": "BotSS: Warden of the Silent Sorrow"
+    },
+    {
+      "name": "CoOLotCV: Snowy window ledge"
+    },
+    {
+      "name": "CoOLotCV: Center enemy lineup"
+    },
+    {
+      "name": "CoOLotCV: Center miasma room"
+    },
+    {
+      "name": "CoOLotCV: Lower west statue"
+    },
+    {
+      "name": "CoOLotCV: Lady of the Six Sorrows"
+    },
+    {
+      "name": "CoOLotCV: Mea Culpa altar"
+    },
+    {
+      "name": "CoOLotCV: Red candle"
+    },
+    {
+      "name": "CoOLotCV: Blue candle"
+    },
+    {
+      "name": "CoOLotCV: Outside pathway"
+    },
+    {
+      "name": "CoOLotCV: Fountain of burning oil"
+    },
+    {
+      "name": "CoOLotCV: Our Lady of the Charred Visage"
+    },
+    {
+      "name": "CoOLotCV: Visage of Compunction"
+    },
+    {
+      "name": "CoOLotCV: Mask room"
+    },
+    {
+      "name": "DoHH: Viridiana's gift"
+    },
+    {
+      "name": "DC: Lady of the Six Sorrows, from MD"
+    },
+    {
+      "name": "DC: Behind sewage drips"
+    },
+    {
+      "name": "DC: Child of Moonlight, above water"
+    },
+    {
+      "name": "DC: Lower east tunnel chest"
+    },
+    {
+      "name": "DC: Upper east tunnel chest"
+    },
+    {
+      "name": "DC: Upper east Child of Moonlight"
+    },
+    {
+      "name": "DC: Hidden alcove near fountain"
+    },
+    {
+      "name": "DC: Shortcut to WotBC"
+    },
+    {
+      "name": "DC: Oil of the Pilgrims"
+    },
+    {
+      "name": "DC: Child of Moonlight, miasma room"
+    },
+    {
+      "name": "DC: Behind gate in miasma room"
+    },
+    {
+      "name": "DC: Child of Moonlight, behind pillar"
+    },
+    {
+      "name": "DC: High ledge near elevator shaft"
+    },
+    {
+      "name": "DC: Shroud puzzle"
+    },
+    {
+      "name": "DC: Chalice room"
+    },
+    {
+      "name": "DC: Mea Culpa altar"
+    },
+    {
+      "name": "DC: Lady of the Six Sorrows, elevator shaft"
+    },
+    {
+      "name": "DC: Top of elevator Child of Moonlight"
+    },
+    {
+      "name": "DC: Elevator shaft Child of Moonlight"
+    },
+    {
+      "name": "DC: Elevator shaft ledge"
+    },
+    {
+      "name": "EoS: Lantern jump near MotED"
+    },
+    {
+      "name": "EoS: Lantern jump near elevator"
+    },
+    {
+      "name": "GotP: Shop cave Child of Moonlight"
+    },
+    {
+      "name": "GotP: Shop cave hidden hole"
+    },
+    {
+      "name": "GotP: Shop item 1"
+    },
+    {
+      "name": "GotP: Shop item 2"
+    },
+    {
+      "name": "GotP: Shop item 3"
+    },
+    {
+      "name": "GotP: Confessor Dungeon room"
+    },
+    {
+      "name": "GotP: Elevator shaft Child of Moonlight"
+    },
+    {
+      "name": "GotP: Elevator shaft ledge"
+    },
+    {
+      "name": "GotP: Lady of the Six Sorrows"
+    },
+    {
+      "name": "GotP: Self sacrifice statue"
+    },
+    {
+      "name": "GotP: Lower east shaft"
+    },
+    {
+      "name": "GotP: Center east shaft"
+    },
+    {
+      "name": "GotP: Upper east shaft"
+    },
+    {
+      "name": "GotP: East cliffside"
+    },
+    {
+      "name": "GotP: West shaft Child of Moonlight"
+    },
+    {
+      "name": "GotP: Lower west shaft"
+    },
+    {
+      "name": "GotP: Upper west shaft"
+    },
+    {
+      "name": "GotP: Center shaft Child of Moonlight"
+    },
+    {
+      "name": "GotP: Center shaft ledge"
+    },
+    {
+      "name": "GotP: Oil of the Pilgrims"
+    },
+    {
+      "name": "GotP: Amanecida of the Bejeweled Arrow"
+    },
+    {
+      "name": "GA: Lower west ledge"
+    },
+    {
+      "name": "GA: Miasma room treasure"
+    },
+    {
+      "name": "GA: Miasma room Child of Moonlight"
+    },
+    {
+      "name": "GA: Miasma room floor"
+    },
+    {
+      "name": "GA: Oil of the Pilgrims"
+    },
+    {
+      "name": "GA: End of blood bridge"
+    },
+    {
+      "name": "GA: Blood bridge Child of Moonlight"
+    },
+    {
+      "name": "GA: Lower east Child of Moonlight"
+    },
+    {
+      "name": "GA: Altasgracias' gift"
+    },
+    {
+      "name": "GA: Empty giant egg"
+    },
+    {
+      "name": "GA: Tres Angustias"
+    },
+    {
+      "name": "GA: Visage of Contrition"
+    },
+    {
+      "name": "HotD: Mirror room"
+    },
+    {
+      "name": "HotD: Laudes, the First of the Amanecidas"
+    },
+    {
+      "name": "Jondo: Upper east ledge"
+    },
+    {
+      "name": "Jondo: Upper east chest"
+    },
+    {
+      "name": "Jondo: Lower east under chargers"
+    },
+    {
+      "name": "Jondo: Lower east bell trap"
+    },
+    {
+      "name": "Jondo: Upper east Child of Moonlight"
+    },
+    {
+      "name": "Jondo: Spike tunnel Child of Moonlight"
+    },
+    {
+      "name": "Jondo: Spike tunnel statue"
+    },
+    {
+      "name": "Jondo: Spike tunnel cave"
+    },
+    {
+      "name": "Jondo: Lower west lift alcove"
+    },
+    {
+      "name": "Jondo: Lower west bell alcove"
+    },
+    {
+      "name": "Jondo: Upper west bell puzzle"
+    },
+    {
+      "name": "Jondo: Upper west tree root"
+    },
+    {
+      "name": "Jondo: Upper west Child of Moonlight"
+    },
+    {
+      "name": "KotTW: Gift from the Traitor"
+    },
+    {
+      "name": "LotNW: Platform room Child of Moonlight"
+    },
+    {
+      "name": "LotNW: Platform room ledge"
+    },
+    {
+      "name": "LotNW: Root ceiling platform"
+    },
+    {
+      "name": "LotNW: Hidden floor"
+    },
+    {
+      "name": "LotNW: Miasma hallway chest"
+    },
+    {
+      "name": "LotNW: Lady of the Six Sorrows"
+    },
+    {
+      "name": "LotNW: Bone puzzle"
+    },
+    {
+      "name": "LotNW: Lowest west upper ledge"
+    },
+    {
+      "name": "LotNW: Platform puzzle chest"
+    },
+    {
+      "name": "LotNW: Lowest west center ledge"
+    },
+    {
+      "name": "LotNW: Lowest west Child of Moonlight"
+    },
+    {
+      "name": "LotNW: Oil of the Pilgrims"
+    },
+    {
+      "name": "LotNW: Elevator Child of Moonlight"
+    },
+    {
+      "name": "LotNW: Mask room"
+    },
+    {
+      "name": "LotNW: Mea Culpa altar"
+    },
+    {
+      "name": "LotNW: Red candle"
+    },
+    {
+      "name": "LotNW: Silence for Diosdado"
+    },
+    {
+      "name": "LotNW: Twisted wood hidden wall"
+    },
+    {
+      "name": "MD: First area hidden wall"
+    },
+    {
+      "name": "MD: Second area trapped chest"
+    },
+    {
+      "name": "MD: Second area ledge"
+    },
+    {
+      "name": "MD: Second area Child of Moonlight"
+    },
+    {
+      "name": "MD: Red candle"
+    },
+    {
+      "name": "MD: Shop item 1"
+    },
+    {
+      "name": "MD: Shop item 2"
+    },
+    {
+      "name": "MD: Shop item 3"
+    },
+    {
+      "name": "MD: Third area hidden room"
+    },
+    {
+      "name": "MD: Sliding challenge"
+    },
+    {
+      "name": "MD: Ten Piedad"
+    },
+    {
+      "name": "MD: Visage of Attrition"
+    },
+    {
+      "name": "MD: Blue candle"
+    },
+    {
+      "name": "MD: Cave Child of Moonlight"
+    },
+    {
+      "name": "MD: Behind gate to TSC"
+    },
+    {
+      "name": "MoM: Oil of the Pilgrims"
+    },
+    {
+      "name": "MoM: Upper east ledge"
+    },
+    {
+      "name": "MoM: East chandelier platform"
+    },
+    {
+      "name": "MoM: Lower west Child of Moonlight"
+    },
+    {
+      "name": "MoM: Upper west floor"
+    },
+    {
+      "name": "MoM: Redento's treasure"
+    },
+    {
+      "name": "MoM: Final meeting with Redento"
+    },
+    {
+      "name": "MoM: Giant chandelier statue"
+    },
+    {
+      "name": "MoM: Outside Cleofas' room"
+    },
+    {
+      "name": "MoM: Upper center floor"
+    },
+    {
+      "name": "MoM: Upper center Child of Moonlight"
+    },
+    {
+      "name": "MoM: Mea Culpa altar"
+    },
+    {
+      "name": "MoM: Melquiades, The Exhumed Archbishop"
+    },
+    {
+      "name": "MoM: Mask room"
+    },
+    {
+      "name": "MotED: Under entrance to DC"
+    },
+    {
+      "name": "MotED: Perpetva"
+    },
+    {
+      "name": "MotED: Child of Moonlight, above chasm"
+    },
+    {
+      "name": "MotED: Platform above chasm"
+    },
+    {
+      "name": "MotED: 1st meeting with Redento"
+    },
+    {
+      "name": "MotED: Blood platform alcove"
+    },
+    {
+      "name": "MotED: Egg hatching"
+    },
+    {
+      "name": "MotED: Amanecida of the Golden Blades"
+    },
+    {
+      "name": "MaH: West chest"
+    },
+    {
+      "name": "MaH: Upper east chest"
+    },
+    {
+      "name": "MaH: Sierpes' eye"
+    },
+    {
+      "name": "MaH: Sierpes"
+    },
+    {
+      "name": "PotSS: First area Child of Moonlight"
+    },
+    {
+      "name": "PotSS: First area ledge"
+    },
+    {
+      "name": "PotSS: Second area ledge"
+    },
+    {
+      "name": "PotSS: Third area Child of Moonlight"
+    },
+    {
+      "name": "PotSS: Third area lower ledge"
+    },
+    {
+      "name": "PotSS: Third area upper ledge"
+    },
+    {
+      "name": "PotSS: Climb to WotHP"
+    },
+    {
+      "name": "PotSS: 4th meeting with Redento"
+    },
+    {
+      "name": "PotSS: Amanecida of the Chiselled Steel"
+    },
+    {
+      "name": "Petrous: Temple entrance"
+    },
+    {
+      "name": "TRPotS: Perpetva's shrine"
+    },
+    {
+      "name": "TSC: Painting ladder ledge"
+    },
+    {
+      "name": "TSC: Candle wax puzzle"
+    },
+    {
+      "name": "TSC: Shop item 1"
+    },
+    {
+      "name": "TSC: Shop item 2"
+    },
+    {
+      "name": "TSC: Shop item 3"
+    },
+    {
+      "name": "TSC: Swinging blade tunnel"
+    },
+    {
+      "name": "TSC: Exposito, Scion of Abjuration"
+    },
+    {
+      "name": "TSC: Under elevator shaft"
+    },
+    {
+      "name": "TSC: Jocinero's 1st reward"
+    },
+    {
+      "name": "TSC: Jocinero's final reward"
+    },
+    {
+      "name": "THL: Deogracias' gift"
+    },
+    {
+      "name": "THL: Hanging skeleton"
+    },
+    {
+      "name": "THL: Across blood platforms"
+    },
+    {
+      "name": "THL: Child of Moonlight"
+    },
+    {
+      "name": "THL: Underground ledge"
+    },
+    {
+      "name": "THL: Underground chest"
+    },
+    {
+      "name": "WotHP: Upper east room, lift puzzle"
+    },
+    {
+      "name": "WotHP: Upper east room, center cell ledge"
+    },
+    {
+      "name": "WotHP: Upper east room, center cell floor"
+    },
+    {
+      "name": "WotHP: Upper east room, top bronze cell"
+    },
+    {
+      "name": "WotHP: Upper east room, top silver cell"
+    },
+    {
+      "name": "WotHP: Upper east room, center gold cell"
+    },
+    {
+      "name": "WotHP: Upper west room, center gold cell"
+    },
+    {
+      "name": "WotHP: Lower west room, bottom gold cell"
+    },
+    {
+      "name": "WotHP: Upper west room, top silver cell"
+    },
+    {
+      "name": "WotHP: Lower west room, top ledge"
+    },
+    {
+      "name": "WotHP: Lower east room, hidden ledge"
+    },
+    {
+      "name": "WotHP: Lower east room, bottom silver cell"
+    },
+    {
+      "name": "WotHP: Lower east room, top bronze cell"
+    },
+    {
+      "name": "WotHP: Lower east room, top silver cell"
+    },
+    {
+      "name": "WotHP: Outside Child of Moonlight"
+    },
+    {
+      "name": "WotHP: Oil of the Pilgrims"
+    },
+    {
+      "name": "WotHP: Quirce, Returned By The Flames"
+    },
+    {
+      "name": "WotHP: Collapsing floor ledge"
+    },
+    {
+      "name": "WotHP: Amanecida of the Molten Thorn"
+    },
+    {
+      "name": "WotBC: Lower log path"
+    },
+    {
+      "name": "WotBC: Hidden alcove"
+    },
+    {
+      "name": "WotBC: Outside ledge"
+    },
+    {
+      "name": "WotBC: Outside Child of Moonlight"
+    },
+    {
+      "name": "WotBC: Under broken bridge"
+    },
+    {
+      "name": "WotBC: Cliffside statue"
+    },
+    {
+      "name": "WotBC: Cliffside Child of Moonlight"
+    },
+    {
+      "name": "WotBC: 3rd meeting with Redento"
+    },
+    {
+      "name": "WOTW: Below Prie Dieu"
+    },
+    {
+      "name": "WOTW: Entrance to tomb"
+    },
+    {
+      "name": "WOTW: Gift for the tomb"
+    },
+    {
+      "name": "WOTW: Underground tomb"
+    },
+    {
+      "name": "WOTW: Underground Child of Moonlight"
+    },
+    {
+      "name": "WOTW: Underground ledge"
+    },
+    {
+      "name": "WOTW: Upper east Child of Moonlight"
+    },
+    {
+      "name": "WOTW: Upper east statue"
+    },
+    {
+      "name": "WOTW: Death run"
+    },
+    {
+      "name": "WOTW: Gemino's gift"
+    },
+    {
+      "name": "WOTW: Gemino's reward"
+    },
+    {
+      "name": "Confessor Dungeon 1 extra"
+    },
+    {
+      "name": "Confessor Dungeon 1 main"
+    },
+    {
+      "name": "Confessor Dungeon 2 extra"
+    },
+    {
+      "name": "Confessor Dungeon 2 main"
+    },
+    {
+      "name": "Confessor Dungeon 3 extra"
+    },
+    {
+      "name": "Confessor Dungeon 3 main"
+    },
+    {
+      "name": "Confessor Dungeon 4 extra"
+    },
+    {
+      "name": "Confessor Dungeon 4 main"
+    },
+    {
+      "name": "Confessor Dungeon 5 extra"
+    },
+    {
+      "name": "Confessor Dungeon 5 main"
+    },
+    {
+      "name": "Confessor Dungeon 6 extra"
+    },
+    {
+      "name": "Confessor Dungeon 6 main"
+    },
+    {
+      "name": "Confessor Dungeon 7 extra"
+    },
+    {
+      "name": "Confessor Dungeon 7 main"
+    },
+    {
+      "name": "Defeat 1 Amanecida"
+    },
+    {
+      "name": "Defeat 2 Amanecidas"
+    },
+    {
+      "name": "Defeat 3 Amanecidas"
+    },
+    {
+      "name": "Defeat 4 Amanecidas"
+    },
+    {
+      "name": "Defeat all Amanecidas"
+    },
+    {
+      "name": "Skill 1, Tier 1"
+    },
+    {
+      "name": "Skill 1, Tier 2"
+    },
+    {
+      "name": "Skill 1, Tier 3"
+    },
+    {
+      "name": "Skill 2, Tier 1"
+    },
+    {
+      "name": "Skill 2, Tier 2"
+    },
+    {
+      "name": "Skill 2, Tier 3"
+    },
+    {
+      "name": "Skill 3, Tier 1"
+    },
+    {
+      "name": "Skill 3, Tier 2"
+    },
+    {
+      "name": "Skill 3, Tier 3"
+    },
+    {
+      "name": "Skill 4, Tier 1"
+    },
+    {
+      "name": "Skill 4, Tier 2"
+    },
+    {
+      "name": "Skill 4, Tier 3"
+    },
+    {
+      "name": "Skill 5, Tier 1"
+    },
+    {
+      "name": "Skill 5, Tier 2"
+    },
+    {
+      "name": "Skill 5, Tier 3"
+    }
+  ],
+  "status": "New"
+}

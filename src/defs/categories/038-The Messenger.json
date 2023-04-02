@@ -1,0 +1,390 @@
+{
+  "category": "The Messenger",
+  "index": 38,
+  "settings": [
+    {
+      "name": "logic_level",
+      "description": "The level of logic to use when determining what locations in your world are accessible.",
+      "readableName": "Logic level",
+      "values": [
+        {
+          "name": "normal",
+          "readableName": "Normal",
+          "description": "Can require damage boosts, but otherwise approachable for someone who has beaten the game."
+        },
+        {
+          "name": "hard",
+          "readableName": "Hard",
+          "description": "Has some easier speedrunning tricks in logic. May need to leash."
+        },
+        {
+          "name": "challenging",
+          "readableName": "Challenging",
+          "description": "Contains more medium and hard difficulty speedrunning tricks."
+        },
+        {
+          "name": "oob",
+          "readableName": "Out-of-bounds",
+          "description": "Places everything with the minimum amount of rules possible. Expect to do OoB. Not guaranteed completable."
+        }
+      ],
+      "type": "choice",
+      "default": "normal"
+    },
+    {
+      "name": "shuffle_seals",
+      "description": "Whether Power Seal locations should be randomized.",
+      "readableName": "Shuffle Seals",
+      "type": "toggle",
+      "default": true,
+      "dependsOn": {
+        "goal": ["open_music_box"]
+      }
+    },
+    {
+      "name": "goal",
+      "description": "Requirement to finish the game. Power Seal Hunt will force Power Seal locations to be shuffled.",
+      "readableName": "Goal",
+      "values": [
+        {
+          "name": "open_music_box",
+          "readableName": "Open Music Box"
+        },
+        {
+          "name": "power_seal_hunt",
+          "readableName": "Power Seal hunt"
+        }
+      ],
+      "type": "choice",
+      "default": "open_music_box"
+    },
+    {
+      "name": "music_box",
+      "description": "Whether the Music Box gauntlet needs to be done.",
+      "readableName": "Music Box",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "notes_needed",
+      "description": "How many notes are needed to access the Music Box.",
+      "high": 6,
+      "readableName": "Notes needed",
+      "low": 1,
+      "type": "range",
+      "default": 6
+    },
+    {
+      "name": "total_seals",
+      "description": "Number of Power Seals that exist in the item pool when Power Seal hunt is the goal.",
+      "high": 45,
+      "readableName": "Total Seals",
+      "low": 1,
+      "type": "range",
+      "default": 45,
+      "dependsOn": {
+        "goal": ["power_seal_hunt"]
+      }
+    },
+    {
+      "name": "percent_seals_required",
+      "description": "Percentage of total Seals required to open the shop chest.",
+      "high": 100,
+      "readableName": "Percent Seals required",
+      "low": 10,
+      "type": "range",
+      "default": 100,
+      "dependsOn": {
+        "goal": ["power_seal_hunt"]
+      }
+    },
+    {
+      "type": "deathlink"
+    }
+  ],
+  "defver": 2,
+  "items": [
+    {
+      "name": "Key of Hope"
+    },
+    {
+      "name": "Key of Chaos"
+    },
+    {
+      "name": "Key of Courage"
+    },
+    {
+      "name": "Key of Love"
+    },
+    {
+      "name": "Key of Strength"
+    },
+    {
+      "name": "Key of Symbiosis"
+    },
+    {
+      "name": "Windmill Shuriken"
+    },
+    {
+      "name": "Wingsuit"
+    },
+    {
+      "name": "Rope Dart"
+    },
+    {
+      "name": "Ninja Tabi"
+    },
+    {
+      "name": "Candle"
+    },
+    {
+      "name": "Seashell"
+    },
+    {
+      "name": "Power Thistle"
+    },
+    {
+      "name": "Demon King Crown"
+    },
+    {
+      "name": "Ruxxtin's Amulet"
+    },
+    {
+      "name": "Fairy Bottle"
+    },
+    {
+      "name": "Sun Crest"
+    },
+    {
+      "name": "Moon Crest"
+    },
+    {
+      "name": "Necro"
+    },
+    {
+      "name": "Pyro"
+    },
+    {
+      "name": "Claustro"
+    },
+    {
+      "name": "Acro"
+    },
+    {
+      "name": "Power Seal"
+    },
+    {
+      "name": "Time Shard"
+    }
+  ],
+  "locations": [
+    {
+      "name": "Key of Love"
+    },
+    {
+      "name": "Key of Courage"
+    },
+    {
+      "name": "Key of Chaos"
+    },
+    {
+      "name": "Key of Symbiosis"
+    },
+    {
+      "name": "Key of Strength"
+    },
+    {
+      "name": "Key of Hope"
+    },
+    {
+      "name": "Wingsuit"
+    },
+    {
+      "name": "Rope Dart"
+    },
+    {
+      "name": "Ninja Tabi"
+    },
+    {
+      "name": "Climbing Claws"
+    },
+    {
+      "name": "Astral Seed"
+    },
+    {
+      "name": "Astral Tea Leaves"
+    },
+    {
+      "name": "Candle"
+    },
+    {
+      "name": "Seashell"
+    },
+    {
+      "name": "Power Thistle"
+    },
+    {
+      "name": "Demon King Crown"
+    },
+    {
+      "name": "Ruxxtin's Amulet"
+    },
+    {
+      "name": "Fairy Bottle"
+    },
+    {
+      "name": "Sun Crest"
+    },
+    {
+      "name": "Moon Crest"
+    },
+    {
+      "name": "Necro"
+    },
+    {
+      "name": "Pyro"
+    },
+    {
+      "name": "Claustro"
+    },
+    {
+      "name": "Acro"
+    },
+    {
+      "name": "Ninja Village Seal - Tree House"
+    },
+    {
+      "name": "Autumn Hills Seal - Trip Saws"
+    },
+    {
+      "name": "Autumn Hills Seal - Double Swing Saws"
+    },
+    {
+      "name": "Autumn Hills Seal - Spike Ball Swing"
+    },
+    {
+      "name": "Autumn Hills Seal - Spike Ball Darts"
+    },
+    {
+      "name": "Catacombs Seal - Triple Spike Crushers"
+    },
+    {
+      "name": "Catacombs Seal - Crusher Gauntlet"
+    },
+    {
+      "name": "Catacombs Seal - Dirty Pond"
+    },
+    {
+      "name": "Bamboo Creek Seal - Spike Crushers and Doors"
+    },
+    {
+      "name": "Bamboo Creek Seal - Spike Ball Pits"
+    },
+    {
+      "name": "Bamboo Creek Seal - Spike Crushers and Doors v2"
+    },
+    {
+      "name": "Howling Grotto Seal - Windy Saws and Balls"
+    },
+    {
+      "name": "Howling Grotto Seal - Crushing Pits"
+    },
+    {
+      "name": "Howling Grotto Seal - Breezy Crushers"
+    },
+    {
+      "name": "Quillshroom Marsh Seal - Spikey Window"
+    },
+    {
+      "name": "Quillshroom Marsh Seal - Sand Trap"
+    },
+    {
+      "name": "Quillshroom Marsh Seal - Do the Spike Wave"
+    },
+    {
+      "name": "Searing Crags Seal - Triple Ball Spinner"
+    },
+    {
+      "name": "Searing Crags Seal - Raining Rocks"
+    },
+    {
+      "name": "Searing Crags Seal - Rhythm Rocks"
+    },
+    {
+      "name": "Glacial Peak Seal - Ice Climbers"
+    },
+    {
+      "name": "Glacial Peak Seal - Projectile Spike Pit"
+    },
+    {
+      "name": "Glacial Peak Seal - Glacial Air Swag"
+    },
+    {
+      "name": "Tower of Time Seal - Time Waster Seal"
+    },
+    {
+      "name": "Tower of Time Seal - Lantern Climb"
+    },
+    {
+      "name": "Tower of Time Seal - Arcane Orbs"
+    },
+    {
+      "name": "Cloud Ruins Seal - Ghost Pit"
+    },
+    {
+      "name": "Cloud Ruins Seal - Toothbrush Alley"
+    },
+    {
+      "name": "Cloud Ruins Seal - Saw Pit"
+    },
+    {
+      "name": "Cloud Ruins Seal - Money Farm Room"
+    },
+    {
+      "name": "Underworld Seal - Sharp and Windy Climb"
+    },
+    {
+      "name": "Underworld Seal - Spike Wall"
+    },
+    {
+      "name": "Underworld Seal - Fireball Wave"
+    },
+    {
+      "name": "Underworld Seal - Rising Fanta"
+    },
+    {
+      "name": "Forlorn Temple Seal - Rocket Maze"
+    },
+    {
+      "name": "Forlorn Temple Seal - Rocket Sunset"
+    },
+    {
+      "name": "Sunken Shrine Seal - Ultra Lifeguard"
+    },
+    {
+      "name": "Sunken Shrine Seal - Waterfall Paradise"
+    },
+    {
+      "name": "Sunken Shrine Seal - Tabi Gauntlet"
+    },
+    {
+      "name": "Riviere Turquoise Seal - Bounces and Balls"
+    },
+    {
+      "name": "Riviere Turquoise Seal - Launch of Faith"
+    },
+    {
+      "name": "Riviere Turquoise Seal - Flower Power"
+    },
+    {
+      "name": "Elemental Skylands Seal - Air"
+    },
+    {
+      "name": "Elemental Skylands Seal - Water"
+    },
+    {
+      "name": "Elemental Skylands Seal - Fire"
+    }
+  ],
+  "status": "New"
+}

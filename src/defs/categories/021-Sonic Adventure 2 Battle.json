@@ -21,6 +21,11 @@
           "name": "finalhazard_chaos_emerald_hunt",
           "description": "Find the Seven Chaos Emeralds and reach Green Hill Zone, then defeat Finalhazard.",
           "readableName": "Finalhazard & Chaos Emerald hunt"
+        },
+        {
+          "name": "grand_prix",
+          "readableName": "Grand Prix",
+          "description": "Win every race in Kart Race Mode (all standard levels are disabled)."
         }
       ],
       "type": "choice",
@@ -71,6 +76,36 @@
       "readableName": "Beetlesanity",
       "type": "toggle",
       "default": false
+    },
+    {
+      "name": "omosanity",
+      "description": "Determines whether activating Omochao grants checks.",
+      "readableName": "omosanity",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "kart_race_checks",
+      "description": "Determines whether Kart Race Mode grants checks",
+      "readableName": "Kart Race checks",
+      "values": [
+        {
+          "name": "none",
+          "readableName": "None"
+        },
+        {
+          "name": "mini",
+          "readableName": "Mini",
+          "description": "Each Kart Race difficulty must be beaten only once."
+        },
+        {
+          "name": "full",
+          "readableName": "Full",
+          "description": "Every Character must separately beat each Kart Race difficulty."
+        }
+      ],
+      "type": "choice",
+      "default": "none"
     },
     {
       "name": "required_rank",
@@ -424,6 +459,76 @@
       ],
       "type": "choice",
       "default": "medium"
+    },
+    {
+      "name": "pong_trap_weight",
+      "description": "Likelihood of receiving a trap which forces you to play a Pong minigame.",
+      "readableName": "pong trap weight",
+      "values": [
+        {
+          "name": "none",
+          "readableName": "*none"
+        },
+        {
+          "name": "low",
+          "readableName": "Low"
+        },
+        {
+          "name": "medium",
+          "readableName": "Medium"
+        },
+        {
+          "name": "high",
+          "readableName": "High"
+        }
+      ],
+      "type": "choice",
+      "default": "medium"
+    },
+    {
+      "name": "minigame_trap_difficulty",
+      "description": "How difficult any Minigame-style traps are",
+      "readableName": "Minigame trap difficulty",
+      "values": [
+        {
+          "name": "easy",
+          "readableName": "Easy"
+        },
+        {
+          "name": "medium",
+          "readableName": "Medium"
+        },
+        {
+          "name": "hard",
+          "readableName": "Hard"
+        }
+      ],
+      "type": "choice",
+      "default": "medium"
+    },
+    {
+      "name": "ring_loss",
+      "description": "Determines how taking damage is handled.",
+      "readableName": "Ring loss",
+      "values": [
+        {
+          "name": "classic",
+          "readableName": "Classic",
+          "description": "Lose all rings on hit."
+        },
+        {
+          "name": "modern",
+          "readableName": "Modern",
+          "description": "Lose at most 20 rings on hit."
+        },
+        {
+          "name": "ohko",
+          "readableName": "One Hit KO",
+          "description": "Rings won't save you here. (NOTE: Some Hard Logic tricks may require damage boosts!)"
+        }
+      ],
+      "type": "choice",
+      "default": "classic"
     },
     {
       "name": "sadx_music",
@@ -891,6 +996,9 @@
     },
     {
       "name": "Blue Chaos Emerald"
+    },
+    {
+      "name": "Pong Trap"
     }
   ],
   "locations": [
@@ -1271,6 +1379,9 @@
     },
     {
       "name": "Cannon Core - 4"
+    },
+    {
+      "name": "Grand Prix"
     },
     {
       "name": "City Escape - 5"
@@ -2390,6 +2501,645 @@
     },
     {
       "name": "City Escape - Hidden 5"
+    },
+    {
+      "name": "City Escape - Omochao 1"
+    },
+    {
+      "name": "Wild Canyon - Omochao 1"
+    },
+    {
+      "name": "Prison Lane - Omochao 1"
+    },
+    {
+      "name": "Metal Harbor - Omochao 1"
+    },
+    {
+      "name": "Pumpkin Hill - Omochao 1"
+    },
+    {
+      "name": "Mission Street - Omochao 1"
+    },
+    {
+      "name": "Aquatic Mine - Omochao 1"
+    },
+    {
+      "name": "Hidden Base - Omochao 1"
+    },
+    {
+      "name": "Pyramid Cave - Omochao 1"
+    },
+    {
+      "name": "Death Chamber - Omochao 1"
+    },
+    {
+      "name": "Eternal Engine - Omochao 1"
+    },
+    {
+      "name": "Meteor Herd - Omochao 1"
+    },
+    {
+      "name": "Crazy Gadget - Omochao 1"
+    },
+    {
+      "name": "Final Rush - Omochao 1"
+    },
+    {
+      "name": "Iron Gate - Omochao 1"
+    },
+    {
+      "name": "Dry Lagoon - Omochao 1"
+    },
+    {
+      "name": "Sand Ocean - Omochao 1"
+    },
+    {
+      "name": "Radical Highway - Omochao 1"
+    },
+    {
+      "name": "Egg Quarters - Omochao 1"
+    },
+    {
+      "name": "Lost Colony - Omochao 1"
+    },
+    {
+      "name": "Weapons Bed - Omochao 1"
+    },
+    {
+      "name": "Security Hall - Omochao 1"
+    },
+    {
+      "name": "White Jungle - Omochao 1"
+    },
+    {
+      "name": "Mad Space - Omochao 1"
+    },
+    {
+      "name": "Cosmic Wall - Omochao 1"
+    },
+    {
+      "name": "Final Chase - Omochao 1"
+    },
+    {
+      "name": "Cannon Core - Omochao 1"
+    },
+    {
+      "name": "City Escape - Omochao 2"
+    },
+    {
+      "name": "Wild Canyon - Omochao 2"
+    },
+    {
+      "name": "Prison Lane - Omochao 2"
+    },
+    {
+      "name": "Metal Harbor - Omochao 2"
+    },
+    {
+      "name": "Pumpkin Hill - Omochao 2"
+    },
+    {
+      "name": "Mission Street - Omochao 2"
+    },
+    {
+      "name": "Aquatic Mine - Omochao 2"
+    },
+    {
+      "name": "Hidden Base - Omochao 2"
+    },
+    {
+      "name": "Pyramid Cave - Omochao 2"
+    },
+    {
+      "name": "Death Chamber - Omochao 2"
+    },
+    {
+      "name": "Eternal Engine - Omochao 2"
+    },
+    {
+      "name": "Meteor Herd - Omochao 2"
+    },
+    {
+      "name": "Crazy Gadget - Omochao 2"
+    },
+    {
+      "name": "Final Rush - Omochao 2"
+    },
+    {
+      "name": "Iron Gate - Omochao 2"
+    },
+    {
+      "name": "Dry Lagoon - Omochao 2"
+    },
+    {
+      "name": "Sand Ocean - Omochao 2"
+    },
+    {
+      "name": "Radical Highway - Omochao 2"
+    },
+    {
+      "name": "Egg Quarters - Omochao 2"
+    },
+    {
+      "name": "Lost Colony - Omochao 2"
+    },
+    {
+      "name": "Weapons Bed - Omochao 2"
+    },
+    {
+      "name": "Security Hall - Omochao 2"
+    },
+    {
+      "name": "White Jungle - Omochao 2"
+    },
+    {
+      "name": "Mad Space - Omochao 2"
+    },
+    {
+      "name": "Cannon Core - Omochao 2"
+    },
+    {
+      "name": "City Escape - Omochao 3"
+    },
+    {
+      "name": "Wild Canyon - Omochao 3"
+    },
+    {
+      "name": "Prison Lane - Omochao 3"
+    },
+    {
+      "name": "Metal Harbor - Omochao 3"
+    },
+    {
+      "name": "Pumpkin Hill - Omochao 3"
+    },
+    {
+      "name": "Mission Street - Omochao 3"
+    },
+    {
+      "name": "Aquatic Mine - Omochao 3"
+    },
+    {
+      "name": "Hidden Base - Omochao 3"
+    },
+    {
+      "name": "Pyramid Cave - Omochao 3"
+    },
+    {
+      "name": "Death Chamber - Omochao 3"
+    },
+    {
+      "name": "Eternal Engine - Omochao 3"
+    },
+    {
+      "name": "Meteor Herd - Omochao 3"
+    },
+    {
+      "name": "Crazy Gadget - Omochao 3"
+    },
+    {
+      "name": "Final Rush - Omochao 3"
+    },
+    {
+      "name": "Iron Gate - Omochao 3"
+    },
+    {
+      "name": "Dry Lagoon - Omochao 3"
+    },
+    {
+      "name": "Radical Highway - Omochao 3"
+    },
+    {
+      "name": "Egg Quarters - Omochao 3"
+    },
+    {
+      "name": "Lost Colony - Omochao 3"
+    },
+    {
+      "name": "Weapons Bed - Omochao 3"
+    },
+    {
+      "name": "Security Hall - Omochao 3"
+    },
+    {
+      "name": "White Jungle - Omochao 3"
+    },
+    {
+      "name": "Mad Space - Omochao 3"
+    },
+    {
+      "name": "Cannon Core - Omochao 3"
+    },
+    {
+      "name": "City Escape - Omochao 4"
+    },
+    {
+      "name": "Wild Canyon - Omochao 4"
+    },
+    {
+      "name": "Prison Lane - Omochao 4"
+    },
+    {
+      "name": "Metal Harbor - Omochao 4"
+    },
+    {
+      "name": "Pumpkin Hill - Omochao 4"
+    },
+    {
+      "name": "Mission Street - Omochao 4"
+    },
+    {
+      "name": "Aquatic Mine - Omochao 4"
+    },
+    {
+      "name": "Hidden Base - Omochao 4"
+    },
+    {
+      "name": "Pyramid Cave - Omochao 4"
+    },
+    {
+      "name": "Death Chamber - Omochao 4"
+    },
+    {
+      "name": "Eternal Engine - Omochao 4"
+    },
+    {
+      "name": "Crazy Gadget - Omochao 4"
+    },
+    {
+      "name": "Iron Gate - Omochao 4"
+    },
+    {
+      "name": "Dry Lagoon - Omochao 4"
+    },
+    {
+      "name": "Radical Highway - Omochao 4"
+    },
+    {
+      "name": "Egg Quarters - Omochao 4"
+    },
+    {
+      "name": "Lost Colony - Omochao 4"
+    },
+    {
+      "name": "Security Hall - Omochao 4"
+    },
+    {
+      "name": "White Jungle - Omochao 4"
+    },
+    {
+      "name": "Mad Space - Omochao 4"
+    },
+    {
+      "name": "Cannon Core - Omochao 4"
+    },
+    {
+      "name": "City Escape - Omochao 5"
+    },
+    {
+      "name": "Wild Canyon - Omochao 5"
+    },
+    {
+      "name": "Prison Lane - Omochao 5"
+    },
+    {
+      "name": "Metal Harbor - Omochao 5"
+    },
+    {
+      "name": "Pumpkin Hill - Omochao 5"
+    },
+    {
+      "name": "Mission Street - Omochao 5"
+    },
+    {
+      "name": "Aquatic Mine - Omochao 5"
+    },
+    {
+      "name": "Death Chamber - Omochao 5"
+    },
+    {
+      "name": "Eternal Engine - Omochao 5"
+    },
+    {
+      "name": "Crazy Gadget - Omochao 5"
+    },
+    {
+      "name": "Iron Gate - Omochao 5"
+    },
+    {
+      "name": "Dry Lagoon - Omochao 5"
+    },
+    {
+      "name": "Radical Highway - Omochao 5"
+    },
+    {
+      "name": "Egg Quarters - Omochao 5"
+    },
+    {
+      "name": "Lost Colony - Omochao 5"
+    },
+    {
+      "name": "Security Hall - Omochao 5"
+    },
+    {
+      "name": "White Jungle - Omochao 5"
+    },
+    {
+      "name": "Mad Space - Omochao 5"
+    },
+    {
+      "name": "Cannon Core - Omochao 5"
+    },
+    {
+      "name": "City Escape - Omochao 6"
+    },
+    {
+      "name": "Wild Canyon - Omochao 6"
+    },
+    {
+      "name": "Prison Lane - Omochao 6"
+    },
+    {
+      "name": "Pumpkin Hill - Omochao 6"
+    },
+    {
+      "name": "Mission Street - Omochao 6"
+    },
+    {
+      "name": "Aquatic Mine - Omochao 6"
+    },
+    {
+      "name": "Death Chamber - Omochao 6"
+    },
+    {
+      "name": "Eternal Engine - Omochao 6"
+    },
+    {
+      "name": "Crazy Gadget - Omochao 6"
+    },
+    {
+      "name": "Iron Gate - Omochao 6"
+    },
+    {
+      "name": "Dry Lagoon - Omochao 6"
+    },
+    {
+      "name": "Radical Highway - Omochao 6"
+    },
+    {
+      "name": "Egg Quarters - Omochao 6"
+    },
+    {
+      "name": "Lost Colony - Omochao 6"
+    },
+    {
+      "name": "Security Hall - Omochao 6"
+    },
+    {
+      "name": "Cannon Core - Omochao 6"
+    },
+    {
+      "name": "City Escape - Omochao 7"
+    },
+    {
+      "name": "Wild Canyon - Omochao 7"
+    },
+    {
+      "name": "Prison Lane - Omochao 7"
+    },
+    {
+      "name": "Pumpkin Hill - Omochao 7"
+    },
+    {
+      "name": "Mission Street - Omochao 7"
+    },
+    {
+      "name": "Aquatic Mine - Omochao 7"
+    },
+    {
+      "name": "Death Chamber - Omochao 7"
+    },
+    {
+      "name": "Eternal Engine - Omochao 7"
+    },
+    {
+      "name": "Crazy Gadget - Omochao 7"
+    },
+    {
+      "name": "Dry Lagoon - Omochao 7"
+    },
+    {
+      "name": "Radical Highway - Omochao 7"
+    },
+    {
+      "name": "Egg Quarters - Omochao 7"
+    },
+    {
+      "name": "Lost Colony - Omochao 7"
+    },
+    {
+      "name": "Security Hall - Omochao 7"
+    },
+    {
+      "name": "Cannon Core - Omochao 7"
+    },
+    {
+      "name": "City Escape - Omochao 8"
+    },
+    {
+      "name": "Wild Canyon - Omochao 8"
+    },
+    {
+      "name": "Prison Lane - Omochao 8"
+    },
+    {
+      "name": "Pumpkin Hill - Omochao 8"
+    },
+    {
+      "name": "Mission Street - Omochao 8"
+    },
+    {
+      "name": "Death Chamber - Omochao 8"
+    },
+    {
+      "name": "Eternal Engine - Omochao 8"
+    },
+    {
+      "name": "Crazy Gadget - Omochao 8"
+    },
+    {
+      "name": "Dry Lagoon - Omochao 8"
+    },
+    {
+      "name": "Radical Highway - Omochao 8"
+    },
+    {
+      "name": "Lost Colony - Omochao 8"
+    },
+    {
+      "name": "Security Hall - Omochao 8"
+    },
+    {
+      "name": "Cannon Core - Omochao 8"
+    },
+    {
+      "name": "City Escape - Omochao 9"
+    },
+    {
+      "name": "Wild Canyon - Omochao 9"
+    },
+    {
+      "name": "Prison Lane - Omochao 9"
+    },
+    {
+      "name": "Pumpkin Hill - Omochao 9"
+    },
+    {
+      "name": "Death Chamber - Omochao 9"
+    },
+    {
+      "name": "Eternal Engine - Omochao 9"
+    },
+    {
+      "name": "Crazy Gadget - Omochao 9"
+    },
+    {
+      "name": "Dry Lagoon - Omochao 9"
+    },
+    {
+      "name": "Security Hall - Omochao 9"
+    },
+    {
+      "name": "Cannon Core - Omochao 9"
+    },
+    {
+      "name": "City Escape - Omochao 10"
+    },
+    {
+      "name": "Wild Canyon - Omochao 10"
+    },
+    {
+      "name": "Prison Lane - Omochao 10"
+    },
+    {
+      "name": "Pumpkin Hill - Omochao 10"
+    },
+    {
+      "name": "Eternal Engine - Omochao 10"
+    },
+    {
+      "name": "Crazy Gadget - Omochao 10"
+    },
+    {
+      "name": "Dry Lagoon - Omochao 10"
+    },
+    {
+      "name": "Security Hall - Omochao 10"
+    },
+    {
+      "name": "City Escape - Omochao 11"
+    },
+    {
+      "name": "Pumpkin Hill - Omochao 11"
+    },
+    {
+      "name": "Eternal Engine - Omochao 11"
+    },
+    {
+      "name": "Crazy Gadget - Omochao 11"
+    },
+    {
+      "name": "Dry Lagoon - Omochao 11"
+    },
+    {
+      "name": "Security Hall - Omochao 11"
+    },
+    {
+      "name": "City Escape - Omochao 12"
+    },
+    {
+      "name": "Eternal Engine - Omochao 12"
+    },
+    {
+      "name": "Crazy Gadget - Omochao 12"
+    },
+    {
+      "name": "Dry Lagoon - Omochao 12"
+    },
+    {
+      "name": "Security Hall - Omochao 12"
+    },
+    {
+      "name": "City Escape - Omochao 13"
+    },
+    {
+      "name": "Crazy Gadget - Omochao 13"
+    },
+    {
+      "name": "City Escape - Omochao 14"
+    },
+    {
+      "name": "Kart Race - Beginner - Sonic"
+    },
+    {
+      "name": "Kart Race - Beginner - Tails"
+    },
+    {
+      "name": "Kart Race - Beginner - Knuckles"
+    },
+    {
+      "name": "Kart Race - Beginner - Shadow"
+    },
+    {
+      "name": "Kart Race - Beginner - Eggman"
+    },
+    {
+      "name": "Kart Race - Beginner - Rouge"
+    },
+    {
+      "name": "Kart Race - Standard - Sonic"
+    },
+    {
+      "name": "Kart Race - Standard - Tails"
+    },
+    {
+      "name": "Kart Race - Standard - Knuckles"
+    },
+    {
+      "name": "Kart Race - Standard - Shadow"
+    },
+    {
+      "name": "Kart Race - Standard - Eggman"
+    },
+    {
+      "name": "Kart Race - Standard - Rouge"
+    },
+    {
+      "name": "Kart Race - Expert - Sonic"
+    },
+    {
+      "name": "Kart Race - Expert - Tails"
+    },
+    {
+      "name": "Kart Race - Expert - Knuckles"
+    },
+    {
+      "name": "Kart Race - Expert - Shadow"
+    },
+    {
+      "name": "Kart Race - Expert - Eggman"
+    },
+    {
+      "name": "Kart Race - Expert - Rouge"
+    },
+    {
+      "name": "Kart Race - Beginner"
+    },
+    {
+      "name": "Kart Race - Standard"
+    },
+    {
+      "name": "Kart Race - Expert"
     }
   ],
   "status": "Updated"

@@ -25,10 +25,75 @@
     },
     {
       "name": "randomize_weapons_level",
-      "description": "Enable this option to upgrade 33% (based on the probability chance) of the pool of weapons to a random value between +1 and +5/+10.",
+      "description": "Enable this option to upgrade a percentage of the pool of weapons to a random value between the minimum and maximum levels defined.",
       "readableName": "Randomize weapons level",
-      "type": "toggle",
-      "default": true
+      "values": [
+        {
+          "name": "none",
+          "readableName": "None"
+        },
+        {
+          "name": "all",
+          "readableName": "All"
+        },
+        {
+          "name": "basic",
+          "readableName": "Basic",
+          "description": "Only weapons that can be upgraded to +10"
+        },
+        {
+          "name": "epic",
+          "readableName": "Epic",
+          "description": "Only weapons that can be upgraded to +5"
+        }
+      ],
+      "type": "choice",
+      "default": "none"
+    },
+    {
+      "name": "randomize_weapons_percentage",
+      "description": "Determines the percentage of weapons in the pool to be upgraded if randomize weapons level is toggled.",
+      "high": 100,
+      "readableName": "Randomize weapons percentage",
+      "low": 1,
+      "type": "range",
+      "default": 33
+    },
+    {
+      "name": "min_levels_in_5",
+      "description": "The minimum upgraded value of a weapon in the pool of weapons that can only reach +5.",
+      "high": 5,
+      "readableName": "Minimum levels in 5",
+      "low": 1,
+      "type": "range",
+      "default": 1
+    },
+    {
+      "name": "max_levels_in_5",
+      "description": "The maximum upgraded value of a weapon in the pool of weapons that can only reach +5.",
+      "high": 5,
+      "readableName": "Maximum levels in 5",
+      "low": 1,
+      "type": "range",
+      "default": 5
+    },
+    {
+      "name": "min_levels_in_10",
+      "description": "The minimum upgraded value of a weapon in the pool of weapons that can only reach +10.",
+      "high": 10,
+      "readableName": "Minimum levels in 10",
+      "low": 1,
+      "type": "range",
+      "default": 1
+    },
+    {
+      "name": "max_levels_in_10",
+      "description": "The maximum upgraded value of a weapon in the pool of weapons that can only reach +10.",
+      "high": 10,
+      "readableName": "Maximum levels in 10",
+      "low": 1,
+      "type": "range",
+      "default": 10
     },
     {
       "name": "late_basin_of_vows",
@@ -53,6 +118,20 @@
     },
     {
       "type": "deathlink"
+    },
+    {
+      "name": "enable_progressive_locations",
+      "description": "Randomize upgrade materials such as the titanite shards, the estus shards and the consumables.",
+      "readableName": "Enable progressive locations",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "enable_dlc",
+      "description": "If enabled, content from Ashes of Ariandel and Ringed City will be used. (Both are required in order to enable.)",
+      "readableName": "Enable DLC",
+      "type": "toggle",
+      "default": false
     }
   ],
   "defver": 2,
@@ -335,6 +414,9 @@
     },
     {
       "name": "Drang Twinspears"
+    },
+    {
+      "name": "Pyromancy Flame"
     },
     {
       "name": "East-West Shield"
@@ -673,6 +755,15 @@
       "name": "Outrider Knight Leggings"
     },
     {
+      "name": "Cornyx's Wrap"
+    },
+    {
+      "name": "Cornyx's Garb"
+    },
+    {
+      "name": "Cornyx's Skirt"
+    },
+    {
       "name": "Estus Ring"
     },
     {
@@ -806,6 +897,9 @@
     },
     {
       "name": "Magic Stoneplate Ring"
+    },
+    {
+      "name": "Blue Tearstone Ring"
     },
     {
       "name": "Seek Guidance"
@@ -1114,21 +1208,6 @@
       "name": "Large Titanite Shard #10"
     },
     {
-      "name": "Titanite Chunk #1"
-    },
-    {
-      "name": "Titanite Chunk #2"
-    },
-    {
-      "name": "Titanite Chunk #3"
-    },
-    {
-      "name": "Titanite Chunk #4"
-    },
-    {
-      "name": "Titanite Chunk #5"
-    },
-    {
       "name": "Titanite Slab #1"
     },
     {
@@ -1256,6 +1335,933 @@
     },
     {
       "name": "Soul of a Crestfallen Knight #10"
+    },
+    {
+      "name": "HWL: Gold Pine Resin #"
+    },
+    {
+      "name": "US: Charcoal Pine Resin #"
+    },
+    {
+      "name": "FK: Gold Pine Bundle #"
+    },
+    {
+      "name": "CC: Carthus Rouge #"
+    },
+    {
+      "name": "ID: Pale Pine Resin #"
+    },
+    {
+      "name": "Ember #1"
+    },
+    {
+      "name": "Ember #2"
+    },
+    {
+      "name": "Ember #3"
+    },
+    {
+      "name": "Ember #4"
+    },
+    {
+      "name": "Ember #5"
+    },
+    {
+      "name": "Ember #6"
+    },
+    {
+      "name": "Ember #7"
+    },
+    {
+      "name": "Ember #8"
+    },
+    {
+      "name": "Ember #9"
+    },
+    {
+      "name": "Ember #10"
+    },
+    {
+      "name": "Ember #11"
+    },
+    {
+      "name": "Ember #12"
+    },
+    {
+      "name": "Ember #13"
+    },
+    {
+      "name": "Ember #14"
+    },
+    {
+      "name": "Ember #15"
+    },
+    {
+      "name": "Ember #16"
+    },
+    {
+      "name": "Ember #17"
+    },
+    {
+      "name": "Ember #18"
+    },
+    {
+      "name": "Ember #19"
+    },
+    {
+      "name": "Ember #20"
+    },
+    {
+      "name": "Ember #21"
+    },
+    {
+      "name": "Ember #22"
+    },
+    {
+      "name": "Ember #23"
+    },
+    {
+      "name": "Ember #24"
+    },
+    {
+      "name": "Ember #25"
+    },
+    {
+      "name": "Ember #26"
+    },
+    {
+      "name": "Ember #27"
+    },
+    {
+      "name": "Ember #28"
+    },
+    {
+      "name": "Ember #29"
+    },
+    {
+      "name": "Ember #30"
+    },
+    {
+      "name": "Ember #31"
+    },
+    {
+      "name": "Ember #32"
+    },
+    {
+      "name": "Ember #33"
+    },
+    {
+      "name": "Ember #34"
+    },
+    {
+      "name": "Ember #35"
+    },
+    {
+      "name": "Ember #36"
+    },
+    {
+      "name": "Ember #37"
+    },
+    {
+      "name": "Ember #38"
+    },
+    {
+      "name": "Ember #39"
+    },
+    {
+      "name": "Ember #40"
+    },
+    {
+      "name": "Ember #41"
+    },
+    {
+      "name": "Ember #42"
+    },
+    {
+      "name": "Ember #43"
+    },
+    {
+      "name": "Ember #44"
+    },
+    {
+      "name": "Titanite Shard #11"
+    },
+    {
+      "name": "Titanite Shard #12"
+    },
+    {
+      "name": "Titanite Shard #13"
+    },
+    {
+      "name": "Titanite Shard #14"
+    },
+    {
+      "name": "Titanite Shard #15"
+    },
+    {
+      "name": "Large Titanite Shard #11"
+    },
+    {
+      "name": "Large Titanite Shard #12"
+    },
+    {
+      "name": "Large Titanite Shard #13"
+    },
+    {
+      "name": "Large Titanite Shard #14"
+    },
+    {
+      "name": "Large Titanite Shard #15"
+    },
+    {
+      "name": "Titanite Scale #1"
+    },
+    {
+      "name": "Titanite Scale #2"
+    },
+    {
+      "name": "Titanite Scale #3"
+    },
+    {
+      "name": "Titanite Scale #4"
+    },
+    {
+      "name": "Titanite Scale #5"
+    },
+    {
+      "name": "Titanite Scale #6"
+    },
+    {
+      "name": "Titanite Scale #7"
+    },
+    {
+      "name": "Titanite Scale #8"
+    },
+    {
+      "name": "Titanite Scale #9"
+    },
+    {
+      "name": "Titanite Scale #10"
+    },
+    {
+      "name": "Titanite Scale #11"
+    },
+    {
+      "name": "Titanite Scale #12"
+    },
+    {
+      "name": "Titanite Scale #13"
+    },
+    {
+      "name": "Titanite Scale #14"
+    },
+    {
+      "name": "Titanite Scale #15"
+    },
+    {
+      "name": "Titanite Scale #16"
+    },
+    {
+      "name": "Titanite Scale #17"
+    },
+    {
+      "name": "Titanite Scale #18"
+    },
+    {
+      "name": "Titanite Scale #19"
+    },
+    {
+      "name": "Titanite Scale #20"
+    },
+    {
+      "name": "Titanite Scale #21"
+    },
+    {
+      "name": "Titanite Scale #22"
+    },
+    {
+      "name": "Titanite Scale #23"
+    },
+    {
+      "name": "Titanite Scale #24"
+    },
+    {
+      "name": "Fading Soul #1"
+    },
+    {
+      "name": "Fading Soul #2"
+    },
+    {
+      "name": "Fading Soul #3"
+    },
+    {
+      "name": "Ring of Sacrifice #1"
+    },
+    {
+      "name": "Ring of Sacrifice #2"
+    },
+    {
+      "name": "Ring of Sacrifice #3"
+    },
+    {
+      "name": "Ring of Sacrifice #4"
+    },
+    {
+      "name": "Homeward Bone #1"
+    },
+    {
+      "name": "Homeward Bone #2"
+    },
+    {
+      "name": "Homeward Bone #3"
+    },
+    {
+      "name": "Homeward Bone #4"
+    },
+    {
+      "name": "Homeward Bone #5"
+    },
+    {
+      "name": "Homeward Bone #6"
+    },
+    {
+      "name": "Homeward Bone #7"
+    },
+    {
+      "name": "Homeward Bone #8"
+    },
+    {
+      "name": "Homeward Bone #9"
+    },
+    {
+      "name": "Homeward Bone #10"
+    },
+    {
+      "name": "Homeward Bone #11"
+    },
+    {
+      "name": "Homeward Bone #12"
+    },
+    {
+      "name": "Homeward Bone #13"
+    },
+    {
+      "name": "Homeward Bone #14"
+    },
+    {
+      "name": "Homeward Bone #15"
+    },
+    {
+      "name": "Homeward Bone #16"
+    },
+    {
+      "name": "Green Blossom #1"
+    },
+    {
+      "name": "Green Blossom #2"
+    },
+    {
+      "name": "Green Blossom #3"
+    },
+    {
+      "name": "Green Blossom #4"
+    },
+    {
+      "name": "Green Blossom #5"
+    },
+    {
+      "name": "Green Blossom #6"
+    },
+    {
+      "name": "Human Pine Resin #1"
+    },
+    {
+      "name": "Human Pine Resin #2"
+    },
+    {
+      "name": "Charcoal Pine Bundle #1"
+    },
+    {
+      "name": "Charcoal Pine Bundle #2"
+    },
+    {
+      "name": "Rotten Pine Resin #1"
+    },
+    {
+      "name": "Rotten Pine Resin #2"
+    },
+    {
+      "name": "Alluring Skull #1"
+    },
+    {
+      "name": "Alluring Skull #2"
+    },
+    {
+      "name": "Alluring Skull #3"
+    },
+    {
+      "name": "Alluring Skull #4"
+    },
+    {
+      "name": "Alluring Skull #5"
+    },
+    {
+      "name": "Alluring Skull #6"
+    },
+    {
+      "name": "Alluring Skull #7"
+    },
+    {
+      "name": "Alluring Skull #8"
+    },
+    {
+      "name": "Rusted Coin #1"
+    },
+    {
+      "name": "Rusted Coin #2"
+    },
+    {
+      "name": "Rusted Gold Coin #1"
+    },
+    {
+      "name": "Rusted Gold Coin #2"
+    },
+    {
+      "name": "Titanite Chunk #1"
+    },
+    {
+      "name": "Titanite Chunk #2"
+    },
+    {
+      "name": "Titanite Chunk #3"
+    },
+    {
+      "name": "Titanite Chunk #4"
+    },
+    {
+      "name": "Titanite Chunk #5"
+    },
+    {
+      "name": "Titanite Chunk #6"
+    },
+    {
+      "name": "Titanite Chunk #7"
+    },
+    {
+      "name": "Titanite Chunk #8"
+    },
+    {
+      "name": "Titanite Chunk #9"
+    },
+    {
+      "name": "Titanite Chunk #10"
+    },
+    {
+      "name": "Titanite Chunk #11"
+    },
+    {
+      "name": "Titanite Chunk #12"
+    },
+    {
+      "name": "Titanite Chunk #13"
+    },
+    {
+      "name": "Titanite Chunk #14"
+    },
+    {
+      "name": "Titanite Chunk #15"
+    },
+    {
+      "name": "Titanite Chunk #16"
+    },
+    {
+      "name": "Twinkling Titanite #1"
+    },
+    {
+      "name": "Twinkling Titanite #2"
+    },
+    {
+      "name": "Twinkling Titanite #3"
+    },
+    {
+      "name": "Twinkling Titanite #4"
+    },
+    {
+      "name": "Twinkling Titanite #5"
+    },
+    {
+      "name": "Twinkling Titanite #6"
+    },
+    {
+      "name": "Twinkling Titanite #7"
+    },
+    {
+      "name": "Friede's Great Scythe"
+    },
+    {
+      "name": "Rose of Ariandel"
+    },
+    {
+      "name": "Demon's Scar"
+    },
+    {
+      "name": "Frayed Blade"
+    },
+    {
+      "name": "Gael's Greatsword"
+    },
+    {
+      "name": "Repeating Crossbow"
+    },
+    {
+      "name": "Onyx Blade"
+    },
+    {
+      "name": "Earth Seeker"
+    },
+    {
+      "name": "Quakestone Hammer"
+    },
+    {
+      "name": "Millwood Greatbow"
+    },
+    {
+      "name": "Valorheart"
+    },
+    {
+      "name": "Aquamarine Dagger"
+    },
+    {
+      "name": "Ringed Knight Straight Sword"
+    },
+    {
+      "name": "Ledo's Great Hammer"
+    },
+    {
+      "name": "Ringed Knight Spear"
+    },
+    {
+      "name": "Crucifix of the Mad King"
+    },
+    {
+      "name": "Sacred Chime of Filianore"
+    },
+    {
+      "name": "Preacher's Right Arm"
+    },
+    {
+      "name": "White Birch Bow"
+    },
+    {
+      "name": "Ringed Knight Paired Greatswords"
+    },
+    {
+      "name": "Follower Sabre"
+    },
+    {
+      "name": "Millwood Battle Axe"
+    },
+    {
+      "name": "Follower Javelin"
+    },
+    {
+      "name": "Crow Talons"
+    },
+    {
+      "name": "Pyromancer's Parting Flame"
+    },
+    {
+      "name": "Crow Quills"
+    },
+    {
+      "name": "Follower Torch"
+    },
+    {
+      "name": "Murky Hand Scythe"
+    },
+    {
+      "name": "Herald Curved Greatsword"
+    },
+    {
+      "name": "Lothric War Banner"
+    },
+    {
+      "name": "Splitleaf Greatsword"
+    },
+    {
+      "name": "Murky Longstaff"
+    },
+    {
+      "name": "Followers Shield"
+    },
+    {
+      "name": "Ethereal Oak Shield"
+    },
+    {
+      "name": "Giant Door Shield"
+    },
+    {
+      "name": "Dragonhead Shield"
+    },
+    {
+      "name": "Dragonhead Greatshield"
+    },
+    {
+      "name": "Soul of Sister Friede"
+    },
+    {
+      "name": "Soul of the Demon Prince"
+    },
+    {
+      "name": "Soul of Darkeater Midir"
+    },
+    {
+      "name": "Soul of Slave Knight Gael"
+    },
+    {
+      "name": "Slave Knight Hood"
+    },
+    {
+      "name": "Slave Knight Armor"
+    },
+    {
+      "name": "Slave Knight Gauntlets"
+    },
+    {
+      "name": "Slave Knight Leggings"
+    },
+    {
+      "name": "Vilhelm's Helm"
+    },
+    {
+      "name": "Vilhelm's Armor"
+    },
+    {
+      "name": "Vilhelm's Gauntlets"
+    },
+    {
+      "name": "Vilhelm's Leggings"
+    },
+    {
+      "name": "Shira's Crown"
+    },
+    {
+      "name": "Shira's Armor"
+    },
+    {
+      "name": "Shira's Gloves"
+    },
+    {
+      "name": "Shira's Trousers"
+    },
+    {
+      "name": "Iron Dragonslayer Helm"
+    },
+    {
+      "name": "Iron Dragonslayer Armor"
+    },
+    {
+      "name": "Iron Dragonslayer Gauntlets"
+    },
+    {
+      "name": "Iron Dragonslayer Leggings"
+    },
+    {
+      "name": "Ruin Sentinel Helm"
+    },
+    {
+      "name": "Ruin Sentinel Armor"
+    },
+    {
+      "name": "Ruin Sentinel Gauntlets"
+    },
+    {
+      "name": "Ruin Sentinel Leggings"
+    },
+    {
+      "name": "Desert Pyromancer Hood"
+    },
+    {
+      "name": "Desert Pyromancer Garb"
+    },
+    {
+      "name": "Desert Pyromancer Gloves"
+    },
+    {
+      "name": "Desert Pyromancer Skirt"
+    },
+    {
+      "name": "Black Witch Veil"
+    },
+    {
+      "name": "Black Witch Hat"
+    },
+    {
+      "name": "Black Witch Garb"
+    },
+    {
+      "name": "Black Witch Wrappings"
+    },
+    {
+      "name": "Black Witch Trousers"
+    },
+    {
+      "name": "White Preacher Head"
+    },
+    {
+      "name": "Antiquated Plain Garb"
+    },
+    {
+      "name": "Frozen Weapon"
+    },
+    {
+      "name": "Snap Freeze"
+    },
+    {
+      "name": "Great Soul Dregs"
+    },
+    {
+      "name": "Flame Fan"
+    },
+    {
+      "name": "Lightning Arrow"
+    },
+    {
+      "name": "Way of White Corona"
+    },
+    {
+      "name": "Projected Heal"
+    },
+    {
+      "name": "Floating Chaos"
+    },
+    {
+      "name": "Havel's Ring"
+    },
+    {
+      "name": "Chillbite Ring"
+    },
+    {
+      "name": "Captains Ashes"
+    },
+    {
+      "name": "Contraption Key"
+    },
+    {
+      "name": "Small Envoy Banner"
+    },
+    {
+      "name": "Large Soul of an Unknown Traveler $1"
+    },
+    {
+      "name": "Large Soul of an Unknown Traveler $2"
+    },
+    {
+      "name": "Large Soul of an Unknown Traveler $3"
+    },
+    {
+      "name": "Large Soul of an Unknown Traveler $4"
+    },
+    {
+      "name": "Large Soul of an Unknown Traveler $5"
+    },
+    {
+      "name": "Large Soul of an Unknown Traveler $6"
+    },
+    {
+      "name": "Large Soul of an Unknown Traveler $7"
+    },
+    {
+      "name": "Large Soul of an Unknown Traveler $8"
+    },
+    {
+      "name": "Large Soul of an Unknown Traveler $9"
+    },
+    {
+      "name": "Soul of a Weary Warrior $1"
+    },
+    {
+      "name": "Soul of a Weary Warrior $2"
+    },
+    {
+      "name": "Soul of a Weary Warrior $3"
+    },
+    {
+      "name": "Soul of a Weary Warrior $4"
+    },
+    {
+      "name": "Soul of a Weary Warrior $5"
+    },
+    {
+      "name": "Large Soul of a Weary Warrior $1"
+    },
+    {
+      "name": "Large Soul of a Weary Warrior $2"
+    },
+    {
+      "name": "Large Soul of a Weary Warrior $3"
+    },
+    {
+      "name": "Large Soul of a Weary Warrior $4"
+    },
+    {
+      "name": "Large Soul of a Weary Warrior $5"
+    },
+    {
+      "name": "Large Soul of a Weary Warrior $6"
+    },
+    {
+      "name": "Soul of a Crestfallen Knight $1"
+    },
+    {
+      "name": "Soul of a Crestfallen Knight $2"
+    },
+    {
+      "name": "Soul of a Crestfallen Knight $3"
+    },
+    {
+      "name": "Soul of a Crestfallen Knight $4"
+    },
+    {
+      "name": "Soul of a Crestfallen Knight $5"
+    },
+    {
+      "name": "Soul of a Crestfallen Knight $6"
+    },
+    {
+      "name": "Large Soul of a Crestfallen Knight $1"
+    },
+    {
+      "name": "Large Soul of a Crestfallen Knight $2"
+    },
+    {
+      "name": "Large Soul of a Crestfallen Knight $3"
+    },
+    {
+      "name": "Homeward Bone $1"
+    },
+    {
+      "name": "Homeward Bone $2"
+    },
+    {
+      "name": "Homeward Bone $3"
+    },
+    {
+      "name": "Homeward Bone $4"
+    },
+    {
+      "name": "Homeward Bone $5"
+    },
+    {
+      "name": "Homeward Bone $6"
+    },
+    {
+      "name": "Large Titanite Shard $1"
+    },
+    {
+      "name": "Large Titanite Shard $2"
+    },
+    {
+      "name": "Large Titanite Shard $3"
+    },
+    {
+      "name": "Titanite Chunk $1"
+    },
+    {
+      "name": "Titanite Chunk $2"
+    },
+    {
+      "name": "Titanite Chunk $3"
+    },
+    {
+      "name": "Titanite Chunk $4"
+    },
+    {
+      "name": "Titanite Chunk $5"
+    },
+    {
+      "name": "Titanite Chunk $6"
+    },
+    {
+      "name": "Titanite Chunk $7"
+    },
+    {
+      "name": "Titanite Chunk $8"
+    },
+    {
+      "name": "Titanite Chunk $9"
+    },
+    {
+      "name": "Titanite Chunk $10"
+    },
+    {
+      "name": "Titanite Chunk $11"
+    },
+    {
+      "name": "Titanite Chunk $12"
+    },
+    {
+      "name": "Titanite Chunk $13"
+    },
+    {
+      "name": "Titanite Chunk $14"
+    },
+    {
+      "name": "Titanite Chunk $15"
+    },
+    {
+      "name": "Twinkling Titanite $1"
+    },
+    {
+      "name": "Twinkling Titanite $2"
+    },
+    {
+      "name": "Twinkling Titanite $3"
+    },
+    {
+      "name": "Twinkling Titanite $4"
+    },
+    {
+      "name": "Twinkling Titanite $5"
+    },
+    {
+      "name": "Rusted Coin $1"
+    },
+    {
+      "name": "Rusted Coin $2"
+    },
+    {
+      "name": "Rusted Coin $3"
+    },
+    {
+      "name": "Ember $1"
+    },
+    {
+      "name": "Ember $2"
+    },
+    {
+      "name": "Ember $3"
+    },
+    {
+      "name": "Ember $4"
+    },
+    {
+      "name": "Ember $5"
+    },
+    {
+      "name": "Ember $6"
+    },
+    {
+      "name": "Ember $7"
+    },
+    {
+      "name": "Ember $8"
+    },
+    {
+      "name": "Ember $9"
+    },
+    {
+      "name": "Ember $10"
     }
   ],
   "locations": [
@@ -1345,6 +2351,9 @@
     },
     {
       "name": "HWL: Greirat's Ashes"
+    },
+    {
+      "name": "HWL: Blue Tearstone Ring"
     },
     {
       "name": "US: Small Leather Shield"
@@ -1465,6 +2474,18 @@
     },
     {
       "name": "US: Cornyx's Ashes"
+    },
+    {
+      "name": "US: Cornyx's Wrap"
+    },
+    {
+      "name": "US: Cornyx's Garb"
+    },
+    {
+      "name": "US: Cornyx's Skirt"
+    },
+    {
+      "name": "US: Pyromancy Flame"
     },
     {
       "name": "RS: Brigand Twindaggers"
@@ -2328,21 +3349,6 @@
       "name": "Large Titanite Shard #10"
     },
     {
-      "name": "Titanite Chunk #1"
-    },
-    {
-      "name": "Titanite Chunk #2"
-    },
-    {
-      "name": "Titanite Chunk #3"
-    },
-    {
-      "name": "Titanite Chunk #4"
-    },
-    {
-      "name": "Titanite Chunk #5"
-    },
-    {
       "name": "Titanite Slab #1"
     },
     {
@@ -2488,6 +3494,915 @@
     },
     {
       "name": "Large Soul of an Unknown Traveler #5"
+    },
+    {
+      "name": "HWL: Gold Pine Resin #"
+    },
+    {
+      "name": "US: Charcoal Pine Resin #"
+    },
+    {
+      "name": "FK: Gold Pine Bundle #"
+    },
+    {
+      "name": "CC: Carthus Rouge #"
+    },
+    {
+      "name": "ID: Pale Pine Resin #"
+    },
+    {
+      "name": "Titanite Scale #1"
+    },
+    {
+      "name": "Titanite Scale #2"
+    },
+    {
+      "name": "Titanite Scale #3"
+    },
+    {
+      "name": "Titanite Scale #4"
+    },
+    {
+      "name": "Titanite Scale #5"
+    },
+    {
+      "name": "Titanite Scale #6"
+    },
+    {
+      "name": "Titanite Scale #7"
+    },
+    {
+      "name": "Titanite Scale #8"
+    },
+    {
+      "name": "Titanite Scale #9"
+    },
+    {
+      "name": "Titanite Scale #10"
+    },
+    {
+      "name": "Titanite Scale #11"
+    },
+    {
+      "name": "Titanite Scale #12"
+    },
+    {
+      "name": "Titanite Scale #13"
+    },
+    {
+      "name": "Titanite Scale #14"
+    },
+    {
+      "name": "Titanite Scale #15"
+    },
+    {
+      "name": "Titanite Scale #16"
+    },
+    {
+      "name": "Titanite Scale #17"
+    },
+    {
+      "name": "Titanite Scale #18"
+    },
+    {
+      "name": "Titanite Scale #19"
+    },
+    {
+      "name": "Titanite Scale #20"
+    },
+    {
+      "name": "Titanite Scale #21"
+    },
+    {
+      "name": "Titanite Scale #22"
+    },
+    {
+      "name": "Titanite Scale #23"
+    },
+    {
+      "name": "Titanite Scale #24"
+    },
+    {
+      "name": "Titanite Scale #25"
+    },
+    {
+      "name": "Titanite Scale #26"
+    },
+    {
+      "name": "Fading Soul #1"
+    },
+    {
+      "name": "Fading Soul #2"
+    },
+    {
+      "name": "Fading Soul #3"
+    },
+    {
+      "name": "Ring of Sacrifice #1"
+    },
+    {
+      "name": "Ring of Sacrifice #2"
+    },
+    {
+      "name": "Ring of Sacrifice #3"
+    },
+    {
+      "name": "Ring of Sacrifice #4"
+    },
+    {
+      "name": "Homeward Bone #1"
+    },
+    {
+      "name": "Homeward Bone #2"
+    },
+    {
+      "name": "Homeward Bone #3"
+    },
+    {
+      "name": "Homeward Bone #4"
+    },
+    {
+      "name": "Homeward Bone #5"
+    },
+    {
+      "name": "Homeward Bone #6"
+    },
+    {
+      "name": "Homeward Bone #7"
+    },
+    {
+      "name": "Homeward Bone #8"
+    },
+    {
+      "name": "Homeward Bone #9"
+    },
+    {
+      "name": "Homeward Bone #10"
+    },
+    {
+      "name": "Homeward Bone #11"
+    },
+    {
+      "name": "Homeward Bone #12"
+    },
+    {
+      "name": "Homeward Bone #13"
+    },
+    {
+      "name": "Homeward Bone #14"
+    },
+    {
+      "name": "Homeward Bone #15"
+    },
+    {
+      "name": "Homeward Bone #16"
+    },
+    {
+      "name": "Ember #1"
+    },
+    {
+      "name": "Ember #2"
+    },
+    {
+      "name": "Ember #3"
+    },
+    {
+      "name": "Ember #4"
+    },
+    {
+      "name": "Ember #5"
+    },
+    {
+      "name": "Ember #6"
+    },
+    {
+      "name": "Ember #7"
+    },
+    {
+      "name": "Ember #8"
+    },
+    {
+      "name": "Ember #9"
+    },
+    {
+      "name": "Ember #10"
+    },
+    {
+      "name": "Ember #11"
+    },
+    {
+      "name": "Ember #12"
+    },
+    {
+      "name": "Ember #13"
+    },
+    {
+      "name": "Ember #14"
+    },
+    {
+      "name": "Ember #15"
+    },
+    {
+      "name": "Ember #16"
+    },
+    {
+      "name": "Ember #17"
+    },
+    {
+      "name": "Ember #18"
+    },
+    {
+      "name": "Ember #19"
+    },
+    {
+      "name": "Ember #20"
+    },
+    {
+      "name": "Ember #21"
+    },
+    {
+      "name": "Ember #22"
+    },
+    {
+      "name": "Ember #23"
+    },
+    {
+      "name": "Ember #24"
+    },
+    {
+      "name": "Ember #25"
+    },
+    {
+      "name": "Ember #26"
+    },
+    {
+      "name": "Ember #27"
+    },
+    {
+      "name": "Ember #28"
+    },
+    {
+      "name": "Ember #29"
+    },
+    {
+      "name": "Ember #30"
+    },
+    {
+      "name": "Ember #31"
+    },
+    {
+      "name": "Ember #32"
+    },
+    {
+      "name": "Ember #33"
+    },
+    {
+      "name": "Ember #34"
+    },
+    {
+      "name": "Ember #35"
+    },
+    {
+      "name": "Ember #36"
+    },
+    {
+      "name": "Ember #37"
+    },
+    {
+      "name": "Ember #38"
+    },
+    {
+      "name": "Ember #39"
+    },
+    {
+      "name": "Ember #40"
+    },
+    {
+      "name": "Ember #41"
+    },
+    {
+      "name": "Ember #42"
+    },
+    {
+      "name": "Ember #43"
+    },
+    {
+      "name": "Ember #44"
+    },
+    {
+      "name": "Ember #45"
+    },
+    {
+      "name": "Green Blossom #1"
+    },
+    {
+      "name": "Green Blossom #2"
+    },
+    {
+      "name": "Green Blossom #3"
+    },
+    {
+      "name": "Green Blossom #4"
+    },
+    {
+      "name": "Green Blossom #5"
+    },
+    {
+      "name": "Green Blossom #6"
+    },
+    {
+      "name": "Human Pine Resin #1"
+    },
+    {
+      "name": "Human Pine Resin #2"
+    },
+    {
+      "name": "Charcoal Pine Bundle #1"
+    },
+    {
+      "name": "Charcoal Pine Bundle #2"
+    },
+    {
+      "name": "Rotten Pine Resin #1"
+    },
+    {
+      "name": "Rotten Pine Resin #2"
+    },
+    {
+      "name": "Pale Tongue #1"
+    },
+    {
+      "name": "Pale Tongue #2"
+    },
+    {
+      "name": "Alluring Skull #1"
+    },
+    {
+      "name": "Alluring Skull #2"
+    },
+    {
+      "name": "Undead Hunter Charm #1"
+    },
+    {
+      "name": "Undead Hunter Charm #2"
+    },
+    {
+      "name": "Duel Charm #1"
+    },
+    {
+      "name": "Duel Charm #2"
+    },
+    {
+      "name": "Rusted Coin #1"
+    },
+    {
+      "name": "Rusted Coin #2"
+    },
+    {
+      "name": "Rusted Gold Coin #1"
+    },
+    {
+      "name": "Rusted Gold Coin #2"
+    },
+    {
+      "name": "Rusted Gold Coin #3"
+    },
+    {
+      "name": "Titanite Chunk #1"
+    },
+    {
+      "name": "Titanite Chunk #2"
+    },
+    {
+      "name": "Titanite Chunk #3"
+    },
+    {
+      "name": "Titanite Chunk #4"
+    },
+    {
+      "name": "Titanite Chunk #5"
+    },
+    {
+      "name": "Titanite Chunk #6"
+    },
+    {
+      "name": "Titanite Chunk #7"
+    },
+    {
+      "name": "Titanite Chunk #8"
+    },
+    {
+      "name": "Titanite Chunk #9"
+    },
+    {
+      "name": "Titanite Chunk #10"
+    },
+    {
+      "name": "Titanite Chunk #11"
+    },
+    {
+      "name": "Titanite Chunk #12"
+    },
+    {
+      "name": "Titanite Chunk #13"
+    },
+    {
+      "name": "Titanite Chunk #14"
+    },
+    {
+      "name": "Titanite Chunk #15"
+    },
+    {
+      "name": "Titanite Chunk #16"
+    },
+    {
+      "name": "Twinkling Titanite #1"
+    },
+    {
+      "name": "Twinkling Titanite #2"
+    },
+    {
+      "name": "Twinkling Titanite #3"
+    },
+    {
+      "name": "Twinkling Titanite #4"
+    },
+    {
+      "name": "Twinkling Titanite #5"
+    },
+    {
+      "name": "Twinkling Titanite #6"
+    },
+    {
+      "name": "Twinkling Titanite #7"
+    },
+    {
+      "name": "PW: Follower Javelin"
+    },
+    {
+      "name": "PW: Frozen Weapon"
+    },
+    {
+      "name": "PW: Millwood Greatbow"
+    },
+    {
+      "name": "PW: Captains Ashes"
+    },
+    {
+      "name": "PW: Millwood Battle Axe"
+    },
+    {
+      "name": "PW: Ethereal Oak Shield"
+    },
+    {
+      "name": "PW: Crow Quills"
+    },
+    {
+      "name": "PW: Slave Knight Hood"
+    },
+    {
+      "name": "PW: Slave Knight Armor"
+    },
+    {
+      "name": "PW: Slave Knight Gauntlets"
+    },
+    {
+      "name": "PW: Slave Knight Leggings"
+    },
+    {
+      "name": "PW: Way of White Corona"
+    },
+    {
+      "name": "PW: Crow Talons"
+    },
+    {
+      "name": "PW: Quakestone Hammer"
+    },
+    {
+      "name": "PW: Earth Seeker"
+    },
+    {
+      "name": "PW: Follower Torch"
+    },
+    {
+      "name": "PW: Follower Shield"
+    },
+    {
+      "name": "PW: Follower Sabre"
+    },
+    {
+      "name": "PW: Snap Freeze"
+    },
+    {
+      "name": "PW: Floating Chaos"
+    },
+    {
+      "name": "PW: Pyromancer's Parting Flame"
+    },
+    {
+      "name": "PW: Vilhelm's Helm"
+    },
+    {
+      "name": "PW: Vilhelm's Armor"
+    },
+    {
+      "name": "PW: Vilhelm's Gauntlets"
+    },
+    {
+      "name": "PW: Vilhelm's Leggings"
+    },
+    {
+      "name": "PW: Valorheart"
+    },
+    {
+      "name": "PW: Champions Bones"
+    },
+    {
+      "name": "PW: Onyx Blade"
+    },
+    {
+      "name": "PW: Soul of Sister Friede"
+    },
+    {
+      "name": "PW: Titanite Slab"
+    },
+    {
+      "name": "PW: Chillbite Ring"
+    },
+    {
+      "name": "PW: Contraption Key"
+    },
+    {
+      "name": "DH: Loincloth"
+    },
+    {
+      "name": "DH: Aquamarine Dagger"
+    },
+    {
+      "name": "DH: Murky Hand Scythe"
+    },
+    {
+      "name": "DH: Murky Longstaff"
+    },
+    {
+      "name": "DH: Great Soul Dregs"
+    },
+    {
+      "name": "DH: Lothric War Banner"
+    },
+    {
+      "name": "DH: Projected Heal"
+    },
+    {
+      "name": "DH: Desert Pyromancer Hood"
+    },
+    {
+      "name": "DH: Desert Pyromancer Garb"
+    },
+    {
+      "name": "DH: Desert Pyromancer Gloves"
+    },
+    {
+      "name": "DH: Desert Pyromancer Skirt"
+    },
+    {
+      "name": "DH: Giant Door Shield"
+    },
+    {
+      "name": "DH: Herald Curved Greatsword"
+    },
+    {
+      "name": "DH: Flame Fan"
+    },
+    {
+      "name": "DH: Soul of the Demon Prince"
+    },
+    {
+      "name": "DH: Small Envoy Banner"
+    },
+    {
+      "name": "RC: Ruin Sentinel Helm"
+    },
+    {
+      "name": "RC: Ruin Sentinel Armor"
+    },
+    {
+      "name": "RC: Ruin Sentinel Gauntlets"
+    },
+    {
+      "name": "RC: Ruin Sentinel Leggings"
+    },
+    {
+      "name": "RC: Black Witch Veil"
+    },
+    {
+      "name": "RC: Black Witch Hat"
+    },
+    {
+      "name": "RC: Black Witch Garb"
+    },
+    {
+      "name": "RC: Black Witch Wrappings"
+    },
+    {
+      "name": "RC: Black Witch Trousers"
+    },
+    {
+      "name": "RC: White Preacher Head"
+    },
+    {
+      "name": "RC: Havel's Ring"
+    },
+    {
+      "name": "RC: Ringed Knight Spear"
+    },
+    {
+      "name": "RC: Dragonhead Shield"
+    },
+    {
+      "name": "RC: Ringed Knight Straight Sword"
+    },
+    {
+      "name": "RC: Preacher's Right Arm"
+    },
+    {
+      "name": "RC: White Birch Bow"
+    },
+    {
+      "name": "RC: Church Guardian Shiv"
+    },
+    {
+      "name": "RC: Dragonhead Greatshield"
+    },
+    {
+      "name": "RC: Ringed Knight Paired Greatswords"
+    },
+    {
+      "name": "RC: Shira's Crown"
+    },
+    {
+      "name": "RC: Shira's Armor"
+    },
+    {
+      "name": "RC: Shira's Gloves"
+    },
+    {
+      "name": "RC: Shira's Trousers"
+    },
+    {
+      "name": "RC: Titanite Slab"
+    },
+    {
+      "name": "RC: Crucifix of the Mad King"
+    },
+    {
+      "name": "RC: Sacred Chime of Filianore"
+    },
+    {
+      "name": "RC: Iron Dragonslayer Helm"
+    },
+    {
+      "name": "RC: Iron Dragonslayer Armor"
+    },
+    {
+      "name": "RC: Iron Dragonslayer Gauntlets"
+    },
+    {
+      "name": "RC: Iron Dragonslayer Leggings"
+    },
+    {
+      "name": "RC: Lightning Arrow"
+    },
+    {
+      "name": "RC: Ritual Spear Fragment"
+    },
+    {
+      "name": "RC: Antiquated Plain Garb"
+    },
+    {
+      "name": "RC: Violet Wrappings"
+    },
+    {
+      "name": "RC: Soul of Darkeater Midir"
+    },
+    {
+      "name": "RC: Soul of Slave Knight Gael"
+    },
+    {
+      "name": "RC: Blood of the Dark Souls"
+    },
+    {
+      "name": "Large Soul of an Unknown Traveler $1"
+    },
+    {
+      "name": "Large Soul of an Unknown Traveler $2"
+    },
+    {
+      "name": "Large Soul of an Unknown Traveler $3"
+    },
+    {
+      "name": "Large Soul of an Unknown Traveler $4"
+    },
+    {
+      "name": "Large Soul of an Unknown Traveler $5"
+    },
+    {
+      "name": "Large Soul of an Unknown Traveler $6"
+    },
+    {
+      "name": "Large Soul of an Unknown Traveler $7"
+    },
+    {
+      "name": "Large Soul of an Unknown Traveler $8"
+    },
+    {
+      "name": "Large Soul of an Unknown Traveler $9"
+    },
+    {
+      "name": "Soul of a Weary Warrior $1"
+    },
+    {
+      "name": "Soul of a Weary Warrior $2"
+    },
+    {
+      "name": "Soul of a Weary Warrior $3"
+    },
+    {
+      "name": "Soul of a Weary Warrior $4"
+    },
+    {
+      "name": "Soul of a Weary Warrior $5"
+    },
+    {
+      "name": "Large Soul of a Weary Warrior $1"
+    },
+    {
+      "name": "Large Soul of a Weary Warrior $2"
+    },
+    {
+      "name": "Large Soul of a Weary Warrior $3"
+    },
+    {
+      "name": "Large Soul of a Weary Warrior $4"
+    },
+    {
+      "name": "Large Soul of a Weary Warrior $5"
+    },
+    {
+      "name": "Large Soul of a Weary Warrior $6"
+    },
+    {
+      "name": "Soul of a Crestfallen Knight $1"
+    },
+    {
+      "name": "Soul of a Crestfallen Knight $2"
+    },
+    {
+      "name": "Soul of a Crestfallen Knight $3"
+    },
+    {
+      "name": "Soul of a Crestfallen Knight $4"
+    },
+    {
+      "name": "Soul of a Crestfallen Knight $5"
+    },
+    {
+      "name": "Soul of a Crestfallen Knight $6"
+    },
+    {
+      "name": "Large Soul of a Crestfallen Knight $1"
+    },
+    {
+      "name": "Large Soul of a Crestfallen Knight $2"
+    },
+    {
+      "name": "Large Soul of a Crestfallen Knight $3"
+    },
+    {
+      "name": "Homeward Bone $1"
+    },
+    {
+      "name": "Homeward Bone $2"
+    },
+    {
+      "name": "Homeward Bone $3"
+    },
+    {
+      "name": "Homeward Bone $4"
+    },
+    {
+      "name": "Homeward Bone $5"
+    },
+    {
+      "name": "Homeward Bone $6"
+    },
+    {
+      "name": "Large Titanite Shard $1"
+    },
+    {
+      "name": "Large Titanite Shard $2"
+    },
+    {
+      "name": "Large Titanite Shard $3"
+    },
+    {
+      "name": "Titanite Chunk $1"
+    },
+    {
+      "name": "Titanite Chunk $2"
+    },
+    {
+      "name": "Titanite Chunk $3"
+    },
+    {
+      "name": "Titanite Chunk $4"
+    },
+    {
+      "name": "Titanite Chunk $5"
+    },
+    {
+      "name": "Titanite Chunk $6"
+    },
+    {
+      "name": "Titanite Chunk $7"
+    },
+    {
+      "name": "Titanite Chunk $8"
+    },
+    {
+      "name": "Titanite Chunk $9"
+    },
+    {
+      "name": "Titanite Chunk $10"
+    },
+    {
+      "name": "Titanite Chunk $11"
+    },
+    {
+      "name": "Titanite Chunk $12"
+    },
+    {
+      "name": "Titanite Chunk $13"
+    },
+    {
+      "name": "Titanite Chunk $14"
+    },
+    {
+      "name": "Titanite Chunk $15"
+    },
+    {
+      "name": "Twinkling Titanite $1"
+    },
+    {
+      "name": "Twinkling Titanite $2"
+    },
+    {
+      "name": "Twinkling Titanite $3"
+    },
+    {
+      "name": "Twinkling Titanite $4"
+    },
+    {
+      "name": "Twinkling Titanite $5"
+    },
+    {
+      "name": "Rusted Coin $1"
+    },
+    {
+      "name": "Rusted Coin $2"
+    },
+    {
+      "name": "Rusted Coin $3"
+    },
+    {
+      "name": "Ember $1"
+    },
+    {
+      "name": "Ember $2"
+    },
+    {
+      "name": "Ember $3"
+    },
+    {
+      "name": "Ember $4"
+    },
+    {
+      "name": "Ember $5"
+    },
+    {
+      "name": "Ember $6"
+    },
+    {
+      "name": "Ember $7"
+    },
+    {
+      "name": "Ember $8"
+    },
+    {
+      "name": "Ember $9"
+    },
+    {
+      "name": "Ember $10"
     }
   ],
   "status": "Updated"

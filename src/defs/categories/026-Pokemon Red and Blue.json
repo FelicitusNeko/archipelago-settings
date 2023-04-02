@@ -79,7 +79,7 @@
     {
       "name": "cerulean_cave_condition",
       "description": "Number of badges, HMs, and key items (not counting items you can lose) required to access Cerulean Cave.",
-      "high": 25,
+      "high": 26,
       "readableName": "Cerulean Cave condition",
       "low": 0,
       "type": "range",
@@ -194,11 +194,66 @@
       "default": "off"
     },
     {
+      "name": "prizesanity",
+      "description": "Shuffles the TM prizes at the Celadon Prize Corner into the item pool.",
+      "readableName": "prizesanity",
+      "type": "toggle",
+      "default": false
+    },
+    {
       "name": "trainersanity",
       "description": "Add a location check to every trainer in the game, which can be obtained by talking to a trainer after defeating them. Does not affect gym leaders and some scripted event battles (including all Rival, Giovanni, and Cinnabar Gym battles).",
       "readableName": "Trainersanity",
       "type": "toggle",
       "default": false
+    },
+    {
+      "name": "require_pokedex",
+      "description": "Require the Pokédex to obtain items from Oak's Aides or from Dexsanity checks.",
+      "readableName": "Require Pokédex",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "all_pokemon_seen",
+      "description": "Start with all Pokemon \"seen\" in your Pokédex. This allows you to see where Pokémon can be encountered in the wild. Pokémon found by fishing or in the Cerulean Cave are not displayed.",
+      "readableName": "All Pokémon seen",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "dexsanity",
+      "description": "Adds a location check for each Pokémon flagged \"Owned\" on your Pokédex. If accessibility is set to `locations` and `randomize_wild_pokemon` is off, `catch_em_all` is not `all_pokemon` or `randomize_legendary_pokemon` is not `any`, accessibility will be forced to `items` instead, as not all Dexsanity locations can be guaranteed to be considered reachable in logic.\n\nIf Pokédex is required, the items for Pokémon acquired before acquiring the Pokédex can be found by talking to Professor Oak or evaluating the Pokédex via Oak's PC.",
+      "readableName": "Dexsanity",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "oaks_aide_rt_2",
+      "description": "Number of Pokémon registered in the Pokedex required to receive the item from Oak's Aide on Route 2. *(Vanilla is 10)*",
+      "high": 80,
+      "readableName": "Oak's Aide Route 2",
+      "low": 0,
+      "type": "range",
+      "default": 10
+    },
+    {
+      "name": "oaks_aide_rt_11",
+      "description": "Number of Pokémon registered in the Pokedex required to receive the item from Oak's Aide on Route 11. *(Vanilla is 30)*",
+      "high": 80,
+      "readableName": "Oak's Aide Route 11",
+      "low": 0,
+      "type": "range",
+      "default": 20
+    },
+    {
+      "name": "oaks_aide_rt_15",
+      "description": "Number of Pokémon registered in the Pokedex required to receive the item from Oak's Aide on Route 15. *(Vanilla is 50)*",
+      "high": 80,
+      "readableName": "Oak's Aide Route 15",
+      "low": 0,
+      "type": "range",
+      "default": 30
     },
     {
       "name": "badges_needed_for_hm_moves",
@@ -237,31 +292,11 @@
       "default": true
     },
     {
-      "name": "oaks_aide_rt_2",
-      "description": "Number of Pokémon registered in the Pokedex required to receive the item from Oak's Aide on Route 2. *(Vanilla is 10)*",
-      "high": 80,
-      "readableName": "Oak's Aide Route 2",
-      "low": 0,
-      "type": "range",
-      "default": 10
-    },
-    {
-      "name": "oaks_aide_rt_11",
-      "description": "Number of Pokémon registered in the Pokedex required to receive the item from Oak's Aide on Route 11. *(Vanilla is 30)*",
-      "high": 80,
-      "readableName": "Oak's Aide Route 11",
-      "low": 0,
-      "type": "range",
-      "default": 20
-    },
-    {
-      "name": "oaks_aide_rt_15",
-      "description": "Number of Pokémon registered in the Pokedex required to receive the item from Oak's Aide on Route 15. *(Vanilla is 50)*",
-      "high": 80,
-      "readableName": "Oak's Aide Route 15",
-      "low": 0,
-      "type": "range",
-      "default": 30
+      "name": "randomize_rock_tunnel",
+      "description": "Randomize the layout of Rock Tunnel. *This is highly experimental.*",
+      "readableName": "Randomize Rock Tunnel",
+      "type": "toggle",
+      "default": false
     },
     {
       "name": "blind_trainers",
@@ -332,6 +367,13 @@
       ],
       "type": "choice",
       "default": "vanilla"
+    },
+    {
+      "name": "area_1_to_1_mapping",
+      "description": "When randomizing wild Pokémon, for each zone, all instances of a particular Pokémon will be replaced with the same Pokémon, resulting in fewer Pokémon in each area.",
+      "readableName": "Area 1:1 mapping",
+      "type": "toggle",
+      "default": true
     },
     {
       "name": "randomize_starter_pokemon",
@@ -525,6 +567,13 @@
       "default": false
     },
     {
+      "name": "move_balancing",
+      "description": "All one-hit-KO moves and fixed-damage moves become normal damaging moves. Blizzard, and moves that cause sleep have their accuracy reduced.",
+      "readableName": "Move balancing",
+      "type": "toggle",
+      "default": false
+    },
+    {
       "name": "randomize_pokemon_movesets",
       "description": "Randomize the moves learned by Pokemon.",
       "readableName": "Randomize Pokémon movesets",
@@ -547,6 +596,13 @@
       "default": "vanilla"
     },
     {
+      "name": "confine_transform_to_ditto",
+      "description": "Regardless of moveset randomization, will keep Ditto's first move as Transform and no others will learn it. If an enemy Pokémon uses Transform before you catch it, it will permanently change to Ditto after capture.",
+      "readableName": "Restrict Transform to Ditto",
+      "type": "toggle",
+      "default": true
+    },
+    {
       "name": "start_with_four_moves",
       "description": "If movesets are randomized, this will give all Pokémon 4 starting moves.",
       "readableName": "Start with four moves",
@@ -561,56 +617,72 @@
       "default": true
     },
     {
-      "name": "tm_compatibility",
-      "description": "Randomize which Pokémon can learn each TM.",
-      "readableName": "TM compatibility",
-      "values": [
-        {
-          "name": "vanilla",
-          "readableName": "Vanilla"
-        },
-        {
-          "name": "prefer_types",
-          "description": "90% chance if Pokemon's type matches the move, 50% chance if move is Normal type and the Pokemon is not, and 25% chance otherwise. Pokemon will retain the same TM compatibility when they evolve if the evolved form has the same type(s). Mew will always be able to learn every TM.",
-          "readableName": "Prefer types"
-        },
-        {
-          "name": "completely_random",
-          "readableName": "Completely random"
-        },
-        {
-          "name": "full_compatibility",
-          "readableName": "Full compatibility"
-        }
-      ],
-      "type": "choice",
-      "default": "vanilla"
+      "name": "randomize_tm_moves",
+      "description": "Randomize the moves taught by TMs. All TM items will be flagged as 'filler' items regardless of how good the move they teach are.",
+      "readableName": "Randomize TM moves",
+      "type": "toggle",
+      "default": false
     },
     {
-      "name": "hm_compatibility",
-      "description": "Randomize which Pokemon can learn each HM.",
-      "readableName": "HM compatibility",
-      "values": [
-        {
-          "name": "vanilla",
-          "readableName": "Vanilla"
-        },
-        {
-          "name": "prefer_types",
-          "description": "100% chance if Pokemon's type matches the move, 75% chance if move is Normal type and the Pokemon is not, and 25% chance otherwise. Pokemon will retain the same HM compatibility when they evolve if the evolved form has the same type(s). Mew will always be able to learn every HM.",
-          "readableName": "Prefer types"
-        },
-        {
-          "name": "completely_random",
-          "readableName": "Completely random"
-        },
-        {
-          "name": "full_compatibility",
-          "readableName": "Full compatibility"
-        }
-      ],
-      "type": "choice",
-      "default": "vanilla"
+      "name": "tm_same_type_compatibility",
+      "description": "Chance of each TM being usable on each Pokémon whose type matches the move.",
+      "high": 100,
+      "readableName": "TM same type compatibility",
+      "low": -1,
+      "type": "range",
+      "default": null
+    },
+    {
+      "name": "tm_normal_type_compatibility",
+      "description": "Chance of each TM being usable on each Pokémon if the move is Normal type and the Pokémon is not.",
+      "high": 100,
+      "readableName": "TM Normal type compatibility",
+      "low": -1,
+      "type": "range",
+      "default": null
+    },
+    {
+      "name": "tm_other_type_compatibility",
+      "description": "Chance of each TM being usable on each Pokémon if the move a type other than Normal or one of the Pokémon's types.",
+      "high": 100,
+      "readableName": "TM other type compatibility",
+      "low": -1,
+      "type": "range",
+      "default": null
+    },
+    {
+      "name": "hm_same_type_compatibility",
+      "description": "Chance of each HM being usable on each Pokémon whose type matches the move. At least one Pokémon will always be able to learn the moves needed to meet your accessibility requirements.",
+      "high": 100,
+      "readableName": "HM same type compatibility",
+      "low": -1,
+      "type": "range",
+      "default": null
+    },
+    {
+      "name": "hm_normal_type_compatibility",
+      "description": "Chance of each HM being usable on each Pokémon if the move is Normal type and the Pokémon is not. At least one Pokémon will always be able to learn the moves needed to meet your accessibility requirements.",
+      "high": 100,
+      "readableName": "HM Normal type compatibility",
+      "low": -1,
+      "type": "range",
+      "default": null
+    },
+    {
+      "name": "hm_other_type_compatibility",
+      "description": "Chance of each HM being usable on each Pokémon if the move a type other than Normal or one of the Pokémon's types. At least one Pokémon will always be able to learn the moves needed to meet your accessibility requirements.",
+      "high": 100,
+      "readableName": "HM other type compatibility",
+      "low": -1,
+      "type": "range",
+      "default": null
+    },
+    {
+      "name": "inherit_tm_hm_compatibility",
+      "description": "If on, evolved Pokemon will inherit their pre-evolved form's TM and HM compatibilities. They will then roll the above set chances again at a 50% lower rate for all TMs and HMs their predecessor could not learn, unless the evolved form has additional or different types, then moves of those new types will be rolled at the full set chance.",
+      "readableName": "Inherit TM/HM compatibility",
+      "type": "toggle",
+      "default": false
     },
     {
       "name": "randomize_pokemon_types",
@@ -903,6 +975,34 @@
       "default": "disabled"
     },
     {
+      "name": "randomize_pokemon_palettes",
+      "description": "Modify palettes of Pokémon.",
+      "readableName": "Randomize Pokémon palettes",
+      "values": [
+        {
+          "name": "vanilla",
+          "readableName": "Vanilla"
+        },
+        {
+          "name": "primary_type",
+          "readableName": "Primary type",
+          "description": "Set Pokémon's palettes based on their primary type."
+        },
+        {
+          "name": "follow_evolutions",
+          "readableName": "Follow evolutions",
+          "description": "Randomize palettes, but palettes will remain the same through evolutions (except Eeveelutions)."
+        },
+        {
+          "name": "completely_random",
+          "readableName": "Completely random",
+          "description": "Randomize all Pokémon's palettes individually."
+        }
+      ],
+      "type": "choice",
+      "default": "vanilla"
+    },
+    {
       "type": "deathlink"
     }
   ],
@@ -1072,6 +1172,9 @@
       "name": "Dire Hit"
     },
     {
+      "name": "10 Coins"
+    },
+    {
       "name": "Fresh Water"
     },
     {
@@ -1169,6 +1272,12 @@
     },
     {
       "name": "Fire Trap"
+    },
+    {
+      "name": "20 Coins"
+    },
+    {
+      "name": "100 Coins"
     },
     {
       "name": "HM01 Cut"
@@ -1334,6 +1443,156 @@
     },
     {
       "name": "TM50 Substitute"
+    },
+    {
+      "name": "TM01"
+    },
+    {
+      "name": "TM02"
+    },
+    {
+      "name": "TM03"
+    },
+    {
+      "name": "TM04"
+    },
+    {
+      "name": "TM05"
+    },
+    {
+      "name": "TM06"
+    },
+    {
+      "name": "TM07"
+    },
+    {
+      "name": "TM08"
+    },
+    {
+      "name": "TM09"
+    },
+    {
+      "name": "TM10"
+    },
+    {
+      "name": "TM11"
+    },
+    {
+      "name": "TM12"
+    },
+    {
+      "name": "TM13"
+    },
+    {
+      "name": "TM14"
+    },
+    {
+      "name": "TM15"
+    },
+    {
+      "name": "TM16"
+    },
+    {
+      "name": "TM17"
+    },
+    {
+      "name": "TM18"
+    },
+    {
+      "name": "TM19"
+    },
+    {
+      "name": "TM20"
+    },
+    {
+      "name": "TM21"
+    },
+    {
+      "name": "TM22"
+    },
+    {
+      "name": "TM23"
+    },
+    {
+      "name": "TM24"
+    },
+    {
+      "name": "TM25"
+    },
+    {
+      "name": "TM26"
+    },
+    {
+      "name": "TM27"
+    },
+    {
+      "name": "TM28"
+    },
+    {
+      "name": "TM29"
+    },
+    {
+      "name": "TM30"
+    },
+    {
+      "name": "TM31"
+    },
+    {
+      "name": "TM32"
+    },
+    {
+      "name": "TM33"
+    },
+    {
+      "name": "TM34"
+    },
+    {
+      "name": "TM35"
+    },
+    {
+      "name": "TM36"
+    },
+    {
+      "name": "TM37"
+    },
+    {
+      "name": "TM38"
+    },
+    {
+      "name": "TM39"
+    },
+    {
+      "name": "TM40"
+    },
+    {
+      "name": "TM41"
+    },
+    {
+      "name": "TM42"
+    },
+    {
+      "name": "TM43"
+    },
+    {
+      "name": "TM44"
+    },
+    {
+      "name": "TM45"
+    },
+    {
+      "name": "TM46"
+    },
+    {
+      "name": "TM47"
+    },
+    {
+      "name": "TM48"
+    },
+    {
+      "name": "TM49"
+    },
+    {
+      "name": "TM50"
     }
   ],
   "locations": [
@@ -1431,7 +1690,7 @@
       "name": "Celadon Gym - Erika 2"
     },
     {
-      "name": "Silph Co 11F - Silph Co President"
+      "name": "Silph Co 11F - Silph Co President (Card Key)"
     },
     {
       "name": "Silph Co 2F - Woman"
@@ -1908,7 +2167,7 @@
       "name": "Pokemon Mansion 3F - Hidden Item Behind Burglar"
     },
     {
-      "name": "Route 23 - Hidden Item Rocks Before Final Guard"
+      "name": "Route 23 - Hidden Item Rocks Before Victory Road"
     },
     {
       "name": "Route 23 - Hidden Item East Bush After Water"
@@ -2911,6 +3170,531 @@
     },
     {
       "name": "Indigo Plateau - Lance"
+    },
+    {
+      "name": "Cinnabar Gym - Burglar 1"
+    },
+    {
+      "name": "Cinnabar Gym - Super Nerd 1"
+    },
+    {
+      "name": "Cinnabar Gym - Super Nerd 2"
+    },
+    {
+      "name": "Cinnabar Gym - Burglar 2"
+    },
+    {
+      "name": "Cinnabar Gym - Super Nerd 3"
+    },
+    {
+      "name": "Cinnabar Gym - Super Nerd 4"
+    },
+    {
+      "name": "Cinnabar Gym - Super Nerd 5"
+    },
+    {
+      "name": "Celadon Prize Corner - Item Prize 1"
+    },
+    {
+      "name": "Celadon Prize Corner - Item Prize 2"
+    },
+    {
+      "name": "Celadon Prize Corner - Item Prize 3"
+    },
+    {
+      "name": "Celadon Game Corner - West Gambler's Gift (Coin Case)"
+    },
+    {
+      "name": "Celadon Game Corner - Center Gambler's Gift (Coin Case)"
+    },
+    {
+      "name": "Celadon Game Corner - East Gambler's Gift (Coin Case)"
+    },
+    {
+      "name": "Celadon Game Corner - Hidden Item Northwest By Counter (Coin Case)"
+    },
+    {
+      "name": "Celadon Game Corner - Hidden Item Southwest Corner (Coin Case)"
+    },
+    {
+      "name": "Celadon Game Corner - Hidden Item Near Rumor Man (Coin Case)"
+    },
+    {
+      "name": "Celadon Game Corner - Hidden Item Near Speculating Woman (Coin Case)"
+    },
+    {
+      "name": "Celadon Game Corner - Hidden Item Near West Gifting Gambler (Coin Case)"
+    },
+    {
+      "name": "Celadon Game Corner - Hidden Item Near Wonderful Time Woman (Coin Case)"
+    },
+    {
+      "name": "Celadon Game Corner - Hidden Item Near Failing Gym Information Guy (Coin Case)"
+    },
+    {
+      "name": "Celadon Game Corner - Hidden Item Near East Gifting Gambler (Coin Case)"
+    },
+    {
+      "name": "Celadon Game Corner - Hidden Item Near Hooked Guy (Coin Case)"
+    },
+    {
+      "name": "Celadon Game Corner - Hidden Item at End of Horizontal Machine Row (Coin Case)"
+    },
+    {
+      "name": "Celadon Game Corner - Hidden Item in Front of Horizontal Machine Row (Coin Case)"
+    },
+    {
+      "name": "Pokedex - Bulbasaur"
+    },
+    {
+      "name": "Pokedex - Ivysaur"
+    },
+    {
+      "name": "Pokedex - Venusaur"
+    },
+    {
+      "name": "Pokedex - Charmander"
+    },
+    {
+      "name": "Pokedex - Charmeleon"
+    },
+    {
+      "name": "Pokedex - Charizard"
+    },
+    {
+      "name": "Pokedex - Squirtle"
+    },
+    {
+      "name": "Pokedex - Wartortle"
+    },
+    {
+      "name": "Pokedex - Blastoise"
+    },
+    {
+      "name": "Pokedex - Caterpie"
+    },
+    {
+      "name": "Pokedex - Metapod"
+    },
+    {
+      "name": "Pokedex - Butterfree"
+    },
+    {
+      "name": "Pokedex - Weedle"
+    },
+    {
+      "name": "Pokedex - Kakuna"
+    },
+    {
+      "name": "Pokedex - Beedrill"
+    },
+    {
+      "name": "Pokedex - Pidgey"
+    },
+    {
+      "name": "Pokedex - Pidgeotto"
+    },
+    {
+      "name": "Pokedex - Pidgeot"
+    },
+    {
+      "name": "Pokedex - Rattata"
+    },
+    {
+      "name": "Pokedex - Raticate"
+    },
+    {
+      "name": "Pokedex - Spearow"
+    },
+    {
+      "name": "Pokedex - Fearow"
+    },
+    {
+      "name": "Pokedex - Ekans"
+    },
+    {
+      "name": "Pokedex - Arbok"
+    },
+    {
+      "name": "Pokedex - Pikachu"
+    },
+    {
+      "name": "Pokedex - Raichu"
+    },
+    {
+      "name": "Pokedex - Sandshrew"
+    },
+    {
+      "name": "Pokedex - Sandslash"
+    },
+    {
+      "name": "Pokedex - Nidoran F"
+    },
+    {
+      "name": "Pokedex - Nidorina"
+    },
+    {
+      "name": "Pokedex - Nidoqueen"
+    },
+    {
+      "name": "Pokedex - Nidoran M"
+    },
+    {
+      "name": "Pokedex - Nidorino"
+    },
+    {
+      "name": "Pokedex - Nidoking"
+    },
+    {
+      "name": "Pokedex - Clefairy"
+    },
+    {
+      "name": "Pokedex - Clefable"
+    },
+    {
+      "name": "Pokedex - Vulpix"
+    },
+    {
+      "name": "Pokedex - Ninetales"
+    },
+    {
+      "name": "Pokedex - Jigglypuff"
+    },
+    {
+      "name": "Pokedex - Wigglytuff"
+    },
+    {
+      "name": "Pokedex - Zubat"
+    },
+    {
+      "name": "Pokedex - Golbat"
+    },
+    {
+      "name": "Pokedex - Oddish"
+    },
+    {
+      "name": "Pokedex - Gloom"
+    },
+    {
+      "name": "Pokedex - Vileplume"
+    },
+    {
+      "name": "Pokedex - Paras"
+    },
+    {
+      "name": "Pokedex - Parasect"
+    },
+    {
+      "name": "Pokedex - Venonat"
+    },
+    {
+      "name": "Pokedex - Venomoth"
+    },
+    {
+      "name": "Pokedex - Diglett"
+    },
+    {
+      "name": "Pokedex - Dugtrio"
+    },
+    {
+      "name": "Pokedex - Meowth"
+    },
+    {
+      "name": "Pokedex - Persian"
+    },
+    {
+      "name": "Pokedex - Psyduck"
+    },
+    {
+      "name": "Pokedex - Golduck"
+    },
+    {
+      "name": "Pokedex - Mankey"
+    },
+    {
+      "name": "Pokedex - Primeape"
+    },
+    {
+      "name": "Pokedex - Growlithe"
+    },
+    {
+      "name": "Pokedex - Arcanine"
+    },
+    {
+      "name": "Pokedex - Poliwag"
+    },
+    {
+      "name": "Pokedex - Poliwhirl"
+    },
+    {
+      "name": "Pokedex - Poliwrath"
+    },
+    {
+      "name": "Pokedex - Abra"
+    },
+    {
+      "name": "Pokedex - Kadabra"
+    },
+    {
+      "name": "Pokedex - Alakazam"
+    },
+    {
+      "name": "Pokedex - Machop"
+    },
+    {
+      "name": "Pokedex - Machoke"
+    },
+    {
+      "name": "Pokedex - Machamp"
+    },
+    {
+      "name": "Pokedex - Bellsprout"
+    },
+    {
+      "name": "Pokedex - Weepinbell"
+    },
+    {
+      "name": "Pokedex - Victreebel"
+    },
+    {
+      "name": "Pokedex - Tentacool"
+    },
+    {
+      "name": "Pokedex - Tentacruel"
+    },
+    {
+      "name": "Pokedex - Geodude"
+    },
+    {
+      "name": "Pokedex - Graveler"
+    },
+    {
+      "name": "Pokedex - Golem"
+    },
+    {
+      "name": "Pokedex - Ponyta"
+    },
+    {
+      "name": "Pokedex - Rapidash"
+    },
+    {
+      "name": "Pokedex - Slowpoke"
+    },
+    {
+      "name": "Pokedex - Slowbro"
+    },
+    {
+      "name": "Pokedex - Magnemite"
+    },
+    {
+      "name": "Pokedex - Magneton"
+    },
+    {
+      "name": "Pokedex - Farfetchd"
+    },
+    {
+      "name": "Pokedex - Doduo"
+    },
+    {
+      "name": "Pokedex - Dodrio"
+    },
+    {
+      "name": "Pokedex - Seel"
+    },
+    {
+      "name": "Pokedex - Dewgong"
+    },
+    {
+      "name": "Pokedex - Grimer"
+    },
+    {
+      "name": "Pokedex - Muk"
+    },
+    {
+      "name": "Pokedex - Shellder"
+    },
+    {
+      "name": "Pokedex - Cloyster"
+    },
+    {
+      "name": "Pokedex - Gastly"
+    },
+    {
+      "name": "Pokedex - Haunter"
+    },
+    {
+      "name": "Pokedex - Gengar"
+    },
+    {
+      "name": "Pokedex - Onix"
+    },
+    {
+      "name": "Pokedex - Drowzee"
+    },
+    {
+      "name": "Pokedex - Hypno"
+    },
+    {
+      "name": "Pokedex - Krabby"
+    },
+    {
+      "name": "Pokedex - Kingler"
+    },
+    {
+      "name": "Pokedex - Voltorb"
+    },
+    {
+      "name": "Pokedex - Electrode"
+    },
+    {
+      "name": "Pokedex - Exeggcute"
+    },
+    {
+      "name": "Pokedex - Exeggutor"
+    },
+    {
+      "name": "Pokedex - Cubone"
+    },
+    {
+      "name": "Pokedex - Marowak"
+    },
+    {
+      "name": "Pokedex - Hitmonlee"
+    },
+    {
+      "name": "Pokedex - Hitmonchan"
+    },
+    {
+      "name": "Pokedex - Lickitung"
+    },
+    {
+      "name": "Pokedex - Koffing"
+    },
+    {
+      "name": "Pokedex - Weezing"
+    },
+    {
+      "name": "Pokedex - Rhyhorn"
+    },
+    {
+      "name": "Pokedex - Rhydon"
+    },
+    {
+      "name": "Pokedex - Chansey"
+    },
+    {
+      "name": "Pokedex - Tangela"
+    },
+    {
+      "name": "Pokedex - Kangaskhan"
+    },
+    {
+      "name": "Pokedex - Horsea"
+    },
+    {
+      "name": "Pokedex - Seadra"
+    },
+    {
+      "name": "Pokedex - Goldeen"
+    },
+    {
+      "name": "Pokedex - Seaking"
+    },
+    {
+      "name": "Pokedex - Staryu"
+    },
+    {
+      "name": "Pokedex - Starmie"
+    },
+    {
+      "name": "Pokedex - Mr Mime"
+    },
+    {
+      "name": "Pokedex - Scyther"
+    },
+    {
+      "name": "Pokedex - Jynx"
+    },
+    {
+      "name": "Pokedex - Electabuzz"
+    },
+    {
+      "name": "Pokedex - Magmar"
+    },
+    {
+      "name": "Pokedex - Pinsir"
+    },
+    {
+      "name": "Pokedex - Tauros"
+    },
+    {
+      "name": "Pokedex - Magikarp"
+    },
+    {
+      "name": "Pokedex - Gyarados"
+    },
+    {
+      "name": "Pokedex - Lapras"
+    },
+    {
+      "name": "Pokedex - Ditto"
+    },
+    {
+      "name": "Pokedex - Eevee"
+    },
+    {
+      "name": "Pokedex - Vaporeon"
+    },
+    {
+      "name": "Pokedex - Jolteon"
+    },
+    {
+      "name": "Pokedex - Flareon"
+    },
+    {
+      "name": "Pokedex - Porygon"
+    },
+    {
+      "name": "Pokedex - Omanyte"
+    },
+    {
+      "name": "Pokedex - Omastar"
+    },
+    {
+      "name": "Pokedex - Kabuto"
+    },
+    {
+      "name": "Pokedex - Kabutops"
+    },
+    {
+      "name": "Pokedex - Aerodactyl"
+    },
+    {
+      "name": "Pokedex - Snorlax"
+    },
+    {
+      "name": "Pokedex - Articuno"
+    },
+    {
+      "name": "Pokedex - Zapdos"
+    },
+    {
+      "name": "Pokedex - Moltres"
+    },
+    {
+      "name": "Pokedex - Dratini"
+    },
+    {
+      "name": "Pokedex - Dragonair"
+    },
+    {
+      "name": "Pokedex - Dragonite"
+    },
+    {
+      "name": "Pokedex - Mewtwo"
+    },
+    {
+      "name": "Pokedex - Mew"
     }
   ],
   "status": "Updated"

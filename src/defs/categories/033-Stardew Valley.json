@@ -1,0 +1,2509 @@
+{
+  "category": "Stardew Valley",
+  "index": 33,
+  "settings": [
+    {
+      "name": "starting_money",
+      "description": "Amount of gold when arriving at the farm. Set to -1 or unlimited for infinite money in this playthrough.",
+      "high": 50000,
+      "readableName": "Starting money",
+      "low": -1,
+      "type": "range",
+      "default": 5000,
+      "aliases": {
+        "unlimited": -1,
+        "vanilla": 500,
+        "extra": 2000,
+        "rich": 5000,
+        "very rich": 20000,
+        "filthy rich": 50000
+      }
+    },
+    {
+      "name": "resource_pack_multiplier",
+      "description": "How many items will be in the resource pack. A lower setting mean fewer resources in each pack. A higher setting means more resources in each pack. Easy (200) doubles the default quantity. This also include Friendship bonuses that replace the one from the Bulletin Board.",
+      "high": 200,
+      "readableName": "Resource pack multiplier",
+      "low": 0,
+      "type": "range",
+      "default": 100,
+      "aliases": {
+        "resource packs disabled": 0,
+        "half packs": 50,
+        "normal packs": 100,
+        "double packs": 200
+      }
+    },
+    {
+      "name": "bundle_randomization",
+      "description": "What items are needed for the community center bundles?",
+      "readableName": "bundle randomization",
+      "values": [
+        {
+          "name": "vanilla",
+          "readableName": "Vanilla",
+          "description": "You get the standard bundles from the game."
+        },
+        {
+          "name": "thematic",
+          "readableName": "Thematic",
+          "description": "Every bundle will require random items within their original category."
+        },
+        {
+          "name": "shuffled",
+          "readableName": "Shuffled",
+          "description": "Every bundle will require random items without logic."
+        }
+      ],
+      "type": "choice",
+      "default": "thematic"
+    },
+    {
+      "name": "bundle_price",
+      "description": "How many items are needed for the community center bundles?",
+      "readableName": "Bundle price",
+      "values": [
+        {
+          "name": "very_cheap",
+          "readableName": "Two fewer items"
+        },
+        {
+          "name": "cheap",
+          "readableName": "One fewer item"
+        },
+        {
+          "name": "normal",
+          "readableName": "Normal"
+        },
+        {
+          "name": "expensive",
+          "readableName": "One additional item"
+        }
+      ],
+      "type": "choice",
+      "default": "normal"
+    },
+    {
+      "name": "entrance_randomization",
+      "description": "Should area entrances be randomized?",
+      "readableName": "Entrance randomization",
+      "values": [
+        {
+          "name": "disabled",
+          "readableName": "Disabled"
+        },
+        {
+          "name": "pelican_town",
+          "readableName": "Pelican Town",
+          "description": "Only buildings in the main town area are randomized with each other."
+        },
+        {
+          "name": "non_progression",
+          "readableName": "Non-progression",
+          "description": "Only buildings that are always available are randomized with each other."
+        }
+      ],
+      "type": "choice",
+      "default": "disabled"
+    },
+    {
+      "name": "backpack_progression",
+      "description": "How is the backpack progression handled?",
+      "readableName": "backpack progression",
+      "values": [
+        {
+          "name": "vanilla",
+          "readableName": "Vanilla"
+        },
+        {
+          "name": "progressive",
+          "readableName": "Progressive",
+          "description": "You will randomly find Progressive Backpack to upgrade."
+        },
+        {
+          "name": "early_progressive",
+          "readableName": "Early progressive",
+          "description": "You can expect you first Backpack before the second season, and the third before the fourth season."
+        }
+      ],
+      "type": "choice",
+      "default": "early_progressive"
+    },
+    {
+      "name": "tool_progression",
+      "description": "How is the tool progression handled?",
+      "readableName": "tool progression",
+      "values": [
+        {
+          "name": "vanilla",
+          "readableName": "Vanilla"
+        },
+        {
+          "name": "progressive",
+          "readableName": "Progressive",
+          "description": "You will randomly find Progressive Tool to upgrade."
+        }
+      ],
+      "type": "choice",
+      "default": "progressive"
+    },
+    {
+      "name": "skill_progression",
+      "description": "How is the skill progression handled?",
+      "readableName": "Skill progression",
+      "values": [
+        {
+          "name": "vanilla",
+          "readableName": "Vanilla"
+        },
+        {
+          "name": "progressive",
+          "readableName": "Progressive",
+          "description": "Experience will be counted internally, and locations will be sent when you gain a virtual level. Your real levels will be scattered around the world."
+        }
+      ],
+      "type": "choice",
+      "default": "progressive"
+    },
+    {
+      "name": "building_progression",
+      "description": "How is the building progression handled?",
+      "readableName": "Building progression",
+      "values": [
+        {
+          "name": "vanilla",
+          "readableName": "Vanilla"
+        },
+        {
+          "name": "progressive",
+          "readableName": "Progressive",
+          "description": "You will receive the buildings and will be able to build the first one of each building for free, once it is received. If you want more of the same building, it will cost the vanilla price. This option INCLUDES the shipping bin as a building you need to receive."
+        },
+        {
+          "name": "progressive_early_shipping_bin",
+          "readableName": "Progressive, early shipping bin",
+          "description": "You will receive the buildings and will be able to build the first one of each building for free, once it is received. If you want more of the same building, it will cost the vanilla price. This option INCLUDES the shipping bin as a building you need to receive, which can be expected before the end of the first season."
+        }
+      ],
+      "type": "choice",
+      "default": "progressive_early_shipping_bin"
+    },
+    {
+      "name": "elevator_progression",
+      "description": "How is The Mines' Elevator progression handled?",
+      "readableName": "Elevator progression",
+      "values": [
+        {
+          "name": "vanilla",
+          "readableName": "Vanilla"
+        },
+        {
+          "name": "progressive",
+          "readableName": "Progressive",
+          "description": "You will randomly find Progressive Mine Elevator to go deeper. Location are sent for reaching every level multiple of 5."
+        },
+        {
+          "name": "progressive_from_previous_floor",
+          "readableName": "Progressive from previous floor",
+          "description": "You will randomly find Progressive Mine Elevator to go deeper. Location are sent for taking the ladder or stair to every level multiple of 5, taking the elevator does not count."
+        }
+      ],
+      "type": "choice",
+      "default": "progressive_from_previous_floor"
+    },
+    {
+      "name": "arcade_machine_locations",
+      "description": "How are the Arcade Machines handled?",
+      "readableName": "Arcade machine locations",
+      "values": [
+        {
+          "name": "disabled",
+          "readableName": "Disabled"
+        },
+        {
+          "name": "victories",
+          "readableName": "Victories",
+          "description": "Each Arcade Machine will contain one check on victory."
+        },
+        {
+          "name": "victories_easy",
+          "readableName": "Victories Easy",
+          "description": "The arcade machines are both made considerably easier to be more accessible for the average player."
+        },
+        {
+          "name": "full_shuffling",
+          "readableName": "Full shuffling",
+          "description": "The arcade machines will contain multiple checks each, and different buffs that make the game easier are in the item pool. Junimo Kart has one check at the end of each level. Journey of the Prairie King has one check after each boss, plus one check for each vendor equipment."
+        }
+      ],
+      "type": "choice",
+      "default": "full_shuffling"
+    },
+    {
+      "name": "help_wanted_locations",
+      "description": "How many \"Help Wanted\" quests need to be completed as Archipelago Locations. Out of every 7 quests, 4 will be item deliveries, and then 1 of each for: Fishing, Gathering and Slaying Monsters. Choosing a multiple of 7 is recommended.",
+      "high": 56,
+      "readableName": "Help Wanted locations",
+      "low": 0,
+      "type": "range",
+      "default": 7,
+      "aliases": {
+        "none": 0,
+        "minimum": 7,
+        "normal": 14,
+        "lots": 28,
+        "maximum": 56
+      }
+    },
+    {
+      "name": "fishsanity",
+      "description": "Locations for catching fish?",
+      "readableName": "Fishsanity",
+      "values": [
+        {
+          "name": "none",
+          "readableName": "None"
+        },
+        {
+          "name": "legendaries",
+          "readableName": "Legendaries"
+        },
+        {
+          "name": "special",
+          "readableName": "Special",
+          "description": "A curated selection of strong fish are locations that contain items."
+        },
+        {
+          "name": "random_selection",
+          "readableName": "Random selection"
+        },
+        {
+          "name": "all",
+          "readableName": "All"
+        }
+      ],
+      "type": "choice",
+      "default": "none"
+    },
+    {
+      "name": "player_buff_number",
+      "description": "Number of buffs to the player of each type that exist as items in the pool. Buffs include movement speed (+25% multiplier, stacks additively) and daily luck bonus (0.025 flat value per buff).",
+      "high": 12,
+      "readableName": "Player buff number",
+      "low": 0,
+      "type": "range",
+      "default": 4
+    },
+    {
+      "name": "goal",
+      "description": "What's your goal with this play-through?",
+      "readableName": "goal",
+      "values": [
+        {
+          "name": "community_center",
+          "readableName": "Community Center",
+          "description": "The world will be completed once you complete the Community Center."
+        },
+        {
+          "name": "grandpa_evaluation",
+          "readableName": "Grandpa's evaluation",
+          "description": "The world will be completed once 4 candles are lit around Grandpa's Shrine."
+        },
+        {
+          "name": "bottom_of_the_mines",
+          "readableName": "Bottom of the Mines",
+          "description": "The world will be completed once you reach level 120 in the local mineshaft."
+        },
+        {
+          "name": "cryptic_note",
+          "readableName": "Cryptic Note",
+          "description": "The world will be completed once you complete the quest \"Cryptic Note\" where Mr Qi asks you to reach floor 100 in the Skull Cavern."
+        },
+        {
+          "name": "master_angler",
+          "readableName": "Master Angler",
+          "description": "The world will be completed once you have caught every fish in the game. Pairs well with Fishsanity."
+        }
+      ],
+      "type": "choice",
+      "default": "community_center"
+    },
+    {
+      "name": "multiple_day_sleep_enabled",
+      "description": "Should you be able to sleep automatically multiple day straight?",
+      "readableName": "Multiple day sleep enabled",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "multiple_day_sleep_cost",
+      "description": "Determines how much gold per day that it costs to sleep through multiple days.",
+      "high": 200,
+      "readableName": "Multiple day sleep cost",
+      "low": 0,
+      "type": "range",
+      "default": 0,
+      "aliases": {
+        "free": 0,
+        "cheap": 25,
+        "medium": 50,
+        "expensive": 100
+      },
+      "dependsOn": {
+        "multiple_day_sleep_enabled": [true]
+      }
+    },
+    {
+      "name": "experience_multiplier",
+      "description": "Determines how experience gains are multiplied.",
+      "high": 400,
+      "readableName": "Experience multiplier",
+      "low": 25,
+      "type": "range",
+      "default": 200,
+      "aliases": {
+        "half": 50,
+        "vanilla": 100,
+        "double": 200,
+        "triple": 300,
+        "quadruple": 400
+      }
+    },
+    {
+      "name": "debris_multiplier",
+      "description": "How much debris spawns on the player's farm?",
+      "readableName": "Debris multiplier",
+      "values": [
+        {
+          "name": "vanilla",
+          "readableName": "Vanilla"
+        },
+        {
+          "name": "half",
+          "readableName": "Half as much"
+        },
+        {
+          "name": "quarter",
+          "readableName": "A quarter as much"
+        },
+        {
+          "name": "none",
+          "readableName": "None ever"
+        },
+        {
+          "name": "start_clear",
+          "readableName": "Vanilla, but start with none"
+        }
+      ],
+      "type": "choice",
+      "default": "half"
+    },
+    {
+      "name": "quick_start",
+      "description": "Do you want the quick start package? You will get a few items to help early game automation, so you can use the multiple day sleep at its maximum.",
+      "readableName": "Quick start",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "gifting",
+      "description": "Do you want to enable gifting items to and from other Stardew Valley worlds?",
+      "readableName": "Gifting",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "gift_tax",
+      "description": "Joja Prime will deliver gifts within one business day, for a price! Sending a gift will cost a percentage of the item's monetary value as a tax on the sender.",
+      "high": 400,
+      "readableName": "Gift tax",
+      "low": 0,
+      "type": "range",
+      "default": 20,
+      "aliases": {
+        "no tax": 0,
+        "soft tax": 20,
+        "rough tax": 40,
+        "full tax": 100,
+        "oppressive tax": 200,
+        "nightmare tax": 400
+      }
+    },
+    {
+      "type": "deathlink"
+    }
+  ],
+  "defver": 2,
+  "items": [
+    {
+      "name": "Joja Cola"
+    },
+    {
+      "name": "Rusty Key"
+    },
+    {
+      "name": "Dwarvish Translation Guide"
+    },
+    {
+      "name": "Bridge Repair"
+    },
+    {
+      "name": "Greenhouse"
+    },
+    {
+      "name": "Glittering Boulder Removed"
+    },
+    {
+      "name": "Minecarts Repair"
+    },
+    {
+      "name": "Bus Repair"
+    },
+    {
+      "name": "Movie Theater"
+    },
+    {
+      "name": "Stardrop"
+    },
+    {
+      "name": "Progressive Backpack"
+    },
+    {
+      "name": "Rusty Sword"
+    },
+    {
+      "name": "Leather Boots"
+    },
+    {
+      "name": "Work Boots"
+    },
+    {
+      "name": "Wooden Blade"
+    },
+    {
+      "name": "Iron Dirk"
+    },
+    {
+      "name": "Wind Spire"
+    },
+    {
+      "name": "Femur"
+    },
+    {
+      "name": "Steel Smallsword"
+    },
+    {
+      "name": "Wood Club"
+    },
+    {
+      "name": "Elf Blade"
+    },
+    {
+      "name": "Glow Ring"
+    },
+    {
+      "name": "Magnet Ring"
+    },
+    {
+      "name": "Slingshot"
+    },
+    {
+      "name": "Tundra Boots"
+    },
+    {
+      "name": "Thermal Boots"
+    },
+    {
+      "name": "Combat Boots"
+    },
+    {
+      "name": "Silver Saber"
+    },
+    {
+      "name": "Pirate's Sword"
+    },
+    {
+      "name": "Crystal Dagger"
+    },
+    {
+      "name": "Cutlass"
+    },
+    {
+      "name": "Iron Edge"
+    },
+    {
+      "name": "Burglar's Shank"
+    },
+    {
+      "name": "Wood Mallet"
+    },
+    {
+      "name": "Master Slingshot"
+    },
+    {
+      "name": "Firewalker Boots"
+    },
+    {
+      "name": "Dark Boots"
+    },
+    {
+      "name": "Claymore"
+    },
+    {
+      "name": "Templar's Blade"
+    },
+    {
+      "name": "Kudgel"
+    },
+    {
+      "name": "Shadow Dagger"
+    },
+    {
+      "name": "Obsidian Edge"
+    },
+    {
+      "name": "Tempered Broadsword"
+    },
+    {
+      "name": "Wicked Kris"
+    },
+    {
+      "name": "Bone Sword"
+    },
+    {
+      "name": "Ossified Blade"
+    },
+    {
+      "name": "Space Boots"
+    },
+    {
+      "name": "Crystal Shoes"
+    },
+    {
+      "name": "Steel Falchion"
+    },
+    {
+      "name": "The Slammer"
+    },
+    {
+      "name": "Skull Key"
+    },
+    {
+      "name": "Progressive Hoe"
+    },
+    {
+      "name": "Progressive Pickaxe"
+    },
+    {
+      "name": "Progressive Axe"
+    },
+    {
+      "name": "Progressive Watering Can"
+    },
+    {
+      "name": "Progressive Trash Can"
+    },
+    {
+      "name": "Progressive Fishing Rod"
+    },
+    {
+      "name": "Golden Scythe"
+    },
+    {
+      "name": "Progressive Mine Elevator"
+    },
+    {
+      "name": "Farming Level"
+    },
+    {
+      "name": "Fishing Level"
+    },
+    {
+      "name": "Foraging Level"
+    },
+    {
+      "name": "Mining Level"
+    },
+    {
+      "name": "Combat Level"
+    },
+    {
+      "name": "Earth Obelisk"
+    },
+    {
+      "name": "Water Obelisk"
+    },
+    {
+      "name": "Desert Obelisk"
+    },
+    {
+      "name": "Island Obelisk"
+    },
+    {
+      "name": "Junimo Hut"
+    },
+    {
+      "name": "Gold Clock"
+    },
+    {
+      "name": "Progressive Coop"
+    },
+    {
+      "name": "Progressive Barn"
+    },
+    {
+      "name": "Well"
+    },
+    {
+      "name": "Silo"
+    },
+    {
+      "name": "Mill"
+    },
+    {
+      "name": "Progressive Shed"
+    },
+    {
+      "name": "Fish Pond"
+    },
+    {
+      "name": "Stable"
+    },
+    {
+      "name": "Slime Hutch"
+    },
+    {
+      "name": "Shipping Bin"
+    },
+    {
+      "name": "Beach Bridge"
+    },
+    {
+      "name": "Adventurer's Guild"
+    },
+    {
+      "name": "Club Card"
+    },
+    {
+      "name": "Magnifying Glass"
+    },
+    {
+      "name": "Bear's Knowledge"
+    },
+    {
+      "name": "Iridium Snake Milk"
+    },
+    {
+      "name": "JotPK: Progressive Boots"
+    },
+    {
+      "name": "JotPK: Progressive Gun"
+    },
+    {
+      "name": "JotPK: Progressive Ammo"
+    },
+    {
+      "name": "JotPK: Extra Life"
+    },
+    {
+      "name": "JotPK: Increased Drop Rate"
+    },
+    {
+      "name": "Junimo Kart: Extra Life"
+    },
+    {
+      "name": "Galaxy Sword"
+    },
+    {
+      "name": "Galaxy Dagger"
+    },
+    {
+      "name": "Galaxy Hammer"
+    },
+    {
+      "name": "Movement Speed Bonus"
+    },
+    {
+      "name": "Luck Bonus"
+    },
+    {
+      "name": "Lava Katana"
+    },
+    {
+      "name": "Progressive House"
+    },
+    {
+      "name": "Traveling Merchant: Sunday"
+    },
+    {
+      "name": "Traveling Merchant: Monday"
+    },
+    {
+      "name": "Traveling Merchant: Tuesday"
+    },
+    {
+      "name": "Traveling Merchant: Wednesday"
+    },
+    {
+      "name": "Traveling Merchant: Thursday"
+    },
+    {
+      "name": "Traveling Merchant: Friday"
+    },
+    {
+      "name": "Traveling Merchant: Saturday"
+    },
+    {
+      "name": "Traveling Merchant Stock Size"
+    },
+    {
+      "name": "Traveling Merchant Discount"
+    },
+    {
+      "name": "Return Scepter"
+    },
+    {
+      "name": "Resource Pack: 500 Money"
+    },
+    {
+      "name": "Resource Pack: 1000 Money"
+    },
+    {
+      "name": "Resource Pack: 1500 Money"
+    },
+    {
+      "name": "Resource Pack: 2000 Money"
+    },
+    {
+      "name": "Resource Pack: 25 Stone"
+    },
+    {
+      "name": "Resource Pack: 50 Stone"
+    },
+    {
+      "name": "Resource Pack: 75 Stone"
+    },
+    {
+      "name": "Resource Pack: 100 Stone"
+    },
+    {
+      "name": "Resource Pack: 25 Wood"
+    },
+    {
+      "name": "Resource Pack: 50 Wood"
+    },
+    {
+      "name": "Resource Pack: 75 Wood"
+    },
+    {
+      "name": "Resource Pack: 100 Wood"
+    },
+    {
+      "name": "Resource Pack: 5 Hardwood"
+    },
+    {
+      "name": "Resource Pack: 10 Hardwood"
+    },
+    {
+      "name": "Resource Pack: 15 Hardwood"
+    },
+    {
+      "name": "Resource Pack: 20 Hardwood"
+    },
+    {
+      "name": "Resource Pack: 15 Fiber"
+    },
+    {
+      "name": "Resource Pack: 30 Fiber"
+    },
+    {
+      "name": "Resource Pack: 45 Fiber"
+    },
+    {
+      "name": "Resource Pack: 60 Fiber"
+    },
+    {
+      "name": "Resource Pack: 5 Coal"
+    },
+    {
+      "name": "Resource Pack: 10 Coal"
+    },
+    {
+      "name": "Resource Pack: 15 Coal"
+    },
+    {
+      "name": "Resource Pack: 20 Coal"
+    },
+    {
+      "name": "Resource Pack: 5 Clay"
+    },
+    {
+      "name": "Resource Pack: 10 Clay"
+    },
+    {
+      "name": "Resource Pack: 15 Clay"
+    },
+    {
+      "name": "Resource Pack: 20 Clay"
+    },
+    {
+      "name": "Resource Pack: 1 Warp Totem: Beach"
+    },
+    {
+      "name": "Resource Pack: 3 Warp Totem: Beach"
+    },
+    {
+      "name": "Resource Pack: 5 Warp Totem: Beach"
+    },
+    {
+      "name": "Resource Pack: 7 Warp Totem: Beach"
+    },
+    {
+      "name": "Resource Pack: 9 Warp Totem: Beach"
+    },
+    {
+      "name": "Resource Pack: 10 Warp Totem: Beach"
+    },
+    {
+      "name": "Resource Pack: 1 Warp Totem: Desert"
+    },
+    {
+      "name": "Resource Pack: 3 Warp Totem: Desert"
+    },
+    {
+      "name": "Resource Pack: 5 Warp Totem: Desert"
+    },
+    {
+      "name": "Resource Pack: 7 Warp Totem: Desert"
+    },
+    {
+      "name": "Resource Pack: 9 Warp Totem: Desert"
+    },
+    {
+      "name": "Resource Pack: 10 Warp Totem: Desert"
+    },
+    {
+      "name": "Resource Pack: 1 Warp Totem: Farm"
+    },
+    {
+      "name": "Resource Pack: 3 Warp Totem: Farm"
+    },
+    {
+      "name": "Resource Pack: 5 Warp Totem: Farm"
+    },
+    {
+      "name": "Resource Pack: 7 Warp Totem: Farm"
+    },
+    {
+      "name": "Resource Pack: 9 Warp Totem: Farm"
+    },
+    {
+      "name": "Resource Pack: 10 Warp Totem: Farm"
+    },
+    {
+      "name": "Resource Pack: 1 Warp Totem: Island"
+    },
+    {
+      "name": "Resource Pack: 3 Warp Totem: Island"
+    },
+    {
+      "name": "Resource Pack: 5 Warp Totem: Island"
+    },
+    {
+      "name": "Resource Pack: 7 Warp Totem: Island"
+    },
+    {
+      "name": "Resource Pack: 9 Warp Totem: Island"
+    },
+    {
+      "name": "Resource Pack: 10 Warp Totem: Island"
+    },
+    {
+      "name": "Resource Pack: 1 Warp Totem: Mountains"
+    },
+    {
+      "name": "Resource Pack: 3 Warp Totem: Mountains"
+    },
+    {
+      "name": "Resource Pack: 5 Warp Totem: Mountains"
+    },
+    {
+      "name": "Resource Pack: 7 Warp Totem: Mountains"
+    },
+    {
+      "name": "Resource Pack: 9 Warp Totem: Mountains"
+    },
+    {
+      "name": "Resource Pack: 10 Warp Totem: Mountains"
+    },
+    {
+      "name": "Resource Pack: 6 Geode"
+    },
+    {
+      "name": "Resource Pack: 12 Geode"
+    },
+    {
+      "name": "Resource Pack: 18 Geode"
+    },
+    {
+      "name": "Resource Pack: 24 Geode"
+    },
+    {
+      "name": "Resource Pack: 4 Frozen Geode"
+    },
+    {
+      "name": "Resource Pack: 8 Frozen Geode"
+    },
+    {
+      "name": "Resource Pack: 12 Frozen Geode"
+    },
+    {
+      "name": "Resource Pack: 16 Frozen Geode"
+    },
+    {
+      "name": "Resource Pack: 3 Magma Geode"
+    },
+    {
+      "name": "Resource Pack: 6 Magma Geode"
+    },
+    {
+      "name": "Resource Pack: 9 Magma Geode"
+    },
+    {
+      "name": "Resource Pack: 12 Magma Geode"
+    },
+    {
+      "name": "Resource Pack: 2 Omni Geode"
+    },
+    {
+      "name": "Resource Pack: 4 Omni Geode"
+    },
+    {
+      "name": "Resource Pack: 6 Omni Geode"
+    },
+    {
+      "name": "Resource Pack: 8 Omni Geode"
+    },
+    {
+      "name": "Resource Pack: 25 Copper Ore"
+    },
+    {
+      "name": "Resource Pack: 50 Copper Ore"
+    },
+    {
+      "name": "Resource Pack: 75 Copper Ore"
+    },
+    {
+      "name": "Resource Pack: 100 Copper Ore"
+    },
+    {
+      "name": "Resource Pack: 125 Copper Ore"
+    },
+    {
+      "name": "Resource Pack: 150 Copper Ore"
+    },
+    {
+      "name": "Resource Pack: 25 Iron Ore"
+    },
+    {
+      "name": "Resource Pack: 50 Iron Ore"
+    },
+    {
+      "name": "Resource Pack: 75 Iron Ore"
+    },
+    {
+      "name": "Resource Pack: 100 Iron Ore"
+    },
+    {
+      "name": "Resource Pack: 12 Gold Ore"
+    },
+    {
+      "name": "Resource Pack: 25 Gold Ore"
+    },
+    {
+      "name": "Resource Pack: 38 Gold Ore"
+    },
+    {
+      "name": "Resource Pack: 50 Gold Ore"
+    },
+    {
+      "name": "Resource Pack: 5 Iridium Ore"
+    },
+    {
+      "name": "Resource Pack: 10 Iridium Ore"
+    },
+    {
+      "name": "Resource Pack: 15 Iridium Ore"
+    },
+    {
+      "name": "Resource Pack: 20 Iridium Ore"
+    },
+    {
+      "name": "Resource Pack: 5 Quartz"
+    },
+    {
+      "name": "Resource Pack: 10 Quartz"
+    },
+    {
+      "name": "Resource Pack: 15 Quartz"
+    },
+    {
+      "name": "Resource Pack: 20 Quartz"
+    },
+    {
+      "name": "Resource Pack: 10 Basic Fertilizer"
+    },
+    {
+      "name": "Resource Pack: 20 Basic Fertilizer"
+    },
+    {
+      "name": "Resource Pack: 30 Basic Fertilizer"
+    },
+    {
+      "name": "Resource Pack: 40 Basic Fertilizer"
+    },
+    {
+      "name": "Resource Pack: 50 Basic Fertilizer"
+    },
+    {
+      "name": "Resource Pack: 60 Basic Fertilizer"
+    },
+    {
+      "name": "Resource Pack: 10 Basic Retaining Soil"
+    },
+    {
+      "name": "Resource Pack: 20 Basic Retaining Soil"
+    },
+    {
+      "name": "Resource Pack: 30 Basic Retaining Soil"
+    },
+    {
+      "name": "Resource Pack: 40 Basic Retaining Soil"
+    },
+    {
+      "name": "Resource Pack: 50 Basic Retaining Soil"
+    },
+    {
+      "name": "Resource Pack: 60 Basic Retaining Soil"
+    },
+    {
+      "name": "Resource Pack: 10 Speed-Gro"
+    },
+    {
+      "name": "Resource Pack: 20 Speed-Gro"
+    },
+    {
+      "name": "Resource Pack: 30 Speed-Gro"
+    },
+    {
+      "name": "Resource Pack: 40 Speed-Gro"
+    },
+    {
+      "name": "Resource Pack: 50 Speed-Gro"
+    },
+    {
+      "name": "Resource Pack: 60 Speed-Gro"
+    },
+    {
+      "name": "Resource Pack: 4 Quality Fertilizer"
+    },
+    {
+      "name": "Resource Pack: 12 Quality Fertilizer"
+    },
+    {
+      "name": "Resource Pack: 20 Quality Fertilizer"
+    },
+    {
+      "name": "Resource Pack: 28 Quality Fertilizer"
+    },
+    {
+      "name": "Resource Pack: 36 Quality Fertilizer"
+    },
+    {
+      "name": "Resource Pack: 40 Quality Fertilizer"
+    },
+    {
+      "name": "Resource Pack: 4 Quality Retaining Soil"
+    },
+    {
+      "name": "Resource Pack: 12 Quality Retaining Soil"
+    },
+    {
+      "name": "Resource Pack: 20 Quality Retaining Soil"
+    },
+    {
+      "name": "Resource Pack: 28 Quality Retaining Soil"
+    },
+    {
+      "name": "Resource Pack: 36 Quality Retaining Soil"
+    },
+    {
+      "name": "Resource Pack: 40 Quality Retaining Soil"
+    },
+    {
+      "name": "Resource Pack: 4 Deluxe Speed-Gro"
+    },
+    {
+      "name": "Resource Pack: 12 Deluxe Speed-Gro"
+    },
+    {
+      "name": "Resource Pack: 20 Deluxe Speed-Gro"
+    },
+    {
+      "name": "Resource Pack: 28 Deluxe Speed-Gro"
+    },
+    {
+      "name": "Resource Pack: 36 Deluxe Speed-Gro"
+    },
+    {
+      "name": "Resource Pack: 40 Deluxe Speed-Gro"
+    },
+    {
+      "name": "Resource Pack: 2 Deluxe Fertilizer"
+    },
+    {
+      "name": "Resource Pack: 6 Deluxe Fertilizer"
+    },
+    {
+      "name": "Resource Pack: 10 Deluxe Fertilizer"
+    },
+    {
+      "name": "Resource Pack: 14 Deluxe Fertilizer"
+    },
+    {
+      "name": "Resource Pack: 18 Deluxe Fertilizer"
+    },
+    {
+      "name": "Resource Pack: 20 Deluxe Fertilizer"
+    },
+    {
+      "name": "Resource Pack: 2 Deluxe Retaining Soil"
+    },
+    {
+      "name": "Resource Pack: 6 Deluxe Retaining Soil"
+    },
+    {
+      "name": "Resource Pack: 10 Deluxe Retaining Soil"
+    },
+    {
+      "name": "Resource Pack: 14 Deluxe Retaining Soil"
+    },
+    {
+      "name": "Resource Pack: 18 Deluxe Retaining Soil"
+    },
+    {
+      "name": "Resource Pack: 20 Deluxe Retaining Soil"
+    },
+    {
+      "name": "Resource Pack: 2 Hyper Speed-Gro"
+    },
+    {
+      "name": "Resource Pack: 6 Hyper Speed-Gro"
+    },
+    {
+      "name": "Resource Pack: 10 Hyper Speed-Gro"
+    },
+    {
+      "name": "Resource Pack: 14 Hyper Speed-Gro"
+    },
+    {
+      "name": "Resource Pack: 18 Hyper Speed-Gro"
+    },
+    {
+      "name": "Resource Pack: 20 Hyper Speed-Gro"
+    },
+    {
+      "name": "Resource Pack: 2 Tree Fertilizer"
+    },
+    {
+      "name": "Resource Pack: 6 Tree Fertilizer"
+    },
+    {
+      "name": "Resource Pack: 10 Tree Fertilizer"
+    },
+    {
+      "name": "Resource Pack: 14 Tree Fertilizer"
+    },
+    {
+      "name": "Resource Pack: 18 Tree Fertilizer"
+    },
+    {
+      "name": "Resource Pack: 20 Tree Fertilizer"
+    },
+    {
+      "name": "Resource Pack: 10 Spring Seeds"
+    },
+    {
+      "name": "Resource Pack: 20 Spring Seeds"
+    },
+    {
+      "name": "Resource Pack: 30 Spring Seeds"
+    },
+    {
+      "name": "Resource Pack: 40 Spring Seeds"
+    },
+    {
+      "name": "Resource Pack: 50 Spring Seeds"
+    },
+    {
+      "name": "Resource Pack: 60 Spring Seeds"
+    },
+    {
+      "name": "Resource Pack: 10 Summer Seeds"
+    },
+    {
+      "name": "Resource Pack: 20 Summer Seeds"
+    },
+    {
+      "name": "Resource Pack: 30 Summer Seeds"
+    },
+    {
+      "name": "Resource Pack: 40 Summer Seeds"
+    },
+    {
+      "name": "Resource Pack: 50 Summer Seeds"
+    },
+    {
+      "name": "Resource Pack: 60 Summer Seeds"
+    },
+    {
+      "name": "Resource Pack: 10 Fall Seeds"
+    },
+    {
+      "name": "Resource Pack: 20 Fall Seeds"
+    },
+    {
+      "name": "Resource Pack: 30 Fall Seeds"
+    },
+    {
+      "name": "Resource Pack: 40 Fall Seeds"
+    },
+    {
+      "name": "Resource Pack: 50 Fall Seeds"
+    },
+    {
+      "name": "Resource Pack: 60 Fall Seeds"
+    },
+    {
+      "name": "Resource Pack: 10 Winter Seeds"
+    },
+    {
+      "name": "Resource Pack: 20 Winter Seeds"
+    },
+    {
+      "name": "Resource Pack: 30 Winter Seeds"
+    },
+    {
+      "name": "Resource Pack: 40 Winter Seeds"
+    },
+    {
+      "name": "Resource Pack: 50 Winter Seeds"
+    },
+    {
+      "name": "Resource Pack: 60 Winter Seeds"
+    },
+    {
+      "name": "Resource Pack: 1 Mahogany Seed"
+    },
+    {
+      "name": "Resource Pack: 3 Mahogany Seed"
+    },
+    {
+      "name": "Resource Pack: 5 Mahogany Seed"
+    },
+    {
+      "name": "Resource Pack: 7 Mahogany Seed"
+    },
+    {
+      "name": "Resource Pack: 9 Mahogany Seed"
+    },
+    {
+      "name": "Resource Pack: 10 Mahogany Seed"
+    },
+    {
+      "name": "Resource Pack: 10 Bait"
+    },
+    {
+      "name": "Resource Pack: 20 Bait"
+    },
+    {
+      "name": "Resource Pack: 30 Bait"
+    },
+    {
+      "name": "Resource Pack: 40 Bait"
+    },
+    {
+      "name": "Resource Pack: 50 Bait"
+    },
+    {
+      "name": "Resource Pack: 60 Bait"
+    },
+    {
+      "name": "Resource Pack: 1 Crab Pot"
+    },
+    {
+      "name": "Resource Pack: 2 Crab Pot"
+    },
+    {
+      "name": "Resource Pack: 3 Crab Pot"
+    },
+    {
+      "name": "Resource Pack: 4 Crab Pot"
+    },
+    {
+      "name": "Resource Pack: 5 Crab Pot"
+    },
+    {
+      "name": "Resource Pack: 6 Crab Pot"
+    },
+    {
+      "name": "Friendship Bonus (1 <3)"
+    },
+    {
+      "name": "Friendship Bonus (2 <3)"
+    },
+    {
+      "name": "Friendship Bonus (3 <3)"
+    },
+    {
+      "name": "Friendship Bonus (4 <3)"
+    }
+  ],
+  "locations": [
+    {
+      "name": "Spring Foraging Bundle"
+    },
+    {
+      "name": "Summer Foraging Bundle"
+    },
+    {
+      "name": "Fall Foraging Bundle"
+    },
+    {
+      "name": "Winter Foraging Bundle"
+    },
+    {
+      "name": "Construction Bundle"
+    },
+    {
+      "name": "Exotic Foraging Bundle"
+    },
+    {
+      "name": "Spring Crops Bundle"
+    },
+    {
+      "name": "Summer Crops Bundle"
+    },
+    {
+      "name": "Fall Crops Bundle"
+    },
+    {
+      "name": "Quality Crops Bundle"
+    },
+    {
+      "name": "Animal Bundle"
+    },
+    {
+      "name": "Artisan Bundle"
+    },
+    {
+      "name": "River Fish Bundle"
+    },
+    {
+      "name": "Lake Fish Bundle"
+    },
+    {
+      "name": "Ocean Fish Bundle"
+    },
+    {
+      "name": "Night Fishing Bundle"
+    },
+    {
+      "name": "Crab Pot Bundle"
+    },
+    {
+      "name": "Specialty Fish Bundle"
+    },
+    {
+      "name": "Blacksmith's Bundle"
+    },
+    {
+      "name": "Geologist's Bundle"
+    },
+    {
+      "name": "Adventurer's Bundle"
+    },
+    {
+      "name": "Chef's Bundle"
+    },
+    {
+      "name": "Dye Bundle"
+    },
+    {
+      "name": "Field Research Bundle"
+    },
+    {
+      "name": "Fodder Bundle"
+    },
+    {
+      "name": "Enchanter's Bundle"
+    },
+    {
+      "name": "2,500g Bundle"
+    },
+    {
+      "name": "5,000g Bundle"
+    },
+    {
+      "name": "10,000g Bundle"
+    },
+    {
+      "name": "25,000g Bundle"
+    },
+    {
+      "name": "The Missing Bundle"
+    },
+    {
+      "name": "Complete Crafts Room"
+    },
+    {
+      "name": "Complete Pantry"
+    },
+    {
+      "name": "Complete Fish Tank"
+    },
+    {
+      "name": "Complete Boiler Room"
+    },
+    {
+      "name": "Complete Bulletin Board"
+    },
+    {
+      "name": "Complete Vault"
+    },
+    {
+      "name": "Large Pack"
+    },
+    {
+      "name": "Deluxe Pack"
+    },
+    {
+      "name": "Copper Hoe Upgrade"
+    },
+    {
+      "name": "Iron Hoe Upgrade"
+    },
+    {
+      "name": "Gold Hoe Upgrade"
+    },
+    {
+      "name": "Iridium Hoe Upgrade"
+    },
+    {
+      "name": "Copper Pickaxe Upgrade"
+    },
+    {
+      "name": "Iron Pickaxe Upgrade"
+    },
+    {
+      "name": "Gold Pickaxe Upgrade"
+    },
+    {
+      "name": "Iridium Pickaxe Upgrade"
+    },
+    {
+      "name": "Copper Axe Upgrade"
+    },
+    {
+      "name": "Iron Axe Upgrade"
+    },
+    {
+      "name": "Gold Axe Upgrade"
+    },
+    {
+      "name": "Iridium Axe Upgrade"
+    },
+    {
+      "name": "Copper Watering Can Upgrade"
+    },
+    {
+      "name": "Iron Watering Can Upgrade"
+    },
+    {
+      "name": "Gold Watering Can Upgrade"
+    },
+    {
+      "name": "Iridium Watering Can Upgrade"
+    },
+    {
+      "name": "Copper Trash Can Upgrade"
+    },
+    {
+      "name": "Iron Trash Can Upgrade"
+    },
+    {
+      "name": "Gold Trash Can Upgrade"
+    },
+    {
+      "name": "Iridium Trash Can Upgrade"
+    },
+    {
+      "name": "Purchase Training Rod"
+    },
+    {
+      "name": "Bamboo Pole Cutscene"
+    },
+    {
+      "name": "Purchase Fiberglass Rod"
+    },
+    {
+      "name": "Purchase Iridium Rod"
+    },
+    {
+      "name": "The Mines Floor 10 Treasure"
+    },
+    {
+      "name": "The Mines Floor 20 Treasure"
+    },
+    {
+      "name": "The Mines Floor 40 Treasure"
+    },
+    {
+      "name": "The Mines Floor 50 Treasure"
+    },
+    {
+      "name": "The Mines Floor 60 Treasure"
+    },
+    {
+      "name": "The Mines Floor 70 Treasure"
+    },
+    {
+      "name": "The Mines Floor 80 Treasure"
+    },
+    {
+      "name": "The Mines Floor 90 Treasure"
+    },
+    {
+      "name": "The Mines Floor 100 Treasure"
+    },
+    {
+      "name": "The Mines Floor 110 Treasure"
+    },
+    {
+      "name": "The Mines Floor 120 Treasure"
+    },
+    {
+      "name": "Grim Reaper statue"
+    },
+    {
+      "name": "The Mines Entrance Cutscene"
+    },
+    {
+      "name": "Floor 5 Elevator"
+    },
+    {
+      "name": "Floor 10 Elevator"
+    },
+    {
+      "name": "Floor 15 Elevator"
+    },
+    {
+      "name": "Floor 20 Elevator"
+    },
+    {
+      "name": "Floor 25 Elevator"
+    },
+    {
+      "name": "Floor 30 Elevator"
+    },
+    {
+      "name": "Floor 35 Elevator"
+    },
+    {
+      "name": "Floor 40 Elevator"
+    },
+    {
+      "name": "Floor 45 Elevator"
+    },
+    {
+      "name": "Floor 50 Elevator"
+    },
+    {
+      "name": "Floor 55 Elevator"
+    },
+    {
+      "name": "Floor 60 Elevator"
+    },
+    {
+      "name": "Floor 65 Elevator"
+    },
+    {
+      "name": "Floor 70 Elevator"
+    },
+    {
+      "name": "Floor 75 Elevator"
+    },
+    {
+      "name": "Floor 80 Elevator"
+    },
+    {
+      "name": "Floor 85 Elevator"
+    },
+    {
+      "name": "Floor 90 Elevator"
+    },
+    {
+      "name": "Floor 95 Elevator"
+    },
+    {
+      "name": "Floor 100 Elevator"
+    },
+    {
+      "name": "Floor 105 Elevator"
+    },
+    {
+      "name": "Floor 110 Elevator"
+    },
+    {
+      "name": "Floor 115 Elevator"
+    },
+    {
+      "name": "Floor 120 Elevator"
+    },
+    {
+      "name": "Level 1 Farming"
+    },
+    {
+      "name": "Level 2 Farming"
+    },
+    {
+      "name": "Level 3 Farming"
+    },
+    {
+      "name": "Level 4 Farming"
+    },
+    {
+      "name": "Level 5 Farming"
+    },
+    {
+      "name": "Level 6 Farming"
+    },
+    {
+      "name": "Level 7 Farming"
+    },
+    {
+      "name": "Level 8 Farming"
+    },
+    {
+      "name": "Level 9 Farming"
+    },
+    {
+      "name": "Level 10 Farming"
+    },
+    {
+      "name": "Level 1 Fishing"
+    },
+    {
+      "name": "Level 2 Fishing"
+    },
+    {
+      "name": "Level 3 Fishing"
+    },
+    {
+      "name": "Level 4 Fishing"
+    },
+    {
+      "name": "Level 5 Fishing"
+    },
+    {
+      "name": "Level 6 Fishing"
+    },
+    {
+      "name": "Level 7 Fishing"
+    },
+    {
+      "name": "Level 8 Fishing"
+    },
+    {
+      "name": "Level 9 Fishing"
+    },
+    {
+      "name": "Level 10 Fishing"
+    },
+    {
+      "name": "Level 1 Foraging"
+    },
+    {
+      "name": "Level 2 Foraging"
+    },
+    {
+      "name": "Level 3 Foraging"
+    },
+    {
+      "name": "Level 4 Foraging"
+    },
+    {
+      "name": "Level 5 Foraging"
+    },
+    {
+      "name": "Level 6 Foraging"
+    },
+    {
+      "name": "Level 7 Foraging"
+    },
+    {
+      "name": "Level 8 Foraging"
+    },
+    {
+      "name": "Level 9 Foraging"
+    },
+    {
+      "name": "Level 10 Foraging"
+    },
+    {
+      "name": "Level 1 Mining"
+    },
+    {
+      "name": "Level 2 Mining"
+    },
+    {
+      "name": "Level 3 Mining"
+    },
+    {
+      "name": "Level 4 Mining"
+    },
+    {
+      "name": "Level 5 Mining"
+    },
+    {
+      "name": "Level 6 Mining"
+    },
+    {
+      "name": "Level 7 Mining"
+    },
+    {
+      "name": "Level 8 Mining"
+    },
+    {
+      "name": "Level 9 Mining"
+    },
+    {
+      "name": "Level 10 Mining"
+    },
+    {
+      "name": "Level 1 Combat"
+    },
+    {
+      "name": "Level 2 Combat"
+    },
+    {
+      "name": "Level 3 Combat"
+    },
+    {
+      "name": "Level 4 Combat"
+    },
+    {
+      "name": "Level 5 Combat"
+    },
+    {
+      "name": "Level 6 Combat"
+    },
+    {
+      "name": "Level 7 Combat"
+    },
+    {
+      "name": "Level 8 Combat"
+    },
+    {
+      "name": "Level 9 Combat"
+    },
+    {
+      "name": "Level 10 Combat"
+    },
+    {
+      "name": "Coop Blueprint"
+    },
+    {
+      "name": "Big Coop Blueprint"
+    },
+    {
+      "name": "Deluxe Coop Blueprint"
+    },
+    {
+      "name": "Barn Blueprint"
+    },
+    {
+      "name": "Big Barn Blueprint"
+    },
+    {
+      "name": "Deluxe Barn Blueprint"
+    },
+    {
+      "name": "Well Blueprint"
+    },
+    {
+      "name": "Silo Blueprint"
+    },
+    {
+      "name": "Mill Blueprint"
+    },
+    {
+      "name": "Shed Blueprint"
+    },
+    {
+      "name": "Big Shed Blueprint"
+    },
+    {
+      "name": "Fish Pond Blueprint"
+    },
+    {
+      "name": "Stable Blueprint"
+    },
+    {
+      "name": "Slime Hutch Blueprint"
+    },
+    {
+      "name": "Shipping Bin Blueprint"
+    },
+    {
+      "name": "Kitchen Blueprint"
+    },
+    {
+      "name": "Kids Room Blueprint"
+    },
+    {
+      "name": "Cellar Blueprint"
+    },
+    {
+      "name": "Introductions"
+    },
+    {
+      "name": "How To Win Friends"
+    },
+    {
+      "name": "Getting Started"
+    },
+    {
+      "name": "Raising Animals"
+    },
+    {
+      "name": "Advancement"
+    },
+    {
+      "name": "Archaeology"
+    },
+    {
+      "name": "Meet The Wizard"
+    },
+    {
+      "name": "Forging Ahead"
+    },
+    {
+      "name": "Smelting"
+    },
+    {
+      "name": "Initiation"
+    },
+    {
+      "name": "Robin's Lost Axe"
+    },
+    {
+      "name": "Jodi's Request"
+    },
+    {
+      "name": "Mayor's \"Shorts\""
+    },
+    {
+      "name": "Blackberry Basket"
+    },
+    {
+      "name": "Marnie's Request"
+    },
+    {
+      "name": "Pam Is Thirsty"
+    },
+    {
+      "name": "A Dark Reagent"
+    },
+    {
+      "name": "Cow's Delight"
+    },
+    {
+      "name": "The Skull Key"
+    },
+    {
+      "name": "Crop Research"
+    },
+    {
+      "name": "Knee Therapy"
+    },
+    {
+      "name": "Robin's Request"
+    },
+    {
+      "name": "Qi's Challenge"
+    },
+    {
+      "name": "The Mysterious Qi"
+    },
+    {
+      "name": "Carving Pumpkins"
+    },
+    {
+      "name": "A Winter Mystery"
+    },
+    {
+      "name": "Strange Note"
+    },
+    {
+      "name": "Cryptic Note"
+    },
+    {
+      "name": "Fresh Fruit"
+    },
+    {
+      "name": "Aquatic Research"
+    },
+    {
+      "name": "A Soldier's Star"
+    },
+    {
+      "name": "Mayor's Need"
+    },
+    {
+      "name": "Wanted: Lobster"
+    },
+    {
+      "name": "Pam Needs Juice"
+    },
+    {
+      "name": "Fish Casserole"
+    },
+    {
+      "name": "Catch A Squid"
+    },
+    {
+      "name": "Fish Stew"
+    },
+    {
+      "name": "Pierre's Notice"
+    },
+    {
+      "name": "Clint's Attempt"
+    },
+    {
+      "name": "A Favor For Clint"
+    },
+    {
+      "name": "Staff Of Power"
+    },
+    {
+      "name": "Granny's Gift"
+    },
+    {
+      "name": "Exotic Spirits"
+    },
+    {
+      "name": "Catch a Lingcod"
+    },
+    {
+      "name": "JotPK: Boots 1"
+    },
+    {
+      "name": "JotPK: Boots 2"
+    },
+    {
+      "name": "JotPK: Gun 1"
+    },
+    {
+      "name": "JotPK: Gun 2"
+    },
+    {
+      "name": "JotPK: Gun 3"
+    },
+    {
+      "name": "JotPK: Super Gun"
+    },
+    {
+      "name": "JotPK: Ammo 1"
+    },
+    {
+      "name": "JotPK: Ammo 2"
+    },
+    {
+      "name": "JotPK: Ammo 3"
+    },
+    {
+      "name": "JotPK: Cowboy 1"
+    },
+    {
+      "name": "JotPK: Cowboy 2"
+    },
+    {
+      "name": "Junimo Kart: Crumble Cavern"
+    },
+    {
+      "name": "Junimo Kart: Slippery Slopes"
+    },
+    {
+      "name": "Junimo Kart: Secret Level"
+    },
+    {
+      "name": "Junimo Kart: The Gem Sea Giant"
+    },
+    {
+      "name": "Junimo Kart: Slomp's Stomp"
+    },
+    {
+      "name": "Junimo Kart: Ghastly Galleon"
+    },
+    {
+      "name": "Junimo Kart: Glowshroom Grotto"
+    },
+    {
+      "name": "Junimo Kart: Red Hot Rollercoaster"
+    },
+    {
+      "name": "Journey of the Prairie King Victory"
+    },
+    {
+      "name": "Junimo Kart: Sunset Speedway (Victory)"
+    },
+    {
+      "name": "Old Master Cannoli"
+    },
+    {
+      "name": "Beach Bridge Repair"
+    },
+    {
+      "name": "Galaxy Sword Shrine"
+    },
+    {
+      "name": "Help Wanted: Gathering 1"
+    },
+    {
+      "name": "Help Wanted: Gathering 2"
+    },
+    {
+      "name": "Help Wanted: Gathering 3"
+    },
+    {
+      "name": "Help Wanted: Gathering 4"
+    },
+    {
+      "name": "Help Wanted: Gathering 5"
+    },
+    {
+      "name": "Help Wanted: Gathering 6"
+    },
+    {
+      "name": "Help Wanted: Gathering 7"
+    },
+    {
+      "name": "Help Wanted: Gathering 8"
+    },
+    {
+      "name": "Help Wanted: Slay Monsters 1"
+    },
+    {
+      "name": "Help Wanted: Slay Monsters 2"
+    },
+    {
+      "name": "Help Wanted: Slay Monsters 3"
+    },
+    {
+      "name": "Help Wanted: Slay Monsters 4"
+    },
+    {
+      "name": "Help Wanted: Slay Monsters 5"
+    },
+    {
+      "name": "Help Wanted: Slay Monsters 6"
+    },
+    {
+      "name": "Help Wanted: Slay Monsters 7"
+    },
+    {
+      "name": "Help Wanted: Slay Monsters 8"
+    },
+    {
+      "name": "Help Wanted: Fishing 1"
+    },
+    {
+      "name": "Help Wanted: Fishing 2"
+    },
+    {
+      "name": "Help Wanted: Fishing 3"
+    },
+    {
+      "name": "Help Wanted: Fishing 4"
+    },
+    {
+      "name": "Help Wanted: Fishing 5"
+    },
+    {
+      "name": "Help Wanted: Fishing 6"
+    },
+    {
+      "name": "Help Wanted: Fishing 7"
+    },
+    {
+      "name": "Help Wanted: Fishing 8"
+    },
+    {
+      "name": "Help Wanted: Item Delivery 1"
+    },
+    {
+      "name": "Help Wanted: Item Delivery 2"
+    },
+    {
+      "name": "Help Wanted: Item Delivery 3"
+    },
+    {
+      "name": "Help Wanted: Item Delivery 4"
+    },
+    {
+      "name": "Help Wanted: Item Delivery 5"
+    },
+    {
+      "name": "Help Wanted: Item Delivery 6"
+    },
+    {
+      "name": "Help Wanted: Item Delivery 7"
+    },
+    {
+      "name": "Help Wanted: Item Delivery 8"
+    },
+    {
+      "name": "Help Wanted: Item Delivery 9"
+    },
+    {
+      "name": "Help Wanted: Item Delivery 10"
+    },
+    {
+      "name": "Help Wanted: Item Delivery 11"
+    },
+    {
+      "name": "Help Wanted: Item Delivery 12"
+    },
+    {
+      "name": "Help Wanted: Item Delivery 13"
+    },
+    {
+      "name": "Help Wanted: Item Delivery 14"
+    },
+    {
+      "name": "Help Wanted: Item Delivery 15"
+    },
+    {
+      "name": "Help Wanted: Item Delivery 16"
+    },
+    {
+      "name": "Help Wanted: Item Delivery 17"
+    },
+    {
+      "name": "Help Wanted: Item Delivery 18"
+    },
+    {
+      "name": "Help Wanted: Item Delivery 19"
+    },
+    {
+      "name": "Help Wanted: Item Delivery 20"
+    },
+    {
+      "name": "Help Wanted: Item Delivery 21"
+    },
+    {
+      "name": "Help Wanted: Item Delivery 22"
+    },
+    {
+      "name": "Help Wanted: Item Delivery 23"
+    },
+    {
+      "name": "Help Wanted: Item Delivery 24"
+    },
+    {
+      "name": "Help Wanted: Item Delivery 25"
+    },
+    {
+      "name": "Help Wanted: Item Delivery 26"
+    },
+    {
+      "name": "Help Wanted: Item Delivery 27"
+    },
+    {
+      "name": "Help Wanted: Item Delivery 28"
+    },
+    {
+      "name": "Help Wanted: Item Delivery 29"
+    },
+    {
+      "name": "Help Wanted: Item Delivery 30"
+    },
+    {
+      "name": "Help Wanted: Item Delivery 31"
+    },
+    {
+      "name": "Help Wanted: Item Delivery 32"
+    },
+    {
+      "name": "Traveling Merchant Sunday Item 1"
+    },
+    {
+      "name": "Traveling Merchant Sunday Item 2"
+    },
+    {
+      "name": "Traveling Merchant Sunday Item 3"
+    },
+    {
+      "name": "Traveling Merchant Monday Item 1"
+    },
+    {
+      "name": "Traveling Merchant Monday Item 2"
+    },
+    {
+      "name": "Traveling Merchant Monday Item 3"
+    },
+    {
+      "name": "Traveling Merchant Tuesday Item 1"
+    },
+    {
+      "name": "Traveling Merchant Tuesday Item 2"
+    },
+    {
+      "name": "Traveling Merchant Tuesday Item 3"
+    },
+    {
+      "name": "Traveling Merchant Wednesday Item 1"
+    },
+    {
+      "name": "Traveling Merchant Wednesday Item 2"
+    },
+    {
+      "name": "Traveling Merchant Wednesday Item 3"
+    },
+    {
+      "name": "Traveling Merchant Thursday Item 1"
+    },
+    {
+      "name": "Traveling Merchant Thursday Item 2"
+    },
+    {
+      "name": "Traveling Merchant Thursday Item 3"
+    },
+    {
+      "name": "Traveling Merchant Friday Item 1"
+    },
+    {
+      "name": "Traveling Merchant Friday Item 2"
+    },
+    {
+      "name": "Traveling Merchant Friday Item 3"
+    },
+    {
+      "name": "Traveling Merchant Saturday Item 1"
+    },
+    {
+      "name": "Traveling Merchant Saturday Item 2"
+    },
+    {
+      "name": "Traveling Merchant Saturday Item 3"
+    },
+    {
+      "name": "Fishsanity: Carp"
+    },
+    {
+      "name": "Fishsanity: Herring"
+    },
+    {
+      "name": "Fishsanity: Smallmouth Bass"
+    },
+    {
+      "name": "Fishsanity: Anchovy"
+    },
+    {
+      "name": "Fishsanity: Sardine"
+    },
+    {
+      "name": "Fishsanity: Sunfish"
+    },
+    {
+      "name": "Fishsanity: Perch"
+    },
+    {
+      "name": "Fishsanity: Chub"
+    },
+    {
+      "name": "Fishsanity: Bream"
+    },
+    {
+      "name": "Fishsanity: Red Snapper"
+    },
+    {
+      "name": "Fishsanity: Sea Cucumber"
+    },
+    {
+      "name": "Fishsanity: Rainbow Trout"
+    },
+    {
+      "name": "Fishsanity: Walleye"
+    },
+    {
+      "name": "Fishsanity: Shad"
+    },
+    {
+      "name": "Fishsanity: Bullhead"
+    },
+    {
+      "name": "Fishsanity: Largemouth Bass"
+    },
+    {
+      "name": "Fishsanity: Salmon"
+    },
+    {
+      "name": "Fishsanity: Ghostfish"
+    },
+    {
+      "name": "Fishsanity: Tilapia"
+    },
+    {
+      "name": "Fishsanity: Woodskip"
+    },
+    {
+      "name": "Fishsanity: Flounder"
+    },
+    {
+      "name": "Fishsanity: Halibut"
+    },
+    {
+      "name": "Fishsanity: Lionfish"
+    },
+    {
+      "name": "Fishsanity: Slimejack"
+    },
+    {
+      "name": "Fishsanity: Midnight Carp"
+    },
+    {
+      "name": "Fishsanity: Red Mullet"
+    },
+    {
+      "name": "Fishsanity: Pike"
+    },
+    {
+      "name": "Fishsanity: Tiger Trout"
+    },
+    {
+      "name": "Fishsanity: Blue Discus"
+    },
+    {
+      "name": "Fishsanity: Albacore"
+    },
+    {
+      "name": "Fishsanity: Sandfish"
+    },
+    {
+      "name": "Fishsanity: Stonefish"
+    },
+    {
+      "name": "Fishsanity: Tuna"
+    },
+    {
+      "name": "Fishsanity: Eel"
+    },
+    {
+      "name": "Fishsanity: Catfish"
+    },
+    {
+      "name": "Fishsanity: Squid"
+    },
+    {
+      "name": "Fishsanity: Sturgeon"
+    },
+    {
+      "name": "Fishsanity: Dorado"
+    },
+    {
+      "name": "Fishsanity: Pufferfish"
+    },
+    {
+      "name": "Fishsanity: Void Salmon"
+    },
+    {
+      "name": "Fishsanity: Super Cucumber"
+    },
+    {
+      "name": "Fishsanity: Stingray"
+    },
+    {
+      "name": "Fishsanity: Ice Pip"
+    },
+    {
+      "name": "Fishsanity: Lingcod"
+    },
+    {
+      "name": "Fishsanity: Scorpion Carp"
+    },
+    {
+      "name": "Fishsanity: Lava Eel"
+    },
+    {
+      "name": "Fishsanity: Octopus"
+    },
+    {
+      "name": "Fishsanity: Midnight Squid"
+    },
+    {
+      "name": "Fishsanity: Spook Fish"
+    },
+    {
+      "name": "Fishsanity: Blobfish"
+    },
+    {
+      "name": "Fishsanity: Crimsonfish"
+    },
+    {
+      "name": "Fishsanity: Angler"
+    },
+    {
+      "name": "Fishsanity: Legend"
+    },
+    {
+      "name": "Fishsanity: Glacierfish"
+    },
+    {
+      "name": "Fishsanity: Mutant Carp"
+    },
+    {
+      "name": "Fishsanity: Crayfish"
+    },
+    {
+      "name": "Fishsanity: Snail"
+    },
+    {
+      "name": "Fishsanity: Periwinkle"
+    },
+    {
+      "name": "Fishsanity: Lobster"
+    },
+    {
+      "name": "Fishsanity: Clam"
+    },
+    {
+      "name": "Fishsanity: Crab"
+    },
+    {
+      "name": "Fishsanity: Cockle"
+    },
+    {
+      "name": "Fishsanity: Mussel"
+    },
+    {
+      "name": "Fishsanity: Shrimp"
+    },
+    {
+      "name": "Fishsanity: Oyster"
+    }
+  ],
+  "status": "New"
+}

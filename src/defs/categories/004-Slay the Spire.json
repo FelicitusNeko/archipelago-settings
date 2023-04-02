@@ -4,28 +4,65 @@
   "settings": [
     {
       "name": "character",
-      "description": "Which character you will be playing as.",
+      "description": "Which character you will be playing as. Characters from the Downfall expansion can only be selected if you have that expansion. You can manually modify the YAML to add custom-modded characters. If an invalid/unavailable character is specified, you will be defaulted to The Ironclad.",
       "readableName": "Character",
       "values": [
         {
-          "name": "ironclad",
-          "readableName": "Ironclad"
+          "name": "the_ironclad",
+          "readableName": "The Ironclad"
         },
         {
-          "name": "silent",
-          "readableName": "Silent"
+          "name": "the_silent",
+          "readableName": "The Silent"
         },
         {
-          "name": "defect",
-          "readableName": "Defect"
+          "name": "the_defect",
+          "readableName": "The Defect"
         },
         {
-          "name": "watcher",
-          "readableName": "Watcher"
+          "name": "the_watcher",
+          "readableName": "The Watcher"
+        },
+        {
+          "name": "the_hermit",
+          "readableName": "The Hermit"
+        },
+        {
+          "name": "the_slime_boss",
+          "readableName": "The Slime Boss"
+        },
+        {
+          "name": "the_guardian",
+          "readableName": "The Guardian"
+        },
+        {
+          "name": "the_hexaghost",
+          "readableName": "The Hexaghost"
+        },
+        {
+          "name": "the_champ",
+          "readableName": "The Champ"
+        },
+        {
+          "name": "the_gremlins",
+          "readableName": "The Gremlins"
+        },
+        {
+          "name": "the_automaton",
+          "readableName": "The Automaton"
+        },
+        {
+          "name": "the_snecko",
+          "readableName": "The Snecko"
+        },
+        {
+          "name": "spire_take_the_wheel",
+          "readableName": "Spire Take the Wheel",
+          "description": "Can be any character, including custom-modded characters."
         }
       ],
       "type": "choice",
-      "default": "ironclad"
+      "default": "the_ironclad"
     },
     {
       "name": "ascension",
@@ -37,11 +74,18 @@
       "default": 0
     },
     {
-      "name": "heart_run",
-      "description": "If enabled, you'll need to collect the three keys and defeat the Heart in order to complete the game.",
-      "readableName": "Heart run",
+      "name": "final_act",
+      "description": "Whether you will need to collect the 3 keys and beat the final act to complete the game.",
+      "readableName": "Final Act (Heart run)",
       "type": "toggle",
-      "default": true
+      "default": false
+    },
+    {
+      "name": "downfall",
+      "description": "Enables playing with the Downfall expansion.",
+      "readableName": "Downfall",
+      "type": "toggle",
+      "default": false
     }
   ],
   "defver": 2,

@@ -14,6 +14,10 @@
         {
           "name": "sigma_expert",
           "readableName": "Σ expert"
+        },
+        {
+          "name": "none",
+          "readableName": "None"
         }
       ],
       "type": "choice",
@@ -86,6 +90,56 @@
       "readableName": "Shuffle Vault Boxes",
       "type": "toggle",
       "default": false
+    },
+    {
+      "name": "shuffle_EPs",
+      "description": "Add Environmental/Obelisk Puzzles into the location pool.",
+      "readableName": "Shuffle environmental puzzles",
+      "values": [
+        {
+          "name": "off",
+          "readableName": "Off"
+        },
+        {
+          "name": "individual",
+          "readableName": "Individual",
+          "description": "Every Environmental Puzzle sends an item."
+        },
+        {
+          "name": "obelisk_sides",
+          "readableName": "Obelisk sides",
+          "description": "Completing every puzzle on one side of an Obelisk sends an item."
+        }
+      ],
+      "type": "choice",
+      "default": "off"
+    },
+    {
+      "name": "EP_difficulty",
+      "description": "This setting governs which EPs are eligible for the location pool.",
+      "readableName": "Environmental puzzle difficulty",
+      "values": [
+        {
+          "name": "normal",
+          "readableName": "Normal",
+          "description": "Several difficult or long EPs are excluded."
+        },
+        {
+          "name": "tedious",
+          "readableName": "Tedious",
+          "description": "Every EP in the game is eligible, except the Theater Eclipse EP."
+        },
+        {
+          "name": "eclipse",
+          "readableName": "Eclipse",
+          "description": "Every EP in the game is eligible, including the 1-hour-long \"Theater Eclipse EP\"."
+        }
+      ],
+      "type": "choice",
+      "default": "normal",
+      "dependsOn": {
+        "shuffle_EPs": ["individual", "obelisk_sides"]
+      }
     },
     {
       "name": "shuffle_postgame",
@@ -173,6 +227,9 @@
       "low": 0,
       "type": "range",
       "default": 10
+    },
+    {
+      "type": "deathlink"
     }
   ],
   "defver": 2,
@@ -265,13 +322,13 @@
       "name": "Desert Flood Controls (Panel)"
     },
     {
-      "name": "Quarry Mill Entry (Panel)"
+      "name": "Quarry Stoneworks Entry (Panel)"
     },
     {
-      "name": "Quarry Mill Ramp Controls (Panel)"
+      "name": "Quarry Stoneworks Ramp Controls (Panel)"
     },
     {
-      "name": "Quarry Mill Lift Controls (Panel)"
+      "name": "Quarry Stoneworks Lift Controls (Panel)"
     },
     {
       "name": "Quarry Boathouse Ramp Height Control (Panel)"
@@ -424,16 +481,16 @@
       "name": "Quarry Entry 2 (Door)"
     },
     {
-      "name": "Quarry Mill Entry (Door)"
+      "name": "Quarry Stoneworks Entry (Door)"
     },
     {
-      "name": "Quarry Mill Side Exit (Door)"
+      "name": "Quarry Stoneworks Side Exit (Door)"
     },
     {
-      "name": "Quarry Mill Roof Exit (Door)"
+      "name": "Quarry Stoneworks Roof Exit (Door)"
     },
     {
-      "name": "Quarry Mill Stairs (Door)"
+      "name": "Quarry Stoneworks Stairs (Door)"
     },
     {
       "name": "Quarry Boathouse Dock (Door)"
@@ -445,7 +502,7 @@
       "name": "Quarry Boathouse Second Barrier (Door)"
     },
     {
-      "name": "Shadows Timed Door (Door)"
+      "name": "Shadows Timed Door"
     },
     {
       "name": "Shadows Laser Entry Right (Door)"
@@ -517,7 +574,7 @@
       "name": "Town Wooden Roof Stairs (Door)"
     },
     {
-      "name": "Town Tinted Glass Door (Door)"
+      "name": "Town Tinted Glass Door"
     },
     {
       "name": "Town Church Entry (Door)"
@@ -532,16 +589,16 @@
       "name": "Town RGB House Stairs (Door)"
     },
     {
-      "name": "Town Tower First Door (Door)"
+      "name": "Town Tower Second (Door)"
     },
     {
-      "name": "Town Tower Third Door (Door)"
+      "name": "Town Tower First (Door)"
     },
     {
-      "name": "Town Tower Fourth Door (Door)"
+      "name": "Town Tower Fourth (Door)"
     },
     {
-      "name": "Town Tower Second Door (Door)"
+      "name": "Town Tower Third (Door)"
     },
     {
       "name": "Theater Entry (Door)"
@@ -565,7 +622,7 @@
       "name": "Bunker Entry (Door)"
     },
     {
-      "name": "Bunker Tinted Glass Door (Door)"
+      "name": "Bunker Tinted Glass Door"
     },
     {
       "name": "Bunker UV Room Entry (Door)"
@@ -604,13 +661,13 @@
       "name": "Swamp Laser Shortcut (Door)"
     },
     {
-      "name": "Treehouse First Door (Door)"
+      "name": "Treehouse First (Door)"
     },
     {
-      "name": "Treehouse Second Door (Door)"
+      "name": "Treehouse Second (Door)"
     },
     {
-      "name": "Treehouse Third Door (Door)"
+      "name": "Treehouse Third (Door)"
     },
     {
       "name": "Treehouse Drawbridge (Door)"
@@ -643,7 +700,7 @@
       "name": "Caves Entry (Door)"
     },
     {
-      "name": "Caves Pillar Door (Door)"
+      "name": "Caves Pillar Door"
     },
     {
       "name": "Caves Swamp Shortcut (Door)"
@@ -679,7 +736,7 @@
       "name": "Quarry Main Entry"
     },
     {
-      "name": "Quarry Mill Shortcuts"
+      "name": "Quarry Stoneworks Shortcuts"
     },
     {
       "name": "Quarry Boathouse Barriers"
@@ -1110,79 +1167,79 @@
       "name": "Quarry Elevator Control"
     },
     {
-      "name": "Quarry Mill Entry Left Panel"
+      "name": "Quarry Stoneworks Entry Left Panel"
     },
     {
-      "name": "Quarry Mill Entry Right Panel"
+      "name": "Quarry Stoneworks Entry Right Panel"
     },
     {
-      "name": "Quarry Mill Side Exit Panel"
+      "name": "Quarry Stoneworks Side Exit Panel"
     },
     {
-      "name": "Quarry Mill Lower Ramp Control"
+      "name": "Quarry Stoneworks Lower Ramp Control"
     },
     {
-      "name": "Quarry Mill Lower Row 1"
+      "name": "Quarry Stoneworks Lower Row 1"
     },
     {
-      "name": "Quarry Mill Lower Row 2"
+      "name": "Quarry Stoneworks Lower Row 2"
     },
     {
-      "name": "Quarry Mill Lower Row 3"
+      "name": "Quarry Stoneworks Lower Row 3"
     },
     {
-      "name": "Quarry Mill Lower Row 4"
+      "name": "Quarry Stoneworks Lower Row 4"
     },
     {
-      "name": "Quarry Mill Lower Row 5"
+      "name": "Quarry Stoneworks Lower Row 5"
     },
     {
-      "name": "Quarry Mill Lower Row 6"
+      "name": "Quarry Stoneworks Lower Row 6"
     },
     {
-      "name": "Quarry Mill Lower Lift Control"
+      "name": "Quarry Stoneworks Lower Lift Control"
     },
     {
-      "name": "Quarry Mill Upper Ramp Control"
+      "name": "Quarry Stoneworks Upper Ramp Control"
     },
     {
-      "name": "Quarry Mill Upper Lift Control"
+      "name": "Quarry Stoneworks Upper Lift Control"
     },
     {
-      "name": "Quarry Mill Upper Row 1"
+      "name": "Quarry Stoneworks Upper Row 1"
     },
     {
-      "name": "Quarry Mill Upper Row 2"
+      "name": "Quarry Stoneworks Upper Row 2"
     },
     {
-      "name": "Quarry Mill Upper Row 3"
+      "name": "Quarry Stoneworks Upper Row 3"
     },
     {
-      "name": "Quarry Mill Upper Row 4"
+      "name": "Quarry Stoneworks Upper Row 4"
     },
     {
-      "name": "Quarry Mill Upper Row 5"
+      "name": "Quarry Stoneworks Upper Row 5"
     },
     {
-      "name": "Quarry Mill Upper Row 6"
+      "name": "Quarry Stoneworks Upper Row 6"
     },
     {
-      "name": "Quarry Mill Upper Row 7"
+      "name": "Quarry Stoneworks Upper Row 7"
     },
     {
-      "name": "Quarry Mill Upper Row 8"
+      "name": "Quarry Stoneworks Upper Row 8"
     },
     {
-      "name": "Quarry Mill Stair Control"
+      "name": "Quarry Stoneworks Stair Control"
     },
     {
-      "name": "Quarry Mill Control Room Left"
+      "name": "Quarry Stoneworks Control Room Left"
     },
     {
-      "name": "Quarry Mill Control Room Right"
+      "name": "Quarry Stoneworks Control Room Right"
     },
     {
-      "name": "Quarry Mill Roof Exit Panel"
+      "name": "Quarry Stoneworks Roof Exit Panel"
     },
     {
       "name": "Quarry Boathouse Intro Left"
@@ -2500,6 +2557,516 @@
     },
     {
       "name": "Mountaintop Box Long"
+    },
+    {
+      "name": "Symmetry Island Glass Factory Black Line Reflection EP"
+    },
+    {
+      "name": "Symmetry Island Glass Factory Black Line EP"
+    },
+    {
+      "name": "Glass Factory Vase EP"
+    },
+    {
+      "name": "Town Windmill First Blade EP"
+    },
+    {
+      "name": "Town Windmill Second Blade EP"
+    },
+    {
+      "name": "Town Windmill Third Blade EP"
+    },
+    {
+      "name": "Desert Sand Snake EP"
+    },
+    {
+      "name": "Desert Facade Right EP"
+    },
+    {
+      "name": "Desert Facade Left EP"
+    },
+    {
+      "name": "Desert Stairs Left EP"
+    },
+    {
+      "name": "Desert Stairs Right EP"
+    },
+    {
+      "name": "Desert Flood Room EP"
+    },
+    {
+      "name": "Desert Elevator EP"
+    },
+    {
+      "name": "Desert Broken Wall Straight EP"
+    },
+    {
+      "name": "Desert Broken Wall Bend EP"
+    },
+    {
+      "name": "Desert Shore EP"
+    },
+    {
+      "name": "Desert Island EP"
+    },
+    {
+      "name": "Boat Desert EP"
+    },
+    {
+      "name": "Desert Pond Room Near Reflection EP"
+    },
+    {
+      "name": "Desert Pond Room Far Reflection EP"
+    },
+    {
+      "name": "Jungle Long Arch Moss EP"
+    },
+    {
+      "name": "Jungle Straight Left Moss EP"
+    },
+    {
+      "name": "Jungle Pop-up Wall Moss EP"
+    },
+    {
+      "name": "Jungle Short Arch Moss EP"
+    },
+    {
+      "name": "River Green Leaf Moss EP"
+    },
+    {
+      "name": "River Monastery Garden Left EP"
+    },
+    {
+      "name": "River Monastery Garden Right EP"
+    },
+    {
+      "name": "River Monastery Wall EP"
+    },
+    {
+      "name": "Monastery Facade Left Near EP"
+    },
+    {
+      "name": "Monastery Facade Left Far Short EP"
+    },
+    {
+      "name": "Monastery Facade Left Far Long EP"
+    },
+    {
+      "name": "Monastery Left Shutter EP"
+    },
+    {
+      "name": "Monastery Middle Shutter EP"
+    },
+    {
+      "name": "Monastery Right Shutter EP"
+    },
+    {
+      "name": "Monastery Facade Right Near EP"
+    },
+    {
+      "name": "Monastery Facade Left Stairs EP"
+    },
+    {
+      "name": "Monastery Facade Right Stairs EP"
+    },
+    {
+      "name": "Monastery Grass Stairs EP"
+    },
+    {
+      "name": "Jungle Entrance EP"
+    },
+    {
+      "name": "Jungle Tree Halo EP"
+    },
+    {
+      "name": "Treehouse Beach Rock Shadow EP"
+    },
+    {
+      "name": "Treehouse Beach Sand Shadow EP"
+    },
+    {
+      "name": "Treehouse Burned House Beach EP"
+    },
+    {
+      "name": "Treehouse Buoy EP"
+    },
+    {
+      "name": "Treehouse Right Orange Bridge EP"
+    },
+    {
+      "name": "Treehouse Beach Both Orange Bridges EP"
+    },
+    {
+      "name": "Shipwreck Circle Far EP"
+    },
+    {
+      "name": "Shipwreck Circle Left EP"
+    },
+    {
+      "name": "Shipwreck Circle Near EP"
+    },
+    {
+      "name": "Boat Shipwreck CCW Underside EP"
+    },
+    {
+      "name": "Shipwreck Stern EP"
+    },
+    {
+      "name": "Shipwreck Rope Inner EP"
+    },
+    {
+      "name": "Shipwreck Rope Outer EP"
+    },
+    {
+      "name": "Shipwreck Couch EP"
+    },
+    {
+      "name": "Boat Shipwreck Green EP"
+    },
+    {
+      "name": "Boat Shipwreck CW Underside EP"
+    },
+    {
+      "name": "Keep Pressure Plates 1 EP"
+    },
+    {
+      "name": "Keep Pressure Plates 2 EP"
+    },
+    {
+      "name": "Keep Pressure Plates 3 EP"
+    },
+    {
+      "name": "Keep Pressure Plates 4 Left Exit EP"
+    },
+    {
+      "name": "Keep Pressure Plates 4 Right Exit EP"
+    },
+    {
+      "name": "Keep Path EP"
+    },
+    {
+      "name": "Keep Hedges EP"
+    },
+    {
+      "name": "Mountaintop River Shape EP"
+    },
+    {
+      "name": "Mountainside Cloud Cycle EP"
+    },
+    {
+      "name": "Bunker Green Room Flowers EP"
+    },
+    {
+      "name": "Bunker Tinted Door EP"
+    },
+    {
+      "name": "Mountain Floor 2 Pink Bridge EP"
+    },
+    {
+      "name": "Mountain Bottom Floor Yellow Bridge EP"
+    },
+    {
+      "name": "Mountain Bottom Floor Blue Bridge EP"
+    },
+    {
+      "name": "Mountaintop Arch Black EP"
+    },
+    {
+      "name": "Swamp Purple Sand Middle EP"
+    },
+    {
+      "name": "Swamp Purple Sand Top EP"
+    },
+    {
+      "name": "Boat Bunker Yellow Line EP"
+    },
+    {
+      "name": "Mountaintop Arch White Right EP"
+    },
+    {
+      "name": "Mountainside Bush EP"
+    },
+    {
+      "name": "Mountaintop Arch White Left EP"
+    },
+    {
+      "name": "Swamp Purple Sand Bottom EP"
+    },
+    {
+      "name": "Swamp Purple Underwater Right EP"
+    },
+    {
+      "name": "Swamp Rotating Bridge CCW EP"
+    },
+    {
+      "name": "Swamp Boat EP"
+    },
+    {
+      "name": "Swamp Long Bridge Side EP"
+    },
+    {
+      "name": "Swamp Rotating Bridge CW EP"
+    },
+    {
+      "name": "Mountainside Apparent River EP"
+    },
+    {
+      "name": "Swamp Purple Underwater Left EP"
+    },
+    {
+      "name": "Swamp Cyan Underwater Sliding Bridge EP"
+    },
+    {
+      "name": "Caves Skylight EP"
+    },
+    {
+      "name": "Swamp Sliding Bridge Left EP"
+    },
+    {
+      "name": "Swamp Sliding Bridge Right EP"
+    },
+    {
+      "name": "Jungle Bamboo CCW EP"
+    },
+    {
+      "name": "Jungle Bamboo CW EP"
+    },
+    {
+      "name": "Shadows Quarry Stoneworks Rooftop Vent EP"
+    },
+    {
+      "name": "Quarry Boathouse Hook EP"
+    },
+    {
+      "name": "Quarry Boathouse Moving Ramp EP"
+    },
+    {
+      "name": "Quarry Railroad EP"
+    },
+    {
+      "name": "Quarry Shore EP"
+    },
+    {
+      "name": "Quarry Entrance Pipe EP"
+    },
+    {
+      "name": "Quarry Stoneworks Ramp EP"
+    },
+    {
+      "name": "Quarry Sand Pile EP"
+    },
+    {
+      "name": "Quarry Stoneworks Lift EP"
+    },
+    {
+      "name": "Quarry Rock Line EP"
+    },
+    {
+      "name": "Quarry Rock Line Reflection EP"
+    },
+    {
+      "name": "Town Brown Bridge EP"
+    },
+    {
+      "name": "Keep Red Flowers EP"
+    },
+    {
+      "name": "Keep Purple Flowers EP"
+    },
+    {
+      "name": "Outside Tutorial Tractor EP"
+    },
+    {
+      "name": "First Hallway EP"
+    },
+    {
+      "name": "Outside Tutorial Garden EP"
+    },
+    {
+      "name": "Tutorial Cloud EP"
+    },
+    {
+      "name": "Tutorial Patio Flowers EP"
+    },
+    {
+      "name": "Outside Tutorial Town Sewer EP"
+    },
+    {
+      "name": "Boat Town Long Sewer EP"
+    },
+    {
+      "name": "Outside Tutorial Path EP"
+    },
+    {
+      "name": "Tutorial Gate EP"
+    },
+    {
+      "name": "Boat Tutorial EP"
+    },
+    {
+      "name": "Boat Tutorial Reflection EP"
+    },
+    {
+      "name": "Boat Tutorial Moss EP"
+    },
+    {
+      "name": "Challenge Water EP"
+    },
+    {
+      "name": "Boat Cargo Box EP"
+    },
+    {
+      "name": "Town Tower Underside Third EP"
+    },
+    {
+      "name": "Town Tower Underside Fourth EP"
+    },
+    {
+      "name": "Town Tower Underside First EP"
+    },
+    {
+      "name": "Town Tower Underside Second EP"
+    },
+    {
+      "name": "Town RGB House Red EP"
+    },
+    {
+      "name": "Town RGB House Green EP"
+    },
+    {
+      "name": "Town Maze Bridge Underside EP"
+    },
+    {
+      "name": "Main Island Thundercloud EP"
+    },
+    {
+      "name": "Town Black Line Tower EP"
+    },
+    {
+      "name": "Town Black Line Redirect EP"
+    },
+    {
+      "name": "Town Black Line Church EP"
+    },
+    {
+      "name": "Theater Eclipse EP"
+    },
+    {
+      "name": "Theater Window EP"
+    },
+    {
+      "name": "Theater Door EP"
+    },
+    {
+      "name": "Tunnels Theater Flowers EP"
+    },
+    {
+      "name": "Theater Church EP"
+    },
+    {
+      "name": "Desert Obelisk Side 1"
+    },
+    {
+      "name": "Desert Obelisk Side 2"
+    },
+    {
+      "name": "Desert Obelisk Side 3"
+    },
+    {
+      "name": "Desert Obelisk Side 4"
+    },
+    {
+      "name": "Desert Obelisk Side 5"
+    },
+    {
+      "name": "Monastery Obelisk Side 1"
+    },
+    {
+      "name": "Monastery Obelisk Side 2"
+    },
+    {
+      "name": "Monastery Obelisk Side 3"
+    },
+    {
+      "name": "Monastery Obelisk Side 4"
+    },
+    {
+      "name": "Monastery Obelisk Side 5"
+    },
+    {
+      "name": "Monastery Obelisk Side 6"
+    },
+    {
+      "name": "Treehouse Obelisk Side 1"
+    },
+    {
+      "name": "Treehouse Obelisk Side 2"
+    },
+    {
+      "name": "Treehouse Obelisk Side 3"
+    },
+    {
+      "name": "Treehouse Obelisk Side 4"
+    },
+    {
+      "name": "Treehouse Obelisk Side 5"
+    },
+    {
+      "name": "Treehouse Obelisk Side 6"
+    },
+    {
+      "name": "River Obelisk Side 1"
+    },
+    {
+      "name": "River Obelisk Side 2"
+    },
+    {
+      "name": "River Obelisk Side 3"
+    },
+    {
+      "name": "River Obelisk Side 4"
+    },
+    {
+      "name": "River Obelisk Side 5"
+    },
+    {
+      "name": "River Obelisk Side 6"
+    },
+    {
+      "name": "Quarry Obelisk Side 1"
+    },
+    {
+      "name": "Quarry Obelisk Side 2"
+    },
+    {
+      "name": "Quarry Obelisk Side 3"
+    },
+    {
+      "name": "Quarry Obelisk Side 4"
+    },
+    {
+      "name": "Quarry Obelisk Side 5"
+    },
+    {
+      "name": "Town Obelisk Side 1"
+    },
+    {
+      "name": "Town Obelisk Side 2"
+    },
+    {
+      "name": "Town Obelisk Side 3"
+    },
+    {
+      "name": "Town Obelisk Side 4"
+    },
+    {
+      "name": "Town Obelisk Side 5"
+    },
+    {
+      "name": "Town Obelisk Side 6"
+    },
+    {
+      "name": "Town Pet the Dog"
     }
   ],
   "status": "Updated"

@@ -211,6 +211,10 @@
       "default": 16
     },
     {
+      "name": "custom_item_pool",
+      "type": "ignore"
+    },
+    {
       "type": "deathlink"
     },
     {
@@ -292,6 +296,104 @@
       ],
       "type": "choice",
       "default": "m"
+    },
+    {
+      "name": "enemy_floor_numbers",
+      "description": "Change which enemy types are encountered at which floor numbers.",
+      "readableName": "Enemy floor numbers",
+      "values": [
+        {
+          "name": "vanilla",
+          "readableName": "Vanilla"
+        },
+        {
+          "name": "shuffle",
+          "readableName": "Shuffle",
+          "description": "The existing enemy types are redistributed among nearby floors. Shifts by up to 6 floors are possible."
+        },
+        {
+          "name": "randomize",
+          "readableName": "Randomize",
+          "description": "For each floor, new enemy types are chosen randomly from the set usually possible on floors [-6, +6]."
+        }
+      ],
+      "type": "choice",
+      "default": "vanilla"
+    },
+    {
+      "name": "enemy_movement_patterns",
+      "description": "Change the movement patterns of enemies. You can modify your YAML to make it a Singularity based on a specific monster (for example, 'Red Jelly').",
+      "readableName": "Enemy movement patterns",
+      "values": [
+        {
+          "name": "vanilla",
+          "readableName": "Vanilla"
+        },
+        {
+          "name": "shuffle_by_pattern",
+          "readableName": "Shuffle by pattern",
+          "description": "The existing movement patterns are redistributed among each other."
+        },
+        {
+          "name": "randomize_by_pattern",
+          "readableName": "Randomize by pattern",
+          "description": "For each movement pattern, a new one is chosen randomly from the set of existing patterns."
+        },
+        {
+          "name": "shuffle_by_sprite",
+          "readableName": "Shuffle by sprite",
+          "description": "The existing movement patterns of sprites are redistributed among the enemy sprites."
+        },
+        {
+          "name": "randomize_by_sprite",
+          "readableName": "Randomize by sprite",
+          "description": "For each sprite, a new movement is chosen randomly from the set of existing patterns."
+        },
+        {
+          "name": "singularity",
+          "readableName": "Singularity",
+          "description": "All enemy sprites use the same, randomly selected movement pattern."
+        }
+      ],
+      "type": "choice",
+      "default": "vanilla"
+    },
+    {
+      "name": "enemy_sprites",
+      "description": "Change the appearance of enemies.",
+      "readableName": "Enemy sprites",
+      "values": [
+        {
+          "name": "vanilla",
+          "readableName": "Vanilla"
+        },
+        {
+          "name": "shuffle",
+          "readableName": "Shuffle",
+          "description": "The existing sprites are redistributed among the enemy types."
+        },
+        {
+          "name": "randomize",
+          "readableName": "Randomize",
+          "description": "For each enemy type, a new sprite is chosen randomly from the set of existing sprites."
+        },
+        {
+          "name": "singularity",
+          "readableName": "Singularity",
+          "description": "All enemies use the same, randomly selected sprite."
+        }
+      ],
+      "type": "choice",
+      "default": "vanilla"
+    },
+    {
+      "name": "exp_modifier",
+      "description": "Percentage modifier for EXP gained from enemies.",
+      "high": 500,
+      "readableName": "EXP modifier",
+      "low": 100,
+      "type": "range",
+      "default": 100
     },
     {
       "name": "final_floor",
@@ -382,17 +484,13 @@
     },
     {
       "name": "master_hp",
-      "description": "The number of hit points of the Master. A setting of 0 will scale the HP based on the location of the final floor.",
+      "description": "The number of hit points of the Master.",
       "high": 9980,
       "readableName": "Master HP",
-      "low": 0,
+      "low": 1,
       "step": 10,
       "type": "range",
-      "default": 9980,
-      "aliases": {
-        "default": 9980,
-        "scale": 0
-      }
+      "default": 9980
     },
     {
       "name": "party_starting_level",

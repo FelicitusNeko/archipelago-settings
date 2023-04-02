@@ -332,6 +332,15 @@
       "default": "rocket"
     },
     {
+      "name": "recipe_ingredients_offset",
+      "description": "When randomizing ingredients, remove or add this many \"slots\" of items. For example, at -1 a randomized Automation Science Pack will only require 1 ingredient, instead of 2.",
+      "high": 5,
+      "readableName": "Recipe ingredients offset",
+      "low": -1,
+      "type": "range",
+      "default": 0
+    },
+    {
       "name": "imported_blueprints",
       "description": "Whether blueprints from outside the current savegame are allowed.",
       "readableName": "Imported blueprints",
@@ -366,17 +375,53 @@
       "default": "on"
     },
     {
-      "name": "evolution_traps",
-      "description": "When these are researched, they will also progress enemy evolution.",
+      "name": "teleport_traps",
+      "description": "Trap items that when received trigger a random teleport.",
       "high": 25,
-      "readableName": "Evolution traps",
+      "readableName": "Teleport traps",
+      "low": 0,
+      "type": "range",
+      "default": 0
+    },
+    {
+      "name": "grenade_traps",
+      "description": "Trap items that when received trigger a grenade explosion on each player.",
+      "high": 25,
+      "readableName": "Grenade traps",
+      "low": 0,
+      "type": "range",
+      "default": 0
+    },
+    {
+      "name": "cluster_grenade_traps",
+      "description": "Trap items that when received trigger a cluster grenade explosion on each player.",
+      "high": 25,
+      "readableName": "Cluster Grenade traps",
+      "low": 0,
+      "type": "range",
+      "default": 0
+    },
+    {
+      "name": "artillery_traps",
+      "description": "Trap items that when received trigger an artillery shell on each player.",
+      "high": 25,
+      "readableName": "Artillery traps",
+      "low": 0,
+      "type": "range",
+      "default": 0
+    },
+    {
+      "name": "atomic_rocket_traps",
+      "description": "Trap items that when received trigger an atomic rocket explosion on each player. **Warning**: there is no warning. The launch is instantaneous.",
+      "high": 25,
+      "readableName": "Atomic Rocket traps",
       "low": 0,
       "type": "range",
       "default": 0
     },
     {
       "name": "attack_traps",
-      "description": "Adds a trigger to certain items which will cause the enemy to attack your base when the item is received.",
+      "description": "Trap items that when received trigger an attack on your base.",
       "high": 25,
       "readableName": "Attack traps",
       "low": 0,
@@ -384,14 +429,29 @@
       "default": 0
     },
     {
+      "name": "evolution_traps",
+      "description": "Trap items that when received increase the enemy evolution.",
+      "high": 10,
+      "readableName": "Evolution traps",
+      "low": 0,
+      "type": "range",
+      "default": 0
+    },
+    {
       "name": "evolution_trap_increase",
-      "description": "When an evolution trap is researched, the scale by which enemy evolution will be boosted. Increases scale down proportionally to the session's current evolution factor (40 increase at 0.50 will add 0.20... 40 increase at 0.75 will add 0.10...)",
+      "description": "When an evolution trap is found, the scale by which enemy evolution will be boosted. Increases scale down proportionally to the session's current evolution factor (40 increase at 0.50 will add 0.20... 40 increase at 0.75 will add 0.10...)",
       "dependsOn": {
         "evolution_traps": [
           1,
           2,
           3,
-          4
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
         ]
       },
       "high": 100,
@@ -401,7 +461,6 @@
       "default": 10
     },
     {
-      "name": "death_link",
       "type": "deathlink"
     },
     {
@@ -414,6 +473,21 @@
   ],
   "defver": 2,
   "items": [
+    {
+      "name": "Atomic Rocket Trap"
+    },
+    {
+      "name": "Artillery Trap"
+    },
+    {
+      "name": "Cluster Grenade Trap"
+    },
+    {
+      "name": "Grenade Trap"
+    },
+    {
+      "name": "Teleport Trap"
+    },
     {
       "name": "Evolution Trap"
     },
@@ -1082,555 +1156,6 @@
     }
   ],
   "locations": [
-    {
-      "name": "advanced-electronics"
-    },
-    {
-      "name": "advanced-electronics-2"
-    },
-    {
-      "name": "advanced-material-processing"
-    },
-    {
-      "name": "advanced-material-processing-2"
-    },
-    {
-      "name": "advanced-oil-processing"
-    },
-    {
-      "name": "artillery"
-    },
-    {
-      "name": "atomic-bomb"
-    },
-    {
-      "name": "automated-rail-transportation"
-    },
-    {
-      "name": "automation"
-    },
-    {
-      "name": "automation-2"
-    },
-    {
-      "name": "automation-3"
-    },
-    {
-      "name": "automobilism"
-    },
-    {
-      "name": "battery"
-    },
-    {
-      "name": "battery-equipment"
-    },
-    {
-      "name": "battery-mk2-equipment"
-    },
-    {
-      "name": "belt-immunity-equipment"
-    },
-    {
-      "name": "braking-force-1"
-    },
-    {
-      "name": "braking-force-2"
-    },
-    {
-      "name": "braking-force-3"
-    },
-    {
-      "name": "braking-force-4"
-    },
-    {
-      "name": "braking-force-5"
-    },
-    {
-      "name": "braking-force-6"
-    },
-    {
-      "name": "braking-force-7"
-    },
-    {
-      "name": "chemical-science-pack"
-    },
-    {
-      "name": "circuit-network"
-    },
-    {
-      "name": "cliff-explosives"
-    },
-    {
-      "name": "coal-liquefaction"
-    },
-    {
-      "name": "concrete"
-    },
-    {
-      "name": "construction-robotics"
-    },
-    {
-      "name": "defender"
-    },
-    {
-      "name": "destroyer"
-    },
-    {
-      "name": "discharge-defense-equipment"
-    },
-    {
-      "name": "distractor"
-    },
-    {
-      "name": "effect-transmission"
-    },
-    {
-      "name": "effectivity-module"
-    },
-    {
-      "name": "effectivity-module-2"
-    },
-    {
-      "name": "effectivity-module-3"
-    },
-    {
-      "name": "electric-energy-accumulators"
-    },
-    {
-      "name": "electric-energy-distribution-1"
-    },
-    {
-      "name": "electric-energy-distribution-2"
-    },
-    {
-      "name": "electric-engine"
-    },
-    {
-      "name": "electronics"
-    },
-    {
-      "name": "energy-shield-equipment"
-    },
-    {
-      "name": "energy-shield-mk2-equipment"
-    },
-    {
-      "name": "energy-weapons-damage-1"
-    },
-    {
-      "name": "energy-weapons-damage-2"
-    },
-    {
-      "name": "energy-weapons-damage-3"
-    },
-    {
-      "name": "energy-weapons-damage-4"
-    },
-    {
-      "name": "energy-weapons-damage-5"
-    },
-    {
-      "name": "energy-weapons-damage-6"
-    },
-    {
-      "name": "engine"
-    },
-    {
-      "name": "exoskeleton-equipment"
-    },
-    {
-      "name": "explosive-rocketry"
-    },
-    {
-      "name": "explosives"
-    },
-    {
-      "name": "fast-inserter"
-    },
-    {
-      "name": "flamethrower"
-    },
-    {
-      "name": "flammables"
-    },
-    {
-      "name": "fluid-handling"
-    },
-    {
-      "name": "fluid-wagon"
-    },
-    {
-      "name": "follower-robot-count-1"
-    },
-    {
-      "name": "follower-robot-count-2"
-    },
-    {
-      "name": "follower-robot-count-3"
-    },
-    {
-      "name": "follower-robot-count-4"
-    },
-    {
-      "name": "follower-robot-count-5"
-    },
-    {
-      "name": "follower-robot-count-6"
-    },
-    {
-      "name": "fusion-reactor-equipment"
-    },
-    {
-      "name": "gate"
-    },
-    {
-      "name": "gun-turret"
-    },
-    {
-      "name": "heavy-armor"
-    },
-    {
-      "name": "inserter-capacity-bonus-1"
-    },
-    {
-      "name": "inserter-capacity-bonus-2"
-    },
-    {
-      "name": "inserter-capacity-bonus-3"
-    },
-    {
-      "name": "inserter-capacity-bonus-4"
-    },
-    {
-      "name": "inserter-capacity-bonus-5"
-    },
-    {
-      "name": "inserter-capacity-bonus-6"
-    },
-    {
-      "name": "inserter-capacity-bonus-7"
-    },
-    {
-      "name": "kovarex-enrichment-process"
-    },
-    {
-      "name": "land-mine"
-    },
-    {
-      "name": "landfill"
-    },
-    {
-      "name": "laser"
-    },
-    {
-      "name": "laser-shooting-speed-1"
-    },
-    {
-      "name": "laser-shooting-speed-2"
-    },
-    {
-      "name": "laser-shooting-speed-3"
-    },
-    {
-      "name": "laser-shooting-speed-4"
-    },
-    {
-      "name": "laser-shooting-speed-5"
-    },
-    {
-      "name": "laser-shooting-speed-6"
-    },
-    {
-      "name": "laser-shooting-speed-7"
-    },
-    {
-      "name": "laser-turret"
-    },
-    {
-      "name": "logistic-robotics"
-    },
-    {
-      "name": "logistic-science-pack"
-    },
-    {
-      "name": "logistic-system"
-    },
-    {
-      "name": "logistics"
-    },
-    {
-      "name": "logistics-2"
-    },
-    {
-      "name": "logistics-3"
-    },
-    {
-      "name": "low-density-structure"
-    },
-    {
-      "name": "lubricant"
-    },
-    {
-      "name": "military"
-    },
-    {
-      "name": "military-2"
-    },
-    {
-      "name": "military-3"
-    },
-    {
-      "name": "military-4"
-    },
-    {
-      "name": "military-science-pack"
-    },
-    {
-      "name": "mining-productivity-1"
-    },
-    {
-      "name": "mining-productivity-2"
-    },
-    {
-      "name": "mining-productivity-3"
-    },
-    {
-      "name": "modular-armor"
-    },
-    {
-      "name": "modules"
-    },
-    {
-      "name": "night-vision-equipment"
-    },
-    {
-      "name": "nuclear-fuel-reprocessing"
-    },
-    {
-      "name": "nuclear-power"
-    },
-    {
-      "name": "oil-processing"
-    },
-    {
-      "name": "optics"
-    },
-    {
-      "name": "personal-laser-defense-equipment"
-    },
-    {
-      "name": "personal-roboport-equipment"
-    },
-    {
-      "name": "personal-roboport-mk2-equipment"
-    },
-    {
-      "name": "physical-projectile-damage-1"
-    },
-    {
-      "name": "physical-projectile-damage-2"
-    },
-    {
-      "name": "physical-projectile-damage-3"
-    },
-    {
-      "name": "physical-projectile-damage-4"
-    },
-    {
-      "name": "physical-projectile-damage-5"
-    },
-    {
-      "name": "physical-projectile-damage-6"
-    },
-    {
-      "name": "plastics"
-    },
-    {
-      "name": "power-armor"
-    },
-    {
-      "name": "power-armor-mk2"
-    },
-    {
-      "name": "production-science-pack"
-    },
-    {
-      "name": "productivity-module"
-    },
-    {
-      "name": "productivity-module-2"
-    },
-    {
-      "name": "productivity-module-3"
-    },
-    {
-      "name": "rail-signals"
-    },
-    {
-      "name": "railway"
-    },
-    {
-      "name": "refined-flammables-1"
-    },
-    {
-      "name": "refined-flammables-2"
-    },
-    {
-      "name": "refined-flammables-3"
-    },
-    {
-      "name": "refined-flammables-4"
-    },
-    {
-      "name": "refined-flammables-5"
-    },
-    {
-      "name": "refined-flammables-6"
-    },
-    {
-      "name": "research-speed-1"
-    },
-    {
-      "name": "research-speed-2"
-    },
-    {
-      "name": "research-speed-3"
-    },
-    {
-      "name": "research-speed-4"
-    },
-    {
-      "name": "research-speed-5"
-    },
-    {
-      "name": "research-speed-6"
-    },
-    {
-      "name": "robotics"
-    },
-    {
-      "name": "rocket-control-unit"
-    },
-    {
-      "name": "rocket-fuel"
-    },
-    {
-      "name": "rocket-silo"
-    },
-    {
-      "name": "rocketry"
-    },
-    {
-      "name": "solar-energy"
-    },
-    {
-      "name": "solar-panel-equipment"
-    },
-    {
-      "name": "space-science-pack"
-    },
-    {
-      "name": "speed-module"
-    },
-    {
-      "name": "speed-module-2"
-    },
-    {
-      "name": "speed-module-3"
-    },
-    {
-      "name": "spidertron"
-    },
-    {
-      "name": "stack-inserter"
-    },
-    {
-      "name": "steel-axe"
-    },
-    {
-      "name": "steel-processing"
-    },
-    {
-      "name": "stone-wall"
-    },
-    {
-      "name": "stronger-explosives-1"
-    },
-    {
-      "name": "stronger-explosives-2"
-    },
-    {
-      "name": "stronger-explosives-3"
-    },
-    {
-      "name": "stronger-explosives-4"
-    },
-    {
-      "name": "stronger-explosives-5"
-    },
-    {
-      "name": "stronger-explosives-6"
-    },
-    {
-      "name": "sulfur-processing"
-    },
-    {
-      "name": "tank"
-    },
-    {
-      "name": "toolbelt"
-    },
-    {
-      "name": "uranium-ammo"
-    },
-    {
-      "name": "uranium-processing"
-    },
-    {
-      "name": "utility-science-pack"
-    },
-    {
-      "name": "weapon-shooting-speed-1"
-    },
-    {
-      "name": "weapon-shooting-speed-2"
-    },
-    {
-      "name": "weapon-shooting-speed-3"
-    },
-    {
-      "name": "weapon-shooting-speed-4"
-    },
-    {
-      "name": "weapon-shooting-speed-5"
-    },
-    {
-      "name": "weapon-shooting-speed-6"
-    },
-    {
-      "name": "worker-robots-speed-1"
-    },
-    {
-      "name": "worker-robots-speed-2"
-    },
-    {
-      "name": "worker-robots-speed-3"
-    },
-    {
-      "name": "worker-robots-speed-4"
-    },
-    {
-      "name": "worker-robots-speed-5"
-    },
-    {
-      "name": "worker-robots-storage-1"
-    },
-    {
-      "name": "worker-robots-storage-2"
-    },
-    {
-      "name": "worker-robots-storage-3"
-    },
     {
       "name": "AP-1-01"
     },

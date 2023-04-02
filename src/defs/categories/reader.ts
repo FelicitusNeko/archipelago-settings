@@ -92,6 +92,16 @@ const APCategoryData: APCategoryJson[] = [
   require("./028-Hylics 2.json"), // 0.3.6
   require("./029-Overcooked 2.json"), // 0.3.6
   require("./030-Sudoku.json"), // 0.3.6
+  require('./031-Lufia II Ancient Cave.json'), // 0.?.?
+  require('./032-Clique.json'), // 0.4.0
+  require('./033-Stardew Valley.json'), // 0.4.0
+  require('./034-Links Awakening DX.json'), // 0.4.0
+  require('./035-Kingdom Hearts 2.json'), // 0.4.0
+  require('./036-Adventure.json'), // 0.4.0
+  require('./037-Blasphemous.json'), // 0.4.0
+  require('./038-The Messenger.json'), // 0.4.0
+  require('./039-Wargroove.json'), // 0.4.0
+  require('./040-The Legend of Zelda.json'), // 0.4.0
 ]
   .map((i: APCategoryJson) => {
     // only bring out ArchipIDLE in April

@@ -361,6 +361,7 @@ const SettingsTool: React.FC = (): ReactElement<unknown> | null => {
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     // TODO: Scan for any obvious problems that would prevent the YAML from working (all-zero weights, bad name, etc.)
+    // TODO: consider removing default values?
 
     // Create the YAML structure
     let outYaml: Record<string, unknown> = Object.assign({

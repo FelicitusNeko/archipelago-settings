@@ -5,7 +5,7 @@
     {
       "name": "advancement_goal",
       "description": "How many advancements are needed for the Ender Dragon to spawn.",
-      "high": 95,
+      "high": 114,
       "readableName": "Advancement goal",
       "low": 0,
       "type": "range",
@@ -14,7 +14,7 @@
     {
       "name": "egg_shards_required",
       "description": "How many Dragon Egg Shards are needed to spawn the Ender Dragon.",
-      "high": 40,
+      "high": 74,
       "readableName": "Egg Shards required",
       "low": 0,
       "type": "range",
@@ -23,7 +23,7 @@
     {
       "name": "egg_shards_available",
       "description": "How many Dragon Egg Shards are added to the multiworld pool.",
-      "high": 40,
+      "high": 74,
       "readableName": "Egg Shards available",
       "low": 0,
       "type": "range",
@@ -70,15 +70,6 @@
       "default": true
     },
     {
-      "name": "bee_traps",
-      "description": "Replace this percentage of junk items with bee traps. These will spawn angry bees around every player in the Minecraft multiworld.",
-      "high": 100,
-      "readableName": "Beemizer",
-      "low": 0,
-      "type": "range",
-      "default": 0
-    },
-    {
       "name": "combat_difficulty",
       "description": "Modifies the level of items logically required to explore dangerous dungeons and fight bosses.",
       "readableName": "Combat difficulty",
@@ -121,6 +112,15 @@
       "default": false
     },
     {
+      "name": "bee_traps",
+      "description": "Replace this percentage of junk items with bee traps. These will spawn angry bees around every player in the Minecraft multiworld.",
+      "high": 100,
+      "readableName": "Beemizer",
+      "low": 0,
+      "type": "range",
+      "default": 0
+    },
+    {
       "name": "send_defeated_mobs",
       "description": "Send defeated mobs to other people in the Minecraft multiworld.",
       "readableName": "Super Minecraft 35",
@@ -140,6 +140,9 @@
     {
       "name": "Progressive Resource Crafting",
       "max": 2
+    },
+    {
+      "name": "Resource Blocks"
     },
     {
       "name": "Brewing"
@@ -652,6 +655,6 @@
       "name": "You've Got a Friend in Me"
     }
   ],
-  "notice": "The current Archipelago-compatible version of Minecraft is Java 1.19.",
+  "notice": "The current Archipelago-compatible version of Minecraft is Java 1.19.4.",
   "status": "Updated"
 }

@@ -3,14 +3,96 @@
   "index": 5,
   "settings": [
     {
+      "name": "goal",
+      "description": "DOC ME",
+      "readableName": "Goal",
+      "values": [
+        {
+          "name": "classic",
+          "readableName": "Classic",
+          "description": "Every Item pickup increases fills a progress bar which gives location checks."
+        },
+        {
+          "name": "explore",
+          "readableName": "Explore",
+          "description": "Each environment will have location checks within each environment. Environments will be locked in the item pool until received."
+        }
+      ],
+      "type": "choice",
+      "default": "classic"
+    },
+    {
       "name": "total_locations",
       "description": "How many location checks will be added to the playthrough.",
       "high": 250,
       "readableName": "Total locations",
-      "low": 10,
+      "low": 40,
       "step": 5,
       "type": "range",
-      "default": 20
+      "default": 40,
+      "dependsOn": {
+        "goal": ["classic"]
+      }
+    },
+    {
+      "name": "chests_per_stage",
+      "description": "The number of chest locations per environment.",
+      "high": 20,
+      "readableName": "Chests per stage",
+      "low": 2,
+      "type": "range",
+      "default": 10,
+      "dependsOn": {
+        "goal": ["explore"]
+      }
+    },
+    {
+      "name": "shrines_per_stage",
+      "description": "The number of shrine locations per environment.",
+      "high": 20,
+      "readableName": "Shrines per stage",
+      "low": 2,
+      "type": "range",
+      "default": 5,
+      "dependsOn": {
+        "goal": ["explore"]
+      }
+    },
+    {
+      "name": "scavengers_per_stage",
+      "description": "The number of scavenger locations per environment.",
+      "high": 1,
+      "readableName": "Scavengers per stage",
+      "low": 0,
+      "type": "range",
+      "default": 1,
+      "dependsOn": {
+        "goal": ["explore"]
+      }
+    },
+    {
+      "name": "scanner_per_stage",
+      "description": "The number of scanners locations per environment.",
+      "high": 1,
+      "readableName": "Scanners per stage",
+      "low": 0,
+      "type": "range",
+      "default": 1,
+      "dependsOn": {
+        "goal": ["explore"]
+      }
+    },
+    {
+      "name": "altars_per_stage",
+      "description": "The number of altars locations per environment.",
+      "high": 2,
+      "readableName": "Altars per stage",
+      "low": 0,
+      "type": "range",
+      "default": 1,
+      "dependsOn": {
+        "goal": ["explore"]
+      }
     },
     {
       "name": "total_revivals",
@@ -36,13 +118,45 @@
       "default": true
     },
     {
+      "name": "begin_with_loop",
+      "description": "Enable to precollect a full loop of environments.",
+      "readableName": "Begin with loop",
+      "type": "toggle",
+      "default": false,
+      "dependsOn": {
+        "goal": ["explore"]
+      }
+    },
+    {
+      "name": "dlc_sotv",
+      "description": "Enable if you are using Survivors of the Void DLC. Adds Void items to the item pool.",
+      "readableName": "Survivors of the Void",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "type": "deathlink"
+    },
+    {
       "name": "item_pickup_step",
       "description": "How many item pickups are required before the next one triggers an AP check.",
       "high": 5,
       "readableName": "Item pickup step",
       "low": 0,
       "type": "range",
-      "default": 2
+      "default": 1
+    },
+    {
+      "name": "shrine_use_step",
+      "description": "Number of shrines to use up before the next one triggers an AP check.",
+      "high": 3,
+      "readableName": "Shrine use step",
+      "low": 0,
+      "type": "range",
+      "default": 0,
+      "dependsOn": {
+        "goal": ["explore"]
+      }
     },
     {
       "name": "enable_lunar",
@@ -98,6 +212,11 @@
         {
           "name": "scraps_only",
           "readableName": "Only scrap items"
+        },
+        {
+          "name": "void",
+          "readableName": "To the Void",
+          "description": "Every item is a Void item."
         }
       ],
       "type": "choice",
@@ -237,6 +356,21 @@
       "default": 16
     },
     {
+      "name": "void_item",
+      "description": "The weight of Void items in the multiworld pool.",
+      "high": 100,
+      "readableName": "Void items",
+      "low": 0,
+      "type": "range",
+      "default": 16,
+      "dependsOn": {
+        "item_pool_presets": [
+          false
+        ],
+        "dlc_sotv": [true]
+      }
+    },
+    {
       "name": "equipment",
       "description": "The weight of Equipment items in the multiworld pool.",
       "dependsOn": {
@@ -300,6 +434,81 @@
     {
       "name": "Item Scrap, Yellow",
       "max": 50
+    },
+    {
+      "name": "Void Item"
+    },
+    {
+      "name": "Aphelian Sanctuary"
+    },
+    {
+      "name": "Void Fields"
+    },
+    {
+      "name": "Hidden Realm: Bulwark's Ambry"
+    },
+    {
+      "name": "Hidden Realm: Bazaar Between Time"
+    },
+    {
+      "name": "Distant Roost"
+    },
+    {
+      "name": "Distant Roost (2)"
+    },
+    {
+      "name": "Abyssal Depths"
+    },
+    {
+      "name": "Wetland Aspect"
+    },
+    {
+      "name": "Rallypoint Delta"
+    },
+    {
+      "name": "Hidden Realm: Gilded Coast"
+    },
+    {
+      "name": "Titanic Plains"
+    },
+    {
+      "name": "Titanic Plains (2)"
+    },
+    {
+      "name": "Abandoned Aqueduct"
+    },
+    {
+      "name": "Hidden Realm: A Moment, Whole"
+    },
+    {
+      "name": "Commencement"
+    },
+    {
+      "name": "Hidden Realm: A Moment, Fractured"
+    },
+    {
+      "name": "Sundered Grove"
+    },
+    {
+      "name": "Siren's Call"
+    },
+    {
+      "name": "Sky Meadow"
+    },
+    {
+      "name": "Siphoned Forest"
+    },
+    {
+      "name": "Sulfur Pools"
+    },
+    {
+      "name": "Void Locus"
+    },
+    {
+      "name": "The Planetarium"
+    },
+    {
+      "name": "Scorched Acres"
     }
   ],
   "locations": [
@@ -1052,6 +1261,1986 @@
     },
     {
       "name": "ItemPickup250"
+    },
+    {
+      "name": "Aphelian Sanctuary: Chest 1"
+    },
+    {
+      "name": "Aphelian Sanctuary: Chest 2"
+    },
+    {
+      "name": "Aphelian Sanctuary: Chest 3"
+    },
+    {
+      "name": "Aphelian Sanctuary: Chest 4"
+    },
+    {
+      "name": "Aphelian Sanctuary: Chest 5"
+    },
+    {
+      "name": "Aphelian Sanctuary: Chest 6"
+    },
+    {
+      "name": "Aphelian Sanctuary: Chest 7"
+    },
+    {
+      "name": "Aphelian Sanctuary: Chest 8"
+    },
+    {
+      "name": "Aphelian Sanctuary: Chest 9"
+    },
+    {
+      "name": "Aphelian Sanctuary: Chest 10"
+    },
+    {
+      "name": "Aphelian Sanctuary: Chest 11"
+    },
+    {
+      "name": "Aphelian Sanctuary: Chest 12"
+    },
+    {
+      "name": "Aphelian Sanctuary: Chest 13"
+    },
+    {
+      "name": "Aphelian Sanctuary: Chest 14"
+    },
+    {
+      "name": "Aphelian Sanctuary: Chest 15"
+    },
+    {
+      "name": "Aphelian Sanctuary: Chest 16"
+    },
+    {
+      "name": "Aphelian Sanctuary: Chest 17"
+    },
+    {
+      "name": "Aphelian Sanctuary: Chest 18"
+    },
+    {
+      "name": "Aphelian Sanctuary: Chest 19"
+    },
+    {
+      "name": "Aphelian Sanctuary: Chest 20"
+    },
+    {
+      "name": "Aphelian Sanctuary: Shrine 1"
+    },
+    {
+      "name": "Aphelian Sanctuary: Shrine 2"
+    },
+    {
+      "name": "Aphelian Sanctuary: Shrine 3"
+    },
+    {
+      "name": "Aphelian Sanctuary: Shrine 4"
+    },
+    {
+      "name": "Aphelian Sanctuary: Shrine 5"
+    },
+    {
+      "name": "Aphelian Sanctuary: Shrine 6"
+    },
+    {
+      "name": "Aphelian Sanctuary: Shrine 7"
+    },
+    {
+      "name": "Aphelian Sanctuary: Shrine 8"
+    },
+    {
+      "name": "Aphelian Sanctuary: Shrine 9"
+    },
+    {
+      "name": "Aphelian Sanctuary: Shrine 10"
+    },
+    {
+      "name": "Aphelian Sanctuary: Shrine 11"
+    },
+    {
+      "name": "Aphelian Sanctuary: Shrine 12"
+    },
+    {
+      "name": "Aphelian Sanctuary: Shrine 13"
+    },
+    {
+      "name": "Aphelian Sanctuary: Shrine 14"
+    },
+    {
+      "name": "Aphelian Sanctuary: Shrine 15"
+    },
+    {
+      "name": "Aphelian Sanctuary: Shrine 16"
+    },
+    {
+      "name": "Aphelian Sanctuary: Shrine 17"
+    },
+    {
+      "name": "Aphelian Sanctuary: Shrine 18"
+    },
+    {
+      "name": "Aphelian Sanctuary: Shrine 19"
+    },
+    {
+      "name": "Aphelian Sanctuary: Shrine 20"
+    },
+    {
+      "name": "Aphelian Sanctuary: Scavenger 1"
+    },
+    {
+      "name": "Aphelian Sanctuary: Radio Scanner 1"
+    },
+    {
+      "name": "Aphelian Sanctuary: Newt Altar 1"
+    },
+    {
+      "name": "Aphelian Sanctuary: Newt Altar 2"
+    },
+    {
+      "name": "Distant Roost: Chest 1"
+    },
+    {
+      "name": "Distant Roost: Chest 2"
+    },
+    {
+      "name": "Distant Roost: Chest 3"
+    },
+    {
+      "name": "Distant Roost: Chest 4"
+    },
+    {
+      "name": "Distant Roost: Chest 5"
+    },
+    {
+      "name": "Distant Roost: Chest 6"
+    },
+    {
+      "name": "Distant Roost: Chest 7"
+    },
+    {
+      "name": "Distant Roost: Chest 8"
+    },
+    {
+      "name": "Distant Roost: Chest 9"
+    },
+    {
+      "name": "Distant Roost: Chest 10"
+    },
+    {
+      "name": "Distant Roost: Chest 11"
+    },
+    {
+      "name": "Distant Roost: Chest 12"
+    },
+    {
+      "name": "Distant Roost: Chest 13"
+    },
+    {
+      "name": "Distant Roost: Chest 14"
+    },
+    {
+      "name": "Distant Roost: Chest 15"
+    },
+    {
+      "name": "Distant Roost: Chest 16"
+    },
+    {
+      "name": "Distant Roost: Chest 17"
+    },
+    {
+      "name": "Distant Roost: Chest 18"
+    },
+    {
+      "name": "Distant Roost: Chest 19"
+    },
+    {
+      "name": "Distant Roost: Chest 20"
+    },
+    {
+      "name": "Distant Roost: Shrine 1"
+    },
+    {
+      "name": "Distant Roost: Shrine 2"
+    },
+    {
+      "name": "Distant Roost: Shrine 3"
+    },
+    {
+      "name": "Distant Roost: Shrine 4"
+    },
+    {
+      "name": "Distant Roost: Shrine 5"
+    },
+    {
+      "name": "Distant Roost: Shrine 6"
+    },
+    {
+      "name": "Distant Roost: Shrine 7"
+    },
+    {
+      "name": "Distant Roost: Shrine 8"
+    },
+    {
+      "name": "Distant Roost: Shrine 9"
+    },
+    {
+      "name": "Distant Roost: Shrine 10"
+    },
+    {
+      "name": "Distant Roost: Shrine 11"
+    },
+    {
+      "name": "Distant Roost: Shrine 12"
+    },
+    {
+      "name": "Distant Roost: Shrine 13"
+    },
+    {
+      "name": "Distant Roost: Shrine 14"
+    },
+    {
+      "name": "Distant Roost: Shrine 15"
+    },
+    {
+      "name": "Distant Roost: Shrine 16"
+    },
+    {
+      "name": "Distant Roost: Shrine 17"
+    },
+    {
+      "name": "Distant Roost: Shrine 18"
+    },
+    {
+      "name": "Distant Roost: Shrine 19"
+    },
+    {
+      "name": "Distant Roost: Shrine 20"
+    },
+    {
+      "name": "Distant Roost: Scavenger 1"
+    },
+    {
+      "name": "Distant Roost: Radio Scanner 1"
+    },
+    {
+      "name": "Distant Roost: Newt Altar 1"
+    },
+    {
+      "name": "Distant Roost: Newt Altar 2"
+    },
+    {
+      "name": "Distant Roost (2): Chest 1"
+    },
+    {
+      "name": "Distant Roost (2): Chest 2"
+    },
+    {
+      "name": "Distant Roost (2): Chest 3"
+    },
+    {
+      "name": "Distant Roost (2): Chest 4"
+    },
+    {
+      "name": "Distant Roost (2): Chest 5"
+    },
+    {
+      "name": "Distant Roost (2): Chest 6"
+    },
+    {
+      "name": "Distant Roost (2): Chest 7"
+    },
+    {
+      "name": "Distant Roost (2): Chest 8"
+    },
+    {
+      "name": "Distant Roost (2): Chest 9"
+    },
+    {
+      "name": "Distant Roost (2): Chest 10"
+    },
+    {
+      "name": "Distant Roost (2): Chest 11"
+    },
+    {
+      "name": "Distant Roost (2): Chest 12"
+    },
+    {
+      "name": "Distant Roost (2): Chest 13"
+    },
+    {
+      "name": "Distant Roost (2): Chest 14"
+    },
+    {
+      "name": "Distant Roost (2): Chest 15"
+    },
+    {
+      "name": "Distant Roost (2): Chest 16"
+    },
+    {
+      "name": "Distant Roost (2): Chest 17"
+    },
+    {
+      "name": "Distant Roost (2): Chest 18"
+    },
+    {
+      "name": "Distant Roost (2): Chest 19"
+    },
+    {
+      "name": "Distant Roost (2): Chest 20"
+    },
+    {
+      "name": "Distant Roost (2): Shrine 1"
+    },
+    {
+      "name": "Distant Roost (2): Shrine 2"
+    },
+    {
+      "name": "Distant Roost (2): Shrine 3"
+    },
+    {
+      "name": "Distant Roost (2): Shrine 4"
+    },
+    {
+      "name": "Distant Roost (2): Shrine 5"
+    },
+    {
+      "name": "Distant Roost (2): Shrine 6"
+    },
+    {
+      "name": "Distant Roost (2): Shrine 7"
+    },
+    {
+      "name": "Distant Roost (2): Shrine 8"
+    },
+    {
+      "name": "Distant Roost (2): Shrine 9"
+    },
+    {
+      "name": "Distant Roost (2): Shrine 10"
+    },
+    {
+      "name": "Distant Roost (2): Shrine 11"
+    },
+    {
+      "name": "Distant Roost (2): Shrine 12"
+    },
+    {
+      "name": "Distant Roost (2): Shrine 13"
+    },
+    {
+      "name": "Distant Roost (2): Shrine 14"
+    },
+    {
+      "name": "Distant Roost (2): Shrine 15"
+    },
+    {
+      "name": "Distant Roost (2): Shrine 16"
+    },
+    {
+      "name": "Distant Roost (2): Shrine 17"
+    },
+    {
+      "name": "Distant Roost (2): Shrine 18"
+    },
+    {
+      "name": "Distant Roost (2): Shrine 19"
+    },
+    {
+      "name": "Distant Roost (2): Shrine 20"
+    },
+    {
+      "name": "Distant Roost (2): Scavenger 1"
+    },
+    {
+      "name": "Distant Roost (2): Radio Scanner 1"
+    },
+    {
+      "name": "Distant Roost (2): Newt Altar 1"
+    },
+    {
+      "name": "Distant Roost (2): Newt Altar 2"
+    },
+    {
+      "name": "Abyssal Depths: Chest 1"
+    },
+    {
+      "name": "Abyssal Depths: Chest 2"
+    },
+    {
+      "name": "Abyssal Depths: Chest 3"
+    },
+    {
+      "name": "Abyssal Depths: Chest 4"
+    },
+    {
+      "name": "Abyssal Depths: Chest 5"
+    },
+    {
+      "name": "Abyssal Depths: Chest 6"
+    },
+    {
+      "name": "Abyssal Depths: Chest 7"
+    },
+    {
+      "name": "Abyssal Depths: Chest 8"
+    },
+    {
+      "name": "Abyssal Depths: Chest 9"
+    },
+    {
+      "name": "Abyssal Depths: Chest 10"
+    },
+    {
+      "name": "Abyssal Depths: Chest 11"
+    },
+    {
+      "name": "Abyssal Depths: Chest 12"
+    },
+    {
+      "name": "Abyssal Depths: Chest 13"
+    },
+    {
+      "name": "Abyssal Depths: Chest 14"
+    },
+    {
+      "name": "Abyssal Depths: Chest 15"
+    },
+    {
+      "name": "Abyssal Depths: Chest 16"
+    },
+    {
+      "name": "Abyssal Depths: Chest 17"
+    },
+    {
+      "name": "Abyssal Depths: Chest 18"
+    },
+    {
+      "name": "Abyssal Depths: Chest 19"
+    },
+    {
+      "name": "Abyssal Depths: Chest 20"
+    },
+    {
+      "name": "Abyssal Depths: Shrine 1"
+    },
+    {
+      "name": "Abyssal Depths: Shrine 2"
+    },
+    {
+      "name": "Abyssal Depths: Shrine 3"
+    },
+    {
+      "name": "Abyssal Depths: Shrine 4"
+    },
+    {
+      "name": "Abyssal Depths: Shrine 5"
+    },
+    {
+      "name": "Abyssal Depths: Shrine 6"
+    },
+    {
+      "name": "Abyssal Depths: Shrine 7"
+    },
+    {
+      "name": "Abyssal Depths: Shrine 8"
+    },
+    {
+      "name": "Abyssal Depths: Shrine 9"
+    },
+    {
+      "name": "Abyssal Depths: Shrine 10"
+    },
+    {
+      "name": "Abyssal Depths: Shrine 11"
+    },
+    {
+      "name": "Abyssal Depths: Shrine 12"
+    },
+    {
+      "name": "Abyssal Depths: Shrine 13"
+    },
+    {
+      "name": "Abyssal Depths: Shrine 14"
+    },
+    {
+      "name": "Abyssal Depths: Shrine 15"
+    },
+    {
+      "name": "Abyssal Depths: Shrine 16"
+    },
+    {
+      "name": "Abyssal Depths: Shrine 17"
+    },
+    {
+      "name": "Abyssal Depths: Shrine 18"
+    },
+    {
+      "name": "Abyssal Depths: Shrine 19"
+    },
+    {
+      "name": "Abyssal Depths: Shrine 20"
+    },
+    {
+      "name": "Abyssal Depths: Scavenger 1"
+    },
+    {
+      "name": "Abyssal Depths: Radio Scanner 1"
+    },
+    {
+      "name": "Abyssal Depths: Newt Altar 1"
+    },
+    {
+      "name": "Abyssal Depths: Newt Altar 2"
+    },
+    {
+      "name": "Wetland Aspect: Chest 1"
+    },
+    {
+      "name": "Wetland Aspect: Chest 2"
+    },
+    {
+      "name": "Wetland Aspect: Chest 3"
+    },
+    {
+      "name": "Wetland Aspect: Chest 4"
+    },
+    {
+      "name": "Wetland Aspect: Chest 5"
+    },
+    {
+      "name": "Wetland Aspect: Chest 6"
+    },
+    {
+      "name": "Wetland Aspect: Chest 7"
+    },
+    {
+      "name": "Wetland Aspect: Chest 8"
+    },
+    {
+      "name": "Wetland Aspect: Chest 9"
+    },
+    {
+      "name": "Wetland Aspect: Chest 10"
+    },
+    {
+      "name": "Wetland Aspect: Chest 11"
+    },
+    {
+      "name": "Wetland Aspect: Chest 12"
+    },
+    {
+      "name": "Wetland Aspect: Chest 13"
+    },
+    {
+      "name": "Wetland Aspect: Chest 14"
+    },
+    {
+      "name": "Wetland Aspect: Chest 15"
+    },
+    {
+      "name": "Wetland Aspect: Chest 16"
+    },
+    {
+      "name": "Wetland Aspect: Chest 17"
+    },
+    {
+      "name": "Wetland Aspect: Chest 18"
+    },
+    {
+      "name": "Wetland Aspect: Chest 19"
+    },
+    {
+      "name": "Wetland Aspect: Chest 20"
+    },
+    {
+      "name": "Wetland Aspect: Shrine 1"
+    },
+    {
+      "name": "Wetland Aspect: Shrine 2"
+    },
+    {
+      "name": "Wetland Aspect: Shrine 3"
+    },
+    {
+      "name": "Wetland Aspect: Shrine 4"
+    },
+    {
+      "name": "Wetland Aspect: Shrine 5"
+    },
+    {
+      "name": "Wetland Aspect: Shrine 6"
+    },
+    {
+      "name": "Wetland Aspect: Shrine 7"
+    },
+    {
+      "name": "Wetland Aspect: Shrine 8"
+    },
+    {
+      "name": "Wetland Aspect: Shrine 9"
+    },
+    {
+      "name": "Wetland Aspect: Shrine 10"
+    },
+    {
+      "name": "Wetland Aspect: Shrine 11"
+    },
+    {
+      "name": "Wetland Aspect: Shrine 12"
+    },
+    {
+      "name": "Wetland Aspect: Shrine 13"
+    },
+    {
+      "name": "Wetland Aspect: Shrine 14"
+    },
+    {
+      "name": "Wetland Aspect: Shrine 15"
+    },
+    {
+      "name": "Wetland Aspect: Shrine 16"
+    },
+    {
+      "name": "Wetland Aspect: Shrine 17"
+    },
+    {
+      "name": "Wetland Aspect: Shrine 18"
+    },
+    {
+      "name": "Wetland Aspect: Shrine 19"
+    },
+    {
+      "name": "Wetland Aspect: Shrine 20"
+    },
+    {
+      "name": "Wetland Aspect: Scavenger 1"
+    },
+    {
+      "name": "Wetland Aspect: Radio Scanner 1"
+    },
+    {
+      "name": "Wetland Aspect: Newt Altar 1"
+    },
+    {
+      "name": "Wetland Aspect: Newt Altar 2"
+    },
+    {
+      "name": "Rallypoint Delta: Chest 1"
+    },
+    {
+      "name": "Rallypoint Delta: Chest 2"
+    },
+    {
+      "name": "Rallypoint Delta: Chest 3"
+    },
+    {
+      "name": "Rallypoint Delta: Chest 4"
+    },
+    {
+      "name": "Rallypoint Delta: Chest 5"
+    },
+    {
+      "name": "Rallypoint Delta: Chest 6"
+    },
+    {
+      "name": "Rallypoint Delta: Chest 7"
+    },
+    {
+      "name": "Rallypoint Delta: Chest 8"
+    },
+    {
+      "name": "Rallypoint Delta: Chest 9"
+    },
+    {
+      "name": "Rallypoint Delta: Chest 10"
+    },
+    {
+      "name": "Rallypoint Delta: Chest 11"
+    },
+    {
+      "name": "Rallypoint Delta: Chest 12"
+    },
+    {
+      "name": "Rallypoint Delta: Chest 13"
+    },
+    {
+      "name": "Rallypoint Delta: Chest 14"
+    },
+    {
+      "name": "Rallypoint Delta: Chest 15"
+    },
+    {
+      "name": "Rallypoint Delta: Chest 16"
+    },
+    {
+      "name": "Rallypoint Delta: Chest 17"
+    },
+    {
+      "name": "Rallypoint Delta: Chest 18"
+    },
+    {
+      "name": "Rallypoint Delta: Chest 19"
+    },
+    {
+      "name": "Rallypoint Delta: Chest 20"
+    },
+    {
+      "name": "Rallypoint Delta: Shrine 1"
+    },
+    {
+      "name": "Rallypoint Delta: Shrine 2"
+    },
+    {
+      "name": "Rallypoint Delta: Shrine 3"
+    },
+    {
+      "name": "Rallypoint Delta: Shrine 4"
+    },
+    {
+      "name": "Rallypoint Delta: Shrine 5"
+    },
+    {
+      "name": "Rallypoint Delta: Shrine 6"
+    },
+    {
+      "name": "Rallypoint Delta: Shrine 7"
+    },
+    {
+      "name": "Rallypoint Delta: Shrine 8"
+    },
+    {
+      "name": "Rallypoint Delta: Shrine 9"
+    },
+    {
+      "name": "Rallypoint Delta: Shrine 10"
+    },
+    {
+      "name": "Rallypoint Delta: Shrine 11"
+    },
+    {
+      "name": "Rallypoint Delta: Shrine 12"
+    },
+    {
+      "name": "Rallypoint Delta: Shrine 13"
+    },
+    {
+      "name": "Rallypoint Delta: Shrine 14"
+    },
+    {
+      "name": "Rallypoint Delta: Shrine 15"
+    },
+    {
+      "name": "Rallypoint Delta: Shrine 16"
+    },
+    {
+      "name": "Rallypoint Delta: Shrine 17"
+    },
+    {
+      "name": "Rallypoint Delta: Shrine 18"
+    },
+    {
+      "name": "Rallypoint Delta: Shrine 19"
+    },
+    {
+      "name": "Rallypoint Delta: Shrine 20"
+    },
+    {
+      "name": "Rallypoint Delta: Scavenger 1"
+    },
+    {
+      "name": "Rallypoint Delta: Radio Scanner 1"
+    },
+    {
+      "name": "Rallypoint Delta: Newt Altar 1"
+    },
+    {
+      "name": "Rallypoint Delta: Newt Altar 2"
+    },
+    {
+      "name": "Titanic Plains: Chest 1"
+    },
+    {
+      "name": "Titanic Plains: Chest 2"
+    },
+    {
+      "name": "Titanic Plains: Chest 3"
+    },
+    {
+      "name": "Titanic Plains: Chest 4"
+    },
+    {
+      "name": "Titanic Plains: Chest 5"
+    },
+    {
+      "name": "Titanic Plains: Chest 6"
+    },
+    {
+      "name": "Titanic Plains: Chest 7"
+    },
+    {
+      "name": "Titanic Plains: Chest 8"
+    },
+    {
+      "name": "Titanic Plains: Chest 9"
+    },
+    {
+      "name": "Titanic Plains: Chest 10"
+    },
+    {
+      "name": "Titanic Plains: Chest 11"
+    },
+    {
+      "name": "Titanic Plains: Chest 12"
+    },
+    {
+      "name": "Titanic Plains: Chest 13"
+    },
+    {
+      "name": "Titanic Plains: Chest 14"
+    },
+    {
+      "name": "Titanic Plains: Chest 15"
+    },
+    {
+      "name": "Titanic Plains: Chest 16"
+    },
+    {
+      "name": "Titanic Plains: Chest 17"
+    },
+    {
+      "name": "Titanic Plains: Chest 18"
+    },
+    {
+      "name": "Titanic Plains: Chest 19"
+    },
+    {
+      "name": "Titanic Plains: Chest 20"
+    },
+    {
+      "name": "Titanic Plains: Shrine 1"
+    },
+    {
+      "name": "Titanic Plains: Shrine 2"
+    },
+    {
+      "name": "Titanic Plains: Shrine 3"
+    },
+    {
+      "name": "Titanic Plains: Shrine 4"
+    },
+    {
+      "name": "Titanic Plains: Shrine 5"
+    },
+    {
+      "name": "Titanic Plains: Shrine 6"
+    },
+    {
+      "name": "Titanic Plains: Shrine 7"
+    },
+    {
+      "name": "Titanic Plains: Shrine 8"
+    },
+    {
+      "name": "Titanic Plains: Shrine 9"
+    },
+    {
+      "name": "Titanic Plains: Shrine 10"
+    },
+    {
+      "name": "Titanic Plains: Shrine 11"
+    },
+    {
+      "name": "Titanic Plains: Shrine 12"
+    },
+    {
+      "name": "Titanic Plains: Shrine 13"
+    },
+    {
+      "name": "Titanic Plains: Shrine 14"
+    },
+    {
+      "name": "Titanic Plains: Shrine 15"
+    },
+    {
+      "name": "Titanic Plains: Shrine 16"
+    },
+    {
+      "name": "Titanic Plains: Shrine 17"
+    },
+    {
+      "name": "Titanic Plains: Shrine 18"
+    },
+    {
+      "name": "Titanic Plains: Shrine 19"
+    },
+    {
+      "name": "Titanic Plains: Shrine 20"
+    },
+    {
+      "name": "Titanic Plains: Scavenger 1"
+    },
+    {
+      "name": "Titanic Plains: Radio Scanner 1"
+    },
+    {
+      "name": "Titanic Plains: Newt Altar 1"
+    },
+    {
+      "name": "Titanic Plains: Newt Altar 2"
+    },
+    {
+      "name": "Titanic Plains (2): Chest 1"
+    },
+    {
+      "name": "Titanic Plains (2): Chest 2"
+    },
+    {
+      "name": "Titanic Plains (2): Chest 3"
+    },
+    {
+      "name": "Titanic Plains (2): Chest 4"
+    },
+    {
+      "name": "Titanic Plains (2): Chest 5"
+    },
+    {
+      "name": "Titanic Plains (2): Chest 6"
+    },
+    {
+      "name": "Titanic Plains (2): Chest 7"
+    },
+    {
+      "name": "Titanic Plains (2): Chest 8"
+    },
+    {
+      "name": "Titanic Plains (2): Chest 9"
+    },
+    {
+      "name": "Titanic Plains (2): Chest 10"
+    },
+    {
+      "name": "Titanic Plains (2): Chest 11"
+    },
+    {
+      "name": "Titanic Plains (2): Chest 12"
+    },
+    {
+      "name": "Titanic Plains (2): Chest 13"
+    },
+    {
+      "name": "Titanic Plains (2): Chest 14"
+    },
+    {
+      "name": "Titanic Plains (2): Chest 15"
+    },
+    {
+      "name": "Titanic Plains (2): Chest 16"
+    },
+    {
+      "name": "Titanic Plains (2): Chest 17"
+    },
+    {
+      "name": "Titanic Plains (2): Chest 18"
+    },
+    {
+      "name": "Titanic Plains (2): Chest 19"
+    },
+    {
+      "name": "Titanic Plains (2): Chest 20"
+    },
+    {
+      "name": "Titanic Plains (2): Shrine 1"
+    },
+    {
+      "name": "Titanic Plains (2): Shrine 2"
+    },
+    {
+      "name": "Titanic Plains (2): Shrine 3"
+    },
+    {
+      "name": "Titanic Plains (2): Shrine 4"
+    },
+    {
+      "name": "Titanic Plains (2): Shrine 5"
+    },
+    {
+      "name": "Titanic Plains (2): Shrine 6"
+    },
+    {
+      "name": "Titanic Plains (2): Shrine 7"
+    },
+    {
+      "name": "Titanic Plains (2): Shrine 8"
+    },
+    {
+      "name": "Titanic Plains (2): Shrine 9"
+    },
+    {
+      "name": "Titanic Plains (2): Shrine 10"
+    },
+    {
+      "name": "Titanic Plains (2): Shrine 11"
+    },
+    {
+      "name": "Titanic Plains (2): Shrine 12"
+    },
+    {
+      "name": "Titanic Plains (2): Shrine 13"
+    },
+    {
+      "name": "Titanic Plains (2): Shrine 14"
+    },
+    {
+      "name": "Titanic Plains (2): Shrine 15"
+    },
+    {
+      "name": "Titanic Plains (2): Shrine 16"
+    },
+    {
+      "name": "Titanic Plains (2): Shrine 17"
+    },
+    {
+      "name": "Titanic Plains (2): Shrine 18"
+    },
+    {
+      "name": "Titanic Plains (2): Shrine 19"
+    },
+    {
+      "name": "Titanic Plains (2): Shrine 20"
+    },
+    {
+      "name": "Titanic Plains (2): Scavenger 1"
+    },
+    {
+      "name": "Titanic Plains (2): Radio Scanner 1"
+    },
+    {
+      "name": "Titanic Plains (2): Newt Altar 1"
+    },
+    {
+      "name": "Titanic Plains (2): Newt Altar 2"
+    },
+    {
+      "name": "Abandoned Aqueduct: Chest 1"
+    },
+    {
+      "name": "Abandoned Aqueduct: Chest 2"
+    },
+    {
+      "name": "Abandoned Aqueduct: Chest 3"
+    },
+    {
+      "name": "Abandoned Aqueduct: Chest 4"
+    },
+    {
+      "name": "Abandoned Aqueduct: Chest 5"
+    },
+    {
+      "name": "Abandoned Aqueduct: Chest 6"
+    },
+    {
+      "name": "Abandoned Aqueduct: Chest 7"
+    },
+    {
+      "name": "Abandoned Aqueduct: Chest 8"
+    },
+    {
+      "name": "Abandoned Aqueduct: Chest 9"
+    },
+    {
+      "name": "Abandoned Aqueduct: Chest 10"
+    },
+    {
+      "name": "Abandoned Aqueduct: Chest 11"
+    },
+    {
+      "name": "Abandoned Aqueduct: Chest 12"
+    },
+    {
+      "name": "Abandoned Aqueduct: Chest 13"
+    },
+    {
+      "name": "Abandoned Aqueduct: Chest 14"
+    },
+    {
+      "name": "Abandoned Aqueduct: Chest 15"
+    },
+    {
+      "name": "Abandoned Aqueduct: Chest 16"
+    },
+    {
+      "name": "Abandoned Aqueduct: Chest 17"
+    },
+    {
+      "name": "Abandoned Aqueduct: Chest 18"
+    },
+    {
+      "name": "Abandoned Aqueduct: Chest 19"
+    },
+    {
+      "name": "Abandoned Aqueduct: Chest 20"
+    },
+    {
+      "name": "Abandoned Aqueduct: Shrine 1"
+    },
+    {
+      "name": "Abandoned Aqueduct: Shrine 2"
+    },
+    {
+      "name": "Abandoned Aqueduct: Shrine 3"
+    },
+    {
+      "name": "Abandoned Aqueduct: Shrine 4"
+    },
+    {
+      "name": "Abandoned Aqueduct: Shrine 5"
+    },
+    {
+      "name": "Abandoned Aqueduct: Shrine 6"
+    },
+    {
+      "name": "Abandoned Aqueduct: Shrine 7"
+    },
+    {
+      "name": "Abandoned Aqueduct: Shrine 8"
+    },
+    {
+      "name": "Abandoned Aqueduct: Shrine 9"
+    },
+    {
+      "name": "Abandoned Aqueduct: Shrine 10"
+    },
+    {
+      "name": "Abandoned Aqueduct: Shrine 11"
+    },
+    {
+      "name": "Abandoned Aqueduct: Shrine 12"
+    },
+    {
+      "name": "Abandoned Aqueduct: Shrine 13"
+    },
+    {
+      "name": "Abandoned Aqueduct: Shrine 14"
+    },
+    {
+      "name": "Abandoned Aqueduct: Shrine 15"
+    },
+    {
+      "name": "Abandoned Aqueduct: Shrine 16"
+    },
+    {
+      "name": "Abandoned Aqueduct: Shrine 17"
+    },
+    {
+      "name": "Abandoned Aqueduct: Shrine 18"
+    },
+    {
+      "name": "Abandoned Aqueduct: Shrine 19"
+    },
+    {
+      "name": "Abandoned Aqueduct: Shrine 20"
+    },
+    {
+      "name": "Abandoned Aqueduct: Scavenger 1"
+    },
+    {
+      "name": "Abandoned Aqueduct: Radio Scanner 1"
+    },
+    {
+      "name": "Abandoned Aqueduct: Newt Altar 1"
+    },
+    {
+      "name": "Abandoned Aqueduct: Newt Altar 2"
+    },
+    {
+      "name": "Sundered Grove: Chest 1"
+    },
+    {
+      "name": "Sundered Grove: Chest 2"
+    },
+    {
+      "name": "Sundered Grove: Chest 3"
+    },
+    {
+      "name": "Sundered Grove: Chest 4"
+    },
+    {
+      "name": "Sundered Grove: Chest 5"
+    },
+    {
+      "name": "Sundered Grove: Chest 6"
+    },
+    {
+      "name": "Sundered Grove: Chest 7"
+    },
+    {
+      "name": "Sundered Grove: Chest 8"
+    },
+    {
+      "name": "Sundered Grove: Chest 9"
+    },
+    {
+      "name": "Sundered Grove: Chest 10"
+    },
+    {
+      "name": "Sundered Grove: Chest 11"
+    },
+    {
+      "name": "Sundered Grove: Chest 12"
+    },
+    {
+      "name": "Sundered Grove: Chest 13"
+    },
+    {
+      "name": "Sundered Grove: Chest 14"
+    },
+    {
+      "name": "Sundered Grove: Chest 15"
+    },
+    {
+      "name": "Sundered Grove: Chest 16"
+    },
+    {
+      "name": "Sundered Grove: Chest 17"
+    },
+    {
+      "name": "Sundered Grove: Chest 18"
+    },
+    {
+      "name": "Sundered Grove: Chest 19"
+    },
+    {
+      "name": "Sundered Grove: Chest 20"
+    },
+    {
+      "name": "Sundered Grove: Shrine 1"
+    },
+    {
+      "name": "Sundered Grove: Shrine 2"
+    },
+    {
+      "name": "Sundered Grove: Shrine 3"
+    },
+    {
+      "name": "Sundered Grove: Shrine 4"
+    },
+    {
+      "name": "Sundered Grove: Shrine 5"
+    },
+    {
+      "name": "Sundered Grove: Shrine 6"
+    },
+    {
+      "name": "Sundered Grove: Shrine 7"
+    },
+    {
+      "name": "Sundered Grove: Shrine 8"
+    },
+    {
+      "name": "Sundered Grove: Shrine 9"
+    },
+    {
+      "name": "Sundered Grove: Shrine 10"
+    },
+    {
+      "name": "Sundered Grove: Shrine 11"
+    },
+    {
+      "name": "Sundered Grove: Shrine 12"
+    },
+    {
+      "name": "Sundered Grove: Shrine 13"
+    },
+    {
+      "name": "Sundered Grove: Shrine 14"
+    },
+    {
+      "name": "Sundered Grove: Shrine 15"
+    },
+    {
+      "name": "Sundered Grove: Shrine 16"
+    },
+    {
+      "name": "Sundered Grove: Shrine 17"
+    },
+    {
+      "name": "Sundered Grove: Shrine 18"
+    },
+    {
+      "name": "Sundered Grove: Shrine 19"
+    },
+    {
+      "name": "Sundered Grove: Shrine 20"
+    },
+    {
+      "name": "Sundered Grove: Scavenger 1"
+    },
+    {
+      "name": "Sundered Grove: Radio Scanner 1"
+    },
+    {
+      "name": "Sundered Grove: Newt Altar 1"
+    },
+    {
+      "name": "Sundered Grove: Newt Altar 2"
+    },
+    {
+      "name": "Siren's Call: Chest 1"
+    },
+    {
+      "name": "Siren's Call: Chest 2"
+    },
+    {
+      "name": "Siren's Call: Chest 3"
+    },
+    {
+      "name": "Siren's Call: Chest 4"
+    },
+    {
+      "name": "Siren's Call: Chest 5"
+    },
+    {
+      "name": "Siren's Call: Chest 6"
+    },
+    {
+      "name": "Siren's Call: Chest 7"
+    },
+    {
+      "name": "Siren's Call: Chest 8"
+    },
+    {
+      "name": "Siren's Call: Chest 9"
+    },
+    {
+      "name": "Siren's Call: Chest 10"
+    },
+    {
+      "name": "Siren's Call: Chest 11"
+    },
+    {
+      "name": "Siren's Call: Chest 12"
+    },
+    {
+      "name": "Siren's Call: Chest 13"
+    },
+    {
+      "name": "Siren's Call: Chest 14"
+    },
+    {
+      "name": "Siren's Call: Chest 15"
+    },
+    {
+      "name": "Siren's Call: Chest 16"
+    },
+    {
+      "name": "Siren's Call: Chest 17"
+    },
+    {
+      "name": "Siren's Call: Chest 18"
+    },
+    {
+      "name": "Siren's Call: Chest 19"
+    },
+    {
+      "name": "Siren's Call: Chest 20"
+    },
+    {
+      "name": "Siren's Call: Shrine 1"
+    },
+    {
+      "name": "Siren's Call: Shrine 2"
+    },
+    {
+      "name": "Siren's Call: Shrine 3"
+    },
+    {
+      "name": "Siren's Call: Shrine 4"
+    },
+    {
+      "name": "Siren's Call: Shrine 5"
+    },
+    {
+      "name": "Siren's Call: Shrine 6"
+    },
+    {
+      "name": "Siren's Call: Shrine 7"
+    },
+    {
+      "name": "Siren's Call: Shrine 8"
+    },
+    {
+      "name": "Siren's Call: Shrine 9"
+    },
+    {
+      "name": "Siren's Call: Shrine 10"
+    },
+    {
+      "name": "Siren's Call: Shrine 11"
+    },
+    {
+      "name": "Siren's Call: Shrine 12"
+    },
+    {
+      "name": "Siren's Call: Shrine 13"
+    },
+    {
+      "name": "Siren's Call: Shrine 14"
+    },
+    {
+      "name": "Siren's Call: Shrine 15"
+    },
+    {
+      "name": "Siren's Call: Shrine 16"
+    },
+    {
+      "name": "Siren's Call: Shrine 17"
+    },
+    {
+      "name": "Siren's Call: Shrine 18"
+    },
+    {
+      "name": "Siren's Call: Shrine 19"
+    },
+    {
+      "name": "Siren's Call: Shrine 20"
+    },
+    {
+      "name": "Siren's Call: Scavenger 1"
+    },
+    {
+      "name": "Siren's Call: Radio Scanner 1"
+    },
+    {
+      "name": "Siren's Call: Newt Altar 1"
+    },
+    {
+      "name": "Siren's Call: Newt Altar 2"
+    },
+    {
+      "name": "Sky Meadow: Chest 1"
+    },
+    {
+      "name": "Sky Meadow: Chest 2"
+    },
+    {
+      "name": "Sky Meadow: Chest 3"
+    },
+    {
+      "name": "Sky Meadow: Chest 4"
+    },
+    {
+      "name": "Sky Meadow: Chest 5"
+    },
+    {
+      "name": "Sky Meadow: Chest 6"
+    },
+    {
+      "name": "Sky Meadow: Chest 7"
+    },
+    {
+      "name": "Sky Meadow: Chest 8"
+    },
+    {
+      "name": "Sky Meadow: Chest 9"
+    },
+    {
+      "name": "Sky Meadow: Chest 10"
+    },
+    {
+      "name": "Sky Meadow: Chest 11"
+    },
+    {
+      "name": "Sky Meadow: Chest 12"
+    },
+    {
+      "name": "Sky Meadow: Chest 13"
+    },
+    {
+      "name": "Sky Meadow: Chest 14"
+    },
+    {
+      "name": "Sky Meadow: Chest 15"
+    },
+    {
+      "name": "Sky Meadow: Chest 16"
+    },
+    {
+      "name": "Sky Meadow: Chest 17"
+    },
+    {
+      "name": "Sky Meadow: Chest 18"
+    },
+    {
+      "name": "Sky Meadow: Chest 19"
+    },
+    {
+      "name": "Sky Meadow: Chest 20"
+    },
+    {
+      "name": "Sky Meadow: Shrine 1"
+    },
+    {
+      "name": "Sky Meadow: Shrine 2"
+    },
+    {
+      "name": "Sky Meadow: Shrine 3"
+    },
+    {
+      "name": "Sky Meadow: Shrine 4"
+    },
+    {
+      "name": "Sky Meadow: Shrine 5"
+    },
+    {
+      "name": "Sky Meadow: Shrine 6"
+    },
+    {
+      "name": "Sky Meadow: Shrine 7"
+    },
+    {
+      "name": "Sky Meadow: Shrine 8"
+    },
+    {
+      "name": "Sky Meadow: Shrine 9"
+    },
+    {
+      "name": "Sky Meadow: Shrine 10"
+    },
+    {
+      "name": "Sky Meadow: Shrine 11"
+    },
+    {
+      "name": "Sky Meadow: Shrine 12"
+    },
+    {
+      "name": "Sky Meadow: Shrine 13"
+    },
+    {
+      "name": "Sky Meadow: Shrine 14"
+    },
+    {
+      "name": "Sky Meadow: Shrine 15"
+    },
+    {
+      "name": "Sky Meadow: Shrine 16"
+    },
+    {
+      "name": "Sky Meadow: Shrine 17"
+    },
+    {
+      "name": "Sky Meadow: Shrine 18"
+    },
+    {
+      "name": "Sky Meadow: Shrine 19"
+    },
+    {
+      "name": "Sky Meadow: Shrine 20"
+    },
+    {
+      "name": "Sky Meadow: Scavenger 1"
+    },
+    {
+      "name": "Sky Meadow: Radio Scanner 1"
+    },
+    {
+      "name": "Sky Meadow: Newt Altar 1"
+    },
+    {
+      "name": "Sky Meadow: Newt Altar 2"
+    },
+    {
+      "name": "Siphoned Forest: Chest 1"
+    },
+    {
+      "name": "Siphoned Forest: Chest 2"
+    },
+    {
+      "name": "Siphoned Forest: Chest 3"
+    },
+    {
+      "name": "Siphoned Forest: Chest 4"
+    },
+    {
+      "name": "Siphoned Forest: Chest 5"
+    },
+    {
+      "name": "Siphoned Forest: Chest 6"
+    },
+    {
+      "name": "Siphoned Forest: Chest 7"
+    },
+    {
+      "name": "Siphoned Forest: Chest 8"
+    },
+    {
+      "name": "Siphoned Forest: Chest 9"
+    },
+    {
+      "name": "Siphoned Forest: Chest 10"
+    },
+    {
+      "name": "Siphoned Forest: Chest 11"
+    },
+    {
+      "name": "Siphoned Forest: Chest 12"
+    },
+    {
+      "name": "Siphoned Forest: Chest 13"
+    },
+    {
+      "name": "Siphoned Forest: Chest 14"
+    },
+    {
+      "name": "Siphoned Forest: Chest 15"
+    },
+    {
+      "name": "Siphoned Forest: Chest 16"
+    },
+    {
+      "name": "Siphoned Forest: Chest 17"
+    },
+    {
+      "name": "Siphoned Forest: Chest 18"
+    },
+    {
+      "name": "Siphoned Forest: Chest 19"
+    },
+    {
+      "name": "Siphoned Forest: Chest 20"
+    },
+    {
+      "name": "Siphoned Forest: Shrine 1"
+    },
+    {
+      "name": "Siphoned Forest: Shrine 2"
+    },
+    {
+      "name": "Siphoned Forest: Shrine 3"
+    },
+    {
+      "name": "Siphoned Forest: Shrine 4"
+    },
+    {
+      "name": "Siphoned Forest: Shrine 5"
+    },
+    {
+      "name": "Siphoned Forest: Shrine 6"
+    },
+    {
+      "name": "Siphoned Forest: Shrine 7"
+    },
+    {
+      "name": "Siphoned Forest: Shrine 8"
+    },
+    {
+      "name": "Siphoned Forest: Shrine 9"
+    },
+    {
+      "name": "Siphoned Forest: Shrine 10"
+    },
+    {
+      "name": "Siphoned Forest: Shrine 11"
+    },
+    {
+      "name": "Siphoned Forest: Shrine 12"
+    },
+    {
+      "name": "Siphoned Forest: Shrine 13"
+    },
+    {
+      "name": "Siphoned Forest: Shrine 14"
+    },
+    {
+      "name": "Siphoned Forest: Shrine 15"
+    },
+    {
+      "name": "Siphoned Forest: Shrine 16"
+    },
+    {
+      "name": "Siphoned Forest: Shrine 17"
+    },
+    {
+      "name": "Siphoned Forest: Shrine 18"
+    },
+    {
+      "name": "Siphoned Forest: Shrine 19"
+    },
+    {
+      "name": "Siphoned Forest: Shrine 20"
+    },
+    {
+      "name": "Siphoned Forest: Scavenger 1"
+    },
+    {
+      "name": "Siphoned Forest: Radio Scanner 1"
+    },
+    {
+      "name": "Siphoned Forest: Newt Altar 1"
+    },
+    {
+      "name": "Siphoned Forest: Newt Altar 2"
+    },
+    {
+      "name": "Sulfur Pools: Chest 1"
+    },
+    {
+      "name": "Sulfur Pools: Chest 2"
+    },
+    {
+      "name": "Sulfur Pools: Chest 3"
+    },
+    {
+      "name": "Sulfur Pools: Chest 4"
+    },
+    {
+      "name": "Sulfur Pools: Chest 5"
+    },
+    {
+      "name": "Sulfur Pools: Chest 6"
+    },
+    {
+      "name": "Sulfur Pools: Chest 7"
+    },
+    {
+      "name": "Sulfur Pools: Chest 8"
+    },
+    {
+      "name": "Sulfur Pools: Chest 9"
+    },
+    {
+      "name": "Sulfur Pools: Chest 10"
+    },
+    {
+      "name": "Sulfur Pools: Chest 11"
+    },
+    {
+      "name": "Sulfur Pools: Chest 12"
+    },
+    {
+      "name": "Sulfur Pools: Chest 13"
+    },
+    {
+      "name": "Sulfur Pools: Chest 14"
+    },
+    {
+      "name": "Sulfur Pools: Chest 15"
+    },
+    {
+      "name": "Sulfur Pools: Chest 16"
+    },
+    {
+      "name": "Sulfur Pools: Chest 17"
+    },
+    {
+      "name": "Sulfur Pools: Chest 18"
+    },
+    {
+      "name": "Sulfur Pools: Chest 19"
+    },
+    {
+      "name": "Sulfur Pools: Chest 20"
+    },
+    {
+      "name": "Sulfur Pools: Shrine 1"
+    },
+    {
+      "name": "Sulfur Pools: Shrine 2"
+    },
+    {
+      "name": "Sulfur Pools: Shrine 3"
+    },
+    {
+      "name": "Sulfur Pools: Shrine 4"
+    },
+    {
+      "name": "Sulfur Pools: Shrine 5"
+    },
+    {
+      "name": "Sulfur Pools: Shrine 6"
+    },
+    {
+      "name": "Sulfur Pools: Shrine 7"
+    },
+    {
+      "name": "Sulfur Pools: Shrine 8"
+    },
+    {
+      "name": "Sulfur Pools: Shrine 9"
+    },
+    {
+      "name": "Sulfur Pools: Shrine 10"
+    },
+    {
+      "name": "Sulfur Pools: Shrine 11"
+    },
+    {
+      "name": "Sulfur Pools: Shrine 12"
+    },
+    {
+      "name": "Sulfur Pools: Shrine 13"
+    },
+    {
+      "name": "Sulfur Pools: Shrine 14"
+    },
+    {
+      "name": "Sulfur Pools: Shrine 15"
+    },
+    {
+      "name": "Sulfur Pools: Shrine 16"
+    },
+    {
+      "name": "Sulfur Pools: Shrine 17"
+    },
+    {
+      "name": "Sulfur Pools: Shrine 18"
+    },
+    {
+      "name": "Sulfur Pools: Shrine 19"
+    },
+    {
+      "name": "Sulfur Pools: Shrine 20"
+    },
+    {
+      "name": "Sulfur Pools: Scavenger 1"
+    },
+    {
+      "name": "Sulfur Pools: Radio Scanner 1"
+    },
+    {
+      "name": "Sulfur Pools: Newt Altar 1"
+    },
+    {
+      "name": "Sulfur Pools: Newt Altar 2"
+    },
+    {
+      "name": "Scorched Acres: Chest 1"
+    },
+    {
+      "name": "Scorched Acres: Chest 2"
+    },
+    {
+      "name": "Scorched Acres: Chest 3"
+    },
+    {
+      "name": "Scorched Acres: Chest 4"
+    },
+    {
+      "name": "Scorched Acres: Chest 5"
+    },
+    {
+      "name": "Scorched Acres: Chest 6"
+    },
+    {
+      "name": "Scorched Acres: Chest 7"
+    },
+    {
+      "name": "Scorched Acres: Chest 8"
+    },
+    {
+      "name": "Scorched Acres: Chest 9"
+    },
+    {
+      "name": "Scorched Acres: Chest 10"
+    },
+    {
+      "name": "Scorched Acres: Chest 11"
+    },
+    {
+      "name": "Scorched Acres: Chest 12"
+    },
+    {
+      "name": "Scorched Acres: Chest 13"
+    },
+    {
+      "name": "Scorched Acres: Chest 14"
+    },
+    {
+      "name": "Scorched Acres: Chest 15"
+    },
+    {
+      "name": "Scorched Acres: Chest 16"
+    },
+    {
+      "name": "Scorched Acres: Chest 17"
+    },
+    {
+      "name": "Scorched Acres: Chest 18"
+    },
+    {
+      "name": "Scorched Acres: Chest 19"
+    },
+    {
+      "name": "Scorched Acres: Chest 20"
+    },
+    {
+      "name": "Scorched Acres: Shrine 1"
+    },
+    {
+      "name": "Scorched Acres: Shrine 2"
+    },
+    {
+      "name": "Scorched Acres: Shrine 3"
+    },
+    {
+      "name": "Scorched Acres: Shrine 4"
+    },
+    {
+      "name": "Scorched Acres: Shrine 5"
+    },
+    {
+      "name": "Scorched Acres: Shrine 6"
+    },
+    {
+      "name": "Scorched Acres: Shrine 7"
+    },
+    {
+      "name": "Scorched Acres: Shrine 8"
+    },
+    {
+      "name": "Scorched Acres: Shrine 9"
+    },
+    {
+      "name": "Scorched Acres: Shrine 10"
+    },
+    {
+      "name": "Scorched Acres: Shrine 11"
+    },
+    {
+      "name": "Scorched Acres: Shrine 12"
+    },
+    {
+      "name": "Scorched Acres: Shrine 13"
+    },
+    {
+      "name": "Scorched Acres: Shrine 14"
+    },
+    {
+      "name": "Scorched Acres: Shrine 15"
+    },
+    {
+      "name": "Scorched Acres: Shrine 16"
+    },
+    {
+      "name": "Scorched Acres: Shrine 17"
+    },
+    {
+      "name": "Scorched Acres: Shrine 18"
+    },
+    {
+      "name": "Scorched Acres: Shrine 19"
+    },
+    {
+      "name": "Scorched Acres: Shrine 20"
+    },
+    {
+      "name": "Scorched Acres: Scavenger 1"
+    },
+    {
+      "name": "Scorched Acres: Radio Scanner 1"
+    },
+    {
+      "name": "Scorched Acres: Newt Altar 1"
+    },
+    {
+      "name": "Scorched Acres: Newt Altar 2"
     }
   ],
   "status": "Updated"

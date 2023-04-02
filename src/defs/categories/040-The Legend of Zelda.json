@@ -1,0 +1,633 @@
+{
+  "category": "The Legend of Zelda",
+  "index": 40,
+  "settings": [
+    {
+      "name": "ExpandedPool",
+      "description": "Puts room clear drops and take any caves into the pool of items and locations.",
+      "readableName": "Expanded Pool",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "name": "TriforceLocations",
+      "description": "Where Triforce fragments can be located. Note that Triforce pieces obtained in a dungeon will heal and warp you out, while overworld Triforce pieces obtained will appear to have no immediate effect. This is normal.",
+      "readableName": "Triforce Locations",
+      "values": [
+        {
+          "name": "vanilla",
+          "readableName": "Vanilla"
+        },
+        {
+          "name": "dungeons",
+          "readableName": "In dungeons"
+        },
+        {
+          "name": "anywhere",
+          "readableName": "Anywhere"
+        }
+      ],
+      "type": "choice",
+      "default": "vanilla"
+    },
+    {
+      "name": "StartingPosition",
+      "description": "How easy is the start of the game.",
+      "readableName": "Starting Position",
+      "values": [
+        {
+          "name": "safe",
+          "readableName": "Safe",
+          "description": "A weapon is guaranteed in Starting Sword Cave."
+        },
+        {
+          "name": "unsafe",
+          "readableName": "Unsafe",
+          "description": "A weapon is guaranteed between Starting Sword Cave, Letter Cave, and Armos Knight."
+        },
+        {
+          "name": "dangerous",
+          "readableName": "Dangerous",
+          "description": "A weapon could be in Starting Sword Cave, Letter Cave, Armos Knight, Level 1 Compass, Level 2 Bomb Drop (Keese), Level 3 Key Drop (Zols Entrance), or Level 3 Compass."
+        },
+        {
+          "name": "very_dangerous",
+          "readableName": "Very dangerous",
+          "description": "No weapon is guaranteed in any particular location. Could result in very early BK mode."
+        }
+      ],
+      "type": "choice",
+      "default": "safe"
+    }
+  ],
+  "defver": 2,
+  "items": [
+    {
+      "name": "Boomerang"
+    },
+    {
+      "name": "Bow"
+    },
+    {
+      "name": "Magical Boomerang"
+    },
+    {
+      "name": "Raft"
+    },
+    {
+      "name": "Stepladder"
+    },
+    {
+      "name": "Recorder"
+    },
+    {
+      "name": "Magical Rod"
+    },
+    {
+      "name": "Red Candle"
+    },
+    {
+      "name": "Book of Magic"
+    },
+    {
+      "name": "Magical Key"
+    },
+    {
+      "name": "Red Ring"
+    },
+    {
+      "name": "Silver Arrow"
+    },
+    {
+      "name": "Sword"
+    },
+    {
+      "name": "White Sword"
+    },
+    {
+      "name": "Magical Sword"
+    },
+    {
+      "name": "Heart Container"
+    },
+    {
+      "name": "Letter"
+    },
+    {
+      "name": "Magical Shield"
+    },
+    {
+      "name": "Candle"
+    },
+    {
+      "name": "Arrow"
+    },
+    {
+      "name": "Food"
+    },
+    {
+      "name": "Water of Life (Blue)"
+    },
+    {
+      "name": "Water of Life (Red)"
+    },
+    {
+      "name": "Blue Ring"
+    },
+    {
+      "name": "Triforce Fragment"
+    },
+    {
+      "name": "Power Bracelet"
+    },
+    {
+      "name": "Small Key"
+    },
+    {
+      "name": "Bomb"
+    },
+    {
+      "name": "Recovery Heart"
+    },
+    {
+      "name": "Five Rupees"
+    },
+    {
+      "name": "Rupee"
+    },
+    {
+      "name": "Clock"
+    },
+    {
+      "name": "Fairy"
+    }
+  ],
+  "locations": [
+    {
+      "name": "Starting Sword Cave"
+    },
+    {
+      "name": "White Sword Pond"
+    },
+    {
+      "name": "Magical Sword Grave"
+    },
+    {
+      "name": "Take Any Item Left"
+    },
+    {
+      "name": "Take Any Item Middle"
+    },
+    {
+      "name": "Take Any Item Right"
+    },
+    {
+      "name": "Armos Knights"
+    },
+    {
+      "name": "Ocean Heart Container"
+    },
+    {
+      "name": "Letter Cave"
+    },
+    {
+      "name": "Level 1 Item (Bow)"
+    },
+    {
+      "name": "Level 1 Item (Boomerang)"
+    },
+    {
+      "name": "Level 1 Map"
+    },
+    {
+      "name": "Level 1 Compass"
+    },
+    {
+      "name": "Level 1 Boss"
+    },
+    {
+      "name": "Level 1 Triforce"
+    },
+    {
+      "name": "Level 1 Key Drop (Keese Entrance)"
+    },
+    {
+      "name": "Level 1 Key Drop (Stalfos Middle)"
+    },
+    {
+      "name": "Level 1 Key Drop (Moblins)"
+    },
+    {
+      "name": "Level 1 Key Drop (Stalfos Water)"
+    },
+    {
+      "name": "Level 1 Key Drop (Stalfos Entrance)"
+    },
+    {
+      "name": "Level 1 Key Drop (Wallmasters)"
+    },
+    {
+      "name": "Level 2 Item (Magical Boomerang)"
+    },
+    {
+      "name": "Level 2 Map"
+    },
+    {
+      "name": "Level 2 Compass"
+    },
+    {
+      "name": "Level 2 Boss"
+    },
+    {
+      "name": "Level 2 Triforce"
+    },
+    {
+      "name": "Level 2 Key Drop (Ropes West)"
+    },
+    {
+      "name": "Level 2 Key Drop (Moldorms)"
+    },
+    {
+      "name": "Level 2 Key Drop (Ropes Middle)"
+    },
+    {
+      "name": "Level 2 Key Drop (Ropes Entrance)"
+    },
+    {
+      "name": "Level 2 Bomb Drop (Keese)"
+    },
+    {
+      "name": "Level 2 Bomb Drop (Moblins)"
+    },
+    {
+      "name": "Level 2 Rupee Drop (Gels)"
+    },
+    {
+      "name": "Level 3 Item (Raft)"
+    },
+    {
+      "name": "Level 3 Map"
+    },
+    {
+      "name": "Level 3 Compass"
+    },
+    {
+      "name": "Level 3 Boss"
+    },
+    {
+      "name": "Level 3 Triforce"
+    },
+    {
+      "name": "Level 3 Key Drop (Zols and Keese West)"
+    },
+    {
+      "name": "Level 3 Key Drop (Keese North)"
+    },
+    {
+      "name": "Level 3 Key Drop (Zols Central)"
+    },
+    {
+      "name": "Level 3 Key Drop (Zols South)"
+    },
+    {
+      "name": "Level 3 Key Drop (Zols Entrance)"
+    },
+    {
+      "name": "Level 3 Bomb Drop (Darknuts West)"
+    },
+    {
+      "name": "Level 3 Bomb Drop (Keese Corridor)"
+    },
+    {
+      "name": "Level 3 Bomb Drop (Darknuts Central)"
+    },
+    {
+      "name": "Level 3 Rupee Drop (Zols and Keese East)"
+    },
+    {
+      "name": "Level 4 Item (Stepladder)"
+    },
+    {
+      "name": "Level 4 Map"
+    },
+    {
+      "name": "Level 4 Compass"
+    },
+    {
+      "name": "Level 4 Boss"
+    },
+    {
+      "name": "Level 4 Triforce"
+    },
+    {
+      "name": "Level 4 Key Drop (Keese Entrance)"
+    },
+    {
+      "name": "Level 4 Key Drop (Keese Central)"
+    },
+    {
+      "name": "Level 4 Key Drop (Zols)"
+    },
+    {
+      "name": "Level 4 Key Drop (Keese North)"
+    },
+    {
+      "name": "Level 5 Item (Recorder)"
+    },
+    {
+      "name": "Level 5 Map"
+    },
+    {
+      "name": "Level 5 Compass"
+    },
+    {
+      "name": "Level 5 Boss"
+    },
+    {
+      "name": "Level 5 Triforce"
+    },
+    {
+      "name": "Level 5 Key Drop (Keese North)"
+    },
+    {
+      "name": "Level 5 Key Drop (Gibdos North)"
+    },
+    {
+      "name": "Level 5 Key Drop (Gibdos Central)"
+    },
+    {
+      "name": "Level 5 Key Drop (Pols Voice Entrance)"
+    },
+    {
+      "name": "Level 5 Key Drop (Gibdos Entrance)"
+    },
+    {
+      "name": "Level 5 Key Drop (Gibdos, Keese, and Pols Voice)"
+    },
+    {
+      "name": "Level 5 Key Drop (Zols)"
+    },
+    {
+      "name": "Level 5 Bomb Drop (Gibdos)"
+    },
+    {
+      "name": "Level 5 Bomb Drop (Dodongos)"
+    },
+    {
+      "name": "Level 5 Rupee Drop (Zols)"
+    },
+    {
+      "name": "Level 6 Item (Magical Rod)"
+    },
+    {
+      "name": "Level 6 Map"
+    },
+    {
+      "name": "Level 6 Compass"
+    },
+    {
+      "name": "Level 6 Boss"
+    },
+    {
+      "name": "Level 6 Triforce"
+    },
+    {
+      "name": "Level 6 Key Drop (Wizzrobes Entrance)"
+    },
+    {
+      "name": "Level 6 Key Drop (Keese)"
+    },
+    {
+      "name": "Level 6 Key Drop (Wizzrobes North Island)"
+    },
+    {
+      "name": "Level 6 Key Drop (Wizzrobes North Stream)"
+    },
+    {
+      "name": "Level 6 Key Drop (Vires)"
+    },
+    {
+      "name": "Level 6 Bomb Drop (Wizzrobes)"
+    },
+    {
+      "name": "Level 6 Rupee Drop (Wizzrobes)"
+    },
+    {
+      "name": "Level 7 Item (Red Candle)"
+    },
+    {
+      "name": "Level 7 Map"
+    },
+    {
+      "name": "Level 7 Compass"
+    },
+    {
+      "name": "Level 7 Boss"
+    },
+    {
+      "name": "Level 7 Triforce"
+    },
+    {
+      "name": "Level 7 Key Drop (Ropes)"
+    },
+    {
+      "name": "Level 7 Key Drop (Goriyas)"
+    },
+    {
+      "name": "Level 7 Key Drop (Stalfos)"
+    },
+    {
+      "name": "Level 7 Key Drop (Moldorms)"
+    },
+    {
+      "name": "Level 7 Bomb Drop (Goriyas South)"
+    },
+    {
+      "name": "Level 7 Bomb Drop (Keese and Spikes)"
+    },
+    {
+      "name": "Level 7 Bomb Drop (Moldorms South)"
+    },
+    {
+      "name": "Level 7 Bomb Drop (Moldorms North)"
+    },
+    {
+      "name": "Level 7 Bomb Drop (Goriyas North)"
+    },
+    {
+      "name": "Level 7 Bomb Drop (Dodongos)"
+    },
+    {
+      "name": "Level 7 Bomb Drop (Digdogger)"
+    },
+    {
+      "name": "Level 7 Rupee Drop (Goriyas Central)"
+    },
+    {
+      "name": "Level 7 Rupee Drop (Dodongos)"
+    },
+    {
+      "name": "Level 7 Rupee Drop (Goriyas North)"
+    },
+    {
+      "name": "Level 8 Item (Magical Key)"
+    },
+    {
+      "name": "Level 8 Map"
+    },
+    {
+      "name": "Level 8 Compass"
+    },
+    {
+      "name": "Level 8 Item (Book of Magic)"
+    },
+    {
+      "name": "Level 8 Boss"
+    },
+    {
+      "name": "Level 8 Triforce"
+    },
+    {
+      "name": "Level 8 Key Drop (Darknuts West)"
+    },
+    {
+      "name": "Level 8 Key Drop (Darknuts Far West)"
+    },
+    {
+      "name": "Level 8 Key Drop (Pols Voice South)"
+    },
+    {
+      "name": "Level 8 Key Drop (Pols Voice and Keese)"
+    },
+    {
+      "name": "Level 8 Key Drop (Darknuts Central)"
+    },
+    {
+      "name": "Level 8 Key Drop (Keese and Zols Entrance)"
+    },
+    {
+      "name": "Level 8 Bomb Drop (Darknuts North)"
+    },
+    {
+      "name": "Level 8 Bomb Drop (Darknuts East)"
+    },
+    {
+      "name": "Level 8 Bomb Drop (Pols Voice North)"
+    },
+    {
+      "name": "Level 8 Rupee Drop (Manhandla Entrance West)"
+    },
+    {
+      "name": "Level 8 Rupee Drop (Manhandla Entrance North)"
+    },
+    {
+      "name": "Level 8 Rupee Drop (Darknuts and Gibdos)"
+    },
+    {
+      "name": "Level 9 Item (Silver Arrow)"
+    },
+    {
+      "name": "Level 9 Item (Red Ring)"
+    },
+    {
+      "name": "Level 9 Map"
+    },
+    {
+      "name": "Level 9 Compass"
+    },
+    {
+      "name": "Level 9 Key Drop (Patra Southwest)"
+    },
+    {
+      "name": "Level 9 Key Drop (Like Likes and Zols East)"
+    },
+    {
+      "name": "Level 9 Key Drop (Wizzrobes and Bubbles East)"
+    },
+    {
+      "name": "Level 9 Key Drop (Wizzrobes East Island)"
+    },
+    {
+      "name": "Level 9 Bomb Drop (Blue Lanmolas)"
+    },
+    {
+      "name": "Level 9 Bomb Drop (Gels Lake)"
+    },
+    {
+      "name": "Level 9 Bomb Drop (Like Likes and Zols Corridor)"
+    },
+    {
+      "name": "Level 9 Bomb Drop (Patra Northeast)"
+    },
+    {
+      "name": "Level 9 Bomb Drop (Vires)"
+    },
+    {
+      "name": "Level 9 Rupee Drop (Wizzrobes West Island)"
+    },
+    {
+      "name": "Level 9 Rupee Drop (Red Lanmolas)"
+    },
+    {
+      "name": "Level 9 Rupee Drop (Keese Southwest)"
+    },
+    {
+      "name": "Level 9 Rupee Drop (Keese Central Island)"
+    },
+    {
+      "name": "Level 9 Rupee Drop (Wizzrobes Central)"
+    },
+    {
+      "name": "Level 9 Rupee Drop (Wizzrobes North Island)"
+    },
+    {
+      "name": "Level 9 Rupee Drop (Gels East)"
+    },
+    {
+      "name": "Arrow Shop Item Left"
+    },
+    {
+      "name": "Arrow Shop Item Middle"
+    },
+    {
+      "name": "Arrow Shop Item Right"
+    },
+    {
+      "name": "Candle Shop Item Left"
+    },
+    {
+      "name": "Candle Shop Item Middle"
+    },
+    {
+      "name": "Candle Shop Item Right"
+    },
+    {
+      "name": "Blue Ring Shop Item Left"
+    },
+    {
+      "name": "Blue Ring Shop Item Middle"
+    },
+    {
+      "name": "Blue Ring Shop Item Right"
+    },
+    {
+      "name": "Shield Shop Item Left"
+    },
+    {
+      "name": "Shield Shop Item Middle"
+    },
+    {
+      "name": "Shield Shop Item Right"
+    },
+    {
+      "name": "Potion Shop Item Left"
+    },
+    {
+      "name": "Potion Shop Item Middle"
+    },
+    {
+      "name": "Potion Shop Item Right"
+    }
+  ],
+  "status": "New"
+}

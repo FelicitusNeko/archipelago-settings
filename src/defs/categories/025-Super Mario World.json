@@ -99,11 +99,76 @@
       "default": "vanilla"
     },
     {
+      "name": "bowser_castle_rooms",
+      "description": "Determines how the rooms of Bowser's Castle Front Door behave.",
+      "readableName": "Bowser's Castle (Front Door) rooms",
+      "values": [
+        {
+          "name": "vanilla",
+          "readableName": "Vanilla"
+        },
+        {
+          "name": "random_two_room",
+          "readableName": "Two random rooms"
+        },
+        {
+          "name": "random_five_room",
+          "readableName": "Five random rooms"
+        },
+        {
+          "name": "gauntlet",
+          "readableName": "Eight-room gauntlet"
+        },
+        {
+          "name": "labyrinth",
+          "readableName": "Labyrinth",
+          "description": "Which room leads to Bowser?"
+        }
+      ],
+      "type": "choice",
+      "default": "random_two_room"
+    },
+    {
       "name": "level_shuffle",
       "description": "Whether levels are shuffled.",
       "readableName": "Level shuffle",
       "type": "toggle",
       "default": false
+    },
+    {
+      "name": "exclude_special_zone",
+      "description": "If active, this option will prevent any progression items from being placed in Special Zone levels. Additionally, if Level Shuffle is active, Special Zone levels will not be shuffled away from their vanilla tiles.",
+      "readableName": "Exclude Special Zone",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "boss_shuffle",
+      "description": "Determines whether and how bosses are shuffled.",
+      "readableName": "boss shuffle",
+      "values": [
+        {
+          "name": "none",
+          "readableName": "Vanilla"
+        },
+        {
+          "name": "simple",
+          "readableName": "Simple",
+          "description": "Four Reznors and the seven Koopalings are shuffled around."
+        },
+        {
+          "name": "full",
+          "readableName": "Full",
+          "description": "Each boss location gets a fully random boss."
+        },
+        {
+          "name": "singularity",
+          "readableName": "Singularity",
+          "description": "One or two bosses are chosen and placed at every boss location."
+        }
+      ],
+      "type": "choice",
+      "default": "none"
     },
     {
       "name": "swap_donut_gh_exits",
@@ -218,11 +283,64 @@
       "default": "medium"
     },
     {
+      "name": "timer_trap_weight",
+      "description": "Likelihood of a receiving a trap which causes the timer to run low.",
+      "readableName": "Timer trap weight",
+      "values": [
+        {
+          "name": "none",
+          "readableName": "None"
+        },
+        {
+          "name": "low",
+          "readableName": "Low"
+        },
+        {
+          "name": "medium",
+          "readableName": "Medium"
+        },
+        {
+          "name": "high",
+          "readableName": "High"
+        }
+      ],
+      "type": "choice",
+      "default": "medium"
+    },
+    {
       "name": "autosave",
       "description": "Whether a save prompt will appear after every level.",
       "readableName": "Autosave",
       "type": "toggle",
       "default": true
+    },
+    {
+      "name": "early_climb",
+      "description": "Force Climb to appear early in the seed as a local item. This is particularly useful to prevent BK when Level Shuffle is disabled.",
+      "readableName": "Early Climb",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "overworld_speed",
+      "description": "Determines how fast Mario moves on the overworld.",
+      "readableName": "Overworld speed",
+      "values": [
+        {
+          "name": "slow",
+          "readableName": "Slow"
+        },
+        {
+          "name": "vanilla",
+          "readableName": "Vanilla"
+        },
+        {
+          "name": "fast",
+          "readableName": "Fast"
+        }
+      ],
+      "type": "choice",
+      "default": "vanilla"
     },
     {
       "name": "music_shuffle",
@@ -295,15 +413,22 @@
     },
     {
       "name": "foreground_palette_shuffle",
-      "description": "Whether to shuffle level foreground palettes.",
+      "description": "Determines whether to shuffle level foreground palettes.",
       "readableName": "Foreground palette shuffle",
       "type": "toggle",
       "default": false
     },
     {
       "name": "background_palette_shuffle",
-      "description": "Whether to shuffle level background palettes.",
+      "description": "Determines whether to shuffle level background palettes.",
       "readableName": "Background palette shuffle",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "overworld_palette_shuffle",
+      "description": "Determines whether to shuffle overworld palettes.",
+      "readableName": "overworld palette shuffle",
       "type": "toggle",
       "default": false
     },
@@ -386,6 +511,9 @@
     {
       "name": "Literature Trap",
       "max": 0
+    },
+    {
+      "name": "Timer Trap"
     }
   ],
   "locations": [

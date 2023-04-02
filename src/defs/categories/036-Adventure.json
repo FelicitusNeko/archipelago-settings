@@ -1,0 +1,325 @@
+{
+  "category": "Adventure",
+  "index": 36,
+  "settings": [
+    {
+      "name": "dragon_slay_check",
+      "description": "If true, slaying each dragon for the first time is a check.",
+      "readableName": "Dragon slay check",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "type": "deathlink"
+    },
+    {
+      "name": "bat_logic",
+      "description": "Determines how the bat is considered for logic.",
+      "readableName": "bat logic",
+      "values": [
+        {
+          "name": "cannot_break",
+          "readableName": "Cannot break",
+          "description": "The bat cannot pick up an item that starts out-of-logic until the player touches it."
+        },
+        {
+          "name": "can_break",
+          "readableName": "Can break",
+          "description": "The bat is free to pick up any items, even if they are out-of-logic."
+        },
+        {
+          "name": "use_logic",
+          "readableName": "Use logic",
+          "description": "The bat can pick up anything just like `can_break`, and locations are no longer considered to require the magnet or bridge to collect, since the bat can retrieve these."
+        }
+      ],
+      "type": "choice",
+      "default": "can_break"
+    },
+    {
+      "name": "freeincarnate_max",
+      "description": "How many maximum freeincarnate items to allow.\n\nWhen done generating items, any remaining item slots will be filled with freeincarnates, up to this maximum amount. Any remaining item slots after that will be 'nothing' items placed locally, so in multigame multiworlds, keeping this value high will allow more items from other games into Adventure.",
+      "high": 17,
+      "readableName": "Freeincarnate max",
+      "low": 0,
+      "type": "range",
+      "default": 17
+    },
+    {
+      "name": "dragon_rando_type",
+      "description": "Determines how to randomize the dragon starting locations.",
+      "readableName": "Dragon rando type",
+      "values": [
+        {
+          "name": "normal",
+          "readableName": "Normal",
+          "description": "Grundle is in the overworld, Yorgle in the white castle, and Rhindle in the black castle."
+        },
+        {
+          "name": "shuffle",
+          "readableName": "Shuffle",
+          "description": "A random dragon is placed in the overworld, one in the white castle, and one in the black castle."
+        },
+        {
+          "name": "overworldplus",
+          "readableName": "Overworld+",
+          "description": "Dragons can be placed anywhere, but at least one will be in the overworld."
+        },
+        {
+          "name": "randomized",
+          "readableName": "Randomized",
+          "description": "Dragons can be anywhere except the credits room."
+        }
+      ],
+      "type": "choice",
+      "default": "shuffle"
+    },
+    {
+      "name": "connector_multi_slot",
+      "description": "If true, the client and lua connector will add lowest 8 bits of the player slot to the port number used to connect to each other, to simplify connecting multiple local clients to local BizHawks. Set in the yaml, since the connector has to read this out of the rom file before connecting.",
+      "readableName": "Connector multi-slot",
+      "type": "toggle",
+      "default": false
+    },
+    {
+      "name": "yorgle_speed",
+      "description": "Sets Yorgle's initial speed. Yorgle has a speed of 2 in the original game.",
+      "high": 9,
+      "readableName": "Yorgle speed",
+      "low": 1,
+      "type": "range",
+      "default": 2
+    },
+    {
+      "name": "yorgle_min_speed",
+      "description": "Sets Yorgle's speed when all speed reducers are found. Yorgle has a speed of 2 in the original game.",
+      "high": 9,
+      "readableName": "Yorgle minimum speed",
+      "low": 1,
+      "type": "range",
+      "default": 1
+    },
+    {
+      "name": "grundle_speed",
+      "description": "Sets Grundle's initial speed. Grundle has a speed of 2 in the original game.",
+      "high": 9,
+      "readableName": "Grundle speed",
+      "low": 1,
+      "type": "range",
+      "default": 2
+    },
+    {
+      "name": "grundle_min_speed",
+      "description": "Sets Grundle's speed when all speed reducers are found. Grundle has a speed of 2 in the original game.",
+      "high": 9,
+      "readableName": "Grundle minimum speed",
+      "low": 1,
+      "type": "range",
+      "default": 1
+    },
+    {
+      "name": "rhindle_speed",
+      "description": "Sets Rhindle's initial speed. Rhindle has a speed of 3 in the original game.",
+      "high": 9,
+      "readableName": "Rhindle speed",
+      "low": 1,
+      "type": "range",
+      "default": 3
+    },
+    {
+      "name": "rhindle_min_speed",
+      "description": "Sets Rhindle's speed when all speed reducers are found. Rhindle has a speed of 3 in the original game.",
+      "high": 9,
+      "readableName": "Rhindle minimum speed",
+      "low": 1,
+      "type": "range",
+      "default": 2
+    },
+    {
+      "name": "difficulty_switch_a",
+      "description": "Set availability of left difficulty switch. This controls the speed of the dragons' bite animation.",
+      "readableName": "Difficulty switch A",
+      "values": [
+        {
+          "name": "normal",
+          "readableName": "Normal"
+        },
+        {
+          "name": "locked_hard",
+          "readableName": "Locked to Hard"
+        },
+        {
+          "name": "hard_with_unlock_item",
+          "readableName": "Hard with unlock item"
+        }
+      ],
+      "type": "choice",
+      "default": "hard_with_unlock_item"
+    },
+    {
+      "name": "difficulty_switch_b",
+      "description": "Set availability of right difficulty switch. On hard, dragons will run away from the sword.",
+      "readableName": "Difficulty switch B",
+      "values": [
+        {
+          "name": "normal",
+          "readableName": "Normal"
+        },
+        {
+          "name": "locked_hard",
+          "readableName": "Locked to Hard"
+        },
+        {
+          "name": "hard_with_unlock_item",
+          "readableName": "Hard with unlock item"
+        }
+      ],
+      "type": "choice",
+      "default": "hard_with_unlock_item"
+    },
+    {
+      "name": "start_castle",
+      "description": "Choose or randomize which castle to start in front of.\n\nThis affects both normal start and reincarnation.  Starting at the black castle may give easy dot runs, while starting at the white castle may make them more dangerous!  Also, not starting at the yellow castle can make delivering the chalice with a full inventory slightly less trivial.\n\nThis doesn't affect logic since all the castles are reachable from each other.",
+      "readableName": "Start castle",
+      "values": [
+        {
+          "name": "yellow",
+          "readableName": "*yellow"
+        },
+        {
+          "name": "black",
+          "readableName": "*black"
+        },
+        {
+          "name": "white",
+          "readableName": "*white"
+        }
+      ],
+      "type": "choice",
+      "default": "yellow"
+    }
+  ],
+  "defver": 2,
+  "items": [
+    {
+      "name": "nothing"
+    },
+    {
+      "name": "Sword"
+    },
+    {
+      "name": "Bridge"
+    },
+    {
+      "name": "Yellow Key"
+    },
+    {
+      "name": "White Key"
+    },
+    {
+      "name": "Black Key"
+    },
+    {
+      "name": "Chalice"
+    },
+    {
+      "name": "Magnet"
+    },
+    {
+      "name": "Left Difficulty Switch"
+    },
+    {
+      "name": "Right Difficulty Switch"
+    },
+    {
+      "name": "Freeincarnate"
+    },
+    {
+      "name": "Slow Yorgle"
+    },
+    {
+      "name": "Slow Grundle"
+    },
+    {
+      "name": "Slow Rhindle"
+    },
+    {
+      "name": "Revive Dragons"
+    }
+  ],
+  "locations": [
+    {
+      "name": "Blue Labyrinth 0"
+    },
+    {
+      "name": "Blue Labyrinth 1"
+    },
+    {
+      "name": "Catacombs"
+    },
+    {
+      "name": "Adjacent to Catacombs"
+    },
+    {
+      "name": "Southwest of Catacombs"
+    },
+    {
+      "name": "White Castle Gate"
+    },
+    {
+      "name": "Black Castle Gate"
+    },
+    {
+      "name": "Yellow Castle Gate"
+    },
+    {
+      "name": "Inside Yellow Castle"
+    },
+    {
+      "name": "Dungeon0"
+    },
+    {
+      "name": "Dungeon1"
+    },
+    {
+      "name": "RedMaze0"
+    },
+    {
+      "name": "Red Maze Vault"
+    },
+    {
+      "name": "RedMaze1"
+    },
+    {
+      "name": "Black Castle Foyer"
+    },
+    {
+      "name": "Northeast of Catacombs"
+    },
+    {
+      "name": "Southeast of Catacombs"
+    },
+    {
+      "name": "Credits Left Side"
+    },
+    {
+      "name": "Dungeon Vault"
+    },
+    {
+      "name": "Red Maze Vault Entrance"
+    },
+    {
+      "name": "Credits Right Side"
+    },
+    {
+      "name": "Slay Rhindle"
+    },
+    {
+      "name": "Slay Yorgle"
+    },
+    {
+      "name": "Slay Grundle"
+    }
+  ],
+  "status": "New"
+}

@@ -1,0 +1,261 @@
+{
+  "category": "Wargroove",
+  "index": 39,
+  "settings": [
+    {
+      "name": "income_boost",
+      "description": "How much extra income the player gets per turn per boost received.",
+      "high": 100,
+      "readableName": "Income boost",
+      "low": 0,
+      "type": "range",
+      "default": 25
+    },
+    {
+      "name": "commander_defense_boost",
+      "description": "How much extra defense the player's commander gets per boost received.",
+      "high": 8,
+      "readableName": "Commander defense boost",
+      "low": 0,
+      "type": "range",
+      "default": 2
+    },
+    {
+      "name": "commander_choice",
+      "description": "How the player's commander is selected for missions. When playing with unlockable factions, faction items are added to the pool. Extra faction items after the first also reward starting Groove charge.",
+      "readableName": "Commander choice",
+      "values": [
+        {
+          "name": "locked_random",
+          "readableName": "Locked random",
+          "description": "The player's commander is randomly predetermined for each level."
+        },
+        {
+          "name": "unlockable_factions",
+          "readableName": "Unlockable factions",
+          "description": "The player starts with Mercival and can unlock playable factions."
+        },
+        {
+          "name": "random_starting_faction",
+          "readableName": "Random starting faction",
+          "description": "The player starts with a random starting faction and can unlock the rest."
+        }
+      ],
+      "type": "choice",
+      "default": "locked_random"
+    }
+  ],
+  "defver": 2,
+  "items": [
+    {
+      "name": "Spearman"
+    },
+    {
+      "name": "Wagon"
+    },
+    {
+      "name": "Mage"
+    },
+    {
+      "name": "Archer"
+    },
+    {
+      "name": "Knight"
+    },
+    {
+      "name": "Ballista"
+    },
+    {
+      "name": "Golem"
+    },
+    {
+      "name": "Harpy"
+    },
+    {
+      "name": "Witch"
+    },
+    {
+      "name": "Dragon"
+    },
+    {
+      "name": "Balloon"
+    },
+    {
+      "name": "Barge"
+    },
+    {
+      "name": "Merfolk"
+    },
+    {
+      "name": "Turtle"
+    },
+    {
+      "name": "Harpoon Ship"
+    },
+    {
+      "name": "Warship"
+    },
+    {
+      "name": "Thief"
+    },
+    {
+      "name": "Rifleman"
+    },
+    {
+      "name": "Eastern Bridges"
+    },
+    {
+      "name": "Southern Walls"
+    },
+    {
+      "name": "Final Bridges"
+    },
+    {
+      "name": "Final Walls"
+    },
+    {
+      "name": "Final Sickle"
+    },
+    {
+      "name": "Income Boost"
+    },
+    {
+      "name": "Commander Defense Boost"
+    },
+    {
+      "name": "Cherrystone Commanders"
+    },
+    {
+      "name": "Felheim Commanders"
+    },
+    {
+      "name": "Floran Commanders"
+    },
+    {
+      "name": "Heavensong Commanders"
+    },
+    {
+      "name": "Requiem Commanders"
+    },
+    {
+      "name": "Outlaw Commanders"
+    }
+  ],
+  "locations": [
+    {
+      "name": "Humble Beginnings: Caesar"
+    },
+    {
+      "name": "Humble Beginnings: Chest 1"
+    },
+    {
+      "name": "Humble Beginnings: Chest 2"
+    },
+    {
+      "name": "Humble Beginnings: Victory"
+    },
+    {
+      "name": "Best Friendssss: Find Sedge"
+    },
+    {
+      "name": "Best Friendssss: Victory"
+    },
+    {
+      "name": "A Knight's Folly: Caesar"
+    },
+    {
+      "name": "A Knight's Folly: Victory"
+    },
+    {
+      "name": "Denrunaway: Chest"
+    },
+    {
+      "name": "Denrunaway: Victory"
+    },
+    {
+      "name": "Dragon Freeway: Victory"
+    },
+    {
+      "name": "Deep Thicket: Find Sedge"
+    },
+    {
+      "name": "Deep Thicket: Victory"
+    },
+    {
+      "name": "Corrupted Inlet: Victory"
+    },
+    {
+      "name": "Mage Mayhem: Caesar"
+    },
+    {
+      "name": "Mage Mayhem: Victory"
+    },
+    {
+      "name": "Endless Knight: Victory"
+    },
+    {
+      "name": "Ambushed in the Middle: Victory (Blue)"
+    },
+    {
+      "name": "Ambushed in the Middle: Victory (Green)"
+    },
+    {
+      "name": "The Churning Sea: Victory"
+    },
+    {
+      "name": "Frigid Archery: Light the Torch"
+    },
+    {
+      "name": "Frigid Archery: Victory"
+    },
+    {
+      "name": "Archery Lessons: Chest"
+    },
+    {
+      "name": "Archery Lessons: Victory"
+    },
+    {
+      "name": "Surrounded: Caesar"
+    },
+    {
+      "name": "Surrounded: Victory"
+    },
+    {
+      "name": "Darkest Knight: Victory"
+    },
+    {
+      "name": "Robbed: Victory"
+    },
+    {
+      "name": "Open Season: Caesar"
+    },
+    {
+      "name": "Open Season: Victory"
+    },
+    {
+      "name": "Doggo Mountain: Find all the Dogs"
+    },
+    {
+      "name": "Doggo Mountain: Victory"
+    },
+    {
+      "name": "Tenri's Fall: Victory"
+    },
+    {
+      "name": "Master of the Lake: Victory"
+    },
+    {
+      "name": "A Ballista's Revenge: Victory"
+    },
+    {
+      "name": "Rebel Village: Victory (Pink)"
+    },
+    {
+      "name": "Rebel Village: Victory (Red)"
+    },
+    {
+      "name": "Foolish Canal: Victory"
+    }
+  ],
+  "status": "New"
+}
