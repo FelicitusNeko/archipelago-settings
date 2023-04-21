@@ -91,8 +91,8 @@ const APCategoryData: APCategoryJson[] = [
   require("./027-Zillion.json"), // 0.3.6
   require("./028-Hylics 2.json"), // 0.3.6
   require("./029-Overcooked 2.json"), // 0.3.6
-  require("./030-Sudoku.json"), // 0.3.6
-  require('./031-Lufia II Ancient Cave.json'), // 0.?.?
+  // require("./030-Sudoku.json"), // 0.3.6, you don't submit a YAML for this
+  require('./031-Lufia II Ancient Cave.json'), // 0.3.6
   require('./032-Clique.json'), // 0.4.0
   require('./033-Stardew Valley.json'), // 0.4.0
   require('./034-Links Awakening DX.json'), // 0.4.0
