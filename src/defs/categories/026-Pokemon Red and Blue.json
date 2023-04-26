@@ -1,5 +1,6 @@
 {
   "category": "Pokemon Red and Blue",
+  "readableName": "Pokémon Red and Blue",
   "index": 26,
   "settings": [
     {
@@ -216,7 +217,7 @@
     },
     {
       "name": "all_pokemon_seen",
-      "description": "Start with all Pokemon \"seen\" in your Pokédex. This allows you to see where Pokémon can be encountered in the wild. Pokémon found by fishing or in the Cerulean Cave are not displayed.",
+      "description": "Start with all Pokémon \"seen\" in your Pokédex. This allows you to see where Pokémon can be encountered in the wild. Pokémon found by fishing or in the Cerulean Cave are not displayed.",
       "readableName": "All Pokémon seen",
       "type": "toggle",
       "default": false
@@ -338,7 +339,7 @@
     },
     {
       "name": "randomize_wild_pokemon",
-      "description": "Randomize all wild Pokemon and game corner prize Pokémon.",
+      "description": "Randomize all wild Pokémon and game corner prize Pokémon.",
       "readableName": "Randomize wild Pokémon",
       "values": [
         {
@@ -347,7 +348,7 @@
         },
         {
           "name": "match_types",
-          "description": "Select a Pokemon with at least one type matching the original type of the original Pokémon.",
+          "description": "Select a Pokémon with at least one type matching the original type of the original Pokémon.",
           "readableName": "Match types"
         },
         {
@@ -377,7 +378,7 @@
     },
     {
       "name": "randomize_starter_pokemon",
-      "description": "Randomize the starter Pokemon choices.",
+      "description": "Randomize the starter Pokémon choices.",
       "readableName": "Randomize starter Pokémon",
       "values": [
         {
@@ -386,7 +387,7 @@
         },
         {
           "name": "match_types",
-          "description": "Select a Pokemon with at least one type matching the original type of the original Pokémon.",
+          "description": "Select a Pokémon with at least one type matching the original type of the original Pokémon.",
           "readableName": "Match types"
         },
         {
@@ -418,7 +419,7 @@
         },
         {
           "name": "match_types",
-          "description": "Select a Pokemon with at least one type matching the original type of the original Pokémon.",
+          "description": "Select a Pokémon with at least one type matching the original type of the original Pokémon.",
           "readableName": "Match types"
         },
         {
@@ -538,7 +539,7 @@
         },
         {
           "name": "match_types",
-          "description": "Select a Pokemon with at least one type matching the original type of the original Pokémon.",
+          "description": "Select a Pokémon with at least one type matching the original type of the original Pokémon.",
           "readableName": "Match types"
         },
         {
@@ -575,7 +576,7 @@
     },
     {
       "name": "randomize_pokemon_movesets",
-      "description": "Randomize the moves learned by Pokemon.",
+      "description": "Randomize the moves learned by Pokémon.",
       "readableName": "Randomize Pokémon movesets",
       "values": [
         {
@@ -584,7 +585,7 @@
         },
         {
           "name": "prefer_types",
-          "description": "Prefer moves that match the type of the Pokemon.",
+          "description": "Prefer moves that match the type of the Pokémon.",
           "readableName": "Prefer types"
         },
         {
@@ -630,7 +631,12 @@
       "readableName": "TM same type compatibility",
       "low": -1,
       "type": "range",
-      "default": null
+      "default": -1,
+      "aliases": {
+        "vanilla": -1,
+        "none": 0,
+        "full": 100
+      }
     },
     {
       "name": "tm_normal_type_compatibility",
@@ -639,7 +645,12 @@
       "readableName": "TM Normal type compatibility",
       "low": -1,
       "type": "range",
-      "default": null
+      "default": -1,
+      "aliases": {
+        "vanilla": -1,
+        "none": 0,
+        "full": 100
+      }
     },
     {
       "name": "tm_other_type_compatibility",
@@ -648,7 +659,12 @@
       "readableName": "TM other type compatibility",
       "low": -1,
       "type": "range",
-      "default": null
+      "default": -1,
+      "aliases": {
+        "vanilla": -1,
+        "none": 0,
+        "full": 100
+      }
     },
     {
       "name": "hm_same_type_compatibility",
@@ -657,7 +673,12 @@
       "readableName": "HM same type compatibility",
       "low": -1,
       "type": "range",
-      "default": null
+      "default": -1,
+      "aliases": {
+        "vanilla": -1,
+        "none": 0,
+        "full": 100
+      }
     },
     {
       "name": "hm_normal_type_compatibility",
@@ -666,7 +687,12 @@
       "readableName": "HM Normal type compatibility",
       "low": -1,
       "type": "range",
-      "default": null
+      "default": -1,
+      "aliases": {
+        "vanilla": -1,
+        "none": 0,
+        "full": 100
+      }
     },
     {
       "name": "hm_other_type_compatibility",
@@ -675,11 +701,16 @@
       "readableName": "HM other type compatibility",
       "low": -1,
       "type": "range",
-      "default": null
+      "default": -1,
+      "aliases": {
+        "vanilla": -1,
+        "none": 0,
+        "full": 100
+      }
     },
     {
       "name": "inherit_tm_hm_compatibility",
-      "description": "If on, evolved Pokemon will inherit their pre-evolved form's TM and HM compatibilities. They will then roll the above set chances again at a 50% lower rate for all TMs and HMs their predecessor could not learn, unless the evolved form has additional or different types, then moves of those new types will be rolled at the full set chance.",
+      "description": "If on, evolved Pokémon will inherit their pre-evolved form's TM and HM compatibilities. They will then roll the above set chances again at a 50% lower rate for all TMs and HMs their predecessor could not learn, unless the evolved form has additional or different types, then moves of those new types will be rolled at the full set chance.",
       "readableName": "Inherit TM/HM compatibility",
       "type": "toggle",
       "default": false
@@ -708,7 +739,7 @@
     },
     {
       "name": "secondary_type_chance",
-      "description": "If \"Randomize Pokémon types\" is on, this is the chance each Pokemon will have a secondary type. If \"Follow evolutions\" is selected, it is the chance a second type will be added at each evolution stage. Vanilla (-1) will give secondary types to Pokémon that normally have a secondary type.",
+      "description": "If \"Randomize Pokémon types\" is on, this is the chance each Pokémon will have a secondary type. If \"Follow evolutions\" is selected, it is the chance a second type will be added at each evolution stage. Vanilla (-1) will give secondary types to Pokémon that normally have a secondary type.",
       "high": 100,
       "readableName": "Secondary type chance",
       "low": -1,
